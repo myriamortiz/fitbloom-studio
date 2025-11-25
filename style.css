@@ -29,8 +29,6 @@ body {
   background-attachment: fixed;
 }
 
-/* On simulera la “texture boho” plus tard avec un petit pattern léger si tu veux */
-
 .fbs-header {
   display: flex;
   align-items: center;
