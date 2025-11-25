@@ -92,7 +92,7 @@ body {
   border-radius: 40px;
   border: 1.5px solid var(--fbs-rose-clair);
   color: white;
-  text-align: left;
+  text-align: center;
   box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
   transition: 0.2s ease;
