@@ -29,7 +29,7 @@ body {
   flex-direction: column;
 
   /* Texture boho */
-  background-image: url("./texture.jpg");
+  background-image: url("./black.jpg");
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
