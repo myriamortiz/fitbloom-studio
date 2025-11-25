@@ -1,0 +1,21 @@
+{
+  "name": "FitBloom Studio",
+  "short_name": "FBS",
+  "description": "Ton studio bien-être : food, fitness & flow.",
+  "display": "standalone",
+  "start_url": "/",
+  "background_color": "#F3EDE7",
+  "theme_color": "#D8A7A7",
+  "icons": [
+    {
+      "src": "assets/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
