@@ -24,6 +24,12 @@ body {
   flex-direction: column;
 }
 
+background-image: url("./données/soho-boho-beige-chle-l.jpg");
+background-size: cover;
+background-repeat: repeat;
+background-attachment: fixed;
+opacity: 1;
+
 /* On simulera la “texture boho” plus tard avec un petit pattern léger si tu veux */
 
 .fbs-header {
