@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   
-  background-image: url("./données/soho-boho-beige-chle-l.jpg");
+  background-image: url("./données/texture-boho.jpg");
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
