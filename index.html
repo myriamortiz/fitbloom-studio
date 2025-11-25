@@ -6,17 +6,17 @@
 
   <title>FitBloom Studio</title>
 
-  <!-- Manifest (pour installation PWA) -->
+  <!-- Manifest pour installation PWA -->
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Icône de l'application -->
+  <!-- Icônes de l'application -->
   <link rel="icon" type="image/png" sizes="192x192" href="assets/logo/icon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/logo/icon-512.png" />
 
-  <!-- Couleurs navigateur (Android / iOS) -->
+  <!-- Couleurs navigateur / thème -->
   <meta name="theme-color" content="#D8A7A7" />
 
-  <!-- CSS -->
+  <!-- Fichier CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -25,7 +25,8 @@
   <!-- HEADER -->
   <header class="fbs-header">
     <div class="fbs-logo">
-      <img src="assets/logo/logo-fbs-light.png" alt="FBS Logo" style="width:100%; height:100%; border-radius:999px;" />
+      <img src="assets/logo/logo-fbs-light.png" alt="FBS Logo" 
+           style="width:100%; height:100%; border-radius:999px;" />
     </div>
     <div class="fbs-title-block">
       <h1>FitBloom Studio</h1>
@@ -64,10 +65,10 @@
     <button class="footer-link">⚙️ Paramètres</button>
   </footer>
 
-  <!-- SCRIPT PRINCIPAL -->
+  <!-- JS principal -->
   <script src="app.js"></script>
 
-  <!-- Service Worker PWA -->
+  <!-- Enregistrement du Service Worker (Étape 7) -->
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("service-worker.js")
