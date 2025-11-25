@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "day": "lundi",
+    "type": "brunch",
+    "name": "Brunch avo-toast & œuf",
+    "calories": 450,
+    "glutenFree": true,
+    "lactoseFree": true
+  }
+]
