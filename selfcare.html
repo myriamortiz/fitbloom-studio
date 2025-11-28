@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FitBloom Studio – Selfcare Universe</title>
 
   <link rel="stylesheet" href="style.css">
-
-  <!-- Icône -->
-  <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png">
+  <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png" />
 </head>
 
 <body class="page-selfcare">
@@ -21,54 +18,72 @@
     <div class="header-center">
       <img src="assets/logo/logo-fbs-light.png" class="sub-logo" alt="logo FBS">
       <h1 class="sub-title">Selfcare Universe</h1>
-      <p class="sub-subtitle">Émotions • Habitudes • Rituels • To-do • Compléments</p>
+      <p class="sub-subtitle">Mood • Rituels • Bien-être</p>
     </div>
   </header>
 
   <!-- SECTION ÉMOTIONS -->
   <section class="sc-section">
-    <h2 class="sc-title">💖 Mon émotion du jour</h2>
-    <div id="emotion-container" class="emotion-container"></div>
+    <h2 class="sc-title">Comment je me sens aujourd’hui ?</h2>
+
+    <div class="emotion-container" id="emotion-container">
+      <button class="emotion-btn" data-emotion="😊 Heureuse">😊 Heureuse</button>
+      <button class="emotion-btn" data-emotion="😔 Triste">😔 Triste</button>
+      <button class="emotion-btn" data-emotion="😤 Stressée">😤 Stressée</button>
+      <button class="emotion-btn" data-emotion="😑 Fatiguée">😑 Fatiguée</button>
+      <button class="emotion-btn" data-emotion="🤩 Motivée">🤩 Motivée</button>
+      <button class="emotion-btn" data-emotion="💗 Amoureuse">💗 Amoureuse</button>
+    </div>
+
+    <p id="emotion-save-msg" style="text-align:center; margin-top:1rem; color:var(--fbs-rose-pale);"></p>
   </section>
 
-  <!-- SECTION HABITUDES -->
+  <!-- SECTION HABIT TRACKER -->
   <section class="sc-section">
-    <h2 class="sc-title">📌 Mes habitudes du jour</h2>
-    <div id="habits-container" class="habits-container"></div>
+    <h2 class="sc-title">Mes habitudes du jour</h2>
+
+    <div class="habits-container">
+      <label class="habit-item"><input type="checkbox" class="habit" data-habit="water">Boire 2L d’eau 💧</label>
+      <label class="habit-item"><input type="checkbox" class="habit" data-habit="complements">Prendre mes compléments 💊</label>
+      <label class="habit-item"><input type="checkbox" class="habit" data-habit="sport">Faire ma séance de sport 💪</label>
+      <label class="habit-item"><input type="checkbox" class="habit" data-habit="night">Rituel du soir 🌙</label>
+    </div>
   </section>
 
   <!-- SECTION RITUEL -->
   <section class="sc-section">
-    <h2 class="sc-title">🧘‍♀️ Rituel bien-être</h2>
-    <p id="rituel-container" class="rituel-text"></p>
+    <h2 class="sc-title">Rituel du jour</h2>
+    <p class="rituel-text" id="rituel"></p>
   </section>
 
-  <!-- SECTION TO-DO LIST -->
+  <!-- SECTION TODO LIST -->
   <section class="sc-section">
-    <h2 class="sc-title">📝 To-do du jour</h2>
+    <h2 class="sc-title">To-do list du jour</h2>
 
     <div class="todo-add">
-      <input id="todo-input" type="text" placeholder="Ajouter une tâche…">
-      <button onclick="addTodo()" class="todo-add-btn">➕</button>
+      <input id="todo-input" placeholder="Ajouter une tâche..." />
+      <button class="todo-add-btn" id="add-todo">+</button>
     </div>
 
-    <div id="todos-container" class="todos-container"></div>
+    <div class="todos-container" id="todos-container"></div>
   </section>
 
   <!-- SECTION COMPLÉMENTS -->
   <section class="sc-section">
-    <h2 class="sc-title">🌿 Mes compléments du moment</h2>
-    <div id="complements-container" class="complements-container"></div>
+    <h2 class="sc-title">Mes compléments du moment</h2>
+
+    <div class="complements-container" id="complements-container"></div>
   </section>
 
-  <!-- RÉCAP HEBDO -->
+  <!-- SECTION RECAP HEBDO -->
   <section class="sc-section">
-    <h2 class="sc-title">📅 Récap hebdomadaire</h2>
-    <div id="weekly-recap" class="weekly-recap"></div>
+    <h2 class="sc-title">Récap de la semaine</h2>
+
+    <p class="weekly-recap" id="weekly-recap">
+      En attente du début de la semaine...
+    </p>
   </section>
 
-  <!-- JS -->
   <script src="selfcare.js"></script>
-
 </body>
 </html>
