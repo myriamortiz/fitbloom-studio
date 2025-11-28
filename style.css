@@ -420,3 +420,115 @@ body {
 .see-btn:hover {
   transform: scale(1.04);
 }
+/* PAGE STYLE */
+.page-fitness {
+  background: #faf8ff; /* même base FitBloom */
+  padding-bottom: 40px;
+}
+
+/* HEADER */
+.sub-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.back-btn {
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.logo-small {
+  height: 35px;
+  opacity: 0.9;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+/* CARDS */
+.container {
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+}
+
+.big-card {
+  padding: 25px;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+/* SESSION */
+.session-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.session-duration {
+  font-size: 16px;
+  margin-bottom: 15px;
+  opacity: 0.7;
+}
+
+/* BUTTONS */
+.btn {
+  background: #eac7ff; /* couleur FitBloom */
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.main-btn {
+  width: 100%;
+  background: #ffb7d5; /* rose FitBloom */
+  font-weight: bold;
+}
+
+/* WEEK GRID */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day-bubble {
+  background: #f7f2ff;
+  border-radius: 50%;
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.2;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.day-bubble span {
+  display: block;
+  font-size: 11px;
+  opacity: 0.7;
+}
