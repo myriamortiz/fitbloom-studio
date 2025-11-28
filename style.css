@@ -538,30 +538,47 @@ h2 {
 .page-fitness {
   padding: 1.5rem;
   min-height: 100vh;
+  color: var(--fbs-rose-clair);
 }
 
-/* Séance du jour */
+/* Carte séance et autres blocs */
+.page-fitness .card {
+  background: var(--fbs-glass);
+  border: 1.5px solid var(--fbs-border);
+  border-radius: 30px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 0 25px var(--fbs-glow);
+  backdrop-filter: blur(6px);
+  margin-top: 1.8rem;
+}
+
+/* -------- Séance du jour -------- */
 .session-title {
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--fbs-rose-pale);
+  text-shadow: 0 0 10px rgba(255,255,255,0.08);
 }
 
 .session-duration {
   font-size: 0.95rem;
-  opacity: 0.7;
+  opacity: 0.75;
+  color: var(--fbs-taupe-rose);
+  margin-bottom: 0.8rem;
 }
 
-/* Planning hebdo */
+/* -------- Planning hebdo -------- */
 .week-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 12px;
+  margin-top: 1rem;
 }
 
+/* Bulles */
 .day-bubble {
-  background: rgba(255, 255, 255, 0.10);
-  border: 1.2px solid var(--fbs-border);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid var(--fbs-border);
   border-radius: 50%;
   padding: 10px 6px;
   height: 70px;
@@ -573,9 +590,35 @@ h2 {
 
   font-size: 0.85rem;
   color: var(--fbs-rose-pale);
+  text-shadow: 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(196,138,138,0.15);
+}
+
+.day-bubble strong {
+  font-size: 0.85rem;
+  color: var(--fbs-rose-pale);
 }
 
 .day-bubble span {
   font-size: 0.7rem;
   opacity: 0.65;
+  color: var(--fbs-taupe-rose);
+  margin-top: 2px;
+}
+
+/* -------- Bouton principal (Boost me) -------- */
+.page-fitness .main-btn {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+  font-weight: bold;
+  border-radius: 18px;
+  padding: 1rem 1.2rem;
+  margin-top: 0.3rem;
+  box-shadow: 0 0 15px rgba(196,138,138,0.35);
+  transition: 0.2s ease;
+}
+
+.page-fitness .main-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 22px rgba(196,138,138,0.5);
 }
