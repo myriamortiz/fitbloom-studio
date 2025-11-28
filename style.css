@@ -720,6 +720,6 @@ h1 {
 .session-title {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--fbs-rose-pale); /* Changer la couleur à rose pâle pour plus de lisibilité */
+  color: var(--fbs-taupe-rose); /* Changer la couleur à rose pâle pour plus de lisibilité */
   margin-bottom: 1rem;
 }
