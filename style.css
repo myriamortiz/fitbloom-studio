@@ -271,15 +271,15 @@ details ul {
 }
 
 .tab-btn {
-  padding: 0.6rem 1.3rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--fbs-rose-clair);
-  color: var(--fbs-rose-clair);
-  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.4rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
-  transition: 0.2s;
-  font-size: 0.95rem;
+  transition: 0.2s ease;
 }
 
 .tab-btn.active {
@@ -297,17 +297,20 @@ details ul {
   color: var(--fbs-rose-clair);
   font-size: 1.4rem;
   margin: 1.5rem 0 0.7rem;
-  text-align: left;
+  text-align: center;
 }
 
 /* CARDS RECETTES */
 .recipe-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--fbs-rose-clair);
-  padding: 1rem 1.2rem;
-  border-radius: 20px;
-  margin-bottom: 1rem;
-  color: var(--fbs-rose-pale);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.4rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .recipe-card h3 {
@@ -337,3 +340,44 @@ details ul {
   color: var(--fbs-rose-clair);
   margin-top: 0.5rem;
 }
+/* BOUTONS */
+.fbs-main {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.fbs-btn {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.4rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.fbs-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 26px var(--fbs-glow);
+}
+
+.fbs-btn .icon {
+  font-size: 1.3rem;
+}
+
+.fbs-btn .label {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+  color: var(--fbs-rose-pale);
+}
+
+.fbs-btn .sub {
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+  color: var(--fbs-taupe-rose);
