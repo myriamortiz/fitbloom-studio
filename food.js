@@ -1,131 +1,173 @@
-// -------------------------
-//  FitBloom Studio – Weekly Food Planner
-// -------------------------
+/* ----------------------------------------------------
+   FITBLOOM STUDIO – FOOD UNIVERSE (Weekly Generator)
+---------------------------------------------------- */
 
+/* -----------------------------
+   1. FICHIERS JSON
+----------------------------- */
+const DATA_PATHS = {
+  brunch: "data/brunch/brunch.json",
+  collation: "data/collation/collation.json",
+  diner: "data/diner/diner.json",
+  jus: "data/jus/jus.json",
+};
+
+
+/* -----------------------------
+   2. JOURS DE LA SEMAINE
+----------------------------- */
 const DAYS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
-const foodWeekContainer = document.getElementById("food-week");
 
-// Fichiers JSON
-const brunchPath = "data/brunch/brunch.json";
-const collationPath = "data/collation/collation.json";
-const dinerPath = "data/diner/diner.json";
-const jusPath = "data/jus/jus.json";
 
-// ------------------------------------
-// 1) Vérifier si on doit générer une nouvelle semaine
-// ------------------------------------
-function shouldGenerateNewWeek() {
-  const savedMonday = localStorage.getItem("fbs_week_monday");
-  const today = new Date();
-  const monday = getMondayOfCurrentWeek();
+/* -----------------------------
+   3. ÉLÉMENT CONTENEUR
+----------------------------- */
+const weekContainer = document.getElementById("food-week");
 
-  return savedMonday !== monday;
+
+/* -----------------------------
+   4. CHARGER TOUS LES FICHIERS JSON
+----------------------------- */
+async function loadAllData() {
+  const brunch = await fetch(DATA_PATHS.brunch).then(r => r.json());
+  const collation = await fetch(DATA_PATHS.collation).then(r => r.json());
+  const diner = await fetch(DATA_PATHS.diner).then(r => r.json());
+  const jus = await fetch(DATA_PATHS.jus).then(r => r.json());
+
+  return { brunch, collation, diner, jus };
 }
 
-function getMondayOfCurrentWeek() {
-  const d = new Date();
-  const day = d.getDay();
-  const diff = d.getDate() - day + (day === 0 ? -6 : 1);
-  const monday = new Date(d.setDate(diff));
-  return monday.toISOString().split("T")[0];
+
+/* -----------------------------
+   5. PICK ALÉATOIRE
+----------------------------- */
+function pickRandom(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
-// ------------------------------------
-// 2) Générer une nouvelle semaine
-// ------------------------------------
-async function generateWeek() {
-  const [brunchData, collationData, dinerData, jusData] = await Promise.all([
-    fetch(brunchPath).then(r => r.json()),
-    fetch(collationPath).then(r => r.json()),
-    fetch(dinerPath).then(r => r.json()),
-    fetch(jusPath).then(r => r.json()),
-  ]);
 
+/* -----------------------------
+   6. GÉNÉRATION D’UN MENU JOURNALIER
+----------------------------- */
+function generateDailyMenu(data) {
+  return {
+    brunch: pickRandom(data.brunch.permanent),
+    collation: pickRandom(data.collation.permanent),
+    diner: pickRandom(data.diner.permanent),
+    jus: pickRandom(data.jus.permanent)
+  };
+}
+
+
+/* -----------------------------
+   7. GÉNÉRER UNE SEMAINE COMPLÈTE
+----------------------------- */
+function generateFullWeek(data) {
   const week = {};
-
   DAYS.forEach(day => {
-    week[day] = {
-      brunch: pickRandom(brunchData.permanent),
-      collation: pickRandom(collationData.permanent),
-      diner: pickRandom(dinerData.permanent),
-      jus: pickRandom(jusData.permanent)
-    };
+    week[day] = generateDailyMenu(data);
   });
-
-  localStorage.setItem("fbs_week", JSON.stringify(week));
-  localStorage.setItem("fbs_week_monday", getMondayOfCurrentWeek());
-
   return week;
 }
 
-// Fonction utilitaire pour choisir une recette aléatoire
-function pickRandom(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+
+/* -----------------------------
+   8. ISOLER LE LUNDI COURANT
+----------------------------- */
+function getCurrentMonday() {
+  const d = new Date();
+  const day = d.getDay(); // 0 = dimanche
+  const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+  const monday = new Date(d.setDate(diff));
+  monday.setHours(0,0,0,0);
+  return monday.getTime();
 }
 
-// ------------------------------------
-// 3) Affichage visuel de la semaine
-// ------------------------------------
-function renderWeek(week) {
-  foodWeekContainer.innerHTML = "";
 
-  DAYS.forEach(day => {
-    const d = week[day];
+/* -----------------------------
+   9. CHARGER OU CRÉER LE MENU DE LA SEMAINE
+----------------------------- */
+async function loadOrCreateWeek() {
 
-    const block = document.createElement("div");
-    block.className = "food-day";
+  const savedWeek = localStorage.getItem("fbs_food_week");
+  const savedMonday = localStorage.getItem("fbs_food_monday");
 
-    block.innerHTML = `
-      <h2>${day}</h2>
+  const currentMonday = getCurrentMonday();
 
-      <p class="food-meal-title">🥞 Brunch</p>
-      <p class="food-meal-text">${d.brunch.name}</p>
-
-      <p class="food-meal-title">🥜 Collation</p>
-      <p class="food-meal-text">${d.collation.name}</p>
-
-      <p class="food-meal-title">🍽️ Dîner</p>
-      <p class="food-meal-text">${d.diner.name}</p>
-
-      <label class="jus-toggle">
-        <input type="checkbox" data-day="${day}">
-        🧃 Ajouter un jus ?
-      </label>
-
-      <p class="food-meal-title" id="jus-${day}" style="display:none;">🧃 Jus</p>
-      <p class="food-meal-text" id="jus-text-${day}" style="display:none;">${d.jus.name}</p>
-    `;
-
-    foodWeekContainer.appendChild(block);
-  });
-
-  // Gestion des jus (afficher/masquer)
-  document.querySelectorAll(".jus-toggle input").forEach(input => {
-    input.addEventListener("change", e => {
-      const day = e.target.dataset.day;
-      const title = document.getElementById(`jus-${day}`);
-      const text = document.getElementById(`jus-text-${day}`);
-
-      const visible = e.target.checked;
-      title.style.display = visible ? "block" : "none";
-      text.style.display = visible ? "block" : "none";
-    });
-  });
-}
-
-// ------------------------------------
-// 4) Init
-// ------------------------------------
-async function initFood() {
-  let week;
-
-  if (shouldGenerateNewWeek()) {
-    week = await generateWeek();
-  } else {
-    week = JSON.parse(localStorage.getItem("fbs_week"));
+  // Si on a déjà une semaine ET que c'est la même → on affiche
+  if (savedWeek && savedMonday && Number(savedMonday) === currentMonday) {
+    return JSON.parse(savedWeek);
   }
 
-  renderWeek(week);
+  // Sinon → nouvelle semaine !
+  const data = await loadAllData();
+  const newWeek = generateFullWeek(data);
+
+  localStorage.setItem("fbs_food_week", JSON.stringify(newWeek));
+  localStorage.setItem("fbs_food_monday", currentMonday);
+
+  return newWeek;
 }
 
-initFood();
+
+/* -----------------------------
+   10. AFFICHAGE D’UN JOUR
+----------------------------- */
+function createDayBlock(dayName, meals) {
+  const block = document.createElement("div");
+  block.className = "food-day";
+
+  block.innerHTML = `
+    <h2>${dayName}</h2>
+
+    <div class="food-meal-title">🥞 Brunch</div>
+    <div class="food-meal-text">${meals.brunch.name}</div>
+
+    <div class="food-meal-title">🥜 Collation</div>
+    <div class="food-meal-text">${meals.collation.name}</div>
+
+    <div class="food-meal-title">🍽️ Dîner</div>
+    <div class="food-meal-text">${meals.diner.name}</div>
+
+    <div class="jus-toggle">
+      <label>
+        <input type="checkbox" class="jus-check">
+        Ajouter un jus
+      </label>
+      <p class="food-meal-text jus-text" style="display:none;">
+        🧃 <span>${meals.jus.name}</span>
+      </p>
+    </div>
+  `;
+
+  // gestion case jus
+  const checkbox = block.querySelector(".jus-check");
+  const jusText = block.querySelector(".jus-text");
+
+  checkbox.addEventListener("change", () => {
+    jusText.style.display = checkbox.checked ? "block" : "none";
+  });
+
+  return block;
+}
+
+
+/* -----------------------------
+   11. AFFICHER TOUTE LA SEMAINE
+----------------------------- */
+async function displayWeek() {
+  const weekData = await loadOrCreateWeek();
+
+  weekContainer.innerHTML = "";
+
+  DAYS.forEach(day => {
+    const block = createDayBlock(day, weekData[day]);
+    weekContainer.appendChild(block);
+  });
+}
+
+
+/* -----------------------------
+   12. LANCEMENT
+----------------------------- */
+displayWeek();
