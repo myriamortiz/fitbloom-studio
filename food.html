@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FitBloom Studio – Food Universe</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
   <!-- Icône -->
@@ -24,13 +25,29 @@
     </div>
   </header>
 
-  <!-- CONTENU SEMAINE -->
+  <!-- SEMAINE -->
   <main id="food-week" class="food-week"></main>
 
-  <!-- BOUTON LISTE COURSES -->
+  <!-- LISTE DE COURSES -->
   <button id="open-grocery" class="grocery-btn">🛒 Liste de courses</button>
 
-  <!-- POPUP LISTE COURSES -->
+  <!-- POPUP : RECETTE DÉTAILLÉE -->
+  <div id="recipe-popup" class="popup">
+    <div class="popup-content">
+      <h2 id="popup-title"></h2>
+      <p id="popup-cal" class="popup-cal"></p>
+
+      <h3>Ingrédients</h3>
+      <ul id="popup-ingredients"></ul>
+
+      <h3>Instructions</h3>
+      <p id="popup-instructions"></p>
+
+      <button id="close-recipe" class="close-btn">Fermer</button>
+    </div>
+  </div>
+
+  <!-- POPUP : LISTE DE COURSES -->
   <div id="grocery-popup" class="popup">
     <div class="popup-content">
       <h2>🛒 Liste de courses</h2>
@@ -41,6 +58,5 @@
 
   <!-- JS -->
   <script src="food.js"></script>
-
 </body>
 </html>
