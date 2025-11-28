@@ -290,3 +290,19 @@ body {
   margin-bottom: 1rem;
   font-size: 0.9rem;
 }
+.view-recipe {
+  margin-top: 0.6rem;
+  background: rgba(255,255,255,0.05);
+  border: 1.2px solid var(--fbs-rose-clair);
+  color: var(--fbs-rose-pale);
+  padding: 0.4rem 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.view-recipe:hover {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+}
