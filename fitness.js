@@ -126,3 +126,12 @@ Object.keys(sessions).forEach((day) => {
     <span>${sessions[day].name}</span>
   `;
 });
+
+// Bouton "Retour" pour rediriger vers la page précédente
+const backButton = document.querySelector(".back-btn");
+
+if (backButton) {
+  backButton.addEventListener("click", function () {
+    window.history.back(); // Cela revient à la page précédente dans l'historique
+  });
+}
