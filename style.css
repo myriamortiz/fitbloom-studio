@@ -308,3 +308,64 @@ body {
   background: var(--fbs-rose-clair);
   color: #1a1a1a;
 }
+/* BOUTON LISTE DE COURSES */
+.grocery-btn {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.4rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  color: var(--fbs-rose-pale);
+  text-align: center;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid var(--fbs-rose-clair);
+  border-radius: 30px;
+  padding: 2rem;
+  width: 85%;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 0 25px var(--fbs-glow);
+}
+
+.popup-content h2 {
+  color: var(--fbs-rose-pale);
+  margin-bottom: 1rem;
+}
+
+#grocery-list li {
+  color: var(--fbs-rose-clair);
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+
+.close-btn {
+  margin-top: 1.2rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--fbs-rose-pale);
+  cursor: pointer;
+}
