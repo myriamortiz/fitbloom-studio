@@ -381,3 +381,66 @@ details ul {
   font-size: 0.85rem;
   margin-top: 0.1rem;
   color: var(--fbs-taupe-rose);
+  /* --------------------------- */
+/*    PLANNER HEBDOMADAIRE     */
+/* --------------------------- */
+
+.week-wrapper {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.day-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--fbs-rose-clair);
+  padding: 1.4rem 1.6rem;
+  border-radius: 22px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 18px var(--fbs-glow);
+}
+
+.day-title {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--fbs-rose-pale);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.meal-block {
+  margin-bottom: 1rem;
+}
+
+.meal-block h3 {
+  font-size: 1rem;
+  color: var(--fbs-rose-clair);
+  margin-bottom: 0.3rem;
+}
+
+.meal-block p {
+  color: var(--fbs-rose-pale);
+  font-size: 0.95rem;
+}
+
+/* Case jus */
+.jus-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.jus-toggle label {
+  color: var(--fbs-rose-clair);
+  font-size: 0.95rem;
+}
+
+.jus-text {
+  margin-top: 0.5rem;
+  color: var(--fbs-rose-pale);
+  font-size: 0.95rem;
+}
+
