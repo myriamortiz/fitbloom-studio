@@ -381,66 +381,48 @@ details ul {
   font-size: 0.85rem;
   margin-top: 0.1rem;
   color: var(--fbs-taupe-rose);
-  /* --------------------------- */
-/*    PLANNER HEBDOMADAIRE     */
-/* --------------------------- */
-
-.week-wrapper {
-  padding: 1.5rem;
+ /* PAGE FOOD – STYLE JOUR PAR JOUR */
+.food-week {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
-.day-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--fbs-rose-clair);
-  padding: 1.4rem 1.6rem;
-  border-radius: 22px;
-  backdrop-filter: blur(4px);
+.food-day {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid var(--fbs-rose-clair);
+  border-radius: 40px;
+  padding: 1.5rem;
   box-shadow: 0 0 18px var(--fbs-glow);
-}
-
-.day-title {
-  font-size: 1.4rem;
   text-align: center;
-  margin-bottom: 1rem;
+}
+
+.food-day h2 {
   color: var(--fbs-rose-pale);
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
 }
 
-.meal-block {
-  margin-bottom: 1rem;
+.food-meal-title {
+  color: var(--fbs-rose-clair);
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
 }
 
-.meal-block h3 {
+.food-meal-text {
+  color: #fff;
   font-size: 1rem;
-  color: var(--fbs-rose-clair);
-  margin-bottom: 0.3rem;
+  margin-top: 0.2rem;
 }
 
-.meal-block p {
-  color: var(--fbs-rose-pale);
-  font-size: 0.95rem;
-}
-
-/* Case jus */
+/* Option jus */
 .jus-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.5rem;
-}
-
-.jus-toggle label {
-  color: var(--fbs-rose-clair);
+  margin-top: 0.7rem;
   font-size: 0.95rem;
+  color: var(--fbs-taupe-rose);
 }
 
-.jus-text {
-  margin-top: 0.5rem;
-  color: var(--fbs-rose-pale);
-  font-size: 0.95rem;
+.jus-toggle input {
+  margin-right: 6px;
 }
-
