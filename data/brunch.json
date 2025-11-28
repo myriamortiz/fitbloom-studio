@@ -106,5 +106,16 @@
     { "type": "healthy", "name": "Chou-fleur rôti citron & paprika", "calories": 430, "ingredients": ["Chou-fleur : 120g","Citron : 1 c.à.c","Paprika : 1 pincée"], "instructions": "Rôtir chou-fleur." },
     { "type": "healthy", "name": "Omelette câpres & herbes", "calories": 390, "ingredients": ["Œufs : 3","Câpres : 1 c.à.c","Persil : 1 c.à.s"], "instructions": "Cuire omelette, ajouter câpres + persil." },
     { "type": "healthy", "name": "Bowl hiver noisette-orange", "calories": 460, "ingredients": ["Riz chaud : 120g","Orange : 1/2","Noisettes : 10g"], "instructions": "Mélanger riz + orange + noisettes." }
-  ]
+  ],
+
+  "_meta": {
+  "healthy_ratio": 0.8,
+  "plaisir_ratio": 0.2,
+  "total_permanent": 35,
+  "total_spring": 15,
+  "total_summer": 15,
+  "total_autumn": 15,
+  "total_winter": 15,
+  "total_recipes": 95
+  }
 }
