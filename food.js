@@ -7,6 +7,7 @@ const DATA_PATHS = {
   brunch: "data/brunch/brunch.json",
   collation: "data/collation/collation.json",
   diner: "data/diner/diner.json",
+  jus: "data/jus/jus.json",
 };
 
 // ----------------------------
@@ -15,7 +16,7 @@ const DATA_PATHS = {
 async function loadAllData() {
   const data = {};
 
-  for (let cat of CATEGORIES) {
+  for (let cat of [...CATEGORIES, "jus"]) {
     const response = await fetch(DATA_PATHS[cat]);
     data[cat] = await response.json();
   }
@@ -23,9 +24,8 @@ async function loadAllData() {
   return data;
 }
 
-
 // ----------------------------
-// RANDOM PICK (80% permanent / 20% saison)
+// PICK (80% permanent / 20% saison)
 // ----------------------------
 function pickRecipe(list) {
   const roll = Math.random();
@@ -40,28 +40,30 @@ function pickRecipe(list) {
   }
 }
 
-
 // ----------------------------
-// GENERATE WEEK MENU
+// GENERATE WEEK (with weekly juice)
 // ----------------------------
 function generateWeek(data) {
   const week = [];
 
+  // Jus de la semaine
+  const juice = pickRecipe(data.jus);
+  week.push({ juice });
+
+  // 7 jours
   for (let i = 0; i < 7; i++) {
-    const day = {
+    week.push({
       brunch: pickRecipe(data.brunch),
       collation: pickRecipe(data.collation),
       diner: pickRecipe(data.diner),
-    };
-    week.push(day);
+    });
   }
 
   return week;
 }
 
-
 // ----------------------------
-// SAVE / LOAD
+// LOCALSTORAGE (weekly persistence)
 // ----------------------------
 function getMonday() {
   const d = new Date();
@@ -77,7 +79,6 @@ function mondayString(date) {
 function loadOrGenerateWeek(data) {
   const saved = localStorage.getItem("fbs-week");
   const savedMonday = localStorage.getItem("fbs-week-date");
-
   const thisMonday = mondayString(getMonday());
 
   if (saved && savedMonday === thisMonday) {
@@ -91,85 +92,79 @@ function loadOrGenerateWeek(data) {
   return newWeek;
 }
 
-
 // ----------------------------
-// DISPLAY WEEK
+// DISPLAY WEEK + JUICE
 // ----------------------------
 function displayWeek(week) {
+  const juiceSection = document.getElementById("weekly-juice");
   const container = document.getElementById("food-week");
+
+  const juice = week[0].juice;
+
+  // JUS PREMIUM
+  juiceSection.innerHTML = `
+    <div class="juice-card">
+      <h2>🌱 Jus bien-être de la semaine</h2>
+      <p class="juice-name">${juice.name}</p>
+      <p class="juice-cal">${juice.calories} kcal</p>
+      <button class="see-btn" onclick='openRecipe(${JSON.stringify(juice)})'>Voir la recette</button>
+    </div>
+  `;
+
   container.innerHTML = "";
 
-  week.forEach((day, i) => {
+  // JOURS
+  week.slice(1).forEach((day, i) => {
     const block = document.createElement("div");
     block.className = "food-day";
 
     block.innerHTML = `
       <h2>${DAYS[i]}</h2>
 
-      <div class="meal-block" data-cat="brunch" data-day="${i}">
+      <div class="meal-block">
         <p class="food-meal-title">🥞 Brunch</p>
-        <p class="food-meal-text clickable">${day.brunch.name}</p>
+        <p class="food-meal-text">${day.brunch.name}</p>
+        <button class="see-btn" onclick='openRecipe(${JSON.stringify(day.brunch)})'>Voir la recette</button>
       </div>
 
-      <div class="meal-block" data-cat="collation" data-day="${i}">
+      <div class="meal-block">
         <p class="food-meal-title">🥜 Collation</p>
-        <p class="food-meal-text clickable">${day.collation.name}</p>
+        <p class="food-meal-text">${day.collation.name}</p>
+        <button class="see-btn" onclick='openRecipe(${JSON.stringify(day.collation)})'>Voir la recette</button>
       </div>
 
-      <div class="meal-block" data-cat="diner" data-day="${i}">
+      <div class="meal-block">
         <p class="food-meal-title">🍽️ Dîner</p>
-        <p class="food-meal-text clickable">${day.diner.name}</p>
+        <p class="food-meal-text">${day.diner.name}</p>
+        <button class="see-btn" onclick='openRecipe(${JSON.stringify(day.diner)})'>Voir la recette</button>
       </div>
     `;
 
     container.appendChild(block);
   });
-
-  activatePopups(week);
 }
-
 
 // ----------------------------
 // POPUP RECETTE
 // ----------------------------
-function activatePopups(week) {
-  const items = document.querySelectorAll(".clickable");
+function openRecipe(recipe) {
+  document.getElementById("popup-title").textContent = recipe.name;
+  document.getElementById("popup-cal").textContent = recipe.calories + " kcal";
 
-  items.forEach(item => {
-    item.addEventListener("click", () => {
-      const parent = item.parentElement;
-      const category = parent.dataset.cat;
-      const dayIndex = parent.dataset.day;
-      const recipe = week[dayIndex][category];
+  const ul = document.getElementById("popup-ingredients");
+  ul.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join("");
 
-      openRecipePopup(recipe);
-    });
-  });
-}
+  document.getElementById("popup-instructions").textContent = recipe.instructions;
 
-function openRecipePopup(recipe) {
-  const popup = document.getElementById("recipe-popup");
-  const title = document.getElementById("popup-title");
-  const calories = document.getElementById("popup-cal");
-  const ingredients = document.getElementById("popup-ingredients");
-  const instructions = document.getElementById("popup-instructions");
-
-  title.textContent = recipe.name;
-  calories.textContent = `${recipe.calories} kcal`;
-
-  ingredients.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join("");
-  instructions.textContent = recipe.instructions;
-
-  popup.style.display = "flex";
+  document.getElementById("recipe-popup").style.display = "flex";
 }
 
 document.getElementById("close-recipe").addEventListener("click", () => {
   document.getElementById("recipe-popup").style.display = "none";
 });
 
-
 // ----------------------------
-// GROCERY LIST
+// LISTE DE COURSES
 // ----------------------------
 function buildGroceryList(week) {
   let ingredients = {};
@@ -179,17 +174,16 @@ function buildGroceryList(week) {
     const [name, qty] = raw.split(":");
     const cleanName = name.trim();
     const cleanQty = qty.trim();
-
-    if (!ingredients[cleanName]) {
-      ingredients[cleanName] = [];
-    }
+    if (!ingredients[cleanName]) ingredients[cleanName] = [];
     ingredients[cleanName].push(cleanQty);
   };
 
-  week.forEach(day => {
-    CATEGORIES.forEach(cat => {
-      day[cat].ingredients.forEach(pushIng);
-    });
+  // juice
+  week[0].juice.ingredients.forEach(pushIng);
+
+  // meals
+  week.slice(1).forEach(day => {
+    CATEGORIES.forEach(cat => day[cat].ingredients.forEach(pushIng));
   });
 
   return ingredients;
@@ -198,7 +192,6 @@ function buildGroceryList(week) {
 function renderGroceryPopup(list) {
   const ul = document.getElementById("grocery-list");
   ul.innerHTML = "";
-
   Object.keys(list).forEach(item => {
     const li = document.createElement("li");
     li.textContent = `${item} : ${list[item].join(" + ")}`;
@@ -206,6 +199,7 @@ function renderGroceryPopup(list) {
   });
 }
 
+// popup events
 document.getElementById("open-grocery").addEventListener("click", () => {
   const week = JSON.parse(localStorage.getItem("fbs-week"));
   const list = buildGroceryList(week);
@@ -216,7 +210,6 @@ document.getElementById("open-grocery").addEventListener("click", () => {
 document.getElementById("close-grocery").addEventListener("click", () => {
   document.getElementById("grocery-popup").style.display = "none";
 });
-
 
 // ----------------------------
 // INIT
