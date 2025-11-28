@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitBloom Studio – Fitness Universe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-fitness">
+
+  <!-- HEADER -->
+  <header class="sub-header">
+    <a href="index.html" class="back-btn">← Retour</a>
+
+    <div class="header-center">
+      <img src="assets/logo/logo-fbs-light.png" class="logo-small" />
+      <h1>Fitness Universe</h1>
+    </div>
+  </header>
+
+  <!-- WRAPPER -->
+  <main class="container">
+
+    <!-- SÉANCE DU JOUR -->
+    <section class="card big-card">
+      <h2>Séance du jour</h2>
+      <p id="today-session-name" class="session-title"></p>
+      <p id="today-session-duration" class="session-duration"></p>
+      <button class="btn">Voir la séance</button>
+    </section>
+
+    <!-- PLANNING HEBDO -->
+    <section class="card">
+      <h2>Planning de la semaine</h2>
+      <div class="week-grid">
+
+        <div class="day-bubble" id="day-1">Lun</div>
+        <div class="day-bubble" id="day-2">Mar</div>
+        <div class="day-bubble" id="day-3">Mer</div>
+        <div class="day-bubble" id="day-4">Jeu</div>
+        <div class="day-bubble" id="day-5">Ven</div>
+        <div class="day-bubble" id="day-6">Sam</div>
+        <div class="day-bubble" id="day-7">Dim</div>
+
+      </div>
+    </section>
+
+    <!-- BOUTON BOOST ME -->
+    <section class="card">
+      <button class="btn main-btn">Boost me 💖🔥</button>
+    </section>
+
+  </main>
+
+  <script src="fitness.js"></script>
+</body>
+</html>
