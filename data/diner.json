@@ -87,5 +87,16 @@
     { "type": "healthy", "name": "Soupe carotte-coco gingembre", "calories": 430, "ingredients": ["Carottes : 150g","Coco : 60ml","Gingembre : 1 pincée"], "instructions": "Mixer." },
     { "type": "healthy", "name": "Poisson rôti & purée céleri", "calories": 440, "ingredients": ["Poisson : 150g","Céleri : 150g"], "instructions": "Assembler." },
     { "type": "healthy", "name": "Riz sauté hivernal noix-orange", "calories": 460, "ingredients": ["Riz : 120g","Orange : 1/2","Noix : 10g"], "instructions": "Assembler." }
-  ]
+   ],
+
+  "_meta": {
+  "healthy_ratio": 0.8,
+  "plaisir_ratio": 0.2,
+  "total_permanent": 60,
+  "total_spring": 20,
+  "total_summer": 20,
+  "total_autumn": 20,
+  "total_winter": 20,
+  "total_recipes": 140
+ }
 }
