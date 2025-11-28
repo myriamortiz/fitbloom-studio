@@ -1,11 +1,27 @@
-[
-  {
-    "id": 1,
-    "day": "lundi",
-    "type": "brunch",
-    "name": "Brunch avo-toast & œuf",
-    "calories": 450,
-    "glutenFree": true,
-    "lactoseFree": true
-  }
-]
+{
+  "brunch": {
+    "permanent": [],
+    "spring": [],
+    "summer": [],
+    "autumn": [],
+    "winter": []
+  },
+
+  "collation": {
+    "permanent": [],
+    "spring": [],
+    "summer": [],
+    "autumn": [],
+    "winter": []
+  },
+
+  "diner": {
+    "permanent": [],
+    "spring": [],
+    "summer": [],
+    "autumn": [],
+    "winter": []
+  },
+
+  "jus": []
+}
