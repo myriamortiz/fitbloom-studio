@@ -723,3 +723,214 @@ h1 {
   color: var(--fbs-taupe-rose); /* Changer la couleur à rose pâle pour plus de lisibilité */
   margin-bottom: 1rem;
 }
+/* --------------------------------------------- */
+/*                 SELFCARE UNIVERSE             */
+/* --------------------------------------------- */
+
+.page-selfcare {
+  background-image: url("./black.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 1.5rem;
+  color: var(--fbs-rose-clair);
+}
+
+/* TITRES DE SECTIONS */
+.sc-section {
+  margin-bottom: 2rem;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  box-shadow: 0 0 18px var(--fbs-glow);
+}
+
+.sc-title {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  color: var(--fbs-rose-pale);
+}
+
+/* --------------------------------------------- */
+/*                  ÉMOTIONS                     */
+/* --------------------------------------------- */
+
+.emotion-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.emotion-btn {
+  padding: 0.8rem 1.3rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+  box-shadow: 0 0 12px var(--fbs-glow);
+}
+
+.emotion-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px var(--fbs-glow);
+}
+
+.emotion-btn.active {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* --------------------------------------------- */
+/*                  HABITUDES                    */
+/* --------------------------------------------- */
+
+.habits-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1.5px solid var(--fbs-rose-clair);
+}
+
+.habit-item input {
+  transform: scale(1.2);
+}
+
+/* --------------------------------------------- */
+/*                RITUEL DU JOUR                 */
+/* --------------------------------------------- */
+
+.rituel-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--fbs-rose-clair);
+}
+
+/* --------------------------------------------- */
+/*                 TO-DO LIST                    */
+/* --------------------------------------------- */
+
+.todo-add {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.todo-add-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todo-add-btn:hover {
+  transform: scale(1.05);
+}
+
+.todos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1.5px solid var(--fbs-rose-clair);
+}
+
+.todo-item span.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.delete-todo {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--fbs-rose-clair);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+
+.delete-todo:hover {
+  transform: scale(1.2);
+  color: var(--fbs-rose-pale);
+}
+
+/* --------------------------------------------- */
+/*               COMPLÉMENTS                     */
+/* --------------------------------------------- */
+
+.complements-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.comp-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  box-shadow: 0 0 15px var(--fbs-glow);
+  text-align: center;
+}
+
+.comp-card h4 {
+  color: var(--fbs-rose-pale);
+  margin-bottom: 0.4rem;
+}
+
+.comp-card p {
+  color: var(--fbs-taupe-rose);
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------- */
+/*              RÉCAP HEBDOMADAIRE               */
+/* --------------------------------------------- */
+
+.weekly-recap {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  text-align: center;
+  font-size: 1rem;
+  color: var(--fbs-rose-pale);
+}
