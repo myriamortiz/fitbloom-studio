@@ -539,7 +539,6 @@ h2 {
 .page-fitness {
   padding: 1.5rem;
   min-height: 100vh;
-  background: transparent !important; /* 🔥 FOND NOIR TEXTURÉ RESTAURÉ */
   color: var(--fbs-rose-clair);
 }
 
