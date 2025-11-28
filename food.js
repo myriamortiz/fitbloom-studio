@@ -121,21 +121,30 @@ function createDayBlock(dayName, meals) {
     <h2>${dayName}</h2>
 
     <div class="food-meal-title">🥞 Brunch</div>
-    <div class="food-meal-text">${meals.brunch.name}</div>
+<div class="food-meal-text">${meals.brunch.name}</div>
+<button class="view-recipe" onclick='openRecipeModal(${JSON.stringify(meals.brunch)})'>Voir la recette</button>
 
-    <div class="food-meal-title">🥜 Collation</div>
-    <div class="food-meal-text">${meals.collation.name}</div>
+<div class="food-meal-title">🥜 Collation</div>
+<div class="food-meal-text">${meals.collation.name}</div>
+<button class="view-recipe" onclick='openRecipeModal(${JSON.stringify(meals.collation)})'>Voir la recette</button>
 
-    <div class="food-meal-title">🍽️ Dîner</div>
-    <div class="food-meal-text">${meals.diner.name}</div>
+<div class="food-meal-title">🍽️ Dîner</div>
+<div class="food-meal-text">${meals.diner.name}</div>
+<button class="view-recipe" onclick='openRecipeModal(${JSON.stringify(meals.diner)})'>Voir la recette</button>
 
-    <div class="jus-toggle">
-      <label>
-        <input type="checkbox" class="jus-check">
-        Ajouter un jus
-      </label>
-      <p class="food-meal-text jus-text" style="display:none;">
-        🧃 <span>${meals.jus.name}</span>
+   <label>
+  <input type="checkbox" class="jus-check">
+  Ajouter un jus
+</label>
+
+<p class="food-meal-text jus-text" style="display:none;">
+  🧃 <span>${meals.jus.name}</span>
+</p>
+
+<button class="view-recipe jus-recipe-btn" style="display:none;"
+  onclick='openRecipeModal(${JSON.stringify(meals.jus)})'>
+  Voir la recette
+</button>
       </p>
     </div>
   `;
