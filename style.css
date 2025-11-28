@@ -78,6 +78,7 @@ body {
   color: var(--fbs-rose-pale);
 }
 
+/* ------------------------------------------------------ */
 /* BOUTONS ACCUEIL */
 .fbs-main {
   flex: 1;
@@ -121,6 +122,8 @@ body {
   color: var(--fbs-taupe-rose);
 }
 
+/* ------------------------------------------------------ */
+/* FOOTER ACCUEIL */
 .fbs-footer {
   padding: 1rem 1.5rem 1.5rem;
   display: flex;
@@ -137,7 +140,7 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*                 PAGE FOOD (WEEKLY PLANNER)             */
+/* PAGE FOOD (WEEKLY PLANNER) */
 /* ------------------------------------------------------ */
 .page-food {
   padding: 1.5rem;
@@ -232,13 +235,14 @@ body {
   margin-top: 0.8rem;
   font-size: 1.1rem;
   color: var(--fbs-taupe-rose);
-  text-align: center
+  text-align: center;
 }
 
 .jus-toggle input {
   margin-right: 6px;
-  text-align: center
+  text-align: center;
 }
+
 /* ---------------------------- */
 /* POPUP RECETTE PREMIUM FBS   */
 /* ---------------------------- */
@@ -292,6 +296,7 @@ body {
   margin-bottom: 1rem;
   font-size: 0.9rem;
 }
+
 .view-recipe {
   margin-top: 0.6rem;
   background: rgba(255,255,255,0.05);
@@ -308,6 +313,7 @@ body {
   background: var(--fbs-rose-clair);
   color: #1a1a1a;
 }
+
 /* BOUTON LISTE DE COURSES */
 .grocery-btn {
   background: rgba(255, 255, 255, 0.05);
@@ -323,52 +329,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* POPUP */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(4px);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid var(--fbs-rose-clair);
-  border-radius: 30px;
-  padding: 2rem;
-  width: 85%;
-  max-height: 80vh;
-  overflow-y: auto;
-  text-align: center;
-  box-shadow: 0 0 25px var(--fbs-glow);
-}
-
-.popup-content h2 {
-  color: var(--fbs-rose-pale);
-  margin-bottom: 1rem;
-}
-
-#grocery-list li {
-  color: var(--fbs-rose-clair);
-  margin: 0.4rem 0;
-  font-size: 1rem;
-}
-
-.close-btn {
-  margin-top: 1.2rem;
-  padding: 0.8rem 1.2rem;
-  border-radius: 20px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--fbs-rose-pale);
-  cursor: pointer;
-}
 /* ------------------------- */
 /* JUS DE LA SEMAINE PREMIUM */
 /* ------------------------- */
@@ -419,300 +379,4 @@ body {
 
 .see-btn:hover {
   transform: scale(1.04);
-}
-/* PAGE STYLE */
-.page-fitness {
-  background: #faf8ff; /* même base FitBloom */
-  padding-bottom: 40px;
-}
-
-/* HEADER */
-.sub-header {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-}
-
-.back-btn {
-  font-size: 18px;
-  text-decoration: none;
-  color: #333;
-}
-
-.header-center {
-  flex: 1;
-  text-align: center;
-}
-
-.logo-small {
-  height: 35px;
-  opacity: 0.9;
-}
-
-h1 {
-  margin: 0;
-  font-size: 22px;
-}
-
-/* CARDS */
-.container {
-  width: 90%;
-  margin: auto;
-  margin-top: 10px;
-}
-
-.card {
-  background: white;
-  padding: 18px;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.04);
-}
-
-.big-card {
-  padding: 25px;
-}
-
-h2 {
-  margin: 0 0 10px 0;
-  font-size: 20px;
-}
-
-/* SESSION */
-.session-title {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.session-duration {
-  font-size: 16px;
-  margin-bottom: 15px;
-  opacity: 0.7;
-}
-
-/* BUTTONS */
-.btn {
-  background: #eac7ff; /* couleur FitBloom */
-  border: none;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.main-btn {
-  width: 100%;
-  background: #ffb7d5; /* rose FitBloom */
-  font-weight: bold;
-}
-
-/* WEEK GRID */
-.week-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-}
-
-.day-bubble {
-  background: #f7f2ff;
-  border-radius: 50%;
-  padding: 10px 5px;
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.2;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.day-bubble span {
-  display: block;
-  font-size: 11px;
-  opacity: 0.7;
-}
-/* ------------------------------------------------------ */
-/* PAGE FITNESS (ajustement de la mise en page)            */
-/* ------------------------------------------------------ */
-.page-fitness {
-  padding: 2rem;
-  min-height: 100vh;
-  background: var(--fbs-noir);
-  background-image: url("./black.jpg");
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  color: white;
-  font-family: "Inter", system-ui, sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; /* Ajout d'un espace global entre les éléments */
-}
-
-/* HEADER */
-.sub-header {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  margin-bottom: 2rem; /* Ajout d'un espace sous le header */
-}
-
-.back-btn {
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--fbs-rose-clair);
-  background: rgba(255,255,255,0.06);
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  margin-right: 1rem; /* Un peu d'espace à droite du bouton Retour */
-}
-
-.header-center {
-  flex: 1;
-  text-align: center;
-}
-
-h1 {
-  margin: 0;
-  font-size: 2rem; /* Taille du titre légèrement plus grande */
-  color: var(--fbs-rose-pale);
-}
-
-/* SESSION DU JOUR */
-.session {
-  margin-bottom: 3rem; /* Espacement supplémentaire pour séparer des autres éléments */
-}
-
-.session-title {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.session-duration {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: var(--fbs-rose-clair);
-}
-
-.main-btn {
-  background: var(--fbs-rose-fonce);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  color: white;
-  font-size: 1.1rem;
-  box-shadow: 0 0 18px var(--fbs-glow);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.main-btn:hover {
-  background: var(--fbs-rose-pale);
-  box-shadow: 0 0 26px var(--fbs-glow);
-}
-
-/* PLANNING HEBDOMADAIRE */
-.week-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1rem;
-  padding: 2rem 0;
-}
-
-.day-bubble {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  padding: 20px;
-  font-size: 1rem;
-  text-align: center;
-  color: var(--fbs-rose-pale);
-  box-shadow: 0 0 15px var(--fbs-glow);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.day-bubble:hover {
-  transform: scale(1.05);
-}
-
-/* MODAL */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  z-index: 9999;
-}
-
-.modal-content {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1.5px solid var(--fbs-rose-clair);
-  padding: 2rem 1.6rem;
-  border-radius: 30px;
-  width: 90%;
-  max-width: 500px;
-  color: var(--fbs-rose-pale);
-  text-align: center;
-  box-shadow: 0 0 30px var(--fbs-glow);
-  backdrop-filter: blur(6px);
-}
-
-/* Fermeture modal */
-.modal-close {
-  border: none;
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--fbs-rose-pale);
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-/* EXERCICES */
-#exercices-list .exercice {
-  margin-bottom: 1.2rem;
-  padding: 0.8rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 0 8px var(--fbs-glow);
-}
-
-#exercices-list .exercice p {
-  font-size: 1rem;
-  margin: 0.3rem 0;
-}
-/* Bouton "Voir ma séance" */
-.main-btn {
-  background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
-  border-radius: 50px; /* Coins arrondis comme les bulles */
-  padding: 15px 30px; /* Taille du bouton */
-  text-align: center;
-  font-size: 1.1rem; /* Taille du texte */
-  color: var(--fbs-rose-pale);
-  border: 1.5px solid var(--fbs-rose-pale); /* Bordure de couleur */
-  box-shadow: 0 0 18px var(--fbs-glow); /* Ombre pour l'effet lumineux */
-  cursor: pointer;
-  transition: 0.3s ease; /* Transition pour l'animation au survol */
-  display: inline-block; /* S'assurer que le bouton est sur une seule ligne */
-  margin-top: 2rem; /* Espace au-dessus */
-}
-
-/* Effet au survol du bouton */
-.main-btn:hover {
-  background: var(--fbs-rose-pale); /* Changement de couleur au survol */
-  color: var(--fbs-taupe-rose); /* Changement de couleur du texte */
-  transform: scale(1.05); /* Légère augmentation de la taille au survol */
-  box-shadow: 0 0 26px var(--fbs-glow); /* Ombre accentuée */
 }
