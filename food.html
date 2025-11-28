@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitBloom Studio – Food Universe</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="food.js"></script>
+</head>
 
+<body class="food-page">
+
+  <header class="food-header">
+    <h1>🍱 Food Universe</h1>
+    <p class="subtitle">Menus • Recettes • Inspiration</p>
+  </header>
+
+  <div class="food-tabs">
+    <button class="tab-btn active" data-target="brunch">Brunch</button>
+    <button class="tab-btn" data-target="collation">Collations</button>
+    <button class="tab-btn" data-target="diner">Diners</button>
+    <button class="tab-btn" data-target="jus">Jus & Extracteurs</button>
+  </div>
+
+  <section id="recipes-container" class="recipes-container">
+    <p class="loading">Chargement des recettes...</p>
+  </section>
+
+</body>
+</html>
