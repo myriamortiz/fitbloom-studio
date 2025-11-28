@@ -1,14 +1,18 @@
-/* PALETTE FITBLOOM STUDIO (fond noir + rose poudré foncé) */
+/* ------------------------------------------------------ */
+/*                 PALETTE FITBLOOM STUDIO                */
+/* ------------------------------------------------------ */
 :root {
   --fbs-noir: #000000;
-  --fbs-rose-fonce: #c48a8a;     
+  --fbs-rose-fonce: #c48a8a;
   --fbs-rose-clair: #eedbd1;
   --fbs-rose-pale: #f2d5c8;
   --fbs-taupe-rose: #d9c0b8;
-  --fbs-glow: rgba(196, 138, 138, 0.45); /* Glow medium */
+  --fbs-glow: rgba(196, 138, 138, 0.45);
 }
 
-/* RESET */
+/* ------------------------------------------------------ */
+/*                         RESET                           */
+/* ------------------------------------------------------ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,10 +20,7 @@
 }
 
 body {
-  /* Couleur de fond */
   background: var(--fbs-noir);
-
-  /* Texture boho */
   background-image: url("./black.jpg");
   background-size: cover;
   background-repeat: repeat;
@@ -32,7 +33,9 @@ body {
   flex-direction: column;
 }
 
-/* HEADER */
+/* ------------------------------------------------------ */
+/*                      PAGE ACCUEIL                       */
+/* ------------------------------------------------------ */
 .fbs-header {
   padding: 2rem 1.5rem 1rem;
   text-align: center;
@@ -62,14 +65,12 @@ body {
   font-size: 0.95rem;
 }
 
-/* MESSAGE BIENVENUE */
 .fbs-welcome {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
   color: var(--fbs-rose-clair);
-  opacity: 0.9;
 }
 
 .fbs-welcome span {
@@ -77,7 +78,7 @@ body {
   color: var(--fbs-rose-pale);
 }
 
-/* BOUTONS */
+/* BOUTONS ACCUEIL */
 .fbs-main {
   flex: 1;
   padding: 1.5rem;
@@ -120,7 +121,6 @@ body {
   color: var(--fbs-taupe-rose);
 }
 
-/* FOOTER */
 .fbs-footer {
   padding: 1rem 1.5rem 1.5rem;
   display: flex;
@@ -135,86 +135,17 @@ body {
   font-size: 0.9rem;
   cursor: pointer;
 }
+
+/* ------------------------------------------------------ */
+/*                 PAGE FOOD (WEEKLY PLANNER)             */
+/* ------------------------------------------------------ */
 .page-food {
   padding: 1.5rem;
-}
-
-/* Tabs */
-.food-tabs {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  overflow-x: auto;
-}
-
-.tab-btn {
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  border: 1px solid #d8a7a7;
-  background: rgba(255,255,255,0.05);
-  color: #f7dede;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: 0.2s;
-}
-
-.tab-btn.active {
-  background: #d8a7a7;
-  color: #2b2b2b;
-  font-weight: 600;
-}
-
-/* Recipes */
-.season-title {
-  color: #d8a7a7;
-  margin: 1.5rem 0 0.7rem;
-  font-size: 1.3rem;
-}
-
-.recipe-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid #d8a7a7;
-  padding: 1rem;
-  border-radius: 15px;
-  margin-bottom: 1rem;
-}
-
-.recipe-card h3 {
-  margin: 0;
-  color: #f2d5d5;
-}
-
-.recipe-card .cal {
-  font-size: 0.9rem;
-  color: #caa8a8;
-}
-
-summary {
-  cursor: pointer;
-  margin-top: 0.7rem;
-  color: #d8a7a7;
-}
-
-details p,
-details ul {
-  color: #e9dddd;
-}
-/* -------------------------------------- */
-/*   STYLES DES SOUS-PAGES (Food, etc)    */
-/* -------------------------------------- */
-
-/* Fond & ambiance identique à l'accueil */
-.page-food {
-  background-image: url("./black.jpg");
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
   min-height: 100vh;
-  padding: 1.5rem;
   color: var(--fbs-rose-clair);
 }
 
-/* HEADER SOUS-PAGE */
+/* -------- Header -------- */
 .sub-header {
   text-align: center;
   padding-top: 2rem;
@@ -232,7 +163,7 @@ details ul {
   background: rgba(255,255,255,0.06);
   padding: 0.4rem 0.9rem;
   border-radius: 12px;
-  border: 1px solid var(--fbs-rose-clair);
+  border: 1.5px solid var(--fbs-rose-clair);
   transition: 0.2s;
 }
 
@@ -260,140 +191,19 @@ details ul {
   margin-top: 0.3rem;
 }
 
-/* TABS */
-.tabs {
-  display: flex;
-  gap: 0.6rem;
-  justify-content: center;
-  margin: 1.5rem 0 1rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-}
-
-.tab-btn {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.2rem 1.4rem;
-  border-radius: 40px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  color: white;
-  text-align: center;
-  box-shadow: 0 0 18px var(--fbs-glow);
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.tab-btn.active {
-  background: var(--fbs-rose-clair);
-  color: #1a1a1a;
-  font-weight: 600;
-}
-
-/* BLOCS SAISONS */
-.season-block {
-  margin-bottom: 2rem;
-}
-
-.season-title {
-  color: var(--fbs-rose-clair);
-  font-size: 1.4rem;
-  margin: 1.5rem 0 0.7rem;
-  text-align: center;
-}
-
-/* CARDS RECETTES */
-.recipe-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.2rem 1.4rem;
-  border-radius: 40px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  color: white;
-  text-align: center;
-  box-shadow: 0 0 18px var(--fbs-glow);
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.recipe-card h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--fbs-rose-pale);
-}
-
-.recipe-card .cal {
-  font-size: 0.85rem;
-  color: var(--fbs-taupe-rose);
-  margin-top: 0.2rem;
-}
-
-details {
-  margin-top: 0.7rem;
-}
-
-details summary {
-  color: var(--fbs-rose-clair);
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-details p,
-details ul {
-  color: var(--fbs-rose-clair);
-  margin-top: 0.5rem;
-}
-/* BOUTONS */
-.fbs-main {
-  flex: 1;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.fbs-btn {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.2rem 1.4rem;
-  border-radius: 40px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  color: white;
-  text-align: center;
-  box-shadow: 0 0 18px var(--fbs-glow);
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.fbs-btn:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 26px var(--fbs-glow);
-}
-
-.fbs-btn .icon {
-  font-size: 1.3rem;
-}
-
-.fbs-btn .label {
-  display: block;
-  font-size: 1.1rem;
-  margin-top: 0.3rem;
-  color: var(--fbs-rose-pale);
-}
-
-.fbs-btn .sub {
-  font-size: 0.85rem;
-  margin-top: 0.1rem;
-  color: var(--fbs-taupe-rose);
- /* PAGE FOOD – STYLE JOUR PAR JOUR */
+/* -------- WEEK LAYOUT -------- */
 .food-week {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1.5rem;
+  padding-top: 1rem;
 }
 
 .food-day {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1.5px solid var(--fbs-rose-clair);
-  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
   box-shadow: 0 0 18px var(--fbs-glow);
   text-align: center;
 }
@@ -404,6 +214,7 @@ details ul {
   margin-bottom: 0.8rem;
 }
 
+/* -------- Text inside each day -------- */
 .food-meal-title {
   color: var(--fbs-rose-clair);
   font-size: 1.1rem;
@@ -412,11 +223,11 @@ details ul {
 
 .food-meal-text {
   color: #fff;
-  font-size: 1rem;
   margin-top: 0.2rem;
+  font-size: 1rem;
 }
 
-/* Option jus */
+/* -------- Jus option -------- */
 .jus-toggle {
   margin-top: 0.7rem;
   font-size: 0.95rem;
