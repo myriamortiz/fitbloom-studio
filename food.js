@@ -1,244 +1,189 @@
-/* ----------------------------------------------------
-   FITBLOOM STUDIO – FOOD UNIVERSE (Weekly Generator)
----------------------------------------------------- */
-
-/* -----------------------------
-   1. FICHIERS JSON
------------------------------ */
+// ----------------------------
+// CONFIG
+// ----------------------------
+const DAYS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+const CATEGORIES = ["brunch", "collation", "diner"];
 const DATA_PATHS = {
   brunch: "data/brunch/brunch.json",
   collation: "data/collation/collation.json",
   diner: "data/diner/diner.json",
-  jus: "data/jus/jus.json",
 };
 
-
-/* -----------------------------
-   2. JOURS DE LA SEMAINE
------------------------------ */
-const DAYS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
-
-
-/* -----------------------------
-   3. CONTENEUR PRINCIPAL
------------------------------ */
-const weekContainer = document.getElementById("food-week");
-
-
-/* -----------------------------
-   4. DÉTERMINER LA SAISON ACTUELLE
------------------------------ */
-function getSeason() {
-  const month = new Date().getMonth() + 1;
-
-  if (month >= 3 && month <= 5) return "spring";
-  if (month >= 6 && month <= 8) return "summer";
-  if (month >= 9 && month <= 11) return "autumn";
-  return "winter";
-}
-
-
-/* -----------------------------
-   5. CHARGER TOUS LES FICHIERS JSON
------------------------------ */
+// ----------------------------
+// LOAD ALL JSON FILES
+// ----------------------------
 async function loadAllData() {
-  const brunch = await fetch(DATA_PATHS.brunch).then(r => r.json());
-  const collation = await fetch(DATA_PATHS.collation).then(r => r.json());
-  const diner = await fetch(DATA_PATHS.diner).then(r => r.json());
-  const jus = await fetch(DATA_PATHS.jus).then(r => r.json());
+  const data = {};
 
-  return { brunch, collation, diner, jus };
-}
-
-
-/* -----------------------------
-   6. PICK ALÉATOIRE
------------------------------ */
-function pickRandom(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-
-/* -----------------------------
-   7. CHOISIR UNE RECETTE PERMANENTE 80% / SAISON 20%
------------------------------ */
-function pickWeightedRecipe(data) {
-  const season = getSeason();
-
-  const permanent = data.permanent || [];
-  const seasonal = data[season] || [];
-
-  const roll = Math.random();
-
-  // 80% permanent
-  if (roll < 0.8 || seasonal.length === 0) {
-    return pickRandom(permanent);
+  for (let cat of CATEGORIES) {
+    const response = await fetch(DATA_PATHS[cat]);
+    data[cat] = await response.json();
   }
 
-  // 20% saison
-  return pickRandom(seasonal);
+  return data;
 }
 
+// ----------------------------
+// RANDOM PICK (80% permanent / 20% saison)
+// ----------------------------
+function pickRecipe(list) {
+  const roll = Math.random();
 
-/* -----------------------------
-   8. GÉNÉRER LE MENU D’UN JOUR
------------------------------ */
-function generateDailyMenu(data) {
-  return {
-    brunch: pickWeightedRecipe(data.brunch),
-    collation: pickWeightedRecipe(data.collation),
-    diner: pickWeightedRecipe(data.diner),
-    jus: pickWeightedRecipe(data.jus)
-  };
+  if (roll <= 0.8) {
+    // permanent
+    return list.permanent[Math.floor(Math.random() * list.permanent.length)];
+  } else {
+    // saison: pick based on current season (simple version = random season)
+    const seasons = ["spring", "summer", "autumn", "winter"];
+    const season = seasons[Math.floor(Math.random() * seasons.length)];
+    const arr = list[season];
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
 }
 
+// ----------------------------
+// GENERATE WEEK MENU
+// ----------------------------
+function generateWeek(data) {
+  const week = [];
 
-/* -----------------------------
-   9. GÉNÉRER UNE SEMAINE COMPLÈTE
------------------------------ */
-function generateFullWeek(data) {
-  const week = {};
-  DAYS.forEach(day => {
-    week[day] = generateDailyMenu(data);
-  });
+  for (let i = 0; i < 7; i++) {
+    const day = {
+      brunch: pickRecipe(data.brunch),
+      collation: pickRecipe(data.collation),
+      diner: pickRecipe(data.diner),
+    };
+    week.push(day);
+  }
+
   return week;
 }
 
-
-/* -----------------------------
-   10. TROUVER LE LUNDI COURANT
------------------------------ */
-function getCurrentMonday() {
+// ----------------------------
+// SAVE / LOAD WEEK FROM LOCALSTORAGE
+// ----------------------------
+function getMonday() {
   const d = new Date();
-  const day = d.getDay(); // Dimanche = 0
+  const day = d.getDay(); // 0 = dimanche
   const diff = d.getDate() - day + (day === 0 ? -6 : 1);
-  const monday = new Date(d.setDate(diff));
-  monday.setHours(0, 0, 0, 0);
-  return monday.getTime();
+  return new Date(d.setDate(diff));
 }
 
+function mondayString(date) {
+  return date.toISOString().split("T")[0];
+}
 
-/* -----------------------------
-   11. CHARGER OU CRÉER LE MENU HEBDO
------------------------------ */
-async function loadOrCreateWeek() {
-  const savedWeek = localStorage.getItem("fbs_food_week");
-  const savedMonday = localStorage.getItem("fbs_food_monday");
+function loadOrGenerateWeek(data) {
+  const saved = localStorage.getItem("fbs-week");
+  const savedMonday = localStorage.getItem("fbs-week-date");
 
-  const currentMonday = getCurrentMonday();
+  const thisMonday = mondayString(getMonday());
 
-  // Si la semaine existe et est la même → on la garde
-  if (savedWeek && savedMonday && Number(savedMonday) === currentMonday) {
-    return JSON.parse(savedWeek);
+  if (saved && savedMonday === thisMonday) {
+    return JSON.parse(saved);
   }
 
-  // Sinon → nouvelle semaine
-  const data = await loadAllData();
-  const newWeek = generateFullWeek(data);
-
-  localStorage.setItem("fbs_food_week", JSON.stringify(newWeek));
-  localStorage.setItem("fbs_food_monday", currentMonday);
+  const newWeek = generateWeek(data);
+  localStorage.setItem("fbs-week", JSON.stringify(newWeek));
+  localStorage.setItem("fbs-week-date", thisMonday);
 
   return newWeek;
 }
 
+// ----------------------------
+// DISPLAY WEEK
+// ----------------------------
+function displayWeek(week) {
+  const container = document.getElementById("food-week");
+  container.innerHTML = "";
 
-/* -----------------------------
-   12. POPUP RECETTE
------------------------------ */
-function openRecipeModal(recipe) {
-  const modal = document.getElementById("recipe-modal");
+  week.forEach((day, i) => {
+    const block = document.createElement("div");
+    block.className = "food-day";
 
-  document.getElementById("modal-title").textContent = recipe.name;
-  document.getElementById("modal-cal").textContent = recipe.calories + " kcal";
+    block.innerHTML = `
+      <h2>${DAYS[i]}</h2>
 
-  const ingList = document.getElementById("modal-ingredients");
-  ingList.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join("");
+      <div class="meal-block">
+        <p class="food-meal-title">🥞 Brunch</p>
+        <p class="food-meal-text">${day.brunch.name}</p>
+      </div>
 
-  document.getElementById("modal-instructions").textContent = recipe.instructions;
+      <div class="meal-block">
+        <p class="food-meal-title">🥜 Collation</p>
+        <p class="food-meal-text">${day.collation.name}</p>
+      </div>
 
-  modal.classList.remove("hidden");
+      <div class="meal-block">
+        <p class="food-meal-title">🍽️ Dîner</p>
+        <p class="food-meal-text">${day.diner.name}</p>
+      </div>
+    `;
 
-  document.querySelector(".modal-close").onclick = () => {
-    modal.classList.add("hidden");
-  };
-
-  modal.onclick = (e) => {
-    if (e.target === modal) modal.classList.add("hidden");
-  };
-}
-
-
-/* -----------------------------
-   13. AFFICHAGE D’UN JOUR
------------------------------ */
-function createDayBlock(dayName, meals) {
-  const block = document.createElement("div");
-  block.className = "food-day";
-
-  const brunchBtn = `onclick='openRecipeModal(${JSON.stringify(meals.brunch)})'`;
-  const collationBtn = `onclick='openRecipeModal(${JSON.stringify(meals.collation)})'`;
-  const dinerBtn = `onclick='openRecipeModal(${JSON.stringify(meals.diner)})'`;
-  const jusBtn = `onclick='openRecipeModal(${JSON.stringify(meals.jus)})'`;
-
-  block.innerHTML = `
-    <h2>${dayName}</h2>
-
-    <div class="food-meal-title">🥞 Brunch</div>
-    <div class="food-meal-text">${meals.brunch.name}</div>
-    <button class="view-recipe" ${brunchBtn}>Voir la recette</button>
-
-    <div class="food-meal-title">🥜 Collation</div>
-    <div class="food-meal-text">${meals.collation.name}</div>
-    <button class="view-recipe" ${collationBtn}>Voir la recette</button>
-
-    <div class="food-meal-title">🍽️ Dîner</div>
-    <div class="food-meal-text">${meals.diner.name}</div>
-    <button class="view-recipe" ${dinerBtn}>Voir la recette</button>
-
-    <div class="jus-toggle">
-      <label>
-        <input type="checkbox" class="jus-check">
-        Ajouter un jus
-      </label>
-      <p class="food-meal-text jus-text" style="display:none;">
-        🧃 <span>${meals.jus.name}</span>
-      </p>
-      <button class="view-recipe jus-btn" style="display:none;" ${jusBtn}>Voir la recette</button>
-    </div>
-  `;
-
-  // gestion jus
-  const checkbox = block.querySelector(".jus-check");
-  const jusText = block.querySelector(".jus-text");
-  const jusButton = block.querySelector(".jus-btn");
-
-  checkbox.addEventListener("change", () => {
-    const visible = checkbox.checked;
-    jusText.style.display = visible ? "block" : "none";
-    jusButton.style.display = visible ? "block" : "none";
-  });
-
-  return block;
-}
-
-
-/* -----------------------------
-   14. AFFICHER LA SEMAINE
------------------------------ */
-async function displayWeek() {
-  const weekData = await loadOrCreateWeek();
-
-  weekContainer.innerHTML = "";
-
-  DAYS.forEach(day => {
-    const block = createDayBlock(day, weekData[day]);
-    weekContainer.appendChild(block);
+    container.appendChild(block);
   });
 }
 
+// ----------------------------
+// LISTE DE COURSES
+// ----------------------------
+function buildGroceryList(week) {
+  let ingredients = {};
 
-/* -----------------------------
-   15. LANCEMENT
------------------------------ */
-displayWeek();
+  const pushIng = (raw) => {
+    // raw = "Tomates : 120g"
+    if (!raw.includes(":")) return;
+
+    const [name, qty] = raw.split(":");
+
+    const cleanName = name.trim();
+    const cleanQty = qty.trim();
+
+    if (!ingredients[cleanName]) {
+      ingredients[cleanName] = [];
+    }
+    ingredients[cleanName].push(cleanQty);
+  };
+
+  week.forEach(day => {
+    CATEGORIES.forEach(cat => {
+      day[cat].ingredients.forEach(pushIng);
+    });
+  });
+
+  return ingredients;
+}
+
+function renderGroceryPopup(list) {
+  const ul = document.getElementById("grocery-list");
+  ul.innerHTML = "";
+
+  Object.keys(list).forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item} : ${list[item].join(" + ")}`;
+    ul.appendChild(li);
+  });
+}
+
+// ----------------------------
+// POPUP EVENTS
+// ----------------------------
+document.getElementById("open-grocery").addEventListener("click", () => {
+  const week = JSON.parse(localStorage.getItem("fbs-week"));
+  const list = buildGroceryList(week);
+  renderGroceryPopup(list);
+  document.getElementById("grocery-popup").style.display = "flex";
+});
+
+document.getElementById("close-grocery").addEventListener("click", () => {
+  document.getElementById("grocery-popup").style.display = "none";
+});
+
+// ----------------------------
+// INIT
+// ----------------------------
+(async function init() {
+  const data = await loadAllData();
+  const week = loadOrGenerateWeek(data);
+  displayWeek(week);
+})();
