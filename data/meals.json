@@ -1,417 +1,45 @@
 {
   "brunch": {
-    "permanent": [[
-  {
-    "type": "healthy",
-    "name": "Pancakes farine de riz & fruits rouges",
-    "calories": 460,
-    "ingredients": [
-      "Farine de riz : 80g",
-      "Oeufs : 2",
-      "Lait d'amande non sucré : 120ml",
-      "Levure sans gluten : 1 c.à.c",
-      "Sirop d’érable : 1 c.à.c",
-      "Fruits rouges : 100g",
-      "Huile de coco : 1 c.à.c"
-    ],
-    "instructions": "Mélanger farine, levure, oeufs et lait. Cuire à la poêle. Servir avec fruits rouges et sirop."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Tartine avocat & œuf poché",
-    "calories": 430,
-    "ingredients": [
-      "Pain sans gluten : 2 tranches",
-      "Avocat : 1/2",
-      "Œufs : 2",
-      "Jus de citron : 1 c.à.c",
-      "Piment d'Espelette : 1 pincée"
-    ],
-    "instructions": "Écraser l’avocat, assaisonner. Pocher les œufs 3 min. Monter sur toast."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Toast champignons & crème coco",
-    "calories": 445,
-    "ingredients": [
-      "Pain sans gluten : 2 tranches",
-      "Champignons : 200g",
-      "Crème coco : 50ml",
-      "Ail : 1 gousse",
-      "Persil : 1 c.à.s"
-    ],
-    "instructions": "Poêler champignons + ail. Ajouter crème coco. Servir sur toast."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Omelette herbes & tomates cerises",
-    "calories": 390,
-    "ingredients": [
-      "Œufs : 3",
-      "Tomates cerises : 80g",
-      "Ciboulette : 1 c.à.s"
-    ],
-    "instructions": "Cuire omelette. Ajouter tomates poêlées et ciboulette."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Shakshuka sans lactose",
-    "calories": 480,
-    "ingredients": [
-      "Œufs : 2",
-      "Poivron rouge : 1",
-      "Tomates concassées : 200g",
-      "Oignon : 1/2",
-      "Paprika : 1 c.à.c"
-    ],
-    "instructions": "Cuire légumes + épices. Ajouter œufs au centre."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Rösti maison & œufs brouillés coco",
-    "calories": 510,
-    "ingredients": [
-      "Pommes de terre : 250g",
-      "Œufs : 2",
-      "Crème coco : 40ml"
-    ],
-    "instructions": "Cuire rösti. Brouiller œufs avec crème coco."
-  },
-
-  {
-    "type": "plaisir",
-    "name": "Porridge façon tarte aux pommes",
-    "calories": 500,
-    "ingredients": [
-      "Flocons de sarrasin : 60g",
-      "Lait d’amande : 150ml",
-      "Pomme : 1",
-      "Cannelle : 1 c.à.c"
-    ],
-    "instructions": "Cuire flocons. Ajouter pomme fondante et cannelle."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Toast saumon fumé & citron",
-    "calories": 420,
-    "ingredients": [
-      "Pain sans gluten : 2 tranches",
-      "Saumon fumé : 80g",
-      "Citron : 1 c.à.c"
-    ],
-    "instructions": "Déposer saumon sur toast. Ajouter citron."
-  },
-
-  {
-    "type": "plaisir",
-    "name": "Crêpes coco-riz fourrées banane",
-    "calories": 520,
-    "ingredients": [
-      "Farine de riz : 70g",
-      "Lait de coco : 150ml",
-      "Banane : 1"
-    ],
-    "instructions": "Cuire crêpes. Garnir de banane et vanille."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Œufs brouillés tomate-basilic",
-    "calories": 370,
-    "ingredients": [
-      "Œufs : 3",
-      "Tomates : 100g",
-      "Basilic : 1 c.à.s"
-    ],
-    "instructions": "Cuire œufs brouillés + tomates. Ajouter basilic."
-  },
-
-  {
-    "type": "plaisir",
-    "name": "Okonomiyaki sans gluten",
-    "calories": 540,
-    "ingredients": [
-      "Chou : 150g",
-      "Farine de riz : 50g",
-      "Œufs : 2"
-    ],
-    "instructions": "Mélanger ingrédients. Cuire en galette."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Avo-salsa bowl mexicain",
-    "calories": 480,
-    "ingredients": [
-      "Riz cuit : 120g",
-      "Avocat : 1/2",
-      "Maïs : 50g",
-      "Citron vert : 1 c.à.c"
-    ],
-    "instructions": "Assembler riz, avocat, maïs, citron, tomate."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Gaufres sarrasin & vanille",
-    "calories": 460,
-    "ingredients": [
-      "Farine de sarrasin : 80g",
-      "Lait d’amande : 150ml",
-      "Œufs : 2"
-    ],
-    "instructions": "Mélanger. Cuire au gaufrier."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Tartine houmous & concombre",
-    "calories": 390,
-    "ingredients": [
-      "Pain GF : 2 tranches",
-      "Houmous : 60g",
-      "Concombre : 6 tranches"
-    ],
-    "instructions": "Étaler houmous. Ajouter concombre."
-  },
-
-  {
-    "type": "plaisir",
-    "name": "Riz au lait d’amande coco",
-    "calories": 520,
-    "ingredients": [
-      "Riz rond : 70g",
-      "Lait d’amande : 250ml",
-      "Crème coco : 40ml"
-    ],
-    "instructions": "Cuire riz dans lait. Ajouter coco."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Bruschetta GF tomate-basilic",
-    "calories": 410,
-    "ingredients": [
-      "Pain GF : 2 tranches",
-      "Tomates : 120g",
-      "Basilic : 1 c.à.s"
-    ],
-    "instructions": "Garnir toast de tomates + basilic."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Curry doux pois chiches",
-    "calories": 480,
-    "ingredients": [
-      "Pois chiches : 120g",
-      "Lait coco : 80ml",
-      "Tomates concassées : 100g"
-    ],
-    "instructions": "Cuire pois chiches + coco + tomates + curry."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Œufs brouillés au bacon de dinde",
-    "calories": 430,
-    "ingredients": [
-      "Œufs : 3",
-      "Bacon de dinde : 40g"
-    ],
-    "instructions": "Poêler bacon. Ajouter œufs brouillés."
-  },
-
-  {
-    "type": "plaisir",
-    "name": "Bowl banane-cannelle façon banana bread",
-    "calories": 520,
-    "ingredients": [
-      "Banane : 1",
-      "Flocons riz : 50g",
-      "Lait d’amande : 120ml"
-    ],
-    "instructions": "Cuire flocons. Ajouter banane écrasée."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Bowl salé GF matin",
-    "calories": 470,
-    "ingredients": [
-      "Riz cuit : 100g",
-      "Avocat : 1/2",
-      "Œuf dur : 1"
-    ],
-    "instructions": "Assembler riz + avocat + œuf + épinards."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Patate douce rôtie & tahini citron",
-    "calories": 450,
-    "ingredients": [
-      "Patate douce : 250g",
-      "Tahini : 1 c.à.s"
-    ],
-    "instructions": "Rôtir patate douce. Ajouter tahini + citron."
-  },
-
-  {
-    "type": "plaisir",
-    "name": "Muffin bowl myrtilles GF",
-    "calories": 510,
-    "ingredients": [
-      "Farine de riz : 60g",
-      "Myrtilles : 60g"
-    ],
-    "instructions": "Mélanger, cuire 2 min micro-ondes."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Œufs cocotte coco & épinards",
-    "calories": 430,
-    "ingredients": [
-      "Œufs : 2",
-      "Crème coco : 50ml",
-      "Épinards : 60g"
-    ],
-    "instructions": "Cuire au four 12 min."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Toast crevettes citron-ail",
-    "calories": 440,
-    "ingredients": [
-      "Crevettes : 100g",
-      "Pain GF : 2 tranches"
-    ],
-    "instructions": "Poêler crevettes ail. Servir sur toast."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Smoothie bowl épais GF (sans smoothie liquide)",
-    "calories": 460,
-    "ingredients": [
-      "Banane congelée : 1",
-      "Fruits rouges : 100g",
-      "Lait coco : 40ml"
-    ],
-    "instructions": "Mixer épais. Garnir."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Omelette épinards & oignons",
-    "calories": 380,
-    "ingredients": [
-      "Œufs : 3",
-      "Épinards : 60g"
-    ],
-    "instructions": "Poêler épinards. Ajouter œufs."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Tartine poulet & mayo vegan",
-    "calories": 440,
-    "ingredients": [
-      "Poulet cuit : 80g",
-      "Pain GF : 2 tranches"
-    ],
-    "instructions": "Mélanger poulet + mayo vegan. Tartiner."
-  },
-
-  {
-    "type": "plaisir",
-    "name": "Gâteau minute chocolat GF",
-    "calories": 540,
-    "ingredients": [
-      "Farine riz : 40g",
-      "Cacao : 1 c.à.s",
-      "Lait amande : 80ml"
-    ],
-    "instructions": "Mélanger. Cuire 1 min micro-ondes."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Riz sauté matin gingembre",
-    "calories": 470,
-    "ingredients": [
-      "Riz froid : 120g",
-      "Oeuf : 1",
-      "Gingembre : 1 c.à.c"
-    ],
-    "instructions": "Sauter riz + œuf + gingembre."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Patate douce farcie œuf",
-    "calories": 460,
-    "ingredients": [
-      "Patate douce : 1",
-      "Œuf : 1"
-    ],
-    "instructions": "Rôtir patate, creuser, ajouter œuf. Cuire."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Salade fraîche avocat & mangue",
-    "calories": 420,
-    "ingredients": [
-      "Mangue : 80g",
-      "Avocat : 1/2"
-    ],
-    "instructions": "Mélanger mangue + avocat + citron."
-  },
-
-  {
-    "type": "plaisir",
-    "name": "Pain perdu GF à la cannelle",
-    "calories": 520,
-    "ingredients": [
-      "Pain GF : 2 tranches",
-      "Lait amande : 120ml",
-      "Œuf : 1"
-    ],
-    "instructions": "Tremper pain. Cuire à la poêle."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Œufs durs mayonnaise vegan légère",
-    "calories": 390,
-    "ingredients": [
-      "Œufs : 2",
-      "Mayonnaise vegan : 1 c.à.c"
-    ],
-    "instructions": "Servir œufs durs + mayo."
-  },
-
-  {
-    "type": "healthy",
-    "name": "Tartine sardines citron & herbes",
-    "calories": 440,
-    "ingredients": [
-      "Sardines : 1 boîte",
-      "Pain GF : 2 tranches"
-    ],
-    "instructions": "Écraser sardines + citron. Tartiner."
+    "permanent": [
+      { "type": "healthy", "name": "Pancakes farine de riz & fruits rouges", "calories": 460, "ingredients": ["Farine de riz : 80g","Oeufs : 2","Lait d'amande non sucré : 120ml","Levure sans gluten : 1 c.à.c","Sirop d’érable : 1 c.à.c","Fruits rouges : 100g","Huile de coco : 1 c.à.c"], "instructions": "Mélanger farine, levure, oeufs et lait. Cuire à la poêle. Servir avec fruits rouges et sirop." },
+      { "type": "healthy", "name": "Tartine avocat & œuf poché", "calories": 430, "ingredients": ["Pain sans gluten : 2 tranches","Avocat : 1/2","Œufs : 2","Jus de citron : 1 c.à.c","Piment d'Espelette : 1 pincée"], "instructions": "Écraser l’avocat, assaisonner. Pocher les œufs 3 min. Monter sur toast." },
+      { "type": "healthy", "name": "Toast champignons & crème coco", "calories": 445, "ingredients": ["Pain sans gluten : 2 tranches","Champignons : 200g","Crème coco : 50ml","Ail : 1 gousse","Persil : 1 c.à.s"], "instructions": "Poêler champignons + ail. Ajouter crème coco. Servir sur toast." },
+      { "type": "healthy", "name": "Omelette herbes & tomates cerises", "calories": 390, "ingredients": ["Œufs : 3","Tomates cerises : 80g","Ciboulette : 1 c.à.s"], "instructions": "Cuire omelette. Ajouter tomates poêlées et ciboulette." },
+      { "type": "healthy", "name": "Shakshuka sans lactose", "calories": 480, "ingredients": ["Œufs : 2","Poivron rouge : 1","Tomates concassées : 200g","Oignon : 1/2","Paprika : 1 c.à.c"], "instructions": "Cuire légumes + épices. Ajouter œufs au centre." },
+      { "type": "healthy", "name": "Rösti maison & œufs brouillés coco", "calories": 510, "ingredients": ["Pommes de terre : 250g","Œufs : 2","Crème coco : 40ml"], "instructions": "Cuire rösti. Brouiller œufs avec crème coco." },
+      { "type": "plaisir", "name": "Porridge façon tarte aux pommes", "calories": 500, "ingredients": ["Flocons de sarrasin : 60g","Lait d’amande : 150ml","Pomme : 1","Cannelle : 1 c.à.c"], "instructions": "Cuire flocons. Ajouter pomme fondante et cannelle." },
+      { "type": "healthy", "name": "Toast saumon fumé & citron", "calories": 420, "ingredients": ["Pain sans gluten : 2 tranches","Saumon fumé : 80g","Citron : 1 c.à.c"], "instructions": "Déposer saumon sur toast. Ajouter citron." },
+      { "type": "plaisir", "name": "Crêpes coco-riz fourrées banane", "calories": 520, "ingredients": ["Farine de riz : 70g","Lait de coco : 150ml","Banane : 1"], "instructions": "Cuire crêpes. Garnir de banane et vanille." },
+      { "type": "healthy", "name": "Œufs brouillés tomate-basilic", "calories": 370, "ingredients": ["Œufs : 3","Tomates : 100g","Basilic : 1 c.à.s"], "instructions": "Cuire œufs brouillés + tomates. Ajouter basilic." },
+      { "type": "plaisir", "name": "Okonomiyaki sans gluten", "calories": 540, "ingredients": ["Chou : 150g","Farine de riz : 50g","Œufs : 2"], "instructions": "Mélanger ingrédients. Cuire en galette." },
+      { "type": "healthy", "name": "Avo-salsa bowl mexicain", "calories": 480, "ingredients": ["Riz cuit : 120g","Avocat : 1/2","Maïs : 50g","Citron vert : 1 c.à.c"], "instructions": "Assembler riz, avocat, maïs, citron, tomate." },
+      { "type": "healthy", "name": "Gaufres sarrasin & vanille", "calories": 460, "ingredients": ["Farine de sarrasin : 80g","Lait d’amande : 150ml","Œufs : 2"], "instructions": "Mélanger. Cuire au gaufrier." },
+      { "type": "healthy", "name": "Tartine houmous & concombre", "calories": 390, "ingredients": ["Pain GF : 2 tranches","Houmous : 60g","Concombre : 6 tranches"], "instructions": "Étaler houmous. Ajouter concombre." },
+      { "type": "plaisir", "name": "Riz au lait d’amande coco", "calories": 520, "ingredients": ["Riz rond : 70g","Lait d’amande : 250ml","Crème coco : 40ml"], "instructions": "Cuire riz dans lait. Ajouter coco." },
+      { "type": "healthy", "name": "Bruschetta GF tomate-basilic", "calories": 410, "ingredients": ["Pain GF : 2 tranches","Tomates : 120g","Basilic : 1 c.à.s"], "instructions": "Garnir toast de tomates + basilic." },
+      { "type": "healthy", "name": "Curry doux pois chiches", "calories": 480, "ingredients": ["Pois chiches : 120g","Lait coco : 80ml","Tomates concassées : 100g"], "instructions": "Cuire pois chiches + coco + tomates + curry." },
+      { "type": "healthy", "name": "Œufs brouillés au bacon de dinde", "calories": 430, "ingredients": ["Œufs : 3","Bacon de dinde : 40g"], "instructions": "Poêler bacon. Ajouter œufs brouillés." },
+      { "type": "plaisir", "name": "Bowl banane-cannelle façon banana bread", "calories": 520, "ingredients": ["Banane : 1","Flocons riz : 50g","Lait d’amande : 120ml"], "instructions": "Cuire flocons. Ajouter banane écrasée." },
+      { "type": "healthy", "name": "Bowl salé GF matin", "calories": 470, "ingredients": ["Riz cuit : 100g","Avocat : 1/2","Œuf dur : 1"], "instructions": "Assembler riz + avocat + œuf + épinards." },
+      { "type": "healthy", "name": "Patate douce rôtie & tahini citron", "calories": 450, "ingredients": ["Patate douce : 250g","Tahini : 1 c.à.s"], "instructions": "Rôtir patate douce. Ajouter tahini + citron." },
+      { "type": "plaisir", "name": "Muffin bowl myrtilles GF", "calories": 510, "ingredients": ["Farine de riz : 60g","Myrtilles : 60g"], "instructions": "Mélanger, cuire 2 min micro-ondes." },
+      { "type": "healthy", "name": "Œufs cocotte coco & épinards", "calories": 430, "ingredients": ["Œufs : 2","Crème coco : 50ml","Épinards : 60g"], "instructions": "Cuire au four 12 min." },
+      { "type": "healthy", "name": "Toast crevettes citron-ail", "calories": 440, "ingredients": ["Crevettes : 100g","Pain GF : 2 tranches"], "instructions": "Poêler crevettes ail. Servir sur toast." },
+      { "type": "healthy", "name": "Smoothie bowl épais GF", "calories": 460, "ingredients": ["Banane congelée : 1","Fruits rouges : 100g","Lait coco : 40ml"], "instructions": "Mixer épais. Garnir." },
+      { "type": "healthy", "name": "Omelette épinards & oignons", "calories": 380, "ingredients": ["Œufs : 3","Épinards : 60g"], "instructions": "Poêler épinards. Ajouter œufs." },
+      { "type": "healthy", "name": "Tartine poulet & mayo vegan", "calories": 440, "ingredients": ["Poulet cuit : 80g","Pain GF : 2 tranches"], "instructions": "Mélanger poulet + mayo vegan. Tartiner." },
+      { "type": "plaisir", "name": "Gâteau minute chocolat GF", "calories": 540, "ingredients": ["Farine riz : 40g","Cacao : 1 c.à.s","Lait amande : 80ml"], "instructions": "Mélanger. Cuire 1 min micro-ondes." },
+      { "type": "healthy", "name": "Riz sauté matin gingembre", "calories": 470, "ingredients": ["Riz froid : 120g","Oeuf : 1","Gingembre : 1 c.à.c"], "instructions": "Sauter riz + œuf + gingembre." },
+      { "type": "healthy", "name": "Patate douce farcie œuf", "calories": 460, "ingredients": ["Patate douce : 1","Œuf : 1"], "instructions": "Rôtir patate, creuser, ajouter œuf. Cuire." },
+      { "type": "healthy", "name": "Salade fraîche avocat & mangue", "calories": 420, "ingredients": ["Mangue : 80g","Avocat : 1/2"], "instructions": "Mélanger mangue + avocat + citron." },
+      { "type": "plaisir", "name": "Pain perdu GF à la cannelle", "calories": 520, "ingredients": ["Pain GF : 2 tranches","Lait amande : 120ml","Œuf : 1"], "instructions": "Tremper pain. Cuire à la poêle." },
+      { "type": "healthy", "name": "Œufs durs mayonnaise vegan légère", "calories": 390, "ingredients": ["Œufs : 2","Mayonnaise vegan : 1 c.à.c"], "instructions": "Servir œufs durs + mayo." },
+      { "type": "healthy", "name": "Tartine sardines citron & herbes", "calories": 440, "ingredients": ["Sardines : 1 boîte","Pain GF : 2 tranches"], "instructions": "Écraser sardines + citron. Tartiner." }
+    ]
   }
-]
-],
+}
+
+    "permanent": [],
     "spring": [],
     "summer": [],
     "autumn": [],
