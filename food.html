@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FitBloom Studio – Food Universe</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 
   <!-- Icône -->
   <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png" />
@@ -18,37 +18,29 @@
     <a href="index.html" class="back-btn">← Retour</a>
 
     <div class="header-center">
-      <img src="assets/logo/logo-fbs-light.png" class="sub-logo" alt="Logo FBS">
+      <img src="assets/logo/logo-fbs-light.png" class="sub-logo" alt="logo FBS">
       <h1 class="sub-title">Food Universe</h1>
-      <p class="sub-subtitle">Inquiète-toi de ce que tu manges et non de qui te mangera.</p>
+      <p class="sub-subtitle">Menus • Brunch • Collations • Dîners • Jus</p>
     </div>
   </header>
 
-
-  <!-- CONTENU (généré par JS) -->
+  <!-- CONTENU SEMAINE -->
   <main id="food-week" class="food-week"></main>
 
+  <!-- BOUTON LISTE COURSES -->
+  <button id="open-grocery" class="grocery-btn">🛒 Liste de courses</button>
+
+  <!-- POPUP LISTE COURSES -->
+  <div id="grocery-popup" class="popup">
+    <div class="popup-content">
+      <h2>🛒 Liste de courses</h2>
+      <ul id="grocery-list"></ul>
+      <button id="close-grocery" class="close-btn">Fermer</button>
+    </div>
+  </div>
 
   <!-- JS -->
-  <script src="app.js"></script>
   <script src="food.js"></script>
-  
-<!-- POPUP RECETTE -->
-<div id="recipe-modal" class="modal hidden">
-  <div class="modal-content">
-    <button class="modal-close">✖</button>
-
-    <h2 id="modal-title"></h2>
-    <p id="modal-cal" class="modal-cal"></p>
-
-    <h3>Ingrédients</h3>
-    <ul id="modal-ingredients"></ul>
-
-    <h3>Instructions</h3>
-    <p id="modal-instructions"></p>
-    
-  </div>
-</div>
 
 </body>
 </html>
