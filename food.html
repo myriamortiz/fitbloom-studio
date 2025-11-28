@@ -1,49 +1,37 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Food Universe – FitBloom Studio</title>
+  <title>FitBloom Studio – Food Universe</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png" />
-</head>
 
-<body class="page-food">
-  
   <!-- Icône -->
   <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png" />
 </head>
 
-<body>
+<body class="page-food">
 
   <!-- HEADER -->
-  <header class="fbs-header">
+  <header class="sub-header">
     <a href="index.html" class="back-btn">← Retour</a>
 
-    <div class="fbs-logo-container" style="margin-top: 1rem;">
-      <img src="assets/logo/logo-fbs-light.png" class="fbs-logo" alt="logo" />
-    </div>
-
-    <div class="fbs-title">
-      <h1>Food Universe</h1>
-      <p>Planner hebdo • Brunch • Collation • Dîner • Jus</p>
+    <div class="header-center">
+      <img src="assets/logo/logo-fbs-light.png" class="sub-logo" alt="Logo FBS">
+      <h1 class="sub-title">Food Universe</h1>
+      <p class="sub-subtitle">Planner hebdo • Brunch • Collation • Dîner • Jus</p>
     </div>
   </header>
 
-  <!-- ONGLET NAVIGATION -->
-  <div class="food-tabs">
-    <button class="tab-btn active" data-target="brunch">🥞 Brunch</button>
-    <button class="tab-btn" data-target="collation">🥜 Collations</button>
-    <button class="tab-btn" data-target="diner">🍽️ Dîner</button>
-    <button class="tab-btn" data-target="jus">🧃 Jus</button>
-  </div>
 
-   <!-- CONTENU HEBDO -->
+  <!-- CONTENU (généré par JS) -->
   <main id="food-week" class="food-week"></main>
 
+
+  <!-- JS -->
+  <script src="app.js"></script>
   <script src="food.js"></script>
+
 </body>
 </html>
- 
