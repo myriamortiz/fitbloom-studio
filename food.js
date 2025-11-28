@@ -23,6 +23,7 @@ async function loadAllData() {
   return data;
 }
 
+
 // ----------------------------
 // RANDOM PICK (80% permanent / 20% saison)
 // ----------------------------
@@ -30,16 +31,15 @@ function pickRecipe(list) {
   const roll = Math.random();
 
   if (roll <= 0.8) {
-    // permanent
     return list.permanent[Math.floor(Math.random() * list.permanent.length)];
   } else {
-    // saison: pick based on current season (simple version = random season)
     const seasons = ["spring", "summer", "autumn", "winter"];
     const season = seasons[Math.floor(Math.random() * seasons.length)];
     const arr = list[season];
     return arr[Math.floor(Math.random() * arr.length)];
   }
 }
+
 
 // ----------------------------
 // GENERATE WEEK MENU
@@ -59,12 +59,13 @@ function generateWeek(data) {
   return week;
 }
 
+
 // ----------------------------
-// SAVE / LOAD WEEK FROM LOCALSTORAGE
+// SAVE / LOAD
 // ----------------------------
 function getMonday() {
   const d = new Date();
-  const day = d.getDay(); // 0 = dimanche
+  const day = d.getDay();
   const diff = d.getDate() - day + (day === 0 ? -6 : 1);
   return new Date(d.setDate(diff));
 }
@@ -90,6 +91,7 @@ function loadOrGenerateWeek(data) {
   return newWeek;
 }
 
+
 // ----------------------------
 // DISPLAY WEEK
 // ----------------------------
@@ -104,38 +106,77 @@ function displayWeek(week) {
     block.innerHTML = `
       <h2>${DAYS[i]}</h2>
 
-      <div class="meal-block">
+      <div class="meal-block" data-cat="brunch" data-day="${i}">
         <p class="food-meal-title">🥞 Brunch</p>
-        <p class="food-meal-text">${day.brunch.name}</p>
+        <p class="food-meal-text clickable">${day.brunch.name}</p>
       </div>
 
-      <div class="meal-block">
+      <div class="meal-block" data-cat="collation" data-day="${i}">
         <p class="food-meal-title">🥜 Collation</p>
-        <p class="food-meal-text">${day.collation.name}</p>
+        <p class="food-meal-text clickable">${day.collation.name}</p>
       </div>
 
-      <div class="meal-block">
+      <div class="meal-block" data-cat="diner" data-day="${i}">
         <p class="food-meal-title">🍽️ Dîner</p>
-        <p class="food-meal-text">${day.diner.name}</p>
+        <p class="food-meal-text clickable">${day.diner.name}</p>
       </div>
     `;
 
     container.appendChild(block);
   });
+
+  activatePopups(week);
 }
 
+
 // ----------------------------
-// LISTE DE COURSES
+// POPUP RECETTE
+// ----------------------------
+function activatePopups(week) {
+  const items = document.querySelectorAll(".clickable");
+
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      const parent = item.parentElement;
+      const category = parent.dataset.cat;
+      const dayIndex = parent.dataset.day;
+      const recipe = week[dayIndex][category];
+
+      openRecipePopup(recipe);
+    });
+  });
+}
+
+function openRecipePopup(recipe) {
+  const popup = document.getElementById("recipe-popup");
+  const title = document.getElementById("popup-title");
+  const calories = document.getElementById("popup-cal");
+  const ingredients = document.getElementById("popup-ingredients");
+  const instructions = document.getElementById("popup-instructions");
+
+  title.textContent = recipe.name;
+  calories.textContent = `${recipe.calories} kcal`;
+
+  ingredients.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join("");
+  instructions.textContent = recipe.instructions;
+
+  popup.style.display = "flex";
+}
+
+document.getElementById("close-recipe").addEventListener("click", () => {
+  document.getElementById("recipe-popup").style.display = "none";
+});
+
+
+// ----------------------------
+// GROCERY LIST
 // ----------------------------
 function buildGroceryList(week) {
   let ingredients = {};
 
   const pushIng = (raw) => {
-    // raw = "Tomates : 120g"
     if (!raw.includes(":")) return;
-
     const [name, qty] = raw.split(":");
-
     const cleanName = name.trim();
     const cleanQty = qty.trim();
 
@@ -165,9 +206,6 @@ function renderGroceryPopup(list) {
   });
 }
 
-// ----------------------------
-// POPUP EVENTS
-// ----------------------------
 document.getElementById("open-grocery").addEventListener("click", () => {
   const week = JSON.parse(localStorage.getItem("fbs-week"));
   const list = buildGroceryList(week);
@@ -178,6 +216,7 @@ document.getElementById("open-grocery").addEventListener("click", () => {
 document.getElementById("close-grocery").addEventListener("click", () => {
   document.getElementById("grocery-popup").style.display = "none";
 });
+
 
 // ----------------------------
 // INIT
