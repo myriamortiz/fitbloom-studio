@@ -543,7 +543,7 @@ h2 {
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
-  color: white;
+  color: var(--fbs-taupe-rose);
   font-family: "Inter", system-ui, sans-serif;
   display: flex;
   flex-direction: column;
