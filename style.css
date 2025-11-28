@@ -539,7 +539,8 @@ h2 {
 .page-fitness {
   padding: 1.5rem;
   min-height: 100vh;
-  color: var(--fbs-rose-clair); /* même couleur texte que Food */
+  background: transparent !important; /* 🔥 FOND NOIR TEXTURÉ RESTAURÉ */
+  color: var(--fbs-rose-clair);
 }
 
 /* Séance du jour */
