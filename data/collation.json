@@ -1,0 +1,90 @@
+{
+  "permanent": [
+    { "type": "healthy", "name": "Pommes rôties cannelle & amandes", "calories": 180, "ingredients": ["Pomme : 1","Cannelle : 1 c.à.c","Amandes : 10g"], "instructions": "Rôtir la pomme, ajouter cannelle et amandes." },
+    { "type": "healthy", "name": "Energy balls dattes-coco", "calories": 210, "ingredients": ["Dattes : 40g","Coco râpée : 10g"], "instructions": "Mixer dattes, former boules, rouler dans coco." },
+    { "type": "healthy", "name": "Yaourt végétal coco & mangue", "calories": 190, "ingredients": ["Yaourt coco sans sucre : 100g","Mangue : 60g"], "instructions": "Assembler yaourt & mangue." },
+    { "type": "healthy", "name": "Banane & beurre d’amande", "calories": 220, "ingredients": ["Banane : 1","Beurre d’amande : 1 c.à.c"], "instructions": "Couper banane, ajouter beurre d’amande." },
+    { "type": "healthy", "name": "Noix & cranberries", "calories": 200, "ingredients": ["Mélange noix : 20g","Cranberries : 15g"], "instructions": "Mélanger et servir." },
+    { "type": "healthy", "name": "Raisins + noisettes", "calories": 180, "ingredients": ["Raisins : 80g","Noisettes : 10g"], "instructions": "Servir ensemble." },
+    { "type": "healthy", "name": "Compote pomme-poire maison", "calories": 160, "ingredients": ["Pomme : 1","Poire : 1"], "instructions": "Cuire et mixer." },
+    { "type": "healthy", "name": "Houmous & bâtonnets carottes", "calories": 170, "ingredients": ["Houmous : 40g","Carotte : 1"], "instructions": "Servir ensemble." },
+    { "type": "healthy", "name": "Chips de patate douce au four", "calories": 190, "ingredients": ["Patate douce : 120g"], "instructions": "Couper, assaisonner et cuire." },
+    { "type": "healthy", "name": "Concombre & guacamole", "calories": 150, "ingredients": ["Concombre : 1/2","Guacamole : 40g"], "instructions": "Tremper concombre dans guacamole." },
+    { "type": "healthy", "name": "Poire & chocolat noir 85%", "calories": 200, "ingredients": ["Poire : 1","Chocolat 85% : 10g"], "instructions": "Servir poire avec chocolat." },
+    { "type": "healthy", "name": "Fraises & noix de cajou", "calories": 190, "ingredients": ["Fraises : 100g","Cajou : 15g"], "instructions": "Servir ensemble." },
+    { "type": "healthy", "name": "Amandes grillées", "calories": 180, "ingredients": ["Amandes : 20g"], "instructions": "Griller quelques minutes." },
+    { "type": "healthy", "name": "Olives & tomates cerises", "calories": 160, "ingredients": ["Olives : 40g","Tomates cerises : 80g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Booster gingembre-miel", "calories": 120, "ingredients": ["Citron : 1","Gingembre : 1 c.à.c","Miel : 1 c.à.c"], "instructions": "Mélanger jus de citron, gingembre et miel." },
+    { "type": "healthy", "name": "Riz soufflé & chocolat noir", "calories": 200, "ingredients": ["Riz soufflé : 20g","Chocolat 85% : 10g"], "instructions": "Mélanger." },
+    { "type": "healthy", "name": "Oranges & pistaches", "calories": 180, "ingredients": ["Orange : 1","Pistaches : 10g"], "instructions": "Servir ensemble." },
+    { "type": "healthy", "name": "Billes melon & menthe", "calories": 150, "ingredients": ["Melon : 120g","Menthe : quelques feuilles"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Pêche & amandes", "calories": 170, "ingredients": ["Pêche : 1","Amandes : 10g"], "instructions": "Servir." },
+    { "type": "plaisir", "name": "Mini mugcake chocolat GF", "calories": 240, "ingredients": ["Farine riz : 20g","Cacao : 1 c.à.c","Lait amande : 40ml"], "instructions": "Cuire 45 sec au micro-ondes." },
+    { "type": "healthy", "name": "Tomates cerises & basilic", "calories": 120, "ingredients": ["Tomates cerises : 100g","Basilic : quelques feuilles"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Céleri & sauce tahini", "calories": 160, "ingredients": ["Céleri : 1 branche","Tahini : 1 c.à.c"], "instructions": "Tremper." },
+    { "type": "healthy", "name": "Chips kale au four", "calories": 150, "ingredients": ["Kale : 60g"], "instructions": "Assaisonner et cuire 10 min." },
+    { "type": "healthy", "name": "Ananas & citron vert", "calories": 140, "ingredients": ["Ananas : 120g","Citron vert : 1 c.à.c"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Dattes & purée cacahuète", "calories": 210, "ingredients": ["Dattes : 3","Purée cacahuète : 1 c.à.c"], "instructions": "Garnir dattes." },
+    { "type": "healthy", "name": "Abricot & amandes", "calories": 170, "ingredients": ["Abricots : 2","Amandes : 10g"], "instructions": "Servir." },
+    { "type": "healthy", "name": "Kiwi & graines de chia", "calories": 160, "ingredients": ["Kiwi : 1","Chia : 1 c.à.c"], "instructions": "Saupoudrer chia sur kiwi." },
+    { "type": "healthy", "name": "Poivron & houmous citronné", "calories": 150, "ingredients": ["Poivron : 1","Houmous : 40g"], "instructions": "Tremper." },
+    { "type": "plaisir", "name": "Rocher choco-coco GF maison", "calories": 230, "ingredients": ["Chocolat 85% : 15g","Coco : 10g"], "instructions": "Faire fondre chocolat, mélanger coco, former rocher." },
+    { "type": "healthy", "name": "Mangue & citron vert", "calories": 160, "ingredients": ["Mangue : 100g","Citron vert : 1 c.à.c"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Airelles & pomme", "calories": 140, "ingredients": ["Pomme : 1","Airelles : 30g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Riz au lait végétal léger", "calories": 200, "ingredients": ["Riz : 30g","Lait amande : 150ml"], "instructions": "Cuire 10 min." },
+    { "type": "healthy", "name": "Mini salade pastèque-menthe", "calories": 150, "ingredients": ["Pastèque : 120g","Menthe : quelques feuilles"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Pomme & cannelle express", "calories": 130, "ingredients": ["Pomme : 1","Cannelle : 1 pincée"], "instructions": "Couper pomme, ajouter cannelle." }
+  ],
+
+  "spring": [
+    { "type": "healthy", "name": "Radis & sel citronné", "calories": 80, "ingredients": ["Radis : 6","Sel citronné : 1 pincée"], "instructions": "Servir." },
+    { "type": "healthy", "name": "Fraises au basilic", "calories": 120, "ingredients": ["Fraises : 100g","Basilic : 4 feuilles"], "instructions": "Mélanger." },
+    { "type": "healthy", "name": "Carottes nouvelles & houmous", "calories": 160, "ingredients": ["Carottes nouvelles : 2","Houmous : 40g"], "instructions": "Tremper." },
+    { "type": "healthy", "name": "Concombre & menthe", "calories": 90, "ingredients": ["Concombre : 1/2","Menthe : 1 c.à.s"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Pois gourmands citron-gingembre", "calories": 150, "ingredients": ["Pois gourmands : 100g","Citron : 1 c.à.c"], "instructions": "Cuire 2 min, ajouter citron." },
+    { "type": "plaisir", "name": "Mini gaufres citron-pavot GF", "calories": 210, "ingredients": ["Farine riz : 30g","Pavot : 1 c.à.c"], "instructions": "Cuire au gaufrier." },
+    { "type": "healthy", "name": "Pommes nouvelles rôties", "calories": 160, "ingredients": ["Pomme nouvelle : 1"], "instructions": "Rôtir 10 min." },
+    { "type": "healthy", "name": "Avo toast printanier mini", "calories": 170, "ingredients": ["Pain GF : 1/2 tranche","Avocat : 1/4"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Petits pois & menthe fraîche", "calories": 120, "ingredients": ["Petits pois : 80g"], "instructions": "Cuire, ajouter menthe." },
+    { "type": "plaisir", "name": "Fraises & chocolat noir", "calories": 200, "ingredients": ["Fraises : 100g","Chocolat noir : 10g"], "instructions": "Tremper." }
+  ],
+
+  "summer": [
+    { "type": "healthy", "name": "Pastèque & citron vert", "calories": 80, "ingredients": ["Pastèque : 120g","Citron vert : quelques gouttes"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Abricot & amandes", "calories": 140, "ingredients": ["Abricots : 2","Amandes : 10g"], "instructions": "Servir." },
+    { "type": "healthy", "name": "Concombre & pistaches", "calories": 130, "ingredients": ["Concombre : 1/2","Pistaches : 10g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Tomates cerises & basilic", "calories": 100, "ingredients": ["Tomates cerises : 100g","Basilic : quelques feuilles"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Melon & menthe", "calories": 120, "ingredients": ["Melon : 120g","Menthe : quelques feuilles"], "instructions": "Assembler." },
+    { "type": "plaisir", "name": "Mini crêpe coco GF", "calories": 210, "ingredients": ["Farine riz : 20g","Lait coco : 40ml"], "instructions": "Cuire 2 min." },
+    { "type": "healthy", "name": "Pêche & citron vert", "calories": 130, "ingredients": ["Pêche : 1","Citron vert : 1 c.à.c"], "instructions": "Servir." },
+    { "type": "healthy", "name": "Myrtilles & cajou", "calories": 150, "ingredients": ["Myrtilles : 80g","Cajou : 10g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Courgette crue & tahini", "calories": 140, "ingredients": ["Courgette : 1/2","Tahini : 1 c.à.c"], "instructions": "Tremper." },
+    { "type": "plaisir", "name": "Glace maison mangue express", "calories": 190, "ingredients": ["Mangue congelée : 150g"], "instructions": "Mixer mangue bien froide." }
+  ],
+
+  "autumn": [
+    { "type": "healthy", "name": "Pomme rôtie & noix", "calories": 160, "ingredients": ["Pomme : 1","Noix : 10g"], "instructions": "Rôtir pomme, ajouter noix." },
+    { "type": "healthy", "name": "Raisin & cannelle", "calories": 140, "ingredients": ["Raisin : 80g","Cannelle : 1 pincée"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Potimarron snack rôtie", "calories": 170, "ingredients": ["Potimarron : 120g"], "instructions": "Rôtir 15 min." },
+    { "type": "healthy", "name": "Poire & cacao pur", "calories": 150, "ingredients": ["Poire : 1","Cacao : 1 c.à.c"], "instructions": "Saupoudrer cacao." },
+    { "type": "healthy", "name": "Betterave & pistaches", "calories": 150, "ingredients": ["Betterave cuite : 100g","Pistaches : 10g"], "instructions": "Assembler." },
+    { "type": "plaisir", "name": "Mini gaufre potimarron GF", "calories": 210, "ingredients": ["Purée potimarron : 40g","Farine riz : 20g"], "instructions": "Cuire au gaufrier." },
+    { "type": "healthy", "name": "Pomme & beurre d’amande", "calories": 180, "ingredients": ["Pomme : 1","Beurre amande : 1 c.à.c"], "instructions": "Servir." },
+    { "type": "healthy", "name": "Chips betterave maison", "calories": 150, "ingredients": ["Betterave : 1"], "instructions": "Couper fin, cuire au four." },
+    { "type": "healthy", "name": "Poire rôtie & gingembre", "calories": 160, "ingredients": ["Poire : 1","Gingembre : 1 pincée"], "instructions": "Rôtir, ajouter gingembre." },
+    { "type": "plaisir", "name": "Truffe choco noisette GF", "calories": 210, "ingredients": ["Chocolat : 15g","Noisettes : 10g"], "instructions": "Former truffe." }
+  ],
+
+  "winter": [
+    { "type": "healthy", "name": "Orange & cannelle", "calories": 120, "ingredients": ["Orange : 1","Cannelle : 1 pincée"], "instructions": "Ajouter cannelle." },
+    { "type": "healthy", "name": "Poire au four & vanille", "calories": 150, "ingredients": ["Poire : 1","Vanille : 1 c.à.c"], "instructions": "Cuire 10 min." },
+    { "type": "healthy", "name": "Amandes grillées cannelle", "calories": 180, "ingredients": ["Amandes : 20g","Cannelle : 1 pincée"], "instructions": "Griller rapidement." },
+    { "type": "healthy", "name": "Clémentines & pistaches", "calories": 140, "ingredients": ["Clémentines : 2","Pistaches : 10g"], "instructions": "Servir." },
+    { "type": "healthy", "name": "Chips de carotte", "calories": 150, "ingredients": ["Carotte : 1"], "instructions": "Cuire au four 10 min." },
+    { "type": "plaisir", "name": "Mini fondant cacao GF", "calories": 210, "ingredients": ["Cacao : 1 c.à.c","Farine riz : 20g","Lait amande : 40ml"], "instructions": "Cuire 45 sec micro-ondes." },
+    { "type": "healthy", "name": "Kiwi & grenade", "calories": 130, "ingredients": ["Kiwi : 1","Grenade : 40g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Clémentines miel-cannelle", "calories": 150, "ingredients": ["Clémentines : 2","Miel : 1 c.à.c"], "instructions": "Arroser de miel et cannelle." },
+    { "type": "healthy", "name": "Noix & dattes", "calories": 190, "ingredients": ["Noix : 10g","Dattes : 2"], "instructions": "Assembler." },
+    { "type": "plaisir", "name": "Bouchée choco-orange GF", "calories": 200, "ingredients": ["Chocolat : 10g","Zeste orange : 1 c.à.c"], "instructions": "Mélanger." }
+  ]
+}
