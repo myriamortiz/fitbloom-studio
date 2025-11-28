@@ -712,7 +712,7 @@ h1 {
 /* Effet au survol du bouton */
 .main-btn:hover {
   background: var(--fbs-rose-pale); /* Changement de couleur au survol */
-  color: #1a1a1a; /* Changement de couleur du texte */
+  color: var(--fbs-taupe-rose); /* Changement de couleur du texte */
   transform: scale(1.05); /* Légère augmentation de la taille au survol */
   box-shadow: 0 0 26px var(--fbs-glow); /* Ombre accentuée */
 }
