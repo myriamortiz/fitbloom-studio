@@ -533,143 +533,163 @@ h2 {
   opacity: 0.7;
 }
 /* ------------------------------------------------------ */
-/*              PAGE FITNESS UNIVERSE (copie conforme)     */
+/* PAGE FITNESS (ajustement de la mise en page)            */
 /* ------------------------------------------------------ */
 .page-fitness {
-  padding: 1.5rem;
+  padding: 2rem;
   min-height: 100vh;
   background: var(--fbs-noir);
   background-image: url("./black.jpg");
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
-
-  color: var(--fbs-taupe-rose);
+  color: white;
   font-family: "Inter", system-ui, sans-serif;
   display: flex;
   flex-direction: column;
+  gap: 2rem; /* Ajout d'un espace global entre les éléments */
 }
 
-/* Header page Fitness (copie conforme Food) */
+/* HEADER */
 .sub-header {
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 2rem; /* Ajout d'un espace sous le header */
 }
 
 .back-btn {
-  position: absolute;
-  left: 1.5rem;
-  top: 2rem;
+  font-size: 1.2rem;
   text-decoration: none;
-  font-size: 1rem;
   color: var(--fbs-rose-clair);
   background: rgba(255,255,255,0.06);
-  padding: 0.4rem 0.9rem;
+  padding: 0.5rem 1rem;
   border-radius: 12px;
   border: 1.5px solid var(--fbs-rose-clair);
-  transition: 0.2s;
+  margin-right: 1rem; /* Un peu d'espace à droite du bouton Retour */
 }
 
-.back-btn:hover {
-  background: var(--fbs-rose-clair);
-  color: var(--fbs-taupe-rose);
+.header-center {
+  flex: 1;
+  text-align: center;
 }
 
-.sub-logo {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 1rem;
-  filter: drop-shadow(0 0 18px var(--fbs-glow));
-}
-
-.sub-title {
-  font-size: 1.7rem;
-  font-weight: 700;
+h1 {
+  margin: 0;
+  font-size: 2rem; /* Taille du titre légèrement plus grande */
   color: var(--fbs-rose-pale);
 }
 
-.sub-subtitle {
-  font-size: 0.9rem;
-  color: var(--fbs-taupe-rose);
-  margin-top: 0.3rem;
+/* SESSION DU JOUR */
+.session {
+  margin-bottom: 3rem; /* Espacement supplémentaire pour séparer des autres éléments */
 }
 
-/* ------------------------------------------------------ */
-/*                 CARDS (COPIE CONFORME FOOD)             */
-/* ------------------------------------------------------ */
-.card {
-  background: var(--fbs-glass) !important;
-  border: 1.5px solid var(--fbs-border) !important;
-  border-radius: 30px;
-  padding: 2rem 1.6rem;
-  box-shadow: 0 0 25px var(--fbs-glow) !important;
-  backdrop-filter: blur(6px) !important;
-  color: var(--fbs-rose-pale);
-  margin-bottom: 1.5rem;
+.session-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-.big-card {
-  padding: 2.2rem 1.8rem;
+.session-duration {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--fbs-rose-clair);
 }
 
-/* ------------------------------------------------------ */
-/*                PLANNING HEBDOMADAIRE                   */
-/* ------------------------------------------------------ */
+.main-btn {
+  background: var(--fbs-rose-fonce);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  color: white;
+  font-size: 1.1rem;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  background: var(--fbs-rose-pale);
+  box-shadow: 0 0 26px var(--fbs-glow);
+}
+
+/* PLANNING HEBDOMADAIRE */
 .week-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
+  padding: 2rem 0;
 }
 
-/* Bulle individuelle */
 .day-bubble {
-  background: var(--fbs-glass) !important; /* verre fumé identique Food */
-  border: 1.5px solid var(--fbs-border) !important;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  height: 75px;
-  width: 75px;
-  color: var(--fbs-rose-pale);
+  padding: 20px;
+  font-size: 1rem;
   text-align: center;
-  box-shadow: 0 0 15px var(--fbs-glow) !important;
+  color: var(--fbs-rose-pale);
+  box-shadow: 0 0 15px var(--fbs-glow);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
 
+.day-bubble:hover {
+  transform: scale(1.05);
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
+  z-index: 9999;
 }
 
-.day-bubble span {
-  font-size: 0.7rem;
-  color: var(--fbs-rose-clair);
-  opacity: 0.8;
-  margin-top: 2px;
-}
-
-/* ------------------------------------------------------ */
-/*                   BOUTONS GÉNÉRAUX                     */
-/* ------------------------------------------------------ */
-.main-btn {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1.5px solid var(--fbs-rose-clair) !important;
-  color: var(--fbs-rose-pale) !important;
-  box-shadow: 0 0 18px var(--fbs-glow) !important;
-  font-weight: bold;
-}
-
-/* ------------------------------------------------------ */
-/*                    SECTION SÉANCE DU JOUR               */
-/* ------------------------------------------------------ */
-.session-title {
-  font-size: 1.4rem;
-  font-weight: 600;
+.modal-content {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid var(--fbs-rose-clair);
+  padding: 2rem 1.6rem;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 500px;
   color: var(--fbs-rose-pale);
+  text-align: center;
+  box-shadow: 0 0 30px var(--fbs-glow);
+  backdrop-filter: blur(6px);
 }
 
-.session-duration {
-  font-size: 0.95rem;
-  color: var(--fbs-taupe-rose);
-  opacity: 0.85;
-  margin-top: 0.2rem;
+/* Fermeture modal */
+.modal-close {
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--fbs-rose-pale);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* EXERCICES */
+#exercices-list .exercice {
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--fbs-glow);
+}
+
+#exercices-list .exercice p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
 }
