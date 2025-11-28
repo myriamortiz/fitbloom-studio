@@ -602,7 +602,7 @@ h1 {
   padding: 1rem 2rem;
   border-radius: 12px;
   border: 1.5px solid var(--fbs-rose-clair);
-  color:var(--fbs-taupe-rose);
+  color: white;
   font-size: 1.1rem;
   box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
