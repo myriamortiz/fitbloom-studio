@@ -693,3 +693,26 @@ h1 {
   font-size: 1rem;
   margin: 0.3rem 0;
 }
+/* Bouton "Voir ma séance" */
+.main-btn {
+  background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+  border-radius: 50px; /* Coins arrondis comme les bulles */
+  padding: 15px 30px; /* Taille du bouton */
+  text-align: center;
+  font-size: 1.1rem; /* Taille du texte */
+  color: var(--fbs-rose-pale);
+  border: 1.5px solid var(--fbs-rose-pale); /* Bordure de couleur */
+  box-shadow: 0 0 18px var(--fbs-glow); /* Ombre pour l'effet lumineux */
+  cursor: pointer;
+  transition: 0.3s ease; /* Transition pour l'animation au survol */
+  display: inline-block; /* S'assurer que le bouton est sur une seule ligne */
+  margin-top: 2rem; /* Espace au-dessus */
+}
+
+/* Effet au survol du bouton */
+.main-btn:hover {
+  background: var(--fbs-rose-pale); /* Changement de couleur au survol */
+  color: #1a1a1a; /* Changement de couleur du texte */
+  transform: scale(1.05); /* Légère augmentation de la taille au survol */
+  box-shadow: 0 0 26px var(--fbs-glow); /* Ombre accentuée */
+}
