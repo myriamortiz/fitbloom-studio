@@ -1,126 +1,131 @@
-// --------------------------
-// FitBloom Studio – Food Planner
-// --------------------------
+// -------------------------
+//  FitBloom Studio – Weekly Food Planner
+// -------------------------
 
 const DAYS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+const foodWeekContainer = document.getElementById("food-week");
 
-const PATHS = {
-  brunch: "data/brunch/brunch.json",
-  collation: "data/collation/collation.json",
-  diner: "data/diner/diner.json",
-  jus: "data/jus/jus.json",
-};
+// Fichiers JSON
+const brunchPath = "data/brunch/brunch.json";
+const collationPath = "data/collation/collation.json";
+const dinerPath = "data/diner/diner.json";
+const jusPath = "data/jus/jus.json";
 
-const container = document.getElementById("week-container");
+// ------------------------------------
+// 1) Vérifier si on doit générer une nouvelle semaine
+// ------------------------------------
+function shouldGenerateNewWeek() {
+  const savedMonday = localStorage.getItem("fbs_week_monday");
+  const today = new Date();
+  const monday = getMondayOfCurrentWeek();
 
-init();
-
-async function init() {
-  const saved = JSON.parse(localStorage.getItem("weeklyMenu"));
-
-  const currentWeek = getWeekNumber();
-
-  if (!saved || saved.week !== currentWeek) {
-    const menu = await generateMenu();
-    localStorage.setItem("weeklyMenu", JSON.stringify(menu));
-    displayWeek(menu);
-  } else {
-    displayWeek(saved);
-  }
+  return savedMonday !== monday;
 }
 
-// --------------------------
-// GET WEEK NUMBER
-// --------------------------
-function getWeekNumber() {
-  const now = new Date();
-  const onejan = new Date(now.getFullYear(), 0, 1);
-  return Math.ceil(((now - onejan) / 86400000 + onejan.getDay() + 1) / 7);
+function getMondayOfCurrentWeek() {
+  const d = new Date();
+  const day = d.getDay();
+  const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+  const monday = new Date(d.setDate(diff));
+  return monday.toISOString().split("T")[0];
 }
 
-// --------------------------
-// GENERATE NEW WEEK MENU
-// --------------------------
-async function generateMenu() {
-  const [brunch, collation, diner, jus] = await Promise.all([
-    fetch(PATHS.brunch).then(r => r.json()),
-    fetch(PATHS.collation).then(r => r.json()),
-    fetch(PATHS.diner).then(r => r.json()),
-    fetch(PATHS.jus).then(r => r.json())
+// ------------------------------------
+// 2) Générer une nouvelle semaine
+// ------------------------------------
+async function generateWeek() {
+  const [brunchData, collationData, dinerData, jusData] = await Promise.all([
+    fetch(brunchPath).then(r => r.json()),
+    fetch(collationPath).then(r => r.json()),
+    fetch(dinerPath).then(r => r.json()),
+    fetch(jusPath).then(r => r.json()),
   ]);
 
-  return {
-    week: getWeekNumber(),
-    brunch: pick7(brunch),
-    collation: pick7(collation),
-    diner: pick7(diner),
-    jus: pick7(jus)
-  };
+  const week = {};
+
+  DAYS.forEach(day => {
+    week[day] = {
+      brunch: pickRandom(brunchData.permanent),
+      collation: pickRandom(collationData.permanent),
+      diner: pickRandom(dinerData.permanent),
+      jus: pickRandom(jusData.permanent)
+    };
+  });
+
+  localStorage.setItem("fbs_week", JSON.stringify(week));
+  localStorage.setItem("fbs_week_monday", getMondayOfCurrentWeek());
+
+  return week;
 }
 
-function pick7(data) {
-  const all = [
-    ...data.permanent,
-    ...(data.spring || []),
-    ...(data.summer || []),
-    ...(data.autumn || []),
-    ...(data.winter || [])
-  ];
-
-  all.sort(() => Math.random() - 0.5);
-  return all.slice(0, 7);
+// Fonction utilitaire pour choisir une recette aléatoire
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// --------------------------
-// DISPLAY THE WEEK
-// --------------------------
-function displayWeek(menu) {
-  container.innerHTML = "";
+// ------------------------------------
+// 3) Affichage visuel de la semaine
+// ------------------------------------
+function renderWeek(week) {
+  foodWeekContainer.innerHTML = "";
 
-  DAYS.forEach((day, i) => {
-    const card = document.createElement("div");
-    card.className = "day-card";
+  DAYS.forEach(day => {
+    const d = week[day];
 
-    card.innerHTML = `
-      <div class="day-title">${day}</div>
+    const block = document.createElement("div");
+    block.className = "food-day";
 
-      <div class="meal-block">
-        <h3>🥞 Brunch</h3>
-        <p>${menu.brunch[i].name}</p>
-      </div>
+    block.innerHTML = `
+      <h2>${day}</h2>
 
-      <div class="meal-block">
-        <h3>🍓 Collation</h3>
-        <p>${menu.collation[i].name}</p>
-      </div>
+      <p class="food-meal-title">🥞 Brunch</p>
+      <p class="food-meal-text">${d.brunch.name}</p>
 
-      <div class="meal-block">
-        <h3>🍽️ Dîner</h3>
-        <p>${menu.diner[i].name}</p>
-      </div>
+      <p class="food-meal-title">🥜 Collation</p>
+      <p class="food-meal-text">${d.collation.name}</p>
 
-      <div class="meal-block">
-        <h3>🧃 Jus (optionnel)</h3>
+      <p class="food-meal-title">🍽️ Dîner</p>
+      <p class="food-meal-text">${d.diner.name}</p>
 
-        <div class="jus-toggle">
-          <input type="checkbox" id="jus-${i}">
-          <label for="jus-${i}">Afficher un jus</label>
-        </div>
+      <label class="jus-toggle">
+        <input type="checkbox" data-day="${day}">
+        🧃 Ajouter un jus ?
+      </label>
 
-        <p class="jus-text" id="jus-text-${i}" style="display:none;">
-          ${menu.jus[i].name}
-        </p>
-      </div>
+      <p class="food-meal-title" id="jus-${day}" style="display:none;">🧃 Jus</p>
+      <p class="food-meal-text" id="jus-text-${day}" style="display:none;">${d.jus.name}</p>
     `;
 
-    container.appendChild(card);
+    foodWeekContainer.appendChild(block);
+  });
 
-    // Toggle jus
-    const checkbox = card.querySelector(`#jus-${i}`);
-    const jusText = card.querySelector(`#jus-text-${i}`);
+  // Gestion des jus (afficher/masquer)
+  document.querySelectorAll(".jus-toggle input").forEach(input => {
+    input.addEventListener("change", e => {
+      const day = e.target.dataset.day;
+      const title = document.getElementById(`jus-${day}`);
+      const text = document.getElementById(`jus-text-${day}`);
 
-    checkbox.addEventListener("change", () => {
-      jusText.style.display = checkbox.checked ? "block" : "none";
+      const visible = e.target.checked;
+      title.style.display = visible ? "block" : "none";
+      text.style.display = visible ? "block" : "none";
     });
   });
 }
+
+// ------------------------------------
+// 4) Init
+// ------------------------------------
+async function initFood() {
+  let week;
+
+  if (shouldGenerateNewWeek()) {
+    week = await generateWeek();
+  } else {
+    week = JSON.parse(localStorage.getItem("fbs_week"));
+  }
+
+  renderWeek(week);
+}
+
+initFood();
