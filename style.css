@@ -123,9 +123,10 @@ h2 {
 }
 
 .header-center .logo-small {
-  width: 80px;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 15px var(--fbs-glow));
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
 
 .header-center h1 {
