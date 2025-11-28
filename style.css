@@ -8,6 +8,10 @@
   --fbs-rose-pale: #f2d5c8;
   --fbs-taupe-rose: #d9c0b8;
   --fbs-glow: rgba(196, 138, 138, 0.45);
+
+  /* verre fumé premium */
+  --fbs-glass: rgba(255, 255, 255, 0.12);
+  --fbs-border: rgba(255, 255, 255, 0.28);
 }
 
 /* ------------------------------------------------------ */
@@ -36,6 +40,7 @@ body {
 /* ------------------------------------------------------ */
 /*                      PAGE ACCUEIL                       */
 /* ------------------------------------------------------ */
+
 .fbs-header {
   padding: 2rem 1.5rem 1rem;
   text-align: center;
@@ -78,7 +83,7 @@ body {
   color: var(--fbs-rose-pale);
 }
 
-/* BOUTONS ACCUEIL */
+/* Boutons accueil */
 .fbs-main {
   flex: 1;
   padding: 1.5rem;
@@ -104,10 +109,6 @@ body {
   box-shadow: 0 0 26px var(--fbs-glow);
 }
 
-.fbs-btn .icon {
-  font-size: 1.3rem;
-}
-
 .fbs-btn .label {
   display: block;
   font-size: 1.1rem;
@@ -121,6 +122,7 @@ body {
   color: var(--fbs-taupe-rose);
 }
 
+/* Footer */
 .fbs-footer {
   padding: 1rem 1.5rem 1.5rem;
   display: flex;
@@ -137,15 +139,9 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*                 PAGE FOOD (WEEKLY PLANNER)             */
+/*                       HEADER GÉNÉRAL                   */
 /* ------------------------------------------------------ */
-.page-food {
-  padding: 1.5rem;
-  min-height: 100vh;
-  color: var(--fbs-rose-clair);
-}
 
-/* -------- Header -------- */
 .sub-header {
   text-align: center;
   padding-top: 2rem;
@@ -172,13 +168,6 @@ body {
   color: #1a1a1a;
 }
 
-.sub-logo {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 1rem;
-  filter: drop-shadow(0 0 18px var(--fbs-glow));
-}
-
 .sub-title {
   font-size: 1.7rem;
   font-weight: 700;
@@ -191,19 +180,20 @@ body {
   margin-top: 0.3rem;
 }
 
-/* -------- WEEK LAYOUT -------- */
-.food-week {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-top: 1rem;
+/* ------------------------------------------------------ */
+/*                   FOOD UNIVERSE                        */
+/* ------------------------------------------------------ */
+.page-food {
+  padding: 1.5rem;
+  min-height: 100vh;
+  color: var(--fbs-rose-clair);
 }
 
 .food-day {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--fbs-glass);
   padding: 1.5rem;
   border-radius: 40px;
-  border: 1.5px solid var(--fbs-rose-clair);
+  border: 1.5px solid var(--fbs-border);
   box-shadow: 0 0 18px var(--fbs-glow);
   text-align: center;
 }
@@ -214,339 +204,33 @@ body {
   margin-bottom: 0.8rem;
 }
 
-/* -------- Text inside each day -------- */
-.food-meal-title {
-  color: var(--fbs-rose-clair);
-  font-size: 1.1rem;
-  margin-top: 0.8rem;
-}
-
-.food-meal-text {
-  color: #fff;
-  margin-top: 0.2rem;
-  font-size: 1rem;
-}
-
-/* -------- Jus option -------- */
-.jus-toggle {
-  margin-top: 0.8rem;
-  font-size: 1.1rem;
-  color: var(--fbs-taupe-rose);
-  text-align: center
-}
-
-.jus-toggle input {
-  margin-right: 6px;
-  text-align: center
-}
-/* ---------------------------- */
-/* POPUP RECETTE PREMIUM FBS   */
-/* ---------------------------- */
-
-.modal.hidden {
-  display: none;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  z-index: 9999;
-}
-
-.modal-content {
-  background: rgba(255,255,255,0.06);
-  border: 1.5px solid var(--fbs-rose-clair);
-  padding: 2rem 1.6rem;
-  border-radius: 30px;
-  width: 100%;
-  max-width: 420px;
-  color: var(--fbs-rose-pale);
-  text-align: center;
-  box-shadow: 0 0 30px var(--fbs-glow);
-  backdrop-filter: blur(6px);
-}
-
-.modal-close {
-  border: none;
-  background: rgba(255,255,255,0.12);
-  color: var(--fbs-rose-pale);
-  padding: 0.4rem 0.7rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-.modal-cal {
-  color: var(--fbs-taupe-rose);
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
-.view-recipe {
-  margin-top: 0.6rem;
-  background: rgba(255,255,255,0.05);
-  border: 1.2px solid var(--fbs-rose-clair);
-  color: var(--fbs-rose-pale);
-  padding: 0.4rem 1rem;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.view-recipe:hover {
-  background: var(--fbs-rose-clair);
-  color: #1a1a1a;
-}
-/* BOUTON LISTE DE COURSES */
-.grocery-btn {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem 1.4rem;
-  border-radius: 40px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  color: var(--fbs-rose-pale);
-  text-align: center;
-  box-shadow: 0 0 18px var(--fbs-glow);
-  cursor: pointer;
-  width: 100%;
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-}
-
-/* POPUP */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(4px);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid var(--fbs-rose-clair);
-  border-radius: 30px;
-  padding: 2rem;
-  width: 85%;
-  max-height: 80vh;
-  overflow-y: auto;
-  text-align: center;
-  box-shadow: 0 0 25px var(--fbs-glow);
-}
-
-.popup-content h2 {
-  color: var(--fbs-rose-pale);
-  margin-bottom: 1rem;
-}
-
-#grocery-list li {
-  color: var(--fbs-rose-clair);
-  margin: 0.4rem 0;
-  font-size: 1rem;
-}
-
-.close-btn {
-  margin-top: 1.2rem;
-  padding: 0.8rem 1.2rem;
-  border-radius: 20px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--fbs-rose-pale);
-  cursor: pointer;
-}
-/* ------------------------- */
-/* JUS DE LA SEMAINE PREMIUM */
-/* ------------------------- */
-
-.weekly-juice {
-  margin-top: 1rem;
-  margin-bottom: 1.8rem;
-}
-
-.juice-card {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 1.8rem;
-  border-radius: 40px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  text-align: center;
-  box-shadow: 0 0 28px var(--fbs-glow);
-}
-
-.juice-card h2 {
-  color: var(--fbs-rose-pale);
-  font-size: 1.5rem;
-  margin-bottom: 0.6rem;
-}
-
-.juice-name {
-  font-size: 1.2rem;
-  margin-top: 0.4rem;
-  color: var(--fbs-rose-clair);
-}
-
-.juice-cal {
-  font-size: 0.95rem;
-  margin-top: 0.2rem;
-  color: var(--fbs-taupe-rose);
-}
-
-.see-btn {
-  margin-top: 0.8rem;
-  background: var(--fbs-rose-clair);
-  border: none;
-  padding: 0.55rem 1.3rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: #1a1a1a;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.see-btn:hover {
-  transform: scale(1.04);
-}
-/* PAGE STYLE */
-.page-fitness {
-  background: #faf8ff; /* même base FitBloom */
-  padding-bottom: 40px;
-}
-
-/* HEADER */
-.sub-header {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-}
-
-.back-btn {
-  font-size: 18px;
-  text-decoration: none;
-  color: #333;
-}
-
-.header-center {
-  flex: 1;
-  text-align: center;
-}
-
-.logo-small {
-  height: 35px;
-  opacity: 0.9;
-}
-
-h1 {
-  margin: 0;
-  font-size: 22px;
-}
-
-/* CARDS */
-.container {
-  width: 90%;
-  margin: auto;
-  margin-top: 10px;
-}
-
-.card {
-  background: white;
-  padding: 18px;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.04);
-}
-
-.big-card {
-  padding: 25px;
-}
-
-h2 {
-  margin: 0 0 10px 0;
-  font-size: 20px;
-}
-
-/* SESSION */
-.session-title {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.session-duration {
-  font-size: 16px;
-  margin-bottom: 15px;
-  opacity: 0.7;
-}
-
-/* BUTTONS */
-.btn {
-  background: #eac7ff; /* couleur FitBloom */
-  border: none;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.main-btn {
-  width: 100%;
-  background: #ffb7d5; /* rose FitBloom */
-  font-weight: bold;
-}
-
-/* WEEK GRID */
-.week-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-}
-
-.day-bubble {
-  background: #f7f2ff;
-  border-radius: 50%;
-  padding: 10px 5px;
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.2;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.day-bubble span {
-  display: block;
-  font-size: 11px;
-  opacity: 0.7;
-}
-
 /* ------------------------------------------------------ */
-/*                   PAGE FITNESS UNIVERSE                */
+/*                 FITNESS UNIVERSE (CORRIGÉ)             */
 /* ------------------------------------------------------ */
+
 .page-fitness {
   padding: 1.5rem;
   min-height: 100vh;
+  background: transparent !important;
   color: var(--fbs-rose-clair);
+}
+
+/* Cards Fitness */
+.page-fitness .card {
+  background: var(--fbs-glass) !important;
+  border: 1.5px solid var(--fbs-border) !important;
+  border-radius: 30px;
+  padding: 2rem 1.6rem;
+  box-shadow: 0 0 25px var(--fbs-glow) !important;
+  backdrop-filter: blur(6px) !important;
+  margin-bottom: 1.5rem;
 }
 
 /* Séance du jour */
 .session-title {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--fbs-rose-pale); /* même palette que Food */
+  color: var(--fbs-rose-pale);
 }
 
 .session-duration {
@@ -556,37 +240,39 @@ h2 {
   margin-top: 0.2rem;
 }
 
-/* ------------------------------------------------------ */
-/*                PLANNING HEBDOMADAIRE                   */
-/* ------------------------------------------------------ */
+/* Planning hebdo */
 .week-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 1rem;
+  gap: 12px;
 }
 
-/* Bulle individuelle */
 .day-bubble {
-  background: var(--fbs-glass); /* verre fumé identique Food */
-  border: 1.5px solid var(--fbs-border);
+  background: rgba(255, 255, 255, 0.10) !important;
+  border: 1.5px solid var(--fbs-border) !important;
   border-radius: 50%;
   height: 75px;
   width: 75px;
+  color: var(--fbs-rose-pale);
+  text-align: center;
+  box-shadow: 0 0 15px var(--fbs-glow) !important;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  font-size: 0.85rem;
-  color: var(--fbs-rose-pale);
-  text-align: center;
-  box-shadow: 0 0 15px var(--fbs-glow); /* même glow FitBloom */
 }
 
 .day-bubble span {
   font-size: 0.7rem;
   color: var(--fbs-rose-clair);
   opacity: 0.8;
-  margin-top: 2px;
+}
+
+/* Bouton Boost me */
+.page-fitness .main-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1.5px solid var(--fbs-rose-clair) !important;
+  color: var(--fbs-rose-pale) !important;
+  box-shadow: 0 0 18px var(--fbs-glow) !important;
 }
