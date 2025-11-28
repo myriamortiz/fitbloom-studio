@@ -151,6 +151,31 @@ function createDayBlock(dayName, meals) {
   return block;
 }
 
+/* -----------------------------
+   POPUP RECETTE
+----------------------------- */
+function openRecipeModal(recipe) {
+  const modal = document.getElementById("recipe-modal");
+
+  document.getElementById("modal-title").textContent = recipe.name;
+  document.getElementById("modal-cal").textContent = recipe.calories + " kcal";
+
+  const ingList = document.getElementById("modal-ingredients");
+  ingList.innerHTML = recipe.ingredients
+    .map(i => `<li>${i}</li>`).join("");
+
+  document.getElementById("modal-instructions").textContent = recipe.instructions;
+
+  modal.classList.remove("hidden");
+
+  document.querySelector(".modal-close").onclick = () => {
+    modal.classList.add("hidden");
+  }
+
+  modal.onclick = (e) => {
+    if (e.target === modal) modal.classList.add("hidden");
+  }
+}
 
 /* -----------------------------
    11. AFFICHER TOUTE LA SEMAINE
