@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FitBloom - Fitness</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Tu peux ajouter ici des liens vers des fichiers JS externes si nécessaire -->
+  <script src="fitness.js" defer></script>
 </head>
 
 <body class="page-fitness">
@@ -24,7 +24,8 @@
     <!-- Séance du jour -->
     <div class="session">
       <h2 class="session-title">Séance du jour</h2>
-      <p class="session-duration">Durée: 45 minutes</p>
+      <p class="session-duration">Durée: <span id="today-session-duration"></span></p>
+      <p id="today-session-name"></p>
 
       <!-- Bouton "Voir ma séance" -->
       <button class="main-btn" id="voir-seance">
@@ -34,25 +35,25 @@
 
     <!-- PLANIFICATION DE LA SEMAINE (exemple) -->
     <div class="week-grid">
-      <div class="day-bubble">
+      <div class="day-bubble" id="day-1">
         <span>Lundi</span>
       </div>
-      <div class="day-bubble">
+      <div class="day-bubble" id="day-2">
         <span>Mardi</span>
       </div>
-      <div class="day-bubble">
+      <div class="day-bubble" id="day-3">
         <span>Mercredi</span>
       </div>
-      <div class="day-bubble">
+      <div class="day-bubble" id="day-4">
         <span>Jeudi</span>
       </div>
-      <div class="day-bubble">
+      <div class="day-bubble" id="day-5">
         <span>Vendredi</span>
       </div>
-      <div class="day-bubble">
+      <div class="day-bubble" id="day-6">
         <span>Samedi</span>
       </div>
-      <div class="day-bubble">
+      <div class="day-bubble" id="day-7">
         <span>Dimanche</span>
       </div>
     </div>
@@ -71,9 +72,6 @@
       <button class="modal-close">Fermer</button>
     </div>
   </div>
-
-  <!-- SCRIPT JS -->
-  <script src="fitness.js"></script>
 </body>
 
 </html>
