@@ -86,5 +86,15 @@
     { "type": "healthy", "name": "Clémentines miel-cannelle", "calories": 150, "ingredients": ["Clémentines : 2","Miel : 1 c.à.c"], "instructions": "Arroser de miel et cannelle." },
     { "type": "healthy", "name": "Noix & dattes", "calories": 190, "ingredients": ["Noix : 10g","Dattes : 2"], "instructions": "Assembler." },
     { "type": "plaisir", "name": "Bouchée choco-orange GF", "calories": 200, "ingredients": ["Chocolat : 10g","Zeste orange : 1 c.à.c"], "instructions": "Mélanger." }
-  ]
+  ],
+
+  "_meta": {
+  "healthy_ratio": 0.8,
+  "plaisir_ratio": 0.2,
+  "total_permanent": 35,
+  "total_spring": 10,
+  "total_summer": 10,
+  "total_autumn": 10,
+  "total_winter": 10,
+  "total_recipes": 75
 }
