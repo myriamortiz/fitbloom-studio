@@ -263,3 +263,10 @@ h2 {
   font-size: 0.7rem;
   opacity: 0.65;
 }
+/* --- Correction Logo Accueil --- */
+.fbs-logo-container img,
+.fbs-logo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
