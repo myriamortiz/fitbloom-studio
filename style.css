@@ -229,14 +229,13 @@ body {
 
 /* -------- Jus option -------- */
 .jus-toggle {
-  margin-top: 0.7rem;
-  font-size: 0.95rem;
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
   color: var(--fbs-taupe-rose);
   text-align: center
 }
 
 .jus-toggle input {
-  margin-right: 6px;
   text-align: center
 }
 /* ---------------------------- */
