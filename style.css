@@ -369,3 +369,54 @@ body {
   color: var(--fbs-rose-pale);
   cursor: pointer;
 }
+/* ------------------------- */
+/* JUS DE LA SEMAINE PREMIUM */
+/* ------------------------- */
+
+.weekly-juice {
+  margin-top: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.juice-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.8rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  text-align: center;
+  box-shadow: 0 0 28px var(--fbs-glow);
+}
+
+.juice-card h2 {
+  color: var(--fbs-rose-pale);
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.juice-name {
+  font-size: 1.2rem;
+  margin-top: 0.4rem;
+  color: var(--fbs-rose-clair);
+}
+
+.juice-cal {
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+  color: var(--fbs-taupe-rose);
+}
+
+.see-btn {
+  margin-top: 0.8rem;
+  background: var(--fbs-rose-clair);
+  border: none;
+  padding: 0.55rem 1.3rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.see-btn:hover {
+  transform: scale(1.04);
+}
