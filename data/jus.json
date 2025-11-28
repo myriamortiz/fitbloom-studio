@@ -1,0 +1,47 @@
+{
+  "permanent": [
+    { "type": "healthy", "name": "Jus carotte-orange-gingembre", "calories": 120, "ingredients": ["Carottes : 2", "Orange : 1", "Gingembre : 1 cm"], "instructions": "Passer tous les ingrédients à l’extracteur." },
+    { "type": "healthy", "name": "Jus pomme-céleri-citron", "calories": 110, "ingredients": ["Pomme : 1", "Céleri branche : 1", "Citron : 1 c.à.c"], "instructions": "Presser pomme, céleri puis ajouter citron." },
+    { "type": "healthy", "name": "Jus concombre-pomme-menthe", "calories": 95, "ingredients": ["Concombre : 1/2", "Pomme : 1", "Menthe : 6 feuilles"], "instructions": "Passer les ingrédients à froid." },
+    { "type": "healthy", "name": "Jus betterave-carotte-pomme", "calories": 130, "ingredients": ["Betterave : 1 petite", "Carotte : 1", "Pomme : 1"], "instructions": "Presser betterave + carotte + pomme." },
+    { "type": "plaisir", "name": "Jus orange-mangue-ananas", "calories": 150, "ingredients": ["Orange : 1", "Mangue : 80g", "Ananas : 80g"], "instructions": "Passer les fruits à l’extracteur." }
+  ],
+
+  "spring": [
+    { "type": "healthy", "name": "Jus fraise-concombre-citron", "calories": 100, "ingredients": ["Fraises : 120g", "Concombre : 1/4", "Citron : 1 c.à.c"], "instructions": "Extraire fraises + concombre, ajouter citron." },
+    { "type": "healthy", "name": "Jus carotte-pomme-menthe", "calories": 110, "ingredients": ["Carotte : 1", "Pomme : 1", "Menthe : 6 feuilles"], "instructions": "Extraire tous les ingrédients." },
+    { "type": "healthy", "name": "Jus ananas-pomme-citron vert", "calories": 125, "ingredients": ["Ananas : 100g", "Pomme : 1/2", "Citron vert : 1 c.à.c"], "instructions": "Extraire ananas + pomme, ajouter citron vert." },
+    { "type": "plaisir", "name": "Jus fraise-vanille", "calories": 140, "ingredients": ["Fraises : 150g", "Vanille : 1 c.à.c"], "instructions": "Presser fraises puis ajouter vanille." },
+    { "type": "healthy", "name": "Jus kiwi-pomme-menthe", "calories": 105, "ingredients": ["Kiwi : 1", "Pomme : 1", "Menthe : 4 feuilles"], "instructions": "Extraire kiwi + pomme + menthe." }
+  ],
+
+  "summer": [
+    { "type": "healthy", "name": "Jus pastèque-menthe", "calories": 90, "ingredients": ["Pastèque : 200g", "Menthe : 6 feuilles"], "instructions": "Passer pastèque + menthe." },
+    { "type": "healthy", "name": "Jus melon-pomme-citron vert", "calories": 110, "ingredients": ["Melon : 150g", "Pomme : 1/2", "Citron vert : 1 c.à.c"], "instructions": "Extraire melon + pomme, ajouter citron vert." },
+    { "type": "healthy", "name": "Jus ananas-citron-curcuma", "calories": 120, "ingredients": ["Ananas : 150g", "Citron : 1 c.à.c", "Curcuma frais : 1 cm"], "instructions": "Passer tous les ingrédients à l’extracteur." },
+    { "type": "healthy", "name": "Jus mangue-pêche-citron", "calories": 135, "ingredients": ["Mangue : 80g", "Pêche : 1/2", "Citron : 1 c.à.c"], "instructions": "Presser mangue + pêche, ajouter citron." },
+    { "type": "plaisir", "name": "Jus tropical coco-ananas-mangue", "calories": 160, "ingredients": ["Ananas : 100g", "Mangue : 60g", "Eau de coco : 50ml"], "instructions": "Extraire fruits puis ajouter eau de coco." }
+  ],
+
+  "autumn": [
+    { "type": "healthy", "name": "Jus poire-pomme-cannelle", "calories": 130, "ingredients": ["Poire : 1", "Pomme : 1/2", "Cannelle : 1 pincée"], "instructions": "Passer poire + pomme, ajouter cannelle." },
+    { "type": "healthy", "name": "Jus raisin-pomme-citron", "calories": 115, "ingredients": ["Raisin : 120g", "Pomme : 1/2", "Citron : 1 c.à.c"], "instructions": "Extraire raisins + pomme, ajouter citron." },
+    { "type": "healthy", "name": "Jus betterave-pomme-citron", "calories": 125, "ingredients": ["Betterave : 1 petite", "Pomme : 1/2", "Citron : 1 c.à.c"], "instructions": "Extraire betterave + pomme, finir par citron." },
+    { "type": "plaisir", "name": "Jus pomme-vanille", "calories": 140, "ingredients": ["Pomme : 2", "Vanille : 1 c.à.c"], "instructions": "Presser pommes puis vanille." },
+    { "type": "healthy", "name": "Jus carotte-poire-orange", "calories": 120, "ingredients": ["Carotte : 1", "Poire : 1/2", "Orange : 1/2"], "instructions": "Extraire carotte + poire + orange." }
+  ],
+
+  "winter": [
+    { "type": "healthy", "name": "Jus orange-carotte-gingembre", "calories": 120, "ingredients": ["Orange : 1", "Carotte : 1", "Gingembre : 1 cm"], "instructions": "Presser tous les ingrédients." },
+    { "type": "healthy", "name": "Jus pomme-orange-cannelle", "calories": 130, "ingredients": ["Pomme : 1", "Orange : 1", "Cannelle : 1 pincée"], "instructions": "Extraire pomme + orange, ajouter cannelle." },
+    { "type": "healthy", "name": "Jus betterave-clémentine", "calories": 125, "ingredients": ["Betterave : 1 petite", "Clémentines : 2"], "instructions": "Extraire betterave + clémentines." },
+    { "type": "plaisir", "name": "Jus poire-orange-vanille", "calories": 150, "ingredients": ["Poire : 1", "Orange : 1", "Vanille : 1 c.à.c"], "instructions": "Passer poire + orange + vanille." },
+    { "type": "healthy", "name": "Jus kiwi-orange-pomme", "calories": 115, "ingredients": ["Kiwi : 1", "Orange : 1/2", "Pomme : 1/2"], "instructions": "Extraire kiwi + pomme + orange." }
+  ],
+
+  "_meta": {
+    "healthy_ratio": 0.8,
+    "plaisir_ratio": 0.2,
+    "total_recipes": 25
+  }
+}
