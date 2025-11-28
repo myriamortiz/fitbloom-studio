@@ -1,12 +1,17 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FitBloom Studio – Food Universe</title>
 
-  <link rel="stylesheet" href="style.css">
+  <title>Food Universe – FitBloom Studio</title>
 
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png" />
+</head>
+
+<body class="page-food">
+  
   <!-- Icône -->
   <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png" />
 </head>
@@ -15,15 +20,15 @@
 
   <!-- HEADER -->
   <header class="fbs-header">
-    <a href="index.html" class="back-btn" style="color: var(--fbs-rose-clair); font-size: 1rem;">← Retour</a>
+    <a href="index.html" class="back-btn">← Retour</a>
 
     <div class="fbs-logo-container" style="margin-top: 1rem;">
-      <img src="assets/logo/logo-fbs-light.png" class="fbs-logo" alt="logo FBS">
+      <img src="assets/logo/logo-fbs-light.png" class="fbs-logo" alt="logo" />
     </div>
 
     <div class="fbs-title">
       <h1>Food Universe</h1>
-      <p>Menus • Brunch • Collations • Dîners • Jus</p>
+      <p>Planner hebdo • Brunch • Collation • Dîner • Jus</p>
     </div>
   </header>
 
@@ -35,9 +40,10 @@
     <button class="tab-btn" data-target="jus">🧃 Jus</button>
   </div>
 
-  <!-- CONTENU -->
-  <main id="recipes-container" class="page-food"></main>
+   <!-- CONTENU HEBDO -->
+  <main id="week-container" class="week-wrapper"></main>
 
   <script src="food.js"></script>
 </body>
 </html>
+ 
