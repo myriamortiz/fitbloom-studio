@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FitBloom Studio – Food Universe</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="food.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Universe – FitBloom Studio</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="food-page">
+<body class="page-food">
 
-  <header class="food-header">
-    <h1>🍱 Food Universe</h1>
+  <header class="fbs-header">
+    <div class="fbs-logo">
+      <img src="assets/logo/logo-fbs-light.png" alt="FitBloom Studio" />
+    </div>
+    <h1>Food Universe</h1>
     <p class="subtitle">Menus • Recettes • Inspiration</p>
   </header>
 
+  <!-- ONGLET NAVIGATION -->
   <div class="food-tabs">
-    <button class="tab-btn active" data-target="brunch">Brunch</button>
-    <button class="tab-btn" data-target="collation">Collations</button>
-    <button class="tab-btn" data-target="diner">Diners</button>
-    <button class="tab-btn" data-target="jus">Jus & Extracteurs</button>
+    <button class="tab-btn active" data-target="brunch">🥞 Brunch</button>
+    <button class="tab-btn" data-target="collation">🍓 Collation</button>
+    <button class="tab-btn" data-target="diner">🍽️ Dîner</button>
+    <button class="tab-btn" data-target="jus">🧃 Jus</button>
   </div>
 
-  <section id="recipes-container" class="recipes-container">
-    <p class="loading">Chargement des recettes...</p>
-  </section>
+  <!-- CONTENEUR DES RECETTES -->
+  <main id="recipes-container" class="recipes-wrapper">
+    <p class="loading">Chargement...</p>
+  </main>
 
+  <script src="food.js"></script>
 </body>
 </html>
