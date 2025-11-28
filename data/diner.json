@@ -1,0 +1,91 @@
+{
+  "permanent": [
+    { "type": "healthy", "name": "Poulet rôti citron-romarin & riz", "calories": 480, "ingredients": ["Poulet : 150g","Citron : 1 c.à.c","Romarin : 1 c.à.c","Riz cuit : 120g"], "instructions": "Rôtir poulet avec citron et romarin. Servir avec riz." },
+    { "type": "healthy", "name": "Saumon grillé & légumes vapeur", "calories": 460, "ingredients": ["Saumon : 140g","Brocoli : 120g","Carotte : 1"], "instructions": "Griller saumon. Cuire légumes vapeur." },
+    { "type": "healthy", "name": "Crevettes ail-persil & quinoa", "calories": 470, "ingredients": ["Crevettes : 150g","Ail : 1 gousse","Persil : 1 c.à.s","Quinoa cuit : 120g"], "instructions": "Poêler crevettes ail. Ajouter persil, servir avec quinoa." },
+    { "type": "plaisir", "name": "Pad thaï GF sauce coco citron", "calories": 520, "ingredients": ["Nouilles riz : 100g","Crevettes : 120g","Coco : 40ml","Citron vert : 1 c.à.c"], "instructions": "Cuire nouilles, poêler crevettes, mélanger avec sauce coco-citron." },
+    { "type": "healthy", "name": "Curry doux pois chiches & épinards", "calories": 480, "ingredients": ["Pois chiches : 150g","Épinards : 100g","Coco : 60ml"], "instructions": "Cuire pois chiches + coco, ajouter épinards." },
+    { "type": "healthy", "name": "Dinde grillée & purée patate douce", "calories": 460, "ingredients": ["Dinde : 150g","Patate douce : 250g"], "instructions": "Griller dinde. Servir avec purée de patate douce." },
+    { "type": "plaisir", "name": "Burger GF maison & potatoes", "calories": 540, "ingredients": ["Pain GF : 1","Steak dinde : 120g","Tomate : 2 tranches","Pommes de terre : 200g"], "instructions": "Assembler burger. Cuire potatoes au four." },
+    { "type": "healthy", "name": "Poisson blanc au four citron-curcuma", "calories": 430, "ingredients": ["Poisson blanc : 150g","Citron : 1 c.à.c","Curcuma : 1 c.à.c"], "instructions": "Cuire poisson au four avec citron-curcuma." },
+    { "type": "healthy", "name": "Riz sauté légumes & œuf", "calories": 460, "ingredients": ["Riz froid : 140g","Légumes variés : 120g","Œuf : 1"], "instructions": "Sauter riz + légumes + œuf." },
+    { "type": "healthy", "name": "Tacos GF poulet & salsa maison", "calories": 470, "ingredients": ["Tortillas GF : 2","Poulet : 120g","Tomate : 1","Citron vert : 1 c.à.c"], "instructions": "Garnir tortillas avec poulet + salsa." },
+    { "type": "plaisir", "name": "Gnocchis GF sauce coco-tomate", "calories": 520, "ingredients": ["Gnocchis GF : 150g","Coco : 50ml","Tomates concassées : 150g"], "instructions": "Cuire gnocchis. Mélanger coco + tomate." },
+    { "type": "healthy", "name": "Tofu croustillant & riz sauté", "calories": 450, "ingredients": ["Tofu : 150g","Riz cuit : 120g","Ail : 1 gousse"], "instructions": "Poêler tofu croustillant. Ajouter riz sauté." },
+    { "type": "healthy", "name": "Soupe thaï coco-citronnelle", "calories": 430, "ingredients": ["Coco : 100ml","Citronnelle : 1","Légumes variés : 150g"], "instructions": "Faire mijoter coco + citronnelle + légumes." },
+    { "type": "healthy", "name": "Bœuf haché & haricots verts sautés", "calories": 470, "ingredients": ["Bœuf 5% : 120g","Haricots verts : 150g"], "instructions": "Poêler bœuf, ajouter haricots." },
+    { "type": "healthy", "name": "Poisson grillé & salade fraîcheur", "calories": 430, "ingredients": ["Poisson blanc : 150g","Salade : 100g","Citron : 1 c.à.c"], "instructions": "Griller poisson. Servir avec salade citronnée." }
+  ],
+
+  "spring": [
+    { "type": "healthy", "name": "Poulet citron-menthe & asperges", "calories": 460, "ingredients": ["Poulet : 150g","Asperges : 150g","Citron : 1 c.à.c","Menthe : 1 c.à.s"], "instructions": "Cuire asperges. Griller poulet. Ajouter citron-menthe." },
+    { "type": "healthy", "name": "Saumon grillé & petits pois citronnés", "calories": 450, "ingredients": ["Saumon : 140g","Petits pois : 120g","Citron : 1 c.à.c"], "instructions": "Griller saumon. Mélanger petits pois + citron." },
+    { "type": "healthy", "name": "Risotto GF asperges & coco", "calories": 480, "ingredients": ["Riz risotto GF : 100g","Asperges : 120g","Coco : 50ml"], "instructions": "Préparer risotto. Ajouter asperges + coco." },
+    { "type": "plaisir", "name": "Pâtes GF pesto basilic maison", "calories": 520, "ingredients": ["Pâtes GF : 100g","Basilic : 1 poignée","Ail : 1 gousse","Huile d’olive : 1 c.à.s"], "instructions": "Mixer pesto. Mélanger aux pâtes." },
+    { "type": "healthy", "name": "Dinde grillée & salade radis-concombre", "calories": 440, "ingredients": ["Dinde : 150g","Radis : 6","Concombre : 1/2"], "instructions": "Griller dinde. Servir avec salade." },
+    { "type": "healthy", "name": "Poisson blanc & asperges vapeur", "calories": 430, "ingredients": ["Poisson blanc : 150g","Asperges : 150g"], "instructions": "Cuire poisson + asperges vapeur." },
+    { "type": "healthy", "name": "Curry vert coco-petits pois", "calories": 470, "ingredients": ["Coco : 80ml","Petits pois : 120g","Pâte curry vert : 1 c.à.c"], "instructions": "Cuire coco + curry vert + petits pois." },
+    { "type": "plaisir", "name": "Pizza GF chèvre vegan-miel", "calories": 540, "ingredients": ["Pâte GF : 1","Chèvre vegan : 60g","Miel : 1 c.à.c"], "instructions": "Cuire pizza garnie." },
+    { "type": "healthy", "name": "Riz sauté asperges & citron", "calories": 450, "ingredients": ["Riz froid : 120g","Asperges : 100g","Citron : 1 c.à.c"], "instructions": "Sauter riz + asperges + citron." },
+    { "type": "healthy", "name": "Tofu grillé & salade printanière", "calories": 460, "ingredients": ["Tofu : 150g","Fèves : 100g","Menthe : 1 c.à.s"], "instructions": "Griller tofu. Mélanger salade + menthe." },
+    { "type": "healthy", "name": "Bœuf grillé & salade fraîche au citron", "calories": 470, "ingredients": ["Bœuf : 120g","Salade : 100g","Citron : 1 c.à.c"], "instructions": "Griller bœuf. Servir avec salade." },
+    { "type": "healthy", "name": "Soupe printanière pois-coco", "calories": 430, "ingredients": ["Petits pois : 150g","Coco : 60ml"], "instructions": "Mixer pois + coco." },
+    { "type": "healthy", "name": "Poisson poêlé & radis croquants", "calories": 440, "ingredients": ["Poisson : 150g","Radis : 6","Citron : 1 c.à.c"], "instructions": "Poêler poisson. Servir avec radis." },
+    { "type": "healthy", "name": "Quinoa citronné & poulet grillé", "calories": 470, "ingredients": ["Quinoa cuit : 120g","Poulet : 150g","Citron : 1 c.à.c"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Riz aux herbes & crevettes grillées", "calories": 480, "ingredients": ["Riz cuit : 120g","Crevettes : 120g","Herbes : 1 c.à.s"], "instructions": "Mélanger riz + crevettes + herbes." }
+  ],
+
+  "summer": [
+    { "type": "healthy", "name": "Poulet grillé & salade melon-concombre", "calories": 450, "ingredients": ["Poulet : 150g","Melon : 100g","Concombre : 1/2"], "instructions": "Griller poulet, servir avec salade fraîche." },
+    { "type": "healthy", "name": "Saumon grillé & salsa mangue", "calories": 470, "ingredients": ["Saumon : 140g","Mangue : 80g","Citron vert : 1 c.à.c"], "instructions": "Griller saumon, servir avec salsa." },
+    { "type": "healthy", "name": "Tofu grillé & riz coco-lime", "calories": 460, "ingredients": ["Tofu : 150g","Riz cuit : 120g","Citron vert : 1 c.à.c","Coco : 40ml"], "instructions": "Griller tofu. Mélanger riz + coco + citron vert." },
+    { "type": "plaisir", "name": "Pâtes GF tomates-basilic & coco", "calories": 520, "ingredients": ["Pâtes GF : 100g","Tomates : 150g","Coco : 40ml","Basilic : 1 c.à.s"], "instructions": "Mélanger pâtes + sauce." },
+    { "type": "healthy", "name": "Poisson grillé & légumes d’été", "calories": 440, "ingredients": ["Poisson blanc : 150g","Courgette : 1","Tomate : 1"], "instructions": "Griller poisson + légumes." },
+    { "type": "healthy", "name": "Dinde grillée & salade pastèque-menthe", "calories": 450, "ingredients": ["Dinde : 150g","Pastèque : 120g","Menthe : 1 c.à.s"], "instructions": "Griller dinde. Servir avec salade." },
+    { "type": "healthy", "name": "Crevettes grillées & citron vert", "calories": 460, "ingredients": ["Crevettes : 150g","Citron vert : 1 c.à.c"], "instructions": "Griller crevettes + citron vert." },
+    { "type": "plaisir", "name": "Pizza GF tomate-mozza vegan", "calories": 540, "ingredients": ["Pâte GF : 1","Mozza vegan : 60g","Tomates : 1"], "instructions": "Cuire pizza." },
+    { "type": "healthy", "name": "Riz sauté courgette & citron vert", "calories": 450, "ingredients": ["Riz froid : 120g","Courgette : 1/2","Citron vert : 1 c.à.c"], "instructions": "Sauter riz + légumes." },
+    { "type": "healthy", "name": "Tofu & légumes grillés", "calories": 470, "ingredients": ["Tofu : 150g","Aubergine : 1/2","Courgette : 1/2"], "instructions": "Griller tofu + légumes." },
+    { "type": "healthy", "name": "Quinoa d’été poulet & citron vert", "calories": 460, "ingredients": ["Quinoa cuit : 120g","Poulet : 150g","Citron vert : 1 c.à.c"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Bœuf grillé & concombre citronné", "calories": 470, "ingredients": ["Bœuf : 120g","Concombre : 1/2","Citron : 1 c.à.c"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Poêlée courgette-tomate & riz", "calories": 450, "ingredients": ["Riz cuit : 120g","Courgette : 1","Tomate : 1"], "instructions": "Sauter légumes + riz." },
+    { "type": "healthy", "name": "Crevettes grillées & salade fraîche", "calories": 460, "ingredients": ["Crevettes : 150g","Salade : 100g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Poisson citron-ail & riz", "calories": 450, "ingredients": ["Poisson blanc : 150g","Citron : 1 c.à.c","Ail : 1 gousse"], "instructions": "Cuire poisson citron-ail." }
+  ],
+
+  "autumn": [
+    { "type": "healthy", "name": "Poulet rôti potimarron & romarin", "calories": 480, "ingredients": ["Poulet : 150g","Potimarron : 150g","Romarin : 1 c.à.c"], "instructions": "Rôtir poulet + potimarron." },
+    { "type": "healthy", "name": "Saumon grillé & purée potiron", "calories": 460, "ingredients": ["Saumon : 140g","Potiron : 150g"], "instructions": "Cuire saumon. Mixer potiron." },
+    { "type": "healthy", "name": "Curry potiron pois chiches", "calories": 480, "ingredients": ["Pois chiches : 150g","Potiron : 120g","Coco : 50ml"], "instructions": "Cuire potiron + pois chiches + coco." },
+    { "type": "plaisir", "name": "Pâtes GF potiron-sauge", "calories": 520, "ingredients": ["Pâtes GF : 100g","Potiron : 100g","Sauce coco : 40ml"], "instructions": "Mélanger pâtes + sauce." },
+    { "type": "healthy", "name": "Dinde grillée & poireaux fondants", "calories": 440, "ingredients": ["Dinde : 150g","Poireaux : 150g"], "instructions": "Poêler poireaux + dinde." },
+    { "type": "healthy", "name": "Poisson blanc & patate douce rôtie", "calories": 460, "ingredients": ["Poisson : 150g","Patate douce : 200g"], "instructions": "Cuire poisson + patate douce." },
+    { "type": "healthy", "name": "Risotto GF potiron & coco", "calories": 470, "ingredients": ["Riz risotto GF : 100g","Potiron : 120g","Coco : 40ml"], "instructions": "Cuire risotto + potiron." },
+    { "type": "plaisir", "name": "Pizza GF potiron-noix", "calories": 540, "ingredients": ["Pâte GF : 1","Potiron : 100g","Noix : 10g"], "instructions": "Cuire pizza." },
+    { "type": "healthy", "name": "Riz sauté poireaux & curcuma", "calories": 450, "ingredients": ["Riz froid : 120g","Poireaux : 100g","Curcuma : 1 c.à.c"], "instructions": "Sauter riz + poireaux + curcuma." },
+    { "type": "healthy", "name": "Tofu grillé & champignons", "calories": 470, "ingredients": ["Tofu : 150g","Champignons : 120g"], "instructions": "Griller tofu + champignons." },
+    { "type": "healthy", "name": "Quinoa automnal dinde & pomme", "calories": 460, "ingredients": ["Quinoa cuit : 120g","Dinde : 150g","Pomme : 1/2"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Bœuf haché & purée potimarron", "calories": 470, "ingredients": ["Bœuf : 120g","Potimarron : 120g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Soupe potiron-coco", "calories": 430, "ingredients": ["Potiron : 150g","Coco : 60ml"], "instructions": "Mixer." },
+    { "type": "healthy", "name": "Poisson rôti & légumes d’automne", "calories": 440, "ingredients": ["Poisson : 150g","Carotte : 1","Poireau : 1"], "instructions": "Cuire au four." },
+    { "type": "healthy", "name": "Riz automnal champignons & thym", "calories": 450, "ingredients": ["Riz cuit : 120g","Champignons : 120g","Thym : 1 c.à.c"], "instructions": "Assembler." }
+  ],
+
+  "winter": [
+    { "type": "healthy", "name": "Poulet rôti légumes racines", "calories": 480, "ingredients": ["Poulet : 150g","Carotte : 1","Panais : 1"], "instructions": "Cuire ensemble au four." },
+    { "type": "healthy", "name": "Saumon grillé & poireaux", "calories": 460, "ingredients": ["Saumon : 140g","Poireaux : 150g"], "instructions": "Griller saumon, poêler poireaux." },
+    { "type": "healthy", "name": "Tofu coco-curry & riz chaud", "calories": 470, "ingredients": ["Tofu : 150g","Coco : 60ml","Riz chaud : 120g"], "instructions": "Cuire tofu + coco + riz." },
+    { "type": "plaisir", "name": "Pâtes GF crème coco & champignons", "calories": 520, "ingredients": ["Pâtes GF : 100g","Champignons : 120g","Coco : 50ml"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Poisson blanc & purée carotte-coco", "calories": 440, "ingredients": ["Poisson blanc : 150g","Carottes : 200g","Coco : 40ml"], "instructions": "Cuire poisson + purée." },
+    { "type": "healthy", "name": "Dinde grillée & riz chaud", "calories": 450, "ingredients": ["Dinde : 150g","Riz chaud : 120g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Curry coco-légumes racines", "calories": 480, "ingredients": ["Panais : 1","Carotte : 1","Coco : 60ml"], "instructions": "Cuire légumes + coco." },
+    { "type": "plaisir", "name": "Pizza GF hiver (champignons & coco)", "calories": 540, "ingredients": ["Pâte GF : 1","Champignons : 120g","Coco : 40ml"], "instructions": "Cuire pizza." },
+    { "type": "healthy", "name": "Riz sauté carotte-curcuma", "calories": 450, "ingredients": ["Riz froid : 120g","Carotte : 1","Curcuma : 1 pincée"], "instructions": "Cuire ensemble." },
+    { "type": "healthy", "name": "Tofu grillé & chou rôti", "calories": 460, "ingredients": ["Tofu : 150g","Chou : 120g"], "instructions": "Griller tofu + chou." },
+    { "type": "healthy", "name": "Quinoa hiver poulet & orange", "calories": 470, "ingredients": ["Quinoa : 120g","Poulet : 150g","Orange : 1/2"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Bœuf haché & poireaux fondants", "calories": 470, "ingredients": ["Bœuf : 120g","Poireaux : 120g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Soupe carotte-coco gingembre", "calories": 430, "ingredients": ["Carottes : 150g","Coco : 60ml","Gingembre : 1 pincée"], "instructions": "Mixer." },
+    { "type": "healthy", "name": "Poisson rôti & purée céleri", "calories": 440, "ingredients": ["Poisson : 150g","Céleri : 150g"], "instructions": "Assembler." },
+    { "type": "healthy", "name": "Riz sauté hivernal noix-orange", "calories": 460, "ingredients": ["Riz : 120g","Orange : 1/2","Noix : 10g"], "instructions": "Assembler." }
+  ]
+}
