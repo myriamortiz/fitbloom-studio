@@ -716,3 +716,25 @@ h1 {
   transform: scale(1.05); /* Légère augmentation de la taille au survol */
   box-shadow: 0 0 26px var(--fbs-glow); /* Ombre accentuée */
 }
+/* Titre "Séance du jour" */
+.session-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--fbs-rose-pale); /* Changer la couleur à rose pâle pour plus de lisibilité */
+  margin-bottom: 1rem;
+}
+
+/* Titre "Full Body" et autres titres de séances */
+#today-session-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--fbs-rose-clair); /* Couleur claire pour une bonne lisibilité */
+  text-transform: uppercase; /* Mettre en majuscule pour un look plus dynamique */
+}
+
+/* Texte des autres sections */
+.session-duration {
+  font-size: 1.2rem;
+  color: var(--fbs-rose-clair); /* Une couleur claire pour les textes descriptifs */
+  margin-bottom: 1rem;
+}
