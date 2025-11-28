@@ -199,3 +199,140 @@ details p,
 details ul {
   color: #e9dddd;
 }
+/* -------------------------------------- */
+/*   STYLES DES SOUS-PAGES (Food, etc)    */
+/* -------------------------------------- */
+
+/* Fond & ambiance identique à l'accueil */
+.page-food {
+  background-image: url("./black.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 1.5rem;
+  color: var(--fbs-rose-clair);
+}
+
+/* HEADER SOUS-PAGE */
+.sub-header {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 1.5rem;
+  top: 2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--fbs-rose-clair);
+  background: rgba(255,255,255,0.06);
+  padding: 0.4rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--fbs-rose-clair);
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+}
+
+.sub-logo {
+  width: 80px;
+  filter: drop-shadow(0 0 12px var(--fbs-glow));
+  margin-bottom: 0.4rem;
+}
+
+.sub-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--fbs-rose-pale);
+}
+
+.sub-subtitle {
+  font-size: 0.9rem;
+  color: var(--fbs-taupe-rose);
+  margin-top: 0.3rem;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 1.5rem 0 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--fbs-rose-clair);
+  color: var(--fbs-rose-clair);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 0.95rem;
+}
+
+.tab-btn.active {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* BLOCS SAISONS */
+.season-block {
+  margin-bottom: 2rem;
+}
+
+.season-title {
+  color: var(--fbs-rose-clair);
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.7rem;
+  text-align: left;
+}
+
+/* CARDS RECETTES */
+.recipe-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--fbs-rose-clair);
+  padding: 1rem 1.2rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  color: var(--fbs-rose-pale);
+}
+
+.recipe-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--fbs-rose-pale);
+}
+
+.recipe-card .cal {
+  font-size: 0.85rem;
+  color: var(--fbs-taupe-rose);
+  margin-top: 0.2rem;
+}
+
+details {
+  margin-top: 0.7rem;
+}
+
+details summary {
+  color: var(--fbs-rose-clair);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+details p,
+details ul {
+  color: var(--fbs-rose-clair);
+  margin-top: 0.5rem;
+}
