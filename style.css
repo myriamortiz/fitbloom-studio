@@ -9,7 +9,6 @@
   --fbs-taupe-rose: #d9c0b8;
   --fbs-glow: rgba(196, 138, 138, 0.45);
 
-  /* verre fumé premium */
   --fbs-glass: rgba(255, 255, 255, 0.12);
   --fbs-border: rgba(255, 255, 255, 0.28);
 }
@@ -18,11 +17,14 @@
 /*                         RESET                           */
 /* ------------------------------------------------------ */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* ------------------------------------------------------ */
+/*                   FOND GLOBAL (TOUTES PAGES)           */
+/* ------------------------------------------------------ */
 body {
   background: var(--fbs-noir);
   background-image: url("./black.jpg");
@@ -31,122 +33,28 @@ body {
   background-attachment: fixed;
 
   color: white;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* ------------------------------------------------------ */
-/*                      PAGE ACCUEIL                       */
-/* ------------------------------------------------------ */
-
-.fbs-header {
-  padding: 2rem 1.5rem 1rem;
-  text-align: center;
-}
-
-.fbs-logo-container {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 1rem;
-  filter: drop-shadow(0 0 18px var(--fbs-glow));
-}
-
-.fbs-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.fbs-title h1 {
-  font-size: 1.9rem;
-  color: var(--fbs-rose-pale);
-}
-
-.fbs-title p {
-  margin-top: 0.3rem;
-  color: var(--fbs-taupe-rose);
-  font-size: 0.95rem;
-}
-
-.fbs-welcome {
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
-  color: var(--fbs-rose-clair);
-}
-
-.fbs-welcome span {
-  font-size: 1.2rem;
-  color: var(--fbs-rose-pale);
-}
-
-/* Boutons accueil */
-.fbs-main {
-  flex: 1;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.fbs-btn {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.2rem 1.4rem;
-  border-radius: 40px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  color: white;
-  text-align: center;
-  box-shadow: 0 0 18px var(--fbs-glow);
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.fbs-btn:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 26px var(--fbs-glow);
-}
-
-.fbs-btn .label {
-  display: block;
-  font-size: 1.1rem;
-  margin-top: 0.3rem;
-  color: var(--fbs-rose-pale);
-}
-
-.fbs-btn .sub {
-  font-size: 0.85rem;
-  margin-top: 0.1rem;
-  color: var(--fbs-taupe-rose);
-}
-
-/* Footer */
-.fbs-footer {
-  padding: 1rem 1.5rem 1.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.footer-link {
-  background: none;
-  border: none;
-  color: var(--fbs-rose-clair);
-  font-size: 0.9rem;
-  cursor: pointer;
+/* AUCUNE PAGE NE DOIT RECouvrir le body */
+.page-fitness,
+.page-food,
+.page-selfcare {
+  background: transparent !important;
 }
 
 /* ------------------------------------------------------ */
-/*                       HEADER GÉNÉRAL                   */
+/*                     HEADER GÉNÉRAL                     */
 /* ------------------------------------------------------ */
-
 .sub-header {
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
   position: relative;
+  background: none !important;
 }
 
 .back-btn {
@@ -168,25 +76,70 @@ body {
   color: #1a1a1a;
 }
 
-.sub-title {
+.header-center .logo-small {
+  width: 80px;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 15px var(--fbs-glow));
+}
+
+.header-center h1 {
   font-size: 1.7rem;
-  font-weight: 700;
+  margin-top: 0.6rem;
   color: var(--fbs-rose-pale);
 }
 
-.sub-subtitle {
-  font-size: 0.9rem;
-  color: var(--fbs-taupe-rose);
-  margin-top: 0.3rem;
+/* ------------------------------------------------------ */
+/*                     CARDS GÉNÉRALES                    */
+/* ------------------------------------------------------ */
+.card {
+  background: var(--fbs-glass) !important;
+  border: 1.5px solid var(--fbs-border);
+  border-radius: 30px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 0 25px var(--fbs-glow);
+  backdrop-filter: blur(6px);
+  margin-bottom: 1.5rem;
+  color: var(--fbs-rose-pale);
+}
+
+.big-card {
+  padding: 2.2rem 1.8rem;
 }
 
 /* ------------------------------------------------------ */
-/*                   FOOD UNIVERSE                        */
+/*                   BOUTONS GÉNÉRAUX                     */
+/* ------------------------------------------------------ */
+.btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid var(--fbs-rose-clair);
+  color: var(--fbs-rose-pale);
+  padding: 0.9rem 1.4rem;
+  border-radius: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px var(--fbs-glow);
+}
+
+.main-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1.5px solid var(--fbs-rose-clair) !important;
+  color: var(--fbs-rose-pale) !important;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------ */
+/*                    FOOD UNIVERSE                       */
 /* ------------------------------------------------------ */
 .page-food {
   padding: 1.5rem;
-  min-height: 100vh;
-  color: var(--fbs-rose-clair);
 }
 
 .food-day {
@@ -200,30 +153,13 @@ body {
 
 .food-day h2 {
   color: var(--fbs-rose-pale);
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
 }
 
 /* ------------------------------------------------------ */
 /*                 FITNESS UNIVERSE (CORRIGÉ)             */
 /* ------------------------------------------------------ */
-
 .page-fitness {
   padding: 1.5rem;
-  min-height: 100vh;
-  color: var(--fbs-rose-clair);
-  background-image: url("./assets/black.jpg");
-}
-
-/* Cards Fitness */
-.page-fitness .card {
-  background: var(--fbs-glass) !important;
-  border: 1.5px solid var(--fbs-border) !important;
-  border-radius: 30px;
-  padding: 2rem 1.6rem;
-  box-shadow: 0 0 25px var(--fbs-glow) !important;
-  backdrop-filter: blur(6px) !important;
-  margin-bottom: 1.5rem;
 }
 
 /* Séance du jour */
@@ -240,7 +176,7 @@ body {
   margin-top: 0.2rem;
 }
 
-/* Planning hebdo */
+/* Planning */
 .week-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -248,14 +184,14 @@ body {
 }
 
 .day-bubble {
-  background: rgba(255, 255, 255, 0.10) !important;
-  border: 1.5px solid var(--fbs-border) !important;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1.5px solid var(--fbs-border);
   border-radius: 50%;
   height: 75px;
   width: 75px;
   color: var(--fbs-rose-pale);
   text-align: center;
-  box-shadow: 0 0 15px var(--fbs-glow) !important;
+  box-shadow: 0 0 15px var(--fbs-glow);
 
   display: flex;
   flex-direction: column;
@@ -267,12 +203,4 @@ body {
   font-size: 0.7rem;
   color: var(--fbs-rose-clair);
   opacity: 0.8;
-}
-
-/* Bouton Boost me */
-.page-fitness .main-btn {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1.5px solid var(--fbs-rose-clair) !important;
-  color: var(--fbs-rose-pale) !important;
-  box-shadow: 0 0 18px var(--fbs-glow) !important;
 }
