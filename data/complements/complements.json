@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "categories_count": 6,
+    "season_count": 4,
+    "version": "1.0",
+    "updated": "2025-11-28"
+  },
+
+  "stress_sommeil": [
+    { "name": "Ashwagandha KSM-66", "benefit": "Stress, anxiété, sommeil profond" },
+    { "name": "Magnésium Bisglycinate", "benefit": "Système nerveux, détente musculaire" },
+    { "name": "Mélatonine faible dose", "benefit": "Aide à l’endormissement" },
+    { "name": "Rhodiole Rosea", "benefit": "Stress + énergie mentale" },
+    { "name": "Passiflore", "benefit": "Apaisement, nervosité" },
+    { "name": "L-Théanine", "benefit": "Calme sans somnolence" }
+  ],
+
+  "hormones_endometriose": [
+    { "name": "Oméga-3 EPA/DHA", "benefit": "Anti-inflammatoire, douleurs endo" },
+    { "name": "Curcuma + pipérine", "benefit": "Inflammation chronique" },
+    { "name": "Vitamine D3 + K2", "benefit": "Immunité + hormones" },
+    { "name": "NAC (N-acétylcystéine)", "benefit": "Inflammation + fertilité + endométriose" },
+    { "name": "B6 P-5-P", "benefit": "Équilibre hormonal + SPM" },
+    { "name": "Zinc", "benefit": "Hormones + peau" }
+  ],
+
+  "digestion": [
+    { "name": "Probiotiques féminins", "benefit": "Microbiote + digestion + immunité" },
+    { "name": "Desmodium", "benefit": "Détox foie, drainage" },
+    { "name": "Bardane", "benefit": "Peau + foie + drainage" },
+    { "name": "Gingembre", "benefit": "Digestion + anti-nausée" },
+    { "name": "Artichaut", "benefit": "Foie + digestion lente" },
+    { "name": "Curcuma", "benefit": "Ballonnements, inflammation" }
+  ],
+
+  "energie": [
+    { "name": "Vitamine C naturelle (acérola)", "benefit": "Énergie + immunité" },
+    { "name": "Rhodiole", "benefit": "Énergie + concentration" },
+    { "name": "Fer bisglycinate", "benefit": "Énergie + anémie" },
+    { "name": "Coenzyme Q10", "benefit": "Vitalité cellulaire" },
+    { "name": "Ginseng", "benefit": "Vitalité physique" },
+    { "name": "B12 méthylée", "benefit": "Énergie + système nerveux" }
+  ],
+
+  "poids": [
+    { "name": "Chrome", "benefit": "Sucre, fringales" },
+    { "name": "Thé vert EGCG", "benefit": "Métabolisme + brûle graisse léger" },
+    { "name": "Glucomannane", "benefit": "Satiété naturelle" },
+    { "name": "L-carnitine", "benefit": "Énergie + métabolisme graisses" },
+    { "name": "Garcinia Cambogia", "benefit": "Appétit + cravings" },
+    { "name": "Magnésium", "benefit": "Régulation glycémie" }
+  ],
+
+  "cheveux_ongles": [
+    { "name": "Collagène marin peptides", "benefit": "Peau + ongles + cheveux" },
+    { "name": "Biotine B8", "benefit": "Chute de cheveux" },
+    { "name": "Zinc", "benefit": "Cuir chevelu + ongles" },
+    { "name": "MSM soufre organique", "benefit": "Volume + croissance" },
+    { "name": "Vitamine E", "benefit": "Antioxydant beauté" },
+    { "name": "Spiruline", "benefit": "Énergie + cheveux + ongles" }
+  ],
+
+  "saisons": {
+    "hiver": [
+      { "name": "Vitamine D3 + K2", "benefit": "Immunité + énergie" },
+      { "name": "Oméga-3", "benefit": "Inflammation + peau sèche" },
+      { "name": "Magnésium glycinate", "benefit": "Système nerveux" },
+      { "name": "Ashwagandha", "benefit": "Stress + sommeil" }
+    ],
+    "printemps": [
+      { "name": "Bardane", "benefit": "Détox peau" },
+      { "name": "Desmodium", "benefit": "Détox foie" },
+      { "name": "Curcuma", "benefit": "Inflammation" },
+      { "name": "Zinc", "benefit": "Peau + hormones" }
+    ],
+    "ete": [
+      { "name": "Électrolytes", "benefit": "Hydratation" },
+      { "name": "Vitamine E", "benefit": "Peau + antioxydant" },
+      { "name": "Collagène marin", "benefit": "Peau + ongles" },
+      { "name": "Vitamine C", "benefit": "Soleil + immunité" }
+    ],
+    "automne": [
+      { "name": "Acérola", "benefit": "Immunité" },
+      { "name": "Rhodiole", "benefit": "Énergie" },
+      { "name": "NAC", "benefit": "Anti-inflammation (endométriose)" },
+      { "name": "Probiotiques", "benefit": "Immunité + digestion" }
+    ]
+  }
+}
