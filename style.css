@@ -211,8 +211,8 @@ body {
 .page-fitness {
   padding: 1.5rem;
   min-height: 100vh;
-  background: transparent !important;
   color: var(--fbs-rose-clair);
+  background-image: url("./assets/black.jpg");
 }
 
 /* Cards Fitness */
