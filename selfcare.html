@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FitBloom Studio – Selfcare Universe</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Icône -->
+  <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png">
+</head>
+
+<body class="page-selfcare">
+
+  <!-- HEADER -->
+  <header class="sub-header">
+    <a href="index.html" class="back-btn">← Retour</a>
+
+    <div class="header-center">
+      <img src="assets/logo/logo-fbs-light.png" class="sub-logo" alt="logo FBS">
+      <h1 class="sub-title">Selfcare Universe</h1>
+      <p class="sub-subtitle">Émotions • Habitudes • Rituels • To-do • Compléments</p>
+    </div>
+  </header>
+
+  <!-- SECTION ÉMOTIONS -->
+  <section class="sc-section">
+    <h2 class="sc-title">💖 Mon émotion du jour</h2>
+    <div id="emotion-container" class="emotion-container"></div>
+  </section>
+
+  <!-- SECTION HABITUDES -->
+  <section class="sc-section">
+    <h2 class="sc-title">📌 Mes habitudes du jour</h2>
+    <div id="habits-container" class="habits-container"></div>
+  </section>
+
+  <!-- SECTION RITUEL -->
+  <section class="sc-section">
+    <h2 class="sc-title">🧘‍♀️ Rituel bien-être</h2>
+    <p id="rituel-container" class="rituel-text"></p>
+  </section>
+
+  <!-- SECTION TO-DO LIST -->
+  <section class="sc-section">
+    <h2 class="sc-title">📝 To-do du jour</h2>
+
+    <div class="todo-add">
+      <input id="todo-input" type="text" placeholder="Ajouter une tâche…">
+      <button onclick="addTodo()" class="todo-add-btn">➕</button>
+    </div>
+
+    <div id="todos-container" class="todos-container"></div>
+  </section>
+
+  <!-- SECTION COMPLÉMENTS -->
+  <section class="sc-section">
+    <h2 class="sc-title">🌿 Mes compléments du moment</h2>
+    <div id="complements-container" class="complements-container"></div>
+  </section>
+
+  <!-- RÉCAP HEBDO -->
+  <section class="sc-section">
+    <h2 class="sc-title">📅 Récap hebdomadaire</h2>
+    <div id="weekly-recap" class="weekly-recap"></div>
+  </section>
+
+  <!-- JS -->
+  <script src="selfcare.js"></script>
+
+</body>
+</html>
