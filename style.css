@@ -307,6 +307,4 @@ body {
 .view-recipe:hover {
   background: var(--fbs-rose-clair);
   color: #1a1a1a;
-  justify-content: center;
-  align-items: center
 }
