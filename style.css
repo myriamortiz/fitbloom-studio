@@ -900,14 +900,18 @@ h1 {
 /*               COMPLÉMENTS                     */
 /* --------------------------------------------- */
 
-.complements-container {
+.complement-category {
   display: flex;
-  flex-direction: column;  /* Aligne les éléments verticalement */
-  justify-content: center; /* Centre horizontalement */
-  align-items: center;     /* Centre verticalement */
-  margin: 20px 0;          /* Espacement autour */
+  flex-direction: column;
+  align-items: center; /* Centre les éléments à l'intérieur de chaque catégorie */
+  margin: 20px 0; /* Espacement entre les catégories */
 }
 
+.complements-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet d'afficher les catégories sur plusieurs lignes si besoin */
+  justify-content: center; /* Centre les catégories horizontalement */
+  gap: 30px; /* Espacement entre les catégories */
 }
 
 .comp-card {
