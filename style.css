@@ -544,7 +544,7 @@ h2 {
   background-repeat: repeat;
   background-attachment: fixed;
 
-  color: #d9c0b8;
+  color: var(--fbs-taupe-rose);
   font-family: "Inter", system-ui, sans-serif;
   display: flex;
   flex-direction: column;
@@ -574,7 +574,7 @@ h2 {
 
 .back-btn:hover {
   background: var(--fbs-rose-clair);
-  color: #d9c0b8;
+  color: var(--fbs-taupe-rose);
 }
 
 .sub-logo {
