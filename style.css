@@ -11,29 +11,6 @@
 }
 
 /* ------------------------------------------------------ */
-/*                         RESET                           */
-/* ------------------------------------------------------ */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: var(--fbs-noir);
-  background-image: url("./black.jpg");
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
-
-  color: white;
-  font-family: "Inter", system-ui, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ------------------------------------------------------ */
 /*                      PAGE ACCUEIL                       */
 /* ------------------------------------------------------ */
 .fbs-header {
