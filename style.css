@@ -135,3 +135,77 @@ body {
   font-size: 0.9rem;
   cursor: pointer;
 }
+/* ---------------------------------------
+   FOOD PAGE
+-----------------------------------------*/
+
+.food-page {
+  padding: 20px;
+  color: #f5e6e0;
+}
+
+.food-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.food-header h1 {
+  font-size: 2rem;
+  color: #f0d0c4;
+}
+
+.food-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffddd2;
+  border: 1px solid #d3a39a;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #d3a39a;
+  color: #1a1a1a;
+}
+
+.season-title {
+  margin: 20px 0 10px;
+  font-size: 1.4rem;
+  color: #ffceb5;
+  border-bottom: 1px solid #d3a39a;
+}
+
+.recipe-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid #d3a39a;
+  padding: 15px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
+
+.recipe-card h3 {
+  margin: 0 0 8px;
+  color: #ffd9c1;
+}
+
+.recipe-card details {
+  margin-top: 8px;
+}
+
+.recipe-card summary {
+  cursor: pointer;
+  color: #f5c4b5;
+}
+
+.cal {
+  color: #f9b9a4;
+  margin-bottom: 8px;
+}
