@@ -202,3 +202,12 @@ function generateWeeklyRecap() {
 }
 
 generateWeeklyRecap();
+
+// -------------------------------
+// BOUTON RETOUR
+// -------------------------------
+const backButton = document.querySelector(".back-btn");
+
+backButton.addEventListener("click", () => {
+  window.history.back(); // Retour à la page précédente dans l'historique du navigateur
+});
