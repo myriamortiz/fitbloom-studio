@@ -209,5 +209,9 @@ generateWeeklyRecap();
 const backButton = document.querySelector(".back-btn");
 
 backButton.addEventListener("click", () => {
-  window.history.back(); // Retour à la page précédente dans l'historique du navigateur
+  if (window.history.length > 1) {
+    window.history.back();  // Retourner à la page précédente
+  } else {
+    window.location.href = "index.html";  // Rediriger vers la page d'accueil si pas d'historique
+  }
 });
