@@ -418,3 +418,109 @@ body {
 .see-btn:hover {
   transform: scale(1.04);
 }
+/* PALETTE FITBLOOM STUDIO (fond noir + rose poudré foncé) */
+:root {
+  --fbs-noir: #000000;
+  --fbs-rose-fonce: #c48a8a;     
+  --fbs-rose-clair: #eedbd1;
+  --fbs-rose-pale: #f2d5c8;
+  --fbs-taupe-rose: #d9c0b8;
+  --fbs-glow: rgba(196, 138, 138, 0.45); /* Glow medium */
+}
+
+body {
+  background: var(--fbs-noir);
+  background-image: url("./black.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: white;
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER SOUS-PAGE */
+.sub-header {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 1.5rem;
+  top: 2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--fbs-rose-clair);
+  background: rgba(255,255,255,0.06);
+  padding: 0.4rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--fbs-rose-clair);
+  transition: 0.2s;
+}
+
+.sub-logo {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 0 18px var(--fbs-glow));
+}
+
+.sub-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--fbs-rose-pale);
+}
+
+.sub-subtitle {
+  font-size: 0.9rem;
+  color: var(--fbs-taupe-rose);
+  margin-top: 0.3rem;
+}
+
+.fitness-week {
+  padding: 1.5rem;
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.4rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tab-btn.active {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.fitness-day {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--fbs-rose-clair);
+  padding: 1.5rem;
+  border-radius: 40px;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  text-align: center;
+}
+
+.fitness-meal-title {
+  color: var(--fbs-rose-clair);
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
+}
+
+.fitness-meal-text {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
