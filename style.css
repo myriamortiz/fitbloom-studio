@@ -941,12 +941,12 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .back-btn {
   background-color: transparent;
-  border: none;
+  border: 1.5px solid var(--fbs-border);
   color: var(--fbs-rose-pale);
   font-size: 16px;
   cursor: pointer;
