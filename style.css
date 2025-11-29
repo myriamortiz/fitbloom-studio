@@ -25,7 +25,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
-  
+
   color: white;
   font-family: "Inter", system-ui, sans-serif;
   min-height: 100vh;
@@ -34,7 +34,7 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*                         HEADER                          */
+/*                      PAGE ACCUEIL                       */
 /* ------------------------------------------------------ */
 .fbs-header {
   padding: 2rem 1.5rem 1rem;
@@ -65,9 +65,62 @@ body {
   font-size: 0.95rem;
 }
 
-/* ------------------------------------------------------ */
-/*                         FOOTER                          */
-/* ------------------------------------------------------ */
+.fbs-welcome {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  color: var(--fbs-rose-clair);
+}
+
+.fbs-welcome span {
+  font-size: 1.2rem;
+  color: var(--fbs-rose-pale);
+}
+
+/* BOUTONS ACCUEIL */
+.fbs-main {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.fbs-btn {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.4rem;
+  border-radius: 40px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.fbs-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 26px var(--fbs-glow);
+}
+
+.fbs-btn .icon {
+  font-size: 1.3rem;
+}
+
+.fbs-btn .label {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+  color: var(--fbs-rose-pale);
+}
+
+.fbs-btn .sub {
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+  color: var(--fbs-taupe-rose);
+}
+
 .fbs-footer {
   padding: 1rem 1.5rem 1.5rem;
   display: flex;
@@ -84,175 +137,170 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*                     PAGE FOOD (WEEKLY PLANNER)         */
+/*                 PAGE FITNESS                           */
 /* ------------------------------------------------------ */
-.page-food {
-  padding: 1.5rem;
+.page-fitness {
+  padding: 2rem;
   min-height: 100vh;
-  color: var(--fbs-rose-clair);
+  background: var(--fbs-noir);
+  background-image: url("./black.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: white;
+  font-family: "Inter", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Ajout d'un espace global entre les éléments */
 }
 
-/* -------- Header -------- */
+/* HEADER */
 .sub-header {
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 2rem; /* Ajout d'un espace sous le header */
 }
 
 .back-btn {
-  position: absolute;
-  left: 1.5rem;
-  top: 2rem;
+  font-size: 1.2rem;
   text-decoration: none;
-  font-size: 1rem;
   color: var(--fbs-rose-clair);
   background: rgba(255,255,255,0.06);
-  padding: 0.4rem 0.9rem;
+  padding: 0.5rem 1rem;
   border-radius: 12px;
   border: 1.5px solid var(--fbs-rose-clair);
-  transition: 0.2s;
+  margin-right: 1rem; /* Un peu d'espace à droite du bouton Retour */
 }
 
-.back-btn:hover {
-  background: var(--fbs-rose-clair);
-  color: #1a1a1a;
-}
-
-.sub-logo {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 1rem;
-  filter: drop-shadow(0 0 18px var(--fbs-glow));
-}
-
-.sub-title {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--fbs-rose-pale);
-}
-
-.sub-subtitle {
-  font-size: 0.9rem;
-  color: var(--fbs-taupe-rose);
-  margin-top: 0.3rem;
-}
-
-/* -------- WEEK LAYOUT -------- */
-.food-week {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-top: 1rem;
-}
-
-.food-day {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 40px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  box-shadow: 0 0 18px var(--fbs-glow);
+.header-center {
+  flex: 1;
   text-align: center;
 }
 
-.food-day h2 {
+h1 {
+  margin: 0;
+  font-size: 2rem; /* Taille du titre légèrement plus grande */
   color: var(--fbs-rose-pale);
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
 }
 
-/* -------- Text inside each day -------- */
-.food-meal-title {
-  color: var(--fbs-rose-clair);
-  font-size: 1.1rem;
-  margin-top: 0.8rem;
+/* SESSION DU JOUR */
+.session {
+  margin-bottom: 3rem; /* Espacement supplémentaire pour séparer des autres éléments */
 }
 
-.food-meal-text {
-  color: #fff;
-  margin-top: 0.2rem;
+.session-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--fbs-rose-pale); /* Changer la couleur à rose pâle pour plus de lisibilité */
+  margin-bottom: 1rem;
+}
+
+.session-duration {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--fbs-rose-clair); /* Une couleur claire pour les textes descriptifs */
+}
+
+.main-btn {
+  background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+  border-radius: 50px; /* Coins arrondis comme les bulles */
+  padding: 15px 30px; /* Taille du bouton */
+  text-align: center;
+  font-size: 1.1rem; /* Taille du texte */
+  color: var(--fbs-rose-pale);
+  border: 1.5px solid var(--fbs-rose-pale); /* Bordure de couleur */
+  box-shadow: 0 0 18px var(--fbs-glow); /* Ombre pour l'effet lumineux */
+  cursor: pointer;
+  transition: 0.3s ease; /* Transition pour l'animation au survol */
+  display: inline-block; /* S'assurer que le bouton est sur une seule ligne */
+  margin-top: 2rem; /* Espace au-dessus */
+}
+
+/* Effet au survol du bouton */
+.main-btn:hover {
+  background: var(--fbs-rose-pale); /* Changement de couleur au survol */
+  color: #1a1a1a; /* Changement de couleur du texte */
+  transform: scale(1.05); /* Légère augmentation de la taille au survol */
+  box-shadow: 0 0 26px var(--fbs-glow); /* Ombre accentuée */
+}
+
+/* PLANNING HEBDOMADAIRE */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.day-bubble {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 20px;
   font-size: 1rem;
+  text-align: center;
+  color: var(--fbs-rose-pale);
+  box-shadow: 0 0 15px var(--fbs-glow);
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-/* -------- Jus option -------- */
-.jus-toggle {
-  margin-top: 0.8rem;
-  font-size: 1.1rem;
-  color: var(--fbs-taupe-rose);
-  text-align: center
+.day-bubble:hover {
+  transform: scale(1.05);
 }
 
-.jus-toggle input {
-  margin-right: 6px;
-  text-align: center
-}
-
-/* ------------------------------------------------------ */
-/* POPUP RECETTE PREMIUM FBS                              */
-/* ------------------------------------------------------ */
-.modal.hidden {
-  display: none;
-}
-
+/* MODAL */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 2rem;
   z-index: 9999;
 }
 
 .modal-content {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   border: 1.5px solid var(--fbs-rose-clair);
   padding: 2rem 1.6rem;
   border-radius: 30px;
-  width: 100%;
-  max-width: 420px;
+  width: 90%;
+  max-width: 500px;
   color: var(--fbs-rose-pale);
   text-align: center;
   box-shadow: 0 0 30px var(--fbs-glow);
   backdrop-filter: blur(6px);
 }
 
+/* Fermeture modal */
 .modal-close {
   border: none;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--fbs-rose-pale);
-  padding: 0.4rem 0.7rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
 
-.modal-cal {
-  color: var(--fbs-taupe-rose);
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+/* EXERCICES */
+#exercices-list .exercice {
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--fbs-glow);
 }
 
-.view-recipe {
-  margin-top: 0.6rem;
-  background: rgba(255,255,255,0.05);
-  border: 1.2px solid var(--fbs-rose-clair);
-  color: var(--fbs-rose-pale);
-  padding: 0.4rem 1rem;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.view-recipe:hover {
-  background: var(--fbs-rose-clair);
-  color: #1a1a1a;
+#exercices-list .exercice p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
 }
