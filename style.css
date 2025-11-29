@@ -418,30 +418,21 @@ body {
 .see-btn:hover {
   transform: scale(1.04);
 }
-/* PALETTE FITBLOOM STUDIO (fond noir + rose poudré foncé) */
-:root {
-  --fbs-noir: #000000;
-  --fbs-rose-fonce: #c48a8a;     
-  --fbs-rose-clair: #eedbd1;
-  --fbs-rose-pale: #f2d5c8;
-  --fbs-taupe-rose: #d9c0b8;
-  --fbs-glow: rgba(196, 138, 138, 0.45); /* Glow medium */
-}
-
-body {
-  background: var(--fbs-noir);
+/* Style général de la page */
+.page-fitness {
+  background-color: var(--fbs-noir);
   background-image: url("./black.jpg");
   background-size: cover;
-  background-repeat: repeat;
   background-attachment: fixed;
   color: white;
   font-family: "Inter", system-ui, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
 
-/* HEADER SOUS-PAGE */
+/* HEADER */
 .sub-header {
   text-align: center;
   padding-top: 2rem;
@@ -449,78 +440,124 @@ body {
   position: relative;
 }
 
-.back-btn {
-  position: absolute;
-  left: 1.5rem;
-  top: 2rem;
-  text-decoration: none;
-  font-size: 1rem;
-  color: var(--fbs-rose-clair);
-  background: rgba(255,255,255,0.06);
-  padding: 0.4rem 0.9rem;
-  border-radius: 12px;
-  border: 1px solid var(--fbs-rose-clair);
-  transition: 0.2s;
-}
-
 .sub-logo {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto 1rem;
   filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
 
 .sub-title {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--fbs-rose-pale);
 }
 
 .sub-subtitle {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--fbs-taupe-rose);
   margin-top: 0.3rem;
 }
 
-.fitness-week {
-  padding: 1.5rem;
-}
-
-.tab-btn {
+/* BOUTONS */
+.main-btn {
   background: rgba(255, 255, 255, 0.05);
-  padding: 1.2rem 1.4rem;
+  padding: 1.2rem 1.5rem;
   border-radius: 40px;
   border: 1.5px solid var(--fbs-rose-clair);
   color: white;
   text-align: center;
   box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
 }
 
-.tab-btn.active {
-  background: var(--fbs-rose-clair);
-  color: #1a1a1a;
-  font-weight: 600;
+.main-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 26px var(--fbs-glow);
 }
 
-.fitness-day {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--fbs-rose-clair);
-  padding: 1.5rem;
-  border-radius: 40px;
-  box-shadow: 0 0 18px var(--fbs-glow);
+.main-btn:active {
+  transform: scale(0.98);
+}
+
+/* GRID SEMAINE */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.day-bubble {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
   text-align: center;
-}
-
-.fitness-meal-title {
-  color: var(--fbs-rose-clair);
+  border-radius: 20px;
+  color: var(--fbs-rose-pale);
+  font-weight: 600;
   font-size: 1.1rem;
-  margin-top: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: 0.3s ease;
 }
 
-.fitness-meal-text {
-  color: #fff;
-  font-size: 1rem;
-  margin-top: 0.2rem;
+.day-bubble:hover {
+  background-color: var(--fbs-rose-clair);
+  color: #1a1a1a;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: var(--fbs-noir);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  color: var(--fbs-rose-clair);
+}
+
+.modal-close {
+  padding: 0.8rem 1.5rem;
+  margin-top: 1.5rem;
+  background-color: var(--fbs-rose-clair);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modal-close:hover {
+  background-color: var(--fbs-rose-pale);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Exercice du jour */
+.exercice {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--fbs-rose-clair);
+}
+
+.exercice p {
+  margin: 0;
+  color: var(--fbs-rose-pale);
 }
