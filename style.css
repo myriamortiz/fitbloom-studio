@@ -1,5 +1,5 @@
 /* ------------------------------------------------------ */
-/*                 PALETTE DE COULEURS                    */
+/*                 PALETTE FITBLOOM STUDIO                */
 /* ------------------------------------------------------ */
 :root {
   --fbs-noir: #000000;
@@ -20,9 +20,9 @@
 }
 
 body {
-  background-color: var(--fbs-noir);
+  background: var(--fbs-noir);
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -40,21 +40,22 @@ body {
   padding: 1rem 0;
 }
 
-.header-center {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.sub-header .back-btn {
+  background: none;
+  color: var(--fbs-rose-clair);
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.sub-header .back-btn:hover {
+  color: var(--fbs-rose-pale);
 }
 
 .header-center h1 {
   font-size: 1.8rem;
   color: var(--fbs-rose-pale);
-}
-
-.logo-small {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
 }
 
 /* ------------------------------------------------------ */
@@ -73,38 +74,6 @@ body {
   color: var(--fbs-rose-pale);
   margin-bottom: 1rem;
   text-align: center;
-}
-
-/* ------------------------------------------------------ */
-/*                      TRACKER                           */
-/* ------------------------------------------------------ */
-.tracker-container {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.tracker-card {
-  background-color: var(--fbs-rose-fonce);
-  color: var(--fbs-rose-pale);
-  padding: 1.5rem;
-  border-radius: 12px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 0 15px var(--fbs-glow);
-  transition: 0.3s ease;
-}
-
-.tracker-card:hover {
-  background-color: var(--fbs-rose-pale);
-  color: var(--fbs-rose-fonce);
-  transform: scale(1.05);
-}
-
-.tracker-card h3 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
 }
 
 /* ------------------------------------------------------ */
@@ -172,7 +141,7 @@ body {
 }
 
 /* ------------------------------------------------------ */
-/*                    SELFCARE                           */
+/*                      SELFCARE                           */
 /* ------------------------------------------------------ */
 .emotion-container {
   display: flex;
@@ -281,6 +250,38 @@ body {
   background-color: var(--fbs-rose-pale);
   color: var(--fbs-rose-fonce);
   transform: scale(1.1);
+}
+
+/* ------------------------------------------------------ */
+/*                      TRACKER                           */
+/* ------------------------------------------------------ */
+.tracker-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tracker-card {
+  background-color: var(--fbs-rose-fonce);
+  color: var(--fbs-rose-pale);
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 15px var(--fbs-glow);
+  transition: 0.3s ease;
+}
+
+.tracker-card:hover {
+  background-color: var(--fbs-rose-pale);
+  color: var(--fbs-rose-fonce);
+  transform: scale(1.05);
+}
+
+.tracker-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 /* ------------------------------------------------------ */
