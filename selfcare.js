@@ -35,39 +35,65 @@ const todoInput = document.getElementById("todo-input");
 const addTodoButton = document.getElementById("add-todo");
 const todosContainer = document.getElementById("todos-container");
 
+// Ajouter une nouvelle tâche
 addTodoButton.addEventListener("click", () => {
   const todoText = todoInput.value.trim();
   if (todoText) {
     const todoItem = document.createElement("div");
     todoItem.className = "todo-item";
 
+    // Ajouter une date d'expiration (minuit le jour suivant)
+    const expirationDate = new Date();
+    expirationDate.setHours(24, 0, 0, 0); // Minuit du jour suivant
+
     todoItem.innerHTML = `
       <label><input type="checkbox" class="todo-checkbox"> ${todoText}</label>
     `;
     todosContainer.appendChild(todoItem);
 
-    todoInput.value = "";
+    todoInput.value = ""; // Clear input
     saveTodos();
   }
 });
 
+// Sauvegarder les tâches dans localStorage
 function saveTodos() {
   const todoItems = document.querySelectorAll(".todo-item");
   const todos = [];
   todoItems.forEach(item => {
     const text = item.querySelector("label").textContent.trim();
     const checked = item.querySelector(".todo-checkbox").checked;
-    todos.push({ text, checked });
+
+    // Ajouter la date d'expiration
+    const expirationDate = new Date();
+    expirationDate.setHours(24, 0, 0, 0); // Expiration à minuit
+
+    todos.push({
+      text,
+      checked,
+      expirationDate: expirationDate.toISOString() // Sauvegarder la date d'expiration
+    });
   });
 
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+// Charger les tâches depuis localStorage et supprimer celles expirées
 function loadTodos() {
   const todos = JSON.parse(localStorage.getItem("todos")) || [];
+  const currentDate = new Date();
+
+  // Parcourir les tâches et vérifier si elles sont expirées
   todos.forEach(todo => {
     const todoItem = document.createElement("div");
     todoItem.className = "todo-item";
+
+    const expirationDate = new Date(todo.expirationDate);
+
+    // Si la tâche est expirée (au-delà de minuit le jour suivant), ne pas l'afficher
+    if (currentDate >= expirationDate) {
+      return; // Ne pas ajouter la tâche si elle est expirée
+    }
 
     todoItem.innerHTML = `
       <label><input type="checkbox" class="todo-checkbox" ${todo.checked ? "checked" : ""}> ${todo.text}</label>
@@ -76,6 +102,7 @@ function loadTodos() {
   });
 }
 
+// Charger les tâches dès que la page se charge
 loadTodos();
 
 // -------------------------------
