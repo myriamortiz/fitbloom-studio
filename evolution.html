@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivi d'Évolution</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header avec le bouton retour -->
+  <div class="sub-header">
+    <button class="back-btn">← Retour</button>
+    <div class="header-center">
+      <h1>Suivi d'Évolution</h1>
+    </div>
+  </div>
+
+  <!-- Tableau des mensurations -->
+  <section>
+    <h2>Mes mensurations</h2>
+    <table id="measurements-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Poids</th>
+          <th>Tour de taille</th>
+          <th>Poitrine</th>
+          <th>Hanche</th>
+          <th>Bras</th>
+          <th>Cuisse</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Lignes de données (ajoutées dynamiquement par JS) -->
+      </tbody>
+    </table>
+    <button id="add-measurement">Ajouter mes mensurations</button>
+  </section>
+
+  <!-- Tableau des moments optimisés pour manger -->
+  <section>
+    <h2>Optimisation des moments de repas</h2>
+    <table id="meal-times-table">
+      <thead>
+        <tr>
+          <th>Jour</th>
+          <th>Moment optimal pour le déjeuner</th>
+          <th>Moment optimal pour le dîner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Lignes de données (ajoutées dynamiquement par JS) -->
+      </tbody>
+    </table>
+    <button id="add-meal-times">Ajouter les horaires de repas</button>
+  </section>
+
+  <script src="evolution.js"></script>
+</body>
+</html>
