@@ -1,77 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FitBloom - Fitness</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitBloom Studio – Fitness Universe</title>
+
   <link rel="stylesheet" href="style.css">
-  <script src="fitness.js" defer></script>
+  <link rel="icon" type="image/png" href="assets/logo/logo-fbs-light.png" />
 </head>
 
 <body class="page-fitness">
   <!-- HEADER -->
-  <div class="sub-header">
-    <button class="back-btn">← Retour</button>
+  <header class="sub-header">
+    <a href="index.html" class="back-btn">← Retour</a>
+
     <div class="header-center">
-      <img src="assets/logo/logo-fbs-light.png" class="logo-small" alt="FitBloom">
-      <h1>Fitness Universe</h1>
+      <img src="assets/logo/logo-fbs-light.png" class="sub-logo" alt="logo FBS">
+      <h1 class="sub-title">Fitness Universe</h1>
+      <p class="sub-subtitle">Entraînements • Routine • Suivi</p>
+    </div>
+  </header>
+
+  <!-- CONTENU SEMAINE -->
+  <main id="fitness-week" class="fitness-week"></main>
+
+  <!-- BOUTON LISTE EXERCICES -->
+  <button id="open-exercise" class="exercise-btn">🏋️ Liste des Exercices</button>
+
+  <!-- POPUP LISTE EXERCICES -->
+  <div id="exercise-popup" class="popup">
+    <div class="popup-content">
+      <h2>🏋️ Liste des Exercices</h2>
+      <ul id="exercise-list"></ul>
+      <button id="close-exercise" class="close-btn">Fermer</button>
     </div>
   </div>
 
-  <!-- PAGE CONTENT -->
-  <div class="container">
-    <!-- Séance du jour -->
-    <div class="session">
-      <h2 class="session-title">Séance du jour</h2>
-      <p class="session-duration">Durée: <span id="today-session-duration"></span></p>
-      <p id="today-session-name"></p>
-
-      <!-- Bouton "Voir ma séance" -->
-      <button class="main-btn" id="voir-seance">
-        Voir ma séance
-      </button>
-    </div>
-
-    <!-- PLANIFICATION DE LA SEMAINE (exemple) -->
-    <div class="week-grid">
-      <div class="day-bubble" id="day-1">
-        <span>Lundi</span>
-      </div>
-      <div class="day-bubble" id="day-2">
-        <span>Mardi</span>
-      </div>
-      <div class="day-bubble" id="day-3">
-        <span>Mercredi</span>
-      </div>
-      <div class="day-bubble" id="day-4">
-        <span>Jeudi</span>
-      </div>
-      <div class="day-bubble" id="day-5">
-        <span>Vendredi</span>
-      </div>
-      <div class="day-bubble" id="day-6">
-        <span>Samedi</span>
-      </div>
-      <div class="day-bubble" id="day-7">
-        <span>Dimanche</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL (invisible par défaut) -->
-  <div class="modal hidden">
-    <div class="modal-content">
-      <h2>Exercices du Jour</h2>
-
-      <!-- Liste des exercices, remplie dynamiquement -->
-      <div id="exercices-list">
-        <!-- Les exercices seront affichés ici -->
-      </div>
-
-      <button class="modal-close">Fermer</button>
-    </div>
-  </div>
+  <!-- JS -->
+  <script src="fitness.js"></script>
 </body>
-
 </html>
