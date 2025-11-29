@@ -172,13 +172,6 @@ body {
   color: #1a1a1a;
 }
 
-.sub-logo {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 1rem;
-  filter: drop-shadow(0 0 18px var(--fbs-glow));
-}
-
 .sub-title {
   font-size: 1.7rem;
   font-weight: 700;
@@ -442,14 +435,6 @@ body {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
   position: relative;
-}
-
-/* HEADER SOUS-PAGE */
-.sub-header .sub-logo {
-  width: 110px;  /* Réduit la taille à celle du logo sur la page d'accueil */
-  height: 110px;
-  margin: 0 auto 1rem;
-  filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
 
 .sub-title {
