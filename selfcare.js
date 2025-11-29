@@ -123,33 +123,67 @@ rituelText.textContent = rituels[dayOfWeek % rituels.length];
 // -------------------------------
 // COMPLÉMENTS ALIMENTAIRES (exemple simple)
 // -------------------------------
-const complementsContainer = document.getElementById("complements-container");
 
-const complements = {
-  "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
-  "Immunité": ["Vitamine C", "Probiotiques", "Curcuma", "Zinc"],
-  "Digestion": ["Ginger", "Fenouil", "Charbon actif"],
-  "Énergie": ["Ginseng", "Spiruline", "Maca"]
+const complementsBySeason = {
+  printemps: {
+    "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
+    "Immunité": ["Vitamine C", "Probiotiques", "Curcuma", "Zinc"],
+    "Digestion": ["Ginger", "Fenouil", "Charbon actif"],
+    "Énergie": ["Ginseng", "Spiruline", "Maca"]
+  },
+  été: {
+    "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
+    "Immunité": ["Vitamine D", "Probiotiques", "Curcuma", "Zinc"],
+    "Digestion": ["Ginger", "Menthe", "Fenouil"],
+    "Énergie": ["Ginseng", "Spiruline", "Maca"]
+  },
+  automne: {
+    "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
+    "Immunité": ["Vitamine C", "Probiotiques", "Curcuma", "Zinc"],
+    "Digestion": ["Ginger", "Fenouil", "Charbon actif"],
+    "Énergie": ["Ginseng", "Spiruline", "Maca"]
+  },
+  hiver: {
+    "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
+    "Immunité": ["Vitamine D", "Probiotiques", "Curcuma", "Zinc"],
+    "Digestion": ["Ginger", "Fenouil", "Charbon actif"],
+    "Énergie": ["Ginseng", "Spiruline", "Maca"]
+  }
 };
 
-function displayComplements() {
-  for (const category in complements) {
+function getSeason() {
+  const month = new Date().getMonth(); // Mois actuel (0 = janvier, 11 = décembre)
+  
+  if (month >= 2 && month <= 4) return "printemps"; // Mars à mai
+  if (month >= 5 && month <= 7) return "été";     // Juin à août
+  if (month >= 8 && month <= 10) return "automne"; // Septembre à novembre
+  return "hiver"; // Décembre à février
+}
+
+function updateComplements() {
+  const season = getSeason();  // Obtenir la saison actuelle
+  const seasonComplements = complementsBySeason[season]; // Compléments en fonction de la saison
+
+  const complementsContainer = document.getElementById("complements-container");
+  complementsContainer.innerHTML = "";  // Vider le container actuel
+
+  // Pour chaque catégorie de compléments, ajouter les éléments à afficher
+  for (const category in seasonComplements) {
     const categoryDiv = document.createElement("div");
     categoryDiv.className = "complement-category";
 
     categoryDiv.innerHTML = `
       <h3>${category}</h3>
       <ul>
-        ${complements[category]
-          .map(item => `<li>${item}</li>`)
-          .join("")}
+        ${seasonComplements[category].map(item => `<li>${item}</li>`).join("")}
       </ul>
     `;
     complementsContainer.appendChild(categoryDiv);
   }
 }
 
-displayComplements();
+// Mettre à jour les compléments lorsque la page se charge
+updateComplements();
 
 // -------------------------------
 // RECAP DE LA SEMAINE
