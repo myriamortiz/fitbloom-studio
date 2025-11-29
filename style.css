@@ -932,21 +932,21 @@ h1 {
   color: var(--fbs-taupe-rose);
   font-size: 0.9rem;
 }
-
 /* ------------------------------------------------------ */
 /*                      PAGE D'ÉVOLUTION                  */
 /* ------------------------------------------------------ */
+
 .sub-header {
   padding: 2rem 1.5rem 1rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .back-btn {
   background-color: transparent;
-  border: 1.5px solid var(--fbs-border);
+  border: none;
   color: var(--fbs-rose-pale);
   font-size: 16px;
   cursor: pointer;
