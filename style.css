@@ -441,8 +441,8 @@ body {
 }
 
 .sub-logo {
-  width: 120px;
-  height: 120px;
+  width: 100px;  /* Taille du logo réduite */
+  height: 100px; /* Taille du logo réduite */
   margin: 0 auto 1rem;
   filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
@@ -450,12 +450,12 @@ body {
 .sub-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--fbs-rose-pale);
+  color: var(--fbs-rose-pale); /* Couleur du texte uniformisée */
 }
 
 .sub-subtitle {
   font-size: 1rem;
-  color: var(--fbs-taupe-rose);
+  color: var(--fbs-rose-pale); /* Couleur du texte uniformisée */
   margin-top: 0.3rem;
 }
 
