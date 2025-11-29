@@ -441,8 +441,8 @@ body {
 }
 
 .sub-logo {
-  width: 100px;  /* Taille du logo réduite */
-  height: 100px; /* Taille du logo réduite */
+  width: 80px;  /* Taille du logo réduite */
+  height: 80px; /* Taille du logo réduite */
   margin: 0 auto 1rem;
   filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
@@ -465,7 +465,7 @@ body {
   padding: 1.2rem 1.5rem;
   border-radius: 40px;
   border: 1.5px solid var(--fbs-rose-clair);
-  color: white;
+  color: var(--fbs-rose-pale);
   text-align: center;
   box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
