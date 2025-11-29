@@ -946,3 +946,168 @@ h1 {
   font-size: 1rem;
   color: var(--fbs-rose-pale);
 }
+/* Body & Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e; /* Couleur de fond sombre */
+  color: #f1f1f1; /* Couleur du texte */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+h1, h2 {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+}
+
+.back-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header-center h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: #f5a623;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #d88b2c;
+}
+/* Style des tableaux */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #f5a623;
+}
+
+th {
+  background-color: #444;
+}
+
+td {
+  background-color: #555;
+}
+
+button#add-measurement {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #f5a623;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button#add-measurement:hover {
+  background-color: #d88b2c;
+}
+/* Style du tableau des repas */
+#meal-times-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #f5a623;
+}
+
+th {
+  background-color: #444;
+}
+
+td {
+  background-color: #555;
+}
+
+button#add-meal-times {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #f5a623;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button#add-meal-times:hover {
+  background-color: #d88b2c;
+}
+/* Bordures et ombres des éléments */
+section {
+  width: 90%;
+  max-width: 1200px;
+  background-color: #222;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #f5a623;
+}
+/* Réactivité : rendre les tableaux plus larges sur les petits écrans */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .sub-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
