@@ -441,8 +441,8 @@ body {
 }
 
 .sub-logo {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   margin: 0 auto 1rem;
   filter: drop-shadow(0 0 18px var(--fbs-glow));;
 }
