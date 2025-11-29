@@ -418,6 +418,7 @@ body {
 .see-btn:hover {
   transform: scale(1.04);
 }
+
 /* Style général de la page */
 .page-fitness {
   background-color: var(--fbs-noir);
@@ -432,7 +433,7 @@ body {
   padding: 2rem;
 }
 
-/* -------- Header -------- */
+/* HEADER */
 .sub-header {
   text-align: center;
   padding-top: 2rem;
@@ -440,42 +441,24 @@ body {
   position: relative;
 }
 
-.back-btn {
-  position: absolute;
-  left: 1.5rem;
-  top: 2rem;
-  text-decoration: none;
-  font-size: 1rem;
-  color: var(--fbs-rose-clair);
-  background: rgba(255,255,255,0.06);
-  padding: 0.4rem 0.9rem;
-  border-radius: 12px;
-  border: 1.5px solid var(--fbs-rose-clair);
-  transition: 0.2s;
-}
-
-.back-btn:hover {
-  background: var(--fbs-rose-clair);
-  color: #1a1a1a;
-}
-
 .sub-logo {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto 1rem;
   filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
 
 .sub-title {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--fbs-rose-pale);
 }
 
 .sub-subtitle {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--fbs-taupe-rose);
   margin-top: 0.3rem;
+}
 
 /* BOUTONS */
 .main-btn {
@@ -483,7 +466,7 @@ body {
   padding: 1.2rem 1.5rem;
   border-radius: 40px;
   border: 1.5px solid var(--fbs-rose-clair);
-  color: var(--fbs-rose-pale);
+  color: white;
   text-align: center;
   box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
