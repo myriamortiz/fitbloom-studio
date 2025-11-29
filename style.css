@@ -428,7 +428,7 @@ body {
   background-image: url("./black.jpg");
   background-size: cover;
   background-attachment: fixed;
-  color: white;
+  color: var(--fbs-rose-pale); /* Uniformisation de la couleur du texte */
   font-family: "Inter", system-ui, sans-serif;
   min-height: 100vh;
   display: flex;
@@ -444,36 +444,25 @@ body {
   position: relative;
 }
 
-.sub-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--fbs-rose-pale); /* Couleur du texte uniformisée */
-}
-
+/* Logo sur la page Fitness : réduit à la même taille que sur les autres pages */
 .sub-logo {
-  width: 110px;
-  height: 110px;
+  width: 80px;  /* Taille réduite du logo (ajustée à ta demande) */
+  height: 80px;
   margin: 0 auto 1rem;
   filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
 
+.sub-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--fbs-rose-pale); /* Couleur uniforme du texte */
+}
+
 .sub-subtitle {
   font-size: 1rem;
-  color: var(--fbs-rose-pale); /* Couleur du texte uniformisée */
+  color: var(--fbs-rose-pale); /* Couleur uniforme du texte */
   margin-top: 0.3rem;
 }
-
-/* PAGE FITNESS */
-.page-fitness {
-  background-image: url("./black.jpg");
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  padding: 1.5rem;
-  color: var(--fbs-rose-pale); /* Uniformisation de la couleur du texte */
-}
-
 /* SESSION DU JOUR */
 .session {
   background: rgba(255, 255, 255, 0.04);
