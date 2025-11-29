@@ -444,9 +444,10 @@ body {
   position: relative;
 }
 
-.sub-logo {
-  width: 90px;  /* Taille du logo réduite à 90px */
-  height: 90px; /* Taille du logo réduite à 90px */
+/* HEADER SOUS-PAGE */
+.sub-header .sub-logo {
+  width: 110px;  /* Réduit la taille à celle du logo sur la page d'accueil */
+  height: 110px;
   margin: 0 auto 1rem;
   filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
