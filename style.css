@@ -419,7 +419,10 @@ body {
   transform: scale(1.04);
 }
 
-/* Style général de la page */
+/* ------------------------------------------------------ */
+/*                 PAGE FITNESS                           */
+/* ------------------------------------------------------ */
+
 .page-fitness {
   background-color: var(--fbs-noir);
   background-image: url("./black.jpg");
@@ -442,8 +445,8 @@ body {
 }
 
 .sub-logo {
-  width: 120px;
-  height: 120px;
+  width: 90px;  /* Taille du logo réduite à 90px */
+  height: 90px; /* Taille du logo réduite à 90px */
   margin: 0 auto 1rem;
   filter: drop-shadow(0 0 18px var(--fbs-glow));
 }
@@ -451,35 +454,71 @@ body {
 .sub-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--fbs-rose-pale);
+  color: var(--fbs-rose-pale); /* Couleur du texte uniformisée */
 }
 
 .sub-subtitle {
   font-size: 1rem;
-  color: var(--fbs-taupe-rose);
+  color: var(--fbs-rose-pale); /* Couleur du texte uniformisée */
   margin-top: 0.3rem;
 }
 
-/* BOUTONS */
+/* PAGE FITNESS */
+.page-fitness {
+  background-image: url("./black.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 1.5rem;
+  color: var(--fbs-rose-pale); /* Uniformisation de la couleur du texte */
+}
+
+/* SESSION DU JOUR */
+.session {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.5rem;
+  border-radius: 40px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 18px var(--fbs-glow);
+  text-align: center;
+}
+
+.session-title {
+  color: var(--fbs-rose-pale);
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.session-duration {
+  color: var(--fbs-rose-clair);
+  font-size: 1.1rem;
+}
+
+/* BUTTON "VOIR MA SÉANCE" */
 .main-btn {
   background: rgba(255, 255, 255, 0.05);
-  padding: 1.2rem 1.5rem;
+  padding: 1.2rem 1.4rem;
   border-radius: 40px;
   border: 1.5px solid var(--fbs-rose-clair);
   color: white;
   text-align: center;
   box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
 }
 
 .main-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0 0 26px var(--fbs-glow);
 }
 
 .main-btn:active {
-  transform: scale(0.98);
+  transform: scale(1);
+}
+
+.main-btn:focus {
+  outline: none;
 }
 
 /* GRID SEMAINE */
@@ -487,47 +526,36 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
-  margin-top: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 .day-bubble {
-  background-color: rgba(255, 255, 255, 0.15);
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  padding: 1.2rem;
   text-align: center;
-  border-radius: 20px;
+  box-shadow: 0 0 18px var(--fbs-glow);
   color: var(--fbs-rose-pale);
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  transition: 0.3s ease;
 }
 
-.day-bubble:hover {
-  background-color: var(--fbs-rose-clair);
-  color: #1a1a1a;
+.day-bubble strong {
+  font-size: 1.2rem;
+  color: var(--fbs-rose-pale);
+}
+
+.day-bubble span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
 
 /* MODAL */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
 .modal-content {
   background-color: var(--fbs-noir);
   padding: 2rem;
   border-radius: 15px;
   max-width: 500px;
-  color: var(--fbs-rose-clair);
+  color: var(--fbs-rose-pale);
 }
 
 .modal-close {
@@ -545,19 +573,7 @@ body {
   background-color: var(--fbs-rose-pale);
 }
 
-.hidden {
-  display: none;
-}
-
-/* Exercice du jour */
-.exercice {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  border: 1px solid var(--fbs-rose-clair);
-}
-
+/* EXERCICES */
 .exercice p {
   margin: 0;
   color: var(--fbs-rose-pale);
