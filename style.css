@@ -878,3 +878,38 @@ button.main-btn:hover {
   color: var(--fbs-rose-pale);
   text-align: center;
 }
+/* SECTION DU JEÛNE INTERMITTENT */
+.intermittent-fasting-section {
+  margin-top: 2rem;
+  color: var(--fbs-rose-pale);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  box-shadow: 0 0 18px var(--fbs-glow);
+}
+
+#fasting-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+#fasting-table th, #fasting-table td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--fbs-rose-clair);
+}
+
+#fasting-table th {
+  background-color: var(--fbs-rose-pale);
+  color: #1a1a1a;
+  font-size: 1.1rem;
+}
+
+#fasting-table td {
+  color: #fff;
+}
+
+#fasting-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
