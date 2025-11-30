@@ -162,9 +162,16 @@ const weeklyRituals = [
   }
 ];
 
-// Calculer la semaine actuelle de l'année
-const weekNumber = Math.floor((new Date().getDate() - 1) / 7);  // On divise les jours de l'année par 7 pour obtenir la semaine
-const ritual = weeklyRituals[weekNumber % weeklyRituals.length];  // Boucle à travers les semaines
+// -------------------------------
+// Calcul de la semaine actuelle
+// -------------------------------
+function getWeekNumber(date) {
+  const startDate = new Date(date.getFullYear(), 0, 1);  // Premier jour de l'année
+  const days = Math.floor((date - startDate) / (24 * 60 * 60 * 1000));  // Nombre de jours écoulés
+  return Math.ceil((days + 1) / 7); // Nombre de la semaine
+}
+
+const currentWeek = getWeekNumber(new Date());  // Calcul de la semaine actuelle
 
 // Afficher le rituel de la semaine
 rituelText.innerHTML = `
