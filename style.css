@@ -490,7 +490,7 @@ body {
   padding: 1.2rem 1.4rem;
   border-radius: 40px;
   border: 1.5px solid var(--fbs-rose-clair);
-  color: white;
+  color: var(--fbs-rose-pale);
   text-align: center;
   box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
