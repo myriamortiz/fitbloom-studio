@@ -102,10 +102,30 @@ const rituelText = document.getElementById("rituel");
 const dayOfWeek = new Date().getDay();  // 0 = Dimanche
 
 const dailyRituals = [
-  "Méditation ou relaxation",
-  "Prendre un bain ou une douche relaxante",
-  "Faire une activité créative (ex: dessin, écriture)",
-  "Faire du yoga ou des étirements"
+      "Chaque matin ou soir, pratique 10 à 20 minutes de yoga doux.",
+      "Prends une douche bien chaude avec des huiles essentielles comme la lavande.",
+      "Choisis une soirée pour déconnecter complètement de tous tes écrans.",
+      "Allonge-toi dans un endroit calme et pratique la relaxation musculaire progressive.",
+      "Utilise une huile ou une crème hydratante pour masser tes mains et poignets tous les soirs.",
+      "Consacre une soirée à un soin du visage relaxant.",
+      "Réveille-toi avec une playlist qui te boostent.",
+      "Bois un verre d'eau chaque matin avec du citron, du gingembre ou des feuilles de menthe.",
+      "Chaque matin, écris une affirmation positive liée à tes objectifs de la semaine.",
+      "Fais une séance de yoga dynamique ou de stretching pendant 30 minutes.",
+      "À la fin de chaque journée, prends 5 minutes pour noter 3 choses que tu as accomplies.",
+      "Chaque soir avant de te coucher, prends quelques minutes pour visualiser tes objectifs.",
+      "Chaque matin, commence ta journée avec un grand verre d'eau tiède citronnée.",
+      "Mange des repas légers et riches en fibres pour favoriser la digestion.",
+      "Pratique une méditation guidée de détox mentale chaque jour.",
+      "Profite d’une séance de sauna ou d’un bain de vapeur.",
+      "Pratique une détox numérique en réduisant ton temps passé sur les écrans.",
+      "Bois une infusion détox chaque jour, comme du thé vert, du pissenlit, de la menthe ou du gingembre.",
+      "Pendant cette semaine, engage-toi dans un acte de gentillesse chaque jour.",
+      "Tous les jours, prends quelques minutes devant un miroir pour regarder ton reflet et te dire des choses positives.",
+      "Chaque jour, pratique une méditation guidée de l’amour de soi.",
+      "Offre-toi un moment de plaisir sans culpabilité.",
+      "Pratique le yoga ou des étirements pour libérer les tensions.",
+      "Avant de t'endormir, prends 5 à 10 minutes pour méditer sur les choses qui te rendent heureuse.",
 ];
 
 rituelText.textContent = dailyRituals[dayOfWeek % dailyRituals.length];
