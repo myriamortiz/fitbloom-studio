@@ -54,6 +54,50 @@ function loadMensurations() {
 loadMensurations();
 
 
+// -------------------------------
+// BOUTON RETOUR
+// -------------------------------
+const backButton = document.querySelector(".back-btn");
+
+if (backButton) {
+  backButton.addEventListener("click", () => {
+    // Vérifie si l'historique du navigateur contient plusieurs pages dans la pile
+    if (window.history.length > 1) {
+      window.history.back();  // Cela revient à la page précédente dans l'historique
+    } else {
+      window.location.href = "index.html";  // Rediriger vers la page d'accueil si pas d'historique
+    }
+  });
+}
+
+
+// -------------------------------
+// GESTION DES MENSURATIONS
+// -------------------------------
+
+function loadMensurations() {
+  const mensurations = JSON.parse(localStorage.getItem("mensurations"));
+  if (mensurations) {
+    const months = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"];
+    months.forEach(month => {
+      const data = mensurations[month.charAt(0).toUpperCase() + month.slice(1)];
+
+      if (data) {
+        document.getElementById(`poids-${month}`).value = data.poids;
+        document.getElementById(`taille-${month}`).value = data.taille;
+        document.getElementById(`poitrine-${month}`).value = data.poitrine;
+        document.getElementById(`hanches-${month}`).value = data.hanches;
+        document.getElementById(`cuisses-${month}`).value = data.cuisses;
+        document.getElementById(`bras-${month}`).value = data.bras;
+      }
+    });
+  }
+}
+
+// Charger les mensurations au chargement de la page
+loadMensurations();
+
+
 <section class="intermittent-fasting-section">
   <h2>Suivi du Jeûne Intermittent (17:7)</h2>
   <p>Voici un tableau adapté à tes horaires de travail en 3x8.</p>
@@ -109,21 +153,7 @@ loadMensurations();
         <td>8H – 16H15</td>
         <td>12H – 19H</td>
         <td>19H – 12H</td>
-      </tr>
-    </tbody>
-  </table>
+      </tr> 
+  </tbody> 
+ </table> 
 </section>
-// Bouton "Retour" pour rediriger vers la page précédente ou la page d'accueil
-const backButton = document.querySelector(".back-btn");
-
-if (backButton) {
-  backButton.addEventListener("click", () => {
-    // Vérifie si l'historique du navigateur contient plusieurs pages dans la pile
-    if (window.history.length > 1) {
-      window.history.back();  // Cela revient à la page précédente dans l'historique
-    } else {
-      window.location.href = "index.html";  // Rediriger vers la page d'accueil si pas d'historique
-    }
-  });
-}
-
