@@ -12,12 +12,12 @@ const addFastButton = document.getElementById("add-fast");
 // Ajouter une entrée de poids
 addWeightButton.addEventListener("click", () => {
   const date = prompt("Entrez la date (format : AAAA-MM-JJ)");
-  const poids = prompt("Entrez votre poids (kg)");
-  const taille = prompt("Entrez votre taille (cm)");
-  const poitrine = prompt("Entrez votre taille (cm)")
-  const hanches = prompt("Entrez vos hanches (cm)");
-  const cuisses = prompt("Entrez votre tour de taille (cm)");
-  const bras = prompt("Entrez votre taille (cm)")
+  const Poids = prompt("Entrez votre poids (kg)");
+  const Taille = prompt("Entrez votre taille (cm)");
+  const Poitrine = prompt("Entrez votre taille (cm)")
+  const Hanches = prompt("Entrez vos hanches (cm)");
+  const Cuisses = prompt("Entrez votre tour de taille (cm)");
+  const Bras = prompt("Entrez votre taille (cm)")
 
   if (date && poids && taille && hanches && tailleT) {
     const row = document.createElement("tr");
