@@ -249,16 +249,28 @@ updateComplements();
 const weeklyRecap = document.getElementById("weekly-recap");
 
 function generateWeeklyRecap() {
+  // Récupérer l'émotion enregistrée
   const emotion = localStorage.getItem("emotion") || "Aucune émotion enregistrée";
+
+  // Récupérer les tâches depuis localStorage
   const todosStatus = JSON.parse(localStorage.getItem("todos")) || [];
   const todosDone = todosStatus.filter(todo => todo.checked).length;
 
-  weeklyRecap.innerHTML = `
-    <p>Emotion de la semaine : ${emotion}</p>
-    <p>Tâches complètes : ${todosDone} / ${todosStatus.length}</p>
-  `;
+  // Si il n'y a pas d'émotion ou de tâches, afficher le message par défaut
+  if (!emotion && todosStatus.length === 0) {
+    weeklyRecap.innerHTML = `
+      <p>En attente du début de la semaine...</p>
+    `;
+  } else {
+    // Mettre à jour le récapitulatif avec les données disponibles
+    weeklyRecap.innerHTML = `
+      <p>Emotion de la semaine : ${emotion}</p>
+      <p>Tâches complètes : ${todosDone} / ${todosStatus.length}</p>
+    `;
+  }
 }
 
+// Générer le récapitulatif dès que la page se charge
 generateWeeklyRecap();
 
 // -------------------------------
