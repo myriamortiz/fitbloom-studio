@@ -832,9 +832,9 @@ body {
 .tracking-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  margin-top: 1rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -846,12 +846,13 @@ body {
 }
 
 .tracking-table th {
-  background-color: rgba(255, 255, 255, 0.1); /* Suppression de la couleur blanche du fond */
-  color: var(--fbs-rose-pale);
+  background-color: var(--fbs-rose-pale);
+  color: #1a1a1a;
+  font-size: 1.1rem;
 }
 
 .tracking-table td {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 button.main-btn {
