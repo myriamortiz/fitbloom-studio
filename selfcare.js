@@ -108,17 +108,63 @@ loadTodos();
 // -------------------------------
 // RITUELS DU JOUR (exemple simple)
 // -------------------------------
+// -------------------------------
+// RITUEL HEBDOMADAIRE
+// -------------------------------
 const rituelText = document.getElementById("rituel");
-const dayOfWeek = new Date().getDay();
+const dayOfWeek = new Date().getDay();  // 0 = Dimanche
 
-const rituels = [
-  "Méditation ou relaxation",
-  "Prendre un bain ou une douche relaxante",
-  "Faire une activité créative (ex: dessin, écriture)",
-  "Faire du yoga ou des étirements"
+// Liste des rituels pour chaque semaine avec des détails
+const weeklyRituals = [
+  { // Semaine 1 : Relaxation et bien-être
+    title: "Semaine de la relaxation et du bien-être",
+    details: [
+      "Commence par 10 minutes de méditation pour apaiser ton esprit.",
+      "Prends un bain relaxant avec des huiles essentielles comme la lavande.",
+      "Pratique des exercices de respiration profonde pour réduire le stress.",
+      "Fais 10 minutes de relaxation guidée ou de relaxation musculaire progressive.",
+    ]
+  },
+  { // Semaine 2 : Énergie et motivation
+    title: "Semaine de l'énergie et de la motivation",
+    details: [
+      "Réveille-toi avec un smoothie énergisant (par exemple, banane, épinards, et spiruline).",
+      "Fais une séance de yoga dynamique ou de stretching pendant 30 minutes.",
+      "Pratique des affirmations positives pour booster ta motivation.",
+      "Prends 5 minutes à la fin de la journée pour réfléchir aux moments positifs.",
+    ]
+  },
+  { // Semaine 3 : Détox et bien-être intérieur
+    title: "Semaine de détox et de bien-être intérieur",
+    details: [
+      "Commence la journée avec un grand verre d'eau chaude au citron.",
+      "Mange des repas légers et riches en fibres pour favoriser la digestion.",
+      "Fais une séance de relaxation ou de méditation de 10 à 15 minutes.",
+      "Prends un bain de vapeur pour libérer ton corps des toxines.",
+    ]
+  },
+  { // Semaine 4 : Gratitude et épanouissement personnel
+    title: "Semaine de la gratitude et de l'épanouissement",
+    details: [
+      "Écris 3 choses pour lesquelles tu es reconnaissant(e) chaque matin.",
+      "Prends un moment pour toi chaque jour et fais une activité créative (dessin, écriture).",
+      "Fais 10 minutes de méditation pour la pleine conscience.",
+      "Pratique le yoga ou des étirements pour libérer les tensions.",
+    ]
+  }
 ];
 
-rituelText.textContent = rituels[dayOfWeek % rituels.length];
+// Calculer la semaine actuelle de l'année
+const weekNumber = Math.floor((new Date().getDate() - 1) / 7);  // On divise les jours de l'année par 7 pour obtenir la semaine
+const ritual = weeklyRituals[weekNumber % weeklyRituals.length];  // Boucle à travers les semaines
+
+// Afficher le rituel de la semaine
+rituelText.innerHTML = `
+  <strong>${ritual.title}</strong>
+  <ul>
+    ${ritual.details.map(detail => `<li>${detail}</li>`).join('')}
+  </ul>
+`;
 
 // -------------------------------
 // COMPLÉMENTS ALIMENTAIRES (exemple simple)
