@@ -1,38 +1,58 @@
 // -------------------------------
-// TABLEAU DE SUIVI DU POIDS ET DES MENUS
+// SAUVEGARDE ET AFFICHAGE DES MENUS
 // -------------------------------
 
-// Suivi du poids et des mensurations
-const weightTrackingTable = document.getElementById("weight-tracking");
-const fastingTrackingTable = document.getElementById("fasting-tracking");
-
 const addWeightButton = document.getElementById("add-entry");
-const addFastButton = document.getElementById("add-fast");
 
-// Ajouter une entrée de poids
 addWeightButton.addEventListener("click", () => {
-  const date = prompt("Entrez la date (format : AAAA-MM-JJ)");
-  const Poids = prompt("Entrez votre poids (kg)");
-  const Taille = prompt("Entrez votre taille (cm)");
-  const Poitrine = prompt("Entrez votre taille (cm)")
-  const Hanches = prompt("Entrez vos hanches (cm)");
-  const Cuisses = prompt("Entrez votre tour de taille (cm)");
-  const Bras = prompt("Entrez votre taille (cm)")
+  const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+  
+  // Créer un objet pour chaque mois
+  let monthlyData = {};
+  months.forEach(month => {
+    monthlyData[month] = {
+      poids: document.getElementById(`poids-${month.toLowerCase()}`).value,
+      taille: document.getElementById(`taille-${month.toLowerCase()}`).value,
+      poitrine: document.getElementById(`poitrine-${month.toLowerCase()}`).value,
+      hanches: document.getElementById(`hanches-${month.toLowerCase()}`).value,
+      cuisses: document.getElementById(`cuisses-${month.toLowerCase()}`).value,
+      bras: document.getElementById(`bras-${month.toLowerCase()}`).value,
+    };
+  });
 
-  if (date && Poids && Taille && Poitrine && Hanches && Cuisses && Bras) {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${date}</td>
-      <td>${Poids}</td>
-      <td>${Taille}</td>
-      <td>${Poitrine}</td>
-      <td>${Hanches}</td>
-      <td>${Cuisses}</td>
-      <td>${Bras}</td>
-    `;
-    weightTrackingTable.appendChild(row);
-  }
+  // Sauvegarder dans le localStorage
+  localStorage.setItem("mensurations", JSON.stringify(monthlyData));
+
+  // Afficher un message de confirmation
+  alert("Mensurations enregistrées avec succès!");
 });
+
+// -------------------------------
+// GESTION DES MENSURATIONS
+// -------------------------------
+
+function loadMensurations() {
+  const mensurations = JSON.parse(localStorage.getItem("mensurations"));
+  if (mensurations) {
+    const months = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"];
+    months.forEach(month => {
+      const data = mensurations[month.charAt(0).toUpperCase() + month.slice(1)];
+
+      if (data) {
+        document.getElementById(`poids-${month}`).value = data.poids;
+        document.getElementById(`taille-${month}`).value = data.taille;
+        document.getElementById(`poitrine-${month}`).value = data.poitrine;
+        document.getElementById(`hanches-${month}`).value = data.hanches;
+        document.getElementById(`cuisses-${month}`).value = data.cuisses;
+        document.getElementById(`bras-${month}`).value = data.bras;
+      }
+    });
+  }
+}
+
+// Charger les mensurations au chargement de la page
+loadMensurations();
+
 
 <section class="intermittent-fasting-section">
   <h2>Suivi du Jeûne Intermittent (17:7)</h2>
