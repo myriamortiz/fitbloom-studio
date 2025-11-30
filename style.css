@@ -444,12 +444,12 @@ body {
   position: relative;
 }
 
-/* Logo sur la page Fitness : réduit à la même taille que sur les autres pages */
+/* Logo ajusté pour être plus petit et cohérent */
 .sub-logo {
-  width: 80px;  /* Taille réduite du logo (ajustée à ta demande) */
+  width: 80px; /* Ajuste la taille ici */
   height: 80px;
   margin: 0 auto 1rem;
-  filter: drop-shadow(0 0 18px var(--fbs-glow));
+  filter: drop-shadow(0 0 18px var(--fbs-glow)); 
 }
 
 .sub-title {
