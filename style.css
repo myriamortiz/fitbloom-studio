@@ -756,7 +756,7 @@ body {
 /* BOUTON RETOUR */
 .back-btn {
   background: none;
-  border: none;
+  border: var(--fbs-rose-pale);
   color: var(--fbs-rose-pale);
   font-size: 1rem;
   cursor: pointer;
