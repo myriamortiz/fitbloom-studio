@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paramètres - FitBloom Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-settings">
+
+  <!-- HEADER -->
+  <div class="sub-header">
+    <button class="back-btn">← Retour</button>
+    <div class="header-center">
+      <h1>Paramètres</h1>
+    </div>
+  </div>
+
+  <!-- SECTION: Profil -->
+  <section class="settings-section">
+    <h2>Profil</h2>
+    <label for="user-name">Nom</label>
+    <input type="text" id="user-name" placeholder="Entrez votre nom">
+    <label for="avatar-upload">Avatar</label>
+    <input type="file" id="avatar-upload">
+    <button class="main-btn" id="save-profile">Enregistrer le profil</button>
+  </section>
+
+  <!-- SECTION: Notifications -->
+  <section class="settings-section">
+    <h2>Notifications</h2>
+    <label><input type="checkbox" id="training-notifications"> Rappels pour les séances d'entraînement</label>
+    <label><input type="checkbox" id="meal-notifications"> Rappels pour les repas</label>
+    <label><input type="checkbox" id="health-notifications"> Rappels pour la santé (habitudes, compléments, etc.)</label>
+  </section>
+
+  <!-- SECTION: Accessibilité -->
+  <section class="settings-section">
+    <h2>Accessibilité</h2>
+    <label><input type="checkbox" id="dark-mode"> Mode sombre</label>
+    <label for="font-size">Taille du texte</label>
+    <input type="range" id="font-size" min="12" max="24" value="16">
+  </section>
+
+  <!-- Sauvegarde des modifications -->
+  <button class="main-btn" id="save-settings">Sauvegarder les modifications</button>
+
+  <script src="settings.js"></script>
+</body>
+</html>
