@@ -53,24 +53,6 @@ function loadMensurations() {
 // Charger les mensurations au chargement de la page
 loadMensurations();
 
-
-// -------------------------------
-// BOUTON RETOUR
-// -------------------------------
-const backButton = document.querySelector(".back-btn");
-
-if (backButton) {
-  backButton.addEventListener("click", () => {
-    // Vérifie si l'historique du navigateur contient plusieurs pages dans la pile
-    if (window.history.length > 1) {
-      window.history.back();  // Cela revient à la page précédente dans l'historique
-    } else {
-      window.location.href = "index.html";  // Rediriger vers la page d'accueil si pas d'historique
-    }
-  });
-}
-
-
 // -------------------------------
 // GESTION DES MENSURATIONS
 // -------------------------------
@@ -157,3 +139,19 @@ loadMensurations();
   </tbody> 
  </table> 
 </section>
+// -------------------------------
+// BOUTON RETOUR
+// -------------------------------
+const backButton = document.querySelector(".back-btn");
+
+if (backButton) {
+  backButton.addEventListener("click", () => {
+    // Vérifie si l'historique du navigateur contient plusieurs pages dans la pile
+    if (window.history.length > 1) {
+      window.history.back();  // Cela revient à la page précédente dans l'historique
+    } else {
+      window.location.href = "index.html";  // Rediriger vers la page d'accueil si pas d'historique
+    }
+  });
+}
+
