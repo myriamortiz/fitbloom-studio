@@ -119,37 +119,45 @@ const weeklyRituals = [
   { // Semaine 1 : Relaxation et bien-être
     title: "Semaine de la relaxation et du bien-être",
     details: [
-      "Commence par 10 minutes de méditation pour apaiser ton esprit.",
-      "Prends un bain relaxant avec des huiles essentielles comme la lavande.",
-      "Pratique des exercices de respiration profonde pour réduire le stress.",
-      "Fais 10 minutes de relaxation guidée ou de relaxation musculaire progressive.",
+      "Chaque matin ou soir, pratique 10 à 20 minutes de yoga doux.",
+      "Prends une douche bien chaude avec des huiles essentielles comme la lavande.",
+      "Choisis une soirée pour déconnecter complètement de tous tes écrans.",
+      "Allonge-toi dans un endroit calme et pratique la relaxation musculaire progressive.",
+      "Utilise une huile ou une crème hydratante pour masser tes mains et poignets tous les soirs.",
+      "Consacre une soirée à un soin du visage relaxant.",
     ]
   },
   { // Semaine 2 : Énergie et motivation
     title: "Semaine de l'énergie et de la motivation",
     details: [
-      "Réveille-toi avec un smoothie énergisant (par exemple, banane, épinards, et spiruline).",
+      "Réveille-toi avec une playlist qui te boostent.",
+      "Bois un verre d'eau chaque matin avec du citron, du gingembre ou des feuilles de menthe.",
+      "Chaque matin, écris une affirmation positive liée à tes objectifs de la semaine.",
       "Fais une séance de yoga dynamique ou de stretching pendant 30 minutes.",
-      "Pratique des affirmations positives pour booster ta motivation.",
-      "Prends 5 minutes à la fin de la journée pour réfléchir aux moments positifs.",
+      "À la fin de chaque journée, prends 5 minutes pour noter 3 choses que tu as accomplies.",
+      "Chaque soir avant de te coucher, prends quelques minutes pour visualiser tes objectifs.",
     ]
   },
   { // Semaine 3 : Détox et bien-être intérieur
     title: "Semaine de détox et de bien-être intérieur",
     details: [
-      "Commence la journée avec un grand verre d'eau chaude au citron.",
+      "Chaque matin, commence ta journée avec un grand verre d'eau tiède citronnée.",
       "Mange des repas légers et riches en fibres pour favoriser la digestion.",
-      "Fais une séance de relaxation ou de méditation de 10 à 15 minutes.",
-      "Prends un bain de vapeur pour libérer ton corps des toxines.",
+      "Pratique une méditation guidée de détox mentale chaque jour.",
+      "Profite d’une séance de sauna ou d’un bain de vapeur.",
+      "Pratique une détox numérique en réduisant ton temps passé sur les écrans.",
+      "Bois une infusion détox chaque jour, comme du thé vert, du pissenlit, de la menthe ou du gingembre.",
     ]
   },
   { // Semaine 4 : Gratitude et épanouissement personnel
-    title: "Semaine de la gratitude et de l'épanouissement",
+    title: "Semaine de l'amour de soi et de l'auto-compassion",
     details: [
-      "Écris 3 choses pour lesquelles tu es reconnaissant(e) chaque matin.",
-      "Prends un moment pour toi chaque jour et fais une activité créative (dessin, écriture).",
-      "Fais 10 minutes de méditation pour la pleine conscience.",
+      "Pendant cette semaine, engage-toi dans un acte de gentillesse chaque jour.",
+      "Tous les jours, prends quelques minutes devant un miroir pour regarder ton reflet et te dire des choses positives.",
+      "Chaque jour, pratique une méditation guidée de l’amour de soi.",
+      "Offre-toi un moment de plaisir sans culpabilité.",
       "Pratique le yoga ou des étirements pour libérer les tensions.",
+      "Avant de t'endormir, prends 5 à 10 minutes pour méditer sur les choses qui te rendent heureuse.",
     ]
   }
 ];
