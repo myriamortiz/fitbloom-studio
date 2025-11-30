@@ -797,6 +797,7 @@ body {
 /* ------------------------------------------------------ */
 /*                 PAGE TRACKERS                          */
 /* ------------------------------------------------------ */
+
 .page-trackers {
   background-color: var(--fbs-noir);
   background-image: url("./black.jpg");
@@ -845,14 +846,12 @@ body {
 }
 
 .tracking-table th {
-  background-color: var(--fbs-rose-clair);
-  color: #1a1a1a;
-  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.1); /* Suppression de la couleur blanche du fond */
+  color: var(--fbs-rose-pale);
 }
 
 .tracking-table td {
   background-color: rgba(255, 255, 255, 0.04);
-  color: var(--fbs-rose-clair);
 }
 
 button.main-btn {
