@@ -180,28 +180,32 @@ rituelText.innerHTML = `
 
 const complementsBySeason = {
   printemps: {
-    "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
-    "Immunité": ["Vitamine C", "Probiotiques", "Curcuma", "Zinc"],
-    "Digestion": ["Ginger", "Fenouil", "Charbon actif"],
-    "Énergie": ["Ginseng", "Spiruline", "Maca"]
+    "Stress & Sommeil": ["Ashwagandha", "L-Theanine", "Magnésium", "Mélatonine"],
+    "Immunité": ["Vitamine D3 + K2", "Échinacée", "Propolis", "Zinc"],
+    "Digestion": ["Probiotiques", "Gingembre / Curcuma", "Fibre de psyllium", "Extrait de papaye fermentée"],
+    "Énergie": ["Rhodiola rosea", "Ginseng", "Vitamine B12", "Coenzyme Q10"]
+    "Autres": ["Biotine", "Collagène", "Oméga‑3"]
   },
   été: {
-    "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
-    "Immunité": ["Vitamine D", "Probiotiques", "Curcuma", "Zinc"],
-    "Digestion": ["Ginger", "Menthe", "Fenouil"],
-    "Énergie": ["Ginseng", "Spiruline", "Maca"]
+    "Stress & Sommeil": ["L-théanine", "Valériane", "Vitamines B", "Magnésium bisglycinate ou marin"],
+    "Immunité": ["Vitamine D", "Vitamine C", "Zinc"],
+    "Digestion": ["Probiotiques", "Enzymes digestives", "Fibres psyllium ou fibres solubles"],
+    "Énergie": ["Ginseng", "Coenzyme Q10", "Un bon multivitamines"]
+    "Autres": ["Bêta-carotène", "Cuivre", "Chardon-marie"]
   },
   automne: {
-    "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
-    "Immunité": ["Vitamine C", "Probiotiques", "Curcuma", "Zinc"],
-    "Digestion": ["Ginger", "Fenouil", "Charbon actif"],
-    "Énergie": ["Ginseng", "Spiruline", "Maca"]
+    "Stress & Sommeil": ["Passiflore", "Minéraux", "Valériane", "Rhodiole"],
+    "Immunité": ["Vitamine C", "Vitamines B6, B12 ", "Sélénium", "Zinc"],
+    "Digestion": ["Bromélaïne", "Fenouil", "Charbon actif"],
+    "Énergie": ["Ginseng", "Fer", "Guarana"]
+    "Autres": ["Biotine", "Collagène", "Propolis"]
   },
   hiver: {
     "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
-    "Immunité": ["Vitamine D", "Probiotiques", "Curcuma", "Zinc"],
-    "Digestion": ["Ginger", "Fenouil", "Charbon actif"],
-    "Énergie": ["Ginseng", "Spiruline", "Maca"]
+    "Immunité": ["Vitamine D3", "Vitamine C", "Oméga‑3 EPA/DHA", "Zinc"],
+    "Digestion": ["Probiotiques", "Artichaut", "Mélisse"],
+    "Énergie": ["Ginseng", "Gelée royale ", "Acérola "]
+    "Autres": ["Sélénium", "Levure de bière", "Acide hyaluronique "]
   }
 };
 
