@@ -573,6 +573,7 @@ body {
   margin: 0;
   color: var(--fbs-rose-pale);
 }
+
 /* -------------------------------- */
 /*                PAGE SELFCARE                */
 /* -------------------------------- */
@@ -626,6 +627,13 @@ body {
   color: var(--fbs-rose-pale);
   text-align: center;
   margin-bottom: 1rem;
+}
+
+.sc-section #rituel {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--fbs-rose-clair);
+  margin-top: 1rem;
 }
 
 /* EMOTIONS */
@@ -726,14 +734,24 @@ body {
 
 /* COMPLÉMENTS */
 .complements-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.complement-category {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1.5px solid var(--fbs-rose-clair);
+  box-shadow: 0 0 18px var(--fbs-glow);
 }
 
 .complement-category h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--fbs-rose-pale);
+  margin-bottom: 0.5rem;
 }
 
 .complement-category ul {
@@ -743,7 +761,7 @@ body {
 
 .complement-category li {
   font-size: 1rem;
-  color: var(--fbs-rose-pale);
+  color: var(--fbs-rose-clair);
 }
 
 /* RECAP HEBDO */
@@ -754,12 +772,24 @@ body {
 }
 
 /* BOUTON RETOUR */
-.back-btn {
-  background: none;
-  border: var(--fbs-rose-pale);
-  color: var(--fbs-rose-pale);
+.sub-header .back-btn {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  text-decoration: none;
   font-size: 1rem;
-  cursor: pointer;
-  padding: 1rem;
-  text-decoration: underline;
+  color: var(--fbs-rose-clair);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.4rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--fbs-rose-clair);
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-header .back-btn:hover {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
 }
