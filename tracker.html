@@ -21,10 +21,11 @@
   <!-- SECTION 1 : Suivi Mensuel (Poids & Mensurations) -->
   <section class="sc-section">
     <h2 class="sc-title">Suivi Mensuel : Poids et Mensurations</h2>
+    <p style="text-align:center;">Entrez vos mensurations à la fin de chaque mois</p>
     <table class="tracking-table">
       <thead>
         <tr>
-          <th>Date</th>
+          <th>Mois</th>
           <th>Poids (kg)</th>
           <th>Taille (cm)</th>
           <th>Poitrine (cm)</th>
@@ -34,10 +35,35 @@
         </tr>
       </thead>
       <tbody id="weight-tracking">
-        <!-- Les données seront insérées ici par JavaScript -->
+        <tr>
+          <td>Janvier</td>
+          <td><input type="number" id="poids-janvier" placeholder="Poids (kg)" /></td>
+          <td><input type="number" id="taille-janvier" placeholder="Taille (cm)" /></td>
+          <td><input type="number" id="poitrine-janvier" placeholder="Poitrine (cm)" /></td>
+          <td><input type="number" id="hanches-janvier" placeholder="Hanches (cm)" /></td>
+          <td><input type="number" id="cuisses-janvier" placeholder="Cuisses (cm)" /></td>
+          <td><input type="number" id="bras-janvier" placeholder="Bras (cm)" /></td>
+        </tr>
+        <tr>
+          <td>Février</td>
+          <td><input type="number" id="poids-fevrier" placeholder="Poids (kg)" /></td>
+          <td><input type="number" id="taille-fevrier" placeholder="Taille (cm)" /></td>
+          <td><input type="number" id="poitrine-fevrier" placeholder="Poitrine (cm)" /></td>
+          <td><input type="number" id="hanches-fevrier" placeholder="Hanches (cm)" /></td>
+          <td><input type="number" id="cuisses-fevrier" placeholder="Cuisses (cm)" /></td>
+          <td><input type="number" id="bras-fevrier" placeholder="Bras (cm)" /></td>
+        </tr>
+        <tr>
+        <td>Mars</td>
+          <td><input type="number" id="poids-mars" placeholder="Poids (kg)" /></td>
+          <td><input type="number" id="taille-mars" placeholder="Taille (cm)" /></td>
+          <td><input type="number" id="poitrine-mars" placeholder="Poitrine (cm)" /></td>
+          <td><input type="number" id="hanches-mars" placeholder="Hanches (cm)" /></td>
+          <td><input type="number" id="cuisses-mars" placeholder="Cuisses (cm)" /></td>
+          <td><input type="number" id="bras-mars" placeholder="Bras (cm)" /></td>
       </tbody>
     </table>
-    <button id="add-entry" class="main-btn">Ajouter une entrée</button>
+    <button id="add-entry" class="main-btn">Enregistrer les Mensurations</button>
   </section>
 
   <!-- SECTION 2 : Suivi du Jeûne Intermittent -->
