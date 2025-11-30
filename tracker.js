@@ -136,9 +136,7 @@ loadMensurations();
         <td>12H – 19H</td>
         <td>19H – 12H</td>
       </tr> 
-  </tbody> 
- </table> 
-</section>
+ 
 // -------------------------------
 // BOUTON RETOUR
 // -------------------------------
@@ -154,4 +152,6 @@ if (backButton) {
     }
   });
 }
-
+</tbody> 
+ </table> 
+</section>
