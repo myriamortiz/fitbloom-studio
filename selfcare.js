@@ -278,8 +278,10 @@ generateWeeklyRecap();
 // -------------------------------
 const backButton = document.querySelector(".back-btn");
 
-if (backButton) {
-  backButton.addEventListener("click", function () {
-    window.history.back(); // Cela revient à la page précédente dans l'historique
-  });
-}
+backButton.addEventListener("click", () => {
+  if (window.history.length > 1) {
+    window.history.back();  // Cela revient à la page précédente dans l'historique
+  } else {
+    window.location.href = "index.html";  // Rediriger vers la page d'accueil si pas d'historique
+  }
+});
