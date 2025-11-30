@@ -136,22 +136,13 @@ loadMensurations();
         <td>12H – 19H</td>
         <td>19H – 12H</td>
       </tr> 
- 
-// -------------------------------
-// BOUTON RETOUR
-// -------------------------------
+    }
+  });
+// Bouton "Retour" pour rediriger vers la page précédente
 const backButton = document.querySelector(".back-btn");
 
 if (backButton) {
-  backButton.addEventListener("click", () => {
-    // Vérifie si l'historique du navigateur contient plusieurs pages dans la pile
-    if (window.history.length > 1) {
-      window.history.back();  // Cela revient à la page précédente dans l'historique
-    } else {
-      window.location.href = "index.html";  // Rediriger vers la page d'accueil si pas d'historique
-    }
+  backButton.addEventListener("click", function () {
+    window.history.back(); // Cela revient à la page précédente dans l'historique
   });
 }
-</tbody> 
- </table> 
-</section>
