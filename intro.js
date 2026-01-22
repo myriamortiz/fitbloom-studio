@@ -31,21 +31,56 @@ function nextStep(stepNumber) {
         userProfile.weight = parseInt(weight);
     }
 
+
+    // Navigation sequence: ... -> activity -> days -> 3
+    if (stepNumber === 'days') {
+        const act = userProfile.activity;
+        if (!act) return alert("Choisis ton niveau d'activité !");
+    }
+
+    // Day Validation (Must pick at least 1)
+    if (stepNumber === 3) {
+        // We assume 'days' step is just before 3
+        if (!userProfile.workoutDays || userProfile.workoutDays.length === 0) {
+            if (!userProfile.workoutDays) userProfile.workoutDays = [1, 3, 5];
+        }
+    }
+
     // TRANSITION
     // Hide all
     document.querySelectorAll('.step-container').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.dot').forEach(el => el.classList.remove('active'));
 
     // Determine ID
-    let nextId = stepNumber; // default (e.g. 'age')
+    let nextId = stepNumber;
     if (typeof stepNumber === 'number') nextId = stepNumber.toString();
 
     document.getElementById(`step-${nextId}`).classList.add('active');
 
-    // Update dots (mapping simple)
+    // Update dots
     const dotId = `dot-${nextId}`;
     if (document.getElementById(dotId)) {
         document.getElementById(dotId).classList.add('active');
+    }
+}
+
+// ---------------------------
+// Day Selection Logic V4
+// ---------------------------
+function toggleDay(btn, dayIndex) {
+    if (!userProfile.workoutDays) userProfile.workoutDays = [];
+
+    // Toggle
+    if (userProfile.workoutDays.includes(dayIndex)) {
+        userProfile.workoutDays = userProfile.workoutDays.filter(d => d !== dayIndex);
+        btn.classList.remove('selected');
+        btn.style.background = "rgba(255,255,255,0.05)";
+        btn.style.color = "var(--fbs-taupe-rose)";
+    } else {
+        userProfile.workoutDays.push(dayIndex);
+        btn.classList.add('selected');
+        btn.style.background = "var(--fbs-rose-clair)";
+        btn.style.color = "#1a1a1a";
     }
 }
 
