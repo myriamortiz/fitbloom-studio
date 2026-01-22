@@ -1,12 +1,14 @@
 // -------------------------------
 // CONFIG & CHARGEMENT
 // -------------------------------
-
 const DATA_URL = "data/fitness.json";
 
 function getTodayStr() {
   return new Date().toISOString().split("T")[0];
 }
+
+// Global Pools Cache
+let globalPools = null;
 
 // 1. CHARGEMENT POOLS
 async function loadFitnessData() {
@@ -20,58 +22,46 @@ async function loadFitnessData() {
 }
 
 // 2. LE GÉNÉRATEUR DYNAMIQUE (THE MIXER) 🧠
-function generateSession(pools, profile, weekParity) {
+function generateSession(pools, profile, weekParity, targetDay = null) {
   // Determine Track based on Goal
   let primary = 'fullbody';
   let secondary = 'cardio';
 
   if (profile.goal === 'perte_poids') { primary = 'cardio'; secondary = 'fullbody'; }
-  if (profile.goal === 'prise_masse') { primary = 'upper'; secondary = 'lower'; } // Split
+  if (profile.goal === 'prise_masse') { primary = 'upper'; secondary = 'lower'; }
   if (profile.goal === 'forme') { primary = 'soft'; secondary = 'fullbody'; }
 
-  // On crée une semaine de 7 jours
-  // On veut distribuer les séances sur les userProfile.workoutDays
-  // Ex: Lundi (1), Mercredi (3), Vendredi (5)
+  // Target Day: default to Today (0-6)
+  const dayToUse = (targetDay !== null) ? targetDay : new Date().getDay();
 
-  const today = new Date().getDay(); // 0-6
-  const isWorkoutDay = profile.workoutDays && profile.workoutDays.includes(today);
+  // Safe Array Check
+  const days = profile.workoutDays || [1, 3, 5];
+  const isWorkoutDay = days.includes(dayToUse);
 
   if (!isWorkoutDay) {
-    // JOUR OFF
     return {
       name: "🌿 Repos Actif",
       duration: "Libre",
-      exercises: [], // Vide = Pas de bouton voir
+      exercises: [],
       isRest: true
     };
   }
 
-  // JOUR ON : QUELLE SÉANCE ?
-  // Pour varier, on utilise le numéro du jour + parité
-  // Pseudo-random stable
-  const seed = today + (weekParity ? 10 : 0);
-
-  // Distribution Intelligente
-  // Si c'est le 1er jour de la semaine -> Primary
-  // Si c'est le 2eme -> Secondary
-  // etc... (Simplifié ici pour la démo)
+  // Seed for stability
+  const seed = dayToUse + (weekParity ? 10 : 0);
 
   let category = primary;
   if (seed % 2 !== 0) category = secondary;
-
-  // Si prise de masse, on alterne Upper/Lower strict
   if (profile.goal === 'prise_masse') {
     category = (seed % 2 === 0) ? 'upper' : 'lower';
   }
 
-  // Pioche dans le pool
   const pool = pools[category];
-  if (!pool) return pools['fullbody'][0]; // Fallback
+  if (!pool || pool.length === 0) return (pools['fullbody'] && pools['fullbody'][0]) || { name: "Erreur", duration: "0", exercises: [], isRest: true };
 
   const sessionIndex = seed % pool.length;
   let session = pool[sessionIndex];
 
-  // Customisation du nom
   let badge = "";
   if (category === 'cardio') badge = "🔥";
   if (category === 'soft') badge = "🧘‍♀️";
@@ -88,50 +78,23 @@ function generateSession(pools, profile, weekParity) {
 // INITIALISATION DE LA PAGE
 // -------------------------------
 function initPage(pools) {
+  globalPools = pools;
   const profile = JSON.parse(localStorage.getItem('userProfile')) || { workoutDays: [1, 3, 5], goal: 'forme' };
-  const currentWeekNumber = getWeekNumber(new Date());
+
+  // Clean initialization
+  const d = new Date();
+  const currentWeekNumber = getWeekNumber(d);
   const isWeekB = currentWeekNumber % 2 !== 0;
 
-  // Générer la séance DU JOUR
-  const session = generateSession(pools, profile, isWeekB);
+  // Render TODAY by default
+  updateDisplayForDay(d.getDay());
 
-  // 1. Afficher les infos
-  document.getElementById("today-session-name").textContent = session.name;
-  document.getElementById("today-session-duration").textContent = session.duration;
+  // Week Grid
+  for (let i = 1; i <= 7; i++) {
+    const simDay = (i === 7) ? 0 : i; // 1..6, 0
+    const isActive = (profile.workoutDays || []).includes(simDay);
 
-  // Petit indicateur Semaine
-  const subtitle = document.querySelector('.sub-subtitle');
-  if (subtitle) {
-    subtitle.innerHTML = `FitBloom Coach • Semaine ${isWeekB ? 'B' : 'A'}`;
-  }
-
-  // 2. Bouton Voir (Caché si repos)
-  const btn = document.getElementById("voir-seance");
-  if (session.isRest) {
-    btn.style.display = 'none';
-    // Msg repos
-    const msg = document.createElement('p');
-    msg.textContent = "Profite pour récupérer ou aller marcher !";
-    msg.style.color = "var(--fbs-rose-suave)";
-    msg.style.marginTop = "1rem";
-    if (btn.parentNode) btn.parentNode.insertBefore(msg, btn);
-  } else {
-    btn.style.display = 'inline-block';
-    setupModal(session.exercises);
-  }
-
-  // 3. Gestion du bouton "Séance terminée ✅" (Uniquement si pas repos)
-  if (!session.isRest) setupCheckButton(session);
-
-  // 4. Grille de la semaine (Visualisation)
-  // On génère toute la semaine pour l'affichage
-  for (let d = 1; d <= 7; d++) { // 1=Lundi -> 7=Dimanche
-    // Simuler le jour d
-    // Attention: getDay() renvoie 0 pour Dimanche, donc mapping 7->0
-    const simDay = (d === 7) ? 0 : d;
-    const isActive = profile.workoutDays.includes(simDay);
-
-    const bubble = document.getElementById(`day-${d}`); // HTML IDs day-1 to day-7
+    const bubble = document.getElementById(`day-${i}`);
     if (bubble) {
       if (isActive) {
         bubble.querySelector("span").textContent = "Sport";
@@ -140,8 +103,71 @@ function initPage(pools) {
         bubble.querySelector("span").textContent = "Repos";
         bubble.style.opacity = "0.5";
       }
+
+      bubble.style.cursor = "pointer";
+      bubble.onclick = () => {
+        // Highlight
+        for (let k = 1; k <= 7; k++) {
+          const b = document.getElementById(`day-${k}`);
+          if (b) b.style.background = 'transparent';
+        }
+        bubble.style.background = 'rgba(255,255,255,0.1)';
+
+        updateDisplayForDay(simDay);
+      };
     }
   }
+}
+
+function updateDisplayForDay(dayIndex) {
+  if (!globalPools) return;
+
+  const profile = JSON.parse(localStorage.getItem('userProfile')) || { workoutDays: [1, 3, 5], goal: 'forme' };
+  const currentWeekNumber = getWeekNumber(new Date());
+  const isWeekB = currentWeekNumber % 2 !== 0;
+
+  const session = generateSession(globalPools, profile, isWeekB, dayIndex);
+
+  // UI Update
+  const titleEl = document.querySelector('.session-title');
+  if (titleEl) {
+    const isToday = (dayIndex === new Date().getDay());
+    titleEl.textContent = isToday ? "Séance du jour" : `Aperçu : ${getDayName(dayIndex)}`;
+  }
+
+  document.getElementById("today-session-name").textContent = session.name;
+  document.getElementById("today-session-duration").textContent = session.duration;
+
+  const btn = document.getElementById("voir-seance");
+  const oldMsg = document.getElementById('msg-repos');
+  if (oldMsg) oldMsg.remove();
+
+  if (session.isRest) {
+    if (btn) btn.style.display = 'none';
+
+    const msg = document.createElement('p');
+    msg.id = 'msg-repos';
+    msg.textContent = "Repos ou Marche active 🌿";
+    msg.style.color = "var(--fbs-rose-suave)";
+    msg.style.marginTop = "1rem";
+    if (btn && btn.parentNode) btn.parentNode.insertBefore(msg, btn);
+
+    const checkBtn = document.getElementById("check-session-btn");
+    if (checkBtn) checkBtn.style.display = 'none';
+
+  } else {
+    if (btn) btn.style.display = 'inline-block';
+    setupModal(session.exercises);
+
+    setupCheckButton(session); // Setup validation button logic
+    const checkBtn = document.getElementById("check-session-btn");
+    if (checkBtn) checkBtn.style.display = 'block';
+  }
+}
+
+function getDayName(dayIndex) {
+  const names = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+  return names[dayIndex];
 }
 
 // -------------------------------
@@ -158,7 +184,6 @@ function setupCheckButton(session) {
     checkBtn.style.background = "rgba(255,255,255,0.1)";
     checkBtn.style.borderColor = "var(--fbs-rose-pale)";
     const voirBtn = document.getElementById("voir-seance");
-    // Insert after "voir-seance" safely
     if (voirBtn && voirBtn.parentNode) {
       voirBtn.parentNode.insertBefore(checkBtn, voirBtn.nextSibling);
       voirBtn.style.marginRight = "1rem";
@@ -218,6 +243,7 @@ function setupModal(exercises) {
 
   if (buttonVoirSeance) {
     buttonVoirSeance.onclick = () => {
+      // Clear
       exercicesList.innerHTML = '';
       if (!exercises || exercises.length === 0) {
         exercicesList.innerHTML = "<p>Repos.</p>";
@@ -250,7 +276,7 @@ function setupModal(exercises) {
 }
 
 // -------------------------------
-// NAVIGATION RETOUR + HELPER
+// HELPERS
 // -------------------------------
 const backButton = document.querySelector(".back-btn");
 if (backButton) {
@@ -266,10 +292,9 @@ if (backButton) {
 function getWeekNumber(d) {
   d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
   d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
-  var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-  return weekNo;
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
 }
 
-// LANCHER LE CHARGEMENT
+// START
 loadFitnessData();
