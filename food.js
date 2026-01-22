@@ -10,6 +10,9 @@ const DATA_PATHS = {
   jus: "data/jus/jus.json",
 };
 
+// Variable globale pour stocker les données brutes
+let ALL_DATA = {};
+
 // ----------------------------
 // LOAD ALL JSON FILES
 // ----------------------------
@@ -21,6 +24,7 @@ async function loadAllData() {
     data[cat] = await response.json();
   }
 
+  ALL_DATA = data;
   return data;
 }
 
@@ -86,11 +90,40 @@ function loadOrGenerateWeek(data) {
   }
 
   const newWeek = generateWeek(data);
-  localStorage.setItem("fbs-week", JSON.stringify(newWeek));
-  localStorage.setItem("fbs-week-date", thisMonday);
-
+  saveWeek(newWeek);
   return newWeek;
 }
+
+function saveWeek(week) {
+  const thisMonday = mondayString(getMonday());
+  localStorage.setItem("fbs-week", JSON.stringify(week));
+  localStorage.setItem("fbs-week-date", thisMonday);
+}
+
+// ----------------------------
+// SWAP RECIPE
+// ----------------------------
+function swapRecipe(dayIndex, category) {
+  // dayIndex : 0 à 6
+  // category : 'brunch', 'collation', 'diner'
+
+  // 1. Piocher une nouvelle recette
+  const newRecipe = pickRecipe(ALL_DATA[category]);
+
+  // 2. Mettre à jour la semaine
+  const week = JSON.parse(localStorage.getItem("fbs-week"));
+
+  // Note: week[0] est le jus, donc les jours sont à partir de l'index 1
+  // Le jour 0 (Lundi) est à l'index 1 du tableau week
+  week[dayIndex + 1][category] = newRecipe;
+
+  // 3. Sauvegarder
+  saveWeek(week);
+
+  // 4. Rafraîchir l'affichage
+  displayWeek(week);
+}
+
 
 // ----------------------------
 // DISPLAY WEEK + JUICE
@@ -122,19 +155,28 @@ function displayWeek(week) {
       <h2>${DAYS[i]}</h2>
 
       <div class="meal-block">
-        <p class="food-meal-title">🥞 Brunch</p>
+        <div class="meal-header">
+          <p class="food-meal-title">🥞 Brunch</p>
+          <button class="swap-btn" onclick="swapRecipe(${i}, 'brunch')" title="Changer de recette">🔀</button>
+        </div>
         <p class="food-meal-text">${day.brunch.name}</p>
         <button class="see-btn" onclick='openRecipe(${JSON.stringify(day.brunch)})'>Voir la recette</button>
       </div>
 
       <div class="meal-block">
-        <p class="food-meal-title">🥜 Collation</p>
+        <div class="meal-header">
+          <p class="food-meal-title">🥜 Collation</p>
+          <button class="swap-btn" onclick="swapRecipe(${i}, 'collation')" title="Changer de recette">🔀</button>
+        </div>
         <p class="food-meal-text">${day.collation.name}</p>
         <button class="see-btn" onclick='openRecipe(${JSON.stringify(day.collation)})'>Voir la recette</button>
       </div>
 
       <div class="meal-block">
-        <p class="food-meal-title">🍽️ Dîner</p>
+        <div class="meal-header">
+          <p class="food-meal-title">🍽️ Dîner</p>
+          <button class="swap-btn" onclick="swapRecipe(${i}, 'diner')" title="Changer de recette">🔀</button>
+        </div>
         <p class="food-meal-text">${day.diner.name}</p>
         <button class="see-btn" onclick='openRecipe(${JSON.stringify(day.diner)})'>Voir la recette</button>
       </div>
@@ -194,7 +236,30 @@ function renderGroceryPopup(list) {
   ul.innerHTML = "";
   Object.keys(list).forEach(item => {
     const li = document.createElement("li");
-    li.textContent = `${item} : ${list[item].join(" + ")}`;
+    li.className = "grocery-item";
+
+    // Création de la checkbox
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "grocery-check";
+
+    // Création du label
+    const label = document.createElement("span");
+    label.textContent = `${item} : ${list[item].join(" + ")}`;
+
+    // Event listener pour barrer le texte
+    checkbox.addEventListener("change", function () {
+      if (this.checked) {
+        label.style.textDecoration = "line-through";
+        label.style.opacity = "0.5";
+      } else {
+        label.style.textDecoration = "none";
+        label.style.opacity = "1";
+      }
+    });
+
+    li.appendChild(checkbox);
+    li.appendChild(label);
     ul.appendChild(li);
   });
 }
