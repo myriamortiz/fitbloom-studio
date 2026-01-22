@@ -1,311 +1,292 @@
 // -------------------------------
-// GESTION DES ÉMOTIONS (Historique)
+// SELFCARE UNIVERSE
 // -------------------------------
-const emotionButtons = document.querySelectorAll(".emotion-btn");
-const emotionSaveMsg = document.getElementById("emotion-save-msg");
 
-function getTodayStr() {
-  return new Date().toISOString().split("T")[0];
+// EMOTIONS
+function loadEmotions() {
+  const container = document.getElementById("emotion-container");
+  if (!container) return; // Pas sur la page
+
+  // Gérer le clic
+  const buttons = container.querySelectorAll(".emotion-btn");
+  buttons.forEach(btn => {
+    btn.onclick = () => {
+      // Retirer la classe active
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const emotion = btn.getAttribute("data-emotion");
+      saveEmotion(emotion);
+    };
+  });
 }
 
-emotionButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const emotion = button.dataset.emotion;
-    const date = getTodayStr();
+function saveEmotion(emotion) {
+  const msg = document.getElementById("emotion-save-msg");
 
-    // Récupérer l'historique existant ou créer un nouvel objet
-    const history = JSON.parse(localStorage.getItem("emotion_history")) || {};
-    history[date] = emotion;
+  // Sauvegarde fictive (localStorage)
+  const today = new Date().toISOString().split("T")[0];
+  const history = JSON.parse(localStorage.getItem("emotions_history")) || {};
+  history[today] = emotion;
+  localStorage.setItem("emotions_history", JSON.stringify(history));
 
-    localStorage.setItem("emotion_history", JSON.stringify(history));
-
-    emotionSaveMsg.textContent = `Emotion enregistrée pour aujourd'hui : ${emotion}`;
-    setTimeout(() => {
-      emotionSaveMsg.textContent = "";
-    }, 2000);
-
-    generateWeeklyRecap(); // Mettre à jour le récap immédiatement
-  });
-});
-
-// -------------------------------
-// HABIT TRACKER (Checkboxes)
-// -------------------------------
-const habitCheckboxes = document.querySelectorAll(".habit");
-
-habitCheckboxes.forEach(checkbox => {
-  // Charger l'état sauvegardé
-  const habitKey = `habit_${checkbox.dataset.habit}_${getTodayStr()}`;
-  if (localStorage.getItem(habitKey) === "done") {
-    checkbox.checked = true;
-  }
-
-  checkbox.addEventListener("change", () => {
-    const status = checkbox.checked ? "done" : "not done";
-    localStorage.setItem(habitKey, status);
-  });
-});
-
-// -------------------------------
-// TO-DO LIST
-// -------------------------------
-const todoInput = document.getElementById("todo-input");
-const addTodoButton = document.getElementById("add-todo");
-const todosContainer = document.getElementById("todos-container");
-
-addTodoButton.addEventListener("click", () => {
-  const todoText = todoInput.value.trim();
-  if (todoText) {
-    const todoItem = document.createElement("div");
-    todoItem.className = "todo-item";
-
-    const expirationDate = new Date();
-    expirationDate.setHours(24, 0, 0, 0); // Minuit du jour suivant
-
-    todoItem.innerHTML = `
-      <label><input type="checkbox" class="todo-checkbox"> ${todoText}</label>
-    `;
-    todosContainer.appendChild(todoItem);
-
-    todoInput.value = ""; // Clear input
-    saveTodos();
-    generateWeeklyRecap();
-  }
-});
-
-function saveTodos() {
-  const todoItems = document.querySelectorAll(".todo-item");
-  const todos = [];
-  todoItems.forEach(item => {
-    const text = item.querySelector("label").textContent.trim();
-    const checked = item.querySelector(".todo-checkbox").checked;
-    const expirationDate = new Date();
-    expirationDate.setHours(24, 0, 0, 0);
-
-    todos.push({
-      text,
-      checked,
-      expirationDate: expirationDate.toISOString()
-    });
-  });
-
-  localStorage.setItem("todos", JSON.stringify(todos));
+  msg.textContent = `Noté : "${emotion}". Prends soin de toi 💖`;
 }
 
-function loadTodos() {
-  const todos = JSON.parse(localStorage.getItem("todos")) || [];
-  const currentDate = new Date();
+// HABITS
+function loadHabits() {
+  const habits = document.querySelectorAll(".habit");
+  if (!habits.length) return;
 
-  todos.forEach(todo => {
-    const todoItem = document.createElement("div");
-    todoItem.className = "todo-item";
+  const today = new Date().toISOString().split("T")[0];
+  const history = JSON.parse(localStorage.getItem("habits_history")) || {};
+  const todaysHabits = history[today] || [];
 
-    const expirationDate = new Date(todo.expirationDate);
-    if (currentDate >= expirationDate) {
-      return; // Ne pas afficher si la tâche est expirée
+  habits.forEach(h => {
+    const type = h.getAttribute("data-habit");
+
+    // Restaurer l'état
+    if (todaysHabits.includes(type)) {
+      h.checked = true;
+      h.parentElement.style.color = "var(--fbs-rose-clair)";
     }
 
-    todoItem.innerHTML = `
-      <label><input type="checkbox" class="todo-checkbox" ${todo.checked ? "checked" : ""}> ${todo.text}</label>
-    `;
-
-    // Ajouter l'event listener pour la case à cocher
-    todoItem.querySelector(".todo-checkbox").addEventListener("change", () => {
-      saveTodos();
-      generateWeeklyRecap();
-    });
-
-    todosContainer.appendChild(todoItem);
+    // Click event
+    h.onchange = () => {
+      let current = history[today] || [];
+      if (h.checked) {
+        if (!current.includes(type)) current.push(type);
+        h.parentElement.style.color = "var(--fbs-rose-clair)";
+      } else {
+        current = current.filter(x => x !== type);
+        h.parentElement.style.color = "var(--fbs-rose-pale)";
+      }
+      history[today] = current;
+      localStorage.setItem("habits_history", JSON.stringify(history));
+    };
   });
 }
 
-loadTodos();
+// RITUEL DU JOUR (Simulé)
+function displayDate() {
+  const rituelText = document.getElementById("rituel");
+  if (!rituelText) return;
 
-// -------------------------------
-// RITUELS DU JOUR (avec rotation hebdomadaire)
-// -------------------------------
-const rituelText = document.getElementById("rituel");
-const dayOfWeek = new Date().getDay();  // 0 = Dimanche
+  const rituels = [
+    "Prends 5 grandes respirations avant de te lever.",
+    "Écris 3 choses pour lesquelles tu es reconnaissante.",
+    "Bois un grand verre d'eau tiède au réveil.",
+    "Fais un compliment à une personne que tu aimes.",
+    "Masse-toi le visage pendant 2 minutes ce soir.",
+    "Écoute ta chanson préférée et danse.",
+    "Regarde le ciel pendant 1 minute sans rien faire."
+  ];
 
-const dailyRituals = [
-  "Chaque matin ou soir, pratique 10 à 20 minutes de yoga doux.",
-  "Prends une douche bien chaude avec des huiles essentielles comme la lavande.",
-  "Choisis une soirée pour déconnecter complètement de tous tes écrans.",
-  "Allonge-toi dans un endroit calme et pratique la relaxation musculaire progressive.",
-  "Utilise une huile ou une crème hydratante pour masser tes mains et poignets tous les soirs.",
-  "Consacre une soirée à un soin du visage relaxant.",
-  "Réveille-toi avec une playlist qui te boostent.",
-  "Bois un verre d'eau chaque matin avec du citron, du gingembre ou des feuilles de menthe.",
-  "Chaque matin, écris une affirmation positive liée à tes objectifs de la semaine.",
-  "Fais une séance de yoga dynamique ou de stretching pendant 30 minutes.",
-  "À la fin de chaque journée, prends 5 minutes pour noter 3 choses que tu as accomplies.",
-  "Chaque soir avant de te coucher, prends quelques minutes pour visualiser tes objectifs.",
-  "Chaque matin, commence ta journée avec un grand verre d'eau tiède citronnée.",
-  "Mange des repas légers et riches en fibres pour favoriser la digestion.",
-  "Pratique une méditation guidée de détox mentale chaque jour.",
-  "Profite d’une séance de sauna ou d’un bain de vapeur.",
-  "Pratique une détox numérique en réduisant ton temps passé sur les écrans.",
-  "Bois une infusion détox chaque jour, comme du thé vert, du pissenlit, de la menthe ou du gingembre.",
-  "Pendant cette semaine, engage-toi dans un acte de gentillesse chaque jour.",
-  "Tous les jours, prends quelques minutes devant un miroir pour regarder ton reflet et te dire des choses positives.",
-  "Chaque jour, pratique une méditation guidée de l’amour de soi.",
-  "Offre-toi un moment de plaisir sans culpabilité.",
-  "Pratique le yoga ou des étirements pour libérer les tensions.",
-  "Avant de t'endormir, prends 5 à 10 minutes pour méditer sur les choses qui te rendent heureuse.",
-];
+  const today = new Date().getDate(); // 1-31
+  const index = today % rituels.length;
+  rituelText.textContent = `✨ ${rituels[index]}`;
+}
 
-rituelText.textContent = dailyRituals[dayOfWeek % dailyRituals.length];
 
-// -------------------------------
-// ESPACE RESPIRATION (Minuteur)
-// -------------------------------
-let breathingInterval;
-let breathingTimeLeft = 0;
-const breathCircle = document.getElementById("breath-circle");
-const breathTimer = document.getElementById("breath-timer");
+// RESPIRATION
+let breatheInterval;
+function startBreathing(durationMinutes) {
+  const circle = document.getElementById('breath-circle');
+  const timerText = document.getElementById('breath-timer');
 
-function startBreathing(minutes) {
-  // Réinitialiser si déjà en cours
+  if (!circle) return;
+
+  // Stop any existing
   stopBreathing();
 
-  breathingTimeLeft = minutes * 60;
-  breathCircle.classList.add("active");
-  updateTimerDisplay();
+  circle.classList.add('active');
 
-  breathingInterval = setInterval(() => {
-    breathingTimeLeft--;
-    updateTimerDisplay();
+  let secondsLeft = durationMinutes * 60;
 
-    if (breathingTimeLeft <= 0) {
+  timerText.textContent = formatTime(secondsLeft);
+
+  breatheInterval = setInterval(() => {
+    secondsLeft--;
+    timerText.textContent = formatTime(secondsLeft);
+
+    if (secondsLeft <= 0) {
       stopBreathing();
-      breathTimer.textContent = "Namasté 🙏";
+      timerText.textContent = "Terminé ✨";
     }
   }, 1000);
 }
 
 function stopBreathing() {
-  clearInterval(breathingInterval);
-  breathCircle.classList.remove("active");
-  breathTimer.textContent = "Prête ?";
+  const circle = document.getElementById('breath-circle');
+  const timerText = document.getElementById('breath-timer');
+  if (!circle) return;
+
+  circle.classList.remove('active');
+  clearInterval(breatheInterval);
+  timerText.textContent = "Prête ?";
 }
 
-function updateTimerDisplay() {
-  const min = Math.floor(breathingTimeLeft / 60);
-  const sec = breathingTimeLeft % 60;
-  breathTimer.textContent = `${min}:${sec < 10 ? "0" : ""}${sec}`;
+function formatTime(sec) {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${m}:${s < 10 ? '0' : ''}${s}`;
 }
 
-// -------------------------------
-// RECAP DE LA SEMAINE (7 derniers jours)
-// -------------------------------
-const weeklyRecap = document.getElementById("weekly-recap");
+// TODO LIST (Simple LocalStorage)
+function loadTodos() {
+  const container = document.getElementById('todos-container');
+  const input = document.getElementById('todo-input');
+  const addBtn = document.getElementById('add-todo');
 
-function generateWeeklyRecap() {
-  const history = JSON.parse(localStorage.getItem("emotion_history")) || {};
-  const todosStatus = JSON.parse(localStorage.getItem("todos")) || [];
-  const todosDone = todosStatus.filter(todo => todo.checked).length;
+  if (!container) return;
 
-  // Calculer l'historique des 7 derniers jours
-  let emotionListHtml = '<ul style="list-style:none; padding:0; margin-top:0.5rem; font-size:0.95rem;">';
-  const today = new Date();
+  let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-  // On regarde les 7 derniers jours (incluant aujourd'hui)
-  let hasEmotions = false;
-  for (let i = 0; i < 7; i++) {
-    const d = new Date();
-    d.setDate(today.getDate() - i);
-    const dateStr = d.toISOString().split("T")[0];
-    const frDate = d.toLocaleDateString("fr-FR", { weekday: 'short', day: 'numeric' });
+  function render() {
+    container.innerHTML = '';
+    todos.forEach((todo, idx) => {
+      const div = document.createElement('div');
+      div.style.display = 'flex';
+      div.style.justifyContent = 'space-between';
+      div.style.background = 'rgba(255,255,255,0.05)';
+      div.style.padding = '0.8rem';
+      div.style.borderRadius = '15px';
+      div.style.alignItems = 'center';
 
-    if (history[dateStr]) {
-      hasEmotions = true;
-      emotionListHtml += `<li>${frDate} : ${history[dateStr]}</li>`;
+      div.innerHTML = `
+                <span style="text-decoration: ${todo.done ? 'line-through' : 'none'}; color: ${todo.done ? 'grey' : 'white'}">${todo.text}</span>
+                <button onclick="toggleTodo(${idx})" style="background:none; border:none; cursor:pointer;">${todo.done ? '✅' : '🔲'}</button>
+                <button onclick="deleteTodo(${idx})" style="background:none; border:none; cursor:pointer; margin-left:10px;">🗑️</button>
+            `;
+      container.appendChild(div);
+    });
+  }
+
+  addBtn.onclick = () => {
+    if (input.value.trim()) {
+      todos.push({ text: input.value, done: false });
+      localStorage.setItem('todos', JSON.stringify(todos));
+      input.value = '';
+      render();
     }
   }
-  emotionListHtml += "</ul>";
 
-  if (!hasEmotions) {
-    emotionListHtml = "<p style='font-size:0.9rem; font-style:italic;'>Aucune émotion enregistrée cette semaine.</p>";
+  window.toggleTodo = (idx) => {
+    todos[idx].done = !todos[idx].done;
+    localStorage.setItem('todos', JSON.stringify(todos));
+    render();
   }
 
-  weeklyRecap.innerHTML = `
-    <div style="margin-bottom:1rem;">
-      <strong>Historique bien-être :</strong>
-      ${emotionListHtml}
-    </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:0.5rem;">
-      <strong>Tâches du jour :</strong><br>
-      ${todosDone} / ${todosStatus.length} complétées
-    </div>
-  `;
+  window.deleteTodo = (idx) => {
+    todos.splice(idx, 1);
+    localStorage.setItem('todos', JSON.stringify(todos));
+    render();
+  }
+
+  render();
 }
 
-generateWeeklyRecap();
-// -------------------------------
-// COMPLÉMENTS ALIMENTAIRES (exemple simple)
-// -------------------------------
-const complementsBySeason = {
-  printemps: {
-    "Stress & Sommeil": ["Ashwagandha", "L-Theanine", "Magnésium", "Mélatonine"],
-    "Immunité": ["Vitamine D3 + K2", "Échinacée", "Propolis", "Zinc"],
-    "Digestion": ["Probiotiques", "Gingembre / Curcuma", "Fibre de psyllium", "Extrait de papaye fermentée"],
-    "Énergie": ["Rhodiola rosea", "Ginseng", "Vitamine B12", "Coenzyme Q10"],
-    "Autres": ["Biotine", "Collagène", "Oméga‑3"]
-  },
-  été: {
-    "Stress & Sommeil": ["L-théanine", "Valériane", "Vitamines B", "Magnésium bisglycinate ou marin"],
-    "Immunité": ["Vitamine D", "Vitamine C", "Zinc"],
-    "Digestion": ["Probiotiques", "Enzymes digestives", "Fibres psyllium ou fibres solubles"],
-    "Énergie": ["Ginseng", "Coenzyme Q10", "Un bon multivitamines"],
-    "Autres": ["Bêta-carotène", "Cuivre", "Chardon-marie"]
-  },
-  automne: {
-    "Stress & Sommeil": ["Passiflore", "Minéraux", "Valériane", "Rhodiole"],
-    "Immunité": ["Vitamine C", "Vitamines B6, B12", "Sélénium", "Zinc"],
-    "Digestion": ["Bromélaïne", "Fenouil", "Charbon actif"],
-    "Énergie": ["Ginseng", "Fer", "Guarana"],
-    "Autres": ["Biotine", "Collagène", "Propolis"]
-  },
-  hiver: {
-    "Stress & Sommeil": ["Ashwagandha", "Mélatonine", "Magnésium", "Rhodiole"],
-    "Immunité": ["Vitamine D3", "Vitamine C", "Oméga‑3 EPA/DHA", "Zinc"],
-    "Digestion": ["Probiotiques", "Artichaut", "Mélisse"],
-    "Énergie": ["Ginseng", "Gelée royale", "Acérola"],
-    "Autres": ["Sélénium", "Levure de bière", "Acide hyaluronique"]
-  },
-};
+// 4. INIT
+// ----------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  displayDate();
+  loadEmotions();
+  loadHabits();
+  loadTodos();
+  loadComplements(); // NEW
 
-function getSeason() {
+  // Weekly Recap Placeholder
+  const recap = document.getElementById('weekly-recap');
+  if (recap) {
+    const profile = JSON.parse(localStorage.getItem('userProfile'));
+    if (profile) {
+      recap.innerHTML = `Semaine en cours pour <strong>${profile.name}</strong>.<br>Objectif : ${profile.goal.replace('_', ' ')}.`;
+    }
+  }
+});
+
+// 5. COMPLEMENTS SAISONNIERS (V7 - TABS)
+let complementsData = null; // Cache
+
+async function loadComplements() {
+  const profile = JSON.parse(localStorage.getItem('userProfile')) || { goal: 'forme' };
+
+  // Initial Load : Use User Goal
+  updateComplementsDisplay(profile.goal);
+
+  // Update active tab visually
+  const tabs = document.querySelectorAll('.tab-btn');
+  tabs.forEach(btn => {
+    if (btn.onclick.toString().includes(profile.goal)) {
+      setActiveTab(btn);
+    }
+  });
+
+  // Detect Season for Badge
   const month = new Date().getMonth();
-  if (month >= 2 && month <= 4) return "printemps";
-  if (month >= 5 && month <= 7) return "été";
-  if (month >= 8 && month <= 10) return "automne";
-  return "hiver";
-}
+  const isWinter = (month >= 9 || month <= 2);
+  const seasonIcon = isWinter ? '❄️ Mode Hiver' : '☀️ Mode Été';
 
-function updateComplements() {
-  const season = getSeason();
-  const seasonComplements = complementsBySeason[season];
-
-  const complementsContainer = document.getElementById("complements-container");
-  complementsContainer.innerHTML = "";
-
-  for (const category in seasonComplements) {
-    const categoryDiv = document.createElement("div");
-    categoryDiv.className = "complement-category";
-    categoryDiv.innerHTML = `
-      <h3>${category}</h3>
-      <ul>
-        ${seasonComplements[category].map(item => `<li>${item}</li>`).join("")}
-      </ul>
-    `;
-    complementsContainer.appendChild(categoryDiv);
+  const header = document.querySelector('.page-selfcare .sc-title');
+  if (header && !header.innerHTML.includes('badge')) {
+    header.innerHTML = `Mes compléments <span class="season-badge">${seasonIcon}</span>`;
   }
 }
 
-updateComplements();
+// Global scope for HTML onclick
+window.switchComplementTab = function (category, btn) {
+  setActiveTab(btn);
+  updateComplementsDisplay(category);
+}
+
+function setActiveTab(activeBtn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  activeBtn.classList.add('active');
+}
+
+async function updateComplementsDisplay(category) {
+  const container = document.getElementById('complements-container');
+  if (!container) return;
+
+  if (!complementsData) {
+    try {
+      const res = await fetch('data/complements/complements.json');
+      complementsData = await res.json();
+    } catch (e) {
+      console.error("Erreur chargement compléments", e);
+      container.innerHTML = "<p>Impossible de charger les conseils.</p>";
+      return;
+    }
+  }
+
+  // Season Logic
+  const month = new Date().getMonth();
+  const isWinter = (month >= 9 || month <= 2);
+  const seasonKey = isWinter ? 'winter' : 'summer';
+
+  const goalData = complementsData[category] || complementsData['forme'];
+  const list = goalData[seasonKey];
+
+  container.innerHTML = list.map(item => `
+        <div class="complement-card">
+            <div style="font-size:2rem; margin-bottom:0.5rem;">${item.icon}</div>
+            <h3 style="color:var(--fbs-rose-pale); font-size:1rem; margin-bottom:0.3rem;">${item.name}</h3>
+            <p style="font-size:0.85rem; color:var(--fbs-taupe-rose); line-height:1.4;">${item.desc}</p>
+        </div>
+    `).join('');
+}
 
 // -------------------------------
 // BOUTON RETOUR
 // -------------------------------
-// La navigation est gérée par le lien HTML directement vers index.html
+const backButton = document.querySelector(".back-btn");
+if (backButton) {
+  backButton.addEventListener("click", function (e) {
+    // Si la navigation history est possible
+    if (window.history.length > 1) {
+      e.preventDefault();
+      window.history.back();
+    }
+    // Sinon le lien href="index.html" du HTML prend le relais
+  });
+}
