@@ -493,7 +493,7 @@ body {
   padding: 1.2rem 1.4rem;
   border-radius: 40px;
   border: 1.5px solid var(--fbs-rose-clair);
-  color: #1a1a1a;
+  color: var(--fbs-rose-pale);
   font-weight: 600;
   text-align: center;
   box-shadow: 0 0 18px var(--fbs-glow);
