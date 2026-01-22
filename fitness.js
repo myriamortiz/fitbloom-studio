@@ -25,11 +25,31 @@ function initPage(sessions) {
   const today = new Date().getDay(); // 0 = Dimanche
   const index = today === 0 ? 7 : today; // 1 = Lundi ... 7 = Dimanche
 
-  const session = sessions[index];
+  // LOGIQUE SEMAINE A / SEMAINE B
+  // On utilise le numéro de la semaine dans l'année
+  const currentWeekNumber = getWeekNumber(new Date());
+  const isWeekB = currentWeekNumber % 2 !== 0; // Impaire = B, Paire = A
+
+  let session = sessions[index];
+
+  // Variation B : On change un peu le programme !
+  if (isWeekB) {
+    // Pour la démo, on inverse le Nom ou on ajoute un suffixe "Intense"
+    // Idéalement, on aurait un fichier fitness_b.json
+    session = { ...session }; // Clone
+    session.name += " (Week B)";
+    // On pourrait aussi mixer les exercices ici si on voulait
+  }
 
   // 1. Afficher les infos de la séance
   document.getElementById("today-session-name").textContent = session.name;
   document.getElementById("today-session-duration").textContent = session.duration;
+
+  // Petit indicateur A/B
+  const subtitle = document.querySelector('.sub-subtitle');
+  if (subtitle && !subtitle.innerHTML.includes("Coach")) {
+    subtitle.innerHTML += `<br><span style="font-size:0.8rem; opacity:0.7;">Programme ${isWeekB ? 'B' : 'A'}</span>`;
+  }
 
   // 2. Gérer le bouton "Voir ma séance"
   setupModal(session.exercises);
@@ -184,3 +204,12 @@ if (backButton) {
 
 // LANCHER LE CHARGEMENT
 loadFitnessData();
+
+// HELPER : Numéro de semaine
+function getWeekNumber(d) {
+  d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+  var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  return weekNo;
+}
