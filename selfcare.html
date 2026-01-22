@@ -94,10 +94,15 @@
   <section class="sc-section">
     <h2 class="sc-title">Mes compléments du moment</h2>
 
-    <div class="complements-tabs">
-      <button class="tab-btn active" onclick="switchComplementTab('forme', this)">☀️ Vitalité</button>
-      <button class="tab-btn" onclick="switchComplementTab('perte_poids', this)">🌿 Légèreté</button>
-      <button class="tab-btn" onclick="switchComplementTab('prise_masse', this)">💪 Performance</button>
+    <!-- Navigation Thématique (Scrollable) -->
+    <div class="complements-tabs-scroll">
+      <button class="tab-pill active" onclick="switchComplementTab('saison', this)">✨ Saison</button>
+      <button class="tab-pill" onclick="switchComplementTab('stress_sommeil', this)">🌙 Stress & Sommeil</button>
+      <button class="tab-pill" onclick="switchComplementTab('hormones_endometriose', this)">🌸 Hormones & Endo</button>
+      <button class="tab-pill" onclick="switchComplementTab('digestion', this)">🍃 Digestion</button>
+      <button class="tab-pill" onclick="switchComplementTab('energie', this)">⚡ Énergie</button>
+      <button class="tab-pill" onclick="switchComplementTab('poids', this)">🌿 Poids</button>
+      <button class="tab-pill" onclick="switchComplementTab('cheveux_ongles', this)">💅 Beauté</button>
     </div>
 
     <div class="complements-container" id="complements-container">
