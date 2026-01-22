@@ -55,8 +55,10 @@ body {
 }
 
 .fbs-title h1 {
-  font-size: 1.9rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
   color: var(--fbs-rose-pale);
+  letter-spacing: 0.5px;
 }
 
 .fbs-title p {
@@ -92,7 +94,7 @@ body {
   padding: 1.2rem 1.4rem;
   border-radius: 40px;
   border: 1.5px solid var(--fbs-rose-clair);
-  color: white;
+  color: var(--fbs-rose-pale);
   text-align: center;
   box-shadow: 0 0 18px var(--fbs-glow);
   cursor: pointer;
@@ -784,35 +786,76 @@ body {
 }
 
 /* COMPLÉMENTS */
+/* COMPLÉMENTS */
+.complements-tabs-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 10px;
+  margin-bottom: 1.5rem;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  white-space: nowrap;
+}
+
+.complements-tabs-scroll::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+.tab-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--fbs-rose-clair);
+  color: var(--fbs-rose-pale);
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.tab-pill.active,
+.tab-pill:hover {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+  box-shadow: 0 0 10px var(--fbs-glow);
+}
+
 .complements-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
   margin-top: 1rem;
 }
 
-.complement-category {
+.season-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--fbs-rose-clair);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.complement-card {
   background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  border-radius: 20px;
   border: 1.5px solid var(--fbs-rose-clair);
   box-shadow: 0 0 18px var(--fbs-glow);
+  text-align: center;
+  transition: transform 0.3s;
 }
 
-.complement-category h3 {
-  font-size: 1.1rem;
-  color: var(--fbs-rose-pale);
-  margin-bottom: 0.5rem;
-}
-
-.complement-category ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.complement-category li {
-  font-size: 1rem;
-  color: var(--fbs-rose-clair);
+.complement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--fbs-glow);
 }
 
 /* RECAP HEBDO */
@@ -1290,18 +1333,24 @@ input[type="text"]:focus {
 }
 
 .btn-next {
-  background: var(--fbs-rose-clair);
-  color: #1a1a1a;
-  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--fbs-rose-pale);
+  border: 1.5px solid var(--fbs-rose-clair);
   padding: 15px 40px;
   border-radius: 50px;
   font-size: 1.1rem;
   cursor: pointer;
   box-shadow: 0 0 15px var(--fbs-glow);
-  transition: transform 0.2s;
+  transition: transform 0.2s, background 0.3s, color 0.3s;
   font-family: 'Inter', sans-serif;
   margin-top: 10px;
   font-weight: 600;
+}
+
+.btn-next:hover {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+  transform: scale(1.03);
 }
 
 .btn-next:active {
