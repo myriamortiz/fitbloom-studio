@@ -76,17 +76,33 @@ function pickRecipe(list) {
   // 4. Filtrage par Objectif (Personnalisation)
   if (profile && profile.goal) {
     const filterByGoal = (recipes) => {
+      // Logique "Mathématique" : Tout est permis si ça rentre dans les clous ! 📉
+
+      let maxCaloriesPerMeal = 600; // Valeur par défaut
+
+      if (profile.targetCalories) {
+        // On divise le budget par ~3 repas principaux + marge pour encas
+        // Ex: 1400 / 3.2 = ~437 kcal max par repas
+        maxCaloriesPerMeal = Math.round(profile.targetCalories / 3.2);
+      } else if (profile.goal === 'perte_poids') {
+        maxCaloriesPerMeal = 500;
+      }
+
       if (profile.goal === 'perte_poids') {
-        // Prioriser recettes < 400kcal ou type 'healthy'
-        const light = recipes.filter(r => r.calories < 450 || r.type === 'healthy');
-        return light.length > 0 ? light : recipes;
+        // On garde TOUTES les recettes (Healthy OU Plaisir) qui respectent le plafond
+        const fitsInBudget = recipes.filter(r => r.calories <= maxCaloriesPerMeal);
+
+        // Si trop restrictif, on élargit un peu pour ne pas avoir 0 résultat
+        return fitsInBudget.length > 0 ? fitsInBudget : recipes.filter(r => r.calories <= maxCaloriesPerMeal + 100);
       }
+
       if (profile.goal === 'prise_masse') {
-        // Prioriser recettes riches en protéines ou > 400kcal
-        const strong = recipes.filter(r => (r.tags && r.tags.includes('proteine')) || r.calories > 400);
-        return strong.length > 0 ? strong : recipes;
+        // Pour la masse, on veut du dense
+        const dense = recipes.filter(r => r.calories > 350);
+        return dense.length > 0 ? dense : recipes;
       }
-      return recipes; // Forme = tout
+
+      return recipes;
     };
 
     poolPermanent = filterByGoal(poolPermanent);
