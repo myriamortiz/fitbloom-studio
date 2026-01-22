@@ -1,89 +1,279 @@
 {
-  "_meta": {
-    "categories_count": 6,
-    "season_count": 4,
-    "version": "1.0",
-    "updated": "2025-11-28"
-  },
-
   "stress_sommeil": [
-    { "name": "Ashwagandha KSM-66", "benefit": "Stress, anxiété, sommeil profond" },
-    { "name": "Magnésium Bisglycinate", "benefit": "Système nerveux, détente musculaire" },
-    { "name": "Mélatonine faible dose", "benefit": "Aide à l’endormissement" },
-    { "name": "Rhodiole Rosea", "benefit": "Stress + énergie mentale" },
-    { "name": "Passiflore", "benefit": "Apaisement, nervosité" },
-    { "name": "L-Théanine", "benefit": "Calme sans somnolence" }
+    {
+      "name": "Ashwagandha KSM-66",
+      "desc": "Stress, anxiété, sommeil profond",
+      "icon": "🌿"
+    },
+    {
+      "name": "Magnésium Bisglycinate",
+      "desc": "Système nerveux, détente musculaire",
+      "icon": "😴"
+    },
+    {
+      "name": "Mélatonine (faible)",
+      "desc": "Aide à l’endormissement",
+      "icon": "🌙"
+    },
+    {
+      "name": "Rhodiole Rosea",
+      "desc": "Stress + énergie mentale",
+      "icon": "🧠"
+    },
+    {
+      "name": "Passiflore",
+      "desc": "Apaisement, nervosité",
+      "icon": "🌸"
+    },
+    {
+      "name": "L-Théanine",
+      "desc": "Calme sans somnolence",
+      "icon": "🍵"
+    }
   ],
-
   "hormones_endometriose": [
-    { "name": "Oméga-3 EPA/DHA", "benefit": "Anti-inflammatoire, douleurs endo" },
-    { "name": "Curcuma + pipérine", "benefit": "Inflammation chronique" },
-    { "name": "Vitamine D3 + K2", "benefit": "Immunité + hormones" },
-    { "name": "NAC (N-acétylcystéine)", "benefit": "Inflammation + fertilité + endométriose" },
-    { "name": "B6 P-5-P", "benefit": "Équilibre hormonal + SPM" },
-    { "name": "Zinc", "benefit": "Hormones + peau" }
+    {
+      "name": "Oméga-3 EPA/DHA",
+      "desc": "Anti-inflammatoire, douleurs",
+      "icon": "🐟"
+    },
+    {
+      "name": "Curcuma + Pipérine",
+      "desc": "Inflammation chronique",
+      "icon": "🧡"
+    },
+    {
+      "name": "Vitamine D3 + K2",
+      "desc": "Immunité + hormones",
+      "icon": "☀️"
+    },
+    {
+      "name": "NAC",
+      "desc": "Inflammation + fertilité",
+      "icon": "🔬"
+    },
+    {
+      "name": "B6 P-5-P",
+      "desc": "Équilibre hormonal + SPM",
+      "icon": "⚖️"
+    },
+    {
+      "name": "Zinc",
+      "desc": "Hormones + peau",
+      "icon": "✨"
+    }
   ],
-
   "digestion": [
-    { "name": "Probiotiques féminins", "benefit": "Microbiote + digestion + immunité" },
-    { "name": "Desmodium", "benefit": "Détox foie, drainage" },
-    { "name": "Bardane", "benefit": "Peau + foie + drainage" },
-    { "name": "Gingembre", "benefit": "Digestion + anti-nausée" },
-    { "name": "Artichaut", "benefit": "Foie + digestion lente" },
-    { "name": "Curcuma", "benefit": "Ballonnements, inflammation" }
+    {
+      "name": "Probiotiques Féminins",
+      "desc": "Microbiote + digestion",
+      "icon": "🦠"
+    },
+    {
+      "name": "Desmodium",
+      "desc": "Détox foie, drainage",
+      "icon": "🍃"
+    },
+    {
+      "name": "Bardane",
+      "desc": "Peau + foie + drainage",
+      "icon": "🌾"
+    },
+    {
+      "name": "Gingembre",
+      "desc": "Digestion + anti-nausée",
+      "icon": "🫚"
+    },
+    {
+      "name": "Artichaut",
+      "desc": "Foie + digestion lente",
+      "icon": "🥬"
+    },
+    {
+      "name": "Charbon Actif",
+      "desc": "Ballonnements, gaz",
+      "icon": "🌑"
+    }
   ],
-
   "energie": [
-    { "name": "Vitamine C naturelle (acérola)", "benefit": "Énergie + immunité" },
-    { "name": "Rhodiole", "benefit": "Énergie + concentration" },
-    { "name": "Fer bisglycinate", "benefit": "Énergie + anémie" },
-    { "name": "Coenzyme Q10", "benefit": "Vitalité cellulaire" },
-    { "name": "Ginseng", "benefit": "Vitalité physique" },
-    { "name": "B12 méthylée", "benefit": "Énergie + système nerveux" }
+    {
+      "name": "Vitamine C (Acérola)",
+      "desc": "Énergie + immunité",
+      "icon": "🍒"
+    },
+    {
+      "name": "Rhodiole",
+      "desc": "Énergie + concentration",
+      "icon": "🚀"
+    },
+    {
+      "name": "Fer Bisglycinate",
+      "desc": "Énergie + anémie",
+      "icon": "🩸"
+    },
+    {
+      "name": "Coenzyme Q10",
+      "desc": "Vitalité cellulaire",
+      "icon": "🔋"
+    },
+    {
+      "name": "Ginseng",
+      "desc": "Vitalité physique",
+      "icon": "🔥"
+    },
+    {
+      "name": "B12 Méthylée",
+      "desc": "Énergie + système nerveux",
+      "icon": "⚡"
+    }
   ],
-
   "poids": [
-    { "name": "Chrome", "benefit": "Sucre, fringales" },
-    { "name": "Thé vert EGCG", "benefit": "Métabolisme + brûle graisse léger" },
-    { "name": "Glucomannane", "benefit": "Satiété naturelle" },
-    { "name": "L-carnitine", "benefit": "Énergie + métabolisme graisses" },
-    { "name": "Garcinia Cambogia", "benefit": "Appétit + cravings" },
-    { "name": "Magnésium", "benefit": "Régulation glycémie" }
+    {
+      "name": "Chrome",
+      "desc": "Sucre, fringales",
+      "icon": "🍬"
+    },
+    {
+      "name": "Thé vert EGCG",
+      "desc": "Métabolisme + brûle graisse",
+      "icon": "🍃"
+    },
+    {
+      "name": "Konjac",
+      "desc": "Satiété naturelle",
+      "icon": "🍜"
+    },
+    {
+      "name": "L-Carnitine",
+      "desc": "Métabolisme graisses",
+      "icon": "🏃‍♀️"
+    },
+    {
+      "name": "Garcinia Cambogia",
+      "desc": "Appétit + cravings",
+      "icon": "🍈"
+    }
   ],
-
   "cheveux_ongles": [
-    { "name": "Collagène marin peptides", "benefit": "Peau + ongles + cheveux" },
-    { "name": "Biotine B8", "benefit": "Chute de cheveux" },
-    { "name": "Zinc", "benefit": "Cuir chevelu + ongles" },
-    { "name": "MSM soufre organique", "benefit": "Volume + croissance" },
-    { "name": "Vitamine E", "benefit": "Antioxydant beauté" },
-    { "name": "Spiruline", "benefit": "Énergie + cheveux + ongles" }
+    {
+      "name": "Collagène Marin",
+      "desc": "Peau + ongles + cheveux",
+      "icon": "🐟"
+    },
+    {
+      "name": "Biotine B8",
+      "desc": "Chute de cheveux",
+      "icon": "💇‍♀️"
+    },
+    {
+      "name": "Zinc",
+      "desc": "Cuir chevelu + ongles",
+      "icon": "💅"
+    },
+    {
+      "name": "MSM Soufre",
+      "desc": "Volume + croissance",
+      "icon": "🌋"
+    },
+    {
+      "name": "Vitamine E",
+      "desc": "Antioxydant beauté",
+      "icon": "💧"
+    },
+    {
+      "name": "Spiruline",
+      "desc": "Énergie + cheveux",
+      "icon": "🌿"
+    }
   ],
-
   "saisons": {
     "hiver": [
-      { "name": "Vitamine D3 + K2", "benefit": "Immunité + énergie" },
-      { "name": "Oméga-3", "benefit": "Inflammation + peau sèche" },
-      { "name": "Magnésium glycinate", "benefit": "Système nerveux" },
-      { "name": "Ashwagandha", "benefit": "Stress + sommeil" }
+      {
+        "name": "Vitamine D3 + K2",
+        "desc": "Immunité + énergie",
+        "icon": "☀️"
+      },
+      {
+        "name": "Oméga-3",
+        "desc": "Inflammation + peau",
+        "icon": "🐟"
+      },
+      {
+        "name": "Magnésium",
+        "desc": "Système nerveux",
+        "icon": "😴"
+      },
+      {
+        "name": "Gelée Royale",
+        "desc": "Immunité forte",
+        "icon": "🐝"
+      }
     ],
     "printemps": [
-      { "name": "Bardane", "benefit": "Détox peau" },
-      { "name": "Desmodium", "benefit": "Détox foie" },
-      { "name": "Curcuma", "benefit": "Inflammation" },
-      { "name": "Zinc", "benefit": "Peau + hormones" }
+      {
+        "name": "Bardane",
+        "desc": "Détox peau",
+        "icon": "🌸"
+      },
+      {
+        "name": "Desmodium",
+        "desc": "Détox foie",
+        "icon": "🍃"
+      },
+      {
+        "name": "Sève de Bouleau",
+        "desc": "Grand nettoyage",
+        "icon": "🌳"
+      },
+      {
+        "name": "Curcuma",
+        "desc": "Anti-inflammatoire",
+        "icon": "🧡"
+      }
     ],
     "ete": [
-      { "name": "Électrolytes", "benefit": "Hydratation" },
-      { "name": "Vitamine E", "benefit": "Peau + antioxydant" },
-      { "name": "Collagène marin", "benefit": "Peau + ongles" },
-      { "name": "Vitamine C", "benefit": "Soleil + immunité" }
+      {
+        "name": "Électrolytes",
+        "desc": "Hydratation",
+        "icon": "💧"
+      },
+      {
+        "name": "Bêta-carotène",
+        "desc": "Prépare la peau (Carotte)",
+        "icon": "🥕"
+      },
+      {
+        "name": "Vigne Rouge",
+        "desc": "Jambes légères",
+        "icon": "🍇"
+      },
+      {
+        "name": "Collagène",
+        "desc": "Protection solaire peau",
+        "icon": "🐟"
+      }
     ],
     "automne": [
-      { "name": "Acérola", "benefit": "Immunité" },
-      { "name": "Rhodiole", "benefit": "Énergie" },
-      { "name": "NAC", "benefit": "Anti-inflammation (endométriose)" },
-      { "name": "Probiotiques", "benefit": "Immunité + digestion" }
+      {
+        "name": "Acérola (Vit C)",
+        "desc": "Immunité rentrée",
+        "icon": "🍒"
+      },
+      {
+        "name": "Rhodiole",
+        "desc": "Antistress rentrée",
+        "icon": "🧘‍♀️"
+      },
+      {
+        "name": "Probiotiques",
+        "desc": "Immunité + digestion",
+        "icon": "🦠"
+      },
+      {
+        "name": "Zinc",
+        "desc": "Bouclier virus",
+        "icon": "🛡️"
+      }
     ]
   }
 }
