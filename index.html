@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>FitBloom Studio</title>
+  <script>
+    // Redirection Onboarding (si pas de profil)
+    if (!localStorage.getItem('userProfile')) {
+      window.location.href = 'intro.html';
+    }
+  </script>
 
   <!-- Manifest -->
   <link rel="manifest" href="manifest.json" />
@@ -40,32 +47,32 @@
   </section>
 
   <!-- BOUTONS -->
-<main class="fbs-main">
-  <a href="food.html" class="fbs-btn">
-    <span class="icon">🍽️</span>
-    <span class="label">Food Universe</span>
-    <span class="sub">Menus & Recettes</span>
-  </a>
+  <main class="fbs-main">
+    <a href="food.html" class="fbs-btn">
+      <span class="icon">🍽️</span>
+      <span class="label">Food Universe</span>
+      <span class="sub">Menus & Recettes</span>
+    </a>
 
-  <a href="fitness.html" class="fbs-btn">
-    <span class="icon">💪</span>
-    <span class="label">Fitness Universe</span>
-    <span class="sub">Workouts & Routine</span>
-  </a>
+    <a href="fitness.html" class="fbs-btn">
+      <span class="icon">💪</span>
+      <span class="label">Fitness Universe</span>
+      <span class="sub">Workouts & Routine</span>
+    </a>
 
-  <a href="selfcare.html" class="fbs-btn">
-    <span class="icon">🌿</span>
-    <span class="label">Selfcare Universe</span>
-    <span class="sub">Mood & Rituels</span>
-  </a>
-</main>
+    <a href="selfcare.html" class="fbs-btn">
+      <span class="icon">🌿</span>
+      <span class="label">Selfcare Universe</span>
+      <span class="sub">Mood & Rituels</span>
+    </a>
+  </main>
 
   <!-- FOOTER -->
-<footer class="fbs-footer">
-  <a href="tracker.html">
-    <button class="footer-link">📊 Trackers</button>
-  </a>
-</footer>
+  <footer class="fbs-footer">
+    <a href="tracker.html">
+      <button class="footer-link">📊 Trackers</button>
+    </a>
+  </footer>
 
   <!-- JS principal -->
   <script src="app.js"></script>
@@ -81,4 +88,5 @@
   </script>
 
 </body>
+
 </html>
