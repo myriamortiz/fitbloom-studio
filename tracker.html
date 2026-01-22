@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FitBloom Studio – Tracker</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="page-trackers">
@@ -22,7 +23,14 @@
   <!-- SECTION 1 : Suivi Mensuel (Poids & Mensurations) -->
   <section class="sc-section">
     <h2 class="sc-title">Suivi Mensuel : Poids et Mensurations</h2>
-    <p style="text-align:center;">Je mesure pour comprendre, jamais pour me juger.</p>
+    <p style="text-align:center; margin-bottom: 1.5rem;">Je mesure pour comprendre, jamais pour me juger.</p>
+
+    <!-- GRAPHIQUE -->
+    <div
+      style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 1rem; margin-bottom: 2rem; border: 1px solid var(--fbs-rose-clair);">
+      <canvas id="weightChart" style="max-height: 300px;"></canvas>
+    </div>
+
     <table class="tracking-table">
       <thead>
         <tr>
@@ -150,8 +158,8 @@
   </section>
 
   <script src="trackers.js"></script>
-    </div>
+  </div>
   </div>
 </body>
-  
+
 </html>
