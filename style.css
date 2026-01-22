@@ -1052,3 +1052,67 @@ button.main-btn:hover {
     font-size: 0.9rem;
   }
 }
+
+/* ------------------------------------------------------ */
+/*                 MODULE RESPIRATION                     */
+/* ------------------------------------------------------ */
+.breathing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  position: relative;
+}
+
+.breathing-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--fbs-rose-pale) 0%, rgba(242, 213, 200, 0) 70%);
+  border: 2px solid var(--fbs-rose-clair);
+  box-shadow: 0 0 30px var(--fbs-glow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  position: relative;
+}
+
+/* Texte au centre */
+.breathing-circle span {
+  position: absolute;
+  color: #1a1a1a;
+  font-weight: bold;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* Animation active */
+.breathing-circle.active {
+  animation: breathe 10s infinite ease-in-out;
+  /* 10s = 5s inspire (grandit) + 5s expire (rétrécit) -> Rythme lent et apaisant */
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+    background-color: var(--fbs-rose-fonce);
+  }
+
+  50% {
+    transform: scale(2);
+    /* Grandit */
+    opacity: 1;
+    background-color: var(--fbs-rose-pale);
+  }
+}
+
+.breathing-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
