@@ -2,49 +2,46 @@
 // SAUVEGARDE ET AFFICHAGE DES MENUS
 // -------------------------------
 
+const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+const FIELDS = ["poids", "taille", "poitrine", "hanches", "cuisses", "bras"];
+
 const addWeightButton = document.getElementById("add-entry");
 
+// SAUVEGARDE
 addWeightButton.addEventListener("click", () => {
-  const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-  
-  // Créer un objet pour chaque mois
   let monthlyData = {};
-  months.forEach(month => {
-    monthlyData[month] = {
-      poids: document.getElementById(`poids-${month.toLowerCase()}`).value,
-      taille: document.getElementById(`taille-${month.toLowerCase()}`).value,
-      poitrine: document.getElementById(`poitrine-${month.toLowerCase()}`).value,
-      hanches: document.getElementById(`hanches-${month.toLowerCase()}`).value,
-      cuisses: document.getElementById(`cuisses-${month.toLowerCase()}`).value,
-      bras: document.getElementById(`bras-${month.toLowerCase()}`).value,
-    };
+
+  MONTHS.forEach(month => {
+    monthlyData[month] = {};
+    FIELDS.forEach(field => {
+      const element = document.getElementById(`${field}-${month}`);
+      if (element) {
+        monthlyData[month][field] = element.value;
+      }
+    });
   });
 
   // Sauvegarder dans le localStorage
   localStorage.setItem("mensurations", JSON.stringify(monthlyData));
 
   // Afficher un message de confirmation
-  alert("Mensurations enregistrées avec succès!");
+  alert("Mensurations enregistrées avec succès ! ✨");
 });
 
-// -------------------------------
-// GESTION DES MENSURATIONS
-// -------------------------------
-
+// CHARGEMENT
 function loadMensurations() {
   const mensurations = JSON.parse(localStorage.getItem("mensurations"));
-  if (mensurations) {
-    const months = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"];
-    months.forEach(month => {
-      const data = mensurations[month.charAt(0).toUpperCase() + month.slice(1)];
 
+  if (mensurations) {
+    MONTHS.forEach(month => {
+      const data = mensurations[month];
       if (data) {
-        document.getElementById(`poids-${month}`).value = data.poids;
-        document.getElementById(`taille-${month}`).value = data.taille;
-        document.getElementById(`poitrine-${month}`).value = data.poitrine;
-        document.getElementById(`hanches-${month}`).value = data.hanches;
-        document.getElementById(`cuisses-${month}`).value = data.cuisses;
-        document.getElementById(`bras-${month}`).value = data.bras;
+        FIELDS.forEach(field => {
+          const element = document.getElementById(`${field}-${month}`);
+          if (element) {
+            element.value = data[field] || "";
+          }
+        });
       }
     });
   }
@@ -53,39 +50,15 @@ function loadMensurations() {
 // Charger les mensurations au chargement de la page
 loadMensurations();
 
-// -------------------------------
-// GESTION DES MENSURATIONS
-// -------------------------------
-
-function loadMensurations() {
-  const mensurations = JSON.parse(localStorage.getItem("mensurations"));
-  if (mensurations) {
-    const months = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"];
-    months.forEach(month => {
-      const data = mensurations[month.charAt(0).toUpperCase() + month.slice(1)];
-
-      if (data) {
-        document.getElementById(`poids-${month}`).value = data.poids;
-        document.getElementById(`taille-${month}`).value = data.taille;
-        document.getElementById(`poitrine-${month}`).value = data.poitrine;
-        document.getElementById(`hanches-${month}`).value = data.hanches;
-        document.getElementById(`cuisses-${month}`).value = data.cuisses;
-        document.getElementById(`bras-${month}`).value = data.bras;
-      }
-    });
-  }
-}
-
-// Charger les mensurations au chargement de la page
-loadMensurations();
-
-    }
-  });
-// Bouton "Retour" pour rediriger vers la page précédente
+// BOUTON RETOUR
 const backButton = document.querySelector(".back-btn");
-
 if (backButton) {
-  backButton.addEventListener("click", function () {
-    window.history.back(); // Cela revient à la page précédente dans l'historique
+  backButton.addEventListener("click", function (e) {
+    // Si c'est un lien <a>, le comportement par défaut suffit.
+    // Si c'est un <button>, on peut utiliser history.back()
+    if (backButton.tagName === "BUTTON") {
+      e.preventDefault();
+      window.history.back();
+    }
   });
 }
