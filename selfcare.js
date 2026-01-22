@@ -24,7 +24,7 @@ function loadEmotions() {
 function saveEmotion(emotion) {
   const msg = document.getElementById("emotion-save-msg");
 
-  // Sauvegarde fictive (localStorage)
+  // Sauvegarde fictive
   const today = new Date().toISOString().split("T")[0];
   const history = JSON.parse(localStorage.getItem("emotions_history")) || {};
   history[today] = emotion;
@@ -67,7 +67,7 @@ function loadHabits() {
   });
 }
 
-// RITUEL DU JOUR (Simulé)
+// RITUEL DU JOUR
 function displayDate() {
   const rituelText = document.getElementById("rituel");
   if (!rituelText) return;
@@ -96,13 +96,10 @@ function startBreathing(durationMinutes) {
 
   if (!circle) return;
 
-  // Stop any existing
   stopBreathing();
-
   circle.classList.add('active');
 
   let secondsLeft = durationMinutes * 60;
-
   timerText.textContent = formatTime(secondsLeft);
 
   breatheInterval = setInterval(() => {
@@ -132,7 +129,7 @@ function formatTime(sec) {
   return `${m}:${s < 10 ? '0' : ''}${s}`;
 }
 
-// TODO LIST (Simple LocalStorage)
+// TODO LIST
 function loadTodos() {
   const container = document.getElementById('todos-container');
   const input = document.getElementById('todo-input');
@@ -193,9 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
   loadEmotions();
   loadHabits();
   loadTodos();
-  loadComplements(); // NEW
+  loadComplements(); // V8
 
-  // Weekly Recap Placeholder
   const recap = document.getElementById('weekly-recap');
   if (recap) {
     const profile = JSON.parse(localStorage.getItem('userProfile'));
@@ -205,43 +201,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// 5. COMPLEMENTS SAISONNIERS (V7 - TABS)
-let complementsData = null; // Cache
+// 5. COMPLEMENTS EXPERT (V8 - 4 SAISONS + CATEGORIES)
+let complementsData = null;
 
 async function loadComplements() {
-  const profile = JSON.parse(localStorage.getItem('userProfile')) || { goal: 'forme' };
+  // Detect 4 Seasons
+  const month = new Date().getMonth(); // 0 = Jan, 11 = Dec
+  let season = 'hiver'; // default
+  let seasonIcon = '❄️ Hiver';
 
-  // Initial Load : Use User Goal
-  updateComplementsDisplay(profile.goal);
+  if (month >= 2 && month <= 4) { season = 'printemps'; seasonIcon = '🌸 Printemps'; }
+  else if (month >= 5 && month <= 7) { season = 'ete'; seasonIcon = '☀️ Été'; }
+  else if (month >= 8 && month <= 10) { season = 'automne'; seasonIcon = '🍂 Automne'; }
 
-  // Update active tab visually
-  const tabs = document.querySelectorAll('.tab-btn');
-  tabs.forEach(btn => {
-    if (btn.onclick.toString().includes(profile.goal)) {
-      setActiveTab(btn);
-    }
-  });
-
-  // Detect Season for Badge
-  const month = new Date().getMonth();
-  const isWinter = (month >= 9 || month <= 2);
-  const seasonIcon = isWinter ? '❄️ Mode Hiver' : '☀️ Mode Été';
-
+  // Titre Badge Saison
   const header = document.querySelector('.page-selfcare .sc-title');
-  if (header && !header.innerHTML.includes('badge')) {
+  if (header) {
+    // Reset content to ensure clean state
+    if (!header.getAttribute('data-original-text')) {
+      header.setAttribute('data-original-text', 'Mes compléments');
+    }
     header.innerHTML = `Mes compléments <span class="season-badge">${seasonIcon}</span>`;
   }
+
+  // Load 'saison' by default
+  updateComplementsDisplay('saison');
 }
 
-// Global scope for HTML onclick
 window.switchComplementTab = function (category, btn) {
-  setActiveTab(btn);
-  updateComplementsDisplay(category);
-}
+  // Highlighting
+  document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 
-function setActiveTab(activeBtn) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  activeBtn.classList.add('active');
+  updateComplementsDisplay(category);
 }
 
 async function updateComplementsDisplay(category) {
@@ -253,19 +245,27 @@ async function updateComplementsDisplay(category) {
       const res = await fetch('data/complements/complements.json');
       complementsData = await res.json();
     } catch (e) {
-      console.error("Erreur chargement compléments", e);
-      container.innerHTML = "<p>Impossible de charger les conseils.</p>";
+      console.error("Erreur chargement", e);
+      container.innerHTML = "<p>Erreur.</p>";
       return;
     }
   }
 
-  // Season Logic
-  const month = new Date().getMonth();
-  const isWinter = (month >= 9 || month <= 2);
-  const seasonKey = isWinter ? 'winter' : 'summer';
+  let list = [];
 
-  const goalData = complementsData[category] || complementsData['forme'];
-  const list = goalData[seasonKey];
+  // LOGIC : Category or Season ?
+  if (category === 'saison') {
+    const month = new Date().getMonth();
+    let seasonKey = 'hiver';
+    if (month >= 2 && month <= 4) seasonKey = 'printemps';
+    else if (month >= 5 && month <= 7) seasonKey = 'ete';
+    else if (month >= 8 && month <= 10) seasonKey = 'automne';
+
+    list = complementsData['saisons'][seasonKey];
+  } else {
+    // Direct category Access (stress, poids...)
+    list = complementsData[category] || [];
+  }
 
   container.innerHTML = list.map(item => `
         <div class="complement-card">
@@ -276,17 +276,13 @@ async function updateComplementsDisplay(category) {
     `).join('');
 }
 
-// -------------------------------
-// BOUTON RETOUR
-// -------------------------------
+// BACK BUTTON
 const backButton = document.querySelector(".back-btn");
 if (backButton) {
   backButton.addEventListener("click", function (e) {
-    // Si la navigation history est possible
     if (window.history.length > 1) {
       e.preventDefault();
       window.history.back();
     }
-    // Sinon le lien href="index.html" du HTML prend le relais
   });
 }
