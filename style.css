@@ -424,6 +424,55 @@ body {
   color: #1a1a1a;
 }
 
+/* FAVORIS & PANIER */
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.3);
+  transition: 0.2s;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.fav-btn.active {
+  color: #ff4b4b;
+  transform: scale(1.1);
+}
+
+.add-list-btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--fbs-rose-clair);
+  color: var(--fbs-rose-pale);
+  padding: 0.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.add-list-btn:hover {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a;
+}
+
+/* My Favorites Filter */
+.filter-fav {
+  text-align: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--fbs-taupe-rose);
+  text-decoration: underline;
+}
+
 /* ------------------------------------------------------ */
 /*                 PAGE FITNESS                           */
 /* ------------------------------------------------------ */
