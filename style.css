@@ -849,7 +849,25 @@ body {
 }
 
 .tracking-table td {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.03);
+  color: var(--fbs-rose-pale);
+}
+
+.tracking-table input {
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.tracking-table input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
 }
 
 button.main-btn {
