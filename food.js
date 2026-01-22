@@ -262,21 +262,7 @@ function displayWeek(week) {
     container.appendChild(block);
   });
 
-  // Bouton Régénérer (Pour tester le moteur)
-  const resetBtn = document.createElement("button");
-  resetBtn.className = "fbs-btn";
-  resetBtn.style.marginTop = "30px";
-  resetBtn.style.textAlign = "center";
-  resetBtn.style.background = "rgba(255,255,255,0.5)";
-  resetBtn.style.color = "var(--fbs-bordeaux)";
-  resetBtn.innerHTML = "🔄 Régénérer mon menu";
-  resetBtn.onclick = () => {
-    if (confirm("Veux-tu créer une nouvelle semaine basée sur ton profil ?")) {
-      localStorage.removeItem("fbs-week");
-      location.reload();
-    }
-  };
-  container.appendChild(resetBtn);
+
 }
 
 // ----------------------------
