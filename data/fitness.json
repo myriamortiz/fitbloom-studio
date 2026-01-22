@@ -1,0 +1,141 @@
+{
+    "1": {
+        "name": "🍑 Booty + Cuisses",
+        "duration": "30–40 min",
+        "exercises": [
+            {
+                "name": "Squats",
+                "repetitions": "15",
+                "rounds": "3"
+            },
+            {
+                "name": "Fentes",
+                "repetitions": "12",
+                "rounds": "3"
+            },
+            {
+                "name": "Hip Thrust (au sol)",
+                "repetitions": "12",
+                "rounds": "3"
+            },
+            {
+                "name": "Pont fessier",
+                "repetitions": "15",
+                "rounds": "3"
+            },
+            {
+                "name": "Squats sautés",
+                "repetitions": "10",
+                "rounds": "3"
+            }
+        ]
+    },
+    "2": {
+        "name": "💪 Full Body",
+        "duration": "25–35 min",
+        "exercises": [
+            {
+                "name": "Pompes",
+                "repetitions": "10",
+                "rounds": "3"
+            },
+            {
+                "name": "Crunchs",
+                "repetitions": "20",
+                "rounds": "3"
+            },
+            {
+                "name": "Burpees",
+                "repetitions": "10",
+                "rounds": "3"
+            },
+            {
+                "name": "Planche",
+                "repetitions": "30s",
+                "rounds": "3"
+            },
+            {
+                "name": "Mountain Climbers",
+                "repetitions": "20",
+                "rounds": "3"
+            }
+        ]
+    },
+    "3": {
+        "name": "🩰 Danse – Jour off",
+        "duration": "1h–1h30",
+        "exercises": []
+    },
+    "4": {
+        "name": "🔥 Abdos + Gainage",
+        "duration": "20–30 min",
+        "exercises": [
+            {
+                "name": "Planche",
+                "repetitions": "30s",
+                "rounds": "3"
+            },
+            {
+                "name": "Crunchs",
+                "repetitions": "20",
+                "rounds": "3"
+            },
+            {
+                "name": "Russian Twist",
+                "repetitions": "15",
+                "rounds": "3"
+            },
+            {
+                "name": "Relevé de jambes",
+                "repetitions": "12",
+                "rounds": "3"
+            },
+            {
+                "name": "Gainage latéral",
+                "repetitions": "30s",
+                "rounds": "2"
+            }
+        ]
+    },
+    "5": {
+        "name": "⚡ Full Body rapide",
+        "duration": "20–25 min",
+        "exercises": [
+            {
+                "name": "Jumping Jacks",
+                "repetitions": "30",
+                "rounds": "3"
+            },
+            {
+                "name": "Mountain Climbers",
+                "repetitions": "20",
+                "rounds": "3"
+            },
+            {
+                "name": "Squats",
+                "repetitions": "15",
+                "rounds": "3"
+            },
+            {
+                "name": "Pompes",
+                "repetitions": "10",
+                "rounds": "3"
+            },
+            {
+                "name": "Fentes",
+                "repetitions": "12",
+                "rounds": "3"
+            }
+        ]
+    },
+    "6": {
+        "name": "🐶 Balade – Récup active",
+        "duration": "30–60 min",
+        "exercises": []
+    },
+    "7": {
+        "name": "🌿 Balade + Chill",
+        "duration": "Libre",
+        "exercises": []
+    }
+}
