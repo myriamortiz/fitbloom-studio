@@ -142,7 +142,7 @@ body {
 .page-food {
   padding: 1.5rem;
   min-height: 100vh;
-  color: var(--fbs-rose-clair);
+  color: var(--fbs-rose-pale);
 }
 
 /* -------- Header -------- */
@@ -428,16 +428,8 @@ body {
 /* ------------------------------------------------------ */
 
 .page-fitness {
-  background-color: var(--fbs-noir);
-  background-image: url("./black.jpg");
-  background-size: cover;
-  background-attachment: fixed;
   color: var(--fbs-rose-pale);
   /* Uniformisation de la couleur du texte */
-  font-family: "Inter", system-ui, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   padding: 2rem;
 }
 
@@ -591,13 +583,7 @@ body {
 /* -------------------------------- */
 
 .page-selfcare {
-  background-color: var(--fbs-noir);
-  background-image: url("./black.jpg");
-  background-size: cover;
-  background-attachment: fixed;
   color: var(--fbs-rose-pale);
-  font-family: "Inter", system-ui, sans-serif;
-  min-height: 100vh;
   padding: 2rem;
 }
 
@@ -813,10 +799,6 @@ body {
 /* ------------------------------------------------------ */
 
 .page-trackers {
-  background-color: var(--fbs-noir);
-  background-image: url("./black.jpg");
-  background-size: cover;
-  background-attachment: fixed;
   color: var(--fbs-rose-pale);
   padding: 2rem;
 }
