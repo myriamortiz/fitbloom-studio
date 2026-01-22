@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-  
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +9,8 @@
   <script src="selfcare.js" defer></script>
 </head>
 
-  <body class="page-selfcare">
-    
+<body class="page-selfcare">
+
   <!-- HEADER -->
   <div class="sub-header">
     <button class="back-btn">← Retour</button>
@@ -44,8 +44,10 @@
 
     <div class="habits-container">
       <label class="habit-item"><input type="checkbox" class="habit" data-habit="water">Boire 2L d’eau 💧</label>
-      <label class="habit-item"><input type="checkbox" class="habit" data-habit="complements">Prendre mes compléments 💊</label>
-      <label class="habit-item"><input type="checkbox" class="habit" data-habit="sport">Faire ma séance de sport 💪</label>
+      <label class="habit-item"><input type="checkbox" class="habit" data-habit="complements">Prendre mes compléments
+        💊</label>
+      <label class="habit-item"><input type="checkbox" class="habit" data-habit="sport">Faire ma séance de sport
+        💪</label>
       <label class="habit-item"><input type="checkbox" class="habit" data-habit="night">Rituel du soir 🌙</label>
     </div>
   </section>
@@ -54,6 +56,26 @@
   <section class="sc-section">
     <h2 class="sc-title">Rituel du jour</h2>
     <p class="rituel-text" id="rituel"></p>
+  </section>
+
+  <!-- SECTION RESPIRATION (NOUVEAU) -->
+  <section class="sc-section">
+    <h2 class="sc-title">Espace Respiration</h2>
+    <p style="text-align:center; margin-bottom:1.5rem; font-size:0.95rem; color:var(--fbs-rose-clair);">Cohérence
+      cardiaque : inspirez quand le cercle grandit, expirez quand il rétrécit.</p>
+
+    <div class="breathing-container">
+      <div class="breathing-circle" id="breath-circle">
+        <span id="breath-timer">Prête ?</span>
+      </div>
+    </div>
+
+    <div class="breathing-controls">
+      <button class="emotion-btn" onclick="startBreathing(3)">3 min</button>
+      <button class="emotion-btn" onclick="startBreathing(5)">5 min</button>
+      <button class="emotion-btn" style="border-color:#c48a8a; color:#c48a8a;"
+        onclick="stopBreathing()">Arrêter</button>
+    </div>
   </section>
 
   <!-- SECTION TODO LIST -->
@@ -88,4 +110,5 @@
 
   <script src="selfcare.js"></script>
 </body>
+
 </html>
