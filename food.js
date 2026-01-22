@@ -31,16 +31,63 @@ async function loadAllData() {
 // ----------------------------
 // PICK (80% permanent / 20% saison)
 // ----------------------------
-function pickRecipe(list) {
-  const roll = Math.random();
+// ----------------------------
+// SMART PICK ENGINE 🧠
+// ----------------------------
+function getSmartProfile() {
+  try {
+    const raw = localStorage.getItem("userProfile");
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) {
+    return null;
+  }
+}
 
-  if (roll <= 0.8) {
-    return list.permanent[Math.floor(Math.random() * list.permanent.length)];
+function filterByProfile(recipes, profile) {
+  if (!profile || !profile.intolerances || profile.intolerances.length === 0) {
+    return recipes; // Pas de filtres
+  }
+
+  // Filtrer : La recette doit contenir TOUS les tags d'intolérance (ex: "sans_gluten")
+  return recipes.filter(r => {
+    if (!r.tags) return false;
+    // Vérifie que chaque intolérance du profil est présente dans les tags de la recette
+    return profile.intolerances.every(into => r.tags.includes(into));
+  });
+}
+
+function pickRecipe(list) {
+  const profile = getSmartProfile();
+
+  // 1. Déterminer la saison (fixe ou aléeatoire, ici aléatoire pour la démo)
+  const seasons = ["spring", "summer", "autumn", "winter"];
+  const season = seasons[Math.floor(Math.random() * seasons.length)];
+
+  // 2. Préparer les bassins de recettes
+  let poolPermanent = list.permanent;
+  let poolSeason = list[season];
+
+  // 3. Filtrage Intelligent
+  if (profile) {
+    const safePermanent = filterByProfile(poolPermanent, profile);
+    const safeSeason = filterByProfile(poolSeason, profile);
+
+    // Fallback de sécurité : Si le filtre est trop strict et qu'il ne reste rien,
+    // on garde le bassin original (ou on pourrait forcer un type par défaut).
+    // Ici, on priorise le "safe", sinon on retourne à "tout" pour éviter l'erreur.
+    if (safePermanent.length > 0) poolPermanent = safePermanent;
+    if (safeSeason.length > 0) poolSeason = safeSeason;
+  }
+
+  // 4. Tirage 80/20
+  const roll = Math.random();
+  if (roll <= 0.8 && poolPermanent.length > 0) {
+    return poolPermanent[Math.floor(Math.random() * poolPermanent.length)];
+  } else if (poolSeason.length > 0) {
+    return poolSeason[Math.floor(Math.random() * poolSeason.length)];
   } else {
-    const seasons = ["spring", "summer", "autumn", "winter"];
-    const season = seasons[Math.floor(Math.random() * seasons.length)];
-    const arr = list[season];
-    return arr[Math.floor(Math.random() * arr.length)];
+    // Dernier recours si tout est vide (ne devrait pas arriver avec les données actuelles)
+    return poolPermanent[0] || list.permanent[0];
   }
 }
 
@@ -184,6 +231,22 @@ function displayWeek(week) {
 
     container.appendChild(block);
   });
+
+  // Bouton Régénérer (Pour tester le moteur)
+  const resetBtn = document.createElement("button");
+  resetBtn.className = "fbs-btn";
+  resetBtn.style.marginTop = "30px";
+  resetBtn.style.textAlign = "center";
+  resetBtn.style.background = "rgba(255,255,255,0.5)";
+  resetBtn.style.color = "var(--fbs-bordeaux)";
+  resetBtn.innerHTML = "🔄 Régénérer mon menu";
+  resetBtn.onclick = () => {
+    if (confirm("Veux-tu créer une nouvelle semaine basée sur ton profil ?")) {
+      localStorage.removeItem("fbs-week");
+      location.reload();
+    }
+  };
+  container.appendChild(resetBtn);
 }
 
 // ----------------------------
@@ -283,4 +346,14 @@ document.getElementById("close-grocery").addEventListener("click", () => {
   const data = await loadAllData();
   const week = loadOrGenerateWeek(data);
   displayWeek(week);
+
+  // Personnalisation de l'accueil
+  const profile = getSmartProfile();
+  if (profile && profile.name) {
+    // Petit hack UX : Changer le titre ou ajouter un toast
+    const title = document.querySelector('.fbs-title h1');
+    if (title) {
+      title.innerHTML = `FitBloom <span style="font-size:0.6em; display:block; color:var(--fbs-rose-suave)">Bonjour ${profile.name} !</span>`;
+    }
+  }
 })();
