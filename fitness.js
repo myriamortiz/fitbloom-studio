@@ -44,6 +44,20 @@ function initPage(sessions) {
       bubble.querySelector("span").textContent = sessions[dayIdx].name;
     }
   });
+
+  // 5. Conseil Coach Personnalisé
+  const profile = JSON.parse(localStorage.getItem('userProfile'));
+  if (profile && profile.goal) {
+    let advice = "";
+    if (profile.goal === 'perte_poids') advice = "🔥 Objectif Brûle-Graisse : Garde un rythme soutenu, minimise les pauses !";
+    if (profile.goal === 'forme') advice = "✨ Objectif Vitalité : Concentre-toi sur la qualité du mouvement et ta respiration.";
+    if (profile.goal === 'prise_masse') advice = "💪 Objectif Force : Ralentis la phase négative (descente) pour plus d'impact.";
+
+    const subSubtitle = document.querySelector('.sub-subtitle');
+    if (subSubtitle && advice) {
+      subSubtitle.innerHTML = `<span style="color:var(--fbs-rose-suave); font-weight:600;">Coach:</span> ${advice}`;
+    }
+  }
 }
 
 // -------------------------------
