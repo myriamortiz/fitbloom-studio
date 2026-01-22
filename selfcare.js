@@ -308,12 +308,4 @@ updateComplements();
 // -------------------------------
 // BOUTON RETOUR
 // -------------------------------
-const backButton = document.querySelector(".back-btn");
-
-backButton.addEventListener("click", () => {
-  if (window.history.length > 1) {
-    window.history.back();
-  } else {
-    window.location.href = "index.html";
-  }
-});
+// La navigation est gérée par le lien HTML directement vers index.html
