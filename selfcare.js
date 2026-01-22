@@ -157,6 +157,45 @@ const dailyRituals = [
 rituelText.textContent = dailyRituals[dayOfWeek % dailyRituals.length];
 
 // -------------------------------
+// ESPACE RESPIRATION (Minuteur)
+// -------------------------------
+let breathingInterval;
+let breathingTimeLeft = 0;
+const breathCircle = document.getElementById("breath-circle");
+const breathTimer = document.getElementById("breath-timer");
+
+function startBreathing(minutes) {
+  // Réinitialiser si déjà en cours
+  stopBreathing();
+
+  breathingTimeLeft = minutes * 60;
+  breathCircle.classList.add("active");
+  updateTimerDisplay();
+
+  breathingInterval = setInterval(() => {
+    breathingTimeLeft--;
+    updateTimerDisplay();
+
+    if (breathingTimeLeft <= 0) {
+      stopBreathing();
+      breathTimer.textContent = "Namasté 🙏";
+    }
+  }, 1000);
+}
+
+function stopBreathing() {
+  clearInterval(breathingInterval);
+  breathCircle.classList.remove("active");
+  breathTimer.textContent = "Prête ?";
+}
+
+function updateTimerDisplay() {
+  const min = Math.floor(breathingTimeLeft / 60);
+  const sec = breathingTimeLeft % 60;
+  breathTimer.textContent = `${min}:${sec < 10 ? "0" : ""}${sec}`;
+}
+
+// -------------------------------
 // RECAP DE LA SEMAINE (7 derniers jours)
 // -------------------------------
 const weeklyRecap = document.getElementById("weekly-recap");
@@ -202,7 +241,6 @@ function generateWeeklyRecap() {
 }
 
 generateWeeklyRecap();
-
 // -------------------------------
 // COMPLÉMENTS ALIMENTAIRES (exemple simple)
 // -------------------------------
@@ -234,7 +272,7 @@ const complementsBySeason = {
     "Digestion": ["Probiotiques", "Artichaut", "Mélisse"],
     "Énergie": ["Ginseng", "Gelée royale", "Acérola"],
     "Autres": ["Sélénium", "Levure de bière", "Acide hyaluronique"]
-  }
+  },
 };
 
 function getSeason() {
