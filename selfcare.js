@@ -1,17 +1,30 @@
 // -------------------------------
-// GESTION DES ÉMOTIONS
+// GESTION DES ÉMOTIONS (Historique)
 // -------------------------------
 const emotionButtons = document.querySelectorAll(".emotion-btn");
 const emotionSaveMsg = document.getElementById("emotion-save-msg");
 
+function getTodayStr() {
+  return new Date().toISOString().split("T")[0];
+}
+
 emotionButtons.forEach(button => {
   button.addEventListener("click", () => {
     const emotion = button.dataset.emotion;
-    localStorage.setItem("emotion", emotion);
-    emotionSaveMsg.textContent = `Emotion enregistrée : ${emotion}`;
+    const date = getTodayStr();
+
+    // Récupérer l'historique existant ou créer un nouvel objet
+    const history = JSON.parse(localStorage.getItem("emotion_history")) || {};
+    history[date] = emotion;
+
+    localStorage.setItem("emotion_history", JSON.stringify(history));
+
+    emotionSaveMsg.textContent = `Emotion enregistrée pour aujourd'hui : ${emotion}`;
     setTimeout(() => {
       emotionSaveMsg.textContent = "";
     }, 2000);
+
+    generateWeeklyRecap(); // Mettre à jour le récap immédiatement
   });
 });
 
@@ -21,10 +34,15 @@ emotionButtons.forEach(button => {
 const habitCheckboxes = document.querySelectorAll(".habit");
 
 habitCheckboxes.forEach(checkbox => {
+  // Charger l'état sauvegardé
+  const habitKey = `habit_${checkbox.dataset.habit}_${getTodayStr()}`;
+  if (localStorage.getItem(habitKey) === "done") {
+    checkbox.checked = true;
+  }
+
   checkbox.addEventListener("change", () => {
-    const habit = checkbox.dataset.habit;
     const status = checkbox.checked ? "done" : "not done";
-    localStorage.setItem(habit, status);
+    localStorage.setItem(habitKey, status);
   });
 });
 
@@ -51,6 +69,7 @@ addTodoButton.addEventListener("click", () => {
 
     todoInput.value = ""; // Clear input
     saveTodos();
+    generateWeeklyRecap();
   }
 });
 
@@ -89,6 +108,13 @@ function loadTodos() {
     todoItem.innerHTML = `
       <label><input type="checkbox" class="todo-checkbox" ${todo.checked ? "checked" : ""}> ${todo.text}</label>
     `;
+
+    // Ajouter l'event listener pour la case à cocher
+    todoItem.querySelector(".todo-checkbox").addEventListener("change", () => {
+      saveTodos();
+      generateWeeklyRecap();
+    });
+
     todosContainer.appendChild(todoItem);
   });
 }
@@ -102,47 +128,76 @@ const rituelText = document.getElementById("rituel");
 const dayOfWeek = new Date().getDay();  // 0 = Dimanche
 
 const dailyRituals = [
-      "Chaque matin ou soir, pratique 10 à 20 minutes de yoga doux.",
-      "Prends une douche bien chaude avec des huiles essentielles comme la lavande.",
-      "Choisis une soirée pour déconnecter complètement de tous tes écrans.",
-      "Allonge-toi dans un endroit calme et pratique la relaxation musculaire progressive.",
-      "Utilise une huile ou une crème hydratante pour masser tes mains et poignets tous les soirs.",
-      "Consacre une soirée à un soin du visage relaxant.",
-      "Réveille-toi avec une playlist qui te boostent.",
-      "Bois un verre d'eau chaque matin avec du citron, du gingembre ou des feuilles de menthe.",
-      "Chaque matin, écris une affirmation positive liée à tes objectifs de la semaine.",
-      "Fais une séance de yoga dynamique ou de stretching pendant 30 minutes.",
-      "À la fin de chaque journée, prends 5 minutes pour noter 3 choses que tu as accomplies.",
-      "Chaque soir avant de te coucher, prends quelques minutes pour visualiser tes objectifs.",
-      "Chaque matin, commence ta journée avec un grand verre d'eau tiède citronnée.",
-      "Mange des repas légers et riches en fibres pour favoriser la digestion.",
-      "Pratique une méditation guidée de détox mentale chaque jour.",
-      "Profite d’une séance de sauna ou d’un bain de vapeur.",
-      "Pratique une détox numérique en réduisant ton temps passé sur les écrans.",
-      "Bois une infusion détox chaque jour, comme du thé vert, du pissenlit, de la menthe ou du gingembre.",
-      "Pendant cette semaine, engage-toi dans un acte de gentillesse chaque jour.",
-      "Tous les jours, prends quelques minutes devant un miroir pour regarder ton reflet et te dire des choses positives.",
-      "Chaque jour, pratique une méditation guidée de l’amour de soi.",
-      "Offre-toi un moment de plaisir sans culpabilité.",
-      "Pratique le yoga ou des étirements pour libérer les tensions.",
-      "Avant de t'endormir, prends 5 à 10 minutes pour méditer sur les choses qui te rendent heureuse.",
+  "Chaque matin ou soir, pratique 10 à 20 minutes de yoga doux.",
+  "Prends une douche bien chaude avec des huiles essentielles comme la lavande.",
+  "Choisis une soirée pour déconnecter complètement de tous tes écrans.",
+  "Allonge-toi dans un endroit calme et pratique la relaxation musculaire progressive.",
+  "Utilise une huile ou une crème hydratante pour masser tes mains et poignets tous les soirs.",
+  "Consacre une soirée à un soin du visage relaxant.",
+  "Réveille-toi avec une playlist qui te boostent.",
+  "Bois un verre d'eau chaque matin avec du citron, du gingembre ou des feuilles de menthe.",
+  "Chaque matin, écris une affirmation positive liée à tes objectifs de la semaine.",
+  "Fais une séance de yoga dynamique ou de stretching pendant 30 minutes.",
+  "À la fin de chaque journée, prends 5 minutes pour noter 3 choses que tu as accomplies.",
+  "Chaque soir avant de te coucher, prends quelques minutes pour visualiser tes objectifs.",
+  "Chaque matin, commence ta journée avec un grand verre d'eau tiède citronnée.",
+  "Mange des repas légers et riches en fibres pour favoriser la digestion.",
+  "Pratique une méditation guidée de détox mentale chaque jour.",
+  "Profite d’une séance de sauna ou d’un bain de vapeur.",
+  "Pratique une détox numérique en réduisant ton temps passé sur les écrans.",
+  "Bois une infusion détox chaque jour, comme du thé vert, du pissenlit, de la menthe ou du gingembre.",
+  "Pendant cette semaine, engage-toi dans un acte de gentillesse chaque jour.",
+  "Tous les jours, prends quelques minutes devant un miroir pour regarder ton reflet et te dire des choses positives.",
+  "Chaque jour, pratique une méditation guidée de l’amour de soi.",
+  "Offre-toi un moment de plaisir sans culpabilité.",
+  "Pratique le yoga ou des étirements pour libérer les tensions.",
+  "Avant de t'endormir, prends 5 à 10 minutes pour méditer sur les choses qui te rendent heureuse.",
 ];
 
 rituelText.textContent = dailyRituals[dayOfWeek % dailyRituals.length];
 
 // -------------------------------
-// RECAP DE LA SEMAINE
+// RECAP DE LA SEMAINE (7 derniers jours)
 // -------------------------------
 const weeklyRecap = document.getElementById("weekly-recap");
 
 function generateWeeklyRecap() {
-  const emotion = localStorage.getItem("emotion") || "Aucune émotion enregistrée";
+  const history = JSON.parse(localStorage.getItem("emotion_history")) || {};
   const todosStatus = JSON.parse(localStorage.getItem("todos")) || [];
   const todosDone = todosStatus.filter(todo => todo.checked).length;
 
+  // Calculer l'historique des 7 derniers jours
+  let emotionListHtml = '<ul style="list-style:none; padding:0; margin-top:0.5rem; font-size:0.95rem;">';
+  const today = new Date();
+
+  // On regarde les 7 derniers jours (incluant aujourd'hui)
+  let hasEmotions = false;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date();
+    d.setDate(today.getDate() - i);
+    const dateStr = d.toISOString().split("T")[0];
+    const frDate = d.toLocaleDateString("fr-FR", { weekday: 'short', day: 'numeric' });
+
+    if (history[dateStr]) {
+      hasEmotions = true;
+      emotionListHtml += `<li>${frDate} : ${history[dateStr]}</li>`;
+    }
+  }
+  emotionListHtml += "</ul>";
+
+  if (!hasEmotions) {
+    emotionListHtml = "<p style='font-size:0.9rem; font-style:italic;'>Aucune émotion enregistrée cette semaine.</p>";
+  }
+
   weeklyRecap.innerHTML = `
-    <p>Emotion de la semaine : ${emotion}</p>
-    <p>Tâches complètes : ${todosDone} / ${todosStatus.length}</p>
+    <div style="margin-bottom:1rem;">
+      <strong>Historique bien-être :</strong>
+      ${emotionListHtml}
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:0.5rem;">
+      <strong>Tâches du jour :</strong><br>
+      ${todosDone} / ${todosStatus.length} complétées
+    </div>
   `;
 }
 
