@@ -18,7 +18,7 @@
 
   <!-- Icônes PWA -->
   <link rel="icon" type="image/png" sizes="192x192" href="assets/logo/icon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/logo/icône-512.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logo/icon-512.png" />
 
   <!-- Couleur navigateur -->
   <meta name="theme-color" content="#000000" />
@@ -72,6 +72,20 @@
     <a href="tracker.html">
       <button class="footer-link">📊 Trackers</button>
     </a>
+    <div style="margin-top:20px; text-align:center;">
+      <button onclick="resetApp()"
+        style="background:none; border:none; color: rgba(0,0,0,0.4); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">
+        🔄 Reset App
+      </button>
+    </div>
+    <script>
+      function resetApp() {
+        if (confirm("Tout effacer et recommencer à zéro ?")) {
+          localStorage.clear();
+          window.location.reload();
+        }
+      }
+    </script>
   </footer>
 
   <!-- JS principal -->
