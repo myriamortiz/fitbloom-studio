@@ -13,7 +13,7 @@
 
   <!-- HEADER -->
   <div class="sub-header">
-    <button class="back-btn">← Retour</button>
+    <a href="index.html" class="back-btn">← Retour</a>
     <div class="header-center">
       <img src="assets/logo/logo-fbs-light.png" class="sub-logo" alt="FitBloom">
       <h1>Selfcare Universe</h1>
@@ -93,6 +93,12 @@
   <!-- SECTION COMPLÉMENTS -->
   <section class="sc-section">
     <h2 class="sc-title">Mes compléments du moment</h2>
+
+    <div class="complements-tabs">
+      <button class="tab-btn active" onclick="switchComplementTab('forme', this)">☀️ Vitalité</button>
+      <button class="tab-btn" onclick="switchComplementTab('perte_poids', this)">🌿 Légèreté</button>
+      <button class="tab-btn" onclick="switchComplementTab('prise_masse', this)">💪 Performance</button>
+    </div>
 
     <div class="complements-container" id="complements-container">
       <!-- Les compléments seront insérés ici par JavaScript -->
