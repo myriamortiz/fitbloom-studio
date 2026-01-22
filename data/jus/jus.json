@@ -1,47 +1,1140 @@
 {
   "permanent": [
-    { "type": "healthy", "name": "Jus carotte-orange-gingembre", "calories": 120, "ingredients": ["Carottes : 2", "Orange : 1", "Gingembre : 1 cm"], "instructions": "Passer tous les ingrédients à l’extracteur." },
-    { "type": "healthy", "name": "Jus pomme-céleri-citron", "calories": 110, "ingredients": ["Pomme : 1", "Céleri branche : 1", "Citron : 1 c.à.c"], "instructions": "Presser pomme, céleri puis ajouter citron." },
-    { "type": "healthy", "name": "Jus concombre-pomme-menthe", "calories": 95, "ingredients": ["Concombre : 1/2", "Pomme : 1", "Menthe : 6 feuilles"], "instructions": "Passer les ingrédients à froid." },
-    { "type": "healthy", "name": "Jus betterave-carotte-pomme", "calories": 130, "ingredients": ["Betterave : 1 petite", "Carotte : 1", "Pomme : 1"], "instructions": "Presser betterave + carotte + pomme." },
-    { "type": "plaisir", "name": "Jus orange-mangue-ananas", "calories": 150, "ingredients": ["Orange : 1", "Mangue : 80g", "Ananas : 80g"], "instructions": "Passer les fruits à l’extracteur." }
+    {
+      "type": "healthy",
+      "name": "Jus carotte-orange-gingembre",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Carottes : 2",
+        "Orange : 1",
+        "Gingembre : 1 cm"
+      ],
+      "instructions": "Passer tous les ingrédients à l’extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus pomme-céleri-citron",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Céleri branche : 1",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Presser pomme, céleri puis ajouter citron."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus concombre-pomme-menthe",
+      "calories": 95,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Concombre : 1/2",
+        "Pomme : 1",
+        "Menthe : 6 feuilles"
+      ],
+      "instructions": "Passer les ingrédients à froid."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus betterave-carotte-pomme",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Betterave : 1 petite",
+        "Carotte : 1",
+        "Pomme : 1"
+      ],
+      "instructions": "Presser betterave + carotte + pomme."
+    },
+    {
+      "type": "plaisir",
+      "name": "Jus orange-mangue-ananas",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Orange : 1",
+        "Mangue : 80g",
+        "Ananas : 80g"
+      ],
+      "instructions": "Passer les fruits à l’extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus vert détox total",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Céleri",
+        "Concombre",
+        "Persil",
+        "Citron"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus ACE (Maison)",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Orange",
+        "Carotte",
+        "Citron"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Shot Gingembre Curcuma",
+      "calories": 40,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Gingembre",
+        "Curcuma",
+        "Citron"
+      ],
+      "instructions": "Shot."
+    },
+    {
+      "type": "plaisir",
+      "name": "Smoothie Banane Cacao",
+      "calories": 250,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Banane",
+        "Cacao",
+        "Lait amande"
+      ],
+      "instructions": "Mixer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Betterave Énergie",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Betterave",
+        "Pomme",
+        "Gingembre"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Eau de coco fraîche",
+      "calories": 60,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Coco jeune"
+      ],
+      "instructions": "Ouvrir et boire."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Fenouil Pomme",
+      "calories": 100,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Fenouil",
+        "Pomme",
+        "Citron"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Lait d'amande maison",
+      "calories": 80,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Amandes trempées",
+        "Eau"
+      ],
+      "instructions": "Mixer et filtrer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Carotte Persil",
+      "calories": 95,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Carotte",
+        "Persil",
+        "Huile olive (goutte)"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Tomate Cèleri",
+      "calories": 70,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Tomate",
+        "Céleri",
+        "Tabasco"
+      ],
+      "instructions": "Extracteur."
+    }
   ],
-
   "spring": [
-    { "type": "healthy", "name": "Jus fraise-concombre-citron", "calories": 100, "ingredients": ["Fraises : 120g", "Concombre : 1/4", "Citron : 1 c.à.c"], "instructions": "Extraire fraises + concombre, ajouter citron." },
-    { "type": "healthy", "name": "Jus carotte-pomme-menthe", "calories": 110, "ingredients": ["Carotte : 1", "Pomme : 1", "Menthe : 6 feuilles"], "instructions": "Extraire tous les ingrédients." },
-    { "type": "healthy", "name": "Jus ananas-pomme-citron vert", "calories": 125, "ingredients": ["Ananas : 100g", "Pomme : 1/2", "Citron vert : 1 c.à.c"], "instructions": "Extraire ananas + pomme, ajouter citron vert." },
-    { "type": "plaisir", "name": "Jus fraise-vanille", "calories": 140, "ingredients": ["Fraises : 150g", "Vanille : 1 c.à.c"], "instructions": "Presser fraises puis ajouter vanille." },
-    { "type": "healthy", "name": "Jus kiwi-pomme-menthe", "calories": 105, "ingredients": ["Kiwi : 1", "Pomme : 1", "Menthe : 4 feuilles"], "instructions": "Extraire kiwi + pomme + menthe." }
+    {
+      "type": "healthy",
+      "name": "Jus fraise-concombre-citron",
+      "calories": 100,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Fraises : 120g",
+        "Concombre : 1/4",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Extraire fraises + concombre, ajouter citron."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus carotte-pomme-menthe",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Carotte : 1",
+        "Pomme : 1",
+        "Menthe : 6 feuilles"
+      ],
+      "instructions": "Extraire tous les ingrédients."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus ananas-pomme-citron vert",
+      "calories": 125,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Ananas : 100g",
+        "Pomme : 1/2",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Extraire ananas + pomme, ajouter citron vert."
+    },
+    {
+      "type": "plaisir",
+      "name": "Jus fraise-vanille",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Fraises : 150g",
+        "Vanille : 1 c.à.c"
+      ],
+      "instructions": "Presser fraises puis ajouter vanille."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus kiwi-pomme-menthe",
+      "calories": 105,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Kiwi : 1",
+        "Pomme : 1",
+        "Menthe : 4 feuilles"
+      ],
+      "instructions": "Extraire kiwi + pomme + menthe."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Détox Printemps",
+      "calories": 85,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Asperce (crue)",
+        "Pomme",
+        "Citron"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie Fraise Rhubarbe",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Fraise",
+        "Rhubarbe (cuite)",
+        "Pomme"
+      ],
+      "instructions": "Mixer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Epinard Pomme",
+      "calories": 100,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Epinard",
+        "Pomme",
+        "Citron vert"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Radis Rose",
+      "calories": 80,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Radis",
+        "Pomme"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Pamplemousse Rose",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pamplemousse"
+      ],
+      "instructions": "Presser."
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie Kiwi Menthe",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Kiwi",
+        "Menthe",
+        "Pomme"
+      ],
+      "instructions": "Mixer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Ortie Pomme",
+      "calories": 95,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Ortie fraîche",
+        "Pomme"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Lait de noisette",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Noisette",
+        "Eau"
+      ],
+      "instructions": "Mixer et filtrer."
+    }
   ],
-
   "summer": [
-    { "type": "healthy", "name": "Jus pastèque-menthe", "calories": 90, "ingredients": ["Pastèque : 200g", "Menthe : 6 feuilles"], "instructions": "Passer pastèque + menthe." },
-    { "type": "healthy", "name": "Jus melon-pomme-citron vert", "calories": 110, "ingredients": ["Melon : 150g", "Pomme : 1/2", "Citron vert : 1 c.à.c"], "instructions": "Extraire melon + pomme, ajouter citron vert." },
-    { "type": "healthy", "name": "Jus ananas-citron-curcuma", "calories": 120, "ingredients": ["Ananas : 150g", "Citron : 1 c.à.c", "Curcuma frais : 1 cm"], "instructions": "Passer tous les ingrédients à l’extracteur." },
-    { "type": "healthy", "name": "Jus mangue-pêche-citron", "calories": 135, "ingredients": ["Mangue : 80g", "Pêche : 1/2", "Citron : 1 c.à.c"], "instructions": "Presser mangue + pêche, ajouter citron." },
-    { "type": "plaisir", "name": "Jus tropical coco-ananas-mangue", "calories": 160, "ingredients": ["Ananas : 100g", "Mangue : 60g", "Eau de coco : 50ml"], "instructions": "Extraire fruits puis ajouter eau de coco." }
+    {
+      "type": "healthy",
+      "name": "Jus pastèque-menthe",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pastèque : 200g",
+        "Menthe : 6 feuilles"
+      ],
+      "instructions": "Passer pastèque + menthe."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus melon-pomme-citron vert",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Melon : 150g",
+        "Pomme : 1/2",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Extraire melon + pomme, ajouter citron vert."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus ananas-citron-curcuma",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Ananas : 150g",
+        "Citron : 1 c.à.c",
+        "Curcuma frais : 1 cm"
+      ],
+      "instructions": "Passer tous les ingrédients à l’extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus mangue-pêche-citron",
+      "calories": 135,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Mangue : 80g",
+        "Pêche : 1/2",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Presser mangue + pêche, ajouter citron."
+    },
+    {
+      "type": "plaisir",
+      "name": "Jus tropical coco-ananas-mangue",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Ananas : 100g",
+        "Mangue : 60g",
+        "Eau de coco : 50ml"
+      ],
+      "instructions": "Extraire fruits puis ajouter eau de coco."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Pastèque Citron",
+      "calories": 80,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pastèque",
+        "Menthe",
+        "Citron vert"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie Pêche Abricot",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pêche",
+        "Abricot",
+        "Lait coco"
+      ],
+      "instructions": "Mixer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Concombre Melon",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Concombre",
+        "Melon"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Citronnade Gingembre",
+      "calories": 60,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Citron",
+        "Gingembre",
+        "Eau",
+        "Agave"
+      ],
+      "instructions": "Mélanger."
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie Fruits Rouges",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Fraise",
+        "Framboise",
+        "Cassis"
+      ],
+      "instructions": "Mixer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Poivron Rouge",
+      "calories": 85,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Poivron rouge",
+        "Carotte",
+        "Pomme"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Thé Glacé Pêche Maison",
+      "calories": 50,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Thé noir",
+        "Pêche",
+        "Glaçons"
+      ],
+      "instructions": "Infuser."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Tomate Basilic",
+      "calories": 70,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Tomate",
+        "Basilic",
+        "Sel"
+      ],
+      "instructions": "Extracteur."
+    }
   ],
-
   "autumn": [
-    { "type": "healthy", "name": "Jus poire-pomme-cannelle", "calories": 130, "ingredients": ["Poire : 1", "Pomme : 1/2", "Cannelle : 1 pincée"], "instructions": "Passer poire + pomme, ajouter cannelle." },
-    { "type": "healthy", "name": "Jus raisin-pomme-citron", "calories": 115, "ingredients": ["Raisin : 120g", "Pomme : 1/2", "Citron : 1 c.à.c"], "instructions": "Extraire raisins + pomme, ajouter citron." },
-    { "type": "healthy", "name": "Jus betterave-pomme-citron", "calories": 125, "ingredients": ["Betterave : 1 petite", "Pomme : 1/2", "Citron : 1 c.à.c"], "instructions": "Extraire betterave + pomme, finir par citron." },
-    { "type": "plaisir", "name": "Jus pomme-vanille", "calories": 140, "ingredients": ["Pomme : 2", "Vanille : 1 c.à.c"], "instructions": "Presser pommes puis vanille." },
-    { "type": "healthy", "name": "Jus carotte-poire-orange", "calories": 120, "ingredients": ["Carotte : 1", "Poire : 1/2", "Orange : 1/2"], "instructions": "Extraire carotte + poire + orange." }
+    {
+      "type": "healthy",
+      "name": "Jus poire-pomme-cannelle",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Pomme : 1/2",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Passer poire + pomme, ajouter cannelle."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus raisin-pomme-citron",
+      "calories": 115,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Raisin : 120g",
+        "Pomme : 1/2",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Extraire raisins + pomme, ajouter citron."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus betterave-pomme-citron",
+      "calories": 125,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Betterave : 1 petite",
+        "Pomme : 1/2",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Extraire betterave + pomme, finir par citron."
+    },
+    {
+      "type": "plaisir",
+      "name": "Jus pomme-vanille",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pomme : 2",
+        "Vanille : 1 c.à.c"
+      ],
+      "instructions": "Presser pommes puis vanille."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus carotte-poire-orange",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Carotte : 1",
+        "Poire : 1/2",
+        "Orange : 1/2"
+      ],
+      "instructions": "Extraire carotte + poire + orange."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Raisin Noir",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Raisin noir"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Poire Épices",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Poire",
+        "Cannelle",
+        "Gingembre"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie Figues",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Figues",
+        "Lait amande",
+        "Miel"
+      ],
+      "instructions": "Mixer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Citrouille Pomme",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Citrouille crue",
+        "Pomme",
+        "Cannelle"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Grenade",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Grenade"
+      ],
+      "instructions": "Presser."
+    },
+    {
+      "type": "healthy",
+      "name": "Lait de noix maison",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Noix",
+        "Eau",
+        "Dattes"
+      ],
+      "instructions": "Mixer filtrer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Kaki Orange",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Kaki",
+        "Orange"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Carotte Violette",
+      "calories": 100,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Carotte violette",
+        "Pomme"
+      ],
+      "instructions": "Extracteur."
+    }
   ],
-
   "winter": [
-    { "type": "healthy", "name": "Jus orange-carotte-gingembre", "calories": 120, "ingredients": ["Orange : 1", "Carotte : 1", "Gingembre : 1 cm"], "instructions": "Presser tous les ingrédients." },
-    { "type": "healthy", "name": "Jus pomme-orange-cannelle", "calories": 130, "ingredients": ["Pomme : 1", "Orange : 1", "Cannelle : 1 pincée"], "instructions": "Extraire pomme + orange, ajouter cannelle." },
-    { "type": "healthy", "name": "Jus betterave-clémentine", "calories": 125, "ingredients": ["Betterave : 1 petite", "Clémentines : 2"], "instructions": "Extraire betterave + clémentines." },
-    { "type": "plaisir", "name": "Jus poire-orange-vanille", "calories": 150, "ingredients": ["Poire : 1", "Orange : 1", "Vanille : 1 c.à.c"], "instructions": "Passer poire + orange + vanille." },
-    { "type": "healthy", "name": "Jus kiwi-orange-pomme", "calories": 115, "ingredients": ["Kiwi : 1", "Orange : 1/2", "Pomme : 1/2"], "instructions": "Extraire kiwi + pomme + orange." }
+    {
+      "type": "healthy",
+      "name": "Jus orange-carotte-gingembre",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Orange : 1",
+        "Carotte : 1",
+        "Gingembre : 1 cm"
+      ],
+      "instructions": "Presser tous les ingrédients."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus pomme-orange-cannelle",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Orange : 1",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Extraire pomme + orange, ajouter cannelle."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus betterave-clémentine",
+      "calories": 125,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Betterave : 1 petite",
+        "Clémentines : 2"
+      ],
+      "instructions": "Extraire betterave + clémentines."
+    },
+    {
+      "type": "plaisir",
+      "name": "Jus poire-orange-vanille",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Orange : 1",
+        "Vanille : 1 c.à.c"
+      ],
+      "instructions": "Passer poire + orange + vanille."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus kiwi-orange-pomme",
+      "calories": 115,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Kiwi : 1",
+        "Orange : 1/2",
+        "Pomme : 1/2"
+      ],
+      "instructions": "Extraire kiwi + pomme + orange."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Orange Sanguine",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Orange sanguine"
+      ],
+      "instructions": "Presser."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Pomme Cèleri Gingembre",
+      "calories": 95,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pomme",
+        "Céleri",
+        "Gingembre"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie Banane Dattes",
+      "calories": 280,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Banane",
+        "Dattes",
+        "Lait avoine"
+      ],
+      "instructions": "Mixer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Chou Rouge Pomme",
+      "calories": 100,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Chou rouge",
+        "Pomme",
+        "Citron"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus Carotte Curcuma Poivre",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Carotte",
+        "Curcuma frais",
+        "Poivre noir"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Lait Praliné (Noisette Dattes)",
+      "calories": 250,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Noisettes torréfiées",
+        "Dattes",
+        "Eau"
+      ],
+      "instructions": "Mixer."
+    },
+    {
+      "type": "healthy",
+      "name": "Jus de Kiwi (Vitamine C)",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Kiwi",
+        "Pomme"
+      ],
+      "instructions": "Extracteur."
+    },
+    {
+      "type": "healthy",
+      "name": "Infusion Thym Citron Miel",
+      "calories": 40,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Thym",
+        "Citron",
+        "Miel"
+      ],
+      "instructions": "Infuser."
+    }
   ],
-
   "_meta": {
     "healthy_ratio": 0.8,
     "plaisir_ratio": 0.2,
-    "total_recipes": 25
+    "total_recipes": 67,
+    "total_permanent": 15,
+    "total_spring": 13,
+    "total_summer": 13,
+    "total_autumn": 13,
+    "total_winter": 13
   }
 }
