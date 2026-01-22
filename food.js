@@ -59,35 +59,49 @@ function filterByProfile(recipes, profile) {
 function pickRecipe(list) {
   const profile = getSmartProfile();
 
-  // 1. Déterminer la saison (fixe ou aléeatoire, ici aléatoire pour la démo)
+  // 1. Déterminer la saison
   const seasons = ["spring", "summer", "autumn", "winter"];
   const season = seasons[Math.floor(Math.random() * seasons.length)];
 
-  // 2. Préparer les bassins de recettes
+  // 2. Préparer les bassins
   let poolPermanent = list.permanent;
   let poolSeason = list[season];
 
-  // 3. Filtrage Intelligent
+  // 3. Filtrage par Intolérances (Santé avant tout)
   if (profile) {
-    const safePermanent = filterByProfile(poolPermanent, profile);
-    const safeSeason = filterByProfile(poolSeason, profile);
-
-    // Fallback de sécurité : Si le filtre est trop strict et qu'il ne reste rien,
-    // on garde le bassin original (ou on pourrait forcer un type par défaut).
-    // Ici, on priorise le "safe", sinon on retourne à "tout" pour éviter l'erreur.
-    if (safePermanent.length > 0) poolPermanent = safePermanent;
-    if (safeSeason.length > 0) poolSeason = safeSeason;
+    poolPermanent = filterByProfile(poolPermanent, profile);
+    poolSeason = filterByProfile(poolSeason, profile);
   }
 
-  // 4. Tirage 80/20
+  // 4. Filtrage par Objectif (Personnalisation)
+  if (profile && profile.goal) {
+    const filterByGoal = (recipes) => {
+      if (profile.goal === 'perte_poids') {
+        // Prioriser recettes < 400kcal ou type 'healthy'
+        const light = recipes.filter(r => r.calories < 450 || r.type === 'healthy');
+        return light.length > 0 ? light : recipes;
+      }
+      if (profile.goal === 'prise_masse') {
+        // Prioriser recettes riches en protéines ou > 400kcal
+        const strong = recipes.filter(r => (r.tags && r.tags.includes('proteine')) || r.calories > 400);
+        return strong.length > 0 ? strong : recipes;
+      }
+      return recipes; // Forme = tout
+    };
+
+    poolPermanent = filterByGoal(poolPermanent);
+    poolSeason = filterByGoal(poolSeason);
+  }
+
+  // 5. Tirage 80/20
   const roll = Math.random();
   if (roll <= 0.8 && poolPermanent.length > 0) {
     return poolPermanent[Math.floor(Math.random() * poolPermanent.length)];
   } else if (poolSeason.length > 0) {
     return poolSeason[Math.floor(Math.random() * poolSeason.length)];
   } else {
-    // Dernier recours si tout est vide (ne devrait pas arriver avec les données actuelles)
-    return poolPermanent[0] || list.permanent[0];
+    // Fallback global (ne devrait pas arriver)
+    return list.permanent[0];
   }
 }
 
@@ -349,11 +363,21 @@ document.getElementById("close-grocery").addEventListener("click", () => {
 
   // Personnalisation de l'accueil
   const profile = getSmartProfile();
-  if (profile && profile.name) {
-    // Petit hack UX : Changer le titre ou ajouter un toast
-    const title = document.querySelector('.fbs-title h1');
-    if (title) {
-      title.innerHTML = `FitBloom <span style="font-size:0.6em; display:block; color:var(--fbs-rose-suave)">Bonjour ${profile.name} !</span>`;
+  if (profile) {
+    if (profile.name) {
+      // Petit hack UX : Changer le titre
+      const title = document.querySelector('.sub-title');
+      if (title) {
+        title.innerHTML = `FitBloom <span style="font-size:0.6em; display:block; color:var(--fbs-rose-suave)">Bonjour ${profile.name} !</span>`;
+      }
+    }
+
+    // Affichage calories
+    if (profile.targetCalories) {
+      const calDiv = document.getElementById('calorie-target-display');
+      if (calDiv) {
+        calDiv.innerHTML = `🎯 Objectif : <strong>${profile.targetCalories} kcal</strong> / jour`;
+      }
     }
   }
 })();
