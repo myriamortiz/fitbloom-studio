@@ -68,13 +68,23 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="fbs-footer">
-    <a href="tracker.html">
-      <button class="footer-link">📊 Trackers</button>
+  <footer class="fbs-footer" style="flex-direction: column; align-items: center; gap: 1rem;">
+    <a href="tracker.html" style="text-decoration:none;">
+      <button class="footer-link" style="
+        border: 1px solid var(--fbs-rose-clair); 
+        padding: 0.8rem 2rem; 
+        border-radius: 30px; 
+        color: var(--fbs-rose-pale);
+        background: rgba(255,255,255,0.05);
+        font-size: 1rem;
+        box-shadow: 0 0 10px var(--fbs-glow);
+      ">
+        📊 Trackers
+      </button>
     </a>
-    <div style="margin-top:20px; text-align:center;">
+    <div>
       <button onclick="resetApp()"
-        style="background:none; border:none; color: rgba(0,0,0,0.4); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">
+        style="background:none; border:none; color: var(--fbs-taupe-rose); font-size: 0.8rem; cursor: pointer; text-decoration: underline; opacity: 0.7;">
         🔄 Reset App
       </button>
     </div>
