@@ -123,15 +123,16 @@ function updateDisplayForDay(dayIndex) {
   if (!globalPools) return;
 
   const profile = JSON.parse(localStorage.getItem('userProfile')) || { workoutDays: [1, 3, 5], goal: 'forme' };
-  const currentWeekNumber = getWeekNumber(new Date());
+  const d = new Date();
+  const currentWeekNumber = getWeekNumber(d);
   const isWeekB = currentWeekNumber % 2 !== 0;
+  const isToday = (dayIndex === d.getDay());
 
   const session = generateSession(globalPools, profile, isWeekB, dayIndex);
 
   // UI Update
   const titleEl = document.querySelector('.session-title');
   if (titleEl) {
-    const isToday = (dayIndex === new Date().getDay());
     titleEl.textContent = isToday ? "Séance du jour" : `Aperçu : ${getDayName(dayIndex)}`;
   }
 
@@ -141,6 +142,10 @@ function updateDisplayForDay(dayIndex) {
   const btn = document.getElementById("voir-seance");
   const oldMsg = document.getElementById('msg-repos');
   if (oldMsg) oldMsg.remove();
+  
+  // Clean up any existing check-btn if it exists from previous state
+  const oldCheckBtn = document.getElementById("check-session-btn");
+  if(oldCheckBtn) oldCheckBtn.style.display = 'none';
 
   if (session.isRest) {
     if (btn) btn.style.display = 'none';
@@ -152,90 +157,16 @@ function updateDisplayForDay(dayIndex) {
     msg.style.marginTop = "1rem";
     if (btn && btn.parentNode) btn.parentNode.insertBefore(msg, btn);
 
-    const checkBtn = document.getElementById("check-session-btn");
-    if (checkBtn) checkBtn.style.display = 'none';
-
   } else {
+    // Session Active
     if (btn) btn.style.display = 'inline-block';
     setupModal(session.exercises);
-
-    setupCheckButton(session); // Setup validation button logic
-    const checkBtn = document.getElementById("check-session-btn");
-    if (checkBtn) checkBtn.style.display = 'block';
   }
 }
 
 function getDayName(dayIndex) {
   const names = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
   return names[dayIndex];
-}
-
-// -------------------------------
-// GESTION DU BOUTON VALIDATION
-// -------------------------------
-function setupCheckButton(session) {
-  const sessionContainer = document.querySelector(".session");
-  let checkBtn = document.getElementById("check-session-btn");
-  if (!checkBtn) {
-    checkBtn = document.createElement("button");
-    checkBtn.id = "check-session-btn";
-    checkBtn.className = "main-btn";
-
-    // Insertion dans le container .session-actions
-    const actionContainer = document.querySelector(".session-actions");
-    if (actionContainer) {
-      actionContainer.appendChild(checkBtn);
-    } else {
-      // Fallback si pas de container
-      const voirBtn = document.getElementById("voir-seance");
-      if (voirBtn && voirBtn.parentNode) {
-        voirBtn.parentNode.insertBefore(checkBtn, voirBtn.nextSibling);
-      }
-    }
-  }
-
-  const dateKey = getTodayStr();
-  const history = JSON.parse(localStorage.getItem("fitness_history")) || {};
-  const isDone = history[dateKey];
-
-  updateCheckButtonState(checkBtn, isDone);
-
-  checkBtn.onclick = () => {
-    const newStatus = !history[dateKey];
-    if (newStatus) {
-      history[dateKey] = true;
-      confettiEffect();
-    } else {
-      delete history[dateKey];
-    }
-    localStorage.setItem("fitness_history", JSON.stringify(history));
-    updateCheckButtonState(checkBtn, newStatus);
-  };
-}
-
-function updateCheckButtonState(btn, isDone) {
-  if (isDone) {
-    btn.textContent = "Séance terminée ! ✅";
-    btn.style.background = "var(--fbs-rose-suave)";
-    btn.style.color = "#fff";
-    btn.style.borderColor = "var(--fbs-rose-suave)";
-  } else {
-    btn.textContent = "Valider ma séance";
-    btn.style.background = ""; // Retour au style CSS .main-btn
-    btn.style.color = "";
-    btn.style.borderColor = "";
-  }
-}
-
-function confettiEffect() {
-  const sessionBox = document.querySelector(".session");
-  if (sessionBox) {
-    sessionBox.style.transition = "box-shadow 0.3s";
-    sessionBox.style.boxShadow = "0 0 50px var(--fbs-rose-clair)";
-    setTimeout(() => {
-      sessionBox.style.boxShadow = "0 0 18px var(--fbs-glow)";
-    }, 500);
-  }
 }
 
 // -------------------------------
