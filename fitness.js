@@ -178,15 +178,18 @@ function setupCheckButton(session) {
   let checkBtn = document.getElementById("check-session-btn");
   if (!checkBtn) {
     checkBtn = document.createElement("button");
-    checkBtn.id = "check-session-btn";
     checkBtn.className = "main-btn";
-    checkBtn.style.marginTop = "1rem";
-    checkBtn.style.background = "rgba(255,255,255,0.1)";
-    checkBtn.style.borderColor = "var(--fbs-rose-pale)";
-    const voirBtn = document.getElementById("voir-seance");
-    if (voirBtn && voirBtn.parentNode) {
-      voirBtn.parentNode.insertBefore(checkBtn, voirBtn.nextSibling);
-      voirBtn.style.marginRight = "1rem";
+
+    // Insertion dans le container .session-actions
+    const actionContainer = document.querySelector(".session-actions");
+    if (actionContainer) {
+      actionContainer.appendChild(checkBtn);
+    } else {
+      // Fallback si pas de container
+      const voirBtn = document.getElementById("voir-seance");
+      if (voirBtn && voirBtn.parentNode) {
+        voirBtn.parentNode.insertBefore(checkBtn, voirBtn.nextSibling);
+      }
     }
   }
 
@@ -212,12 +215,14 @@ function setupCheckButton(session) {
 function updateCheckButtonState(btn, isDone) {
   if (isDone) {
     btn.textContent = "Séance terminée ! ✅";
-    btn.style.background = "var(--fbs-rose-pale)";
-    btn.style.color = "#1a1a1a";
+    btn.style.background = "var(--fbs-rose-suave)";
+    btn.style.color = "#fff";
+    btn.style.borderColor = "var(--fbs-rose-suave)";
   } else {
     btn.textContent = "Valider ma séance";
-    btn.style.background = "rgba(255,255,255,0.1)";
-    btn.style.color = "var(--fbs-rose-pale)";
+    btn.style.background = ""; // Retour au style CSS .main-btn
+    btn.style.color = "";
+    btn.style.borderColor = "";
   }
 }
 
