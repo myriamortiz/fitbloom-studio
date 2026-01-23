@@ -245,8 +245,8 @@ function openRecipe(recipe) {
 
   document.getElementById("popup-instructions").textContent = recipe.instructions || "Pas d'instructions.";
 
-  // V3 FEATURES (Favorites & Shopping)
-  const modalContent = document.querySelector("#recipe-popup .modal-content");
+  // V3 FEATURES (Favorites)
+  const modalContent = document.querySelector("#recipe-popup .popup-content");
 
   const favs = JSON.parse(localStorage.getItem('fbs_favorites')) || [];
   const isFav = favs.includes(recipe.name);
@@ -264,15 +264,7 @@ function openRecipe(recipe) {
   heartBtn.innerHTML = '❤';
   heartBtn.onclick = () => toggleFavorite(recipe.name);
 
-  let shopBtn = document.getElementById('shop-btn-modal');
-  if (!shopBtn) {
-    shopBtn = document.createElement('button');
-    shopBtn.id = 'shop-btn-modal';
-    shopBtn.className = 'add-list-btn';
-    shopBtn.innerHTML = '🛒 Ajouter à ma liste';
-    modalContent.appendChild(shopBtn);
-  }
-  shopBtn.onclick = () => addToGroceryList(recipe.ingredients);
+
 
   document.getElementById("recipe-popup").style.display = "flex";
 }
@@ -294,14 +286,7 @@ function toggleFavorite(recipeName) {
   localStorage.setItem('fbs_favorites', JSON.stringify(favs));
 }
 
-// SHOPPING LOGIC
-function addToGroceryList(ingredients) {
-  if (!ingredients) return;
-  let extras = JSON.parse(localStorage.getItem('grocery_ext')) || [];
-  extras = [...extras, ...ingredients];
-  localStorage.setItem('grocery_ext', JSON.stringify(extras));
-  alert("Ingrédients ajoutés à la liste de courses !");
-}
+
 
 // ----------------------------
 // LISTE DE COURSES
