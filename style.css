@@ -1435,8 +1435,167 @@ input[type="text"]:focus {
   transition: all 0.3s;
 }
 
-.dot.active {
-  background: var(--fbs-rose-clair);
-  width: 20px;
-  border-radius: 10px;
+
+/* FOOTER FIXES */
+.fbs-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.footer-link {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--fbs-rose-suave);
+  color: var(--fbs-rose-pale);
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+/* TRACKER BUTTON FIX */
+#add-entry {
+  margin-top: 2rem !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/* -----------------------------------------------------------
+   FIX V9: FINAL HARMONIZATION
+   ----------------------------------------------------------- */
+
+/* 1. FORCE OVAL BUTTONS (PILL SHAPE) */
+.see-btn, 
+.main-btn, 
+.footer-link, 
+.action-btn,
+.intro-btn,
+button.see-btn,
+button.main-btn,
+.fbs-btn {
+  border-radius: 50px !important;
+  padding: 10px 24px !important;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+  border: none !important;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* 2. FOOTER ALIGNMENT FIX */
+.fbs-footer {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.footer-link {
+  margin: 0 !important; 
+  display: inline-block !important;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--fbs-rose-pale) !important;
+  color: var(--fbs-rose-vif);
+  text-decoration: none;
+  width: auto !important;
+}
+
+/* 3. FITNESS BUTTON CENTERING */
+#check-session-btn {
+  display: block !important;
+  margin: 1.5rem auto !important;
+  width: fit-content !important;
+}
+
+/* -----------------------------------------------------------
+   FIX V9.4: FITNESS BUTTONS ALIGNMENT
+   ----------------------------------------------------------- */
+.session-actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.5rem !important; /* Space between buttons */
+  margin-top: 1.5rem !important;
+  flex-wrap: wrap; /* Safe wrapping on small screens */
+}
+
+/* -----------------------------------------------------------
+   FIX V9.6: ULTIMATE INPUT TRANSPARENCY
+   ----------------------------------------------------------- */
+
+/* Targeted by ID for Max Specificity */
+#user-name,
+#user-age,
+#user-height,
+#user-weight {
+  background-color: rgba(255, 255, 255, 0.07) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 219, 209, 0.5) !important;
+  border-radius: 50px !important;
+  padding: 12px 20px !important;
+  font-size: 1.1rem !important;
+  text-align: center;
+  box-shadow: none !important;
+  width: 80% !important; /* Force width */
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#user-name::placeholder,
+#user-age::placeholder,
+#user-height::placeholder,
+#user-weight::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* AUTOFILL HACK - Prevents white background on Chrome/Safari */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #2a2a2a inset !important; /* Dark background match */
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* -----------------------------------------------------------
+   FIX V9.8: MAIN MENU CONTOURS
+   ----------------------------------------------------------- */
+/* Force visible border on the 3 big universe buttons */
+.fbs-btn {
+  border: 1px solid rgba(255, 255, 255, 0.4) !important; /* Lighter, more visible border */
+  background: rgba(255, 255, 255, 0.08) !important; /* Slightly more visible background */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.fbs-btn:hover {
+  border-color: var(--fbs-rose-vif) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* -----------------------------------------------------------
+   FIX V9.9: ROSE BORDERS FOR MAIN MENU
+   ----------------------------------------------------------- */
+.fbs-btn {
+  /* Match exactly the other buttons */
+  border: 1px solid var(--fbs-rose-pale) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.fbs-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 20px var(--fbs-glow); 
 }
