@@ -178,6 +178,7 @@ function setupCheckButton(session) {
   let checkBtn = document.getElementById("check-session-btn");
   if (!checkBtn) {
     checkBtn = document.createElement("button");
+    checkBtn.id = "check-session-btn";
     checkBtn.className = "main-btn";
 
     // Insertion dans le container .session-actions
