@@ -1,23 +1,26 @@
- // Variables pour stocker les choix
-letuserProfile = {
+// Variables pour stocker les choix
+let userProfile = {
     name: "",
     goal: "forme", // Valeur par défaut
     intolerances: [],
-    fasting: false,
+    fasting: undefined, // Changé de false à undefined pour forcer un choix
     fastingMode: "none" // 'none', 'skip_breakfast', 'skip_dinner'
 };
 
 // Navigation entre les étapes
 function nextStep(stepNumber) {
-    // Navigation séquentielle : 1 -> age -> measure -> 2 -> activity -> 3
+    console.log("Moving to step:", stepNumber);
 
-    // VALIDATION & SAVE
+    // VALIDATION & SAVE de l'étape ACTUELLE avant de passer à la suivante
+    
+    // Si on est à l'étape 1 (Prénom) et qu'on veut aller vers 'age'
     if (stepNumber === 'age') {
         const nameInput = document.getElementById('user-name').value.trim();
         if (!nameInput) return alert("Raconte-moi, comment t'appelles-tu ? 😊");
         userProfile.name = nameInput;
     }
 
+    // Si on est à l'étape 'age' et qu'on veut aller vers 'measure'
     if (stepNumber === 'measure') {
         const age = document.getElementById('user-age').value;
         if (!age) return alert("Quel âge as-tu ?");
@@ -25,7 +28,8 @@ function nextStep(stepNumber) {
         if (!userProfile.gender) userProfile.gender = 'F'; // Default
     }
 
-    if (stepNumber === 2) { // Coming from 'measure'
+    // Si on est à l'étape 'measure' et qu'on veut aller vers 2 (Objectif)
+    if (stepNumber === 2) {
         const height = document.getElementById('user-height').value;
         const weight = document.getElementById('user-weight').value;
         if (!height || !weight) return alert("Nous avons besoin de ta taille et ton poids pour le calcul !");
@@ -33,57 +37,58 @@ function nextStep(stepNumber) {
         userProfile.weight = parseInt(weight);
     }
 
+    // Si on est à l'étape 2 (Objectif) et qu'on veut aller vers 'activity'
+    if (stepNumber === 'activity') {
+        if (!userProfile.goal) return alert("Choisis un objectif !");
+    }
 
-    // Navigation sequence: ... -> activity -> fasting -> [fasting-details] -> days -> 3
+    // Si on est à l'étape 'activity' et qu'on veut aller vers 'fasting'
     if (stepNumber === 'fasting') {
+        if (!userProfile.activity) return alert("Choisis ton niveau d'activité !");
+    }
+
+    // Logique spéciale pour le Jeûne (Step 'fasting')
+    if (stepNumber === 'fasting-details' || stepNumber === 'days') {
+        // Cette validation s'exécute quand on clique sur "Suivant" depuis l'étape 'fasting'
         if (typeof userProfile.fasting === 'undefined') return alert("Pratiques-tu le jeûne intermittent ?");
-        // SI NON -> on saute direkt à 'days', SI OUI -> on va à 'fasting-details'
+        
+        // Si l'utilisateur a choisi NON au jeûne, on saute directement à 'days' (Planning)
         if (userProfile.fasting === false) {
-            // Reset meal skip
             userProfile.fastingMode = "none";
-
-            // Manually trigger transition to 'days'
-            document.querySelectorAll('.step-container').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.dot').forEach(el => el.classList.remove('active'));
-            document.getElementById('step-days').classList.add('active');
-            document.getElementById('dot-days').classList.add('active');
-            return;
+            stepNumber = 'days'; 
         }
-        // Si OUI, on laisse aller au next step naturel qui est 'fasting-details'
     }
 
-    if (stepNumber === 'fasting-details') {
-        if (!userProfile.fastingMode) return alert("Dis-moi quel repas tu sautes !");
+    if (stepNumber === 'days' && document.getElementById('step-fasting-details').classList.contains('active')) {
+        if (!userProfile.fastingMode || userProfile.fastingMode === 'none') return alert("Dis-moi quel repas tu sautes !");
     }
 
-    if (stepNumber === 'days') {
-        const act = userProfile.activity;
-        if (!act) return alert("Choisis ton niveau d'activité !");
-    }
-
-    // Day Validation (Must pick at least 1)
+    // Validation finale avant l'étape 3 (Intolérances)
     if (stepNumber === 3) {
-        // We assume 'days' step is just before 3
         if (!userProfile.workoutDays || userProfile.workoutDays.length === 0) {
-            if (!userProfile.workoutDays) userProfile.workoutDays = [1, 3, 5];
+            // Par défaut si rien choisi
+            userProfile.workoutDays = [1, 3, 5];
         }
     }
 
-    // TRANSITION
-    // Hide all
+    // TRANSITION VISUELLE
+    // Masquer tout
     document.querySelectorAll('.step-container').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.dot').forEach(el => el.classList.remove('active'));
 
-    // Determine ID
-    let nextId = stepNumber;
-    if (typeof stepNumber === 'number') nextId = stepNumber.toString();
+    // Afficher la cible
+    let nextId = stepNumber.toString();
+    const nextElem = document.getElementById(`step-${nextId}`);
+    if (nextElem) {
+        nextElem.classList.add('active');
+    } else {
+        console.error("Step element not found:", `step-${nextId}`);
+    }
 
-    document.getElementById(`step-${nextId}`).classList.add('active');
-
-    // Update dots
-    const dotId = `dot-${nextId}`;
-    if (document.getElementById(dotId)) {
-        document.getElementById(dotId).classList.add('active');
+    // Activer le dot correspondant
+    const dotElem = document.getElementById(`dot-${nextId}`);
+    if (dotElem) {
+        dotElem.classList.add('active');
     }
 }
 
