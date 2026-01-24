@@ -64,11 +64,11 @@ function getMealSlots(profile) {
 
 function getTagsForSlot(slot) {
   // Map UI slot to DB tags
-  // We used 'brunch' tag for breakfast/lunch in migration script
-  if (slot === 'breakfast') return ['brunch'];
-  if (slot === 'lunch') return ['brunch', 'lunch']; // some brunch recipes work as lunch
+  // Strict separation V2
+  if (slot === 'breakfast') return ['petit-dej', 'brunch']; // 'brunch' kept for ambiguous items (toast), but sweet items are now 'petit-dej'
+  if (slot === 'lunch') return ['lunch', 'dejeuner', 'brunch']; // 'brunch' allowed for lunch (avocado toast etc)
   if (slot === 'snack') return ['snack', 'collation'];
-  if (slot === 'dinner') return ['dinner', 'diner'];
+  if (slot === 'dinner') return ['dinner', 'diner']; // Never brunch at dinner
   return [];
 }
 
@@ -192,12 +192,24 @@ function filterRecipes(pool, profile, slot) {
   return candidates;
 }
 
-function pickRecipeForSlot(slot, profile) {
-  const candidates = filterRecipes(ALL_RECIPES, profile, slot);
+function pickRecipeForSlot(slot, profile, usedNames = new Set()) {
+  let candidates = filterRecipes(ALL_RECIPES, profile, slot);
+
+  // Filter out used recipes
+  const freshCandidates = candidates.filter(r => !usedNames.has(r.name));
+
+  // If we have enough fresh candidates, use them. Otherwise fallback to all candidates to avoid empty slots.
+  if (freshCandidates.length > 0) {
+    candidates = freshCandidates;
+  }
+
   if (!candidates || candidates.length === 0) return { name: "Aucune recette trouvée", calories: 0, ingredients: [], instructions: "" };
 
   // Random pick
   const base = candidates[Math.floor(Math.random() * candidates.length)];
+
+  // Add to used list
+  if (base.name) usedNames.add(base.name);
 
   // CLONE & SCALE
   const recipe = { ...base };
@@ -253,6 +265,7 @@ function pickJuice(bgData) {
 function generateWeek(data) {
   const week = [];
   const profile = getSmartProfile();
+  const usedNames = new Set(); // Track used recipes for this week
 
   const juice = pickJuice(data.juice);
   week.push({ juice });
@@ -262,7 +275,7 @@ function generateWeek(data) {
   for (let i = 0; i < 7; i++) {
     const dayPlan = {};
     slots.forEach(slot => {
-      dayPlan[slot] = pickRecipeForSlot(slot, profile);
+      dayPlan[slot] = pickRecipeForSlot(slot, profile, usedNames);
     });
     week.push(dayPlan);
   }
@@ -303,8 +316,25 @@ function saveWeek(week) {
 
 function swapRecipe(dayIndex, slot) {
   const profile = getSmartProfile();
-  const newRecipe = pickRecipeForSlot(slot, profile);
   const week = JSON.parse(localStorage.getItem("fbs-week-v2"));
+
+  // Build set of currently used recipes to avoid picking them again
+  const usedNames = new Set();
+
+  // We can scan the whole week to be strict, or just try to avoid the *current* one.
+  // Let's scan the whole week for better UX.
+  if (week) {
+    week.slice(1).forEach(day => {
+      Object.values(day).forEach(r => {
+        if (r && r.name) usedNames.add(r.name);
+      });
+    });
+  }
+
+  // Remove the current one from set so we don't block swapping BACK to it if it was the only option (edge case),
+  // but actually we want to CHANGE, so keeping it in usedNames ensures we get something else.
+
+  const newRecipe = pickRecipeForSlot(slot, profile, usedNames);
 
   week[dayIndex + 1][slot] = newRecipe;
   saveWeek(week);
