@@ -1,8 +1,10 @@
-// Variables pour stocker les choix
-let userProfile = {
+ // Variables pour stocker les choix
+letuserProfile = {
     name: "",
     goal: "forme", // Valeur par défaut
-    intolerances: []
+    intolerances: [],
+    fasting: false,
+    fastingMode: "none" // 'none', 'skip_breakfast', 'skip_dinner'
 };
 
 // Navigation entre les étapes
@@ -32,7 +34,28 @@ function nextStep(stepNumber) {
     }
 
 
-    // Navigation sequence: ... -> activity -> days -> 3
+    // Navigation sequence: ... -> activity -> fasting -> [fasting-details] -> days -> 3
+    if (stepNumber === 'fasting') {
+        if (typeof userProfile.fasting === 'undefined') return alert("Pratiques-tu le jeûne intermittent ?");
+        // SI NON -> on saute direkt à 'days', SI OUI -> on va à 'fasting-details'
+        if (userProfile.fasting === false) {
+            // Reset meal skip
+            userProfile.fastingMode = "none";
+
+            // Manually trigger transition to 'days'
+            document.querySelectorAll('.step-container').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.dot').forEach(el => el.classList.remove('active'));
+            document.getElementById('step-days').classList.add('active');
+            document.getElementById('dot-days').classList.add('active');
+            return;
+        }
+        // Si OUI, on laisse aller au next step naturel qui est 'fasting-details'
+    }
+
+    if (stepNumber === 'fasting-details') {
+        if (!userProfile.fastingMode) return alert("Dis-moi quel repas tu sautes !");
+    }
+
     if (stepNumber === 'days') {
         const act = userProfile.activity;
         if (!act) return alert("Choisis ton niveau d'activité !");
@@ -118,6 +141,20 @@ function selectActivity(div, factor) {
     document.querySelectorAll('#step-activity .goal-card').forEach(c => c.classList.remove('selected'));
     div.classList.add('selected');
     userProfile.activity = factor;
+}
+
+function selectFasting(div, isFasting) {
+    document.querySelectorAll('#step-fasting .goal-card').forEach(c => c.classList.remove('selected'));
+    div.classList.add('selected');
+    userProfile.fasting = isFasting;
+    // Visu: on pré-sélectionne none si jamais
+    if (!isFasting) userProfile.fastingMode = "none";
+}
+
+function selectSkipMeal(div, mode) {
+    document.querySelectorAll('#step-fasting-details .goal-card').forEach(c => c.classList.remove('selected'));
+    div.classList.add('selected');
+    userProfile.fastingMode = mode;
 }
 
 // Calcul Mifflin-St Jeor
