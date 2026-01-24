@@ -166,9 +166,16 @@ function selectSkipMeal(div, mode) {
 function calculateCalories() {
     // Security: Ensure valid numbers
     const weight = Math.max(parseFloat(userProfile.weight) || 0, 30);
-    const height = Math.max(parseFloat(userProfile.height) || 0, 100);
+    let height = Math.max(parseFloat(userProfile.height) || 0, 0); // Allow 0 to detect invalid, but we'll floor at 100 later
     const age = Math.max(parseFloat(userProfile.age) || 0, 15);
     const activity = parseFloat(userProfile.activity) || 1.2;
+
+    // Auto-fix: If height is small (e.g. 1.75), assume meters and convert to cm
+    if (height > 0 && height < 3) {
+        height *= 100;
+    }
+    // Floor height to 100cm (child/dwarf limit)
+    height = Math.max(height, 100);
 
     let bmr;
     if (userProfile.gender === 'H') {
@@ -184,7 +191,7 @@ function calculateCalories() {
 
     // Ajustement selon objectif
     if (userProfile.goal === 'perte_poids') {
-        tdee *= 0.85; // Déficit 15%
+        tdee *= 0.70; // Déficit 30% (Plus agressif : ~1500kcal pour un TDEE de 2200)
     } else if (userProfile.goal === 'prise_masse') {
         tdee *= 1.10; // Surplus 10%
     }
