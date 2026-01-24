@@ -210,7 +210,24 @@ function pickRecipeForSlot(slot, profile) {
     recipe.adjustedCalories = recipe.calories;
   }
 
+  // IMAGE ENGINE (V4)
+  recipe.image = getRecipeImage(recipe);
+
   return recipe;
+}
+
+// MOTEUR VISUEL : Assigne une image magnifique selon le contexte
+function getRecipeImage(recipe) {
+  const name = recipe.name.toLowerCase();
+  const tags = (recipe.tags || []).join(' ').toLowerCase();
+
+  if (name.includes('jus') || name.includes('smoothie') || name.includes('dr')) return "assets/food/aesthetic_green_juice_1769281546709.png";
+  if (name.includes('porridge') || name.includes('oat') || name.includes('bowl') && tags.includes('petit-dej')) return "assets/food/breakfast_oatmeal_1769281517208.png";
+  if (name.includes('bowl') || tags.includes('bowl') || name.includes('salade')) return "assets/food/healthy_buddha_bowl_1769281530331.png";
+  if (name.includes('balls') || name.includes('barre') || tags.includes('snack') || tags.includes('collation')) return "assets/food/snack_energy_balls_1769281587972.png";
+
+  // Default Main Dish
+  return "assets/food/dinner_healthy_chicken_1769281569061.png";
 }
 
 // ----------------------------
@@ -355,11 +372,19 @@ function displayWeek(week) {
         html += `
            <div class="meal-block">
             <div class="meal-header">
-            <p class="food-meal-title">${label} ${diffIcon}</p>
-            <button class="swap-btn" onclick="swapRecipe(${i}, '${slot}')" title="Changer">🔀</button>
+             <p class="food-meal-title">${label} ${diffIcon}</p>
+             <button class="swap-btn" onclick="swapRecipe(${i}, '${slot}')" title="Changer">🔀</button>
             </div>
-            <p class="food-meal-text">${recipe.name}</p>
-            ${timeDisplay}
+            
+            <div class="food-card-content">
+              <img src="${recipe.image}" class="food-img-preview" alt="${recipe.name}" onerror="this.style.display='none'">
+              <div>
+                 <p class="food-meal-text" style="font-weight:600">${recipe.name}</p>
+                 <p style="font-size:0.85em; color:#bbb">${recipe.adjustedCalories || recipe.calories} kcal</p>
+                 ${timeDisplay}
+              </div>
+            </div>
+            
             <button class="see-btn" onclick='openRecipe(${escape(recipe)})'>Voir la recette</button>
            </div>`;
       }
