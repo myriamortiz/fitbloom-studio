@@ -12,7 +12,7 @@ function nextStep(stepNumber) {
     console.log("Moving to step:", stepNumber);
 
     // VALIDATION & SAVE de l'étape ACTUELLE avant de passer à la suivante
-    
+
     // Si on est à l'étape 1 (Prénom) et qu'on veut aller vers 'age'
     if (stepNumber === 'age') {
         const nameInput = document.getElementById('user-name').value.trim();
@@ -51,11 +51,11 @@ function nextStep(stepNumber) {
     if (stepNumber === 'fasting-details' || stepNumber === 'days') {
         // Cette validation s'exécute quand on clique sur "Suivant" depuis l'étape 'fasting'
         if (typeof userProfile.fasting === 'undefined') return alert("Pratiques-tu le jeûne intermittent ?");
-        
+
         // Si l'utilisateur a choisi NON au jeûne, on saute directement à 'days' (Planning)
         if (userProfile.fasting === false) {
             userProfile.fastingMode = "none";
-            stepNumber = 'days'; 
+            stepNumber = 'days';
         }
     }
 
@@ -164,14 +164,23 @@ function selectSkipMeal(div, mode) {
 
 // Calcul Mifflin-St Jeor
 function calculateCalories() {
+    // Security: Ensure valid numbers
+    const weight = Math.max(parseFloat(userProfile.weight) || 0, 30);
+    const height = Math.max(parseFloat(userProfile.height) || 0, 100);
+    const age = Math.max(parseFloat(userProfile.age) || 0, 15);
+    const activity = parseFloat(userProfile.activity) || 1.2;
+
     let bmr;
     if (userProfile.gender === 'H') {
-        bmr = (10 * userProfile.weight) + (6.25 * userProfile.height) - (5 * userProfile.age) + 5;
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
     } else {
-        bmr = (10 * userProfile.weight) + (6.25 * userProfile.height) - (5 * userProfile.age) - 161;
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
     }
 
-    let tdee = bmr * (userProfile.activity || 1.2);
+    // Security: BMR floor
+    bmr = Math.max(bmr, 1000);
+
+    let tdee = bmr * activity;
 
     // Ajustement selon objectif
     if (userProfile.goal === 'perte_poids') {
@@ -180,7 +189,9 @@ function calculateCalories() {
         tdee *= 1.10; // Surplus 10%
     }
 
-    userProfile.targetCalories = Math.round(tdee);
+    // Security: Absolute floor (1200 kcal is a standard healthy minimum for women, 1500 for men)
+    const absoluteFloor = (userProfile.gender === 'H') ? 1500 : 1200;
+    userProfile.targetCalories = Math.round(Math.max(tdee, absoluteFloor));
 }
 
 // Fin de l'onboarding

@@ -119,7 +119,9 @@ function getTargetForSlot(slot, profile) {
     if (slot === 'dinner') share = 0.40;
     if (mode === 'skip_dinner' && slot === 'breakfast') share = 0.40;
   }
-  return Math.round(profile.targetCalories * share);
+  // Security: Ensure target is never negative or dangerously low
+  const minTarget = (slot === 'snack') ? 100 : 300;
+  return Math.round(Math.max(profile.targetCalories * share, minTarget));
 }
 
 function filterRecipes(pool, profile, slot) {
@@ -201,9 +203,9 @@ function pickRecipeForSlot(slot, profile) {
   const recipe = { ...base };
   const target = getTargetForSlot(slot, profile);
 
-  if (target && recipe.calories > 0) {
+  if (target && recipe.calories > 0 && target > 0) {
     recipe.targetCal = target;
-    recipe.scaleFactor = target / recipe.calories;
+    recipe.scaleFactor = Math.max(target / recipe.calories, 0.1); // Avoid 0 or negative scale
     recipe.adjustedCalories = Math.round(recipe.calories * recipe.scaleFactor);
   } else {
     recipe.scaleFactor = 1;
@@ -393,27 +395,6 @@ function displayWeek(week) {
     block.innerHTML = html;
     container.appendChild(block);
   });
-}
-
-// ----------------------------
-// HELPERS FOR RECIPE DISPLAY
-// ----------------------------
-function scaleString(str, factor) {
-  if (!str || factor === 1) return str;
-
-  // Regex to find numbers at the beginning of the string, possibly with units
-  const match = str.match(/^(\d+(\.\d+)?)\s*([a-zA-Z%]*)\s*(.*)/);
-  if (match) {
-    const value = parseFloat(match[1]);
-    const unit = match[3];
-    const rest = match[4];
-
-    if (!isNaN(value)) {
-      const scaledValue = Math.round(value * factor * 10) / 10; // Round to one decimal place
-      return `${scaledValue}${unit ? ' ' + unit : ''} ${rest}`.trim();
-    }
-  }
-  return str; // Return original string if no number found or parsing fails
 }
 
 // ----------------------------
