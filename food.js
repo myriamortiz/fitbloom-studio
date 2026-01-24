@@ -72,34 +72,90 @@ function getTagsForSlot(slot) {
   return [];
 }
 
-function filterRecipes(pool, profile, slot) {
-  // 1. Tag Filtering
-  const targetTags = getTagsForSlot(slot);
-  let candidates = pool.filter(r => r.tags && targetTags.some(t => r.tags.includes(t)));
+// 3. Goal & Calorie Filtering (Advanced Target Match)
+// Logic: TotalTarget / NbMeals = TargetPerMeal
+// We accept matches within +/- 20% range
 
-  // 2. Intolerance Filtering
-  if (profile && profile.intolerances && profile.intolerances.length > 0) {
-    candidates = candidates.filter(r => {
-      return profile.intolerances.every(into => r.tags.includes(into));
+let candidates = pool;
+
+// Apply Intolerance Filter first
+if (profile && profile.intolerances && profile.intolerances.length > 0) {
+  candidates = candidates.filter(r => {
+    return profile.intolerances.every(into => r.tags.includes(into));
+  });
+}
+
+// Apply Tag Filter
+const targetTags = getTagsForSlot(slot);
+candidates = candidates.filter(r => r.tags && targetTags.some(t => r.tags.includes(t)));
+
+if (profile && profile.targetCalories) {
+  const mode = getFastingConfig(profile);
+  const nbMeals = (mode === 'standard') ? 4 : 3;
+
+  // Weighting : Breakfast/Snack are smaller than Lunch/Dinner
+  let ratio = 1.0;
+  if (slot === 'snack') ratio = 0.5; // Snacks are half size
+  if (slot === 'breakfast' || slot === 'brunch') ratio = 0.8;
+  if (slot === 'lunch' || slot === 'dinner') ratio = 1.2;
+
+  // Calculate adjusted target per meal
+  // Base unit = Target / (0.8 + 1.2 + 0.5 + 1.2) = Target / 3.7 (approx 4 units)
+  // Standard distribution: B(20%) L(35%) S(10%) D(35%)
+
+  let share = 0.25; // Default flat
+  if (mode === 'standard') {
+    if (slot === 'breakfast') share = 0.20;
+    if (slot === 'lunch') share = 0.35;
+    if (slot === 'snack') share = 0.10;
+    if (slot === 'dinner') share = 0.35;
+  } else {
+    // Fasting (3 meals)
+    // e.g. Lunch (45%) Snack (15%) Dinner (40%)
+    if (slot === 'lunch') share = 0.45;
+    if (slot === 'snack') share = 0.15;
+    if (slot === 'dinner') share = 0.40;
+    // If skip dinner, then breakfast gets bigger
+    if (mode === 'skip_dinner' && slot === 'breakfast') share = 0.40;
+  }
+
+  const targetPerMeal = Math.round(profile.targetCalories * share);
+  const tolerance = 0.25; // +/- 25% flexibility
+
+  const min = targetPerMeal * (1 - tolerance);
+  const max = targetPerMeal * (1 + tolerance);
+
+  const strictMatches = candidates.filter(r => {
+    const c = r.calories || 0;
+    return c >= min && c <= max;
+  });
+
+  // If we find matches, great! If not, we fallback to sorted list to find closest
+  if (strictMatches.length > 0) {
+    candidates = strictMatches;
+  } else {
+    // Fallback: Sort by distance to target
+    candidates.sort((a, b) => {
+      const distA = Math.abs((a.calories || 0) - targetPerMeal);
+      const distB = Math.abs((b.calories || 0) - targetPerMeal);
+      return distA - distB;
     });
+    // Take top 10 closest
+    candidates = candidates.slice(0, 10);
   }
-
-  // 3. Goal Filtering (Calorie logic)
-  if (profile && profile.goal) {
-    // Simplified Logic for now
-    if (profile.goal === 'perte_poids') {
-      candidates = candidates.sort((a, b) => (a.calories || 0) - (b.calories || 0));
-      // Take bottom 50% lighter
-      if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.6));
-    }
-    if (profile.goal === 'prise_masse') {
-      candidates = candidates.sort((a, b) => (b.calories || 0) - (a.calories || 0));
-      // Take top 50% heavier
-      if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.6));
-    }
+} else {
+  // Legacy generic goals if no specific target
+  if (profile && profile.goal === 'perte_poids') {
+    candidates = candidates.sort((a, b) => (a.calories || 0) - (b.calories || 0));
+    if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.5));
   }
+  if (profile && profile.goal === 'prise_masse') {
+    candidates = candidates.sort((a, b) => (b.calories || 0) - (a.calories || 0));
+    if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.5));
+  }
+}
 
-  return candidates;
+return candidates;
 }
 
 function pickRecipeForSlot(slot, profile) {
@@ -233,13 +289,24 @@ function displayWeek(week) {
       const label = labels[slot] || slot;
 
       if (recipe) {
+        // Difficulty Icon
+        let diffIcon = '';
+        if (recipe.difficulty === 'facile') diffIcon = '🟢';
+        if (recipe.difficulty === 'moyen') diffIcon = '🟡';
+        if (recipe.difficulty === 'difficile') diffIcon = '🔴';
+
+        // Time display
+        let timeDisplay = '';
+        if (recipe.prep_time) timeDisplay = `<span style="font-size:0.8em; color:#888; margin-left:5px;">⏱ ${recipe.prep_time} min</span>`;
+
         html += `
            <div class="meal-block">
             <div class="meal-header">
-            <p class="food-meal-title">${label}</p>
+            <p class="food-meal-title">${label} ${diffIcon}</p>
             <button class="swap-btn" onclick="swapRecipe(${i}, '${slot}')" title="Changer">🔀</button>
             </div>
             <p class="food-meal-text">${recipe.name}</p>
+            ${timeDisplay}
             <button class="see-btn" onclick='openRecipe(${escape(recipe)})'>Voir la recette</button>
            </div>`;
       }
@@ -256,7 +323,13 @@ function displayWeek(week) {
 function openRecipe(recipe) {
   if (!recipe) return;
   document.getElementById("popup-title").textContent = recipe.name;
-  document.getElementById("popup-cal").textContent = (recipe.calories || 0) + " kcal";
+
+  // Richer Metadata Display
+  let metaHtml = `<strong>${recipe.calories || 0} kcal</strong>`;
+  if (recipe.prep_time) metaHtml += ` • ⏱ ${recipe.prep_time} min`;
+  if (recipe.difficulty) metaHtml += ` • Niveau: ${recipe.difficulty}`;
+
+  document.getElementById("popup-cal").innerHTML = metaHtml;
 
   const ul = document.getElementById("popup-ingredients");
   ul.innerHTML = (recipe.ingredients || []).map(i => `<li>${i}</li>`).join("");

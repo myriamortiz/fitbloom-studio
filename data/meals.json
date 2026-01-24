@@ -6449,6 +6449,137 @@
       ],
       "instructions": "Fondre.",
       "id": "raclette_bowl_(3_fromages)"
+    },
+    {
+      "name": "Spaghetti Bolognese Maison (Boeuf 5%)",
+      "type": "plaisir",
+      "calories": 620,
+      "prep_time": 15,
+      "difficulty": "moyen",
+      "tags": [
+        "dinner",
+        "lunch",
+        "all_seasons",
+        "family",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Spaghetti: 100g",
+        "Boeuf 5%: 100g",
+        "Coulis tomate: 150g",
+        "Oignon",
+        "Herbes"
+      ],
+      "instructions": "Faire revenir oignon et boeuf. Ajouter tomate et mijoter 20 min. Cuire les pâtes al dente.",
+      "id": "spaghetti_bolognese_maison_(boeuf_5%)"
+    },
+    {
+      "name": "Burger Maison Dinde & Avocat",
+      "type": "plaisir",
+      "calories": 580,
+      "prep_time": 20,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "dinner",
+        "all_seasons",
+        "plaisir",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Pain Burger: 1",
+        "Steak Dinde: 120g",
+        "Avocat: 1/2",
+        "Tomate",
+        "Moutarde"
+      ],
+      "instructions": "Griller le steak. Toaster le pain. Assembler avec avocat et légumes.",
+      "id": "burger_maison_dinde_&_avocat"
+    },
+    {
+      "name": "Curry Vert Crevettes Express",
+      "type": "healthy",
+      "calories": 450,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "dinner",
+        "lunch",
+        "all_seasons",
+        "pescetarien",
+        "sans_gluten"
+      ],
+      "ingredients": [
+        "Crevettes: 150g",
+        "Lait Coco: 100ml",
+        "Pâte Curry Vert",
+        "Riz basmati: 50g cru"
+      ],
+      "instructions": "Cuire le riz. Poêler crevettes avec curry et coco 5 min.",
+      "id": "curry_vert_crevettes_express"
+    },
+    {
+      "name": "Gnocchis à la Romaine (Gratin)",
+      "type": "plaisir",
+      "calories": 700,
+      "prep_time": 30,
+      "difficulty": "moyen",
+      "tags": [
+        "lunch",
+        "dinner",
+        "family",
+        "vegetarien"
+      ],
+      "ingredients": [
+        "Semoule blé: 80g",
+        "Lait",
+        "Beurre",
+        "Parmesan: 30g"
+      ],
+      "instructions": "Faire la pâte, découper disques, gratiner au four avec parmesan.",
+      "id": "gnocchis_à_la_romaine_(gratin)"
+    },
+    {
+      "name": "Buddha Bowl Grande Faim",
+      "type": "healthy",
+      "calories": 680,
+      "prep_time": 25,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "vegan",
+        "sans_gluten",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Quinoa: 80g",
+        "Pois Chiches: 100g",
+        "Avocat: 1",
+        "Sauce Tahini"
+      ],
+      "instructions": "Cuire quinoa. Rôtir pois chiches. Assembler tout dans un grand bol.",
+      "id": "buddha_bowl_grande_faim"
+    },
+    {
+      "name": "Omelette Complète 3 Oeufs Fromage",
+      "type": "rapide",
+      "calories": 550,
+      "prep_time": 10,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "dinner",
+        "vegetarien",
+        "sans_gluten",
+        "keto"
+      ],
+      "ingredients": [
+        "Oeufs: 3",
+        "Comté: 40g",
+        "Epinards: 50g"
+      ],
+      "instructions": "Battre oeufs, poêler, ajouter fromage à la fin.",
+      "id": "omelette_complète_3_oeufs_fromage"
     }
   ]
 }
