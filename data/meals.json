@@ -1,54 +1,6454 @@
 {
-  "brunch": {
-    "file": "data/brunch/brunch.json",
-    "categories": ["permanent", "spring", "summer", "autumn", "winter"],
-    "meta": {
-      "healthy_ratio": 0.8,
-      "plaisir_ratio": 0.2,
-      "total_permanent": 35,
-      "total_spring": 15,
-      "total_summer": 15,
-      "total_autumn": 15,
-      "total_winter": 15,
-      "total_recipes": 95
+  "recipes": [
+    {
+      "type": "healthy",
+      "name": "Pancakes farine de riz & fruits rouges",
+      "calories": 460,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Farine de riz : 80g",
+        "Oeufs : 2",
+        "Lait d'amande non sucré : 120ml",
+        "Levure sans gluten : 1 c.à.c",
+        "Sirop d’érable : 1 c.à.c",
+        "Fruits rouges : 100g",
+        "Huile de coco : 1 c.à.c"
+      ],
+      "instructions": "Mélanger farine, levure, oeufs et lait. Cuire à la poêle. Servir avec fruits rouges et sirop.",
+      "id": "pancakes_farine_de_riz_&_fruits_rouges"
+    },
+    {
+      "type": "healthy",
+      "name": "Tartine avocat & œuf poché",
+      "calories": 430,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pain sans gluten : 2 tranches",
+        "Avocat : 1/2",
+        "Œufs : 2",
+        "Jus de citron : 1 c.à.c",
+        "Piment d'Espelette : 1 pincée"
+      ],
+      "instructions": "Écraser l’avocat, assaisonner. Pocher les œufs 3 min. Monter sur toast.",
+      "id": "tartine_avocat_&_œuf_poché"
+    },
+    {
+      "type": "healthy",
+      "name": "Toast champignons & crème coco",
+      "calories": 445,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pain sans gluten : 2 tranches",
+        "Champignons : 200g",
+        "Crème coco : 50ml",
+        "Ail : 1 gousse",
+        "Persil : 1 c.à.s"
+      ],
+      "instructions": "Poêler champignons + ail. Ajouter crème coco. Servir sur toast.",
+      "id": "toast_champignons_&_crème_coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Omelette herbes & tomates cerises",
+      "calories": 390,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Œufs : 3",
+        "Tomates cerises : 80g",
+        "Ciboulette : 1 c.à.s"
+      ],
+      "instructions": "Cuire omelette. Ajouter tomates poêlées et ciboulette.",
+      "id": "omelette_herbes_&_tomates_cerises"
+    },
+    {
+      "type": "healthy",
+      "name": "Shakshuka sans lactose",
+      "calories": 480,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Œufs : 2",
+        "Poivron rouge : 1",
+        "Tomates concassées : 200g",
+        "Oignon : 1/2",
+        "Paprika : 1 c.à.c"
+      ],
+      "instructions": "Cuire légumes + épices. Ajouter œufs au centre.",
+      "id": "shakshuka_sans_lactose"
+    },
+    {
+      "type": "healthy",
+      "name": "Rösti maison & œufs brouillés coco",
+      "calories": 510,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pommes de terre : 250g",
+        "Œufs : 2",
+        "Crème coco : 40ml"
+      ],
+      "instructions": "Cuire rösti. Brouiller œufs avec crème coco.",
+      "id": "rösti_maison_&_œufs_brouillés_coco"
+    },
+    {
+      "type": "plaisir",
+      "name": "Porridge façon tarte aux pommes",
+      "calories": 500,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Flocons de sarrasin : 60g",
+        "Lait d’amande : 150ml",
+        "Pomme : 1",
+        "Cannelle : 1 c.à.c"
+      ],
+      "instructions": "Cuire flocons. Ajouter pomme fondante et cannelle.",
+      "id": "porridge_façon_tarte_aux_pommes"
+    },
+    {
+      "type": "healthy",
+      "name": "Toast saumon fumé & citron",
+      "calories": 420,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pain sans gluten : 2 tranches",
+        "Saumon fumé : 80g",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Déposer saumon sur toast. Ajouter citron.",
+      "id": "toast_saumon_fumé_&_citron"
+    },
+    {
+      "type": "plaisir",
+      "name": "Crêpes coco-riz fourrées banane",
+      "calories": 520,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Farine de riz : 70g",
+        "Lait de coco : 150ml",
+        "Banane : 1"
+      ],
+      "instructions": "Cuire crêpes. Garnir de banane et vanille.",
+      "id": "crêpes_coco-riz_fourrées_banane"
+    },
+    {
+      "type": "healthy",
+      "name": "Œufs brouillés tomate-basilic",
+      "calories": 370,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Œufs : 3",
+        "Tomates : 100g",
+        "Basilic : 1 c.à.s"
+      ],
+      "instructions": "Cuire œufs brouillés + tomates. Ajouter basilic.",
+      "id": "œufs_brouillés_tomate-basilic"
+    },
+    {
+      "type": "plaisir",
+      "name": "Okonomiyaki sans gluten",
+      "calories": 540,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Chou : 150g",
+        "Farine de riz : 50g",
+        "Œufs : 2"
+      ],
+      "instructions": "Mélanger ingrédients. Cuire en galette.",
+      "id": "okonomiyaki_sans_gluten"
+    },
+    {
+      "type": "healthy",
+      "name": "Avo-salsa bowl mexicain",
+      "calories": 480,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Riz cuit : 120g",
+        "Avocat : 1/2",
+        "Maïs : 50g",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Assembler riz, avocat, maïs, citron, tomate.",
+      "id": "avo-salsa_bowl_mexicain"
+    },
+    {
+      "type": "healthy",
+      "name": "Gaufres sarrasin & vanille",
+      "calories": 460,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Farine de sarrasin : 80g",
+        "Lait d’amande : 150ml",
+        "Œufs : 2"
+      ],
+      "instructions": "Mélanger. Cuire au gaufrier.",
+      "id": "gaufres_sarrasin_&_vanille"
+    },
+    {
+      "type": "healthy",
+      "name": "Tartine houmous & concombre",
+      "calories": 390,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pain GF : 2 tranches",
+        "Houmous : 60g",
+        "Concombre : 6 tranches"
+      ],
+      "instructions": "Étaler houmous. Ajouter concombre.",
+      "id": "tartine_houmous_&_concombre"
+    },
+    {
+      "type": "plaisir",
+      "name": "Riz au lait d’amande coco",
+      "calories": 520,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Riz rond : 70g",
+        "Lait d’amande : 250ml",
+        "Crème coco : 40ml"
+      ],
+      "instructions": "Cuire riz dans lait. Ajouter coco.",
+      "id": "riz_au_lait_d’amande_coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Bruschetta GF tomate-basilic",
+      "calories": 410,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pain GF : 2 tranches",
+        "Tomates : 120g",
+        "Basilic : 1 c.à.s"
+      ],
+      "instructions": "Garnir toast de tomates + basilic.",
+      "id": "bruschetta_gf_tomate-basilic"
+    },
+    {
+      "type": "healthy",
+      "name": "Curry doux pois chiches",
+      "calories": 480,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pois chiches : 120g",
+        "Lait coco : 80ml",
+        "Tomates concassées : 100g"
+      ],
+      "instructions": "Cuire pois chiches + coco + tomates + curry.",
+      "id": "curry_doux_pois_chiches"
+    },
+    {
+      "type": "healthy",
+      "name": "Œufs brouillés au bacon de dinde",
+      "calories": 430,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Œufs : 3",
+        "Bacon de dinde : 40g"
+      ],
+      "instructions": "Poêler bacon. Ajouter œufs brouillés.",
+      "id": "œufs_brouillés_au_bacon_de_dinde"
+    },
+    {
+      "type": "healthy",
+      "name": "Oeuf cocotte épinard",
+      "calories": 280,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Oeuf : 1",
+        "Epinard : 50g",
+        "Crème soja : 1 c.à.s"
+      ],
+      "instructions": "Cuire au four.",
+      "id": "oeuf_cocotte_épinard"
+    },
+    {
+      "type": "healthy",
+      "name": "Bowl fromage blanc, granola",
+      "calories": 400,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Fromage blanc : 150g",
+        "Granola : 40g"
+      ],
+      "instructions": "Assembler.",
+      "id": "bowl_fromage_blanc,_granola"
+    },
+    {
+      "type": "healthy",
+      "name": "Tartine figue chèvre miel",
+      "calories": 350,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pain GF : 1 tr",
+        "Figue : 1",
+        "Chèvre : 20g"
+      ],
+      "instructions": "Griller.",
+      "id": "tartine_figue_chèvre_miel"
+    },
+    {
+      "type": "healthy",
+      "name": "Pudding chia mangue",
+      "calories": 330,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Chia : 3 c.à.s",
+        "Lait coco : 150ml",
+        "Mangue : 1/2"
+      ],
+      "instructions": "Repos 2h.",
+      "id": "pudding_chia_mangue"
+    },
+    {
+      "type": "healthy",
+      "name": "Galette sarrasin oeuf miroir",
+      "calories": 380,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Farine sarrasin : 60g",
+        "Oeuf : 1"
+      ],
+      "instructions": "Cuire galette puis oeuf.",
+      "id": "galette_sarrasin_oeuf_miroir"
+    },
+    {
+      "type": "healthy",
+      "name": "Bagel GF saumon cream cheese",
+      "calories": 450,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Bagel GF : 1",
+        "Saumon: 50g",
+        "Faux-mage : 20g"
+      ],
+      "instructions": "Garnir.",
+      "id": "bagel_gf_saumon_cream_cheese"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pain perdu brioché",
+      "calories": 520,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Brioche GF : 2 tr",
+        "Oeuf : 1",
+        "Lait amande : 50ml"
+      ],
+      "instructions": "Tremper et poêler.",
+      "id": "pain_perdu_brioché"
+    },
+    {
+      "type": "healthy",
+      "name": "Omelette champignons persillade",
+      "calories": 360,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Oeufs : 2",
+        "Champignons : 100g",
+        "Ail/Persil"
+      ],
+      "instructions": "Poêler champignons puis oeufs.",
+      "id": "omelette_champignons_persillade"
+    },
+    {
+      "type": "healthy",
+      "name": "Salade de fruits & menthe",
+      "calories": 250,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Fruits saison : 200g",
+        "Menthe : 5 feuilles"
+      ],
+      "instructions": "Couper.",
+      "id": "salade_de_fruits_&_menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Wrap oeuf brouillé avocat",
+      "calories": 420,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Wrap GF : 1",
+        "Oeuf : 2",
+        "Avocat : 1/4"
+      ],
+      "instructions": "Rouler.",
+      "id": "wrap_oeuf_brouillé_avocat"
+    },
+    {
+      "type": "healthy",
+      "name": "Pommes rôties cannelle & amandes",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Cannelle : 1 c.à.c",
+        "Amandes : 10g"
+      ],
+      "instructions": "Rôtir la pomme, ajouter cannelle et amandes.",
+      "id": "pommes_rôties_cannelle_&_amandes"
+    },
+    {
+      "type": "healthy",
+      "name": "Energy balls dattes-coco",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Dattes : 40g",
+        "Coco râpée : 10g"
+      ],
+      "instructions": "Mixer dattes, former boules, rouler dans coco.",
+      "id": "energy_balls_dattes-coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Yaourt végétal coco & mangue",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Yaourt coco sans sucre : 100g",
+        "Mangue : 60g"
+      ],
+      "instructions": "Assembler yaourt & mangue.",
+      "id": "yaourt_végétal_coco_&_mangue"
+    },
+    {
+      "type": "healthy",
+      "name": "Banane & beurre d’amande",
+      "calories": 220,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Banane : 1",
+        "Beurre d’amande : 1 c.à.c"
+      ],
+      "instructions": "Couper banane, ajouter beurre d’amande.",
+      "id": "banane_&_beurre_d’amande"
+    },
+    {
+      "type": "healthy",
+      "name": "Noix & cranberries",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Mélange noix : 20g",
+        "Cranberries : 15g"
+      ],
+      "instructions": "Mélanger et servir.",
+      "id": "noix_&_cranberries"
+    },
+    {
+      "type": "healthy",
+      "name": "Raisins + noisettes",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Raisins : 80g",
+        "Noisettes : 10g"
+      ],
+      "instructions": "Servir ensemble.",
+      "id": "raisins_+_noisettes"
+    },
+    {
+      "type": "healthy",
+      "name": "Compote pomme-poire maison",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Poire : 1"
+      ],
+      "instructions": "Cuire et mixer.",
+      "id": "compote_pomme-poire_maison"
+    },
+    {
+      "type": "healthy",
+      "name": "Houmous & bâtonnets carottes",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Houmous : 40g",
+        "Carotte : 1"
+      ],
+      "instructions": "Servir ensemble.",
+      "id": "houmous_&_bâtonnets_carottes"
+    },
+    {
+      "type": "healthy",
+      "name": "Chips de patate douce au four",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Patate douce : 120g"
+      ],
+      "instructions": "Couper, assaisonner et cuire.",
+      "id": "chips_de_patate_douce_au_four"
+    },
+    {
+      "type": "healthy",
+      "name": "Concombre & guacamole",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Concombre : 1/2",
+        "Guacamole : 40g"
+      ],
+      "instructions": "Tremper concombre dans guacamole.",
+      "id": "concombre_&_guacamole"
+    },
+    {
+      "type": "healthy",
+      "name": "Poire & chocolat noir 85%",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Chocolat 85% : 10g"
+      ],
+      "instructions": "Servir poire avec chocolat.",
+      "id": "poire_&_chocolat_noir_85%"
+    },
+    {
+      "type": "healthy",
+      "name": "Fraises & noix de cajou",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Fraises : 100g",
+        "Cajou : 15g"
+      ],
+      "instructions": "Servir ensemble.",
+      "id": "fraises_&_noix_de_cajou"
+    },
+    {
+      "type": "healthy",
+      "name": "Amandes grillées",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Amandes : 20g"
+      ],
+      "instructions": "Griller quelques minutes.",
+      "id": "amandes_grillées"
+    },
+    {
+      "type": "healthy",
+      "name": "Olives & tomates cerises",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Olives : 40g",
+        "Tomates cerises : 80g"
+      ],
+      "instructions": "Assembler.",
+      "id": "olives_&_tomates_cerises"
+    },
+    {
+      "type": "healthy",
+      "name": "Booster gingembre-miel",
+      "calories": 120,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Citron : 1",
+        "Gingembre : 1 c.à.c",
+        "Miel : 1 c.à.c"
+      ],
+      "instructions": "Mélanger jus de citron, gingembre et miel.",
+      "id": "booster_gingembre-miel"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz soufflé & chocolat noir",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Riz soufflé : 20g",
+        "Chocolat 85% : 10g"
+      ],
+      "instructions": "Mélanger.",
+      "id": "riz_soufflé_&_chocolat_noir"
+    },
+    {
+      "type": "healthy",
+      "name": "Oranges & pistaches",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Orange : 1",
+        "Pistaches : 10g"
+      ],
+      "instructions": "Servir ensemble.",
+      "id": "oranges_&_pistaches"
+    },
+    {
+      "type": "healthy",
+      "name": "Billes melon & menthe",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Melon : 120g",
+        "Menthe : quelques feuilles"
+      ],
+      "instructions": "Assembler.",
+      "id": "billes_melon_&_menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Pêche & amandes",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pêche : 1",
+        "Amandes : 10g"
+      ],
+      "instructions": "Servir.",
+      "id": "pêche_&_amandes"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini mugcake chocolat GF",
+      "calories": 240,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Farine riz : 20g",
+        "Cacao : 1 c.à.c",
+        "Lait amande : 40ml"
+      ],
+      "instructions": "Cuire 45 sec au micro-ondes.",
+      "id": "mini_mugcake_chocolat_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Tomates cerises & basilic",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Tomates cerises : 100g",
+        "Basilic : quelques feuilles"
+      ],
+      "instructions": "Assembler.",
+      "id": "tomates_cerises_&_basilic"
+    },
+    {
+      "type": "healthy",
+      "name": "Céleri & sauce tahini",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Céleri : 1 branche",
+        "Tahini : 1 c.à.c"
+      ],
+      "instructions": "Tremper.",
+      "id": "céleri_&_sauce_tahini"
+    },
+    {
+      "type": "healthy",
+      "name": "Chips kale au four",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Kale : 60g"
+      ],
+      "instructions": "Assaisonner et cuire 10 min.",
+      "id": "chips_kale_au_four"
+    },
+    {
+      "type": "healthy",
+      "name": "Ananas & citron vert",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Ananas : 120g",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Assembler.",
+      "id": "ananas_&_citron_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Dattes & purée cacahuète",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Dattes : 3",
+        "Purée cacahuète : 1 c.à.c"
+      ],
+      "instructions": "Garnir dattes.",
+      "id": "dattes_&_purée_cacahuète"
+    },
+    {
+      "type": "healthy",
+      "name": "Abricot & amandes",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Abricots : 2",
+        "Amandes : 10g"
+      ],
+      "instructions": "Servir.",
+      "id": "abricot_&_amandes"
+    },
+    {
+      "type": "healthy",
+      "name": "Kiwi & graines de chia",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Kiwi : 1",
+        "Chia : 1 c.à.c"
+      ],
+      "instructions": "Saupoudrer chia sur kiwi.",
+      "id": "kiwi_&_graines_de_chia"
+    },
+    {
+      "type": "healthy",
+      "name": "Poivron & houmous citronné",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Poivron : 1",
+        "Houmous : 40g"
+      ],
+      "instructions": "Tremper.",
+      "id": "poivron_&_houmous_citronné"
+    },
+    {
+      "type": "plaisir",
+      "name": "Rocher choco-coco GF maison",
+      "calories": 230,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Chocolat 85% : 15g",
+        "Coco : 10g"
+      ],
+      "instructions": "Faire fondre chocolat, mélanger coco, former rocher.",
+      "id": "rocher_choco-coco_gf_maison"
+    },
+    {
+      "type": "healthy",
+      "name": "Mangue & citron vert",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Mangue : 100g",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Assembler.",
+      "id": "mangue_&_citron_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Airelles & pomme",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Airelles : 30g"
+      ],
+      "instructions": "Assembler.",
+      "id": "airelles_&_pomme"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz au lait végétal léger",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Riz : 30g",
+        "Lait amande : 150ml"
+      ],
+      "instructions": "Cuire 10 min.",
+      "id": "riz_au_lait_végétal_léger"
+    },
+    {
+      "type": "healthy",
+      "name": "Mini salade pastèque-menthe",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pastèque : 120g",
+        "Menthe : quelques feuilles"
+      ],
+      "instructions": "Assembler.",
+      "id": "mini_salade_pastèque-menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Pomme & cannelle express",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Couper pomme, ajouter cannelle.",
+      "id": "pomme_&_cannelle_express"
+    },
+    {
+      "type": "healthy",
+      "name": "Poignée de graines de courge",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Graines de courge : 30g"
+      ],
+      "instructions": "À croquer nature.",
+      "id": "poignée_de_graines_de_courge"
+    },
+    {
+      "type": "healthy",
+      "name": "Toast beurre de noix & banane",
+      "calories": 250,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pain GF : 1 tranche",
+        "Beurre de noix : 1 c.à.c",
+        "Banane : 1/2"
+      ],
+      "instructions": "Tartiner et garnir.",
+      "id": "toast_beurre_de_noix_&_banane"
+    },
+    {
+      "type": "healthy",
+      "name": "Lait d'or (Golden Milk)",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Lait végétal : 200ml",
+        "Curcuma : 1 c.à.c",
+        "Poivre noir : pincée"
+      ],
+      "instructions": "Chauffer et fouetter.",
+      "id": "lait_d'or_(golden_milk)"
+    },
+    {
+      "type": "healthy",
+      "name": "Bâtonnets céleri & beurre d'amande",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Céleri : 2 branches",
+        "Beurre d'amande : 1 c.à.s"
+      ],
+      "instructions": "Garnir la branche.",
+      "id": "bâtonnets_céleri_&_beurre_d'amande"
+    },
+    {
+      "type": "healthy",
+      "name": "Mélange étudiant maison",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Noix cajou : 10g",
+        "Amandes : 10g",
+        "Raisins secs : 10g"
+      ],
+      "instructions": "Mélanger.",
+      "id": "mélange_étudiant_maison"
+    },
+    {
+      "type": "healthy",
+      "name": "Compote pomme-châtaigne",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Crème de marrons : 1 c.à.c"
+      ],
+      "instructions": "Mélanger.",
+      "id": "compote_pomme-châtaigne"
+    },
+    {
+      "type": "healthy",
+      "name": "Pudding chia coco-matcha",
+      "calories": 220,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Graines chia : 2 c.à.s",
+        "Lait coco : 100ml",
+        "Matcha : 1/2 c.à.c"
+      ],
+      "instructions": "Laisser gonfler 30 min.",
+      "id": "pudding_chia_coco-matcha"
+    },
+    {
+      "type": "healthy",
+      "name": "Boules d'énergie figue-noix",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Figues sèches : 30g",
+        "Noix : 20g"
+      ],
+      "instructions": "Mixer et rouler.",
+      "id": "boules_d'énergie_figue-noix"
+    },
+    {
+      "type": "healthy",
+      "name": "Raw bar cacao-orange",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Dattes : 2",
+        "Cacao : 1 c.à.c",
+        "Zeste orange : pincée"
+      ],
+      "instructions": "Mixer et former barre.",
+      "id": "raw_bar_cacao-orange"
+    },
+    {
+      "type": "healthy",
+      "name": "Chips de noix de coco",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Chips coco nature : 30g"
+      ],
+      "instructions": "Déguster.",
+      "id": "chips_de_noix_de_coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Poulet rôti citron-romarin & riz",
+      "calories": 480,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Poulet : 150g",
+        "Citron : 1 c.à.c",
+        "Romarin : 1 c.à.c",
+        "Riz cuit : 120g"
+      ],
+      "instructions": "Rôtir poulet avec citron et romarin. Servir avec riz.",
+      "id": "poulet_rôti_citron-romarin_&_riz"
+    },
+    {
+      "type": "healthy",
+      "name": "Saumon grillé & légumes vapeur",
+      "calories": 460,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Saumon : 140g",
+        "Brocoli : 120g",
+        "Carotte : 1"
+      ],
+      "instructions": "Griller saumon. Cuire légumes vapeur.",
+      "id": "saumon_grillé_&_légumes_vapeur"
+    },
+    {
+      "type": "healthy",
+      "name": "Crevettes ail-persil & quinoa",
+      "calories": 470,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Crevettes : 150g",
+        "Ail : 1 gousse",
+        "Persil : 1 c.à.s",
+        "Quinoa cuit : 120g"
+      ],
+      "instructions": "Poêler crevettes ail. Ajouter persil, servir avec quinoa.",
+      "id": "crevettes_ail-persil_&_quinoa"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pad thaï GF sauce coco citron",
+      "calories": 520,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Nouilles riz : 100g",
+        "Crevettes : 120g",
+        "Coco : 40ml",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Cuire nouilles, poêler crevettes, mélanger avec sauce coco-citron.",
+      "id": "pad_thaï_gf_sauce_coco_citron"
+    },
+    {
+      "type": "healthy",
+      "name": "Curry doux pois chiches & épinards",
+      "calories": 480,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pois chiches : 150g",
+        "Épinards : 100g",
+        "Coco : 60ml"
+      ],
+      "instructions": "Cuire pois chiches + coco, ajouter épinards.",
+      "id": "curry_doux_pois_chiches_&_épinards"
+    },
+    {
+      "type": "healthy",
+      "name": "Dinde grillée & purée patate douce",
+      "calories": 460,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Dinde : 150g",
+        "Patate douce : 250g"
+      ],
+      "instructions": "Griller dinde. Servir avec purée de patate douce.",
+      "id": "dinde_grillée_&_purée_patate_douce"
+    },
+    {
+      "type": "plaisir",
+      "name": "Burger GF maison & potatoes",
+      "calories": 540,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pain GF : 1",
+        "Steak dinde : 120g",
+        "Tomate : 2 tranches",
+        "Pommes de terre : 200g"
+      ],
+      "instructions": "Assembler burger. Cuire potatoes au four.",
+      "id": "burger_gf_maison_&_potatoes"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson blanc au four citron-curcuma",
+      "calories": 430,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Poisson blanc : 150g",
+        "Citron : 1 c.à.c",
+        "Curcuma : 1 c.à.c"
+      ],
+      "instructions": "Cuire poisson au four avec citron-curcuma.",
+      "id": "poisson_blanc_au_four_citron-curcuma"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz sauté légumes & œuf",
+      "calories": 460,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Riz froid : 140g",
+        "Légumes variés : 120g",
+        "Œuf : 1"
+      ],
+      "instructions": "Sauter riz + légumes + œuf.",
+      "id": "riz_sauté_légumes_&_œuf"
+    },
+    {
+      "type": "healthy",
+      "name": "Tacos GF poulet & salsa maison",
+      "calories": 470,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Tortillas GF : 2",
+        "Poulet : 120g",
+        "Tomate : 1",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Garnir tortillas avec poulet + salsa.",
+      "id": "tacos_gf_poulet_&_salsa_maison"
+    },
+    {
+      "type": "plaisir",
+      "name": "Gnocchis GF sauce coco-tomate",
+      "calories": 520,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Gnocchis GF : 150g",
+        "Coco : 50ml",
+        "Tomates concassées : 150g"
+      ],
+      "instructions": "Cuire gnocchis. Mélanger coco + tomate.",
+      "id": "gnocchis_gf_sauce_coco-tomate"
+    },
+    {
+      "type": "healthy",
+      "name": "Tofu croustillant & riz sauté",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Tofu : 150g",
+        "Riz cuit : 120g",
+        "Ail : 1 gousse"
+      ],
+      "instructions": "Poêler tofu croustillant. Ajouter riz sauté.",
+      "id": "tofu_croustillant_&_riz_sauté"
+    },
+    {
+      "type": "healthy",
+      "name": "Soupe thaï coco-citronnelle",
+      "calories": 430,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Coco : 100ml",
+        "Citronnelle : 1",
+        "Légumes variés : 150g"
+      ],
+      "instructions": "Faire mijoter coco + citronnelle + légumes.",
+      "id": "soupe_thaï_coco-citronnelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Bœuf haché & haricots verts sautés",
+      "calories": 470,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Bœuf 5% : 120g",
+        "Haricots verts : 150g"
+      ],
+      "instructions": "Poêler bœuf, ajouter haricots.",
+      "id": "bœuf_haché_&_haricots_verts_sautés"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson grillé & salade fraîcheur",
+      "calories": 430,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Poisson blanc : 150g",
+        "Salade : 100g",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Griller poisson. Servir avec salade citronnée.",
+      "id": "poisson_grillé_&_salade_fraîcheur"
+    },
+    {
+      "type": "healthy",
+      "name": "Curry de lentilles corail",
+      "calories": 420,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Lentilles corail: 70g",
+        "Coco: 50ml",
+        "Tomates: 100g",
+        "Curry"
+      ],
+      "instructions": "Mijoter 15min.",
+      "id": "curry_de_lentilles_corail"
+    },
+    {
+      "type": "healthy",
+      "name": "Steak de thon sésame",
+      "calories": 450,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Thon: 120g",
+        "Sésame",
+        "Soja GF"
+      ],
+      "instructions": "Snacker 1min par face.",
+      "id": "steak_de_thon_sésame"
+    },
+    {
+      "type": "healthy",
+      "name": "Wok poulet cacahuète",
+      "calories": 480,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Poulet: 120g",
+        "Beurre cacahuète: 1 c.à.s",
+        "Légumes wok"
+      ],
+      "instructions": "Sauter au wok.",
+      "id": "wok_poulet_cacahuète"
+    },
+    {
+      "type": "healthy",
+      "name": "Papillote cabillaud fenouil",
+      "calories": 380,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Cabillaud: 150g",
+        "Fenouil: 1",
+        "Orange: 2 tranches"
+      ],
+      "instructions": "Four 20min.",
+      "id": "papillote_cabillaud_fenouil"
+    },
+    {
+      "type": "healthy",
+      "name": "Salade quinoa avocat tofu",
+      "calories": 440,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Quinoa: 60g",
+        "Avocat: 1/2",
+        "Tofu fumé: 100g"
+      ],
+      "instructions": "Mélanger.",
+      "id": "salade_quinoa_avocat_tofu"
+    },
+    {
+      "type": "plaisir",
+      "name": "Gratin dauphinois vegan",
+      "calories": 520,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "PdT: 200g",
+        "Crème soja: 100ml",
+        "Ail"
+      ],
+      "instructions": "Four 45min.",
+      "id": "gratin_dauphinois_vegan"
+    },
+    {
+      "type": "healthy",
+      "name": "Boulettes boeuf menthe",
+      "calories": 460,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Boeuf: 120g",
+        "Menthe",
+        "Cumin"
+      ],
+      "instructions": "Cuire poêle.",
+      "id": "boulettes_boeuf_menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Falafels au four",
+      "calories": 410,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Pois chiches: 150g",
+        "Herbes",
+        "Epices"
+      ],
+      "instructions": "Mixer et cuire four.",
+      "id": "falafels_au_four"
+    },
+    {
+      "type": "healthy",
+      "name": "Oeuf sur le plat & épinards",
+      "calories": 360,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Oeufs: 2",
+        "Epinards: 200g"
+      ],
+      "instructions": "Poêler.",
+      "id": "oeuf_sur_le_plat_&_épinards"
+    },
+    {
+      "type": "healthy",
+      "name": "Poulet basquaise express",
+      "calories": 450,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "all_seasons"
+      ],
+      "ingredients": [
+        "Poulet: 120g",
+        "Poivrons: 2",
+        "Tomate: 2"
+      ],
+      "instructions": "Mijoter.",
+      "id": "poulet_basquaise_express"
+    },
+    {
+      "type": "healthy",
+      "name": "Radis & sel citronné",
+      "calories": 80,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Radis : 6",
+        "Sel citronné : 1 pincée"
+      ],
+      "instructions": "Servir.",
+      "id": "radis_&_sel_citronné"
+    },
+    {
+      "type": "healthy",
+      "name": "Fraises au basilic",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Fraises : 100g",
+        "Basilic : 4 feuilles"
+      ],
+      "instructions": "Mélanger.",
+      "id": "fraises_au_basilic"
+    },
+    {
+      "type": "healthy",
+      "name": "Carottes nouvelles & houmous",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Carottes nouvelles : 2",
+        "Houmous : 40g"
+      ],
+      "instructions": "Tremper.",
+      "id": "carottes_nouvelles_&_houmous"
+    },
+    {
+      "type": "healthy",
+      "name": "Concombre & menthe",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Concombre : 1/2",
+        "Menthe : 1 c.à.s"
+      ],
+      "instructions": "Assembler.",
+      "id": "concombre_&_menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Pois gourmands citron-gingembre",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Pois gourmands : 100g",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Cuire 2 min, ajouter citron.",
+      "id": "pois_gourmands_citron-gingembre"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini gaufres citron-pavot GF",
+      "calories": 210,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Farine riz : 30g",
+        "Pavot : 1 c.à.c"
+      ],
+      "instructions": "Cuire au gaufrier.",
+      "id": "mini_gaufres_citron-pavot_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Pommes nouvelles rôties",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Pomme nouvelle : 1"
+      ],
+      "instructions": "Rôtir 10 min.",
+      "id": "pommes_nouvelles_rôties"
+    },
+    {
+      "type": "healthy",
+      "name": "Avo toast printanier mini",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Pain GF : 1/2 tranche",
+        "Avocat : 1/4"
+      ],
+      "instructions": "Assembler.",
+      "id": "avo_toast_printanier_mini"
+    },
+    {
+      "type": "healthy",
+      "name": "Petits pois & menthe fraîche",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Petits pois : 80g"
+      ],
+      "instructions": "Cuire, ajouter menthe.",
+      "id": "petits_pois_&_menthe_fraîche"
+    },
+    {
+      "type": "plaisir",
+      "name": "Fraises & chocolat noir",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Fraises : 100g",
+        "Chocolat noir : 10g"
+      ],
+      "instructions": "Tremper.",
+      "id": "fraises_&_chocolat_noir"
+    },
+    {
+      "type": "healthy",
+      "name": "Omelette asperges vertes",
+      "calories": 380,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Oeufs : 2",
+        "Asperges : 6"
+      ],
+      "instructions": "Cuire.",
+      "id": "omelette_asperges_vertes"
+    },
+    {
+      "type": "healthy",
+      "name": "Tartine radis beurre salé",
+      "calories": 290,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Pain GF : 1",
+        "Radis : 5",
+        "Beurre : 10g"
+      ],
+      "instructions": "Servir.",
+      "id": "tartine_radis_beurre_salé"
+    },
+    {
+      "type": "healthy",
+      "name": "Salade fraise-épinard-feta",
+      "calories": 340,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Fraises : 100g",
+        "Epinard : 50g",
+        "Feta : 30g"
+      ],
+      "instructions": "Mélanger.",
+      "id": "salade_fraise-épinard-feta"
+    },
+    {
+      "type": "healthy",
+      "name": "Scones salés petit pois",
+      "calories": 410,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Farine riz : 100g",
+        "Petits pois : 30g"
+      ],
+      "instructions": "Cuire au four.",
+      "id": "scones_salés_petit_pois"
+    },
+    {
+      "type": "healthy",
+      "name": "Muffin carotte-noisette",
+      "calories": 360,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Carotte râpée : 50g",
+        "Poudre noisette : 30g"
+      ],
+      "instructions": "Cuire.",
+      "id": "muffin_carotte-noisette"
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie bowl vert",
+      "calories": 320,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Epinard : 50g",
+        "Banane : 1",
+        "Kiwi : 1"
+      ],
+      "instructions": "Mixer.",
+      "id": "smoothie_bowl_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Oeuf mollet & mouillettes",
+      "calories": 300,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Oeufs : 2",
+        "Pain GF : 1tr"
+      ],
+      "instructions": "Oeuf 6min.",
+      "id": "oeuf_mollet_&_mouillettes"
+    },
+    {
+      "type": "healthy",
+      "name": "Navets glacés au miel",
+      "calories": 260,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "spring"
+      ],
+      "ingredients": [
+        "Navets : 150g",
+        "Miel : 1 c.à.s"
+      ],
+      "instructions": "Poêler.",
+      "id": "navets_glacés_au_miel"
+    },
+    {
+      "type": "healthy",
+      "name": "Radis & sel citronné",
+      "calories": 80,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Radis : 6",
+        "Sel citronné : 1 pincée"
+      ],
+      "instructions": "Servir.",
+      "id": "radis_&_sel_citronné"
+    },
+    {
+      "type": "healthy",
+      "name": "Fraises au basilic",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Fraises : 100g",
+        "Basilic : 4 feuilles"
+      ],
+      "instructions": "Mélanger.",
+      "id": "fraises_au_basilic"
+    },
+    {
+      "type": "healthy",
+      "name": "Carottes nouvelles & houmous",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Carottes nouvelles : 2",
+        "Houmous : 40g"
+      ],
+      "instructions": "Tremper.",
+      "id": "carottes_nouvelles_&_houmous"
+    },
+    {
+      "type": "healthy",
+      "name": "Concombre & menthe",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Concombre : 1/2",
+        "Menthe : 1 c.à.s"
+      ],
+      "instructions": "Assembler.",
+      "id": "concombre_&_menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Pois gourmands citron-gingembre",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Pois gourmands : 100g",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Cuire 2 min, ajouter citron.",
+      "id": "pois_gourmands_citron-gingembre"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini gaufres citron-pavot GF",
+      "calories": 210,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Farine riz : 30g",
+        "Pavot : 1 c.à.c"
+      ],
+      "instructions": "Cuire au gaufrier.",
+      "id": "mini_gaufres_citron-pavot_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Pommes nouvelles rôties",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Pomme nouvelle : 1"
+      ],
+      "instructions": "Rôtir 10 min.",
+      "id": "pommes_nouvelles_rôties"
+    },
+    {
+      "type": "healthy",
+      "name": "Avo toast printanier mini",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Pain GF : 1/2 tranche",
+        "Avocat : 1/4"
+      ],
+      "instructions": "Assembler.",
+      "id": "avo_toast_printanier_mini"
+    },
+    {
+      "type": "healthy",
+      "name": "Petits pois & menthe fraîche",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Petits pois : 80g"
+      ],
+      "instructions": "Cuire, ajouter menthe.",
+      "id": "petits_pois_&_menthe_fraîche"
+    },
+    {
+      "type": "plaisir",
+      "name": "Fraises & chocolat noir",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Fraises : 100g",
+        "Chocolat noir : 10g"
+      ],
+      "instructions": "Tremper.",
+      "id": "fraises_&_chocolat_noir"
+    },
+    {
+      "type": "healthy",
+      "name": "Asperges vertes croquantes",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Asperges : 4",
+        "Citron : filet"
+      ],
+      "instructions": "Cuire vapeur, croquer froid avec citron.",
+      "id": "asperges_vertes_croquantes"
+    },
+    {
+      "type": "healthy",
+      "name": "Barre avoine-rhubarbe",
+      "calories": 230,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Flocons avoine : 40g",
+        "Compote rhubarbe : 20g"
+      ],
+      "instructions": "Cuire 15 min au four.",
+      "id": "barre_avoine-rhubarbe"
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie fraise-basilic",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Fraises : 100g",
+        "Basilic : 3 feuilles",
+        "Eau : 100ml"
+      ],
+      "instructions": "Mixer.",
+      "id": "smoothie_fraise-basilic"
+    },
+    {
+      "type": "healthy",
+      "name": "Muffins épinards (mini)",
+      "calories": 180,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Oeuf : 1",
+        "Epinards : 50g",
+        "Farine pois chiche : 10g"
+      ],
+      "instructions": "Cuire moules muffin.",
+      "id": "muffins_épinards_(mini)"
+    },
+    {
+      "type": "healthy",
+      "name": "Radis noir & purée sésame",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Radis noir : 1/4",
+        "Tahini : 1 c.à.c"
+      ],
+      "instructions": "Tremper.",
+      "id": "radis_noir_&_purée_sésame"
+    },
+    {
+      "type": "healthy",
+      "name": "Artichaut vinaigrette légère",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Artichaut : 1/2",
+        "Vinaigre cidre : 1 c.à.s"
+      ],
+      "instructions": "Tremper les feuilles.",
+      "id": "artichaut_vinaigrette_légère"
+    },
+    {
+      "type": "healthy",
+      "name": "Navets nouveaux croque-sel",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Navets : 2 petits",
+        "Sel : pincée"
+      ],
+      "instructions": "Couper en tranches.",
+      "id": "navets_nouveaux_croque-sel"
+    },
+    {
+      "type": "healthy",
+      "name": "Yaourt soja & kiwi",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "spring"
+      ],
+      "ingredients": [
+        "Yaourt soja : 100g",
+        "Kiwi : 1"
+      ],
+      "instructions": "Mélanger.",
+      "id": "yaourt_soja_&_kiwi"
+    },
+    {
+      "type": "healthy",
+      "name": "Poulet citron-menthe & asperges",
+      "calories": 460,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Poulet : 150g",
+        "Asperges : 150g",
+        "Citron : 1 c.à.c",
+        "Menthe : 1 c.à.s"
+      ],
+      "instructions": "Cuire asperges. Griller poulet. Ajouter citron-menthe.",
+      "id": "poulet_citron-menthe_&_asperges"
+    },
+    {
+      "type": "healthy",
+      "name": "Saumon grillé & petits pois citronnés",
+      "calories": 450,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Saumon : 140g",
+        "Petits pois : 120g",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Griller saumon. Mélanger petits pois + citron.",
+      "id": "saumon_grillé_&_petits_pois_citronnés"
+    },
+    {
+      "type": "healthy",
+      "name": "Risotto GF asperges & coco",
+      "calories": 480,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Riz risotto GF : 100g",
+        "Asperges : 120g",
+        "Coco : 50ml"
+      ],
+      "instructions": "Préparer risotto. Ajouter asperges + coco.",
+      "id": "risotto_gf_asperges_&_coco"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pâtes GF pesto basilic maison",
+      "calories": 520,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Pâtes GF : 100g",
+        "Basilic : 1 poignée",
+        "Ail : 1 gousse",
+        "Huile d’olive : 1 c.à.s"
+      ],
+      "instructions": "Mixer pesto. Mélanger aux pâtes.",
+      "id": "pâtes_gf_pesto_basilic_maison"
+    },
+    {
+      "type": "healthy",
+      "name": "Dinde grillée & salade radis-concombre",
+      "calories": 440,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Dinde : 150g",
+        "Radis : 6",
+        "Concombre : 1/2"
+      ],
+      "instructions": "Griller dinde. Servir avec salade.",
+      "id": "dinde_grillée_&_salade_radis-concombre"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson blanc & asperges vapeur",
+      "calories": 430,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Poisson blanc : 150g",
+        "Asperges : 150g"
+      ],
+      "instructions": "Cuire poisson + asperges vapeur.",
+      "id": "poisson_blanc_&_asperges_vapeur"
+    },
+    {
+      "type": "healthy",
+      "name": "Curry vert coco-petits pois",
+      "calories": 470,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Coco : 80ml",
+        "Petits pois : 120g",
+        "Pâte curry vert : 1 c.à.c"
+      ],
+      "instructions": "Cuire coco + curry vert + petits pois.",
+      "id": "curry_vert_coco-petits_pois"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pizza GF chèvre vegan-miel",
+      "calories": 540,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Pâte GF : 1",
+        "Chèvre vegan : 60g",
+        "Miel : 1 c.à.c"
+      ],
+      "instructions": "Cuire pizza garnie.",
+      "id": "pizza_gf_chèvre_vegan-miel"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz sauté asperges & citron",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Riz froid : 120g",
+        "Asperges : 100g",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Sauter riz + asperges + citron.",
+      "id": "riz_sauté_asperges_&_citron"
+    },
+    {
+      "type": "healthy",
+      "name": "Tofu grillé & salade printanière",
+      "calories": 460,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Tofu : 150g",
+        "Fèves : 100g",
+        "Menthe : 1 c.à.s"
+      ],
+      "instructions": "Griller tofu. Mélanger salade + menthe.",
+      "id": "tofu_grillé_&_salade_printanière"
+    },
+    {
+      "type": "healthy",
+      "name": "Bœuf grillé & salade fraîche au citron",
+      "calories": 470,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Bœuf : 120g",
+        "Salade : 100g",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Griller bœuf. Servir avec salade.",
+      "id": "bœuf_grillé_&_salade_fraîche_au_citron"
+    },
+    {
+      "type": "healthy",
+      "name": "Soupe printanière pois-coco",
+      "calories": 430,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Petits pois : 150g",
+        "Coco : 60ml"
+      ],
+      "instructions": "Mixer pois + coco.",
+      "id": "soupe_printanière_pois-coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson poêlé & radis croquants",
+      "calories": 440,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Poisson : 150g",
+        "Radis : 6",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Poêler poisson. Servir avec radis.",
+      "id": "poisson_poêlé_&_radis_croquants"
+    },
+    {
+      "type": "healthy",
+      "name": "Quinoa citronné & poulet grillé",
+      "calories": 470,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Quinoa cuit : 120g",
+        "Poulet : 150g",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Assembler.",
+      "id": "quinoa_citronné_&_poulet_grillé"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz aux herbes & crevettes grillées",
+      "calories": 480,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Riz cuit : 120g",
+        "Crevettes : 120g",
+        "Herbes : 1 c.à.s"
+      ],
+      "instructions": "Mélanger riz + crevettes + herbes.",
+      "id": "riz_aux_herbes_&_crevettes_grillées"
+    },
+    {
+      "type": "healthy",
+      "name": "Navarin d'agneau printanier",
+      "calories": 500,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Agneau: 100g",
+        "Petits pois: 50g",
+        "Carottes: 1"
+      ],
+      "instructions": "Mijoter.",
+      "id": "navarin_d'agneau_printanier"
+    },
+    {
+      "type": "healthy",
+      "name": "Salade fevettes et menthe",
+      "calories": 380,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Fèves: 150g",
+        "Menthe",
+        "Citron"
+      ],
+      "instructions": "Blanchir et assaisonner.",
+      "id": "salade_fevettes_et_menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Asperges rôties & oeuf mollet",
+      "calories": 320,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Asperges: 10",
+        "Oeuf: 2"
+      ],
+      "instructions": "Four et cuisson oeuf.",
+      "id": "asperges_rôties_&_oeuf_mollet"
+    },
+    {
+      "type": "healthy",
+      "name": "Risotto petits pois citron",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Riz arborio: 60g",
+        "Petits pois: 50g",
+        "Citron"
+      ],
+      "instructions": "Cuire risotto.",
+      "id": "risotto_petits_pois_citron"
+    },
+    {
+      "type": "healthy",
+      "name": "Tarte salée épinard chèvre (pâte GF)",
+      "calories": 480,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Pâte GF",
+        "Epinards",
+        "Chèvre"
+      ],
+      "instructions": "Four.",
+      "id": "tarte_salée_épinard_chèvre_(pâte_gf)"
+    },
+    {
+      "type": "healthy",
+      "name": "Dos de cabillaud croûte d'herbes",
+      "calories": 400,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Cabillaud: 150g",
+        "Herbes",
+        "Poudre amande"
+      ],
+      "instructions": "Four.",
+      "id": "dos_de_cabillaud_croûte_d'herbes"
+    },
+    {
+      "type": "healthy",
+      "name": "Sauté de veau aux olives",
+      "calories": 460,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Veau: 120g",
+        "Olives: 10",
+        "Tomate"
+      ],
+      "instructions": "Mijoter.",
+      "id": "sauté_de_veau_aux_olives"
+    },
+    {
+      "type": "healthy",
+      "name": "Taboulé de chou-fleur",
+      "calories": 320,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "spring"
+      ],
+      "ingredients": [
+        "Chou-fleur râpé: 200g",
+        "Tomate",
+        "Concombre"
+      ],
+      "instructions": "Tout cru.",
+      "id": "taboulé_de_chou-fleur"
+    },
+    {
+      "type": "healthy",
+      "name": "Pastèque & citron vert",
+      "calories": 80,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Pastèque : 120g",
+        "Citron vert : quelques gouttes"
+      ],
+      "instructions": "Assembler.",
+      "id": "pastèque_&_citron_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Abricot & amandes",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Abricots : 2",
+        "Amandes : 10g"
+      ],
+      "instructions": "Servir.",
+      "id": "abricot_&_amandes"
+    },
+    {
+      "type": "healthy",
+      "name": "Concombre & pistaches",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Concombre : 1/2",
+        "Pistaches : 10g"
+      ],
+      "instructions": "Assembler.",
+      "id": "concombre_&_pistaches"
+    },
+    {
+      "type": "healthy",
+      "name": "Tomates cerises & basilic",
+      "calories": 100,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Tomates cerises : 100g",
+        "Basilic : quelques feuilles"
+      ],
+      "instructions": "Assembler.",
+      "id": "tomates_cerises_&_basilic"
+    },
+    {
+      "type": "healthy",
+      "name": "Melon & menthe",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Melon : 120g",
+        "Menthe : quelques feuilles"
+      ],
+      "instructions": "Assembler.",
+      "id": "melon_&_menthe"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini crêpe coco GF",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Farine riz : 20g",
+        "Lait coco : 40ml"
+      ],
+      "instructions": "Cuire 2 min.",
+      "id": "mini_crêpe_coco_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Pêche & citron vert",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Pêche : 1",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Servir.",
+      "id": "pêche_&_citron_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Myrtilles & cajou",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Myrtilles : 80g",
+        "Cajou : 10g"
+      ],
+      "instructions": "Assembler.",
+      "id": "myrtilles_&_cajou"
+    },
+    {
+      "type": "healthy",
+      "name": "Courgette crue & tahini",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Courgette : 1/2",
+        "Tahini : 1 c.à.c"
+      ],
+      "instructions": "Tremper.",
+      "id": "courgette_crue_&_tahini"
+    },
+    {
+      "type": "plaisir",
+      "name": "Glace maison mangue express",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Mangue congelée : 150g"
+      ],
+      "instructions": "Mixer mangue bien froide.",
+      "id": "glace_maison_mangue_express"
+    },
+    {
+      "type": "healthy",
+      "name": "Toast tomate-bmozzarella",
+      "calories": 380,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Pain GF : 1",
+        "Tomate : 1",
+        "Mozza : 50g"
+      ],
+      "instructions": "Gratiner.",
+      "id": "toast_tomate-bmozzarella"
+    },
+    {
+      "type": "healthy",
+      "name": "Salade pêche-verveine",
+      "calories": 220,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Pêche : 2",
+        "Verveine : 5 feuilles"
+      ],
+      "instructions": "Infuser.",
+      "id": "salade_pêche-verveine"
+    },
+    {
+      "type": "healthy",
+      "name": "Frittata courgette-menthe",
+      "calories": 360,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Oeufs : 2",
+        "Courgette : 1",
+        "Menthe"
+      ],
+      "instructions": "Cuire poêle.",
+      "id": "frittata_courgette-menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Muesli froid abricot",
+      "calories": 350,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Flocons : 50g",
+        "Lait : 100ml",
+        "Abricot : 2"
+      ],
+      "instructions": "Frigo nuit.",
+      "id": "muesli_froid_abricot"
+    },
+    {
+      "type": "healthy",
+      "name": "Crevettes avocat pamplemousse",
+      "calories": 400,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Crevettes : 100g",
+        "Pamplemousse : 1/2"
+      ],
+      "instructions": "Mélanger.",
+      "id": "crevettes_avocat_pamplemousse"
+    },
+    {
+      "type": "healthy",
+      "name": "Clafoutis cerise (rapide)",
+      "calories": 390,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Cerises : 100g",
+        "Appareil oeuf/lait/farine"
+      ],
+      "instructions": "Four.",
+      "id": "clafoutis_cerise_(rapide)"
+    },
+    {
+      "type": "healthy",
+      "name": "Wrap laitue poulet grillé",
+      "calories": 320,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Laitue (feuilles) : 2",
+        "Poulet : 100g"
+      ],
+      "instructions": "Rouler.",
+      "id": "wrap_laitue_poulet_grillé"
+    },
+    {
+      "type": "healthy",
+      "name": "Tarte fine tomate moutarde",
+      "calories": 380,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "summer"
+      ],
+      "ingredients": [
+        "Pâte GF",
+        "Moutarde",
+        "Tomate"
+      ],
+      "instructions": "Four.",
+      "id": "tarte_fine_tomate_moutarde"
+    },
+    {
+      "type": "healthy",
+      "name": "Pastèque & citron vert",
+      "calories": 80,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Pastèque : 120g",
+        "Citron vert : quelques gouttes"
+      ],
+      "instructions": "Assembler.",
+      "id": "pastèque_&_citron_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Abricot & amandes",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Abricots : 2",
+        "Amandes : 10g"
+      ],
+      "instructions": "Servir.",
+      "id": "abricot_&_amandes"
+    },
+    {
+      "type": "healthy",
+      "name": "Concombre & pistaches",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Concombre : 1/2",
+        "Pistaches : 10g"
+      ],
+      "instructions": "Assembler.",
+      "id": "concombre_&_pistaches"
+    },
+    {
+      "type": "healthy",
+      "name": "Tomates cerises & basilic",
+      "calories": 100,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Tomates cerises : 100g",
+        "Basilic : quelques feuilles"
+      ],
+      "instructions": "Assembler.",
+      "id": "tomates_cerises_&_basilic"
+    },
+    {
+      "type": "healthy",
+      "name": "Melon & menthe",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Melon : 120g",
+        "Menthe : quelques feuilles"
+      ],
+      "instructions": "Assembler.",
+      "id": "melon_&_menthe"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini crêpe coco GF",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Farine riz : 20g",
+        "Lait coco : 40ml"
+      ],
+      "instructions": "Cuire 2 min.",
+      "id": "mini_crêpe_coco_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Pêche & citron vert",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Pêche : 1",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Servir.",
+      "id": "pêche_&_citron_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Myrtilles & cajou",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Myrtilles : 80g",
+        "Cajou : 10g"
+      ],
+      "instructions": "Assembler.",
+      "id": "myrtilles_&_cajou"
+    },
+    {
+      "type": "healthy",
+      "name": "Courgette crue & tahini",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Courgette : 1/2",
+        "Tahini : 1 c.à.c"
+      ],
+      "instructions": "Tremper.",
+      "id": "courgette_crue_&_tahini"
+    },
+    {
+      "type": "plaisir",
+      "name": "Glace maison mangue express",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Mangue congelée : 150g"
+      ],
+      "instructions": "Mixer mangue bien froide.",
+      "id": "glace_maison_mangue_express"
+    },
+    {
+      "type": "healthy",
+      "name": "Pop-sicle eau de coco & fruits",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Eau de coco : 100ml",
+        "Fruits rouges : 20g"
+      ],
+      "instructions": "Congeler.",
+      "id": "pop-sicle_eau_de_coco_&_fruits"
+    },
+    {
+      "type": "healthy",
+      "name": "Gaspacho mini concombre-menthe",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Concombre : 100g",
+        "Menthe : 4 feuilles",
+        "Vinaigre : 1 c.à.c"
+      ],
+      "instructions": "Mixer froid.",
+      "id": "gaspacho_mini_concombre-menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Billes de mozzarella & melon",
+      "calories": 220,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Melon : 100g",
+        "Mozzarella billes : 30g"
+      ],
+      "instructions": "Piquer sur cure-dents.",
+      "id": "billes_de_mozzarella_&_melon"
+    },
+    {
+      "type": "healthy",
+      "name": "Nectarine rôtie thym",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Nectarine : 1",
+        "Thym : pincée"
+      ],
+      "instructions": "Passer 5 min sous le grill.",
+      "id": "nectarine_rôtie_thym"
+    },
+    {
+      "type": "healthy",
+      "name": "Framboises farcies (chocolat)",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Framboises : 10",
+        "Pépite chocolat : 10"
+      ],
+      "instructions": "Insérer une pépite dans chaque framboise.",
+      "id": "framboises_farcies_(chocolat)"
+    },
+    {
+      "type": "healthy",
+      "name": "Chia fresca citron",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Eau : 200ml",
+        "Chia : 1 c.à.s",
+        "Citron : 1/2"
+      ],
+      "instructions": "Mélanger et attendre 10 min.",
+      "id": "chia_fresca_citron"
+    },
+    {
+      "type": "healthy",
+      "name": "Mûres & noix de pécan",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Mûres : 80g",
+        "Pécan : 10g"
+      ],
+      "instructions": "Servir.",
+      "id": "mûres_&_noix_de_pécan"
+    },
+    {
+      "type": "healthy",
+      "name": "Rouleaux de concombre au chèvre",
+      "calories": 160,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "snack",
+        "summer"
+      ],
+      "ingredients": [
+        "Concombre : 1/2",
+        "Chèvre frais : 30g"
+      ],
+      "instructions": "Faire des lanières, tartiner, rouler.",
+      "id": "rouleaux_de_concombre_au_chèvre"
+    },
+    {
+      "type": "healthy",
+      "name": "Poulet grillé & salade melon-concombre",
+      "calories": 450,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Poulet : 150g",
+        "Melon : 100g",
+        "Concombre : 1/2"
+      ],
+      "instructions": "Griller poulet, servir avec salade fraîche.",
+      "id": "poulet_grillé_&_salade_melon-concombre"
+    },
+    {
+      "type": "healthy",
+      "name": "Saumon grillé & salsa mangue",
+      "calories": 470,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Saumon : 140g",
+        "Mangue : 80g",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Griller saumon, servir avec salsa.",
+      "id": "saumon_grillé_&_salsa_mangue"
+    },
+    {
+      "type": "healthy",
+      "name": "Tofu grillé & riz coco-lime",
+      "calories": 460,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Tofu : 150g",
+        "Riz cuit : 120g",
+        "Citron vert : 1 c.à.c",
+        "Coco : 40ml"
+      ],
+      "instructions": "Griller tofu. Mélanger riz + coco + citron vert.",
+      "id": "tofu_grillé_&_riz_coco-lime"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pâtes GF tomates-basilic & coco",
+      "calories": 520,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Pâtes GF : 100g",
+        "Tomates : 150g",
+        "Coco : 40ml",
+        "Basilic : 1 c.à.s"
+      ],
+      "instructions": "Mélanger pâtes + sauce.",
+      "id": "pâtes_gf_tomates-basilic_&_coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson grillé & légumes d’été",
+      "calories": 440,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Poisson blanc : 150g",
+        "Courgette : 1",
+        "Tomate : 1"
+      ],
+      "instructions": "Griller poisson + légumes.",
+      "id": "poisson_grillé_&_légumes_d’été"
+    },
+    {
+      "type": "healthy",
+      "name": "Dinde grillée & salade pastèque-menthe",
+      "calories": 450,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Dinde : 150g",
+        "Pastèque : 120g",
+        "Menthe : 1 c.à.s"
+      ],
+      "instructions": "Griller dinde. Servir avec salade.",
+      "id": "dinde_grillée_&_salade_pastèque-menthe"
+    },
+    {
+      "type": "healthy",
+      "name": "Crevettes grillées & citron vert",
+      "calories": 460,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Crevettes : 150g",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Griller crevettes + citron vert.",
+      "id": "crevettes_grillées_&_citron_vert"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pizza GF tomate-mozza vegan",
+      "calories": 540,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Pâte GF : 1",
+        "Mozza vegan : 60g",
+        "Tomates : 1"
+      ],
+      "instructions": "Cuire pizza.",
+      "id": "pizza_gf_tomate-mozza_vegan"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz sauté courgette & citron vert",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Riz froid : 120g",
+        "Courgette : 1/2",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Sauter riz + légumes.",
+      "id": "riz_sauté_courgette_&_citron_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Tofu & légumes grillés",
+      "calories": 470,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Tofu : 150g",
+        "Aubergine : 1/2",
+        "Courgette : 1/2"
+      ],
+      "instructions": "Griller tofu + légumes.",
+      "id": "tofu_&_légumes_grillés"
+    },
+    {
+      "type": "healthy",
+      "name": "Quinoa d’été poulet & citron vert",
+      "calories": 460,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Quinoa cuit : 120g",
+        "Poulet : 150g",
+        "Citron vert : 1 c.à.c"
+      ],
+      "instructions": "Assembler.",
+      "id": "quinoa_d’été_poulet_&_citron_vert"
+    },
+    {
+      "type": "healthy",
+      "name": "Bœuf grillé & concombre citronné",
+      "calories": 470,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Bœuf : 120g",
+        "Concombre : 1/2",
+        "Citron : 1 c.à.c"
+      ],
+      "instructions": "Assembler.",
+      "id": "bœuf_grillé_&_concombre_citronné"
+    },
+    {
+      "type": "healthy",
+      "name": "Poêlée courgette-tomate & riz",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Riz cuit : 120g",
+        "Courgette : 1",
+        "Tomate : 1"
+      ],
+      "instructions": "Sauter légumes + riz.",
+      "id": "poêlée_courgette-tomate_&_riz"
+    },
+    {
+      "type": "healthy",
+      "name": "Crevettes grillées & salade fraîche",
+      "calories": 460,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Crevettes : 150g",
+        "Salade : 100g"
+      ],
+      "instructions": "Assembler.",
+      "id": "crevettes_grillées_&_salade_fraîche"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson citron-ail & riz",
+      "calories": 450,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Poisson blanc : 150g",
+        "Citron : 1 c.à.c",
+        "Ail : 1 gousse"
+      ],
+      "instructions": "Cuire poisson citron-ail.",
+      "id": "poisson_citron-ail_&_riz"
+    },
+    {
+      "type": "healthy",
+      "name": "Tomates farcies au quinoa",
+      "calories": 400,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Tomates: 4",
+        "Quinoa cuit: 100g",
+        "Herbes"
+      ],
+      "instructions": "Farcir et cuire.",
+      "id": "tomates_farcies_au_quinoa"
+    },
+    {
+      "type": "healthy",
+      "name": "Brochettes poulet citron confit",
+      "calories": 450,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Poulet: 150g",
+        "Citron confit",
+        "Oignon"
+      ],
+      "instructions": "BBQ ou four.",
+      "id": "brochettes_poulet_citron_confit"
+    },
+    {
+      "type": "healthy",
+      "name": "Salade niçoise revisitée",
+      "calories": 420,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Thon",
+        "Oeuf",
+        "Haricots verts",
+        "Pomme de terre"
+      ],
+      "instructions": "Assembler.",
+      "id": "salade_niçoise_revisitée"
+    },
+    {
+      "type": "healthy",
+      "name": "Auberginges à la parmigiana (allégé)",
+      "calories": 410,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Aubergine",
+        "Tomate",
+        "Mozza",
+        "Parmesan"
+      ],
+      "instructions": "Four.",
+      "id": "auberginges_à_la_parmigiana_(allégé)"
+    },
+    {
+      "type": "healthy",
+      "name": "Gazpacho andalou & oeuf dur",
+      "calories": 350,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Tomates",
+        "Poivron",
+        "Concombre",
+        "Oeuf: 2"
+      ],
+      "instructions": "Mixer soupe, ajouter oeuf.",
+      "id": "gazpacho_andalou_&_oeuf_dur"
+    },
+    {
+      "type": "healthy",
+      "name": "Sardines grillées & ratatouille",
+      "calories": 460,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Sardines: 4",
+        "Ratatouille: 200g"
+      ],
+      "instructions": "Griller.",
+      "id": "sardines_grillées_&_ratatouille"
+    },
+    {
+      "type": "healthy",
+      "name": "Ceviche dorade mangue",
+      "calories": 380,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Dorade: 120g",
+        "Mangue",
+        "Citron vert"
+      ],
+      "instructions": "Mariner 20min.",
+      "id": "ceviche_dorade_mangue"
+    },
+    {
+      "type": "healthy",
+      "name": "Courgettes farcies boeuf",
+      "calories": 440,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "summer"
+      ],
+      "ingredients": [
+        "Courgette ronde: 2",
+        "Boeuf: 100g",
+        "Oignon"
+      ],
+      "instructions": "Farcir et cuire.",
+      "id": "courgettes_farcies_boeuf"
+    },
+    {
+      "type": "healthy",
+      "name": "Pomme rôtie & noix",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Noix : 10g"
+      ],
+      "instructions": "Rôtir pomme, ajouter noix.",
+      "id": "pomme_rôtie_&_noix"
+    },
+    {
+      "type": "healthy",
+      "name": "Raisin & cannelle",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Raisin : 80g",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Assembler.",
+      "id": "raisin_&_cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Potimarron snack rôtie",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Potimarron : 120g"
+      ],
+      "instructions": "Rôtir 15 min.",
+      "id": "potimarron_snack_rôtie"
+    },
+    {
+      "type": "healthy",
+      "name": "Poire & cacao pur",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Cacao : 1 c.à.c"
+      ],
+      "instructions": "Saupoudrer cacao.",
+      "id": "poire_&_cacao_pur"
+    },
+    {
+      "type": "healthy",
+      "name": "Betterave & pistaches",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Betterave cuite : 100g",
+        "Pistaches : 10g"
+      ],
+      "instructions": "Assembler.",
+      "id": "betterave_&_pistaches"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini gaufre potimarron GF",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Purée potimarron : 40g",
+        "Farine riz : 20g"
+      ],
+      "instructions": "Cuire au gaufrier.",
+      "id": "mini_gaufre_potimarron_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Pomme & beurre d’amande",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Beurre amande : 1 c.à.c"
+      ],
+      "instructions": "Servir.",
+      "id": "pomme_&_beurre_d’amande"
+    },
+    {
+      "type": "healthy",
+      "name": "Chips betterave maison",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Betterave : 1"
+      ],
+      "instructions": "Couper fin, cuire au four.",
+      "id": "chips_betterave_maison"
+    },
+    {
+      "type": "healthy",
+      "name": "Poire rôtie & gingembre",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Gingembre : 1 pincée"
+      ],
+      "instructions": "Rôtir, ajouter gingembre.",
+      "id": "poire_rôtie_&_gingembre"
+    },
+    {
+      "type": "plaisir",
+      "name": "Truffe choco noisette GF",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Chocolat : 15g",
+        "Noisettes : 10g"
+      ],
+      "instructions": "Former truffe.",
+      "id": "truffe_choco_noisette_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Pain perdu potiron épices",
+      "calories": 410,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pain GF : 2",
+        "Purée potiron : 50g",
+        "Oeuf : 1"
+      ],
+      "instructions": "Tremper et cuire.",
+      "id": "pain_perdu_potiron_épices"
+    },
+    {
+      "type": "healthy",
+      "name": "Oeuf cocotte champignons",
+      "calories": 340,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Oeuf : 2",
+        "Champignons : 100g"
+      ],
+      "instructions": "Four.",
+      "id": "oeuf_cocotte_champignons"
+    },
+    {
+      "type": "healthy",
+      "name": "Porridge poire-chocolat",
+      "calories": 400,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Flocons : 50g",
+        "Poire : 1",
+        "Chocolat : 10g"
+      ],
+      "instructions": "Cuire.",
+      "id": "porridge_poire-chocolat"
+    },
+    {
+      "type": "healthy",
+      "name": "Cake salé figues-noix",
+      "calories": 450,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Farine : 100g",
+        "Figue : 2",
+        "Noix : 20g"
+      ],
+      "instructions": "Four.",
+      "id": "cake_salé_figues-noix"
+    },
+    {
+      "type": "healthy",
+      "name": "Pancakes châtaigne",
+      "calories": 420,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Farine châtaigne : 50g",
+        "Oeuf : 1"
+      ],
+      "instructions": "Cuire.",
+      "id": "pancakes_châtaigne"
+    },
+    {
+      "type": "healthy",
+      "name": "Salade lentilles raisin",
+      "calories": 380,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Lentilles : 150g",
+        "Raisin : 50g"
+      ],
+      "instructions": "Mélanger.",
+      "id": "salade_lentilles_raisin"
+    },
+    {
+      "type": "healthy",
+      "name": "Oeuf brouillé huile de truffe",
+      "calories": 360,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Oeufs : 2",
+        "Huile truffe : filet"
+      ],
+      "instructions": "Brouiller.",
+      "id": "oeuf_brouillé_huile_de_truffe"
+    },
+    {
+      "type": "healthy",
+      "name": "Granola maison noisette",
+      "calories": 420,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "autumn"
+      ],
+      "ingredients": [
+        "Flocons",
+        "Noisettes",
+        "Sirop érable"
+      ],
+      "instructions": "Four.",
+      "id": "granola_maison_noisette"
+    },
+    {
+      "type": "healthy",
+      "name": "Pomme rôtie & noix",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Noix : 10g"
+      ],
+      "instructions": "Rôtir pomme, ajouter noix.",
+      "id": "pomme_rôtie_&_noix"
+    },
+    {
+      "type": "healthy",
+      "name": "Raisin & cannelle",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Raisin : 80g",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Assembler.",
+      "id": "raisin_&_cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Potimarron snack rôtie",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Potimarron : 120g"
+      ],
+      "instructions": "Rôtir 15 min.",
+      "id": "potimarron_snack_rôtie"
+    },
+    {
+      "type": "healthy",
+      "name": "Poire & cacao pur",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Cacao : 1 c.à.c"
+      ],
+      "instructions": "Saupoudrer cacao.",
+      "id": "poire_&_cacao_pur"
+    },
+    {
+      "type": "healthy",
+      "name": "Betterave & pistaches",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Betterave cuite : 100g",
+        "Pistaches : 10g"
+      ],
+      "instructions": "Assembler.",
+      "id": "betterave_&_pistaches"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini gaufre potimarron GF",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Purée potimarron : 40g",
+        "Farine riz : 20g"
+      ],
+      "instructions": "Cuire au gaufrier.",
+      "id": "mini_gaufre_potimarron_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Pomme & beurre d’amande",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pomme : 1",
+        "Beurre amande : 1 c.à.c"
+      ],
+      "instructions": "Servir.",
+      "id": "pomme_&_beurre_d’amande"
+    },
+    {
+      "type": "healthy",
+      "name": "Chips betterave maison",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Betterave : 1"
+      ],
+      "instructions": "Couper fin, cuire au four.",
+      "id": "chips_betterave_maison"
+    },
+    {
+      "type": "healthy",
+      "name": "Poire rôtie & gingembre",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Gingembre : 1 pincée"
+      ],
+      "instructions": "Rôtir, ajouter gingembre.",
+      "id": "poire_rôtie_&_gingembre"
+    },
+    {
+      "type": "plaisir",
+      "name": "Truffe choco noisette GF",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Chocolat : 15g",
+        "Noisettes : 10g"
+      ],
+      "instructions": "Former truffe.",
+      "id": "truffe_choco_noisette_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Figues fraîches & noix",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Figues : 2",
+        "Noix : 10g"
+      ],
+      "instructions": "Manger tel quel.",
+      "id": "figues_fraîches_&_noix"
+    },
+    {
+      "type": "healthy",
+      "name": "Pain d'épices minute (mug cake)",
+      "calories": 240,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Farine sarrasin: 20g",
+        "Miel : 1 c.à.c",
+        "4 épices : pincée"
+      ],
+      "instructions": "Micro-ondes 1 min.",
+      "id": "pain_d'épices_minute_(mug_cake)"
+    },
+    {
+      "type": "healthy",
+      "name": "Chips de panais",
+      "calories": 160,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Panais : 1",
+        "Huile : 1/2 c.à.c"
+      ],
+      "instructions": "Fines tranches au four.",
+      "id": "chips_de_panais"
+    },
+    {
+      "type": "healthy",
+      "name": "Smoothie poire-épinard",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Epinards : 30g",
+        "Eau : 150ml"
+      ],
+      "instructions": "Mixer.",
+      "id": "smoothie_poire-épinard"
+    },
+    {
+      "type": "healthy",
+      "name": "Yaourt curcuma-miel",
+      "calories": 180,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Yaourt grec : 100g",
+        "Curcuma : 1/2 c.à.c",
+        "Miel : 1 c.à.c"
+      ],
+      "instructions": "Mélanger.",
+      "id": "yaourt_curcuma-miel"
+    },
+    {
+      "type": "healthy",
+      "name": "Bruschetta champignons",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pain GF : 1 tranche",
+        "Champignons : 50g"
+      ],
+      "instructions": "Poêler les champignons, poser sur pain.",
+      "id": "bruschetta_champignons"
+    },
+    {
+      "type": "healthy",
+      "name": "Dés de courge rôtie muscade",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Courge : 150g",
+        "Muscade : pincée"
+      ],
+      "instructions": "Four 20 min.",
+      "id": "dés_de_courge_rôtie_muscade"
+    },
+    {
+      "type": "healthy",
+      "name": "Pruneaux & amandes",
+      "calories": 170,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pruneaux : 3",
+        "Amandes : 5"
+      ],
+      "instructions": "Enfourner l'amande dans le pruneau.",
+      "id": "pruneaux_&_amandes"
+    },
+    {
+      "type": "healthy",
+      "name": "Poulet rôti potimarron & romarin",
+      "calories": 480,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Poulet : 150g",
+        "Potimarron : 150g",
+        "Romarin : 1 c.à.c"
+      ],
+      "instructions": "Rôtir poulet + potimarron.",
+      "id": "poulet_rôti_potimarron_&_romarin"
+    },
+    {
+      "type": "healthy",
+      "name": "Saumon grillé & purée potiron",
+      "calories": 460,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Saumon : 140g",
+        "Potiron : 150g"
+      ],
+      "instructions": "Cuire saumon. Mixer potiron.",
+      "id": "saumon_grillé_&_purée_potiron"
+    },
+    {
+      "type": "healthy",
+      "name": "Curry potiron pois chiches",
+      "calories": 480,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pois chiches : 150g",
+        "Potiron : 120g",
+        "Coco : 50ml"
+      ],
+      "instructions": "Cuire potiron + pois chiches + coco.",
+      "id": "curry_potiron_pois_chiches"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pâtes GF potiron-sauge",
+      "calories": 520,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pâtes GF : 100g",
+        "Potiron : 100g",
+        "Sauce coco : 40ml"
+      ],
+      "instructions": "Mélanger pâtes + sauce.",
+      "id": "pâtes_gf_potiron-sauge"
+    },
+    {
+      "type": "healthy",
+      "name": "Dinde grillée & poireaux fondants",
+      "calories": 440,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Dinde : 150g",
+        "Poireaux : 150g"
+      ],
+      "instructions": "Poêler poireaux + dinde.",
+      "id": "dinde_grillée_&_poireaux_fondants"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson blanc & patate douce rôtie",
+      "calories": 460,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Poisson : 150g",
+        "Patate douce : 200g"
+      ],
+      "instructions": "Cuire poisson + patate douce.",
+      "id": "poisson_blanc_&_patate_douce_rôtie"
+    },
+    {
+      "type": "healthy",
+      "name": "Risotto GF potiron & coco",
+      "calories": 470,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Riz risotto GF : 100g",
+        "Potiron : 120g",
+        "Coco : 40ml"
+      ],
+      "instructions": "Cuire risotto + potiron.",
+      "id": "risotto_gf_potiron_&_coco"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pizza GF potiron-noix",
+      "calories": 540,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pâte GF : 1",
+        "Potiron : 100g",
+        "Noix : 10g"
+      ],
+      "instructions": "Cuire pizza.",
+      "id": "pizza_gf_potiron-noix"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz sauté poireaux & curcuma",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Riz froid : 120g",
+        "Poireaux : 100g",
+        "Curcuma : 1 c.à.c"
+      ],
+      "instructions": "Sauter riz + poireaux + curcuma.",
+      "id": "riz_sauté_poireaux_&_curcuma"
+    },
+    {
+      "type": "healthy",
+      "name": "Tofu grillé & champignons",
+      "calories": 470,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Tofu : 150g",
+        "Champignons : 120g"
+      ],
+      "instructions": "Griller tofu + champignons.",
+      "id": "tofu_grillé_&_champignons"
+    },
+    {
+      "type": "healthy",
+      "name": "Quinoa automnal dinde & pomme",
+      "calories": 460,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Quinoa cuit : 120g",
+        "Dinde : 150g",
+        "Pomme : 1/2"
+      ],
+      "instructions": "Assembler.",
+      "id": "quinoa_automnal_dinde_&_pomme"
+    },
+    {
+      "type": "healthy",
+      "name": "Bœuf haché & purée potimarron",
+      "calories": 470,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Bœuf : 120g",
+        "Potimarron : 120g"
+      ],
+      "instructions": "Assembler.",
+      "id": "bœuf_haché_&_purée_potimarron"
+    },
+    {
+      "type": "healthy",
+      "name": "Soupe potiron-coco",
+      "calories": 430,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Potiron : 150g",
+        "Coco : 60ml"
+      ],
+      "instructions": "Mixer.",
+      "id": "soupe_potiron-coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson rôti & légumes d’automne",
+      "calories": 440,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Poisson : 150g",
+        "Carotte : 1",
+        "Poireau : 1"
+      ],
+      "instructions": "Cuire au four.",
+      "id": "poisson_rôti_&_légumes_d’automne"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz automnal champignons & thym",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Riz cuit : 120g",
+        "Champignons : 120g",
+        "Thym : 1 c.à.c"
+      ],
+      "instructions": "Assembler.",
+      "id": "riz_automnal_champignons_&_thym"
+    },
+    {
+      "type": "healthy",
+      "name": "Parmentier canard patate douce",
+      "calories": 520,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Confit canard: 100g",
+        "Patate douce: 200g"
+      ],
+      "instructions": "Effilocher canard, purée, gratiner.",
+      "id": "parmentier_canard_patate_douce"
+    },
+    {
+      "type": "healthy",
+      "name": "Velouté champignons & oeuf poché",
+      "calories": 340,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Champignons: 300g",
+        "Oeuf: 1",
+        "Bouillon"
+      ],
+      "instructions": "Mixer soupe, ajouter oeuf.",
+      "id": "velouté_champignons_&_oeuf_poché"
+    },
+    {
+      "type": "healthy",
+      "name": "One pot pasta courge (GF)",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Pâtes GF: 80g",
+        "Courge: 150g",
+        "Bouillon"
+      ],
+      "instructions": "Cuire tout ensemble.",
+      "id": "one_pot_pasta_courge_(gf)"
+    },
+    {
+      "type": "healthy",
+      "name": "Chou farci végétarien",
+      "calories": 400,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Feuilles chou",
+        "Riz",
+        "Lentilles"
+      ],
+      "instructions": "Rouler et cuire vapeur.",
+      "id": "chou_farci_végétarien"
+    },
+    {
+      "type": "healthy",
+      "name": "Porc au caramel (sans sucre)",
+      "calories": 480,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Filet mignon",
+        "Tamari",
+        "Sirop agave"
+      ],
+      "instructions": "Sauter.",
+      "id": "porc_au_caramel_(sans_sucre)"
+    },
+    {
+      "type": "healthy",
+      "name": "Crumble salé potiron parmesan",
+      "calories": 460,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Potiron",
+        "Farine amande",
+        "Parmesan"
+      ],
+      "instructions": "Four.",
+      "id": "crumble_salé_potiron_parmesan"
+    },
+    {
+      "type": "healthy",
+      "name": "Lentilles saucisse (volaille)",
+      "calories": 490,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Lentilles vertes: 150g",
+        "Saucisse volaille: 2"
+      ],
+      "instructions": "Mijoter.",
+      "id": "lentilles_saucisse_(volaille)"
+    },
+    {
+      "type": "healthy",
+      "name": "Moules marinières & frites four",
+      "calories": 420,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "autumn"
+      ],
+      "ingredients": [
+        "Moules: 500g",
+        "Pomme de terre: 150g"
+      ],
+      "instructions": "Cuire.",
+      "id": "moules_marinières_&_frites_four"
+    },
+    {
+      "type": "healthy",
+      "name": "Orange & cannelle",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Orange : 1",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Ajouter cannelle.",
+      "id": "orange_&_cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Poire au four & vanille",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Vanille : 1 c.à.c"
+      ],
+      "instructions": "Cuire 10 min.",
+      "id": "poire_au_four_&_vanille"
+    },
+    {
+      "type": "healthy",
+      "name": "Amandes grillées cannelle",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Amandes : 20g",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Griller rapidement.",
+      "id": "amandes_grillées_cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Clémentines & pistaches",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Clémentines : 2",
+        "Pistaches : 10g"
+      ],
+      "instructions": "Servir.",
+      "id": "clémentines_&_pistaches"
+    },
+    {
+      "type": "healthy",
+      "name": "Chips de carotte",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Carotte : 1"
+      ],
+      "instructions": "Cuire au four 10 min.",
+      "id": "chips_de_carotte"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini fondant cacao GF",
+      "calories": 210,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Cacao : 1 c.à.c",
+        "Farine riz : 20g",
+        "Lait amande : 40ml"
+      ],
+      "instructions": "Cuire 45 sec micro-ondes.",
+      "id": "mini_fondant_cacao_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Kiwi & grenade",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Kiwi : 1",
+        "Grenade : 40g"
+      ],
+      "instructions": "Assembler.",
+      "id": "kiwi_&_grenade"
+    },
+    {
+      "type": "healthy",
+      "name": "Clémentines miel-cannelle",
+      "calories": 150,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Clémentines : 2",
+        "Miel : 1 c.à.c"
+      ],
+      "instructions": "Arroser de miel et cannelle.",
+      "id": "clémentines_miel-cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Noix & dattes",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Noix : 10g",
+        "Dattes : 2"
+      ],
+      "instructions": "Assembler.",
+      "id": "noix_&_dattes"
+    },
+    {
+      "type": "plaisir",
+      "name": "Bouchée choco-orange GF",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Chocolat : 10g",
+        "Zeste orange : 1 c.à.c"
+      ],
+      "instructions": "Mélanger.",
+      "id": "bouchée_choco-orange_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Porridge pomme cannelle",
+      "calories": 380,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Flocons : 50g",
+        "Pomme : 1",
+        "Cannelle"
+      ],
+      "instructions": "Cuire.",
+      "id": "porridge_pomme_cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Oeuf coque & soldates comté",
+      "calories": 390,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Oeufs : 2",
+        "Pain GF : 1tr",
+        "Comté : 20g"
+      ],
+      "instructions": "Gratiner pain.",
+      "id": "oeuf_coque_&_soldates_comté"
+    },
+    {
+      "type": "healthy",
+      "name": "Gaufre patate douce",
+      "calories": 350,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Purée patate douce : 100g",
+        "Farine : 50g"
+      ],
+      "instructions": "Gaufrier.",
+      "id": "gaufre_patate_douce"
+    },
+    {
+      "type": "healthy",
+      "name": "Salade d'agrumes aux dattes",
+      "calories": 280,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Orange : 1",
+        "Pamplemousse : 1/2",
+        "Dattes : 2"
+      ],
+      "instructions": "Couper.",
+      "id": "salade_d'agrumes_aux_dattes"
+    },
+    {
+      "type": "healthy",
+      "name": "Avocado toast grenade",
+      "calories": 400,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Pain GF : 2",
+        "Avocat : 1",
+        "Grenade : 20g"
+      ],
+      "instructions": "Garnir.",
+      "id": "avocado_toast_grenade"
+    },
+    {
+      "type": "healthy",
+      "name": "Omelette chou kale",
+      "calories": 360,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Oeufs : 2",
+        "Kale : 50g"
+      ],
+      "instructions": "Poêler.",
+      "id": "omelette_chou_kale"
+    },
+    {
+      "type": "healthy",
+      "name": "Pain banane noix (Banana bread)",
+      "calories": 450,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Banane : 1",
+        "Farine : 60g",
+        "Noix : 20g"
+      ],
+      "instructions": "Four.",
+      "id": "pain_banane_noix_(banana_bread)"
+    },
+    {
+      "type": "healthy",
+      "name": "Chocolat chaud onctueux & orange",
+      "calories": 300,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "brunch",
+        "winter"
+      ],
+      "ingredients": [
+        "Lait végétal",
+        "Chocolat",
+        "Zeste"
+      ],
+      "instructions": "Chauffer.",
+      "id": "chocolat_chaud_onctueux_&_orange"
+    },
+    {
+      "type": "healthy",
+      "name": "Orange & cannelle",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Orange : 1",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Ajouter cannelle.",
+      "id": "orange_&_cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Poire au four & vanille",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Poire : 1",
+        "Vanille : 1 c.à.c"
+      ],
+      "instructions": "Cuire 10 min.",
+      "id": "poire_au_four_&_vanille"
+    },
+    {
+      "type": "healthy",
+      "name": "Amandes grillées cannelle",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Amandes : 20g",
+        "Cannelle : 1 pincée"
+      ],
+      "instructions": "Griller rapidement.",
+      "id": "amandes_grillées_cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Clémentines & pistaches",
+      "calories": 140,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Clémentines : 2",
+        "Pistaches : 10g"
+      ],
+      "instructions": "Servir.",
+      "id": "clémentines_&_pistaches"
+    },
+    {
+      "type": "healthy",
+      "name": "Chips de carotte",
+      "calories": 150,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Carotte : 1"
+      ],
+      "instructions": "Cuire au four 10 min.",
+      "id": "chips_de_carotte"
+    },
+    {
+      "type": "plaisir",
+      "name": "Mini fondant cacao GF",
+      "calories": 210,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Cacao : 1 c.à.c",
+        "Farine riz : 20g",
+        "Lait amande : 40ml"
+      ],
+      "instructions": "Cuire 45 sec micro-ondes.",
+      "id": "mini_fondant_cacao_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Kiwi & grenade",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Kiwi : 1",
+        "Grenade : 40g"
+      ],
+      "instructions": "Assembler.",
+      "id": "kiwi_&_grenade"
+    },
+    {
+      "type": "healthy",
+      "name": "Clémentines miel-cannelle",
+      "calories": 150,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Clémentines : 2",
+        "Miel : 1 c.à.c"
+      ],
+      "instructions": "Arroser de miel et cannelle.",
+      "id": "clémentines_miel-cannelle"
+    },
+    {
+      "type": "healthy",
+      "name": "Noix & dattes",
+      "calories": 190,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Noix : 10g",
+        "Dattes : 2"
+      ],
+      "instructions": "Assembler.",
+      "id": "noix_&_dattes"
+    },
+    {
+      "type": "plaisir",
+      "name": "Bouchée choco-orange GF",
+      "calories": 200,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Chocolat : 10g",
+        "Zeste orange : 1 c.à.c"
+      ],
+      "instructions": "Mélanger.",
+      "id": "bouchée_choco-orange_gf"
+    },
+    {
+      "type": "healthy",
+      "name": "Chocolat chaud léger 85%",
+      "calories": 130,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Lait amande : 200ml",
+        "Carré chocolat 85% : 1"
+      ],
+      "instructions": "Fondre doucement.",
+      "id": "chocolat_chaud_léger_85%"
+    },
+    {
+      "type": "healthy",
+      "name": "Carpaccio d'ananas épicé",
+      "calories": 110,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Ananas : 100g",
+        "Piment : pointe",
+        "Menthe : 2 feuilles"
+      ],
+      "instructions": "Trancher fin.",
+      "id": "carpaccio_d'ananas_épicé"
+    },
+    {
+      "type": "healthy",
+      "name": "Pomélo grillé au miel",
+      "calories": 140,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Pomélo : 1/2",
+        "Miel : 1 c.à.c"
+      ],
+      "instructions": "Griller au four 5 min.",
+      "id": "pomélo_grillé_au_miel"
+    },
+    {
+      "type": "healthy",
+      "name": "Datte fourrée beurre cacahuète",
+      "calories": 220,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Dattes : 2",
+        "Beurre cacahuète : 1 c.à.c"
+      ],
+      "instructions": "Garnir.",
+      "id": "datte_fourrée_beurre_cacahuète"
+    },
+    {
+      "type": "healthy",
+      "name": "Tea latte vanille (sans sucre)",
+      "calories": 60,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Thé noir : 1 tasse",
+        "Lait avoine : 50ml",
+        "Vanille : 1 c.à.c"
+      ],
+      "instructions": "Infuser et ajouter lait.",
+      "id": "tea_latte_vanille_(sans_sucre)"
+    },
+    {
+      "type": "healthy",
+      "name": "Kaki persimon en quartiers",
+      "calories": 120,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Kaki : 1"
+      ],
+      "instructions": "Croquer.",
+      "id": "kaki_persimon_en_quartiers"
+    },
+    {
+      "type": "healthy",
+      "name": "Noisettes grillées",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Noisettes : 20g"
+      ],
+      "instructions": "5 min à la poêle.",
+      "id": "noisettes_grillées"
+    },
+    {
+      "type": "healthy",
+      "name": "Carottes croquantes citron",
+      "calories": 90,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "winter"
+      ],
+      "ingredients": [
+        "Carottes : 2",
+        "Citron : jus"
+      ],
+      "instructions": "Bâtonnets.",
+      "id": "carottes_croquantes_citron"
+    },
+    {
+      "type": "healthy",
+      "name": "Poulet rôti légumes racines",
+      "calories": 480,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Poulet : 150g",
+        "Carotte : 1",
+        "Panais : 1"
+      ],
+      "instructions": "Cuire ensemble au four.",
+      "id": "poulet_rôti_légumes_racines"
+    },
+    {
+      "type": "healthy",
+      "name": "Saumon grillé & poireaux",
+      "calories": 460,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Saumon : 140g",
+        "Poireaux : 150g"
+      ],
+      "instructions": "Griller saumon, poêler poireaux.",
+      "id": "saumon_grillé_&_poireaux"
+    },
+    {
+      "type": "healthy",
+      "name": "Tofu coco-curry & riz chaud",
+      "calories": 470,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Tofu : 150g",
+        "Coco : 60ml",
+        "Riz chaud : 120g"
+      ],
+      "instructions": "Cuire tofu + coco + riz.",
+      "id": "tofu_coco-curry_&_riz_chaud"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pâtes GF crème coco & champignons",
+      "calories": 520,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Pâtes GF : 100g",
+        "Champignons : 120g",
+        "Coco : 50ml"
+      ],
+      "instructions": "Assembler.",
+      "id": "pâtes_gf_crème_coco_&_champignons"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson blanc & purée carotte-coco",
+      "calories": 440,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Poisson blanc : 150g",
+        "Carottes : 200g",
+        "Coco : 40ml"
+      ],
+      "instructions": "Cuire poisson + purée.",
+      "id": "poisson_blanc_&_purée_carotte-coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Dinde grillée & riz chaud",
+      "calories": 450,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Dinde : 150g",
+        "Riz chaud : 120g"
+      ],
+      "instructions": "Assembler.",
+      "id": "dinde_grillée_&_riz_chaud"
+    },
+    {
+      "type": "healthy",
+      "name": "Curry coco-légumes racines",
+      "calories": 480,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Panais : 1",
+        "Carotte : 1",
+        "Coco : 60ml"
+      ],
+      "instructions": "Cuire légumes + coco.",
+      "id": "curry_coco-légumes_racines"
+    },
+    {
+      "type": "plaisir",
+      "name": "Pizza GF hiver (champignons & coco)",
+      "calories": 540,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Pâte GF : 1",
+        "Champignons : 120g",
+        "Coco : 40ml"
+      ],
+      "instructions": "Cuire pizza.",
+      "id": "pizza_gf_hiver_(champignons_&_coco)"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz sauté carotte-curcuma",
+      "calories": 450,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Riz froid : 120g",
+        "Carotte : 1",
+        "Curcuma : 1 pincée"
+      ],
+      "instructions": "Cuire ensemble.",
+      "id": "riz_sauté_carotte-curcuma"
+    },
+    {
+      "type": "healthy",
+      "name": "Tofu grillé & chou rôti",
+      "calories": 460,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Tofu : 150g",
+        "Chou : 120g"
+      ],
+      "instructions": "Griller tofu + chou.",
+      "id": "tofu_grillé_&_chou_rôti"
+    },
+    {
+      "type": "healthy",
+      "name": "Quinoa hiver poulet & orange",
+      "calories": 470,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Quinoa : 120g",
+        "Poulet : 150g",
+        "Orange : 1/2"
+      ],
+      "instructions": "Assembler.",
+      "id": "quinoa_hiver_poulet_&_orange"
+    },
+    {
+      "type": "healthy",
+      "name": "Bœuf haché & poireaux fondants",
+      "calories": 470,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Bœuf : 120g",
+        "Poireaux : 120g"
+      ],
+      "instructions": "Assembler.",
+      "id": "bœuf_haché_&_poireaux_fondants"
+    },
+    {
+      "type": "healthy",
+      "name": "Soupe carotte-coco gingembre",
+      "calories": 430,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Carottes : 150g",
+        "Coco : 60ml",
+        "Gingembre : 1 pincée"
+      ],
+      "instructions": "Mixer.",
+      "id": "soupe_carotte-coco_gingembre"
+    },
+    {
+      "type": "healthy",
+      "name": "Poisson rôti & purée céleri",
+      "calories": 440,
+      "tags": [
+        "pescetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Poisson : 150g",
+        "Céleri : 150g"
+      ],
+      "instructions": "Assembler.",
+      "id": "poisson_rôti_&_purée_céleri"
+    },
+    {
+      "type": "healthy",
+      "name": "Riz sauté hivernal noix-orange",
+      "calories": 460,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Riz : 120g",
+        "Orange : 1/2",
+        "Noix : 10g"
+      ],
+      "instructions": "Assembler.",
+      "id": "riz_sauté_hivernal_noix-orange"
+    },
+    {
+      "type": "healthy",
+      "name": "Tartiflette allégée (Reblochon)",
+      "calories": 550,
+      "tags": [
+        "sans_gluten",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "PdT",
+        "Lardon dinde",
+        "Oignon",
+        "Reblochon: 40g"
+      ],
+      "instructions": "Four.",
+      "id": "tartiflette_allégée_(reblochon)"
+    },
+    {
+      "type": "healthy",
+      "name": "Chili con carne (ou sin carne)",
+      "calories": 480,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Haricots rouges",
+        "Tomate",
+        "Boeuf ou Soja"
+      ],
+      "instructions": "Mijoter.",
+      "id": "chili_con_carne_(ou_sin_carne)"
+    },
+    {
+      "type": "healthy",
+      "name": "Soupe oignon gratinée (pain GF)",
+      "calories": 380,
+      "tags": [
+        "vegetarien",
+        "sans_gluten",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Oignon: 3",
+        "Pain GF",
+        "Comté"
+      ],
+      "instructions": "Gratiner.",
+      "id": "soupe_oignon_gratinée_(pain_gf)"
+    },
+    {
+      "type": "healthy",
+      "name": "Pot-au-feu léger",
+      "calories": 450,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Boeuf maigre",
+        "Carotte",
+        "Poireau",
+        "Navet"
+      ],
+      "instructions": "Bouillon long.",
+      "id": "pot-au-feu_léger"
+    },
+    {
+      "type": "healthy",
+      "name": "Endives au jambon (béchamel chou-fleur)",
+      "calories": 420,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Endives: 2",
+        "Jambon: 2",
+        "Chou-fleur mixé"
+      ],
+      "instructions": "Four.",
+      "id": "endives_au_jambon_(béchamel_chou-fleur)"
+    },
+    {
+      "type": "healthy",
+      "name": "Dahl de lentilles coco",
+      "calories": 430,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Lentilles corail",
+        "Coco",
+        "Epinards"
+      ],
+      "instructions": "Mijoter.",
+      "id": "dahl_de_lentilles_coco"
+    },
+    {
+      "type": "healthy",
+      "name": "Boudin noir aux pommes",
+      "calories": 480,
+      "tags": [
+        "sans_gluten",
+        "sans_lactose",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "Boudin: 1",
+        "Pommes: 2"
+      ],
+      "instructions": "Poêler.",
+      "id": "boudin_noir_aux_pommes"
+    },
+    {
+      "type": "healthy",
+      "name": "Raclette bowl (3 fromages)",
+      "calories": 580,
+      "tags": [
+        "sans_gluten",
+        "proteine",
+        "dinner",
+        "winter"
+      ],
+      "ingredients": [
+        "PdT: 150g",
+        "Fromage: 3 tr",
+        "Cornichon"
+      ],
+      "instructions": "Fondre.",
+      "id": "raclette_bowl_(3_fromages)"
     }
-  },
-
-  "collation": {
-    "file": "data/collation/collation.json",
-    "categories": ["permanent", "spring", "summer", "autumn", "winter"],
-    "meta": {
-      "healthy_ratio": 0.8,
-      "plaisir_ratio": 0.2,
-      "total_permanent": 35,
-      "total_spring": 10,
-      "total_summer": 10,
-      "total_autumn": 10,
-      "total_winter": 10,
-      "total_recipes": 75
-    }
-  },
-
-  "jus": {
-    "file": "data/collation/jus.json",
-    "categories": ["permanent"],
-    "meta": {
-      "total_recipes": 20
-    }
-  },
-
-  "diner": {
-    "file": "data/diner/diner.json",
-    "categories": ["permanent", "spring", "summer", "autumn", "winter"],
-    "meta": {
-      "healthy_ratio": 0.8,
-      "plaisir_ratio": 0.2,
-      "total_permanent": 20,
-      "total_spring": 10,
-      "total_summer": 10,
-      "total_autumn": 10,
-      "total_winter": 10,
-      "total_recipes": 60
-    }
-  }
+  ]
 }
