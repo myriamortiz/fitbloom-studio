@@ -2,73 +2,6 @@
   "recipes": [
     {
       "type": "healthy",
-      "name": "Pancakes farine de riz & fruits rouges",
-      "calories": 460,
-      "tags": [
-        "vegetarien",
-        "sans_gluten",
-        "sans_lactose",
-        "brunch",
-        "all_seasons"
-      ],
-      "ingredients": [
-        "Farine de riz : 80g",
-        "Oeufs : 2",
-        "Lait d'amande non sucré : 120ml",
-        "Levure sans gluten : 1 c.à.c",
-        "Sirop d’érable : 1 c.à.c",
-        "Fruits rouges : 100g",
-        "Huile de coco : 1 c.à.c"
-      ],
-      "instructions": "Mélanger farine, levure, oeufs et lait. Cuire à la poêle. Servir avec fruits rouges et sirop.",
-      "id": "pancakes_farine_de_riz_&_fruits_rouges"
-    },
-    {
-      "type": "healthy",
-      "name": "Tartine avocat & œuf poché",
-      "calories": 430,
-      "tags": [
-        "vegetarien",
-        "sans_gluten",
-        "sans_lactose",
-        "proteine",
-        "brunch",
-        "all_seasons"
-      ],
-      "ingredients": [
-        "Pain sans gluten : 2 tranches",
-        "Avocat : 1/2",
-        "Œufs : 2",
-        "Jus de citron : 1 c.à.c",
-        "Piment d'Espelette : 1 pincée"
-      ],
-      "instructions": "Écraser l’avocat, assaisonner. Pocher les œufs 3 min. Monter sur toast.",
-      "id": "tartine_avocat_&_œuf_poché"
-    },
-    {
-      "type": "healthy",
-      "name": "Toast champignons & crème coco",
-      "calories": 445,
-      "tags": [
-        "vegan",
-        "vegetarien",
-        "sans_gluten",
-        "sans_lactose",
-        "brunch",
-        "all_seasons"
-      ],
-      "ingredients": [
-        "Pain sans gluten : 2 tranches",
-        "Champignons : 200g",
-        "Crème coco : 50ml",
-        "Ail : 1 gousse",
-        "Persil : 1 c.à.s"
-      ],
-      "instructions": "Poêler champignons + ail. Ajouter crème coco. Servir sur toast.",
-      "id": "toast_champignons_&_crème_coco"
-    },
-    {
-      "type": "healthy",
       "name": "Omelette herbes & tomates cerises",
       "calories": 390,
       "tags": [
@@ -85,7 +18,9 @@
         "Ciboulette : 1 c.à.s"
       ],
       "instructions": "Cuire omelette. Ajouter tomates poêlées et ciboulette.",
-      "id": "omelette_herbes_&_tomates_cerises"
+      "id": "omelette_herbes_&_tomates_cerises",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -107,7 +42,9 @@
         "Paprika : 1 c.à.c"
       ],
       "instructions": "Cuire légumes + épices. Ajouter œufs au centre.",
-      "id": "shakshuka_sans_lactose"
+      "id": "shakshuka_sans_lactose",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -127,7 +64,9 @@
         "Crème coco : 40ml"
       ],
       "instructions": "Cuire rösti. Brouiller œufs avec crème coco.",
-      "id": "rösti_maison_&_œufs_brouillés_coco"
+      "id": "rösti_maison_&_œufs_brouillés_coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -148,7 +87,9 @@
         "Cannelle : 1 c.à.c"
       ],
       "instructions": "Cuire flocons. Ajouter pomme fondante et cannelle.",
-      "id": "porridge_façon_tarte_aux_pommes"
+      "id": "porridge_façon_tarte_aux_pommes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -168,7 +109,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Déposer saumon sur toast. Ajouter citron.",
-      "id": "toast_saumon_fumé_&_citron"
+      "id": "toast_saumon_fumé_&_citron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -188,7 +131,9 @@
         "Banane : 1"
       ],
       "instructions": "Cuire crêpes. Garnir de banane et vanille.",
-      "id": "crêpes_coco-riz_fourrées_banane"
+      "id": "crêpes_coco-riz_fourrées_banane",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -208,7 +153,9 @@
         "Basilic : 1 c.à.s"
       ],
       "instructions": "Cuire œufs brouillés + tomates. Ajouter basilic.",
-      "id": "œufs_brouillés_tomate-basilic"
+      "id": "œufs_brouillés_tomate-basilic",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -228,7 +175,9 @@
         "Œufs : 2"
       ],
       "instructions": "Mélanger ingrédients. Cuire en galette.",
-      "id": "okonomiyaki_sans_gluten"
+      "id": "okonomiyaki_sans_gluten",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -249,7 +198,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Assembler riz, avocat, maïs, citron, tomate.",
-      "id": "avo-salsa_bowl_mexicain"
+      "id": "avo-salsa_bowl_mexicain",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -268,7 +219,9 @@
         "Œufs : 2"
       ],
       "instructions": "Mélanger. Cuire au gaufrier.",
-      "id": "gaufres_sarrasin_&_vanille"
+      "id": "gaufres_sarrasin_&_vanille",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -289,7 +242,9 @@
         "Concombre : 6 tranches"
       ],
       "instructions": "Étaler houmous. Ajouter concombre.",
-      "id": "tartine_houmous_&_concombre"
+      "id": "tartine_houmous_&_concombre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -309,7 +264,9 @@
         "Crème coco : 40ml"
       ],
       "instructions": "Cuire riz dans lait. Ajouter coco.",
-      "id": "riz_au_lait_d’amande_coco"
+      "id": "riz_au_lait_d’amande_coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -329,7 +286,9 @@
         "Basilic : 1 c.à.s"
       ],
       "instructions": "Garnir toast de tomates + basilic.",
-      "id": "bruschetta_gf_tomate-basilic"
+      "id": "bruschetta_gf_tomate-basilic",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -350,7 +309,9 @@
         "Tomates concassées : 100g"
       ],
       "instructions": "Cuire pois chiches + coco + tomates + curry.",
-      "id": "curry_doux_pois_chiches"
+      "id": "curry_doux_pois_chiches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -368,7 +329,9 @@
         "Bacon de dinde : 40g"
       ],
       "instructions": "Poêler bacon. Ajouter œufs brouillés.",
-      "id": "œufs_brouillés_au_bacon_de_dinde"
+      "id": "œufs_brouillés_au_bacon_de_dinde",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -388,7 +351,9 @@
         "Crème soja : 1 c.à.s"
       ],
       "instructions": "Cuire au four.",
-      "id": "oeuf_cocotte_épinard"
+      "id": "oeuf_cocotte_épinard",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -406,7 +371,9 @@
         "Granola : 40g"
       ],
       "instructions": "Assembler.",
-      "id": "bowl_fromage_blanc,_granola"
+      "id": "bowl_fromage_blanc,_granola",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -424,7 +391,9 @@
         "Chèvre : 20g"
       ],
       "instructions": "Griller.",
-      "id": "tartine_figue_chèvre_miel"
+      "id": "tartine_figue_chèvre_miel",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -444,7 +413,9 @@
         "Mangue : 1/2"
       ],
       "instructions": "Repos 2h.",
-      "id": "pudding_chia_mangue"
+      "id": "pudding_chia_mangue",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -463,7 +434,9 @@
         "Oeuf : 1"
       ],
       "instructions": "Cuire galette puis oeuf.",
-      "id": "galette_sarrasin_oeuf_miroir"
+      "id": "galette_sarrasin_oeuf_miroir",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -483,7 +456,9 @@
         "Faux-mage : 20g"
       ],
       "instructions": "Garnir.",
-      "id": "bagel_gf_saumon_cream_cheese"
+      "id": "bagel_gf_saumon_cream_cheese",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -502,7 +477,9 @@
         "Lait amande : 50ml"
       ],
       "instructions": "Tremper et poêler.",
-      "id": "pain_perdu_brioché"
+      "id": "pain_perdu_brioché",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -522,7 +499,9 @@
         "Ail/Persil"
       ],
       "instructions": "Poêler champignons puis oeufs.",
-      "id": "omelette_champignons_persillade"
+      "id": "omelette_champignons_persillade",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -541,7 +520,9 @@
         "Menthe : 5 feuilles"
       ],
       "instructions": "Couper.",
-      "id": "salade_de_fruits_&_menthe"
+      "id": "salade_de_fruits_&_menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -561,7 +542,9 @@
         "Avocat : 1/4"
       ],
       "instructions": "Rouler.",
-      "id": "wrap_oeuf_brouillé_avocat"
+      "id": "wrap_oeuf_brouillé_avocat",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -581,7 +564,9 @@
         "Amandes : 10g"
       ],
       "instructions": "Rôtir la pomme, ajouter cannelle et amandes.",
-      "id": "pommes_rôties_cannelle_&_amandes"
+      "id": "pommes_rôties_cannelle_&_amandes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -600,7 +585,9 @@
         "Coco râpée : 10g"
       ],
       "instructions": "Mixer dattes, former boules, rouler dans coco.",
-      "id": "energy_balls_dattes-coco"
+      "id": "energy_balls_dattes-coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -619,7 +606,9 @@
         "Mangue : 60g"
       ],
       "instructions": "Assembler yaourt & mangue.",
-      "id": "yaourt_végétal_coco_&_mangue"
+      "id": "yaourt_végétal_coco_&_mangue",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -639,7 +628,9 @@
         "Beurre d’amande : 1 c.à.c"
       ],
       "instructions": "Couper banane, ajouter beurre d’amande.",
-      "id": "banane_&_beurre_d’amande"
+      "id": "banane_&_beurre_d’amande",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -658,7 +649,9 @@
         "Cranberries : 15g"
       ],
       "instructions": "Mélanger et servir.",
-      "id": "noix_&_cranberries"
+      "id": "noix_&_cranberries",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -677,7 +670,9 @@
         "Noisettes : 10g"
       ],
       "instructions": "Servir ensemble.",
-      "id": "raisins_+_noisettes"
+      "id": "raisins_+_noisettes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -696,7 +691,9 @@
         "Poire : 1"
       ],
       "instructions": "Cuire et mixer.",
-      "id": "compote_pomme-poire_maison"
+      "id": "compote_pomme-poire_maison",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -716,7 +713,9 @@
         "Carotte : 1"
       ],
       "instructions": "Servir ensemble.",
-      "id": "houmous_&_bâtonnets_carottes"
+      "id": "houmous_&_bâtonnets_carottes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -734,7 +733,9 @@
         "Patate douce : 120g"
       ],
       "instructions": "Couper, assaisonner et cuire.",
-      "id": "chips_de_patate_douce_au_four"
+      "id": "chips_de_patate_douce_au_four",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -753,7 +754,9 @@
         "Guacamole : 40g"
       ],
       "instructions": "Tremper concombre dans guacamole.",
-      "id": "concombre_&_guacamole"
+      "id": "concombre_&_guacamole",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -772,7 +775,9 @@
         "Chocolat 85% : 10g"
       ],
       "instructions": "Servir poire avec chocolat.",
-      "id": "poire_&_chocolat_noir_85%"
+      "id": "poire_&_chocolat_noir_85%",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -791,7 +796,9 @@
         "Cajou : 15g"
       ],
       "instructions": "Servir ensemble.",
-      "id": "fraises_&_noix_de_cajou"
+      "id": "fraises_&_noix_de_cajou",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -810,7 +817,9 @@
         "Amandes : 20g"
       ],
       "instructions": "Griller quelques minutes.",
-      "id": "amandes_grillées"
+      "id": "amandes_grillées",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -829,7 +838,9 @@
         "Tomates cerises : 80g"
       ],
       "instructions": "Assembler.",
-      "id": "olives_&_tomates_cerises"
+      "id": "olives_&_tomates_cerises",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -848,7 +859,9 @@
         "Miel : 1 c.à.c"
       ],
       "instructions": "Mélanger jus de citron, gingembre et miel.",
-      "id": "booster_gingembre-miel"
+      "id": "booster_gingembre-miel",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -867,7 +880,9 @@
         "Chocolat 85% : 10g"
       ],
       "instructions": "Mélanger.",
-      "id": "riz_soufflé_&_chocolat_noir"
+      "id": "riz_soufflé_&_chocolat_noir",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -886,7 +901,9 @@
         "Pistaches : 10g"
       ],
       "instructions": "Servir ensemble.",
-      "id": "oranges_&_pistaches"
+      "id": "oranges_&_pistaches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -905,7 +922,9 @@
         "Menthe : quelques feuilles"
       ],
       "instructions": "Assembler.",
-      "id": "billes_melon_&_menthe"
+      "id": "billes_melon_&_menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -924,7 +943,9 @@
         "Amandes : 10g"
       ],
       "instructions": "Servir.",
-      "id": "pêche_&_amandes"
+      "id": "pêche_&_amandes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -944,7 +965,9 @@
         "Lait amande : 40ml"
       ],
       "instructions": "Cuire 45 sec au micro-ondes.",
-      "id": "mini_mugcake_chocolat_gf"
+      "id": "mini_mugcake_chocolat_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -963,7 +986,9 @@
         "Basilic : quelques feuilles"
       ],
       "instructions": "Assembler.",
-      "id": "tomates_cerises_&_basilic"
+      "id": "tomates_cerises_&_basilic",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -983,7 +1008,9 @@
         "Tahini : 1 c.à.c"
       ],
       "instructions": "Tremper.",
-      "id": "céleri_&_sauce_tahini"
+      "id": "céleri_&_sauce_tahini",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1001,7 +1028,9 @@
         "Kale : 60g"
       ],
       "instructions": "Assaisonner et cuire 10 min.",
-      "id": "chips_kale_au_four"
+      "id": "chips_kale_au_four",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1020,7 +1049,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Assembler.",
-      "id": "ananas_&_citron_vert"
+      "id": "ananas_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1040,7 +1071,9 @@
         "Purée cacahuète : 1 c.à.c"
       ],
       "instructions": "Garnir dattes.",
-      "id": "dattes_&_purée_cacahuète"
+      "id": "dattes_&_purée_cacahuète",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1059,7 +1092,9 @@
         "Amandes : 10g"
       ],
       "instructions": "Servir.",
-      "id": "abricot_&_amandes"
+      "id": "abricot_&_amandes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1079,7 +1114,9 @@
         "Chia : 1 c.à.c"
       ],
       "instructions": "Saupoudrer chia sur kiwi.",
-      "id": "kiwi_&_graines_de_chia"
+      "id": "kiwi_&_graines_de_chia",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1099,7 +1136,9 @@
         "Houmous : 40g"
       ],
       "instructions": "Tremper.",
-      "id": "poivron_&_houmous_citronné"
+      "id": "poivron_&_houmous_citronné",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -1118,7 +1157,9 @@
         "Coco : 10g"
       ],
       "instructions": "Faire fondre chocolat, mélanger coco, former rocher.",
-      "id": "rocher_choco-coco_gf_maison"
+      "id": "rocher_choco-coco_gf_maison",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1137,7 +1178,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Assembler.",
-      "id": "mangue_&_citron_vert"
+      "id": "mangue_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1156,7 +1199,9 @@
         "Airelles : 30g"
       ],
       "instructions": "Assembler.",
-      "id": "airelles_&_pomme"
+      "id": "airelles_&_pomme",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1175,7 +1220,9 @@
         "Lait amande : 150ml"
       ],
       "instructions": "Cuire 10 min.",
-      "id": "riz_au_lait_végétal_léger"
+      "id": "riz_au_lait_végétal_léger",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1194,7 +1241,9 @@
         "Menthe : quelques feuilles"
       ],
       "instructions": "Assembler.",
-      "id": "mini_salade_pastèque-menthe"
+      "id": "mini_salade_pastèque-menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1213,7 +1262,9 @@
         "Cannelle : 1 pincée"
       ],
       "instructions": "Couper pomme, ajouter cannelle.",
-      "id": "pomme_&_cannelle_express"
+      "id": "pomme_&_cannelle_express",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1232,7 +1283,9 @@
         "Graines de courge : 30g"
       ],
       "instructions": "À croquer nature.",
-      "id": "poignée_de_graines_de_courge"
+      "id": "poignée_de_graines_de_courge",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1253,7 +1306,9 @@
         "Banane : 1/2"
       ],
       "instructions": "Tartiner et garnir.",
-      "id": "toast_beurre_de_noix_&_banane"
+      "id": "toast_beurre_de_noix_&_banane",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1273,7 +1328,9 @@
         "Poivre noir : pincée"
       ],
       "instructions": "Chauffer et fouetter.",
-      "id": "lait_d'or_(golden_milk)"
+      "id": "lait_d'or_(golden_milk)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1293,7 +1350,9 @@
         "Beurre d'amande : 1 c.à.s"
       ],
       "instructions": "Garnir la branche.",
-      "id": "bâtonnets_céleri_&_beurre_d'amande"
+      "id": "bâtonnets_céleri_&_beurre_d'amande",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1314,7 +1373,9 @@
         "Raisins secs : 10g"
       ],
       "instructions": "Mélanger.",
-      "id": "mélange_étudiant_maison"
+      "id": "mélange_étudiant_maison",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1333,7 +1394,9 @@
         "Crème de marrons : 1 c.à.c"
       ],
       "instructions": "Mélanger.",
-      "id": "compote_pomme-châtaigne"
+      "id": "compote_pomme-châtaigne",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1353,7 +1416,9 @@
         "Matcha : 1/2 c.à.c"
       ],
       "instructions": "Laisser gonfler 30 min.",
-      "id": "pudding_chia_coco-matcha"
+      "id": "pudding_chia_coco-matcha",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1372,7 +1437,9 @@
         "Noix : 20g"
       ],
       "instructions": "Mixer et rouler.",
-      "id": "boules_d'énergie_figue-noix"
+      "id": "boules_d'énergie_figue-noix",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1392,7 +1459,9 @@
         "Zeste orange : pincée"
       ],
       "instructions": "Mixer et former barre.",
-      "id": "raw_bar_cacao-orange"
+      "id": "raw_bar_cacao-orange",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1410,7 +1479,9 @@
         "Chips coco nature : 30g"
       ],
       "instructions": "Déguster.",
-      "id": "chips_de_noix_de_coco"
+      "id": "chips_de_noix_de_coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1430,7 +1501,9 @@
         "Riz cuit : 120g"
       ],
       "instructions": "Rôtir poulet avec citron et romarin. Servir avec riz.",
-      "id": "poulet_rôti_citron-romarin_&_riz"
+      "id": "poulet_rôti_citron-romarin_&_riz",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1450,7 +1523,9 @@
         "Carotte : 1"
       ],
       "instructions": "Griller saumon. Cuire légumes vapeur.",
-      "id": "saumon_grillé_&_légumes_vapeur"
+      "id": "saumon_grillé_&_légumes_vapeur",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1471,7 +1546,9 @@
         "Quinoa cuit : 120g"
       ],
       "instructions": "Poêler crevettes ail. Ajouter persil, servir avec quinoa.",
-      "id": "crevettes_ail-persil_&_quinoa"
+      "id": "crevettes_ail-persil_&_quinoa",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -1492,7 +1569,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Cuire nouilles, poêler crevettes, mélanger avec sauce coco-citron.",
-      "id": "pad_thaï_gf_sauce_coco_citron"
+      "id": "pad_thaï_gf_sauce_coco_citron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1513,7 +1592,9 @@
         "Coco : 60ml"
       ],
       "instructions": "Cuire pois chiches + coco, ajouter épinards.",
-      "id": "curry_doux_pois_chiches_&_épinards"
+      "id": "curry_doux_pois_chiches_&_épinards",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1531,7 +1612,9 @@
         "Patate douce : 250g"
       ],
       "instructions": "Griller dinde. Servir avec purée de patate douce.",
-      "id": "dinde_grillée_&_purée_patate_douce"
+      "id": "dinde_grillée_&_purée_patate_douce",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -1551,7 +1634,9 @@
         "Pommes de terre : 200g"
       ],
       "instructions": "Assembler burger. Cuire potatoes au four.",
-      "id": "burger_gf_maison_&_potatoes"
+      "id": "burger_gf_maison_&_potatoes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1571,7 +1656,9 @@
         "Curcuma : 1 c.à.c"
       ],
       "instructions": "Cuire poisson au four avec citron-curcuma.",
-      "id": "poisson_blanc_au_four_citron-curcuma"
+      "id": "poisson_blanc_au_four_citron-curcuma",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1591,7 +1678,9 @@
         "Œuf : 1"
       ],
       "instructions": "Sauter riz + légumes + œuf.",
-      "id": "riz_sauté_légumes_&_œuf"
+      "id": "riz_sauté_légumes_&_œuf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1611,7 +1700,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Garnir tortillas avec poulet + salsa.",
-      "id": "tacos_gf_poulet_&_salsa_maison"
+      "id": "tacos_gf_poulet_&_salsa_maison",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -1631,7 +1722,9 @@
         "Tomates concassées : 150g"
       ],
       "instructions": "Cuire gnocchis. Mélanger coco + tomate.",
-      "id": "gnocchis_gf_sauce_coco-tomate"
+      "id": "gnocchis_gf_sauce_coco-tomate",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1652,7 +1745,9 @@
         "Ail : 1 gousse"
       ],
       "instructions": "Poêler tofu croustillant. Ajouter riz sauté.",
-      "id": "tofu_croustillant_&_riz_sauté"
+      "id": "tofu_croustillant_&_riz_sauté",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1672,7 +1767,9 @@
         "Légumes variés : 150g"
       ],
       "instructions": "Faire mijoter coco + citronnelle + légumes.",
-      "id": "soupe_thaï_coco-citronnelle"
+      "id": "soupe_thaï_coco-citronnelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1690,7 +1787,9 @@
         "Haricots verts : 150g"
       ],
       "instructions": "Poêler bœuf, ajouter haricots.",
-      "id": "bœuf_haché_&_haricots_verts_sautés"
+      "id": "bœuf_haché_&_haricots_verts_sautés",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1710,7 +1809,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Griller poisson. Servir avec salade citronnée.",
-      "id": "poisson_grillé_&_salade_fraîcheur"
+      "id": "poisson_grillé_&_salade_fraîcheur",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1732,7 +1833,9 @@
         "Curry"
       ],
       "instructions": "Mijoter 15min.",
-      "id": "curry_de_lentilles_corail"
+      "id": "curry_de_lentilles_corail",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1752,7 +1855,9 @@
         "Soja GF"
       ],
       "instructions": "Snacker 1min par face.",
-      "id": "steak_de_thon_sésame"
+      "id": "steak_de_thon_sésame",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1771,7 +1876,9 @@
         "Légumes wok"
       ],
       "instructions": "Sauter au wok.",
-      "id": "wok_poulet_cacahuète"
+      "id": "wok_poulet_cacahuète",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1791,7 +1898,9 @@
         "Orange: 2 tranches"
       ],
       "instructions": "Four 20min.",
-      "id": "papillote_cabillaud_fenouil"
+      "id": "papillote_cabillaud_fenouil",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1812,7 +1921,9 @@
         "Tofu fumé: 100g"
       ],
       "instructions": "Mélanger.",
-      "id": "salade_quinoa_avocat_tofu"
+      "id": "salade_quinoa_avocat_tofu",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -1832,7 +1943,9 @@
         "Ail"
       ],
       "instructions": "Four 45min.",
-      "id": "gratin_dauphinois_vegan"
+      "id": "gratin_dauphinois_vegan",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1851,7 +1964,9 @@
         "Cumin"
       ],
       "instructions": "Cuire poêle.",
-      "id": "boulettes_boeuf_menthe"
+      "id": "boulettes_boeuf_menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1872,7 +1987,9 @@
         "Epices"
       ],
       "instructions": "Mixer et cuire four.",
-      "id": "falafels_au_four"
+      "id": "falafels_au_four",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1891,7 +2008,9 @@
         "Epinards: 200g"
       ],
       "instructions": "Poêler.",
-      "id": "oeuf_sur_le_plat_&_épinards"
+      "id": "oeuf_sur_le_plat_&_épinards",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1910,7 +2029,9 @@
         "Tomate: 2"
       ],
       "instructions": "Mijoter.",
-      "id": "poulet_basquaise_express"
+      "id": "poulet_basquaise_express",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1929,7 +2050,9 @@
         "Sel citronné : 1 pincée"
       ],
       "instructions": "Servir.",
-      "id": "radis_&_sel_citronné"
+      "id": "radis_&_sel_citronné",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1948,7 +2071,9 @@
         "Basilic : 4 feuilles"
       ],
       "instructions": "Mélanger.",
-      "id": "fraises_au_basilic"
+      "id": "fraises_au_basilic",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1968,7 +2093,9 @@
         "Houmous : 40g"
       ],
       "instructions": "Tremper.",
-      "id": "carottes_nouvelles_&_houmous"
+      "id": "carottes_nouvelles_&_houmous",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -1987,7 +2114,9 @@
         "Menthe : 1 c.à.s"
       ],
       "instructions": "Assembler.",
-      "id": "concombre_&_menthe"
+      "id": "concombre_&_menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2006,7 +2135,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Cuire 2 min, ajouter citron.",
-      "id": "pois_gourmands_citron-gingembre"
+      "id": "pois_gourmands_citron-gingembre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -2024,7 +2155,9 @@
         "Pavot : 1 c.à.c"
       ],
       "instructions": "Cuire au gaufrier.",
-      "id": "mini_gaufres_citron-pavot_gf"
+      "id": "mini_gaufres_citron-pavot_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2042,7 +2175,9 @@
         "Pomme nouvelle : 1"
       ],
       "instructions": "Rôtir 10 min.",
-      "id": "pommes_nouvelles_rôties"
+      "id": "pommes_nouvelles_rôties",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2061,7 +2196,9 @@
         "Avocat : 1/4"
       ],
       "instructions": "Assembler.",
-      "id": "avo_toast_printanier_mini"
+      "id": "avo_toast_printanier_mini",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2079,7 +2216,9 @@
         "Petits pois : 80g"
       ],
       "instructions": "Cuire, ajouter menthe.",
-      "id": "petits_pois_&_menthe_fraîche"
+      "id": "petits_pois_&_menthe_fraîche",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -2098,7 +2237,9 @@
         "Chocolat noir : 10g"
       ],
       "instructions": "Tremper.",
-      "id": "fraises_&_chocolat_noir"
+      "id": "fraises_&_chocolat_noir",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2117,7 +2258,9 @@
         "Asperges : 6"
       ],
       "instructions": "Cuire.",
-      "id": "omelette_asperges_vertes"
+      "id": "omelette_asperges_vertes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2135,7 +2278,9 @@
         "Beurre : 10g"
       ],
       "instructions": "Servir.",
-      "id": "tartine_radis_beurre_salé"
+      "id": "tartine_radis_beurre_salé",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2154,7 +2299,9 @@
         "Feta : 30g"
       ],
       "instructions": "Mélanger.",
-      "id": "salade_fraise-épinard-feta"
+      "id": "salade_fraise-épinard-feta",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2172,7 +2319,9 @@
         "Petits pois : 30g"
       ],
       "instructions": "Cuire au four.",
-      "id": "scones_salés_petit_pois"
+      "id": "scones_salés_petit_pois",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2190,7 +2339,9 @@
         "Poudre noisette : 30g"
       ],
       "instructions": "Cuire.",
-      "id": "muffin_carotte-noisette"
+      "id": "muffin_carotte-noisette",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2210,7 +2361,9 @@
         "Kiwi : 1"
       ],
       "instructions": "Mixer.",
-      "id": "smoothie_bowl_vert"
+      "id": "smoothie_bowl_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2229,7 +2382,9 @@
         "Pain GF : 1tr"
       ],
       "instructions": "Oeuf 6min.",
-      "id": "oeuf_mollet_&_mouillettes"
+      "id": "oeuf_mollet_&_mouillettes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2247,7 +2402,9 @@
         "Miel : 1 c.à.s"
       ],
       "instructions": "Poêler.",
-      "id": "navets_glacés_au_miel"
+      "id": "navets_glacés_au_miel",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2266,7 +2423,9 @@
         "Sel citronné : 1 pincée"
       ],
       "instructions": "Servir.",
-      "id": "radis_&_sel_citronné"
+      "id": "radis_&_sel_citronné",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2285,7 +2444,9 @@
         "Basilic : 4 feuilles"
       ],
       "instructions": "Mélanger.",
-      "id": "fraises_au_basilic"
+      "id": "fraises_au_basilic",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2305,7 +2466,9 @@
         "Houmous : 40g"
       ],
       "instructions": "Tremper.",
-      "id": "carottes_nouvelles_&_houmous"
+      "id": "carottes_nouvelles_&_houmous",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2324,7 +2487,9 @@
         "Menthe : 1 c.à.s"
       ],
       "instructions": "Assembler.",
-      "id": "concombre_&_menthe"
+      "id": "concombre_&_menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2343,7 +2508,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Cuire 2 min, ajouter citron.",
-      "id": "pois_gourmands_citron-gingembre"
+      "id": "pois_gourmands_citron-gingembre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -2361,7 +2528,9 @@
         "Pavot : 1 c.à.c"
       ],
       "instructions": "Cuire au gaufrier.",
-      "id": "mini_gaufres_citron-pavot_gf"
+      "id": "mini_gaufres_citron-pavot_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2379,7 +2548,9 @@
         "Pomme nouvelle : 1"
       ],
       "instructions": "Rôtir 10 min.",
-      "id": "pommes_nouvelles_rôties"
+      "id": "pommes_nouvelles_rôties",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2398,7 +2569,9 @@
         "Avocat : 1/4"
       ],
       "instructions": "Assembler.",
-      "id": "avo_toast_printanier_mini"
+      "id": "avo_toast_printanier_mini",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2416,7 +2589,9 @@
         "Petits pois : 80g"
       ],
       "instructions": "Cuire, ajouter menthe.",
-      "id": "petits_pois_&_menthe_fraîche"
+      "id": "petits_pois_&_menthe_fraîche",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -2435,7 +2610,9 @@
         "Chocolat noir : 10g"
       ],
       "instructions": "Tremper.",
-      "id": "fraises_&_chocolat_noir"
+      "id": "fraises_&_chocolat_noir",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2454,7 +2631,9 @@
         "Citron : filet"
       ],
       "instructions": "Cuire vapeur, croquer froid avec citron.",
-      "id": "asperges_vertes_croquantes"
+      "id": "asperges_vertes_croquantes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2473,7 +2652,9 @@
         "Compote rhubarbe : 20g"
       ],
       "instructions": "Cuire 15 min au four.",
-      "id": "barre_avoine-rhubarbe"
+      "id": "barre_avoine-rhubarbe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2493,7 +2674,9 @@
         "Eau : 100ml"
       ],
       "instructions": "Mixer.",
-      "id": "smoothie_fraise-basilic"
+      "id": "smoothie_fraise-basilic",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2513,7 +2696,9 @@
         "Farine pois chiche : 10g"
       ],
       "instructions": "Cuire moules muffin.",
-      "id": "muffins_épinards_(mini)"
+      "id": "muffins_épinards_(mini)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2532,7 +2717,9 @@
         "Tahini : 1 c.à.c"
       ],
       "instructions": "Tremper.",
-      "id": "radis_noir_&_purée_sésame"
+      "id": "radis_noir_&_purée_sésame",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2551,7 +2738,9 @@
         "Vinaigre cidre : 1 c.à.s"
       ],
       "instructions": "Tremper les feuilles.",
-      "id": "artichaut_vinaigrette_légère"
+      "id": "artichaut_vinaigrette_légère",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2570,7 +2759,9 @@
         "Sel : pincée"
       ],
       "instructions": "Couper en tranches.",
-      "id": "navets_nouveaux_croque-sel"
+      "id": "navets_nouveaux_croque-sel",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2590,7 +2781,9 @@
         "Kiwi : 1"
       ],
       "instructions": "Mélanger.",
-      "id": "yaourt_soja_&_kiwi"
+      "id": "yaourt_soja_&_kiwi",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2610,7 +2803,9 @@
         "Menthe : 1 c.à.s"
       ],
       "instructions": "Cuire asperges. Griller poulet. Ajouter citron-menthe.",
-      "id": "poulet_citron-menthe_&_asperges"
+      "id": "poulet_citron-menthe_&_asperges",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2630,7 +2825,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Griller saumon. Mélanger petits pois + citron.",
-      "id": "saumon_grillé_&_petits_pois_citronnés"
+      "id": "saumon_grillé_&_petits_pois_citronnés",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2650,7 +2847,9 @@
         "Coco : 50ml"
       ],
       "instructions": "Préparer risotto. Ajouter asperges + coco.",
-      "id": "risotto_gf_asperges_&_coco"
+      "id": "risotto_gf_asperges_&_coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -2670,7 +2869,9 @@
         "Huile d’olive : 1 c.à.s"
       ],
       "instructions": "Mixer pesto. Mélanger aux pâtes.",
-      "id": "pâtes_gf_pesto_basilic_maison"
+      "id": "pâtes_gf_pesto_basilic_maison",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2689,7 +2890,9 @@
         "Concombre : 1/2"
       ],
       "instructions": "Griller dinde. Servir avec salade.",
-      "id": "dinde_grillée_&_salade_radis-concombre"
+      "id": "dinde_grillée_&_salade_radis-concombre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2708,7 +2911,9 @@
         "Asperges : 150g"
       ],
       "instructions": "Cuire poisson + asperges vapeur.",
-      "id": "poisson_blanc_&_asperges_vapeur"
+      "id": "poisson_blanc_&_asperges_vapeur",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2728,7 +2933,9 @@
         "Pâte curry vert : 1 c.à.c"
       ],
       "instructions": "Cuire coco + curry vert + petits pois.",
-      "id": "curry_vert_coco-petits_pois"
+      "id": "curry_vert_coco-petits_pois",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -2748,7 +2955,9 @@
         "Miel : 1 c.à.c"
       ],
       "instructions": "Cuire pizza garnie.",
-      "id": "pizza_gf_chèvre_vegan-miel"
+      "id": "pizza_gf_chèvre_vegan-miel",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2768,7 +2977,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Sauter riz + asperges + citron.",
-      "id": "riz_sauté_asperges_&_citron"
+      "id": "riz_sauté_asperges_&_citron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2789,7 +3000,9 @@
         "Menthe : 1 c.à.s"
       ],
       "instructions": "Griller tofu. Mélanger salade + menthe.",
-      "id": "tofu_grillé_&_salade_printanière"
+      "id": "tofu_grillé_&_salade_printanière",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2808,7 +3021,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Griller bœuf. Servir avec salade.",
-      "id": "bœuf_grillé_&_salade_fraîche_au_citron"
+      "id": "bœuf_grillé_&_salade_fraîche_au_citron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2827,7 +3042,9 @@
         "Coco : 60ml"
       ],
       "instructions": "Mixer pois + coco.",
-      "id": "soupe_printanière_pois-coco"
+      "id": "soupe_printanière_pois-coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2847,7 +3064,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Poêler poisson. Servir avec radis.",
-      "id": "poisson_poêlé_&_radis_croquants"
+      "id": "poisson_poêlé_&_radis_croquants",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2866,7 +3085,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Assembler.",
-      "id": "quinoa_citronné_&_poulet_grillé"
+      "id": "quinoa_citronné_&_poulet_grillé",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2886,7 +3107,9 @@
         "Herbes : 1 c.à.s"
       ],
       "instructions": "Mélanger riz + crevettes + herbes.",
-      "id": "riz_aux_herbes_&_crevettes_grillées"
+      "id": "riz_aux_herbes_&_crevettes_grillées",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2905,7 +3128,9 @@
         "Carottes: 1"
       ],
       "instructions": "Mijoter.",
-      "id": "navarin_d'agneau_printanier"
+      "id": "navarin_d'agneau_printanier",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2926,7 +3151,9 @@
         "Citron"
       ],
       "instructions": "Blanchir et assaisonner.",
-      "id": "salade_fevettes_et_menthe"
+      "id": "salade_fevettes_et_menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2945,7 +3172,9 @@
         "Oeuf: 2"
       ],
       "instructions": "Four et cuisson oeuf.",
-      "id": "asperges_rôties_&_oeuf_mollet"
+      "id": "asperges_rôties_&_oeuf_mollet",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2965,7 +3194,9 @@
         "Citron"
       ],
       "instructions": "Cuire risotto.",
-      "id": "risotto_petits_pois_citron"
+      "id": "risotto_petits_pois_citron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -2984,7 +3215,9 @@
         "Chèvre"
       ],
       "instructions": "Four.",
-      "id": "tarte_salée_épinard_chèvre_(pâte_gf)"
+      "id": "tarte_salée_épinard_chèvre_(pâte_gf)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3004,7 +3237,9 @@
         "Poudre amande"
       ],
       "instructions": "Four.",
-      "id": "dos_de_cabillaud_croûte_d'herbes"
+      "id": "dos_de_cabillaud_croûte_d'herbes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3023,7 +3258,9 @@
         "Tomate"
       ],
       "instructions": "Mijoter.",
-      "id": "sauté_de_veau_aux_olives"
+      "id": "sauté_de_veau_aux_olives",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3043,7 +3280,9 @@
         "Concombre"
       ],
       "instructions": "Tout cru.",
-      "id": "taboulé_de_chou-fleur"
+      "id": "taboulé_de_chou-fleur",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3062,7 +3301,9 @@
         "Citron vert : quelques gouttes"
       ],
       "instructions": "Assembler.",
-      "id": "pastèque_&_citron_vert"
+      "id": "pastèque_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3081,7 +3322,9 @@
         "Amandes : 10g"
       ],
       "instructions": "Servir.",
-      "id": "abricot_&_amandes"
+      "id": "abricot_&_amandes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3100,7 +3343,9 @@
         "Pistaches : 10g"
       ],
       "instructions": "Assembler.",
-      "id": "concombre_&_pistaches"
+      "id": "concombre_&_pistaches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3119,7 +3364,9 @@
         "Basilic : quelques feuilles"
       ],
       "instructions": "Assembler.",
-      "id": "tomates_cerises_&_basilic"
+      "id": "tomates_cerises_&_basilic",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3138,7 +3385,9 @@
         "Menthe : quelques feuilles"
       ],
       "instructions": "Assembler.",
-      "id": "melon_&_menthe"
+      "id": "melon_&_menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -3157,7 +3406,9 @@
         "Lait coco : 40ml"
       ],
       "instructions": "Cuire 2 min.",
-      "id": "mini_crêpe_coco_gf"
+      "id": "mini_crêpe_coco_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3176,7 +3427,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Servir.",
-      "id": "pêche_&_citron_vert"
+      "id": "pêche_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3195,7 +3448,9 @@
         "Cajou : 10g"
       ],
       "instructions": "Assembler.",
-      "id": "myrtilles_&_cajou"
+      "id": "myrtilles_&_cajou",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3215,7 +3470,9 @@
         "Tahini : 1 c.à.c"
       ],
       "instructions": "Tremper.",
-      "id": "courgette_crue_&_tahini"
+      "id": "courgette_crue_&_tahini",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -3233,7 +3490,9 @@
         "Mangue congelée : 150g"
       ],
       "instructions": "Mixer mangue bien froide.",
-      "id": "glace_maison_mangue_express"
+      "id": "glace_maison_mangue_express",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3252,7 +3511,9 @@
         "Mozza : 50g"
       ],
       "instructions": "Gratiner.",
-      "id": "toast_tomate-bmozzarella"
+      "id": "toast_tomate-bmozzarella",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3271,7 +3532,9 @@
         "Verveine : 5 feuilles"
       ],
       "instructions": "Infuser.",
-      "id": "salade_pêche-verveine"
+      "id": "salade_pêche-verveine",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3291,7 +3554,9 @@
         "Menthe"
       ],
       "instructions": "Cuire poêle.",
-      "id": "frittata_courgette-menthe"
+      "id": "frittata_courgette-menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3311,7 +3576,9 @@
         "Abricot : 2"
       ],
       "instructions": "Frigo nuit.",
-      "id": "muesli_froid_abricot"
+      "id": "muesli_froid_abricot",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3330,7 +3597,9 @@
         "Pamplemousse : 1/2"
       ],
       "instructions": "Mélanger.",
-      "id": "crevettes_avocat_pamplemousse"
+      "id": "crevettes_avocat_pamplemousse",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3348,7 +3617,9 @@
         "Appareil oeuf/lait/farine"
       ],
       "instructions": "Four.",
-      "id": "clafoutis_cerise_(rapide)"
+      "id": "clafoutis_cerise_(rapide)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3366,7 +3637,9 @@
         "Poulet : 100g"
       ],
       "instructions": "Rouler.",
-      "id": "wrap_laitue_poulet_grillé"
+      "id": "wrap_laitue_poulet_grillé",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3385,7 +3658,9 @@
         "Tomate"
       ],
       "instructions": "Four.",
-      "id": "tarte_fine_tomate_moutarde"
+      "id": "tarte_fine_tomate_moutarde",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3404,7 +3679,9 @@
         "Citron vert : quelques gouttes"
       ],
       "instructions": "Assembler.",
-      "id": "pastèque_&_citron_vert"
+      "id": "pastèque_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3423,7 +3700,9 @@
         "Amandes : 10g"
       ],
       "instructions": "Servir.",
-      "id": "abricot_&_amandes"
+      "id": "abricot_&_amandes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3442,7 +3721,9 @@
         "Pistaches : 10g"
       ],
       "instructions": "Assembler.",
-      "id": "concombre_&_pistaches"
+      "id": "concombre_&_pistaches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3461,7 +3742,9 @@
         "Basilic : quelques feuilles"
       ],
       "instructions": "Assembler.",
-      "id": "tomates_cerises_&_basilic"
+      "id": "tomates_cerises_&_basilic",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3480,7 +3763,9 @@
         "Menthe : quelques feuilles"
       ],
       "instructions": "Assembler.",
-      "id": "melon_&_menthe"
+      "id": "melon_&_menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -3499,7 +3784,9 @@
         "Lait coco : 40ml"
       ],
       "instructions": "Cuire 2 min.",
-      "id": "mini_crêpe_coco_gf"
+      "id": "mini_crêpe_coco_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3518,7 +3805,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Servir.",
-      "id": "pêche_&_citron_vert"
+      "id": "pêche_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3537,7 +3826,9 @@
         "Cajou : 10g"
       ],
       "instructions": "Assembler.",
-      "id": "myrtilles_&_cajou"
+      "id": "myrtilles_&_cajou",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3557,7 +3848,9 @@
         "Tahini : 1 c.à.c"
       ],
       "instructions": "Tremper.",
-      "id": "courgette_crue_&_tahini"
+      "id": "courgette_crue_&_tahini",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -3575,7 +3868,9 @@
         "Mangue congelée : 150g"
       ],
       "instructions": "Mixer mangue bien froide.",
-      "id": "glace_maison_mangue_express"
+      "id": "glace_maison_mangue_express",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3594,7 +3889,9 @@
         "Fruits rouges : 20g"
       ],
       "instructions": "Congeler.",
-      "id": "pop-sicle_eau_de_coco_&_fruits"
+      "id": "pop-sicle_eau_de_coco_&_fruits",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3614,7 +3911,9 @@
         "Vinaigre : 1 c.à.c"
       ],
       "instructions": "Mixer froid.",
-      "id": "gaspacho_mini_concombre-menthe"
+      "id": "gaspacho_mini_concombre-menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3632,7 +3931,9 @@
         "Mozzarella billes : 30g"
       ],
       "instructions": "Piquer sur cure-dents.",
-      "id": "billes_de_mozzarella_&_melon"
+      "id": "billes_de_mozzarella_&_melon",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3651,7 +3952,9 @@
         "Thym : pincée"
       ],
       "instructions": "Passer 5 min sous le grill.",
-      "id": "nectarine_rôtie_thym"
+      "id": "nectarine_rôtie_thym",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3670,7 +3973,9 @@
         "Pépite chocolat : 10"
       ],
       "instructions": "Insérer une pépite dans chaque framboise.",
-      "id": "framboises_farcies_(chocolat)"
+      "id": "framboises_farcies_(chocolat)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3690,7 +3995,9 @@
         "Citron : 1/2"
       ],
       "instructions": "Mélanger et attendre 10 min.",
-      "id": "chia_fresca_citron"
+      "id": "chia_fresca_citron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3709,7 +4016,9 @@
         "Pécan : 10g"
       ],
       "instructions": "Servir.",
-      "id": "mûres_&_noix_de_pécan"
+      "id": "mûres_&_noix_de_pécan",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3727,7 +4036,9 @@
         "Chèvre frais : 30g"
       ],
       "instructions": "Faire des lanières, tartiner, rouler.",
-      "id": "rouleaux_de_concombre_au_chèvre"
+      "id": "rouleaux_de_concombre_au_chèvre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3746,7 +4057,9 @@
         "Concombre : 1/2"
       ],
       "instructions": "Griller poulet, servir avec salade fraîche.",
-      "id": "poulet_grillé_&_salade_melon-concombre"
+      "id": "poulet_grillé_&_salade_melon-concombre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3766,7 +4079,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Griller saumon, servir avec salsa.",
-      "id": "saumon_grillé_&_salsa_mangue"
+      "id": "saumon_grillé_&_salsa_mangue",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3788,7 +4103,9 @@
         "Coco : 40ml"
       ],
       "instructions": "Griller tofu. Mélanger riz + coco + citron vert.",
-      "id": "tofu_grillé_&_riz_coco-lime"
+      "id": "tofu_grillé_&_riz_coco-lime",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -3809,7 +4126,9 @@
         "Basilic : 1 c.à.s"
       ],
       "instructions": "Mélanger pâtes + sauce.",
-      "id": "pâtes_gf_tomates-basilic_&_coco"
+      "id": "pâtes_gf_tomates-basilic_&_coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3829,7 +4148,9 @@
         "Tomate : 1"
       ],
       "instructions": "Griller poisson + légumes.",
-      "id": "poisson_grillé_&_légumes_d’été"
+      "id": "poisson_grillé_&_légumes_d’été",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3848,7 +4169,9 @@
         "Menthe : 1 c.à.s"
       ],
       "instructions": "Griller dinde. Servir avec salade.",
-      "id": "dinde_grillée_&_salade_pastèque-menthe"
+      "id": "dinde_grillée_&_salade_pastèque-menthe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3867,7 +4190,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Griller crevettes + citron vert.",
-      "id": "crevettes_grillées_&_citron_vert"
+      "id": "crevettes_grillées_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -3887,7 +4212,9 @@
         "Tomates : 1"
       ],
       "instructions": "Cuire pizza.",
-      "id": "pizza_gf_tomate-mozza_vegan"
+      "id": "pizza_gf_tomate-mozza_vegan",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3907,7 +4234,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Sauter riz + légumes.",
-      "id": "riz_sauté_courgette_&_citron_vert"
+      "id": "riz_sauté_courgette_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3928,7 +4257,9 @@
         "Courgette : 1/2"
       ],
       "instructions": "Griller tofu + légumes.",
-      "id": "tofu_&_légumes_grillés"
+      "id": "tofu_&_légumes_grillés",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3947,7 +4278,9 @@
         "Citron vert : 1 c.à.c"
       ],
       "instructions": "Assembler.",
-      "id": "quinoa_d’été_poulet_&_citron_vert"
+      "id": "quinoa_d’été_poulet_&_citron_vert",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3966,7 +4299,9 @@
         "Citron : 1 c.à.c"
       ],
       "instructions": "Assembler.",
-      "id": "bœuf_grillé_&_concombre_citronné"
+      "id": "bœuf_grillé_&_concombre_citronné",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -3986,7 +4321,9 @@
         "Tomate : 1"
       ],
       "instructions": "Sauter légumes + riz.",
-      "id": "poêlée_courgette-tomate_&_riz"
+      "id": "poêlée_courgette-tomate_&_riz",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4005,7 +4342,9 @@
         "Salade : 100g"
       ],
       "instructions": "Assembler.",
-      "id": "crevettes_grillées_&_salade_fraîche"
+      "id": "crevettes_grillées_&_salade_fraîche",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4025,7 +4364,9 @@
         "Ail : 1 gousse"
       ],
       "instructions": "Cuire poisson citron-ail.",
-      "id": "poisson_citron-ail_&_riz"
+      "id": "poisson_citron-ail_&_riz",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4046,7 +4387,9 @@
         "Herbes"
       ],
       "instructions": "Farcir et cuire.",
-      "id": "tomates_farcies_au_quinoa"
+      "id": "tomates_farcies_au_quinoa",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4065,7 +4408,9 @@
         "Oignon"
       ],
       "instructions": "BBQ ou four.",
-      "id": "brochettes_poulet_citron_confit"
+      "id": "brochettes_poulet_citron_confit",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4086,7 +4431,9 @@
         "Pomme de terre"
       ],
       "instructions": "Assembler.",
-      "id": "salade_niçoise_revisitée"
+      "id": "salade_niçoise_revisitée",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4106,7 +4453,9 @@
         "Parmesan"
       ],
       "instructions": "Four.",
-      "id": "auberginges_à_la_parmigiana_(allégé)"
+      "id": "auberginges_à_la_parmigiana_(allégé)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4127,7 +4476,9 @@
         "Oeuf: 2"
       ],
       "instructions": "Mixer soupe, ajouter oeuf.",
-      "id": "gazpacho_andalou_&_oeuf_dur"
+      "id": "gazpacho_andalou_&_oeuf_dur",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4146,7 +4497,9 @@
         "Ratatouille: 200g"
       ],
       "instructions": "Griller.",
-      "id": "sardines_grillées_&_ratatouille"
+      "id": "sardines_grillées_&_ratatouille",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4166,7 +4519,9 @@
         "Citron vert"
       ],
       "instructions": "Mariner 20min.",
-      "id": "ceviche_dorade_mangue"
+      "id": "ceviche_dorade_mangue",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4185,7 +4540,9 @@
         "Oignon"
       ],
       "instructions": "Farcir et cuire.",
-      "id": "courgettes_farcies_boeuf"
+      "id": "courgettes_farcies_boeuf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4204,7 +4561,9 @@
         "Noix : 10g"
       ],
       "instructions": "Rôtir pomme, ajouter noix.",
-      "id": "pomme_rôtie_&_noix"
+      "id": "pomme_rôtie_&_noix",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4223,7 +4582,9 @@
         "Cannelle : 1 pincée"
       ],
       "instructions": "Assembler.",
-      "id": "raisin_&_cannelle"
+      "id": "raisin_&_cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4241,7 +4602,9 @@
         "Potimarron : 120g"
       ],
       "instructions": "Rôtir 15 min.",
-      "id": "potimarron_snack_rôtie"
+      "id": "potimarron_snack_rôtie",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4260,7 +4623,9 @@
         "Cacao : 1 c.à.c"
       ],
       "instructions": "Saupoudrer cacao.",
-      "id": "poire_&_cacao_pur"
+      "id": "poire_&_cacao_pur",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4279,7 +4644,9 @@
         "Pistaches : 10g"
       ],
       "instructions": "Assembler.",
-      "id": "betterave_&_pistaches"
+      "id": "betterave_&_pistaches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -4298,7 +4665,9 @@
         "Farine riz : 20g"
       ],
       "instructions": "Cuire au gaufrier.",
-      "id": "mini_gaufre_potimarron_gf"
+      "id": "mini_gaufre_potimarron_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4318,7 +4687,9 @@
         "Beurre amande : 1 c.à.c"
       ],
       "instructions": "Servir.",
-      "id": "pomme_&_beurre_d’amande"
+      "id": "pomme_&_beurre_d’amande",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4336,7 +4707,9 @@
         "Betterave : 1"
       ],
       "instructions": "Couper fin, cuire au four.",
-      "id": "chips_betterave_maison"
+      "id": "chips_betterave_maison",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4355,7 +4728,9 @@
         "Gingembre : 1 pincée"
       ],
       "instructions": "Rôtir, ajouter gingembre.",
-      "id": "poire_rôtie_&_gingembre"
+      "id": "poire_rôtie_&_gingembre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -4374,7 +4749,9 @@
         "Noisettes : 10g"
       ],
       "instructions": "Former truffe.",
-      "id": "truffe_choco_noisette_gf"
+      "id": "truffe_choco_noisette_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4393,7 +4770,9 @@
         "Oeuf : 1"
       ],
       "instructions": "Tremper et cuire.",
-      "id": "pain_perdu_potiron_épices"
+      "id": "pain_perdu_potiron_épices",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4412,7 +4791,9 @@
         "Champignons : 100g"
       ],
       "instructions": "Four.",
-      "id": "oeuf_cocotte_champignons"
+      "id": "oeuf_cocotte_champignons",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4432,7 +4813,9 @@
         "Chocolat : 10g"
       ],
       "instructions": "Cuire.",
-      "id": "porridge_poire-chocolat"
+      "id": "porridge_poire-chocolat",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4451,7 +4834,9 @@
         "Noix : 20g"
       ],
       "instructions": "Four.",
-      "id": "cake_salé_figues-noix"
+      "id": "cake_salé_figues-noix",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4469,7 +4854,9 @@
         "Oeuf : 1"
       ],
       "instructions": "Cuire.",
-      "id": "pancakes_châtaigne"
+      "id": "pancakes_châtaigne",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4489,7 +4876,9 @@
         "Raisin : 50g"
       ],
       "instructions": "Mélanger.",
-      "id": "salade_lentilles_raisin"
+      "id": "salade_lentilles_raisin",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4508,7 +4897,9 @@
         "Huile truffe : filet"
       ],
       "instructions": "Brouiller.",
-      "id": "oeuf_brouillé_huile_de_truffe"
+      "id": "oeuf_brouillé_huile_de_truffe",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4528,7 +4919,9 @@
         "Sirop érable"
       ],
       "instructions": "Four.",
-      "id": "granola_maison_noisette"
+      "id": "granola_maison_noisette",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4547,7 +4940,9 @@
         "Noix : 10g"
       ],
       "instructions": "Rôtir pomme, ajouter noix.",
-      "id": "pomme_rôtie_&_noix"
+      "id": "pomme_rôtie_&_noix",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4566,7 +4961,9 @@
         "Cannelle : 1 pincée"
       ],
       "instructions": "Assembler.",
-      "id": "raisin_&_cannelle"
+      "id": "raisin_&_cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4584,7 +4981,9 @@
         "Potimarron : 120g"
       ],
       "instructions": "Rôtir 15 min.",
-      "id": "potimarron_snack_rôtie"
+      "id": "potimarron_snack_rôtie",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4603,7 +5002,9 @@
         "Cacao : 1 c.à.c"
       ],
       "instructions": "Saupoudrer cacao.",
-      "id": "poire_&_cacao_pur"
+      "id": "poire_&_cacao_pur",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4622,7 +5023,9 @@
         "Pistaches : 10g"
       ],
       "instructions": "Assembler.",
-      "id": "betterave_&_pistaches"
+      "id": "betterave_&_pistaches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -4641,7 +5044,9 @@
         "Farine riz : 20g"
       ],
       "instructions": "Cuire au gaufrier.",
-      "id": "mini_gaufre_potimarron_gf"
+      "id": "mini_gaufre_potimarron_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4661,7 +5066,9 @@
         "Beurre amande : 1 c.à.c"
       ],
       "instructions": "Servir.",
-      "id": "pomme_&_beurre_d’amande"
+      "id": "pomme_&_beurre_d’amande",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4679,7 +5086,9 @@
         "Betterave : 1"
       ],
       "instructions": "Couper fin, cuire au four.",
-      "id": "chips_betterave_maison"
+      "id": "chips_betterave_maison",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4698,7 +5107,9 @@
         "Gingembre : 1 pincée"
       ],
       "instructions": "Rôtir, ajouter gingembre.",
-      "id": "poire_rôtie_&_gingembre"
+      "id": "poire_rôtie_&_gingembre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -4717,7 +5128,9 @@
         "Noisettes : 10g"
       ],
       "instructions": "Former truffe.",
-      "id": "truffe_choco_noisette_gf"
+      "id": "truffe_choco_noisette_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4736,7 +5149,9 @@
         "Noix : 10g"
       ],
       "instructions": "Manger tel quel.",
-      "id": "figues_fraîches_&_noix"
+      "id": "figues_fraîches_&_noix",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4755,7 +5170,9 @@
         "4 épices : pincée"
       ],
       "instructions": "Micro-ondes 1 min.",
-      "id": "pain_d'épices_minute_(mug_cake)"
+      "id": "pain_d'épices_minute_(mug_cake)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4774,7 +5191,9 @@
         "Huile : 1/2 c.à.c"
       ],
       "instructions": "Fines tranches au four.",
-      "id": "chips_de_panais"
+      "id": "chips_de_panais",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4794,7 +5213,9 @@
         "Eau : 150ml"
       ],
       "instructions": "Mixer.",
-      "id": "smoothie_poire-épinard"
+      "id": "smoothie_poire-épinard",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4813,7 +5234,9 @@
         "Miel : 1 c.à.c"
       ],
       "instructions": "Mélanger.",
-      "id": "yaourt_curcuma-miel"
+      "id": "yaourt_curcuma-miel",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4832,7 +5255,9 @@
         "Champignons : 50g"
       ],
       "instructions": "Poêler les champignons, poser sur pain.",
-      "id": "bruschetta_champignons"
+      "id": "bruschetta_champignons",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4851,7 +5276,9 @@
         "Muscade : pincée"
       ],
       "instructions": "Four 20 min.",
-      "id": "dés_de_courge_rôtie_muscade"
+      "id": "dés_de_courge_rôtie_muscade",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4870,7 +5297,9 @@
         "Amandes : 5"
       ],
       "instructions": "Enfourner l'amande dans le pruneau.",
-      "id": "pruneaux_&_amandes"
+      "id": "pruneaux_&_amandes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4889,7 +5318,9 @@
         "Romarin : 1 c.à.c"
       ],
       "instructions": "Rôtir poulet + potimarron.",
-      "id": "poulet_rôti_potimarron_&_romarin"
+      "id": "poulet_rôti_potimarron_&_romarin",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4908,7 +5339,9 @@
         "Potiron : 150g"
       ],
       "instructions": "Cuire saumon. Mixer potiron.",
-      "id": "saumon_grillé_&_purée_potiron"
+      "id": "saumon_grillé_&_purée_potiron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4929,7 +5362,9 @@
         "Coco : 50ml"
       ],
       "instructions": "Cuire potiron + pois chiches + coco.",
-      "id": "curry_potiron_pois_chiches"
+      "id": "curry_potiron_pois_chiches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -4949,7 +5384,9 @@
         "Sauce coco : 40ml"
       ],
       "instructions": "Mélanger pâtes + sauce.",
-      "id": "pâtes_gf_potiron-sauge"
+      "id": "pâtes_gf_potiron-sauge",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4967,7 +5404,9 @@
         "Poireaux : 150g"
       ],
       "instructions": "Poêler poireaux + dinde.",
-      "id": "dinde_grillée_&_poireaux_fondants"
+      "id": "dinde_grillée_&_poireaux_fondants",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -4986,7 +5425,9 @@
         "Patate douce : 200g"
       ],
       "instructions": "Cuire poisson + patate douce.",
-      "id": "poisson_blanc_&_patate_douce_rôtie"
+      "id": "poisson_blanc_&_patate_douce_rôtie",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5006,7 +5447,9 @@
         "Coco : 40ml"
       ],
       "instructions": "Cuire risotto + potiron.",
-      "id": "risotto_gf_potiron_&_coco"
+      "id": "risotto_gf_potiron_&_coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -5026,7 +5469,9 @@
         "Noix : 10g"
       ],
       "instructions": "Cuire pizza.",
-      "id": "pizza_gf_potiron-noix"
+      "id": "pizza_gf_potiron-noix",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5046,7 +5491,9 @@
         "Curcuma : 1 c.à.c"
       ],
       "instructions": "Sauter riz + poireaux + curcuma.",
-      "id": "riz_sauté_poireaux_&_curcuma"
+      "id": "riz_sauté_poireaux_&_curcuma",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5066,7 +5513,9 @@
         "Champignons : 120g"
       ],
       "instructions": "Griller tofu + champignons.",
-      "id": "tofu_grillé_&_champignons"
+      "id": "tofu_grillé_&_champignons",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5085,7 +5534,9 @@
         "Pomme : 1/2"
       ],
       "instructions": "Assembler.",
-      "id": "quinoa_automnal_dinde_&_pomme"
+      "id": "quinoa_automnal_dinde_&_pomme",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5103,7 +5554,9 @@
         "Potimarron : 120g"
       ],
       "instructions": "Assembler.",
-      "id": "bœuf_haché_&_purée_potimarron"
+      "id": "bœuf_haché_&_purée_potimarron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5122,7 +5575,9 @@
         "Coco : 60ml"
       ],
       "instructions": "Mixer.",
-      "id": "soupe_potiron-coco"
+      "id": "soupe_potiron-coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5142,7 +5597,9 @@
         "Poireau : 1"
       ],
       "instructions": "Cuire au four.",
-      "id": "poisson_rôti_&_légumes_d’automne"
+      "id": "poisson_rôti_&_légumes_d’automne",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5162,7 +5619,9 @@
         "Thym : 1 c.à.c"
       ],
       "instructions": "Assembler.",
-      "id": "riz_automnal_champignons_&_thym"
+      "id": "riz_automnal_champignons_&_thym",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5180,7 +5639,9 @@
         "Patate douce: 200g"
       ],
       "instructions": "Effilocher canard, purée, gratiner.",
-      "id": "parmentier_canard_patate_douce"
+      "id": "parmentier_canard_patate_douce",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5200,7 +5661,9 @@
         "Bouillon"
       ],
       "instructions": "Mixer soupe, ajouter oeuf.",
-      "id": "velouté_champignons_&_oeuf_poché"
+      "id": "velouté_champignons_&_oeuf_poché",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5220,7 +5683,9 @@
         "Bouillon"
       ],
       "instructions": "Cuire tout ensemble.",
-      "id": "one_pot_pasta_courge_(gf)"
+      "id": "one_pot_pasta_courge_(gf)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5241,7 +5706,9 @@
         "Lentilles"
       ],
       "instructions": "Rouler et cuire vapeur.",
-      "id": "chou_farci_végétarien"
+      "id": "chou_farci_végétarien",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5260,7 +5727,9 @@
         "Sirop agave"
       ],
       "instructions": "Sauter.",
-      "id": "porc_au_caramel_(sans_sucre)"
+      "id": "porc_au_caramel_(sans_sucre)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5279,7 +5748,9 @@
         "Parmesan"
       ],
       "instructions": "Four.",
-      "id": "crumble_salé_potiron_parmesan"
+      "id": "crumble_salé_potiron_parmesan",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5297,7 +5768,9 @@
         "Saucisse volaille: 2"
       ],
       "instructions": "Mijoter.",
-      "id": "lentilles_saucisse_(volaille)"
+      "id": "lentilles_saucisse_(volaille)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5316,7 +5789,9 @@
         "Pomme de terre: 150g"
       ],
       "instructions": "Cuire.",
-      "id": "moules_marinières_&_frites_four"
+      "id": "moules_marinières_&_frites_four",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5335,7 +5810,9 @@
         "Cannelle : 1 pincée"
       ],
       "instructions": "Ajouter cannelle.",
-      "id": "orange_&_cannelle"
+      "id": "orange_&_cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5354,7 +5831,9 @@
         "Vanille : 1 c.à.c"
       ],
       "instructions": "Cuire 10 min.",
-      "id": "poire_au_four_&_vanille"
+      "id": "poire_au_four_&_vanille",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5373,7 +5852,9 @@
         "Cannelle : 1 pincée"
       ],
       "instructions": "Griller rapidement.",
-      "id": "amandes_grillées_cannelle"
+      "id": "amandes_grillées_cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5392,7 +5873,9 @@
         "Pistaches : 10g"
       ],
       "instructions": "Servir.",
-      "id": "clémentines_&_pistaches"
+      "id": "clémentines_&_pistaches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5410,7 +5893,9 @@
         "Carotte : 1"
       ],
       "instructions": "Cuire au four 10 min.",
-      "id": "chips_de_carotte"
+      "id": "chips_de_carotte",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -5429,7 +5914,9 @@
         "Lait amande : 40ml"
       ],
       "instructions": "Cuire 45 sec micro-ondes.",
-      "id": "mini_fondant_cacao_gf"
+      "id": "mini_fondant_cacao_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5448,7 +5935,9 @@
         "Grenade : 40g"
       ],
       "instructions": "Assembler.",
-      "id": "kiwi_&_grenade"
+      "id": "kiwi_&_grenade",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5466,7 +5955,9 @@
         "Miel : 1 c.à.c"
       ],
       "instructions": "Arroser de miel et cannelle.",
-      "id": "clémentines_miel-cannelle"
+      "id": "clémentines_miel-cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5485,7 +5976,9 @@
         "Dattes : 2"
       ],
       "instructions": "Assembler.",
-      "id": "noix_&_dattes"
+      "id": "noix_&_dattes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -5504,7 +5997,9 @@
         "Zeste orange : 1 c.à.c"
       ],
       "instructions": "Mélanger.",
-      "id": "bouchée_choco-orange_gf"
+      "id": "bouchée_choco-orange_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5524,7 +6019,9 @@
         "Cannelle"
       ],
       "instructions": "Cuire.",
-      "id": "porridge_pomme_cannelle"
+      "id": "porridge_pomme_cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5543,7 +6040,9 @@
         "Comté : 20g"
       ],
       "instructions": "Gratiner pain.",
-      "id": "oeuf_coque_&_soldates_comté"
+      "id": "oeuf_coque_&_soldates_comté",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5561,7 +6060,9 @@
         "Farine : 50g"
       ],
       "instructions": "Gaufrier.",
-      "id": "gaufre_patate_douce"
+      "id": "gaufre_patate_douce",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5581,7 +6082,9 @@
         "Dattes : 2"
       ],
       "instructions": "Couper.",
-      "id": "salade_d'agrumes_aux_dattes"
+      "id": "salade_d'agrumes_aux_dattes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5601,7 +6104,9 @@
         "Grenade : 20g"
       ],
       "instructions": "Garnir.",
-      "id": "avocado_toast_grenade"
+      "id": "avocado_toast_grenade",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5620,7 +6125,9 @@
         "Kale : 50g"
       ],
       "instructions": "Poêler.",
-      "id": "omelette_chou_kale"
+      "id": "omelette_chou_kale",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5639,7 +6146,9 @@
         "Noix : 20g"
       ],
       "instructions": "Four.",
-      "id": "pain_banane_noix_(banana_bread)"
+      "id": "pain_banane_noix_(banana_bread)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5659,7 +6168,9 @@
         "Zeste"
       ],
       "instructions": "Chauffer.",
-      "id": "chocolat_chaud_onctueux_&_orange"
+      "id": "chocolat_chaud_onctueux_&_orange",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5678,7 +6189,9 @@
         "Cannelle : 1 pincée"
       ],
       "instructions": "Ajouter cannelle.",
-      "id": "orange_&_cannelle"
+      "id": "orange_&_cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5697,7 +6210,9 @@
         "Vanille : 1 c.à.c"
       ],
       "instructions": "Cuire 10 min.",
-      "id": "poire_au_four_&_vanille"
+      "id": "poire_au_four_&_vanille",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5716,7 +6231,9 @@
         "Cannelle : 1 pincée"
       ],
       "instructions": "Griller rapidement.",
-      "id": "amandes_grillées_cannelle"
+      "id": "amandes_grillées_cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5735,7 +6252,9 @@
         "Pistaches : 10g"
       ],
       "instructions": "Servir.",
-      "id": "clémentines_&_pistaches"
+      "id": "clémentines_&_pistaches",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5753,7 +6272,9 @@
         "Carotte : 1"
       ],
       "instructions": "Cuire au four 10 min.",
-      "id": "chips_de_carotte"
+      "id": "chips_de_carotte",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -5773,7 +6294,9 @@
         "Lait amande : 40ml"
       ],
       "instructions": "Cuire 45 sec micro-ondes.",
-      "id": "mini_fondant_cacao_gf"
+      "id": "mini_fondant_cacao_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5792,7 +6315,9 @@
         "Grenade : 40g"
       ],
       "instructions": "Assembler.",
-      "id": "kiwi_&_grenade"
+      "id": "kiwi_&_grenade",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5810,7 +6335,9 @@
         "Miel : 1 c.à.c"
       ],
       "instructions": "Arroser de miel et cannelle.",
-      "id": "clémentines_miel-cannelle"
+      "id": "clémentines_miel-cannelle",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5829,7 +6356,9 @@
         "Dattes : 2"
       ],
       "instructions": "Assembler.",
-      "id": "noix_&_dattes"
+      "id": "noix_&_dattes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -5848,7 +6377,9 @@
         "Zeste orange : 1 c.à.c"
       ],
       "instructions": "Mélanger.",
-      "id": "bouchée_choco-orange_gf"
+      "id": "bouchée_choco-orange_gf",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5867,7 +6398,9 @@
         "Carré chocolat 85% : 1"
       ],
       "instructions": "Fondre doucement.",
-      "id": "chocolat_chaud_léger_85%"
+      "id": "chocolat_chaud_léger_85%",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5887,7 +6420,9 @@
         "Menthe : 2 feuilles"
       ],
       "instructions": "Trancher fin.",
-      "id": "carpaccio_d'ananas_épicé"
+      "id": "carpaccio_d'ananas_épicé",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5905,7 +6440,9 @@
         "Miel : 1 c.à.c"
       ],
       "instructions": "Griller au four 5 min.",
-      "id": "pomélo_grillé_au_miel"
+      "id": "pomélo_grillé_au_miel",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5925,7 +6462,9 @@
         "Beurre cacahuète : 1 c.à.c"
       ],
       "instructions": "Garnir.",
-      "id": "datte_fourrée_beurre_cacahuète"
+      "id": "datte_fourrée_beurre_cacahuète",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5945,7 +6484,9 @@
         "Vanille : 1 c.à.c"
       ],
       "instructions": "Infuser et ajouter lait.",
-      "id": "tea_latte_vanille_(sans_sucre)"
+      "id": "tea_latte_vanille_(sans_sucre)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5963,7 +6504,9 @@
         "Kaki : 1"
       ],
       "instructions": "Croquer.",
-      "id": "kaki_persimon_en_quartiers"
+      "id": "kaki_persimon_en_quartiers",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -5982,7 +6525,9 @@
         "Noisettes : 20g"
       ],
       "instructions": "5 min à la poêle.",
-      "id": "noisettes_grillées"
+      "id": "noisettes_grillées",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6001,7 +6546,9 @@
         "Citron : jus"
       ],
       "instructions": "Bâtonnets.",
-      "id": "carottes_croquantes_citron"
+      "id": "carottes_croquantes_citron",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6020,7 +6567,9 @@
         "Panais : 1"
       ],
       "instructions": "Cuire ensemble au four.",
-      "id": "poulet_rôti_légumes_racines"
+      "id": "poulet_rôti_légumes_racines",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6039,7 +6588,9 @@
         "Poireaux : 150g"
       ],
       "instructions": "Griller saumon, poêler poireaux.",
-      "id": "saumon_grillé_&_poireaux"
+      "id": "saumon_grillé_&_poireaux",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6060,7 +6611,9 @@
         "Riz chaud : 120g"
       ],
       "instructions": "Cuire tofu + coco + riz.",
-      "id": "tofu_coco-curry_&_riz_chaud"
+      "id": "tofu_coco-curry_&_riz_chaud",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -6080,7 +6633,9 @@
         "Coco : 50ml"
       ],
       "instructions": "Assembler.",
-      "id": "pâtes_gf_crème_coco_&_champignons"
+      "id": "pâtes_gf_crème_coco_&_champignons",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6100,7 +6655,9 @@
         "Coco : 40ml"
       ],
       "instructions": "Cuire poisson + purée.",
-      "id": "poisson_blanc_&_purée_carotte-coco"
+      "id": "poisson_blanc_&_purée_carotte-coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6118,7 +6675,9 @@
         "Riz chaud : 120g"
       ],
       "instructions": "Assembler.",
-      "id": "dinde_grillée_&_riz_chaud"
+      "id": "dinde_grillée_&_riz_chaud",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6139,7 +6698,9 @@
         "Coco : 60ml"
       ],
       "instructions": "Cuire légumes + coco.",
-      "id": "curry_coco-légumes_racines"
+      "id": "curry_coco-légumes_racines",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "plaisir",
@@ -6159,7 +6720,9 @@
         "Coco : 40ml"
       ],
       "instructions": "Cuire pizza.",
-      "id": "pizza_gf_hiver_(champignons_&_coco)"
+      "id": "pizza_gf_hiver_(champignons_&_coco)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6179,7 +6742,9 @@
         "Curcuma : 1 pincée"
       ],
       "instructions": "Cuire ensemble.",
-      "id": "riz_sauté_carotte-curcuma"
+      "id": "riz_sauté_carotte-curcuma",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6199,7 +6764,9 @@
         "Chou : 120g"
       ],
       "instructions": "Griller tofu + chou.",
-      "id": "tofu_grillé_&_chou_rôti"
+      "id": "tofu_grillé_&_chou_rôti",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6218,7 +6785,9 @@
         "Orange : 1/2"
       ],
       "instructions": "Assembler.",
-      "id": "quinoa_hiver_poulet_&_orange"
+      "id": "quinoa_hiver_poulet_&_orange",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6236,7 +6805,9 @@
         "Poireaux : 120g"
       ],
       "instructions": "Assembler.",
-      "id": "bœuf_haché_&_poireaux_fondants"
+      "id": "bœuf_haché_&_poireaux_fondants",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6256,7 +6827,9 @@
         "Gingembre : 1 pincée"
       ],
       "instructions": "Mixer.",
-      "id": "soupe_carotte-coco_gingembre"
+      "id": "soupe_carotte-coco_gingembre",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6275,7 +6848,9 @@
         "Céleri : 150g"
       ],
       "instructions": "Assembler.",
-      "id": "poisson_rôti_&_purée_céleri"
+      "id": "poisson_rôti_&_purée_céleri",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6295,7 +6870,9 @@
         "Noix : 10g"
       ],
       "instructions": "Assembler.",
-      "id": "riz_sauté_hivernal_noix-orange"
+      "id": "riz_sauté_hivernal_noix-orange",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6314,7 +6891,9 @@
         "Reblochon: 40g"
       ],
       "instructions": "Four.",
-      "id": "tartiflette_allégée_(reblochon)"
+      "id": "tartiflette_allégée_(reblochon)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6333,7 +6912,9 @@
         "Boeuf ou Soja"
       ],
       "instructions": "Mijoter.",
-      "id": "chili_con_carne_(ou_sin_carne)"
+      "id": "chili_con_carne_(ou_sin_carne)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6352,7 +6933,9 @@
         "Comté"
       ],
       "instructions": "Gratiner.",
-      "id": "soupe_oignon_gratinée_(pain_gf)"
+      "id": "soupe_oignon_gratinée_(pain_gf)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6372,7 +6955,9 @@
         "Navet"
       ],
       "instructions": "Bouillon long.",
-      "id": "pot-au-feu_léger"
+      "id": "pot-au-feu_léger",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6391,7 +6976,9 @@
         "Chou-fleur mixé"
       ],
       "instructions": "Four.",
-      "id": "endives_au_jambon_(béchamel_chou-fleur)"
+      "id": "endives_au_jambon_(béchamel_chou-fleur)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6412,7 +6999,9 @@
         "Epinards"
       ],
       "instructions": "Mijoter.",
-      "id": "dahl_de_lentilles_coco"
+      "id": "dahl_de_lentilles_coco",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6430,7 +7019,9 @@
         "Pommes: 2"
       ],
       "instructions": "Poêler.",
-      "id": "boudin_noir_aux_pommes"
+      "id": "boudin_noir_aux_pommes",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "type": "healthy",
@@ -6448,7 +7039,9 @@
         "Cornichon"
       ],
       "instructions": "Fondre.",
-      "id": "raclette_bowl_(3_fromages)"
+      "id": "raclette_bowl_(3_fromages)",
+      "prep_time": 15,
+      "difficulty": "facile"
     },
     {
       "name": "Spaghetti Bolognese Maison (Boeuf 5%)",
@@ -6580,6 +7173,745 @@
       ],
       "instructions": "Battre oeufs, poêler, ajouter fromage à la fin.",
       "id": "omelette_complète_3_oeufs_fromage"
+    },
+    {
+      "name": "Lasagnes Maison Aubergines & Mozza",
+      "type": "plaisir",
+      "calories": 550,
+      "prep_time": 30,
+      "difficulty": "moyen",
+      "tags": [
+        "dinner",
+        "lunch",
+        "family",
+        "vegetarien",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Pâtes lasagne: 3 feuilles",
+        "Aubergine: 1",
+        "Mozzarella: 50g",
+        "Coulis tomate: 150g",
+        "Parmesan"
+      ],
+      "instructions": "Griller aubergines. Alterner couches pâtes/légumes/fromage. Cuire 30min au four.",
+      "id": "lasagnes_maison_aubergines_&_mozza"
+    },
+    {
+      "name": "Chili Con Carne Family",
+      "type": "plaisir",
+      "calories": 600,
+      "prep_time": 20,
+      "difficulty": "facile",
+      "tags": [
+        "dinner",
+        "lunch",
+        "family",
+        "sans_gluten",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Boeuf haché 5%: 100g",
+        "Haricots rouges: 150g",
+        "Maïs: 50g",
+        "Epices Chili",
+        "Riz: 50g"
+      ],
+      "instructions": "Mijoter le boeuf avec épices et tomates. Ajouter haricots et maïs. Servir avec riz.",
+      "id": "chili_con_carne_family"
+    },
+    {
+      "name": "Pizza Maison Base Chou-Fleur",
+      "type": "healthy",
+      "calories": 480,
+      "prep_time": 25,
+      "difficulty": "moyen",
+      "tags": [
+        "dinner",
+        "lunch",
+        "sans_gluten",
+        "vegetarien",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Chou-fleur râpé: 200g",
+        "Oeuf: 1",
+        "Chèvre: 30g",
+        "Tomate",
+        "Origan"
+      ],
+      "instructions": "Mélanger chou-fleur et oeuf pour la pâte. Cuire à blanc. Garnir et gratiner.",
+      "id": "pizza_maison_base_chou-fleur"
+    },
+    {
+      "name": "Tacos Poulet & Guacamole",
+      "type": "plaisir",
+      "calories": 580,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "dinner",
+        "family",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Tortillas Maïs: 2",
+        "Poulet: 100g",
+        "Avocat: 1/2",
+        "Citron vert",
+        "Coriandre"
+      ],
+      "instructions": "Saisir poulet aux épices. Garnir tortillas avec purée d'avocat.",
+      "id": "tacos_poulet_&_guacamole"
+    },
+    {
+      "name": "Fajitas Boeuf Poivrons",
+      "type": "plaisir",
+      "calories": 620,
+      "prep_time": 20,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "dinner",
+        "family",
+        "plaisir",
+        "sans_lactose"
+      ],
+      "ingredients": [
+        "Boeuf steak: 120g",
+        "Poivrons: 2",
+        "Oignon",
+        "Tortillas blé: 2",
+        "Epices fajitas"
+      ],
+      "instructions": "Sauter boeuf et légumes en lanières. Servir chaud dans galettes.",
+      "id": "fajitas_boeuf_poivrons"
+    },
+    {
+      "name": "Risotto Champignons & Parmesan",
+      "type": "plaisir",
+      "calories": 650,
+      "prep_time": 35,
+      "difficulty": "moyen",
+      "tags": [
+        "lunch",
+        "dinner",
+        "vegetarien",
+        "sans_gluten",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Riz Arborio: 80g",
+        "Champignons: 150g",
+        "Parmesan: 30g",
+        "Vin blanc: 30ml",
+        "Bouillon"
+      ],
+      "instructions": "Nacrer riz. Ajouter bouillon louche par louche. Finir avec parmesan.",
+      "id": "risotto_champignons_&_parmesan"
+    },
+    {
+      "name": "Wok Poulet Cacahuète (Pad Thaï Style)",
+      "type": "plaisir",
+      "calories": 610,
+      "prep_time": 20,
+      "difficulty": "moyen",
+      "tags": [
+        "lunch",
+        "dinner",
+        "sans_gluten",
+        "sans_lactose",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Nouilles riz: 80g",
+        "Poulet: 100g",
+        "Beurre cacahuète: 1 c.à.s",
+        "Soja",
+        "Citron vert"
+      ],
+      "instructions": "Cuire nouilles. Sauter poulet. Mélanger beurre cacahuète et soja pour la sauce.",
+      "id": "wok_poulet_cacahuète_(pad_thaï_style)"
+    },
+    {
+      "name": "Croque-Monsieur Avocat Dinde",
+      "type": "rapide",
+      "calories": 520,
+      "prep_time": 10,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "snack",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Pain complet: 2 tr",
+        "Jambon Dinde: 1 tr",
+        "Avocat: 1/4",
+        "Mozzarella: 20g"
+      ],
+      "instructions": "Tartiner avocat. Ajouter dinde et mozza. Griller à la poêle.",
+      "id": "croque-monsieur_avocat_dinde"
+    },
+    {
+      "name": "Poke Bowl Saumon Mangue",
+      "type": "healthy",
+      "calories": 500,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "pescetarien",
+        "sans_gluten",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Riz Vinaigré: 100g",
+        "Saumon: 80g",
+        "Mangue: 1/2",
+        "Avocat: 1/4",
+        "Sésame"
+      ],
+      "instructions": "Couper saumon et fruits en dés. Disposer sur riz froid.",
+      "id": "poke_bowl_saumon_mangue"
+    },
+    {
+      "name": "Gratin Dauphinois (Version Légère)",
+      "type": "family",
+      "calories": 450,
+      "prep_time": 40,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "dinner",
+        "vegetarien",
+        "sans_gluten",
+        "family"
+      ],
+      "ingredients": [
+        "Pommes de terre: 200g",
+        "Lait: 100ml",
+        "Ail",
+        "Muscade",
+        "Gruyère: 20g"
+      ],
+      "instructions": "Couper pdt fines. Cuire dans lait aillé. Gratiner au four.",
+      "id": "gratin_dauphinois_(version_légère)"
+    },
+    {
+      "name": "Bagel Saumon Cream Cheese (Le vrai)",
+      "type": "plaisir",
+      "calories": 550,
+      "prep_time": 10,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "brunch",
+        "pescetarien",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Bagel sésame: 1",
+        "Saumon fumé: 60g",
+        "Cream Cheese: 30g",
+        "Câpres",
+        "Oignon rouge"
+      ],
+      "instructions": "Toaster bagel. Tartiner fromage. Ajouter saumon et condiments.",
+      "id": "bagel_saumon_cream_cheese_(le_vrai)"
+    },
+    {
+      "name": "Cookies Avoine Chocolat Noir",
+      "type": "plaisir",
+      "calories": 280,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "snack",
+        "vegetarien",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Flocons avoine: 40g",
+        "Banane: 1/2",
+        "Pépites chocolat: 15g"
+      ],
+      "instructions": "Ecraser banane, mélanger avoine. Cuire 12min au four 180°C.",
+      "id": "cookies_avoine_chocolat_noir"
+    },
+    {
+      "name": "Pancakes Banane 'Fluffy'",
+      "type": "plaisir",
+      "calories": 420,
+      "prep_time": 20,
+      "difficulty": "facile",
+      "tags": [
+        "brunch",
+        "breakfast",
+        "vegetarien",
+        "plaisir",
+        "sans_gluten"
+      ],
+      "ingredients": [
+        "Banane: 1",
+        "Oeufs: 2",
+        "Farine sarrasin: 20g",
+        "Sirop d'érable"
+      ],
+      "instructions": "Mixer banane et oeufs. Cuire petits tas à la poêle.",
+      "id": "pancakes_banane_'fluffy'"
+    },
+    {
+      "name": "Oeufs Bénédictine (Sauce Yaourt)",
+      "type": "plaisir",
+      "calories": 480,
+      "prep_time": 20,
+      "difficulty": "moyen",
+      "tags": [
+        "brunch",
+        "lunch",
+        "vegetarien",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Muffin anglais: 1",
+        "Oeufs: 2",
+        "Yaourt grec: 50g",
+        "Moutarde",
+        "Citron"
+      ],
+      "instructions": "Pocher les oeufs. Faire sauce avec yaourt/moutarde. Servir sur muffin toasté.",
+      "id": "oeufs_bénédictine_(sauce_yaourt)"
+    },
+    {
+      "name": "Curry Rouge Canard Ananas",
+      "type": "plaisir",
+      "calories": 680,
+      "prep_time": 25,
+      "difficulty": "moyen",
+      "tags": [
+        "dinner",
+        "lunch",
+        "sans_gluten",
+        "sans_lactose",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Magret canard: 100g",
+        "Lait Coco: 100ml",
+        "Pâte Curry Rouge",
+        "Ananas frais: 50g",
+        "Riz"
+      ],
+      "instructions": "Saisir canard. Mijoter dans coco/curry avec ananas. Servir avec riz.",
+      "id": "curry_rouge_canard_ananas"
+    },
+    {
+      "name": "Barre Protéinée Maison Choco-Beurre Cacahuète",
+      "type": "plaisir",
+      "calories": 250,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "snack",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Avoine",
+        "Protein Whey",
+        "Beurre Cacahuète",
+        "Miel"
+      ],
+      "instructions": "Mélanger, presser dans un moule, frigo 1h.",
+      "id": "barre_protéinée_maison_choco-beurre_cacahuète"
+    },
+    {
+      "name": "Muffins Myrtilles Avoine (Light)",
+      "type": "healthy",
+      "calories": 180,
+      "prep_time": 20,
+      "difficulty": "moyen",
+      "tags": [
+        "snack",
+        "healthy"
+      ],
+      "ingredients": [
+        "Farine avoine",
+        "Oeuf",
+        "Myrtilles",
+        "Yaourt"
+      ],
+      "instructions": "Cuire 20min au four à 180C.",
+      "id": "muffins_myrtilles_avoine_(light)"
+    },
+    {
+      "name": "Quiche Sans Pâte Courgette Chèvre",
+      "type": "family",
+      "calories": 350,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "dinner",
+        "lunch",
+        "vegetarien"
+      ],
+      "ingredients": [
+        "Courgettes",
+        "Oeufs",
+        "Lait",
+        "Chèvre",
+        "Maïzena"
+      ],
+      "instructions": "Mélanger tout et cuire au four 30min.",
+      "id": "quiche_sans_pâte_courgette_chèvre"
+    },
+    {
+      "name": "Papillote Poisson Légumes du Soleil",
+      "type": "healthy",
+      "calories": 400,
+      "prep_time": 10,
+      "difficulty": "facile",
+      "tags": [
+        "dinner",
+        "lunch",
+        "pescetarien"
+      ],
+      "ingredients": [
+        "Poisson blanc",
+        "Courgette",
+        "Tomate",
+        "Citron"
+      ],
+      "instructions": "Fermer papillote, cuire 20min four.",
+      "id": "papillote_poisson_légumes_du_soleil"
+    },
+    {
+      "name": "Dahl Lentilles Corail Coco",
+      "type": "healthy",
+      "calories": 450,
+      "prep_time": 20,
+      "difficulty": "facile",
+      "tags": [
+        "dinner",
+        "lunch",
+        "vegan"
+      ],
+      "ingredients": [
+        "Lentilles corail",
+        "Lait coco",
+        "Curry",
+        "Tomate"
+      ],
+      "instructions": "Mijoter lentilles dans coco/tomate 15min.",
+      "id": "dahl_lentilles_corail_coco"
+    },
+    {
+      "name": "Poulet Basquaise Express",
+      "type": "family",
+      "calories": 500,
+      "prep_time": 20,
+      "difficulty": "moyen",
+      "tags": [
+        "dinner",
+        "lunch",
+        "family"
+      ],
+      "ingredients": [
+        "Poulet",
+        "Poivrons",
+        "Riz",
+        "Oignon"
+      ],
+      "instructions": "Sauter poulet et poivrons. Servir avec riz.",
+      "id": "poulet_basquaise_express"
+    },
+    {
+      "name": "Salade César Allégée (Poulet)",
+      "type": "healthy",
+      "calories": 420,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Romaine",
+        "Poulet grillé",
+        "Parmesan",
+        "Sauce yaourt"
+      ],
+      "instructions": "Assembler salade.",
+      "id": "salade_césar_allégée_(poulet)"
+    },
+    {
+      "name": "Sandwich Club Poulet Avocat (Complet)",
+      "type": "rapide",
+      "calories": 480,
+      "prep_time": 10,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "rapide"
+      ],
+      "ingredients": [
+        "Pain complet",
+        "Poulet",
+        "Avocat",
+        "Tomate"
+      ],
+      "instructions": "Toaster pain, monter le club.",
+      "id": "sandwich_club_poulet_avocat_(complet)"
+    },
+    {
+      "name": "Bento Riz Saumon Brocoli",
+      "type": "healthy",
+      "calories": 500,
+      "prep_time": 20,
+      "difficulty": "moyen",
+      "tags": [
+        "lunch",
+        "pescetarien"
+      ],
+      "ingredients": [
+        "Riz",
+        "Saumon vapeur",
+        "Brocoli",
+        "Sésame"
+      ],
+      "instructions": "Cuire riz et saumon. Disposer dans bento.",
+      "id": "bento_riz_saumon_brocoli"
+    },
+    {
+      "name": "Taboulé de Quinoa Menthe Feta",
+      "type": "healthy",
+      "calories": 380,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "vegetarien"
+      ],
+      "ingredients": [
+        "Quinoa cuit",
+        "Tomate",
+        "Concombre",
+        "Feta",
+        "Menthe"
+      ],
+      "instructions": "Mélanger tout frais.",
+      "id": "taboulé_de_quinoa_menthe_feta"
+    },
+    {
+      "name": "Wrap Thon Crudités (Tortilla Complète)",
+      "type": "rapide",
+      "calories": 400,
+      "prep_time": 10,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "rapide"
+      ],
+      "ingredients": [
+        "Tortilla",
+        "Thon",
+        "Salade",
+        "Mais"
+      ],
+      "instructions": "Rouler serré.",
+      "id": "wrap_thon_crudités_(tortilla_complète)"
+    },
+    {
+      "name": "Salade Niçoise Classique",
+      "type": "healthy",
+      "calories": 420,
+      "prep_time": 20,
+      "difficulty": "moyen",
+      "tags": [
+        "lunch",
+        "pescetarien"
+      ],
+      "ingredients": [
+        "Oeuf dur",
+        "Thon",
+        "Haricots verts",
+        "Pomme de terre",
+        "Olive"
+      ],
+      "instructions": "Dresser l'assiette.",
+      "id": "salade_niçoise_classique"
+    },
+    {
+      "name": "Pâtes Complètes Pesto Rosso & Roquette",
+      "type": "plaisir",
+      "calories": 550,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "vegetarien"
+      ],
+      "ingredients": [
+        "Pâtes complètes",
+        "Pesto Rosso",
+        "Roquette",
+        "Pignons"
+      ],
+      "instructions": "Mélanger pâtes chaudes et pesto.",
+      "id": "pâtes_complètes_pesto_rosso_&_roquette"
+    },
+    {
+      "name": "Buddha Bowl Patate Douce Pois Chiches",
+      "type": "healthy",
+      "calories": 480,
+      "prep_time": 20,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "vegan"
+      ],
+      "ingredients": [
+        "Patate douce rôtie",
+        "Pois chiches",
+        "Epinard",
+        "Tahini"
+      ],
+      "instructions": "Assembler bol.",
+      "id": "buddha_bowl_patate_douce_pois_chiches"
+    },
+    {
+      "name": "Croque-Monsieur Saumon Epinard",
+      "type": "plaisir",
+      "calories": 450,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "plaisir"
+      ],
+      "ingredients": [
+        "Pain mie",
+        "Saumon fumé",
+        "Epinard",
+        "Emmental"
+      ],
+      "instructions": "Cuire appareil à croque.",
+      "id": "croque-monsieur_saumon_epinard"
+    },
+    {
+      "name": "Salade Grecque Authentique",
+      "type": "healthy",
+      "calories": 350,
+      "prep_time": 10,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "vegetarien"
+      ],
+      "ingredients": [
+        "Tomate",
+        "Concombre",
+        "Feta bloc",
+        "Olive Kalamata",
+        "Origan"
+      ],
+      "instructions": "Couper grossièrement. Huile d'olive.",
+      "id": "salade_grecque_authentique"
+    },
+    {
+      "name": "Bagel Veggie Houmous Légumes Grillés",
+      "type": "plaisir",
+      "calories": 420,
+      "prep_time": 15,
+      "difficulty": "facile",
+      "tags": [
+        "lunch",
+        "vegan"
+      ],
+      "ingredients": [
+        "Bagel",
+        "Houmous",
+        "Poivron grillé",
+        "Aubergine grillée"
+      ],
+      "instructions": "Garnir bagel.",
+      "id": "bagel_veggie_houmous_légumes_grillés"
+    },
+    {
+      "name": "Poke Bowl Saumon Express",
+      "calories": 550,
+      "protein": "30g",
+      "carbs": "60g",
+      "fat": "20g",
+      "ingredients": [
+        "100g de riz à sushi cuit",
+        "100g de saumon frais (qualité sushi) en dés",
+        "1/2 avocat en tranches",
+        "50g de fèves edamame",
+        "1 cuillère à soupe de sauce soja",
+        "Graines de sésame"
+      ],
+      "instructions": "Disposez le riz au fond du bol. Arrangez joliment le saumon, l'avocat et les edamames par-dessus. Arrosez de sauce soja et saupoudrez de sésame. Servez immédiatement.",
+      "tags": [
+        "lunch",
+        "poisson",
+        "frais",
+        "sans_gluten"
+      ],
+      "prep_time": "15 min",
+      "difficulty": "Facile",
+      "id": "extra_lunch_oghqnhyur"
+    },
+    {
+      "name": "Risotto Champignons Rapide",
+      "calories": 480,
+      "protein": "12g",
+      "carbs": "70g",
+      "fat": "15g",
+      "ingredients": [
+        "150g de riz arborio",
+        "100g de champignons de Paris émincés",
+        "1 échalote ciselée",
+        "500ml de bouillon de légumes chaud",
+        "2 cuillères à soupe de parmesan râpé",
+        "1 noix de beurre"
+      ],
+      "instructions": "Faites revenir l'échalote et les champignons dans le beurre. Ajoutez le riz et remuez 1 min. Versez le bouillon louche par louche en attendant qu'il soit absorbé. Terminez avec le parmesan.",
+      "tags": [
+        "lunch",
+        "italien",
+        "vegetarien",
+        "chaud"
+      ],
+      "prep_time": "25 min",
+      "difficulty": "Moyen",
+      "id": "extra_lunch_gq6n5p2qp"
+    },
+    {
+      "name": "Club Sandwich Dinde & Avocat",
+      "calories": 520,
+      "protein": "35g",
+      "carbs": "45g",
+      "fat": "22g",
+      "ingredients": [
+        "3 tranches de pain complet grillées",
+        "100g de tranches de dinde (rôti)",
+        "1/2 avocat écrasé",
+        "2 tranches de tomate",
+        "Quelques feuilles de laitue",
+        "1 cuillère à café de mayonnaise légère"
+      ],
+      "instructions": "Tartinez une tranche de pain d'avocat. Ajoutez la dinde. Posez la seconde tranche, tartinez de mayonnaise, ajoutez tomate et laitue. Fermez avec la troisième tranche. Coupez en triangles.",
+      "tags": [
+        "lunch",
+        "sandwich",
+        "rapide",
+        "froid"
+      ],
+      "prep_time": "10 min",
+      "difficulty": "Trés facile",
+      "id": "extra_lunch_51kr0clcj"
     }
   ]
 }

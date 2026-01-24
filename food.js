@@ -72,90 +72,122 @@ function getTagsForSlot(slot) {
   return [];
 }
 
-// 3. Goal & Calorie Filtering (Advanced Target Match)
-// Logic: TotalTarget / NbMeals = TargetPerMeal
-// We accept matches within +/- 20% range
+// ----------------------------
+// SCALING ENGINE ⚖️
+// ----------------------------
+function scaleString(str, factor) {
+  if (factor === 1) return str;
 
-let candidates = pool;
+  // Regex : cherche les nombres (entiers ou décimaux) au début ou au milieu
+  // On gère : "100g", "1.5L", "2 tranches", "1/2"
+  return str.replace(/(\d+[\.,]?\d*|\d+\/\d+)/g, (match) => {
+    let val = 0;
+    if (match.includes('/')) {
+      const [n, d] = match.split('/');
+      val = parseFloat(n) / parseFloat(d);
+    } else {
+      val = parseFloat(match.replace(',', '.'));
+    }
 
-// Apply Intolerance Filter first
-if (profile && profile.intolerances && profile.intolerances.length > 0) {
-  candidates = candidates.filter(r => {
-    return profile.intolerances.every(into => r.tags.includes(into));
+    let newVal = val * factor;
+
+    // Smart Rounding
+    if (newVal > 10) newVal = Math.round(newVal); // 102.4 -> 102
+    else if (newVal > 1) newVal = parseFloat(newVal.toFixed(1)); // 2.43 -> 2.4
+    else newVal = parseFloat(newVal.toFixed(2)); // 0.333 -> 0.33
+
+    return newVal;
   });
 }
 
-// Apply Tag Filter
-const targetTags = getTagsForSlot(slot);
-candidates = candidates.filter(r => r.tags && targetTags.some(t => r.tags.includes(t)));
+// Calculate target calories for specific slot/profile
+function getTargetForSlot(slot, profile) {
+  if (!profile || !profile.targetCalories) return null;
 
-if (profile && profile.targetCalories) {
   const mode = getFastingConfig(profile);
-  const nbMeals = (mode === 'standard') ? 4 : 3;
 
-  // Weighting : Breakfast/Snack are smaller than Lunch/Dinner
-  let ratio = 1.0;
-  if (slot === 'snack') ratio = 0.5; // Snacks are half size
-  if (slot === 'breakfast' || slot === 'brunch') ratio = 0.8;
-  if (slot === 'lunch' || slot === 'dinner') ratio = 1.2;
-
-  // Calculate adjusted target per meal
-  // Base unit = Target / (0.8 + 1.2 + 0.5 + 1.2) = Target / 3.7 (approx 4 units)
-  // Standard distribution: B(20%) L(35%) S(10%) D(35%)
-
-  let share = 0.25; // Default flat
+  // Shares
+  let share = 0.25;
   if (mode === 'standard') {
     if (slot === 'breakfast') share = 0.20;
     if (slot === 'lunch') share = 0.35;
     if (slot === 'snack') share = 0.10;
     if (slot === 'dinner') share = 0.35;
   } else {
-    // Fasting (3 meals)
-    // e.g. Lunch (45%) Snack (15%) Dinner (40%)
     if (slot === 'lunch') share = 0.45;
     if (slot === 'snack') share = 0.15;
     if (slot === 'dinner') share = 0.40;
-    // If skip dinner, then breakfast gets bigger
     if (mode === 'skip_dinner' && slot === 'breakfast') share = 0.40;
   }
-
-  const targetPerMeal = Math.round(profile.targetCalories * share);
-  const tolerance = 0.25; // +/- 25% flexibility
-
-  const min = targetPerMeal * (1 - tolerance);
-  const max = targetPerMeal * (1 + tolerance);
-
-  const strictMatches = candidates.filter(r => {
-    const c = r.calories || 0;
-    return c >= min && c <= max;
-  });
-
-  // If we find matches, great! If not, we fallback to sorted list to find closest
-  if (strictMatches.length > 0) {
-    candidates = strictMatches;
-  } else {
-    // Fallback: Sort by distance to target
-    candidates.sort((a, b) => {
-      const distA = Math.abs((a.calories || 0) - targetPerMeal);
-      const distB = Math.abs((b.calories || 0) - targetPerMeal);
-      return distA - distB;
-    });
-    // Take top 10 closest
-    candidates = candidates.slice(0, 10);
-  }
-} else {
-  // Legacy generic goals if no specific target
-  if (profile && profile.goal === 'perte_poids') {
-    candidates = candidates.sort((a, b) => (a.calories || 0) - (b.calories || 0));
-    if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.5));
-  }
-  if (profile && profile.goal === 'prise_masse') {
-    candidates = candidates.sort((a, b) => (b.calories || 0) - (a.calories || 0));
-    if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.5));
-  }
+  return Math.round(profile.targetCalories * share);
 }
 
-return candidates;
+function filterRecipes(pool, profile, slot) {
+  let candidates = pool;
+
+  // Apply Intolerance Filter first
+  if (profile && profile.intolerances && profile.intolerances.length > 0) {
+    candidates = candidates.filter(r => {
+      return profile.intolerances.every(into => r.tags.includes(into));
+    });
+  }
+
+  // Apply Tag Filter
+  const targetTags = getTagsForSlot(slot);
+  candidates = candidates.filter(r => r.tags && targetTags.some(t => r.tags.includes(t)));
+
+  // 3. Goal & Calorie Filtering (Elastic Match 🧘‍♂️)
+  // Logic: We define a Target. We look for recipes within a WIDE range (e.g. 0.5x to 1.5x)
+  // AND we verify if their type (plaisir/healthy) fits the goal.
+
+  const target = getTargetForSlot(slot, profile);
+
+  if (target) {
+    // Elastic Tolerance: allow recipes from 50% to 150% of target
+    // We will SCALE them later.
+    const min = target * 0.5;
+    const max = target * 1.5;
+
+    // Filter candidates
+    let matches = candidates.filter(r => {
+      const c = r.calories || 0;
+      return c >= min && c <= max;
+    });
+
+    // Valid candidates?
+    if (matches.length === 0) {
+      // Fallback: take all, we will scale hard
+      matches = candidates;
+    }
+
+    // Inject Scale Factor directly into the returned object selection
+    // But wait! We can't modify the GLOBAL recipe objects.
+    // We must decide strictly on candidates here.
+    // The cloning/scaling happens in pickRecipeForSlot.
+    candidates = matches;
+
+    // Sort by proximity to avoid extreme scaling if possible
+    candidates.sort((a, b) => {
+      const distA = Math.abs((a.calories || 0) - target);
+      const distB = Math.abs((b.calories || 0) - target);
+      return distA - distB;
+    });
+    // Keep top 20 to have variety
+    if (candidates.length > 20) candidates = candidates.slice(0, 20);
+
+  } else {
+    // Legacy generic goals
+    if (profile && profile.goal === 'perte_poids') {
+      candidates = candidates.sort((a, b) => (a.calories || 0) - (b.calories || 0));
+      if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.5));
+    }
+    if (profile && profile.goal === 'prise_masse') {
+      candidates = candidates.sort((a, b) => (b.calories || 0) - (a.calories || 0));
+      if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.5));
+    }
+  }
+
+  return candidates;
 }
 
 function pickRecipeForSlot(slot, profile) {
@@ -163,19 +195,40 @@ function pickRecipeForSlot(slot, profile) {
   if (!candidates || candidates.length === 0) return { name: "Aucune recette trouvée", calories: 0, ingredients: [], instructions: "" };
 
   // Random pick
-  return candidates[Math.floor(Math.random() * candidates.length)];
+  const base = candidates[Math.floor(Math.random() * candidates.length)];
+
+  // CLONE & SCALE
+  const recipe = { ...base };
+  const target = getTargetForSlot(slot, profile);
+
+  if (target && recipe.calories > 0) {
+    recipe.targetCal = target;
+    recipe.scaleFactor = target / recipe.calories;
+    recipe.adjustedCalories = Math.round(recipe.calories * recipe.scaleFactor);
+  } else {
+    recipe.scaleFactor = 1;
+    recipe.adjustedCalories = recipe.calories;
+  }
+
+  return recipe;
 }
 
 // ----------------------------
 // GENERATE WEEK
 // ----------------------------
 function pickJuice(bgData) {
-  // Legacy juice picker
-  const season = "permanent";
-  // Simplify: just pick random from permanent
-  const list = (bgData.permanent) || [];
-  if (list.length === 0) return { name: "Jus Detox" };
-  return list[Math.floor(Math.random() * list.length)];
+  // NEW LOGIC: Flatten all seasons to offer maximum variety
+  let allJuices = [];
+  if (bgData.permanent) allJuices = allJuices.concat(bgData.permanent);
+  if (bgData.spring) allJuices = allJuices.concat(bgData.spring);
+  if (bgData.summer) allJuices = allJuices.concat(bgData.summer);
+  if (bgData.autumn) allJuices = allJuices.concat(bgData.autumn);
+  if (bgData.winter) allJuices = allJuices.concat(bgData.winter);
+
+  if (allJuices.length === 0) return { name: "Jus Detox (Défaut)" };
+
+  // Pick random
+  return allJuices[Math.floor(Math.random() * allJuices.length)];
 }
 
 function generateWeek(data) {
@@ -318,21 +371,54 @@ function displayWeek(week) {
 }
 
 // ----------------------------
+// HELPERS FOR RECIPE DISPLAY
+// ----------------------------
+function scaleString(str, factor) {
+  if (!str || factor === 1) return str;
+
+  // Regex to find numbers at the beginning of the string, possibly with units
+  const match = str.match(/^(\d+(\.\d+)?)\s*([a-zA-Z%]*)\s*(.*)/);
+  if (match) {
+    const value = parseFloat(match[1]);
+    const unit = match[3];
+    const rest = match[4];
+
+    if (!isNaN(value)) {
+      const scaledValue = Math.round(value * factor * 10) / 10; // Round to one decimal place
+      return `${scaledValue}${unit ? ' ' + unit : ''} ${rest}`.trim();
+    }
+  }
+  return str; // Return original string if no number found or parsing fails
+}
+
+// ----------------------------
 // POPUP RECETTE
 // ----------------------------
 function openRecipe(recipe) {
   if (!recipe) return;
   document.getElementById("popup-title").textContent = recipe.name;
 
-  // Richer Metadata Display
-  let metaHtml = `<strong>${recipe.calories || 0} kcal</strong>`;
+  // Use Adjusted Calories
+  const showCal = recipe.adjustedCalories || recipe.calories || 0;
+
+  let metaHtml = `<strong>${showCal} kcal</strong>`;
   if (recipe.prep_time) metaHtml += ` • ⏱ ${recipe.prep_time} min`;
   if (recipe.difficulty) metaHtml += ` • Niveau: ${recipe.difficulty}`;
+
+  // Show Scaling Info if exists
+  const factor = recipe.scaleFactor || 1;
+  if (Math.abs(factor - 1) > 0.1) {
+    metaHtml += ` <br><span style="font-size:0.8em; color:var(--fbs-rose-suave)">Portion ajustée à tes besoins (x${factor.toFixed(2)})</span>`;
+  }
 
   document.getElementById("popup-cal").innerHTML = metaHtml;
 
   const ul = document.getElementById("popup-ingredients");
-  ul.innerHTML = (recipe.ingredients || []).map(i => `<li>${i}</li>`).join("");
+  ul.innerHTML = (recipe.ingredients || []).map(i => {
+    // Scale string
+    const txt = scaleString(i, factor);
+    return `<li>${txt}</li>`;
+  }).join("");
 
   document.getElementById("popup-instructions").textContent = recipe.instructions || "Pas d'instructions.";
 
