@@ -94,6 +94,44 @@
                 </div>
             </div>
 
+            <button class="btn-next" onclick="nextStep('fasting')">Suivant</button>
+        </div>
+
+        <!-- Step 2.5a : Jeune Intermittent ? -->
+        <div class="step-container" id="step-fasting">
+            <h1>Jeûne Intermittent</h1>
+            <p class="subtitle">Pratiques-tu le jeûne ?</p>
+
+            <div class="goals-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="goal-card" onclick="selectFasting(this, true)">
+                    <span class="goal-icon">🕰️</span>
+                    <strong>OUI</strong>
+                </div>
+                <div class="goal-card" onclick="selectFasting(this, false)">
+                    <span class="goal-icon">🍽️</span>
+                    <strong>NON</strong>
+                </div>
+            </div>
+            <button class="btn-next" onclick="nextStep('fasting-details')">Suivant</button>
+        </div>
+
+        <!-- Step 2.5b : Quel repas sauter ? -->
+        <div class="step-container" id="step-fasting-details">
+            <h1>Quel rythme ?</h1>
+            <p class="subtitle">Quel repas sautes-tu ?</p>
+
+            <div class="goals-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="goal-card" onclick="selectSkipMeal(this, 'skip_breakfast')">
+                    <span class="goal-icon">🌅</span>
+                    <strong>Je saute le Matin</strong>
+                    <div style="font-size:0.8rem; color:#d9c0b8">12h - 20h</div>
+                </div>
+                <div class="goal-card" onclick="selectSkipMeal(this, 'skip_dinner')">
+                    <span class="goal-icon">🌙</span>
+                    <strong>Je saute le Soir</strong>
+                    <div style="font-size:0.8rem; color:#d9c0b8">08h - 16h</div>
+                </div>
+            </div>
             <button class="btn-next" onclick="nextStep('days')">Suivant</button>
         </div>
 
@@ -138,6 +176,8 @@
             <div class="dot" id="dot-measure"></div>
             <div class="dot" id="dot-2"></div>
             <div class="dot" id="dot-activity"></div>
+            <div class="dot" id="dot-fasting"></div>
+            <div class="dot" id="dot-fasting-details"></div>
             <div class="dot" id="dot-days"></div> <!-- NEW -->
             <div class="dot" id="dot-3"></div>
         </div>
