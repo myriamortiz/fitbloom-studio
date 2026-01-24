@@ -1,236 +1,286 @@
 // -------------------------------
-// CONFIG & CHARGEMENT
+// CONFIG & CONSTANTS
 // -------------------------------
 const DATA_URL = "data/fitness.json";
+const STORAGE_KEY = "fbs-fitness-week-v1";
 
-function getTodayStr() {
-  return new Date().toISOString().split("T")[0];
-}
-
-// Global Pools Cache
-let globalPools = null;
-
-// 1. CHARGEMENT POOLS
+// -------------------------------
+// 1. CHARGEMENT & INIT
+// -------------------------------
 async function loadFitnessData() {
   try {
     const response = await fetch(DATA_URL);
     const pools = await response.json();
-    initPage(pools);
+
+    // Setup User Profile
+    const profile = getUserProfile();
+
+    // Init Week
+    const weekData = getOrGenerateWeek(pools, profile);
+
+    // Render
+    renderWeek(weekData, profile);
+
   } catch (error) {
     console.error("Erreur chargement fitness:", error);
   }
 }
 
-// 2. LE GÉNÉRATEUR DYNAMIQUE (THE MIXER) 🧠
-function generateSession(pools, profile, weekParity, targetDay = null) {
-  // Determine Track based on Goal
-  let primary = 'fullbody';
-  let secondary = 'cardio';
-
-  if (profile.goal === 'perte_poids') { primary = 'cardio'; secondary = 'fullbody'; }
-  if (profile.goal === 'prise_masse') { primary = 'upper'; secondary = 'lower'; }
-  if (profile.goal === 'forme') { primary = 'soft'; secondary = 'fullbody'; }
-
-  // Target Day: default to Today (0-6)
-  const dayToUse = (targetDay !== null) ? targetDay : new Date().getDay();
-
-  // Safe Array Check
-  const days = profile.workoutDays || [1, 3, 5];
-  const isWorkoutDay = days.includes(dayToUse);
-
-  if (!isWorkoutDay) {
-    return {
-      name: "🌿 Repos Actif",
-      duration: "Libre",
-      exercises: [],
-      isRest: true
-    };
-  }
-
-  // Seed for stability
-  const seed = dayToUse + (weekParity ? 10 : 0);
-
-  let category = primary;
-  if (seed % 2 !== 0) category = secondary;
-  if (profile.goal === 'prise_masse') {
-    category = (seed % 2 === 0) ? 'upper' : 'lower';
-  }
-
-  const pool = pools[category];
-  if (!pool || pool.length === 0) return (pools['fullbody'] && pools['fullbody'][0]) || { name: "Erreur", duration: "0", exercises: [], isRest: true };
-
-  const sessionIndex = seed % pool.length;
-  let session = pool[sessionIndex];
-
-  let badge = "";
-  if (category === 'cardio') badge = "🔥";
-  if (category === 'soft') badge = "🧘‍♀️";
-  if (category === 'upper' || category === 'lower') badge = "💪";
-
-  return {
-    ...session,
-    name: `${badge} ${session.name}`,
-    isRest: false
+function getUserProfile() {
+  return JSON.parse(localStorage.getItem('userProfile')) || {
+    name: "Guest",
+    workoutDays: [1, 3, 5],
+    goal: 'forme',
+    activity: 1.2
   };
 }
 
 // -------------------------------
-// INITIALISATION DE LA PAGE
+// 2. LOGIQUE GÉNÉRATION SEMAINE
 // -------------------------------
-function initPage(pools) {
-  globalPools = pools;
-  const profile = JSON.parse(localStorage.getItem('userProfile')) || { workoutDays: [1, 3, 5], goal: 'forme' };
-
-  // Clean initialization
+function getOrGenerateWeek(pools, profile) {
   const d = new Date();
-  const currentWeekNumber = getWeekNumber(d);
-  const isWeekB = currentWeekNumber % 2 !== 0;
+  const currentWeekNum = getWeekNumber(d);
 
-  // Render TODAY by default
-  updateDisplayForDay(d.getDay());
+  // Check Storage
+  const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if (stored && stored.weekNum === currentWeekNum && stored.profileHash === hashProfile(profile)) {
+    console.log("Chargement semaine fitness existante...");
+    return stored.days;
+  }
 
-  // Week Grid
+  console.log("Génération nouvelle semaine fitness...");
+  const days = generateFullWeek(pools, profile);
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    weekNum: currentWeekNum,
+    profileHash: hashProfile(profile),
+    days: days
+  }));
+
+  return days;
+}
+
+function generateFullWeek(pools, profile) {
+  const weekPlan = [];
+  const workoutDays = profile.workoutDays || []; // e.g. [1, 3, 5]
+  let workoutCounter = 0;
+
+  for (let i = 0; i < 7; i++) {
+    if (!workoutDays.includes(i)) {
+      // Rest Day
+      weekPlan[i] = { type: 'rest', name: "Repos & Récup", duration: "Active", exercises: [] };
+    } else {
+      // Workout Day
+      weekPlan[i] = pickSession(pools, profile, i, workoutCounter);
+      workoutCounter++;
+    }
+  }
+
+  return weekPlan;
+}
+
+function pickSession(pools, profile, dayIndex, workoutCounter) {
+  // STRATEGY BASED ON GOAL
+  let category = 'fullbody';
+
+  // Rotation based on sequence to ensure variety even if days are only even/odd
+  const isEvenSeq = (workoutCounter % 2 === 0);
+
+  if (profile.goal === 'perte_poids') {
+    // 70% Cardio/HIIT, 30% Fullbody
+    // Use random primarily but ensure at least some Mix
+    category = (Math.random() > 0.3) ? 'cardio' : 'fullbody';
+  }
+  else if (profile.goal === 'prise_masse') {
+    // Upper / Lower Split STRICT rotation
+    category = isEvenSeq ? 'upper' : 'lower';
+  }
+  else {
+    // Forme: Mix everything
+    const types = ['soft', 'fullbody', 'cardio', 'lower', 'upper'];
+    category = types[workoutCounter % types.length];
+  }
+
+  // Safety fallback
+  let pool = pools[category];
+  if (!pool || pool.length === 0) pool = pools['fullbody'];
+
+  // Pick random
+  const rawSession = pool[Math.floor(Math.random() * pool.length)];
+
+  // CLONE & ADAPT difficulty
+  const session = JSON.parse(JSON.stringify(rawSession));
+  adaptDifficulty(session, profile);
+
+  return {
+    type: 'workout',
+    category: category,
+    ...session
+  };
+}
+
+function adaptDifficulty(session, profile) {
+  const activity = profile.activity || 1.2;
+  // 1.2 = Sedentary, 1.375 = Light, 1.55 = Moderate, 1.725 = Active
+
+  let multiplier = 1;
+  if (activity >= 1.55) multiplier = 1.5; // +50% rounds/reps
+  else if (activity >= 1.375) multiplier = 1.2;
+
+  if (multiplier > 1) {
+    session.duration += " (+Intense)";
+    session.exercises.forEach(ex => {
+      if (ex.rounds && typeof ex.rounds === 'number') {
+        ex.rounds = Math.ceil(ex.rounds * multiplier);
+      }
+    });
+  }
+}
+
+// -------------------------------
+// 3. AFFICHAGE (UI)
+// -------------------------------
+function renderWeek(weekData, profile) {
+  // 1. Render Bubble Grid
+  // UI expects day-1 (Mon) to day-7 (Sun)
+
+  const todayIndex = new Date().getDay(); // 0=Sun, 1=Mon
+
   for (let i = 1; i <= 7; i++) {
-    const simDay = (i === 7) ? 0 : i; // 1..6, 0
-    const isActive = (profile.workoutDays || []).includes(simDay);
-
+    const jsDay = (i === 7) ? 0 : i; // Convert 7->0 for Sunday
     const bubble = document.getElementById(`day-${i}`);
+    const dayData = weekData[jsDay];
+
     if (bubble) {
-      if (isActive) {
-        bubble.querySelector("span").textContent = "Sport";
-        bubble.style.borderColor = "var(--fbs-rose-clair)";
+      const span = bubble.querySelector("span");
+
+      // State
+      if (dayData.type === 'rest') {
+        bubble.classList.add('rest-day');
+        span.innerHTML = `<span style="font-size:0.8em">Repos</span>`;
+        bubble.style.opacity = '0.5';
+        bubble.style.borderColor = 'rgba(255,255,255,0.1)';
       } else {
-        bubble.querySelector("span").textContent = "Repos";
-        bubble.style.opacity = "0.5";
+        bubble.classList.add('workout-day');
+        // Icon based on category
+        let icon = "💪";
+        if (dayData.category === 'cardio') icon = "🔥";
+        if (dayData.category === 'soft') icon = "🧘‍♀️";
+
+        span.innerHTML = `${icon}<br><span style="font-size:0.7em">${getDayNameShort(jsDay)}</span>`;
+        bubble.style.borderColor = 'var(--fbs-rose-clair)';
       }
 
-      bubble.style.cursor = "pointer";
-      bubble.onclick = () => {
-        // Highlight
-        for (let k = 1; k <= 7; k++) {
-          const b = document.getElementById(`day-${k}`);
-          if (b) b.style.background = 'transparent';
-        }
-        bubble.style.background = 'rgba(255,255,255,0.1)';
+      // Interaction
+      bubble.onclick = () => showSession(jsDay, weekData[jsDay]);
 
-        updateDisplayForDay(simDay);
-      };
+      // Auto-select today
+      if (jsDay === todayIndex) {
+        bubble.click();
+      }
     }
   }
 }
 
-function updateDisplayForDay(dayIndex) {
-  if (!globalPools) return;
+function showSession(dayIndex, session) {
+  // Highlight bubble
+  document.querySelectorAll('.day-bubble').forEach(b => b.classList.remove('active-day'));
+  const uiDay = (dayIndex === 0) ? 7 : dayIndex;
+  const bubble = document.getElementById(`day-${uiDay}`);
+  if (bubble) bubble.classList.add('active-day');
 
-  const profile = JSON.parse(localStorage.getItem('userProfile')) || { workoutDays: [1, 3, 5], goal: 'forme' };
-  const d = new Date();
-  const currentWeekNumber = getWeekNumber(d);
-  const isWeekB = currentWeekNumber % 2 !== 0;
-  const isToday = (dayIndex === d.getDay());
-
-  const session = generateSession(globalPools, profile, isWeekB, dayIndex);
-
-  // UI Update
+  // Update Card
   const titleEl = document.querySelector('.session-title');
-  if (titleEl) {
-    titleEl.textContent = isToday ? "Séance du jour" : `Aperçu : ${getDayName(dayIndex)}`;
-  }
+  const nameEl = document.getElementById('today-session-name');
+  const durEl = document.getElementById('today-session-duration');
+  const btn = document.getElementById('voir-seance');
 
-  document.getElementById("today-session-name").textContent = session.name;
-  document.getElementById("today-session-duration").textContent = session.duration;
+  // Is it today?
+  const isToday = (dayIndex === new Date().getDay());
+  titleEl.textContent = isToday ? "SÉANCE DU JOUR" : `PROGRAMME DU ${getDayName(dayIndex).toUpperCase()}`;
 
-  const btn = document.getElementById("voir-seance");
+  nameEl.textContent = session.name;
+  durEl.textContent = session.duration;
+
+  // Clear old elements if any
   const oldMsg = document.getElementById('msg-repos');
   if (oldMsg) oldMsg.remove();
-  
-  // Clean up any existing check-btn if it exists from previous state
-  const oldCheckBtn = document.getElementById("check-session-btn");
-  if(oldCheckBtn) oldCheckBtn.style.display = 'none';
 
-  if (session.isRest) {
-    if (btn) btn.style.display = 'none';
+  if (session.type === 'rest') {
+    btn.style.display = 'none';
 
     const msg = document.createElement('p');
     msg.id = 'msg-repos';
-    msg.textContent = "Repos ou Marche active 🌿";
+    msg.innerHTML = "💤 Profite de cette journée pour récupérer.<br>Une petite marche est toujours bienvenue !";
     msg.style.color = "var(--fbs-rose-suave)";
     msg.style.marginTop = "1rem";
-    if (btn && btn.parentNode) btn.parentNode.insertBefore(msg, btn);
+    msg.style.fontSize = "0.9rem";
+    btn.parentNode.insertBefore(msg, btn);
 
   } else {
-    // Session Active
-    if (btn) btn.style.display = 'inline-block';
-    setupModal(session.exercises);
+    btn.style.display = 'inline-block';
+    btn.onclick = () => openModal(session);
   }
 }
 
-function getDayName(dayIndex) {
-  const names = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-  return names[dayIndex];
-}
-
 // -------------------------------
-// GESTION DE LA MODAL EXERCICES
+// 4. MODAL
 // -------------------------------
-function setupModal(exercises) {
-  const buttonVoirSeance = document.getElementById("voir-seance");
+function openModal(session) {
   const modal = document.querySelector(".modal");
-  const modalCloseButton = document.querySelector(".modal-close");
-  const exercicesList = document.getElementById("exercices-list");
+  const list = document.getElementById("exercices-list");
 
-  if (buttonVoirSeance) {
-    buttonVoirSeance.onclick = () => {
-      // Clear
-      exercicesList.innerHTML = '';
-      if (!exercises || exercises.length === 0) {
-        exercicesList.innerHTML = "<p>Repos.</p>";
-      } else {
-        exercises.forEach(ex => {
-          const div = document.createElement("div");
-          div.className = "exercice";
-          div.style.marginBottom = "1rem";
-          div.style.paddingBottom = "1rem";
-          div.style.borderBottom = "1px solid rgba(255,255,255,0.1)";
-          div.innerHTML = `
-              <p style="font-size:1.1rem; color:var(--fbs-rose-clair); margin-bottom:0.2rem;"><strong>${ex.name}</strong></p>
-              <div style="display:flex; gap:1rem; font-size:0.95rem;">
-                <span>🔄 ${ex.repetitions}</span>
-                <span>🔁 ${ex.rounds} tours</span>
-              </div>
-            `;
-          exercicesList.appendChild(div);
-        });
-      }
-      modal.classList.remove("hidden");
-    };
-  }
+  list.innerHTML = ""; // Clear
 
-  if (modalCloseButton) {
-    modalCloseButton.onclick = () => {
-      modal.classList.add("hidden");
-    };
-  }
+  session.exercises.forEach(ex => {
+    const div = document.createElement("div");
+    div.className = "exo-item";
+    div.innerHTML = `
+            <div class="exo-header">
+                <span class="exo-name">${ex.name}</span>
+                <span class="exo-rounds">${ex.rounds} tours</span>
+            </div>
+            <div class="exo-reps">Répétitions: <strong>${ex.reps}</strong></div>
+        `;
+    list.appendChild(div);
+  });
+
+  modal.classList.remove("hidden");
+
+  // Close logic
+  document.querySelector(".modal-close").onclick = () => modal.classList.add("hidden");
 }
 
 // -------------------------------
 // HELPERS
 // -------------------------------
-const backButton = document.querySelector(".back-btn");
-if (backButton) {
-  backButton.addEventListener("click", () => {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      window.location.href = "index.html";
-    }
-  });
-}
-
 function getWeekNumber(d) {
   d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
   d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
   return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+}
+
+function hashProfile(p) {
+  // Simple hash to detect significant profile changes
+  return `${p.goal}-${p.activity}-${(p.workoutDays || []).join('')}`;
+}
+
+function getDayName(i) {
+  return ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"][i];
+}
+
+function getDayNameShort(i) {
+  return ["DIM", "LUN", "MAR", "MER", "JEU", "VEN", "SAM"][i];
+}
+
+// Navigation Back
+const backButton = document.querySelector(".back-btn");
+if (backButton) {
+  backButton.addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
 }
 
 // START

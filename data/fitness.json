@@ -1,254 +1,1117 @@
 {
-    "cardio": [
+  "cardio": [
+    {
+      "name": "🔥 HIIT Brûle-Graisse",
+      "duration": "25 min",
+      "intensity": 3,
+      "exercises": [
         {
-            "name": "🔥 HIIT Brûle-Graisse",
-            "duration": "30 min",
-            "exercises": [
-                {
-                    "name": "Burpees",
-                    "repetitions": "15",
-                    "rounds": 4
-                },
-                {
-                    "name": "Mountain Climbers",
-                    "repetitions": "30",
-                    "rounds": 4
-                },
-                {
-                    "name": "Squat Jumps",
-                    "repetitions": "15",
-                    "rounds": 4
-                },
-                {
-                    "name": "Jumping Jacks",
-                    "repetitions": "40",
-                    "rounds": 4
-                }
-            ]
+          "name": "Burpees",
+          "rounds": 4,
+          "reps": "15"
         },
         {
-            "name": "⚡ Cardio Boxing",
-            "duration": "25 min",
-            "exercises": [
-                {
-                    "name": "Jabs",
-                    "repetitions": "40",
-                    "rounds": 4
-                },
-                {
-                    "name": "Esquives",
-                    "repetitions": "20",
-                    "rounds": 4
-                },
-                {
-                    "name": "Kicks",
-                    "repetitions": "20",
-                    "rounds": 4
-                },
-                {
-                    "name": "Corde à sauter",
-                    "repetitions": "1 min",
-                    "rounds": 3
-                }
-            ]
+          "name": "High Knees",
+          "rounds": 4,
+          "reps": "30s"
         },
         {
-            "name": "🥵 Tabata Intense",
-            "duration": "20 min",
-            "exercises": [
-                {
-                    "name": "Sprints sur place",
-                    "repetitions": "20s",
-                    "rounds": 8
-                },
-                {
-                    "name": "Push Ups",
-                    "repetitions": "20s",
-                    "rounds": 8
-                }
-            ]
+          "name": "Squat Jumps",
+          "rounds": 4,
+          "reps": "15"
+        },
+        {
+          "name": "Moutain Climbers",
+          "rounds": 4,
+          "reps": "30"
         }
-    ],
-    "lower": [
+      ]
+    },
+    {
+      "name": "⚡ Cardio Boxing",
+      "duration": "30 min",
+      "intensity": 2,
+      "exercises": [
         {
-            "name": "🍑 Booty Pump",
-            "duration": "35 min",
-            "exercises": [
-                {
-                    "name": "Hip Thrust",
-                    "repetitions": "15",
-                    "rounds": 4
-                },
-                {
-                    "name": "Fentes Bulgares",
-                    "repetitions": "10/leg",
-                    "rounds": 3
-                },
-                {
-                    "name": "Donkey Kicks",
-                    "repetitions": "20",
-                    "rounds": 3
-                }
-            ]
+          "name": "Shadow Boxing",
+          "rounds": 5,
+          "reps": "1 min"
         },
         {
-            "name": "🦶 Legs & Calves",
-            "duration": "40 min",
-            "exercises": [
-                {
-                    "name": "Squats",
-                    "repetitions": "12",
-                    "rounds": 4
-                },
-                {
-                    "name": "Fentes avant",
-                    "repetitions": "12",
-                    "rounds": 3
-                },
-                {
-                    "name": "Mollets debout",
-                    "repetitions": "20",
-                    "rounds": 4
-                }
-            ]
+          "name": "Corde à sauter",
+          "rounds": 5,
+          "reps": "1 min"
+        },
+        {
+          "name": "Jabs & Cross",
+          "rounds": 5,
+          "reps": "50"
+        },
+        {
+          "name": "Esquives",
+          "rounds": 5,
+          "reps": "20"
         }
-    ],
-    "upper": [
+      ]
+    },
+    {
+      "name": "💦 Tabata Enfer",
+      "duration": "20 min",
+      "intensity": 3,
+      "exercises": [
         {
-            "name": "💪 Bras & Epaules",
-            "duration": "30 min",
-            "exercises": [
-                {
-                    "name": "Pompes",
-                    "repetitions": "10",
-                    "rounds": 3
-                },
-                {
-                    "name": "Dips chaise",
-                    "repetitions": "12",
-                    "rounds": 3
-                },
-                {
-                    "name": "Elévations latérales",
-                    "repetitions": "15",
-                    "rounds": 3
-                }
-            ]
+          "name": "Sprints sur place",
+          "rounds": 8,
+          "reps": "20s"
         },
         {
-            "name": "🦋 Dos & Posture",
-            "duration": "25 min",
-            "exercises": [
-                {
-                    "name": "Superman",
-                    "repetitions": "15",
-                    "rounds": 3
-                },
-                {
-                    "name": "Rowing elastique (ou vide)",
-                    "repetitions": "15",
-                    "rounds": 4
-                },
-                {
-                    "name": "Oiseau",
-                    "repetitions": "15",
-                    "rounds": 3
-                }
-            ]
+          "name": "Push Ups",
+          "rounds": 8,
+          "reps": "20s"
+        },
+        {
+          "name": "Squats",
+          "rounds": 8,
+          "reps": "20s"
+        },
+        {
+          "name": "Planche Jack",
+          "rounds": 8,
+          "reps": "20s"
         }
-    ],
-    "fullbody": [
+      ]
+    },
+    {
+      "name": "🏃‍♀️ Endurance Fondamentale",
+      "duration": "45 min",
+      "intensity": 1,
+      "exercises": [
         {
-            "name": "💥 Full Body Tone",
-            "duration": "40 min",
-            "exercises": [
-                {
-                    "name": "Thrusters",
-                    "repetitions": "12",
-                    "rounds": 3
-                },
-                {
-                    "name": "Renegade Rows",
-                    "repetitions": "10",
-                    "rounds": 3
-                },
-                {
-                    "name": "Planche dynamique",
-                    "repetitions": "45s",
-                    "rounds": 3
-                }
-            ]
-        },
-        {
-            "name": "✨ Circuit Maison",
-            "duration": "35 min",
-            "exercises": [
-                {
-                    "name": "Chaise",
-                    "repetitions": "45s",
-                    "rounds": 3
-                },
-                {
-                    "name": "Pompes genoux",
-                    "repetitions": "12",
-                    "rounds": 3
-                },
-                {
-                    "name": "Crunchs",
-                    "repetitions": "20",
-                    "rounds": 3
-                }
-            ]
+          "name": "Running ou Marche Rapide",
+          "rounds": 1,
+          "reps": "45 min"
         }
-    ],
-    "soft": [
+      ]
+    },
+    {
+      "name": "🕺 Dance Workout",
+      "duration": "30 min",
+      "intensity": 2,
+      "exercises": [
         {
-            "name": "🧘‍♀️ Morning Yoga",
-            "duration": "20 min",
-            "exercises": [
-                {
-                    "name": "Salutation soleil",
-                    "repetitions": "5",
-                    "rounds": 1
-                },
-                {
-                    "name": "Chien tête en bas",
-                    "repetitions": "1 min",
-                    "rounds": 2
-                }
-            ]
+          "name": "Zumba Step",
+          "rounds": 3,
+          "reps": "5 min"
         },
         {
-            "name": "☁️ Pilates Doux",
-            "duration": "30 min",
-            "exercises": [
-                {
-                    "name": "The Hundred",
-                    "repetitions": "100",
-                    "rounds": 1
-                },
-                {
-                    "name": "Rolling like a ball",
-                    "repetitions": "10",
-                    "rounds": 3
-                }
-            ]
-        },
-        {
-            "name": "🤸‍♀️ Stretching Total",
-            "duration": "25 min",
-            "exercises": [
-                {
-                    "name": "Etirement Ishios",
-                    "repetitions": "30s",
-                    "rounds": 2
-                },
-                {
-                    "name": "Etirement Dos",
-                    "repetitions": "30s",
-                    "rounds": 2
-                }
-            ]
+          "name": "Freestyle",
+          "rounds": 3,
+          "reps": "3 min"
         }
-    ]
+      ]
+    },
+    {
+      "name": "🪜 Step Tonique",
+      "duration": "25 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Basic Step",
+          "rounds": 4,
+          "reps": "1 min"
+        },
+        {
+          "name": "Knee Lift",
+          "rounds": 4,
+          "reps": "1 min"
+        },
+        {
+          "name": "V-Step",
+          "rounds": 4,
+          "reps": "1 min"
+        }
+      ]
+    },
+    {
+      "name": "🚀 Cardio Express",
+      "duration": "15 min",
+      "intensity": 3,
+      "exercises": [
+        {
+          "name": "Jumping Jacks",
+          "rounds": 3,
+          "reps": "1 min"
+        },
+        {
+          "name": "Burpees",
+          "rounds": 3,
+          "reps": "10"
+        }
+      ]
+    },
+    {
+      "name": "🚴‍♀️ Vélo Indoor",
+      "duration": "40 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Echauffement",
+          "rounds": 1,
+          "reps": "5 min"
+        },
+        {
+          "name": "Fractionné",
+          "rounds": 10,
+          "reps": "1 min/1 min"
+        },
+        {
+          "name": "Retour calme",
+          "rounds": 1,
+          "reps": "5 min"
+        }
+      ]
+    },
+    {
+      "name": "🐊 Crawl Animal",
+      "duration": "20 min",
+      "intensity": 3,
+      "exercises": [
+        {
+          "name": "Bear Crawl",
+          "rounds": 4,
+          "reps": "20m"
+        },
+        {
+          "name": "Crab Walk",
+          "rounds": 4,
+          "reps": "20m"
+        },
+        {
+          "name": "Gorilla Walk",
+          "rounds": 4,
+          "reps": "20m"
+        }
+      ]
+    },
+    {
+      "name": "🦘 Corde à Sauter Master",
+      "duration": "20 min",
+      "intensity": 3,
+      "exercises": [
+        {
+          "name": "Sauts pieds joints",
+          "rounds": 5,
+          "reps": "1 min"
+        },
+        {
+          "name": "Double Under",
+          "rounds": 5,
+          "reps": "30s"
+        },
+        {
+          "name": "Sauts alternés",
+          "rounds": 5,
+          "reps": "1 min"
+        }
+      ]
+    }
+  ],
+  "fullbody": [
+    {
+      "name": "💥 Full Body Tone",
+      "duration": "35 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Thrusters",
+          "rounds": 3,
+          "reps": "12"
+        },
+        {
+          "name": "Renegade Rows",
+          "rounds": 3,
+          "reps": "10"
+        },
+        {
+          "name": "Planche dynamique",
+          "rounds": 3,
+          "reps": "45s"
+        }
+      ]
+    },
+    {
+      "name": "🏠 Circuit Maison",
+      "duration": "30 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Chaise",
+          "rounds": 3,
+          "reps": "45s"
+        },
+        {
+          "name": "Pompes genoux",
+          "rounds": 3,
+          "reps": "12"
+        },
+        {
+          "name": "Crunchs",
+          "rounds": 3,
+          "reps": "20"
+        },
+        {
+          "name": "Squats",
+          "rounds": 3,
+          "reps": "20"
+        }
+      ]
+    },
+    {
+      "name": "⚔️ Spartan Training",
+      "duration": "40 min",
+      "intensity": 3,
+      "exercises": [
+        {
+          "name": "Burpees",
+          "rounds": 4,
+          "reps": "10"
+        },
+        {
+          "name": "Pull-ups (ou Rowing)",
+          "rounds": 4,
+          "reps": "8"
+        },
+        {
+          "name": "Lunges walk",
+          "rounds": 4,
+          "reps": "20m"
+        }
+      ]
+    },
+    {
+      "name": "🎒 Backpack Workout",
+      "duration": "30 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Sac à dos Squat",
+          "rounds": 4,
+          "reps": "15"
+        },
+        {
+          "name": "Sac à dos Press",
+          "rounds": 4,
+          "reps": "12"
+        },
+        {
+          "name": "Sac à dos Row",
+          "rounds": 4,
+          "reps": "15"
+        }
+      ]
+    },
+    {
+      "name": "🧱 Bodyweight Master",
+      "duration": "45 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Pistol Squat (ou assisté)",
+          "rounds": 3,
+          "reps": "5/leg"
+        },
+        {
+          "name": "Handstand Hold (ou Wall)",
+          "rounds": 3,
+          "reps": "30s"
+        },
+        {
+          "name": "L-Sit (ou Tuck)",
+          "rounds": 3,
+          "reps": "15s"
+        }
+      ]
+    },
+    {
+      "name": "🏋️‍♀️ Kettlebell Flow",
+      "duration": "25 min",
+      "intensity": 3,
+      "exercises": [
+        {
+          "name": "Swing",
+          "rounds": 5,
+          "reps": "20"
+        },
+        {
+          "name": "Goblet Squat",
+          "rounds": 5,
+          "reps": "15"
+        },
+        {
+          "name": "Clean & Press",
+          "rounds": 5,
+          "reps": "10"
+        }
+      ]
+    },
+    {
+      "name": "🤸 Calisthenics Basics",
+      "duration": "35 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Inverted Rows",
+          "rounds": 4,
+          "reps": "10"
+        },
+        {
+          "name": "Dips Banc",
+          "rounds": 4,
+          "reps": "12"
+        },
+        {
+          "name": "Walking Lunges",
+          "rounds": 4,
+          "reps": "20"
+        }
+      ]
+    },
+    {
+      "name": "⏱️ AMRAP 20",
+      "duration": "20 min",
+      "intensity": 3,
+      "exercises": [
+        {
+          "name": "Pompes",
+          "rounds": 1,
+          "reps": "5"
+        },
+        {
+          "name": "Squats",
+          "rounds": 1,
+          "reps": "10"
+        },
+        {
+          "name": "Sit-ups",
+          "rounds": 1,
+          "reps": "15"
+        },
+        {
+          "name": "Max Tours en 20 min",
+          "rounds": 1,
+          "reps": "Inf"
+        }
+      ]
+    },
+    {
+      "name": "🧼 Towel Workout",
+      "duration": "25 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Gliding Lunges (Sol)",
+          "rounds": 3,
+          "reps": "12/leg"
+        },
+        {
+          "name": "Hamstring Curl (Sol)",
+          "rounds": 3,
+          "reps": "12"
+        },
+        {
+          "name": "Plank Saw",
+          "rounds": 3,
+          "reps": "15"
+        }
+      ]
+    },
+    {
+      "name": "🗿 Statutaire (Iso)",
+      "duration": "20 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Planche",
+          "rounds": 3,
+          "reps": "1 min"
+        },
+        {
+          "name": "Chaise",
+          "rounds": 3,
+          "reps": "1 min"
+        },
+        {
+          "name": "Hollow Body",
+          "rounds": 3,
+          "reps": "45s"
+        }
+      ]
+    }
+  ],
+  "upper": [
+    {
+      "name": "💪 Bras & Épaules",
+      "duration": "30 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Pompes",
+          "rounds": 3,
+          "reps": "12"
+        },
+        {
+          "name": "Dips chaise",
+          "rounds": 3,
+          "reps": "12"
+        },
+        {
+          "name": "Elévations latérales (bouteilles)",
+          "rounds": 3,
+          "reps": "15"
+        }
+      ]
+    },
+    {
+      "name": "🦋 Dos & Posture",
+      "duration": "25 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Superman",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Oiseau",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Rowing élastique",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Face Pull",
+          "rounds": 3,
+          "reps": "15"
+        }
+      ]
+    },
+    {
+      "name": "🦾 Push Day (Maison)",
+      "duration": "35 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Pompes Diamant",
+          "rounds": 4,
+          "reps": "10"
+        },
+        {
+          "name": "Pompes larges",
+          "rounds": 4,
+          "reps": "10"
+        },
+        {
+          "name": "Pike Push Up (Epaules)",
+          "rounds": 4,
+          "reps": "8"
+        }
+      ]
+    },
+    {
+      "name": "🛶 Pull Day (Maison)",
+      "duration": "35 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Rowing table/porte",
+          "rounds": 4,
+          "reps": "12"
+        },
+        {
+          "name": "Bicep Curl (bouteille/sac)",
+          "rounds": 4,
+          "reps": "15"
+        },
+        {
+          "name": "Superman Hold",
+          "rounds": 4,
+          "reps": "30s"
+        }
+      ]
+    },
+    {
+      "name": "🧱 Pecs d'acier",
+      "duration": "20 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Pompes claquées",
+          "rounds": 3,
+          "reps": "8"
+        },
+        {
+          "name": "Pompes déclinées",
+          "rounds": 3,
+          "reps": "10"
+        },
+        {
+          "name": "Ecarté sol (bouteilles)",
+          "rounds": 3,
+          "reps": "12"
+        }
+      ]
+    },
+    {
+      "name": "🏹 Epaules 3D",
+      "duration": "25 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Pike Push Up",
+          "rounds": 3,
+          "reps": "10"
+        },
+        {
+          "name": "Elévation frontale",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Y-Raise (sol)",
+          "rounds": 3,
+          "reps": "15"
+        }
+      ]
+    },
+    {
+      "name": "🦴 Triceps Killer",
+      "duration": "15 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Dips serrés",
+          "rounds": 3,
+          "reps": "Max"
+        },
+        {
+          "name": "Extension nuque (bouteille)",
+          "rounds": 3,
+          "reps": "15"
+        }
+      ]
+    },
+    {
+      "name": "🪵 Biceps Blaster",
+      "duration": "15 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Curl Marteau",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Chin-ups (si barre)",
+          "rounds": 3,
+          "reps": "Max"
+        }
+      ]
+    },
+    {
+      "name": "🧘 Correctif Postural",
+      "duration": "20 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Wall Angels",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Cat Cow",
+          "rounds": 3,
+          "reps": "10"
+        },
+        {
+          "name": "Thoracic Opening",
+          "rounds": 3,
+          "reps": "10/side"
+        }
+      ]
+    },
+    {
+      "name": "🪵 Core & Abs",
+      "duration": "20 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Crunchs croisés",
+          "rounds": 4,
+          "reps": "20"
+        },
+        {
+          "name": "Leg Raise",
+          "rounds": 4,
+          "reps": "15"
+        },
+        {
+          "name": "Russian Twist",
+          "rounds": 4,
+          "reps": "30"
+        }
+      ]
+    }
+  ],
+  "lower": [
+    {
+      "name": "🍑 Booty Pump",
+      "duration": "35 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Hip Thrust",
+          "rounds": 4,
+          "reps": "15"
+        },
+        {
+          "name": "Fentes Bulgares",
+          "rounds": 3,
+          "reps": "10/leg"
+        },
+        {
+          "name": "Donkey Kicks",
+          "rounds": 3,
+          "reps": "20"
+        },
+        {
+          "name": "Abductors (élastique)",
+          "rounds": 3,
+          "reps": "20"
+        }
+      ]
+    },
+    {
+      "name": "🦵 Legs & Calves",
+      "duration": "40 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Squats",
+          "rounds": 4,
+          "reps": "15"
+        },
+        {
+          "name": "Fentes arrière",
+          "rounds": 4,
+          "reps": "12/leg"
+        },
+        {
+          "name": "Mollets debout",
+          "rounds": 5,
+          "reps": "20"
+        },
+        {
+          "name": "Wall Sit",
+          "rounds": 3,
+          "reps": "1 min"
+        }
+      ]
+    },
+    {
+      "name": "🧨 Explosive Legs",
+      "duration": "25 min",
+      "intensity": 3,
+      "exercises": [
+        {
+          "name": "Jump Squats",
+          "rounds": 4,
+          "reps": "15"
+        },
+        {
+          "name": "Jumping Lunges",
+          "rounds": 4,
+          "reps": "20"
+        },
+        {
+          "name": "Box Jump (ou Step Up rapide)",
+          "rounds": 4,
+          "reps": "12"
+        }
+      ]
+    },
+    {
+      "name": "🧘 Fessiers Isolés",
+      "duration": "30 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Fire Hydrant",
+          "rounds": 3,
+          "reps": "20"
+        },
+        {
+          "name": "Glute Bridge",
+          "rounds": 3,
+          "reps": "20"
+        },
+        {
+          "name": "Side Leg Raise",
+          "rounds": 3,
+          "reps": "20"
+        }
+      ]
+    },
+    {
+      "name": "🚶 Marche fentes",
+      "duration": "20 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Fentes marchées",
+          "rounds": 4,
+          "reps": "50 pas"
+        },
+        {
+          "name": "Squat isométrique",
+          "rounds": 4,
+          "reps": "45s"
+        }
+      ]
+    },
+    {
+      "name": "🩰 Barre au sol (Jambes)",
+      "duration": "30 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Battements",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Pliés",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Ronds de jambe",
+          "rounds": 3,
+          "reps": "10"
+        }
+      ]
+    },
+    {
+      "name": "🛋️ Canapé Workout",
+      "duration": "20 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Squat canapé",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Hip Thrust canapé",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Step Up canapé",
+          "rounds": 3,
+          "reps": "10"
+        }
+      ]
+    },
+    {
+      "name": "🔥 Ischios & Fessiers",
+      "duration": "30 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Nordic Curl (négatif)",
+          "rounds": 3,
+          "reps": "8"
+        },
+        {
+          "name": "Good Morning (sac/élastique)",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Single Leg Bridge",
+          "rounds": 3,
+          "reps": "10/leg"
+        }
+      ]
+    },
+    {
+      "name": "🧱 Quadzilla",
+      "duration": "30 min",
+      "intensity": 2,
+      "exercises": [
+        {
+          "name": "Sissy Squat (ou variante)",
+          "rounds": 3,
+          "reps": "10"
+        },
+        {
+          "name": "Squat talons surélevés",
+          "rounds": 3,
+          "reps": "15"
+        },
+        {
+          "name": "Fente statique",
+          "rounds": 3,
+          "reps": "30s/leg"
+        }
+      ]
+    },
+    {
+      "name": "🏃 Mollets d'acier",
+      "duration": "10 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Single Leg Calf Raise",
+          "rounds": 4,
+          "reps": "15"
+        },
+        {
+          "name": "Marche pointe des pieds",
+          "rounds": 2,
+          "reps": "1 min"
+        }
+      ]
+    }
+  ],
+  "soft": [
+    {
+      "name": "🧘‍♀️ Morning Yoga",
+      "duration": "20 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Salutation soleil",
+          "rounds": 3,
+          "reps": "Flow"
+        },
+        {
+          "name": "Chien tête en bas",
+          "rounds": 3,
+          "reps": "1 min"
+        },
+        {
+          "name": "Guerrier 1 & 2",
+          "rounds": 3,
+          "reps": "30s/side"
+        }
+      ]
+    },
+    {
+      "name": "☁️ Pilates Doux",
+      "duration": "30 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "The Hundred",
+          "rounds": 1,
+          "reps": "100"
+        },
+        {
+          "name": "Rolling like a ball",
+          "rounds": 3,
+          "reps": "10"
+        },
+        {
+          "name": "Swimming",
+          "rounds": 3,
+          "reps": "20"
+        },
+        {
+          "name": "Leg Circles",
+          "rounds": 3,
+          "reps": "10"
+        }
+      ]
+    },
+    {
+      "name": "🤸 Stretching Total",
+      "duration": "25 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Etirement Ischios",
+          "rounds": 2,
+          "reps": "45s"
+        },
+        {
+          "name": "Etirement Dos (Child Pose)",
+          "rounds": 2,
+          "reps": "1 min"
+        },
+        {
+          "name": "Etirement Psoas",
+          "rounds": 2,
+          "reps": "45s"
+        },
+        {
+          "name": "Twist colonne",
+          "rounds": 2,
+          "reps": "45s"
+        }
+      ]
+    },
+    {
+      "name": "😴 Yoga du Soir",
+      "duration": "20 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Posture de l'enfant",
+          "rounds": 1,
+          "reps": "2 min"
+        },
+        {
+          "name": "Papillon allongé",
+          "rounds": 1,
+          "reps": "2 min"
+        },
+        {
+          "name": "Jambes au mur",
+          "rounds": 1,
+          "reps": "5 min"
+        }
+      ]
+    },
+    {
+      "name": "🔋 Mobilité Hanches",
+      "duration": "15 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "90/90 Stretch",
+          "rounds": 2,
+          "reps": "1 min"
+        },
+        {
+          "name": "Deep Squat Hold",
+          "rounds": 2,
+          "reps": "1 min"
+        },
+        {
+          "name": "Lizard Pose",
+          "rounds": 2,
+          "reps": "1 min"
+        }
+      ]
+    },
+    {
+      "name": "🎋 Mobilité Epaules",
+      "duration": "15 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Dislocations (baton/serviette)",
+          "rounds": 2,
+          "reps": "15"
+        },
+        {
+          "name": "Scapular Push Up",
+          "rounds": 2,
+          "reps": "15"
+        },
+        {
+          "name": "Thread the needle",
+          "rounds": 2,
+          "reps": "45s"
+        }
+      ]
+    },
+    {
+      "name": "🧊 Récupération Active",
+      "duration": "30 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Marche lente",
+          "rounds": 1,
+          "reps": "20 min"
+        },
+        {
+          "name": "Foam Rolling (si dispo)",
+          "rounds": 1,
+          "reps": "10 min"
+        }
+      ]
+    },
+    {
+      "name": "🌬️ Respiration & Core",
+      "duration": "15 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Stomach Vacuum",
+          "rounds": 5,
+          "reps": "20s"
+        },
+        {
+          "name": "Dead Bug",
+          "rounds": 3,
+          "reps": "20"
+        },
+        {
+          "name": "Bird Dog",
+          "rounds": 3,
+          "reps": "20"
+        }
+      ]
+    },
+    {
+      "name": "🧘 Yin Yoga Basics",
+      "duration": "30 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Dragon Pose",
+          "rounds": 1,
+          "reps": "3 min/side"
+        },
+        {
+          "name": "Swan Pose",
+          "rounds": 1,
+          "reps": "3 min/side"
+        },
+        {
+          "name": "Caterpillar",
+          "rounds": 1,
+          "reps": "3 min"
+        }
+      ]
+    },
+    {
+      "name": "🧍 Equilibre & Proprio",
+      "duration": "15 min",
+      "intensity": 1,
+      "exercises": [
+        {
+          "name": "Single Leg Stand (yeux fermés)",
+          "rounds": 3,
+          "reps": "30s"
+        },
+        {
+          "name": "Star Excursion",
+          "rounds": 3,
+          "reps": "5"
+        },
+        {
+          "name": "Walking Line",
+          "rounds": 3,
+          "reps": "1 min"
+        }
+      ]
+    }
+  ]
 }

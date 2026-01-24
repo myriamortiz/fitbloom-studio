@@ -1609,3 +1609,68 @@ input:-webkit-autofill:active {
   margin-top: 2rem;
   flex-wrap: wrap;
 }
+
+/* -------------------------------- */
+/*         FITNESS V1 (New)         */
+/* -------------------------------- */
+
+.day-bubble.active-day {
+  background: var(--fbs-rose-clair);
+  color: #1a1a1a !important;
+  transform: scale(1.05);
+  border-color: var(--fbs-rose-pale);
+  box-shadow: 0 0 25px var(--fbs-glow);
+}
+
+.day-bubble.active-day span, 
+.day-bubble.active-day strong {
+  color: #1a1a1a !important;
+}
+
+.day-bubble.rest-day {
+  opacity: 0.6;
+}
+
+.day-bubble:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Modal Exercises List */
+.exo-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.exo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.exo-name {
+  font-weight: 700;
+  color: var(--fbs-rose-clair);
+  font-size: 1.1rem;
+}
+
+.exo-rounds {
+  background: rgba(255,255,255,0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: var(--fbs-taupe-rose);
+}
+
+.exo-reps {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.exo-reps strong {
+  color: #fff;
+}
