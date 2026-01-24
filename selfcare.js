@@ -1,74 +1,299 @@
 // -------------------------------
-// SELFCARE UNIVERSE
+// SELFCARE UNIVERSE (V1)
 // -------------------------------
 
-// EMOTIONS
-function loadEmotions() {
-  const container = document.getElementById("emotion-container");
-  if (!container) return; // Pas sur la page
+document.addEventListener("DOMContentLoaded", () => {
+  loadMoodModule();
+  loadHabitsModule();
+  loadJournalModule();
+  loadRitual();
+  loadRespiration();
+  loadTodos();
+  loadComplements(); // V8 logic
+});
 
-  // Gérer le clic
+
+// ============================================
+// 1. MOOD TRACKER & HISTORY
+// ============================================
+
+function loadMoodModule() {
+  const container = document.getElementById("emotion-container");
+  if (!container) return;
+
+  // 1. Click Handler
   const buttons = container.querySelectorAll(".emotion-btn");
   buttons.forEach(btn => {
     btn.onclick = () => {
-      // Retirer la classe active
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const emotion = btn.getAttribute("data-emotion");
-      saveEmotion(emotion);
+      const emotion = btn.getAttribute("data-emotion"); // e.g. "😊"
+      const val = parseInt(btn.getAttribute("data-val") || "3", 10);
+
+      saveEmotion(emotion, val);
     };
   });
+
+  // 2. Render Chart
+  renderMoodChart();
 }
 
-function saveEmotion(emotion) {
+function saveEmotion(emotion, val) {
   const msg = document.getElementById("emotion-save-msg");
-
-  // Sauvegarde fictive
   const today = new Date().toISOString().split("T")[0];
+
+  // Save current feeling (for recap)
   const history = JSON.parse(localStorage.getItem("emotions_history")) || {};
-  history[today] = emotion;
+  history[today] = { emotion, val };
+
+  // Cleanup old entries (> 30 days) to keep easy storage? (Optional, let's keep it simple)
+
   localStorage.setItem("emotions_history", JSON.stringify(history));
 
-  msg.textContent = `Noté : "${emotion}". Prends soin de toi 💖`;
+  msg.textContent = `Enregistré : ${emotion}. Prends soin de toi 💖`;
+
+  // Re-render chart to show today's update
+  renderMoodChart();
 }
 
-// HABITS
-function loadHabits() {
-  const habits = document.querySelectorAll(".habit");
-  if (!habits.length) return;
+function renderMoodChart() {
+  const chartEl = document.getElementById('mood-chart');
+  if (!chartEl) return;
 
-  const today = new Date().toISOString().split("T")[0];
-  const history = JSON.parse(localStorage.getItem("habits_history")) || {};
-  const todaysHabits = history[today] || [];
+  chartEl.innerHTML = '';
 
-  habits.forEach(h => {
-    const type = h.getAttribute("data-habit");
+  // Get last 7 days including today
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    days.push(d.toISOString().split("T")[0]);
+  }
 
-    // Restaurer l'état
-    if (todaysHabits.includes(type)) {
-      h.checked = true;
-      h.parentElement.style.color = "var(--fbs-rose-clair)";
+  const history = JSON.parse(localStorage.getItem("emotions_history")) || {};
+
+  const dayNames = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+
+  days.forEach(dateStr => {
+    const entry = history[dateStr];
+    const dateObj = new Date(dateStr);
+    const dayLabel = dayNames[dateObj.getDay()];
+
+    // Value 1 to 5 mapping to percentage height
+    // 1=20%, 5=100%
+    let height = "5px";
+    let color = "rgba(255,255,255,0.1)";
+    let icon = "";
+
+    if (entry) {
+      const pct = (entry.val / 5) * 100;
+      height = `${Math.max(pct, 10)}%`; // Min 10% visible
+      color = "var(--fbs-rose-clair)";
+      // Color variations
+      if (entry.val <= 2) color = "#c48a8a"; // Red-ish
+      if (entry.val >= 4) color = "#a8d5ba"; // Green-ish/Happy
+      icon = entry.emotion || "";
     }
 
-    // Click event
-    h.onchange = () => {
-      let current = history[today] || [];
-      if (h.checked) {
-        if (!current.includes(type)) current.push(type);
-        h.parentElement.style.color = "var(--fbs-rose-clair)";
-      } else {
-        current = current.filter(x => x !== type);
-        h.parentElement.style.color = "var(--fbs-rose-pale)";
-      }
-      history[today] = current;
-      localStorage.setItem("habits_history", JSON.stringify(history));
-    };
+    const barContainer = document.createElement('div');
+    barContainer.className = 'mood-bar-container';
+
+    barContainer.innerHTML = `
+            <div style="margin-bottom:2px; font-size:0.8rem">${icon}</div>
+            <div class="mood-bar" style="height:${height}; background:${color}"></div>
+            <div class="mood-day">${dayLabel}</div>
+        `;
+
+    chartEl.appendChild(barContainer);
   });
 }
 
-// RITUEL DU JOUR
-function displayDate() {
+
+// ============================================
+// 2. HABITS TRACKER (Dynamic)
+// ============================================
+
+const DEFAULT_HABITS = [
+  { id: 'water', label: "Boire 2L d’eau 💧" },
+  { id: 'complements', label: "Prendre mes compléments 💊" },
+  { id: 'sport', label: "Bouger mon corps 💪" }
+];
+
+function loadHabitsModule() {
+  renderHabitsList();
+
+  // Add Button Logic
+  const addBtn = document.getElementById('add-habit-btn');
+  const addInput = document.getElementById('new-habit-input');
+
+  if (addBtn && addInput) {
+    addBtn.onclick = () => {
+      const text = addInput.value.trim();
+      if (text) {
+        addNewHabit(text);
+        addInput.value = "";
+      }
+    };
+  }
+
+  updateStreak();
+}
+
+function getMyHabits() {
+  const custom = JSON.parse(localStorage.getItem('my_custom_habits'));
+  if (!custom) {
+    // Init defaults
+    localStorage.setItem('my_custom_habits', JSON.stringify(DEFAULT_HABITS));
+    return DEFAULT_HABITS;
+  }
+  return custom;
+}
+
+function addNewHabit(text) {
+  const habits = getMyHabits();
+  const id = "h_" + Date.now();
+  habits.push({ id, label: text });
+  localStorage.setItem('my_custom_habits', JSON.stringify(habits));
+  renderHabitsList();
+}
+
+function deleteHabit(id) {
+  let habits = getMyHabits();
+  habits = habits.filter(h => h.id !== id);
+  localStorage.setItem('my_custom_habits', JSON.stringify(habits));
+  renderHabitsList();
+}
+
+function renderHabitsList() {
+  const container = document.getElementById('habits-list');
+  if (!container) return;
+
+  const habits = getMyHabits();
+  const today = new Date().toISOString().split("T")[0];
+  const history = JSON.parse(localStorage.getItem("habits_history")) || {};
+  const todaysDone = history[today] || [];
+
+  container.innerHTML = "";
+
+  habits.forEach(h => {
+    const isDone = todaysDone.includes(h.id);
+
+    const el = document.createElement('div');
+    el.className = 'habit-item';
+
+    // Inner HTML
+    el.innerHTML = `
+            <div class="habit-label" onclick="toggleHabit('${h.id}')">
+                <div style="
+                    width:20px; height:20px; 
+                    border:2px solid var(--fbs-rose-clair); 
+                    border-radius:50%; 
+                    display:flex; align-items:center; justify-content:center;
+                    background:${isDone ? 'var(--fbs-rose-clair)' : 'transparent'}
+                ">
+                    ${isDone ? '<span style="color:#1a1a1a; font-size:0.8rem">✔</span>' : ''}
+                </div>
+                <span style="color:${isDone ? 'var(--fbs-rose-clair)' : 'var(--fbs-rose-pale)'}; text-decoration:${isDone ? 'line-through' : 'none'}">
+                    ${h.label}
+                </span>
+            </div>
+            <button class="delete-habit-btn" onclick="deleteHabit('${h.id}')">✕</button>
+        `;
+
+    container.appendChild(el);
+  });
+}
+
+// Global scope for onclick
+window.toggleHabit = (id) => {
+  const today = new Date().toISOString().split("T")[0];
+  const history = JSON.parse(localStorage.getItem("habits_history")) || {};
+  let todaysDone = history[today] || [];
+
+  if (todaysDone.includes(id)) {
+    todaysDone = todaysDone.filter(x => x !== id);
+  } else {
+    todaysDone.push(id);
+  }
+
+  history[today] = todaysDone;
+  localStorage.setItem("habits_history", JSON.stringify(history));
+
+  renderHabitsList();
+  updateStreak();
+};
+
+window.deleteHabit = (id) => {
+  if (confirm("Supprimer cette habitude ?")) {
+    deleteHabit(id);
+  }
+}
+
+function updateStreak() {
+  // Simple streak logic: check consecutive days backward where at least 1 habit was done
+  const history = JSON.parse(localStorage.getItem("habits_history")) || {};
+  let streak = 0;
+
+  for (let i = 0; i < 365; i++) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const dateStr = d.toISOString().split("T")[0];
+
+    if (history[dateStr] && history[dateStr].length > 0) {
+      streak++;
+    } else if (i === 0) {
+      // If today is empty, don't break streak yet (user might do it later)
+      continue;
+    } else {
+      break;
+    }
+  }
+
+  const el = document.getElementById('habit-streak');
+  if (el && streak > 1) {
+    el.textContent = `🔥 Série : ${streak} jours !`;
+  } else {
+    if (el) el.textContent = "";
+  }
+}
+
+
+// ============================================
+// 3. JOURNALING
+// ============================================
+
+function loadJournalModule() {
+  const input = document.getElementById('journal-input');
+  const btn = document.getElementById('save-journal-btn');
+  const feedback = document.getElementById('journal-feedback');
+
+  if (!input || !btn) return;
+
+  const today = new Date().toISOString().split("T")[0];
+  const journalData = JSON.parse(localStorage.getItem("my_journal")) || {};
+
+  // Load existing
+  if (journalData[today]) {
+    input.value = journalData[today];
+  }
+
+  btn.onclick = () => {
+    const text = input.value;
+    journalData[today] = text;
+    localStorage.setItem("my_journal", JSON.stringify(journalData));
+
+    feedback.textContent = "Sauvegardé ✨";
+    setTimeout(() => feedback.textContent = "", 2000);
+  };
+}
+
+
+// ============================================
+// 4. HELPERS & LEGACY (Respiration, Rituals...)
+// ============================================
+
+function loadRitual() {
   const rituelText = document.getElementById("rituel");
   if (!rituelText) return;
 
@@ -82,15 +307,14 @@ function displayDate() {
     "Regarde le ciel pendant 1 minute sans rien faire."
   ];
 
-  const today = new Date().getDate(); // 1-31
+  const today = new Date().getDate();
   const index = today % rituels.length;
   rituelText.textContent = `✨ ${rituels[index]}`;
 }
 
-
 // RESPIRATION
 let breatheInterval;
-function startBreathing(durationMinutes) {
+window.startBreathing = (durationMinutes) => {
   const circle = document.getElementById('breath-circle');
   const timerText = document.getElementById('breath-timer');
 
@@ -113,7 +337,7 @@ function startBreathing(durationMinutes) {
   }, 1000);
 }
 
-function stopBreathing() {
+window.stopBreathing = () => {
   const circle = document.getElementById('breath-circle');
   const timerText = document.getElementById('breath-timer');
   if (!circle) return;
@@ -129,12 +353,13 @@ function formatTime(sec) {
   return `${m}:${s < 10 ? '0' : ''}${s}`;
 }
 
-// TODO LIST
+// TODO LIST (Legacy)
 function loadTodos() {
+  // Keeping existing TODO logic but simplified for brevity in this rewrite
+  // Assuming user wants to keep it
   const container = document.getElementById('todos-container');
   const input = document.getElementById('todo-input');
   const addBtn = document.getElementById('add-todo');
-
   if (!container) return;
 
   let todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -143,23 +368,19 @@ function loadTodos() {
     container.innerHTML = '';
     todos.forEach((todo, idx) => {
       const div = document.createElement('div');
-      div.style.display = 'flex';
-      div.style.justifyContent = 'space-between';
-      div.style.background = 'rgba(255,255,255,0.05)';
-      div.style.padding = '0.8rem';
-      div.style.borderRadius = '15px';
-      div.style.alignItems = 'center';
-
+      div.style.cssText = "display:flex; justify-content:space-between; background:rgba(255,255,255,0.05); padding:0.8rem; border-radius:15px; margin-bottom:0.5rem; align-items:center;";
       div.innerHTML = `
                 <span style="text-decoration: ${todo.done ? 'line-through' : 'none'}; color: ${todo.done ? 'grey' : 'white'}">${todo.text}</span>
-                <button onclick="toggleTodo(${idx})" style="background:none; border:none; cursor:pointer;">${todo.done ? '✅' : '🔲'}</button>
-                <button onclick="deleteTodo(${idx})" style="background:none; border:none; cursor:pointer; margin-left:10px;">🗑️</button>
+                <div>
+                   <button onclick="toggleTodo(${idx})" style="background:none; border:none; cursor:pointer;">${todo.done ? '✅' : '🔲'}</button>
+                   <button onclick="deleteTodo(${idx})" style="background:none; border:none; cursor:pointer; margin-left:10px;">🗑️</button>
+                </div>
             `;
       container.appendChild(div);
     });
   }
 
-  addBtn.onclick = () => {
+  if (addBtn) addBtn.onclick = () => {
     if (input.value.trim()) {
       todos.push({ text: input.value, done: false });
       localStorage.setItem('todos', JSON.stringify(todos));
@@ -183,87 +404,50 @@ function loadTodos() {
   render();
 }
 
-// 4. INIT
-// ----------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  displayDate();
-  loadEmotions();
-  loadHabits();
-  loadTodos();
-  loadComplements(); // V8
-
-  const recap = document.getElementById('weekly-recap');
-  if (recap) {
-    const profile = JSON.parse(localStorage.getItem('userProfile'));
-    if (profile) {
-      recap.innerHTML = `Semaine en cours pour <strong>${profile.name}</strong>.<br>Objectif : ${profile.goal.replace('_', ' ')}.`;
-    }
-  }
-});
-
-// 5. COMPLEMENTS EXPERT (V8 - 4 SAISONS + CATEGORIES)
+// COMPLEMENTS (V8 Logic)
 let complementsData = null;
-
 async function loadComplements() {
-  // Detect 4 Seasons
-  const month = new Date().getMonth(); // 0 = Jan, 11 = Dec
-  let season = 'hiver'; // default
+  const month = new Date().getMonth();
   let seasonIcon = '❄️ Hiver';
+  if (month >= 2 && month <= 4) { seasonIcon = '🌸 Printemps'; }
+  else if (month >= 5 && month <= 7) { seasonIcon = '☀️ Été'; }
+  else if (month >= 8 && month <= 10) { seasonIcon = '🍂 Automne'; }
 
-  if (month >= 2 && month <= 4) { season = 'printemps'; seasonIcon = '🌸 Printemps'; }
-  else if (month >= 5 && month <= 7) { season = 'ete'; seasonIcon = '☀️ Été'; }
-  else if (month >= 8 && month <= 10) { season = 'automne'; seasonIcon = '🍂 Automne'; }
-
-  // Titre Badge Saison
   const header = document.querySelector('.page-selfcare .sc-title');
-  if (header) {
-    // Reset content to ensure clean state
-    if (!header.getAttribute('data-original-text')) {
-      header.setAttribute('data-original-text', 'Mes compléments');
-    }
+  if (header && !header.innerHTML.includes("span")) {
     header.innerHTML = `Mes compléments <span class="season-badge">${seasonIcon}</span>`;
   }
-
-  // Load 'saison' by default
   updateComplementsDisplay('saison');
 }
 
 window.switchComplementTab = function (category, btn) {
-  // Highlighting
   document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-
   updateComplementsDisplay(category);
 }
 
 async function updateComplementsDisplay(category) {
   const container = document.getElementById('complements-container');
   if (!container) return;
-
   if (!complementsData) {
     try {
       const res = await fetch('data/complements/complements.json');
       complementsData = await res.json();
     } catch (e) {
-      console.error("Erreur chargement", e);
       container.innerHTML = "<p>Erreur.</p>";
       return;
     }
   }
 
   let list = [];
-
-  // LOGIC : Category or Season ?
   if (category === 'saison') {
     const month = new Date().getMonth();
     let seasonKey = 'hiver';
     if (month >= 2 && month <= 4) seasonKey = 'printemps';
     else if (month >= 5 && month <= 7) seasonKey = 'ete';
     else if (month >= 8 && month <= 10) seasonKey = 'automne';
-
     list = complementsData['saisons'][seasonKey];
   } else {
-    // Direct category Access (stress, poids...)
     list = complementsData[category] || [];
   }
 
@@ -274,15 +458,4 @@ async function updateComplementsDisplay(category) {
             <p style="font-size:0.85rem; color:var(--fbs-taupe-rose); line-height:1.4;">${item.desc}</p>
         </div>
     `).join('');
-}
-
-// BACK BUTTON
-const backButton = document.querySelector(".back-btn");
-if (backButton) {
-  backButton.addEventListener("click", function (e) {
-    if (window.history.length > 1) {
-      e.preventDefault();
-      window.history.back();
-    }
-  });
 }
