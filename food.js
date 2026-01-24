@@ -1,127 +1,148 @@
 // ----------------------------
 // CONFIG
 // ----------------------------
+// ----------------------------
+// CONFIG & DATA
+// ----------------------------
 const DAYS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
-const CATEGORIES = ["brunch", "collation", "diner"];
-const DATA_PATHS = {
-  brunch: "data/brunch/brunch.json",
-  collation: "data/collation/collation.json",
-  diner: "data/diner/diner.json",
-  jus: "data/jus/jus.json",
-};
+const MEALS_URL = "data/meals.json";
+const JUICE_URL = "data/jus/jus.json";
 
-// Variable globale
-let ALL_DATA = {};
+let ALL_RECIPES = []; // List of all recipes from meals.json
+let JUICE_DATA = {}; // Keep juice separate for now if structure differs
 
 // ----------------------------
-// LOAD ALL JSON FILES
+// LOAD DATA
 // ----------------------------
 async function loadAllData() {
-  const data = {};
   try {
-    for (let cat of [...CATEGORIES, "jus"]) {
-      const response = await fetch(DATA_PATHS[cat]);
-      data[cat] = await response.json();
-    }
-    ALL_DATA = data;
-    return data;
+    // Load Meals
+    const respMeals = await fetch(MEALS_URL);
+    const jsonMeals = await respMeals.json();
+    ALL_RECIPES = jsonMeals.recipes || [];
+
+    // Load Juice
+    const respJuice = await fetch(JUICE_URL);
+    JUICE_DATA = await respJuice.json();
+
+    return { recipes: ALL_RECIPES, juice: JUICE_DATA };
   } catch (e) {
-    console.error("Error loading data", e);
-    return {};
+    console.error("Error loading recipes", e);
+    return { recipes: [], juice: {} };
   }
 }
 
 // ----------------------------
-// SMART PICK ENGINE 🧠
+// SMART ENGINE 🧠
 // ----------------------------
 function getSmartProfile() {
   try {
-    const raw = localStorage.getItem("userProfile");
-    return raw ? JSON.parse(raw) : null;
-  } catch (e) {
-    return null;
-  }
+    return JSON.parse(localStorage.getItem("userProfile")) || null;
+  } catch (e) { return null; }
 }
 
-function filterByProfile(recipes, profile) {
-  if (!profile || !profile.intolerances || profile.intolerances.length === 0) {
-    return recipes;
-  }
-  return recipes.filter(r => {
-    if (!r.tags) return false;
-    return profile.intolerances.every(into => r.tags.includes(into));
-  });
+function getFastingConfig(profile) {
+  if (!profile || !profile.fasting) return "standard"; // 4 meals
+  return profile.fastingMode || "standard"; // 'skip_breakfast' | 'skip_dinner'
 }
 
-function pickRecipe(list) {
-  if (!list) return { name: "Erreur", calories: 0, ingredients: [], instructions: "" };
+/*
+  Categories mapping based on config:
+  Standard: [breakfast, lunch, snack, dinner]
+  Skip Breakfast: [lunch, snack, dinner]
+  Skip Dinner: [breakfast, lunch, snack]
+*/
+function getMealSlots(profile) {
+  const mode = getFastingConfig(profile);
+  if (mode === 'skip_breakfast') return ['brunch', 'collation', 'diner']; // using old keys for now or new tags?
+  // Let's use generic keys and map them to tags
+  // Keys for UI: 'breakfast', 'lunch', 'snack', 'dinner'
+  if (mode === 'skip_breakfast') return ['lunch', 'snack', 'dinner'];
+  if (mode === 'skip_dinner') return ['breakfast', 'lunch', 'snack'];
+  return ['breakfast', 'lunch', 'snack', 'dinner'];
+}
 
-  const profile = getSmartProfile();
-  const seasons = ["spring", "summer", "autumn", "winter"];
-  const season = seasons[Math.floor(Math.random() * seasons.length)];
+function getTagsForSlot(slot) {
+  // Map UI slot to DB tags
+  // We used 'brunch' tag for breakfast/lunch in migration script
+  if (slot === 'breakfast') return ['brunch'];
+  if (slot === 'lunch') return ['brunch', 'lunch']; // some brunch recipes work as lunch
+  if (slot === 'snack') return ['snack', 'collation'];
+  if (slot === 'dinner') return ['dinner', 'diner'];
+  return [];
+}
 
-  let poolPermanent = list.permanent || [];
-  let poolSeason = list[season] || [];
+function filterRecipes(pool, profile, slot) {
+  // 1. Tag Filtering
+  const targetTags = getTagsForSlot(slot);
+  let candidates = pool.filter(r => r.tags && targetTags.some(t => r.tags.includes(t)));
 
-  if (profile) {
-    poolPermanent = filterByProfile(poolPermanent, profile);
-    poolSeason = filterByProfile(poolSeason, profile);
+  // 2. Intolerance Filtering
+  if (profile && profile.intolerances && profile.intolerances.length > 0) {
+    candidates = candidates.filter(r => {
+      return profile.intolerances.every(into => r.tags.includes(into));
+    });
   }
 
-  // Filtrage par Objectif
+  // 3. Goal Filtering (Calorie logic)
   if (profile && profile.goal) {
-    const filterByGoal = (recipes) => {
-      let maxCaloriesPerMeal = 600;
-      if (profile.targetCalories) {
-        maxCaloriesPerMeal = Math.round(profile.targetCalories / 3.2);
-      } else if (profile.goal === 'perte_poids') {
-        maxCaloriesPerMeal = 500;
-      }
-
-      if (profile.goal === 'perte_poids') {
-        const fitsInBudget = recipes.filter(r => r.calories <= maxCaloriesPerMeal);
-        return fitsInBudget.length > 0 ? fitsInBudget : recipes.filter(r => r.calories <= maxCaloriesPerMeal + 100);
-      }
-      if (profile.goal === 'prise_masse') {
-        const dense = recipes.filter(r => r.calories > 350);
-        return dense.length > 0 ? dense : recipes;
-      }
-      return recipes;
-    };
-    poolPermanent = filterByGoal(poolPermanent);
-    poolSeason = filterByGoal(poolSeason);
+    // Simplified Logic for now
+    if (profile.goal === 'perte_poids') {
+      candidates = candidates.sort((a, b) => (a.calories || 0) - (b.calories || 0));
+      // Take bottom 50% lighter
+      if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.6));
+    }
+    if (profile.goal === 'prise_masse') {
+      candidates = candidates.sort((a, b) => (b.calories || 0) - (a.calories || 0));
+      // Take top 50% heavier
+      if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.6));
+    }
   }
 
-  const roll = Math.random();
-  if (roll <= 0.8 && poolPermanent.length > 0) {
-    return poolPermanent[Math.floor(Math.random() * poolPermanent.length)];
-  } else if (poolSeason.length > 0) {
-    return poolSeason[Math.floor(Math.random() * poolSeason.length)];
-  } else {
-    return (list.permanent && list.permanent[0]) ? list.permanent[0] : { name: "Non trouvé" };
-  }
+  return candidates;
+}
+
+function pickRecipeForSlot(slot, profile) {
+  const candidates = filterRecipes(ALL_RECIPES, profile, slot);
+  if (!candidates || candidates.length === 0) return { name: "Aucune recette trouvée", calories: 0, ingredients: [], instructions: "" };
+
+  // Random pick
+  return candidates[Math.floor(Math.random() * candidates.length)];
 }
 
 // ----------------------------
 // GENERATE WEEK
 // ----------------------------
+function pickJuice(bgData) {
+  // Legacy juice picker
+  const season = "permanent";
+  // Simplify: just pick random from permanent
+  const list = (bgData.permanent) || [];
+  if (list.length === 0) return { name: "Jus Detox" };
+  return list[Math.floor(Math.random() * list.length)];
+}
+
 function generateWeek(data) {
   const week = [];
-  const juice = pickRecipe(data.jus);
+  const profile = getSmartProfile();
+
+  const juice = pickJuice(data.juice);
   week.push({ juice });
 
+  const slots = getMealSlots(profile);
+
   for (let i = 0; i < 7; i++) {
-    week.push({
-      brunch: pickRecipe(data.brunch),
-      collation: pickRecipe(data.collation),
-      diner: pickRecipe(data.diner),
+    const dayPlan = {};
+    slots.forEach(slot => {
+      dayPlan[slot] = pickRecipeForSlot(slot, profile);
     });
+    week.push(dayPlan);
   }
   return week;
 }
 
 // ----------------------------
-// LOCALSTORAGE
+// LOCALSTORAGE MANIPULATION
 // ----------------------------
 function getMonday() {
   const d = new Date();
@@ -129,22 +150,16 @@ function getMonday() {
   const diff = d.getDate() - day + (day === 0 ? -6 : 1);
   return new Date(d.setDate(diff));
 }
-
-function mondayString(date) {
-  return date.toISOString().split("T")[0];
-}
+function mondayString(date) { return date.toISOString().split("T")[0]; }
 
 function loadOrGenerateWeek(data) {
-  if (!data.brunch) return []; // Data not loaded
-
-  const saved = localStorage.getItem("fbs-week");
+  const saved = localStorage.getItem("fbs-week-v2"); // New key for V2 structure
   const savedMonday = localStorage.getItem("fbs-week-date");
   const thisMonday = mondayString(getMonday());
 
+  // Check if we need to regenerate (new monday OR profile changed recently - not handled here but could be)
   if (saved && savedMonday === thisMonday) {
-    try {
-      return JSON.parse(saved);
-    } catch (e) { console.error(e); }
+    try { return JSON.parse(saved); } catch (e) { console.error(e); }
   }
 
   const newWeek = generateWeek(data);
@@ -154,14 +169,16 @@ function loadOrGenerateWeek(data) {
 
 function saveWeek(week) {
   const thisMonday = mondayString(getMonday());
-  localStorage.setItem("fbs-week", JSON.stringify(week));
+  localStorage.setItem("fbs-week-v2", JSON.stringify(week));
   localStorage.setItem("fbs-week-date", thisMonday);
 }
 
-function swapRecipe(dayIndex, category) {
-  const newRecipe = pickRecipe(ALL_DATA[category]);
-  const week = JSON.parse(localStorage.getItem("fbs-week"));
-  week[dayIndex + 1][category] = newRecipe;
+function swapRecipe(dayIndex, slot) {
+  const profile = getSmartProfile();
+  const newRecipe = pickRecipeForSlot(slot, profile);
+  const week = JSON.parse(localStorage.getItem("fbs-week-v2"));
+
+  week[dayIndex + 1][slot] = newRecipe;
   saveWeek(week);
   displayWeek(week);
 }
@@ -174,60 +191,61 @@ function displayWeek(week) {
 
   const juiceSection = document.getElementById("weekly-juice");
   const container = document.getElementById("food-week");
+  const profile = getSmartProfile();
+  const slots = getMealSlots(profile); // Ensure consistency
 
-  // SAFETY ESCAPE
+  // Helper labels
+  const labels = {
+    'breakfast': '🥞 Petit Déjeuner',
+    'lunch': '🥗 Déjeuner',
+    'snack': '🥜 Collation',
+    'dinner': '🍲 Dîner'
+  };
+
   const escape = (str) => {
     if (!str) return '{}';
-    return JSON.stringify(str).replace(/'/g, "&apos;");
+    return JSON.stringify(str).replace(/'/g, "&apos;").replace(/"/g, "&quot;");
   }
 
-  const juice = week[0].juice;
-  juiceSection.innerHTML = `
-    <div class="juice-card">
-      <h2>🌱 Jus bien-être de la semaine</h2>
-      <p class="juice-name">${juice.name || "Jus mystère"}</p>
-      <p class="juice-cal">${juice.calories || 0} kcal</p>
-      <button class="see-btn" onclick='openRecipe(${escape(juice)})'>Voir la recette</button>
-    </div>
-  `;
+  // JUICE
+  if (week[0] && week[0].juice) {
+    const j = week[0].juice;
+    juiceSection.innerHTML = `
+        <div class="juice-card">
+        <h2>🌱 Jus bien-être de la semaine</h2>
+        <p class="juice-name">${j.name || ""}</p>
+        <p class="juice-cal">${j.calories || 0} kcal</p>
+        <button class="see-btn" onclick='openRecipe(${escape(j)})'>Voir la recette</button>
+        </div>`;
+  }
 
   container.innerHTML = "";
 
+  // DAYS
   week.slice(1).forEach((day, i) => {
     const block = document.createElement("div");
     block.className = "food-day";
 
-    block.innerHTML = `
-      <h2>${DAYS[i]}</h2>
+    let html = `<h2>${DAYS[i]}</h2>`;
 
-      <div class="meal-block">
-        <div class="meal-header">
-          <p class="food-meal-title">🥞 Brunch</p>
-          <button class="swap-btn" onclick="swapRecipe(${i}, 'brunch')" title="Changer de recette">🔀</button>
-        </div>
-        <p class="food-meal-text">${day.brunch.name}</p>
-        <button class="see-btn" onclick='openRecipe(${escape(day.brunch)})'>Voir la recette</button>
-      </div>
+    slots.forEach(slot => {
+      const recipe = day[slot];
+      const label = labels[slot] || slot;
 
-      <div class="meal-block">
-        <div class="meal-header">
-          <p class="food-meal-title">🥜 Collation</p>
-          <button class="swap-btn" onclick="swapRecipe(${i}, 'collation')" title="Changer de recette">🔀</button>
-        </div>
-        <p class="food-meal-text">${day.collation.name}</p>
-        <button class="see-btn" onclick='openRecipe(${escape(day.collation)})'>Voir la recette</button>
-      </div>
-      
-      <div class="meal-block">
-        <div class="meal-header">
-           <p class="food-meal-title">🥗 Dîner</p>
-           <button class="swap-btn" onclick="swapRecipe(${i}, 'diner')" title="Changer de recette">🔀</button>
-        </div>
-        <p class="food-meal-text">${day.diner.name}</p>
-        <button class="see-btn" onclick='openRecipe(${escape(day.diner)})'>Voir la recette</button>
-      </div>
-    `;
+      if (recipe) {
+        html += `
+           <div class="meal-block">
+            <div class="meal-header">
+            <p class="food-meal-title">${label}</p>
+            <button class="swap-btn" onclick="swapRecipe(${i}, '${slot}')" title="Changer">🔀</button>
+            </div>
+            <p class="food-meal-text">${recipe.name}</p>
+            <button class="see-btn" onclick='openRecipe(${escape(recipe)})'>Voir la recette</button>
+           </div>`;
+      }
+    });
 
+    block.innerHTML = html;
     container.appendChild(block);
   });
 }
@@ -304,8 +322,13 @@ function buildGroceryList(week) {
 
   if (!week) return {};
   if (week[0] && week[0].juice) week[0].juice.ingredients.forEach(pushIng);
+
+  // Generic iteration over all keys in daily object except 'juice'
   week.slice(1).forEach(day => {
-    CATEGORIES.forEach(cat => day[cat].ingredients.forEach(pushIng));
+    Object.keys(day).forEach(slotKey => {
+      const r = day[slotKey];
+      if (r && r.ingredients) r.ingredients.forEach(pushIng);
+    });
   });
 
   return ingredients;
@@ -340,7 +363,7 @@ function renderGroceryPopup(list) {
 }
 
 document.getElementById("open-grocery").addEventListener("click", () => {
-  const week = JSON.parse(localStorage.getItem("fbs-week"));
+  const week = JSON.parse(localStorage.getItem("fbs-week-v2"));
   const list = buildGroceryList(week);
   const extras = JSON.parse(localStorage.getItem('grocery_ext')) || [];
   if (extras.length > 0) {
