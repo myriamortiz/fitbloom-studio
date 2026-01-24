@@ -37,9 +37,23 @@ function nextStep(stepNumber) {
         userProfile.weight = parseInt(weight);
     }
 
-    // Si on est à l'étape 2 (Objectif) et qu'on veut aller vers 'activity'
-    if (stepNumber === 'activity') {
+    // Si on est à l'étape 2 (Objectif)
+    if (stepNumber === 'activity') { // On vient de cliquer sur "Suivant" dans Step 2 ou Step Intensity
         if (!userProfile.goal) return alert("Choisis un objectif !");
+
+        // INTERCEPTION : Si c'est perte de poids et qu'on n'a pas encore choisi l'intensité
+        // On vérifie si on est actuellement sur l'écran Step 2
+        const step2Active = document.getElementById('step-2').classList.contains('active');
+        if (step2Active && userProfile.goal === 'perte_poids') {
+            // Rediriger vers l'étape intensité au lieu d'activity
+            stepNumber = 'intensity';
+        }
+
+        // Si on est sur l'étape Intensité, on vérifie la sélection
+        const stepIntActive = document.getElementById('step-intensity').classList.contains('active');
+        if (stepIntActive && !userProfile.intensity) {
+            return alert("Choisis un rythme !");
+        }
     }
 
     // Si on est à l'étape 'activity' et qu'on veut aller vers 'fasting'
@@ -85,8 +99,11 @@ function nextStep(stepNumber) {
         console.error("Step element not found:", `step-${nextId}`);
     }
 
-    // Activer le dot correspondant
-    const dotElem = document.getElementById(`dot-${nextId}`);
+    // Activer le dot correspondant (Mapper intensity -> dot 2)
+    let dotId = nextId;
+    if (nextId === 'intensity') dotId = '2';
+
+    const dotElem = document.getElementById(`dot-${dotId}`);
     if (dotElem) {
         dotElem.classList.add('active');
     }
@@ -162,6 +179,12 @@ function selectSkipMeal(div, mode) {
     userProfile.fastingMode = mode;
 }
 
+function selectIntensity(div, mode) {
+    document.querySelectorAll('#step-intensity .goal-card').forEach(c => c.classList.remove('selected'));
+    div.classList.add('selected');
+    userProfile.intensity = mode;
+}
+
 // Calcul Mifflin-St Jeor
 function calculateCalories() {
     // Security: Ensure valid numbers
@@ -191,7 +214,12 @@ function calculateCalories() {
 
     // Ajustement selon objectif
     if (userProfile.goal === 'perte_poids') {
-        tdee *= 0.70; // Déficit 30% (Plus agressif : ~1500kcal pour un TDEE de 2200)
+        // Adaptation selon l'intensité choisie
+        if (userProfile.intensity === 'hard') {
+            tdee *= 0.70; // Déficit 30%
+        } else {
+            tdee *= 0.85; // Déficit 15% (Mode "Douce" par défaut)
+        }
     } else if (userProfile.goal === 'prise_masse') {
         tdee *= 1.10; // Surplus 10%
     }

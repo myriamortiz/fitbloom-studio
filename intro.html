@@ -74,6 +74,25 @@
             <button class="btn-next" onclick="nextStep('activity')">Suivant</button>
         </div>
 
+        <!-- Step 2.1: Intensité (Uniquement si Perte de Poids) -->
+        <div class="step-container" id="step-intensity">
+            <h1>Ton Rythme</h1>
+            <p class="subtitle">À quelle vitesse veux-tu progresser ?</p>
+            <div class="goals-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="goal-card" onclick="selectIntensity(this, 'soft')">
+                    <span class="goal-icon">🍃</span>
+                    <strong>Douce</strong>
+                    <div style="font-size:0.8rem; color:#d9c0b8">-15% kcal</div>
+                </div>
+                <div class="goal-card" onclick="selectIntensity(this, 'hard')">
+                    <span class="goal-icon">🔥</span>
+                    <strong>Intense</strong>
+                    <div style="font-size:0.8rem; color:#d9c0b8">-30% kcal</div>
+                </div>
+            </div>
+            <button class="btn-next" onclick="nextStep('activity')">Suivant</button>
+        </div>
+
         <!-- Step 2.5: Activité -->
         <div class="step-container" id="step-activity">
             <h1>Ton Rythme</h1>
