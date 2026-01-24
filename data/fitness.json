@@ -38,7 +38,7 @@
           "reps": "1 min"
         },
         {
-          "name": "Corde à sauter",
+          "name": "Corde à sauter (ou Jumping Jacks)",
           "rounds": 5,
           "reps": "1 min"
         },
@@ -223,14 +223,14 @@
       "intensity": 2,
       "exercises": [
         {
-          "name": "Thrusters",
+          "name": "Squat Jumps + Punch",
           "rounds": 3,
           "reps": "12"
         },
         {
-          "name": "Renegade Rows",
+          "name": "Planche Taps Epaules",
           "rounds": 3,
-          "reps": "10"
+          "reps": "20"
         },
         {
           "name": "Planche dynamique",
@@ -277,9 +277,9 @@
           "reps": "10"
         },
         {
-          "name": "Pull-ups (ou Rowing)",
+          "name": "Superman Pull (sol)",
           "rounds": 4,
-          "reps": "8"
+          "reps": "15"
         },
         {
           "name": "Lunges walk",
@@ -294,17 +294,17 @@
       "intensity": 2,
       "exercises": [
         {
-          "name": "Sac à dos Squat",
+          "name": "Squats Tempo (Lent)",
           "rounds": 4,
           "reps": "15"
         },
         {
-          "name": "Sac à dos Press",
+          "name": "Pike Push Ups (Epaules)",
           "rounds": 4,
-          "reps": "12"
+          "reps": "10"
         },
         {
-          "name": "Sac à dos Row",
+          "name": "Superman Pull (Dos)",
           "rounds": 4,
           "reps": "15"
         }
@@ -333,22 +333,22 @@
       ]
     },
     {
-      "name": "🏋️‍♀️ Kettlebell Flow",
+      "name": "🏋️‍♀️ Charge Flow (Sac/Bouteille)",
       "duration": "25 min",
       "intensity": 3,
       "exercises": [
         {
-          "name": "Swing",
+          "name": "Glute Bridge March",
           "rounds": 5,
           "reps": "20"
         },
         {
-          "name": "Goblet Squat",
+          "name": "Sumo Squat",
           "rounds": 5,
-          "reps": "15"
+          "reps": "20"
         },
         {
-          "name": "Clean & Press",
+          "name": "Burpees (Sans saut)",
           "rounds": 5,
           "reps": "10"
         }
@@ -465,7 +465,7 @@
           "reps": "12"
         },
         {
-          "name": "Elévations latérales (bouteilles)",
+          "name": "Elévations Y-T-W (Sol)",
           "rounds": 3,
           "reps": "15"
         }
@@ -531,9 +531,9 @@
           "reps": "12"
         },
         {
-          "name": "Bicep Curl (bouteille/sac)",
+          "name": "Curl Porte (Isométrique)",
           "rounds": 4,
-          "reps": "15"
+          "reps": "30s"
         },
         {
           "name": "Superman Hold",
@@ -558,9 +558,9 @@
           "reps": "10"
         },
         {
-          "name": "Ecarté sol (bouteilles)",
+          "name": "Rotations Epaules (Cercles)",
           "rounds": 3,
-          "reps": "12"
+          "reps": "40"
         }
       ]
     },
@@ -597,7 +597,7 @@
           "reps": "Max"
         },
         {
-          "name": "Extension nuque (bouteille)",
+          "name": "Pompes Diamant",
           "rounds": 3,
           "reps": "15"
         }
@@ -614,9 +614,9 @@
           "reps": "15"
         },
         {
-          "name": "Chin-ups (si barre)",
+          "name": "Curl au mur",
           "rounds": 3,
-          "reps": "Max"
+          "reps": "15"
         }
       ]
     },
