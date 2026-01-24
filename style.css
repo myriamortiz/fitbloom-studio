@@ -1915,3 +1915,36 @@ input:-webkit-autofill:active {
   color: #ccc;
   font-style: italic;
 }
+
+/* ====================================================== */
+/*          PATCH FINAL : FORCE DESIGN (NO PHOTO)         */
+/* ====================================================== */
+
+/* 1. CACHER STRICTEMENT LES IMAGES */
+.food-card-content img, 
+.food-img-preview {
+  display: none !important;
+}
+
+/* 2. FORCER L'ALIGNEMENT CENTRÉ */
+.food-card-content {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.2rem !important;
+}
+
+/* 3. CENTRER LE TEXTE */
+.food-meal-text {
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Ajustement pour que le bloc texte prenne toute la largeur */
+.food-card-content > div {
+  width: 100% !important;
+  text-align: center !important;
+}
