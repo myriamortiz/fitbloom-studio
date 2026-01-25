@@ -65,7 +65,7 @@ function getMealSlots(profile) {
 function getTagsForSlot(slot) {
   // Map UI slot to DB tags
   // Strict separation V2
-  if (slot === 'breakfast') return ['petit-dej', 'brunch']; // 'brunch' kept for ambiguous items (toast), but sweet items are now 'petit-dej'
+  if (slot === 'breakfast') return ['petit-dej']; // Strict breakfast only
   if (slot === 'lunch') return ['lunch', 'dejeuner', 'brunch']; // 'brunch' allowed for lunch (avocado toast etc)
   if (slot === 'snack') return ['snack', 'collation'];
   if (slot === 'dinner') return ['dinner', 'diner']; // Never brunch at dinner
