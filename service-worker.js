@@ -1,4 +1,4 @@
-const CACHE_NAME = "fbs-cache-v3"; // Versionnée pour forcer la mise à jour
+const CACHE_NAME = "fbs-cache-v4"; // Force New Version (Android Fix)
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",

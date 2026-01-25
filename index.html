@@ -24,7 +24,7 @@
   <meta name="theme-color" content="#000000" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2.0" />
 </head>
 
 <body>
@@ -71,7 +71,7 @@
     </a>
   </main>
 
-  <script src="gamification.js"></script>
+  <script src="gamification.js?v=2.0"></script>
 
   <!-- FOOTER -->
   <footer class="fbs-footer" style="flex-direction: column; align-items: center; gap: 1rem;">
@@ -114,21 +114,26 @@
       function resetApp() {
         if (confirm("Tout effacer et recommencer à zéro ?")) {
           localStorage.clear();
-          window.location.reload();
+          // Force reload ignoring cache
+          window.location.reload(true);
         }
       }
     </script>
   </footer>
 
   <!-- JS principal -->
-  <script src="app.js"></script>
+  <script src="app.js?v=2.0"></script>
 
   <!-- Service Worker -->
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("service-worker.js")
-        .then(() => console.log("Service worker enregistré"))
+        .then(reg => {
+             // Force update
+             reg.update();
+             console.log("Service worker enregistré");
+        })
         .catch(err => console.log("Erreur SW :", err));
     }
   </script>

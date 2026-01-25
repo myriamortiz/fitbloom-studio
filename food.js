@@ -92,9 +92,19 @@ function scaleString(str, factor) {
     let newVal = val * factor;
 
     // Smart Rounding
-    if (newVal > 10) newVal = Math.round(newVal); // 102.4 -> 102
-    else if (newVal > 1) newVal = parseFloat(newVal.toFixed(1)); // 2.43 -> 2.4
-    else newVal = parseFloat(newVal.toFixed(2)); // 0.333 -> 0.33
+    // Logic: If close to integer (±0.15), snap to integer.
+    const nearestInt = Math.round(newVal);
+    if (Math.abs(newVal - nearestInt) < 0.15) {
+      newVal = nearestInt;
+    } else {
+      // Regular formatting for actual decimals
+      if (newVal > 10) newVal = Math.round(newVal); // 102.4 -> 102
+      else if (newVal > 1) newVal = parseFloat(newVal.toFixed(1)); // 2.43 -> 2.4
+      // 2.9 -> 2.9 (if not snapped) but 2.9 should snap to 3 if within 0.15. 2.9 is within 0.1 of 3.
+      // So 2.9 will become 3.
+      // 1.5 stays 1.5
+      else newVal = parseFloat(newVal.toFixed(2)); // 0.333 -> 0.33
+    }
 
     return newVal;
   });
@@ -408,11 +418,11 @@ function displayWeek(week) {
              <button class="swap-btn" onclick="swapRecipe(${i}, '${slot}')" title="Changer">🔀</button>
             </div>
             
-            <div class="food-card-content">
-              <img src="${recipe.image}" class="food-img-preview" alt="${recipe.name}" onerror="this.style.display='none'">
+            <div class="food-card-content" style="text-align:center; padding:10px;">
+              <!-- IMG REMOVED BY USER REQUEST -->
               <div>
-                 <p class="food-meal-text" style="font-weight:600">${recipe.name}</p>
-                 <p style="font-size:0.85em; color:#bbb">${recipe.adjustedCalories || recipe.calories} kcal</p>
+                 <p class="food-meal-text" style="font-weight:600; font-size:1.1em; margin-bottom:5px;">${recipe.name}</p>
+                 <p style="font-size:0.9em; color:#bbb">${recipe.adjustedCalories || recipe.calories} kcal</p>
                  ${timeDisplay}
               </div>
             </div>

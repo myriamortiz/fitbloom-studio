@@ -65,6 +65,7 @@ function generateFullWeek(pools, profile) {
   const weekPlan = [];
   const workoutDays = profile.workoutDays || []; // e.g. [1, 3, 5]
   let workoutCounter = 0;
+  const usedSessions = new Set();
 
   for (let i = 0; i < 7; i++) {
     if (!workoutDays.includes(i)) {
@@ -72,7 +73,7 @@ function generateFullWeek(pools, profile) {
       weekPlan[i] = { type: 'rest', name: "Repos & Récup", duration: "Active", exercises: [] };
     } else {
       // Workout Day
-      weekPlan[i] = pickSession(pools, profile, i, workoutCounter);
+      weekPlan[i] = pickSession(pools, profile, i, workoutCounter, usedSessions);
       workoutCounter++;
     }
   }
@@ -80,7 +81,7 @@ function generateFullWeek(pools, profile) {
   return weekPlan;
 }
 
-function pickSession(pools, profile, dayIndex, workoutCounter) {
+function pickSession(pools, profile, dayIndex, workoutCounter, usedSessions) {
   // STRATEGY BASED ON GOAL
   let category = 'fullbody';
 
@@ -106,8 +107,18 @@ function pickSession(pools, profile, dayIndex, workoutCounter) {
   let pool = pools[category];
   if (!pool || pool.length === 0) pool = pools['fullbody'];
 
-  // Pick random
-  const rawSession = pool[Math.floor(Math.random() * pool.length)];
+  // FILTER UNUSED
+  // Start with fresh candidates
+  let candidates = pool.filter(s => !usedSessions.has(s.name));
+
+  // If we ran out of unique sessions in this category, reset (fallback to full pool)
+  if (candidates.length === 0) candidates = pool;
+
+  // Pick random from candidates
+  const rawSession = candidates[Math.floor(Math.random() * candidates.length)];
+
+  // Mark as used
+  if (rawSession && rawSession.name) usedSessions.add(rawSession.name);
 
   // CLONE & ADAPT difficulty
   const session = JSON.parse(JSON.stringify(rawSession));
@@ -238,7 +249,10 @@ function openModal(session) {
     div.className = "exo-item";
     div.innerHTML = `
             <div class="exo-header">
-                <span class="exo-name">${ex.name}</span>
+                <span class="exo-name">
+                  ${ex.name} 
+                  <a href="https://www.youtube.com/results?search_query=exercice+fitness+${encodeURIComponent(ex.name)}" target="_blank" style="text-decoration:none; margin-left:5px;" title="Voir démo vidéo">🎥</a>
+                </span>
                 <span class="exo-rounds">${ex.rounds} tours</span>
             </div>
             <div class="exo-reps">Répétitions: <strong>${ex.reps}</strong></div>
