@@ -189,11 +189,15 @@ function filterRecipes(pool, profile, slot) {
 
   } else {
     // Legacy generic goals
-    if (profile && profile.goal === 'perte_poids') {
+    // Support singular 'goal' for backward compatibility or plural 'goals'
+    const goals = profile.goals || (profile.goal ? [profile.goal] : []);
+
+    if (goals.includes('perte_poids')) {
       candidates = candidates.sort((a, b) => (a.calories || 0) - (b.calories || 0));
       if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.5));
     }
-    if (profile && profile.goal === 'prise_masse') {
+    // If 'prise_masse' is selected AND NOT 'perte_poids' (conflict resolution: weight loss wins for calorie restriction)
+    else if (goals.includes('prise_masse')) {
       candidates = candidates.sort((a, b) => (b.calories || 0) - (a.calories || 0));
       if (candidates.length > 5) candidates = candidates.slice(0, Math.ceil(candidates.length * 0.5));
     }

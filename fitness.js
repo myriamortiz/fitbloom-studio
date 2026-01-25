@@ -30,7 +30,7 @@ function getUserProfile() {
   return JSON.parse(localStorage.getItem('userProfile')) || {
     name: "Guest",
     workoutDays: [1, 3, 5],
-    goal: 'forme',
+    goals: ['forme'],
     activity: 1.2
   };
 }
@@ -88,12 +88,21 @@ function pickSession(pools, profile, dayIndex, workoutCounter, usedSessions) {
   // Rotation based on sequence to ensure variety even if days are only even/odd
   const isEvenSeq = (workoutCounter % 2 === 0);
 
-  if (profile.goal === 'perte_poids') {
+  if (profile.goals && profile.goals.includes('perte_poids') && profile.goals.includes('prise_masse')) {
+    // HYBRID : Mix Cardio & Strength
+    // Odd days = Cardio, Even days = Upper/Lower
+    if (workoutCounter % 2 !== 0) {
+      category = 'cardio';
+    } else {
+      category = (workoutCounter % 4 === 0) ? 'upper' : 'lower';
+    }
+  }
+  else if (profile.goals && profile.goals.includes('perte_poids')) {
     // 70% Cardio/HIIT, 30% Fullbody
     // Use random primarily but ensure at least some Mix
     category = (Math.random() > 0.3) ? 'cardio' : 'fullbody';
   }
-  else if (profile.goal === 'prise_masse') {
+  else if (profile.goals && profile.goals.includes('prise_masse')) {
     // Upper / Lower Split STRICT rotation
     category = isEvenSeq ? 'upper' : 'lower';
   }
@@ -278,7 +287,7 @@ function getWeekNumber(d) {
 
 function hashProfile(p) {
   // Simple hash to detect significant profile changes
-  return `${p.goal}-${p.activity}-${(p.workoutDays || []).join('')}`;
+  return `${(p.goals || []).join('-')}-${p.activity}-${(p.workoutDays || []).join('')}`;
 }
 
 function getDayName(i) {
