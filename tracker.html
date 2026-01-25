@@ -26,6 +26,17 @@
     <h2 class="sc-title">Suivi Mensuel : Poids et Mensurations</h2>
     <p style="text-align:center; margin-bottom: 1.5rem;">Je mesure pour comprendre, jamais pour me juger.</p>
 
+    <!-- SELETCEUR METRIQUE -->
+    <div class="metric-selector"
+      style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+      <button class="tab-pill active" onclick="switchMetric('poids', this)">Poids</button>
+      <button class="tab-pill" onclick="switchMetric('taille', this)">Taille</button>
+      <button class="tab-pill" onclick="switchMetric('poitrine', this)">Poitrine</button>
+      <button class="tab-pill" onclick="switchMetric('hanches', this)">Hanches</button>
+      <button class="tab-pill" onclick="switchMetric('cuisses', this)">Cuisses</button>
+      <button class="tab-pill" onclick="switchMetric('bras', this)">Bras</button>
+    </div>
+
     <!-- GRAPHIQUE -->
     <div
       style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 1rem; margin-bottom: 2rem; border: 1px solid var(--fbs-rose-clair);">

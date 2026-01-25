@@ -314,6 +314,8 @@ function loadRitual() {
 
 // RESPIRATION
 let breatheInterval;
+let guidanceInterval;
+
 window.startBreathing = (durationMinutes) => {
   const circle = document.getElementById('breath-circle');
   const timerText = document.getElementById('breath-timer');
@@ -323,12 +325,24 @@ window.startBreathing = (durationMinutes) => {
   stopBreathing();
   circle.classList.add('active');
 
+  // Initial State
+  timerText.textContent = "Inspire...";
   let secondsLeft = durationMinutes * 60;
-  timerText.textContent = formatTime(secondsLeft);
 
+  // Update Guidance Text every 5 seconds (sync with 10s animation: 5s In, 5s Out)
+  // We use a separate interval to stay perfectly synced with the phase changes
+  let phase = 'in'; // 'in' or 'out'
+
+  // Start the guidance loop
+  guidanceInterval = setInterval(() => {
+    // This flips every 5 seconds
+    phase = (phase === 'in') ? 'out' : 'in';
+    timerText.textContent = (phase === 'in') ? "Inspire..." : "Expire...";
+  }, 5000);
+
+  // Global Timer (just to stop at the end)
   breatheInterval = setInterval(() => {
     secondsLeft--;
-    timerText.textContent = formatTime(secondsLeft);
 
     if (secondsLeft <= 0) {
       stopBreathing();
@@ -344,6 +358,7 @@ window.stopBreathing = () => {
 
   circle.classList.remove('active');
   clearInterval(breatheInterval);
+  clearInterval(guidanceInterval);
   timerText.textContent = "Prête ?";
 }
 
