@@ -75,7 +75,7 @@ function renderBloomWidget() {
             <div class="bloom-info">
                 <h3>Mon Bloom du Jour</h3>
                 <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width:${score}%"></div>
+                    <div class="progress-bar-fill" style="width:0%; transition: width 1.5s ease-out;"></div>
                 </div>
                 <p class="bloom-status">${score}% - ${stage.label}</p>
                 
@@ -83,11 +83,17 @@ function renderBloomWidget() {
             `<button class="fbs-btn-small" onclick="declareWorkout()" style="margin-top:10px; width:100%">
                     J'ai fait mon sport ! (+40 XP)
                    </button>` :
-            `<div style="color:var(--fbs-vert-sauge); font-size:0.9rem; margin-top:5px;">✨ Sport validé !</div>`
+            `<div style="color:var(--fbs-vert-sauge); font-size:0.9rem; margin-top:5px; font-weight:bold;">✨ Sport validé !</div>`
         }
             </div>
         </div>
     `;
+
+    // Trigger animation after render
+    setTimeout(() => {
+        const bar = container.querySelector('.progress-bar-fill');
+        if (bar) bar.style.width = `${score}%`;
+    }, 100);
 }
 
 window.declareWorkout = () => {
@@ -95,13 +101,13 @@ window.declareWorkout = () => {
     localStorage.setItem(`workout_done_${today}`, 'true');
     renderBloomWidget();
 
-    // Confetti Effect
+    // MAGIC Sparkles Confetti
     if (typeof confetti === 'function') {
-        const duration = 3000;
+        const duration = 2000;
         const animationEnd = Date.now() + duration;
-        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
 
-        const randomInRange = (min, max) => Math.random() * (max - min) + min;
+        // Gold and Rose dust
+        const colors = ['#ffeebb', '#f2d5c8', '#ffffff'];
 
         const interval = setInterval(function () {
             const timeLeft = animationEnd - Date.now();
@@ -110,20 +116,19 @@ window.declareWorkout = () => {
                 return clearInterval(interval);
             }
 
-            const particleCount = 50 * (timeLeft / duration);
-            // Theme Colors: Rose (#eedbd1), Gold (#ffd700), White (#ffffff)
-            confetti(Object.assign({}, defaults, {
-                particleCount,
-                origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-                colors: ['#eedbd1', '#d9c0b8', '#ffffff']
-            }));
-            confetti(Object.assign({}, defaults, {
-                particleCount,
-                origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-                colors: ['#eedbd1', '#d9c0b8', '#ffffff']
-            }));
-        }, 250);
-    }
+            const particleCount = 20 * (timeLeft / duration);
 
-    alert("Bravo ! Ta fleur grandit ! 🌱 -> 🌿");
+            // Center burst
+            confetti({
+                particleCount,
+                startVelocity: 20,
+                spread: 360,
+                origin: { x: 0.5, y: 0.4 }, // Center near widget
+                colors: colors,
+                shapes: ['circle'],
+                scalar: 0.6, // Smaller particles
+                disableForReducedMotion: true
+            });
+        }, 100);
+    }
 };
