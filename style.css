@@ -1874,22 +1874,12 @@ input:-webkit-autofill:active {
 }
 
 /* Magic Aura Background */
-.bloom-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 215, 185, 0.1) 0%, transparent 70%);
-  animation: rotate-aura 15s linear infinite;
-  pointer-events: none;
-}
+/* .bloom-card::before removed as per user feedback */
 
 .bloom-visual {
   width: 110px;
   height: 110px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 70%);
+  /* background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 70%); removed as per user request */
   border-radius: 50%;
   padding: 15px;
   display: flex;
@@ -1935,15 +1925,7 @@ input:-webkit-autofill:active {
   }
 }
 
-@keyframes rotate-aura {
-  0% {
-    transform: rotate(0deg);
-  }
 
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 .bloom-info {
   flex: 1;
@@ -2161,6 +2143,11 @@ input:-webkit-autofill:active {
     width: 50px !important;
     height: 50px !important;
     margin: 0 !important;
+    padding: 2px !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   /* Session Card overlap fix */

@@ -126,8 +126,6 @@
         "sans_gluten",
         "sans_lactose",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -242,8 +240,6 @@
         "sans_lactose",
         "proteine",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -266,8 +262,6 @@
         "sans_gluten",
         "sans_lactose",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -380,8 +374,6 @@
         "sans_gluten",
         "proteine",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -401,8 +393,6 @@
         "vegetarien",
         "sans_gluten",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -491,8 +481,6 @@
         "sans_gluten",
         "sans_lactose",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -538,8 +526,6 @@
         "sans_gluten",
         "sans_lactose",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -4891,8 +4877,6 @@
         "sans_gluten",
         "sans_lactose",
         "winter",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -5868,10 +5852,8 @@
       "prep_time": 10,
       "difficulty": "facile",
       "tags": [
-        "lunch",
         "pescetarien",
         "plaisir",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -6238,9 +6220,7 @@
       "prep_time": 15,
       "difficulty": "facile",
       "tags": [
-        "lunch",
         "vegan",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
