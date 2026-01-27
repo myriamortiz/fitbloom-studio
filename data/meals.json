@@ -58,7 +58,8 @@
         "sans_lactose",
         "proteine",
         "all_seasons",
-        "petit-dej"
+        "lunch",
+        "dinner"
       ],
       "ingredients": [
         "Pommes de terre : 250g",
@@ -95,7 +96,7 @@
     },
     {
       "type": "healthy",
-      "name": "Toast saumon fumé & citron",
+      "name": "Toast saumon fumé, avocat & citron",
       "calories": 420,
       "tags": [
         "pescetarien",
@@ -103,16 +104,15 @@
         "sans_lactose",
         "proteine",
         "all_seasons",
-        "lunch",
-        "dinner"
+        "petit-dej"
       ],
       "ingredients": [
         "Pain sans gluten : 2 tranches",
         "Saumon fumé : 80g",
         "Citron : 1 c.à.c"
       ],
-      "instructions": "Déposer saumon sur toast. Ajouter citron.",
-      "id": "toast_saumon_fumé_&_citron",
+      "instructions": "Déposer saumon et l'avocat sur le toast. Ajouter citron.",
+      "id": "toast_saumon_avocat_&_citron",
       "prep_time": 15,
       "difficulty": "facile"
     },
@@ -126,8 +126,6 @@
         "sans_gluten",
         "sans_lactose",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -224,9 +222,10 @@
       "ingredients": [
         "Farine de sarrasin : 80g",
         "Lait d’amande : 150ml",
+        "Arôme vanille : 1 c.à.c",
         "Œufs : 2"
       ],
-      "instructions": "Mélanger. Cuire au gaufrier.",
+      "instructions": "Mélanger le tout. Cuire au gaufrier.",
       "id": "gaufres_sarrasin_&_vanille",
       "prep_time": 15,
       "difficulty": "facile"
@@ -242,8 +241,6 @@
         "sans_lactose",
         "proteine",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -266,8 +263,6 @@
         "sans_gluten",
         "sans_lactose",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -329,22 +324,21 @@
     },
     {
       "type": "healthy",
-      "name": "Œufs brouillés au bacon de dinde",
+      "name": "Œufs brouillés au bacon",
       "calories": 430,
       "tags": [
         "sans_gluten",
         "sans_lactose",
         "proteine",
         "all_seasons",
-        "lunch",
-        "dinner"
+        "petit-dej"
       ],
       "ingredients": [
         "Œufs : 3",
         "Bacon de dinde : 40g"
       ],
       "instructions": "Poêler bacon. Ajouter œufs brouillés.",
-      "id": "œufs_brouillés_au_bacon_de_dinde",
+      "id": "œufs_brouillés_au_bacon",
       "prep_time": 15,
       "difficulty": "facile"
     },
@@ -380,8 +374,6 @@
         "sans_gluten",
         "proteine",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -401,8 +393,6 @@
         "vegetarien",
         "sans_gluten",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -491,8 +481,6 @@
         "sans_gluten",
         "sans_lactose",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -538,8 +526,6 @@
         "sans_gluten",
         "sans_lactose",
         "all_seasons",
-        "lunch",
-        "dinner",
         "petit-dej"
       ],
       "ingredients": [
@@ -561,8 +547,7 @@
         "sans_lactose",
         "proteine",
         "all_seasons",
-        "lunch",
-        "dinner"
+        "petit-dej"
       ],
       "ingredients": [
         "Wrap GF : 1",
@@ -628,8 +613,7 @@
         "sans_gluten",
         "sans_lactose",
         "snack",
-        "all_seasons",
-        "petit-dej"
+        "all_seasons"
       ],
       "ingredients": [
         "Yaourt coco sans sucre : 100g",
@@ -651,8 +635,7 @@
         "sans_lactose",
         "proteine",
         "snack",
-        "all_seasons",
-        "petit-dej"
+        "all_seasons"
       ],
       "ingredients": [
         "Banane : 1",
@@ -695,7 +678,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Raisins : 80g",
@@ -717,7 +699,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Pomme : 1",
@@ -761,8 +742,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "lunch",
-        "dinner"
       ],
       "ingredients": [
         "Patate douce : 120g"
@@ -803,8 +782,7 @@
         "sans_gluten",
         "sans_lactose",
         "snack",
-        "all_seasons",
-        "petit-dej"
+        "all_seasons"
       ],
       "ingredients": [
         "Poire : 1",
@@ -847,8 +825,7 @@
         "sans_lactose",
         "proteine",
         "snack",
-        "all_seasons",
-        "petit-dej"
+        "all_seasons"
       ],
       "ingredients": [
         "Amandes : 20g"
@@ -888,8 +865,7 @@
         "sans_gluten",
         "sans_lactose",
         "snack",
-        "all_seasons",
-        "petit-dej"
+         "all_seasons"
       ],
       "ingredients": [
         "Citron : 1",
@@ -975,7 +951,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Pêche : 1",
@@ -1148,7 +1123,6 @@
         "proteine",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Kiwi : 1",
@@ -1192,7 +1166,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Chocolat 85% : 15g",
@@ -1235,7 +1208,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Pomme : 1",
@@ -1278,8 +1250,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "lunch",
-        "dinner"
       ],
       "ingredients": [
         "Pastèque : 120g",
@@ -1301,7 +1271,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Pomme : 1",
@@ -1391,7 +1360,6 @@
         "proteine",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Céleri : 2 branches",
@@ -1414,7 +1382,6 @@
         "proteine",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Noix cajou : 10g",
@@ -1437,7 +1404,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Pomme : 1",
@@ -1459,7 +1425,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Graines chia : 2 c.à.s",
@@ -1503,7 +1468,6 @@
         "sans_lactose",
         "snack",
         "all_seasons",
-        "petit-dej"
       ],
       "ingredients": [
         "Dattes : 2",
@@ -1698,7 +1662,7 @@
     },
     {
       "type": "healthy",
-      "name": "Poisson blanc au four citron-curcuma",
+      "name": "Poisson blanc au four citron-curcuma avec légumes vapeur",
       "calories": 430,
       "tags": [
         "pescetarien",
@@ -1710,6 +1674,7 @@
       ],
       "ingredients": [
         "Poisson blanc : 150g",
+        "Légumes variés : 120g",
         "Citron : 1 c.à.c",
         "Curcuma : 1 c.à.c"
       ],
@@ -1903,7 +1868,7 @@
     },
     {
       "type": "healthy",
-      "name": "Steak de thon sésame",
+      "name": "Steak de thon sésame avec légumes",
       "calories": 450,
       "tags": [
         "pescetarien",
@@ -1915,6 +1880,7 @@
       ],
       "ingredients": [
         "Thon: 120g",
+        "Légumes variés : 120g",
         "Sésame",
         "Soja GF"
       ],
@@ -2015,7 +1981,7 @@
     },
     {
       "type": "healthy",
-      "name": "Boulettes boeuf menthe",
+      "name": "Boulettes boeuf menthe avec légumes",
       "calories": 460,
       "tags": [
         "sans_gluten",
@@ -2027,6 +1993,7 @@
       ],
       "ingredients": [
         "Boeuf: 120g",
+        "Légumes variés : 120g",
         "Menthe",
         "Cumin"
       ],
@@ -2083,7 +2050,7 @@
     },
     {
       "type": "healthy",
-      "name": "Poulet basquaise express",
+      "name": "Poulet basquaise express avec riz",
       "calories": 450,
       "tags": [
         "sans_gluten",
@@ -2095,6 +2062,7 @@
       ],
       "ingredients": [
         "Poulet: 120g",
+        "Riz : 120g cuit",
         "Poivrons: 2",
         "Tomate: 2"
       ],
@@ -2113,8 +2081,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "lunch",
-        "dinner"
+        "snack"
       ],
       "ingredients": [
         "Radis : 6",
@@ -2135,8 +2102,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "lunch",
-        "dinner"
+        "snack"
       ],
       "ingredients": [
         "Fraises : 100g",
@@ -2158,8 +2124,7 @@
         "sans_lactose",
         "proteine",
         "spring",
-        "lunch",
-        "dinner"
+        "snack"
       ],
       "ingredients": [
         "Carottes nouvelles : 2",
@@ -2180,8 +2145,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "lunch",
-        "dinner"
+        "snack"
       ],
       "ingredients": [
         "Concombre : 1/2",
@@ -2202,8 +2166,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "lunch",
-        "dinner"
+        "snack"
       ],
       "ingredients": [
         "Pois gourmands : 100g",
@@ -2223,8 +2186,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "lunch",
-        "dinner"
+        "petit-dej"
       ],
       "ingredients": [
         "Farine riz : 30g",
@@ -2245,7 +2207,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "petit-dej"
+        "snack"
       ],
       "ingredients": [
         "Pomme nouvelle : 1"
@@ -2265,8 +2227,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "lunch",
-        "dinner"
+        "snack"
       ],
       "ingredients": [
         "Pain GF : 1/2 tranche",
@@ -2274,27 +2235,6 @@
       ],
       "instructions": "Assembler.",
       "id": "avo_toast_printanier_mini",
-      "prep_time": 15,
-      "difficulty": "facile"
-    },
-    {
-      "type": "healthy",
-      "name": "Petits pois & menthe fraîche",
-      "calories": 120,
-      "tags": [
-        "vegan",
-        "vegetarien",
-        "sans_gluten",
-        "sans_lactose",
-        "spring",
-        "lunch",
-        "dinner"
-      ],
-      "ingredients": [
-        "Petits pois : 80g"
-      ],
-      "instructions": "Cuire, ajouter menthe.",
-      "id": "petits_pois_&_menthe_fraîche",
       "prep_time": 15,
       "difficulty": "facile"
     },
@@ -2308,7 +2248,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "petit-dej"
+        "snack"
       ],
       "ingredients": [
         "Fraises : 100g",
@@ -2349,8 +2289,7 @@
         "vegetarien",
         "sans_gluten",
         "spring",
-        "lunch",
-        "dinner"
+        "snack"
       ],
       "ingredients": [
         "Pain GF : 1",
@@ -2435,8 +2374,8 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "lunch",
-        "dinner"
+        "petit-dej",
+        "snack"
       ],
       "ingredients": [
         "Epinard : 50g",
@@ -2458,8 +2397,8 @@
         "sans_lactose",
         "proteine",
         "spring",
-        "lunch",
-        "dinner"
+        "petit-dej",
+        "snack"
       ],
       "ingredients": [
         "Oeufs : 2",
@@ -2479,7 +2418,7 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "petit-dej"
+        "snack"
       ],
       "ingredients": [
         "Navets : 150g",
@@ -2487,27 +2426,6 @@
       ],
       "instructions": "Poêler.",
       "id": "navets_glacés_au_miel",
-      "prep_time": 15,
-      "difficulty": "facile"
-    },
-    {
-      "type": "healthy",
-      "name": "Radis & sel citronné",
-      "calories": 80,
-      "tags": [
-        "vegan",
-        "vegetarien",
-        "sans_gluten",
-        "sans_lactose",
-        "snack",
-        "spring"
-      ],
-      "ingredients": [
-        "Radis : 6",
-        "Sel citronné : 1 pincée"
-      ],
-      "instructions": "Servir.",
-      "id": "radis_&_sel_citronné",
       "prep_time": 15,
       "difficulty": "facile"
     },
