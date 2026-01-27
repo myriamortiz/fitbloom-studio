@@ -267,28 +267,39 @@ function openModal(session) {
     const div = document.createElement("div");
     div.className = "exo-item";
 
-    // Find Image
-    let imgTag = "";
+    // 1. Resolve Image Path
+    let imgPath = "assets/fitness/instruction_squat.png"; // Default fallback (Cardio/Generic)
+
     const lowerName = ex.name.toLowerCase();
+
+    // Direct Match from Map
     const foundKey = Object.keys(EXERCISE_IMAGES).find(k => lowerName.includes(k));
+
     if (foundKey) {
-      imgTag = `<div class="exo-img-container"><img src="${EXERCISE_IMAGES[foundKey]}" alt="${ex.name}" class="exo-instruction-img"></div>`;
-    } else {
-      // Fallback or keep video link? User asked to REPLACE video with images.
-      // If no image, maybe keep video link as fallback? 
-      // "Replace existing exercise videos with instructive images" 
-      // -> implied preference for images. fallback to video if no image.
-      imgTag = `<div class="exo-img-container"><a href="https://www.youtube.com/results?search_query=exercice+fitness+${encodeURIComponent(ex.name)}" target="_blank" class="video-fallback-btn">Voir démo vidéo 🎥</a></div>`;
+      imgPath = EXERCISE_IMAGES[foundKey];
+    }
+    // Manual Fallbacks for unknown items like "Surfer"
+    else if (lowerName.includes('surfer') || lowerName.includes('burpee')) {
+      imgPath = "assets/fitness/instruction_burpee.png";
+    } else if (lowerName.includes('fente')) {
+      imgPath = "assets/fitness/instruction_lunge.png";
+    } else if (lowerName.includes('planche') || lowerName.includes('gainage')) {
+      imgPath = "assets/fitness/instruction_plank.png";
     }
 
+    // 2. Build HTML (Row Layout)
     div.innerHTML = `
-            <div class="exo-header">
+        <div class="exo-img-container">
+            <img src="${imgPath}" alt="${ex.name}" class="exo-instruction-img">
+        </div>
+        <div class="exo-info">
+             <div class="exo-header">
                 <span class="exo-name">${ex.name}</span>
                 <span class="exo-rounds">${ex.rounds} tours</span>
-            </div>
-            <div class="exo-reps">Répétitions: <strong>${ex.reps}</strong></div>
-            ${imgTag}
-        `;
+             </div>
+             <div class="exo-reps">Répétitions: <strong>${ex.reps}</strong></div>
+        </div>
+    `;
     list.appendChild(div);
   });
 
