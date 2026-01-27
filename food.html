@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,8 +28,11 @@
   <!-- SEMAINE -->
   <main id="food-week" class="food-week"></main>
 
-  <!-- LISTE DE COURSES -->
-  <button id="open-grocery" class="grocery-btn">🛒 Liste de courses</button>
+  <!-- BOUTONS ACTIONS -->
+  <div style="display:flex; justify-content:center; gap:10px; margin:20px 0;">
+    <button id="open-grocery" class="grocery-btn">🛒 Liste de courses</button>
+    <button id="open-favorites" class="grocery-btn" style="background:var(--fbs-rose-suave);">❤ Mes Favoris</button>
+  </div>
 
   <!-- POPUP RECETTE -->
   <div id="recipe-popup" class="popup">
@@ -55,6 +59,17 @@
     </div>
   </div>
 
+  <!-- POPUP FAVORIS -->
+  <div id="favorites-popup" class="popup">
+    <div class="popup-content">
+      <h2>❤ Mes Recettes Favorites</h2>
+      <div id="favorites-list" style="max-height:60vh; overflow-y:auto; display:flex; flex-direction:column; gap:10px;">
+      </div>
+      <button id="close-favorites" class="close-btn">Fermer</button>
+    </div>
+  </div>
+
   <script src="food.js"></script>
 </body>
+
 </html>

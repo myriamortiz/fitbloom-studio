@@ -466,11 +466,110 @@ async function updateComplementsDisplay(category) {
     list = complementsData[category] || [];
   }
 
-  container.innerHTML = list.map(item => `
-        <div class="complement-card">
+  // Render with Clickable Cards
+  container.innerHTML = list.map(item => {
+    // Escape item for onclick
+    const jsonItem = JSON.stringify(item).replace(/"/g, "&quot;");
+    return `
+        <div class="complement-card" onclick="openComplementDetails(${jsonItem})">
             <div style="font-size:2rem; margin-bottom:0.5rem;">${item.icon}</div>
             <h3 style="color:var(--fbs-rose-pale); font-size:1rem; margin-bottom:0.3rem;">${item.name}</h3>
-            <p style="font-size:0.85rem; color:var(--fbs-taupe-rose); line-height:1.4;">${item.desc}</p>
+            <p style="font-size:0.85rem; color:var(--fbs-taupe-rose); line-height:1.4;">${item.desc.substring(0, 50)}...</p>
         </div>
-    `).join('');
+    `;
+  }).join('');
+}
+
+// OPEN DETAIL
+window.openComplementDetails = (item) => {
+  document.getElementById('comp-icon').textContent = item.icon;
+  document.getElementById('comp-title').textContent = item.name;
+  document.getElementById('comp-desc').textContent = item.desc;
+
+  // Fake extra data if not in JSON (to save time, or we could update JSON)
+  // Let's assume JSON has benefits/dosage OR we generate generic ones
+  document.getElementById('comp-benefits').textContent = item.benefits || "Favorise le bien-être général et aide à l'équilibre du corps. Idéal pour compléter une alimentation variée.";
+  document.getElementById('comp-dosage').textContent = item.dosage || "1 à 2 gélules par jour avec un grand verre d'eau, de préférence le matin.";
+
+  document.getElementById('complements-popup').style.display = 'flex';
+};
+
+document.getElementById('close-complements').onclick = () => {
+  document.getElementById('complements-popup').style.display = 'none';
+};
+
+// ----------------------------
+// WEEKLY RECAP LOGIC
+// ----------------------------
+function loadWeeklyRecap() {
+  const container = document.getElementById('weekly-recap');
+  if (!container) return;
+
+  const moodHistory = JSON.parse(localStorage.getItem("emotions_history")) || {};
+  const habitHistory = JSON.parse(localStorage.getItem("habits_history")) || {};
+
+  // Calculate Average Mood (Last 7 days)
+  let totalMood = 0;
+  let moodCount = 0;
+  let daysAnalyzed = 0;
+
+  for (let i = 0; i < 7; i++) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const key = d.toISOString().split("T")[0];
+
+    if (moodHistory[key]) {
+      totalMood += moodHistory[key].val;
+      moodCount++;
+    }
+  }
+
+  // Calculate Top Habit
+  const habitCounts = {};
+  Object.values(habitHistory).forEach(doneList => {
+    doneList.forEach(hId => {
+      habitCounts[hId] = (habitCounts[hId] || 0) + 1;
+    });
+  });
+
+  // Find max
+  let topHabitId = null;
+  let maxCount = 0;
+  Object.entries(habitCounts).forEach(([id, count]) => {
+    if (count > maxCount) {
+      maxCount = count;
+      topHabitId = id;
+    }
+  });
+
+  // Render
+  if (moodCount === 0) {
+    container.innerHTML = "Pas assez de données cette semaine. Continue à prendre soin de toi ! 💖";
+    return;
+  }
+
+  const avg = (totalMood / moodCount).toFixed(1);
+  let msg = `Humeur moyenne : <strong>${avg}/5</strong> this week.`;
+
+  if (topHabitId) {
+    const habits = getMyHabits();
+    const hObj = habits.find(h => h.id === topHabitId);
+    const label = hObj ? hObj.label : "Inconnu";
+    msg += `<br>Top Habitude : <strong>${label}</strong> (${maxCount} fois)`;
+  } else {
+    msg += `<br>Aucune habitude trackée cette semaine.`;
+  }
+
+  container.innerHTML = msg;
+}
+
+// Calls logic at end of load
+// Add to init?
+// It was not called in DOMContentLoaded in original file, let's look at line 12.
+// We can just call it at the end of file or add to init list.
+// For safety, let's append it to the global init or just call it here if DOM is ready.
+if (document.readyState === "complete") {
+  loadWeeklyRecap();
+} else {
+  window.addEventListener("load", loadWeeklyRecap);
 }

@@ -247,7 +247,8 @@
         "proteine",
         "all_seasons",
         "lunch",
-        "dinner"
+        "dinner",
+        "petit-dej"
       ],
       "ingredients": [
         "Pain GF : 2 tranches",
@@ -6329,7 +6330,8 @@
         "sans_lactose",
         "winter",
         "lunch",
-        "dinner"
+        "dinner",
+        "petit-dej"
       ],
       "ingredients": [
         "Pain GF : 2",
@@ -7670,7 +7672,8 @@
         "lunch",
         "pescetarien",
         "plaisir",
-        "dinner"
+        "dinner",
+        "petit-dej"
       ],
       "ingredients": [
         "Bagel sésame: 1",
@@ -7689,10 +7692,11 @@
       "prep_time": 15,
       "difficulty": "facile",
       "tags": [
-        "snack",
-        "vegetarien",
+        "brunch",
+        "petit-dej",
         "plaisir",
-        "petit-dej"
+        "snack",
+        "vegetarien"
       ],
       "ingredients": [
         "Flocons avoine: 40g",
@@ -8101,7 +8105,8 @@
       "tags": [
         "lunch",
         "vegan",
-        "dinner"
+        "dinner",
+        "petit-dej"
       ],
       "ingredients": [
         "Bagel",

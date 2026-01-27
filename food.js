@@ -65,7 +65,7 @@ function getMealSlots(profile) {
 function getTagsForSlot(slot) {
   // Map UI slot to DB tags
   // Strict separation V2
-  if (slot === 'breakfast') return ['petit-dej']; // Strict breakfast only
+  if (slot === 'breakfast') return ['petit-dej']; // Stricte : que ce qui est explicitement marqué pour le matiner
   if (slot === 'lunch') return ['lunch', 'dejeuner', 'brunch']; // 'brunch' allowed for lunch (avocado toast etc)
   if (slot === 'snack') return ['snack', 'collation'];
   if (slot === 'dinner') return ['dinner', 'diner']; // Never brunch at dinner
@@ -79,34 +79,66 @@ function scaleString(str, factor) {
   if (factor === 1) return str;
 
   // Regex : cherche les nombres (entiers ou décimaux) au début ou au milieu
-  // On gère : "100g", "1.5L", "2 tranches", "1/2"
-  return str.replace(/(\d+[\.,]?\d*|\d+\/\d+)/g, (match) => {
+  return str.replace(/(\d+[\.,]?\d*|\d+\/\d+)\s*([a-zA-Z]+)?/g, (match, qtyStr, unit) => {
     let val = 0;
-    if (match.includes('/')) {
-      const [n, d] = match.split('/');
+    if (qtyStr.includes('/')) {
+      const [n, d] = qtyStr.split('/');
       val = parseFloat(n) / parseFloat(d);
     } else {
-      val = parseFloat(match.replace(',', '.'));
+      val = parseFloat(qtyStr.replace(',', '.'));
     }
 
     let newVal = val * factor;
 
-    // Smart Rounding
-    // Logic: If close to integer (±0.15), snap to integer.
-    const nearestInt = Math.round(newVal);
-    if (Math.abs(newVal - nearestInt) < 0.15) {
-      newVal = nearestInt;
-    } else {
-      // Regular formatting for actual decimals
-      if (newVal > 10) newVal = Math.round(newVal); // 102.4 -> 102
-      else if (newVal > 1) newVal = parseFloat(newVal.toFixed(1)); // 2.43 -> 2.4
-      // 2.9 -> 2.9 (if not snapped) but 2.9 should snap to 3 if within 0.15. 2.9 is within 0.1 of 3.
-      // So 2.9 will become 3.
-      // 1.5 stays 1.5
-      else newVal = parseFloat(newVal.toFixed(2)); // 0.333 -> 0.33
-    }
+    // --- SMARTER ROUNDING LOGIC (V4) ---
+    // Apply specific rounding based on unit
+    if (unit) {
+      const lowerUnit = unit.toLowerCase();
+      let displayQty = newVal;
 
-    return newVal;
+      // 1. Oeufs : Toujours entier
+      if (lowerUnit.includes('oeuf')) {
+          displayQty = Math.round(newVal);
+      }
+      // 2. Grammes/Millilitres : Arrondir "joli" pour les grandes quantités
+      else if (lowerUnit === 'g' || lowerUnit === 'ml') {
+          if (newVal >= 100) { // Large values (> 100) -> Round to nearest 5 or 10
+              displayQty = Math.round(newVal / 5) * 5;
+          } else if (newVal > 10) { // Values between 10 and 100 -> Round to nearest integer
+              displayQty = Math.round(newVal);
+          } else { // Small quantities (< 10) -> Keep 1 decimal if needed, avoid .0
+              const fixed = newVal.toFixed(1);
+              displayQty = fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
+          }
+      }
+      // 3. Other units (c.à.s, tranche...)
+      else {
+          // Small integers proximity check (e.g. 2.9 -> 3)
+          const nearestInt = Math.round(newVal);
+          if (Math.abs(newVal - nearestInt) < 0.2) {
+            displayQty = nearestInt;
+          } else if (newVal > 10) {
+            displayQty = Math.round(newVal);
+          } else {
+            // Max 1 decimal, no .0
+            const fixed = newVal.toFixed(1);
+            displayQty = fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
+          }
+      }
+      return `${displayQty} ${unit}`;
+    } else {
+      // If no unit, use previous general rounding logic
+      if (newVal >= 100) {
+        return Math.round(newVal / 5) * 5;
+      }
+      const nearestInt = Math.round(newVal);
+      if (Math.abs(newVal - nearestInt) < 0.2) {
+        return nearestInt;
+      }
+      if (newVal > 10) return Math.round(newVal);
+      const fixed = newVal.toFixed(1);
+      return fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
+    }
   });
 }
 
@@ -423,7 +455,10 @@ function displayWeek(week) {
             </div>
             
             <div class="food-card-content" style="text-align:center; padding:10px;">
-              <!-- IMG REMOVED BY USER REQUEST -->
+              <!-- IMG RESTORED -->
+               <div style="height:120px; overflow:hidden; border-radius:10px; margin-bottom:10px;">
+                 <img src="${recipe.image}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='assets/food/dinner_healthy_chicken_1769281569061.png'">
+               </div>
               <div>
                  <p class="food-meal-text" style="font-weight:600; font-size:1.1em; margin-bottom:5px;">${recipe.name}</p>
                  <p style="font-size:0.9em; color:#bbb">${recipe.adjustedCalories || recipe.calories} kcal</p>
@@ -500,7 +535,9 @@ document.getElementById("close-recipe").addEventListener("click", () => {
   document.getElementById("recipe-popup").style.display = "none";
 });
 
+// ----------------------------
 // FAVORITE LOGIC
+// ----------------------------
 function toggleFavorite(recipeName) {
   let favs = JSON.parse(localStorage.getItem('fbs_favorites')) || [];
   if (favs.includes(recipeName)) {
@@ -513,11 +550,56 @@ function toggleFavorite(recipeName) {
   localStorage.setItem('fbs_favorites', JSON.stringify(favs));
 }
 
+// SHOW FAVORITES
+document.getElementById("open-favorites").addEventListener("click", () => {
+  const container = document.getElementById("favorites-list");
+  container.innerHTML = "";
 
+  const favs = JSON.parse(localStorage.getItem('fbs_favorites')) || [];
 
-// ----------------------------
-// LISTE DE COURSES
-// ----------------------------
+  if (favs.length === 0) {
+    container.innerHTML = "<p style='text-align:center; opacity:0.6'>Aucune recette favorite pour le moment.</p>";
+  } else {
+    // Find recipe objects
+    // Note: This relies on ALL_RECIPES being populated.
+    const found = ALL_RECIPES.filter(r => favs.includes(r.name));
+
+    found.forEach(r => {
+      const div = document.createElement("div");
+      div.className = "meal-block";
+      div.style.marginBottom = "0";
+      div.innerHTML = `
+          <div class="food-card-content" style="text-align:left; display:flex; align-items:center; gap:10px;">
+             <div style="flex:1">
+               <p class="food-meal-text" style="font-weight:600;">${r.name}</p>
+               <p style="font-size:0.8em; color:#bbb">${r.calories} kcal</p>
+             </div>
+             <button class="see-btn" style="margin:0; padding:5px 10px; font-size:0.8em">Voir</button>
+             <button class="delete-habit-btn" style="font-size:1.2em; color:var(--fbs-rose-suave)">✖</button>
+          </div>
+      `;
+
+      // Click Handlers
+      div.querySelector(".see-btn").onclick = () => openRecipe(r);
+      div.querySelector(".delete-habit-btn").onclick = () => {
+        toggleFavorite(r.name);
+        div.remove();
+        // If empty
+        if (document.getElementById("favorites-list").children.length === 0) {
+          document.getElementById("favorites-list").innerHTML = "<p style='text-align:center; opacity:0.6'>Aucune recette favorite pour le moment.</p>";
+        }
+      };
+
+      container.appendChild(div);
+    });
+  }
+
+  document.getElementById("favorites-popup").style.display = "flex";
+});
+
+document.getElementById("close-favorites").addEventListener("click", () => {
+  document.getElementById("favorites-popup").style.display = "none";
+});
 function buildGroceryList(week) {
   let ingredients = {};
   const pushIng = (raw) => {

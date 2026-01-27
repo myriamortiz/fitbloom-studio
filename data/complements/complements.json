@@ -2,277 +2,379 @@
   "stress_sommeil": [
     {
       "name": "Ashwagandha KSM-66",
-      "desc": "Stress, anxiété, sommeil profond",
-      "icon": "🌿"
+      "desc": "Adaptogène puissant pour réduire le cortisol.",
+      "icon": "🌿",
+      "benefits": "Réduit le stress et l'anxiété, améliore la qualité du sommeil et soutient l'équilibre hormonal.",
+      "dosage": "300 à 600mg par jour, de préférence le soir."
     },
     {
       "name": "Magnésium Bisglycinate",
-      "desc": "Système nerveux, détente musculaire",
-      "icon": "😴"
+      "desc": "Forme la plus assimilable pour le système nerveux.",
+      "icon": "😴",
+      "benefits": "Détend les muscles, apaise le système nerveux, réduit la fatigue et améliore le sommeil.",
+      "dosage": "300mg par jour, au dîner."
     },
     {
       "name": "Mélatonine (faible)",
-      "desc": "Aide à l’endormissement",
-      "icon": "🌙"
+      "desc": "Hormone du sommeil pour l'endormissement.",
+      "icon": "🌙",
+      "benefits": "Réduit le temps d'endormissement et recalibre l'horloge interne.",
+      "dosage": "1mg à 1.9mg, 30 minutes avant le coucher."
     },
     {
       "name": "Rhodiole Rosea",
-      "desc": "Stress + énergie mentale",
-      "icon": "🧠"
+      "desc": "Plante de la vitalité mentale et du stress.",
+      "icon": "🧠",
+      "benefits": "Augmente la résistance au stress, améliore la concentration et réduit la fatigue mentale.",
+      "dosage": "200 à 400mg, le matin ou midi (éviter le soir)."
     },
     {
       "name": "Passiflore",
-      "desc": "Apaisement, nervosité",
-      "icon": "🌸"
+      "desc": "Plante apaisante pour la nervosité.",
+      "icon": "🌸",
+      "benefits": "Calme l'agitation nerveuse, favorise la relaxation musculaire et aide à dormir.",
+      "dosage": "Sous forme d'extrait ou infusion, le soir."
     },
     {
       "name": "L-Théanine",
-      "desc": "Calme sans somnolence",
-      "icon": "🍵"
+      "desc": "Acide aminé relaxant issu du thé vert.",
+      "icon": "🍵",
+      "benefits": "Favorise la relaxation sans somnolence, améliore le focus calme.",
+      "dosage": "100 à 200mg en cas de stress ponctuel."
     }
   ],
   "hormones_endometriose": [
     {
       "name": "Oméga-3 EPA/DHA",
-      "desc": "Anti-inflammatoire, douleurs",
-      "icon": "🐟"
+      "desc": "Anti-inflammatoire essentiel.",
+      "icon": "🐟",
+      "benefits": "Réduit l'inflammation systémique et les douleurs menstruelles. Soutient la santé hormonale.",
+      "dosage": "1000 à 2000mg d'huile de poisson (riche en EPA) par jour."
     },
     {
       "name": "Curcuma + Pipérine",
-      "desc": "Inflammation chronique",
-      "icon": "🧡"
+      "desc": "Puissant anti-inflammatoire naturel.",
+      "icon": "🧡",
+      "benefits": "Diminue les douleurs inflammatoires chroniques et soutient la détox hépatique.",
+      "dosage": "500 à 1000mg de curcumine (avec poivre noir ou graisses) par jour."
     },
     {
       "name": "Vitamine D3 + K2",
-      "desc": "Immunité + hormones",
-      "icon": "☀️"
+      "desc": "Essentiel pour l'immunité et les hormones.",
+      "icon": "☀️",
+      "benefits": "Régule le système immunitaire et soutient l'équilibre oestrogène/progestérone.",
+      "dosage": "2000 à 4000 UI par jour (selon bilan sanguin), le matin."
     },
     {
-      "name": "NAC",
-      "desc": "Inflammation + fertilité",
-      "icon": "🔬"
+      "name": "NAC (N-Acétyl-Cystéine)",
+      "desc": "Antioxydant pour le stress oxydatif.",
+      "icon": "🔬",
+      "benefits": "Réduit le stress oxydatif, améliore la qualité des ovocytes et réduit l'inflammation.",
+      "dosage": "600 à 1200mg par jour."
     },
     {
       "name": "B6 P-5-P",
-      "desc": "Équilibre hormonal + SPM",
-      "icon": "⚖️"
+      "desc": "Régulateur hormonal doux.",
+      "icon": "⚖️",
+      "benefits": "Aide à équilibrer le rapport oestrogène/progestérone et réduit les symptômes du SPM.",
+      "dosage": "50 à 100mg de forme coenzymée (P-5-P)."
     },
     {
       "name": "Zinc",
-      "desc": "Hormones + peau",
-      "icon": "✨"
+      "desc": "Minéral de la peau et de l'immunité.",
+      "icon": "✨",
+      "benefits": "Réduit l'acné hormonale, soutient l'ovulation et l'immunité.",
+      "dosage": "15 à 30mg de Zinc Bisglycinate par jour."
     }
   ],
   "digestion": [
     {
       "name": "Probiotiques Féminins",
-      "desc": "Microbiote + digestion",
-      "icon": "🦠"
+      "desc": "Soutien du microbiote intime et intestinal.",
+      "icon": "🦠",
+      "benefits": "Restaure la flore intestinale, améliore la digestion et soutient l'immunité.",
+      "dosage": "1 gélule à jeun le matin, cure de 1 à 3 mois."
     },
     {
       "name": "Desmodium",
-      "desc": "Détox foie, drainage",
-      "icon": "🍃"
+      "desc": "Protecteur du foie.",
+      "icon": "🍃",
+      "benefits": "Soutient la régénération du foie et aide à l'élimination des toxines.",
+      "dosage": "10ml en ampoule ou gélules, le soir avant le coucher."
     },
     {
       "name": "Bardane",
-      "desc": "Peau + foie + drainage",
-      "icon": "🌾"
+      "desc": "Plante dépurative pour la peau.",
+      "icon": "🌾",
+      "benefits": "Draine les toxines, purifie la peau et soutient le foie.",
+      "dosage": "En infusion ou gélules, aux changements de saison."
     },
     {
       "name": "Gingembre",
-      "desc": "Digestion + anti-nausée",
-      "icon": "🫚"
+      "desc": "Tonique digestif.",
+      "icon": "🫚",
+      "benefits": "Stimule la digestion, réduit les nausées et les ballonnements.",
+      "dosage": "Frais en infusion ou gélules avant/après repas."
     },
     {
       "name": "Artichaut",
-      "desc": "Foie + digestion lente",
-      "icon": "🥬"
+      "desc": "Ami du foie et de la digestion des graisses.",
+      "icon": "🥬",
+      "benefits": "Stimule la production de bile et facilite la digestion des repas riches.",
+      "dosage": "En extrait standardisé, avant les repas lourds."
     },
     {
       "name": "Charbon Actif",
-      "desc": "Ballonnements, gaz",
-      "icon": "🌑"
+      "desc": "Absorbant naturel de gaz.",
+      "icon": "🌑",
+      "benefits": "Soulage rapidement les ballonnements et gaz intestinaux.",
+      "dosage": "1g à distance des repas et des médicaments (2h)."
     }
   ],
   "energie": [
     {
       "name": "Vitamine C (Acérola)",
-      "desc": "Énergie + immunité",
-      "icon": "🍒"
+      "desc": "Boost immunitaire naturel.",
+      "icon": "🍒",
+      "benefits": "Réduit la fatigue, soutient le système immunitaire et la production de collagène.",
+      "dosage": "500 à 1000mg le matin (éviter le soir)."
     },
     {
       "name": "Rhodiole",
-      "desc": "Énergie + concentration",
-      "icon": "🚀"
+      "desc": "Énergie mentale et physique.",
+      "icon": "🚀",
+      "benefits": "Améliore les performances physiques et mentales en période de stress.",
+      "dosage": "200 à 400mg le matin."
     },
     {
       "name": "Fer Bisglycinate",
-      "desc": "Énergie + anémie",
-      "icon": "🩸"
+      "desc": "Contre l'anémie et la fatigue.",
+      "icon": "🩸",
+      "benefits": "Transporte l'oxygène dans le sang, essentiel pour l'énergie (vérifier carence avant).",
+      "dosage": "14mg à 28mg avec de la Vitamine C pour l'absorption."
     },
     {
       "name": "Coenzyme Q10",
-      "desc": "Vitalité cellulaire",
-      "icon": "🔋"
+      "desc": "Carburant cellulaire.",
+      "icon": "🔋",
+      "benefits": "Soutient la production d'énergie au niveau cellulaire et la santé cardiaque.",
+      "dosage": "100 à 200mg (Ubiquinol) avec un repas gras."
     },
     {
       "name": "Ginseng",
-      "desc": "Vitalité physique",
-      "icon": "🔥"
+      "desc": "Tonique général.",
+      "icon": "🔥",
+      "benefits": "Stimule la vitalité physique et combat la fatigue passagère.",
+      "dosage": "500mg à 1g d'extrait le matin."
     },
     {
       "name": "B12 Méthylée",
-      "desc": "Énergie + système nerveux",
-      "icon": "⚡"
+      "desc": "Essentielle pour le système nerveux.",
+      "icon": "⚡",
+      "benefits": "Prévient l'anémie et soutient la santé neurologique (crucial pour les végétariens).",
+      "dosage": "1000µg par semaine ou 10µg par jour."
     }
   ],
   "poids": [
     {
       "name": "Chrome",
-      "desc": "Sucre, fringales",
-      "icon": "🍬"
+      "desc": "Régulateur de glycémie.",
+      "icon": "🍬",
+      "benefits": "Aide à stabiliser le taux de sucre dans le sang et réduit les envies de sucre.",
+      "dosage": "200µg (Picolinate) le matin ou midi."
     },
     {
       "name": "Thé vert EGCG",
-      "desc": "Métabolisme + brûle graisse",
-      "icon": "🍃"
+      "desc": "Antioxydant et métabolisme.",
+      "icon": "🍃",
+      "benefits": "Légère augmentation du métabolisme et effet brûle-graisse modéré.",
+      "dosage": "300 à 500mg d'extrait standardisé."
     },
     {
       "name": "Konjac",
-      "desc": "Satiété naturelle",
-      "icon": "🍜"
+      "desc": "Coupe-faim naturel.",
+      "icon": "🍜",
+      "benefits": "Fibre qui gonfle dans l'estomac pour augmenter la satiété.",
+      "dosage": "1 à 3g avec beaucoup d'eau, 30 min avant le repas."
     },
     {
       "name": "L-Carnitine",
-      "desc": "Métabolisme graisses",
-      "icon": "🏃‍♀️"
+      "desc": "Transport des graisses.",
+      "icon": "🏃‍♀️",
+      "benefits": "Aide à utiliser les graisses comme source d'énergie pendant l'effort.",
+      "dosage": "1 à 2g, 30 min avant le sport."
     },
     {
       "name": "Garcinia Cambogia",
-      "desc": "Appétit + cravings",
-      "icon": "🍈"
+      "desc": "Soutien minceur.",
+      "icon": "🍈",
+      "benefits": "Peut aider à réduire l'appétit et le stockage des graisses.",
+      "dosage": "500mg avant les repas principaux."
     }
   ],
   "cheveux_ongles": [
     {
       "name": "Collagène Marin",
-      "desc": "Peau + ongles + cheveux",
-      "icon": "🐟"
+      "desc": "Structure de la peau.",
+      "icon": "🐟",
+      "benefits": "Améliore l'élasticité de la peau, réduit les ridules et renforce les ongles.",
+      "dosage": "5 à 10g de peptides hydrolysés par jour."
     },
     {
       "name": "Biotine B8",
-      "desc": "Chute de cheveux",
-      "icon": "💇‍♀️"
+      "desc": "Vitamine des cheveux.",
+      "icon": "💇‍♀️",
+      "benefits": "Stimule la pousse des cheveux et fortifie les ongles cassants.",
+      "dosage": "500µg à 2000µg en cure de 3 mois."
     },
     {
       "name": "Zinc",
-      "desc": "Cuir chevelu + ongles",
-      "icon": "💅"
+      "desc": "Assainit le cuir chevelu.",
+      "icon": "💅",
+      "benefits": "Régule le sébum, lutte contre les pellicules et favorise la cicatrisation.",
+      "dosage": "15mg par jour."
     },
     {
       "name": "MSM Soufre",
-      "desc": "Volume + croissance",
-      "icon": "🌋"
+      "desc": "Constituant de la kératine.",
+      "icon": "🌋",
+      "benefits": "Apporte le soufre nécessaire à la formation de kératine (cheveux/ongles).",
+      "dosage": "1 à 3g par jour."
     },
     {
       "name": "Vitamine E",
-      "desc": "Antioxydant beauté",
-      "icon": "💧"
+      "desc": "Protection antioxydante.",
+      "icon": "💧",
+      "benefits": "Protège les cellules du vieillissement prématuré et hydrate la peau.",
+      "dosage": "15mg (Tocophérols mixtes)."
     },
     {
       "name": "Spiruline",
-      "desc": "Énergie + cheveux",
-      "icon": "🌿"
+      "desc": "Superaliment complet.",
+      "icon": "🌿",
+      "benefits": "Apporte fer, protéines et vitamines pour la vitalité des cheveux.",
+      "dosage": "3 à 5g par jour."
     }
   ],
   "saisons": {
     "hiver": [
       {
         "name": "Vitamine D3 + K2",
-        "desc": "Immunité + énergie",
-        "icon": "☀️"
+        "desc": "Lumière liquide.",
+        "icon": "☀️",
+        "benefits": "Compense le manque de soleil, soutient le moral et l'immunité.",
+        "dosage": "2000 UI minimum par jour."
       },
       {
         "name": "Oméga-3",
-        "desc": "Inflammation + peau",
-        "icon": "🐟"
+        "desc": "Contre la déprime hivernale.",
+        "icon": "🐟",
+        "benefits": "Nourrit le cerveau et la peau sèche en hiver.",
+        "dosage": "1000mg EPA/DHA jour."
       },
       {
         "name": "Magnésium",
-        "desc": "Système nerveux",
-        "icon": "😴"
+        "desc": "Anti-fatigue hivernale.",
+        "icon": "😴",
+        "benefits": "Lutte contre la fatigue chronique et le stress du froid.",
+        "dosage": "300mg le soir."
       },
       {
         "name": "Gelée Royale",
-        "desc": "Immunité forte",
-        "icon": "🐝"
+        "desc": "Trésor de la ruche.",
+        "icon": "🐝",
+        "benefits": "Revitalisant puissant et stimulant immunitaire.",
+        "dosage": "1 ampoule le matin à jeun (fraîche de préférence)."
       }
     ],
     "printemps": [
       {
         "name": "Bardane",
-        "desc": "Détox peau",
-        "icon": "🌸"
+        "desc": "Grand nettoyage de peau.",
+        "icon": "🌸",
+        "benefits": "Élimine les toxines accumulées l'hiver, peau nette.",
+        "dosage": "Cure de 3 semaines."
       },
       {
         "name": "Desmodium",
-        "desc": "Détox foie",
-        "icon": "🍃"
+        "desc": "Régénération hépatique.",
+        "icon": "🍃",
+        "benefits": "Soutient le foie après les excès de l'hiver.",
+        "dosage": "10ml le soir."
       },
       {
         "name": "Sève de Bouleau",
-        "desc": "Grand nettoyage",
-        "icon": "🌳"
+        "desc": "Drainage complet.",
+        "icon": "🌳",
+        "benefits": "Reminéralise l'organisme tout en drainant les reins.",
+        "dosage": "1 verre le matin à jeun pendant 3 semaines."
       },
       {
         "name": "Curcuma",
-        "desc": "Anti-inflammatoire",
-        "icon": "🧡"
+        "desc": "Réveil articulaire.",
+        "icon": "🧡",
+        "benefits": "Apaise les inflammations printanières (allergies, articulations).",
+        "dosage": "500mg par jour."
       }
     ],
     "ete": [
       {
         "name": "Électrolytes",
-        "desc": "Hydratation",
-        "icon": "💧"
+        "desc": "Hydratation optimale.",
+        "icon": "💧",
+        "benefits": "Compense les pertes minérales dues à la transpiration.",
+        "dosage": "1 dose dans la gourde en cas de forte chaleur."
       },
       {
         "name": "Bêta-carotène",
-        "desc": "Prépare la peau (Carotte)",
-        "icon": "🥕"
+        "desc": "Préparateur solaire.",
+        "icon": "🥕",
+        "benefits": "Prépare la peau au soleil et prolonge le bronzage.",
+        "dosage": "Commencer 1 mois avant l'exposition."
       },
       {
         "name": "Vigne Rouge",
-        "desc": "Jambes légères",
-        "icon": "🍇"
+        "desc": "Circulation veineuse.",
+        "icon": "🍇",
+        "benefits": "Soulage les jambes lourdes fréquentes en été.",
+        "dosage": "Extrait fluide ou gélules le matin."
       },
       {
         "name": "Collagène",
-        "desc": "Protection solaire peau",
-        "icon": "🐟"
+        "desc": "Protection UV interne.",
+        "icon": "🐟",
+        "benefits": "Protège la structure de la peau contre les UV.",
+        "dosage": "10g par jour."
       }
     ],
     "automne": [
       {
         "name": "Acérola (Vit C)",
-        "desc": "Immunité rentrée",
-        "icon": "🍒"
+        "desc": "Immunité préventive.",
+        "icon": "🍒",
+        "benefits": "Prépare l'immunité avant les premiers froids.",
+        "dosage": "500mg le matin."
       },
       {
         "name": "Rhodiole",
-        "desc": "Antistress rentrée",
-        "icon": "🧘‍♀️"
+        "desc": "Anti-blues de rentrée.",
+        "icon": "🧘‍♀️",
+        "benefits": "Aide à gérer le stress de la reprise.",
+        "dosage": "200mg matin."
       },
       {
         "name": "Probiotiques",
-        "desc": "Immunité + digestion",
-        "icon": "🦠"
+        "desc": "Barrière immunitaire.",
+        "icon": "🦠",
+        "benefits": "Renforce la flore pour résister aux virus.",
+        "dosage": "Cure de 1 mois."
       },
       {
         "name": "Zinc",
-        "desc": "Bouclier virus",
-        "icon": "🛡️"
+        "desc": "Bouclier antiviral.",
+        "icon": "🛡️",
+        "benefits": "Action directe sur l'immunité virale.",
+        "dosage": "15mg par jour."
       }
     ]
   }
