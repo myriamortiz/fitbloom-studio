@@ -468,14 +468,11 @@ function displayWeek(week) {
              <button class="swap-btn" onclick="swapRecipe(${i}, '${slot}')" title="Changer">🔀</button>
             </div>
             
-            <div class="food-card-content" style="text-align:center; padding:10px;">
-              <!-- IMG RESTORED -->
-               <div style="height:120px; overflow:hidden; border-radius:10px; margin-bottom:10px;">
-                 <img src="${recipe.image}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='assets/food/dinner_healthy_chicken_1769281569061.png'">
-               </div>
+            <div class="food-card-content" style="text-align:center; padding:5px 10px;">
+              <!-- IMAGE REMOVED -->
               <div>
-                 <p class="food-meal-text" style="font-weight:600; font-size:1.1em; margin-bottom:5px;">${recipe.name}</p>
-                 <p style="font-size:0.9em; color:#bbb">${recipe.adjustedCalories || recipe.calories} kcal</p>
+                 <p class="food-meal-text" style="font-weight:600; font-size:1.1em; margin-bottom:2px;">${recipe.name}</p>
+                 <p style="font-size:0.9em; color:#bbb; margin:0;">${recipe.adjustedCalories || recipe.calories} kcal</p>
                  ${timeDisplay}
               </div>
             </div>
