@@ -5526,26 +5526,6 @@
     },
     {
       "type": "healthy",
-      "name": "Boudin noir aux pommes",
-      "calories": 480,
-      "tags": [
-        "sans_gluten",
-        "sans_lactose",
-        "proteine",
-        "winter",
-        "petit-dej"
-      ],
-      "ingredients": [
-        "Boudin: 1",
-        "Pommes: 2"
-      ],
-      "instructions": "Poêler.",
-      "id": "boudin_noir_aux_pommes",
-      "prep_time": 15,
-      "difficulty": "facile"
-    },
-    {
-      "type": "healthy",
       "name": "Raclette bowl (3 fromages)",
       "calories": 580,
       "tags": [

@@ -1976,3 +1976,129 @@ input:-webkit-autofill:active {
     font-size: 0.9rem;
     font-weight: 500;
 }
+/* ====================================================== */
+/*          MOBILE RESPONSIVENESS (V1)                    */
+/* ====================================================== */
+@media (max-width: 480px) {
+
+  /* --- GLOBAL --- */
+  body {
+    overflow-x: hidden;
+  }
+  
+  .fbs-header {
+    padding: 1.5rem 1rem 0.5rem;
+  }
+
+  .fbs-logo-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .fbs-title h1 {
+    font-size: 1.8rem;
+  }
+
+  .fbs-welcome {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  /* --- INTRO INPUTS --- */
+  #user-name, #user-age, #user-height, #user-weight {
+    width: 90% !important;
+    font-size: 1rem !important;
+  }
+
+  /* --- FOOD MODULE --- */
+  .page-food {
+    padding: 1rem 0.8rem;
+  }
+
+  .food-card-content {
+    width: 100% !important;
+    padding: 1rem 0.5rem !important;
+  }
+  
+  .food-meal-title {
+    font-size: 1rem;
+  }
+
+  .see-btn {
+    width: 100%; /* Full width button */
+    padding: 12px;
+  }
+
+  /* --- FITNESS MODULE --- */
+  /* Allow bubbles to wrap */
+  #calendar-strip {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  .day-bubble {
+    width: 45px !important;
+    height: 45px !important;
+    margin: 0 !important;
+  }
+
+  /* Action buttons stack */
+  .session-actions {
+    flex-direction: column;
+    gap: 1rem !important;
+    width: 100%;
+  }
+
+  .action-btn {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  /* --- SELFCARE MODULE --- */
+  /* Charts */
+  .mood-chart {
+    height: 80px; /* Smaller height */
+    gap: 2px;
+  }
+  
+  .mood-bar {
+    width: 8px; /* Thinner bars */
+  }
+
+  /* Habits */
+  .habit-item {
+    flex-direction: row; /* Keep row but tighter */
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .habit-label {
+    font-size: 0.9rem;
+  }
+
+  /* Complements Grid */
+  .complements-list {
+    grid-template-columns: 1fr 1fr; /* 2 cols is fine, maybe 1 if really small? */
+    gap: 10px;
+  }
+  
+  .comp-card {
+    padding: 0.8rem;
+  }
+  
+  .comp-icon {
+    font-size: 1.5rem;
+  }
+
+  /* --- MODALS --- */
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .fbs-btn {
+     width: 100%;
+  }
+}
