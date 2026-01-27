@@ -2090,16 +2090,42 @@ input:-webkit-autofill:active {
 
   /* --- FITNESS MODULE --- */
   /* Allow bubbles to wrap */
-  #calendar-strip {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 8px !important;
+  /* SCROLLABLE WEEK GRID */
+  .week-grid {
+    display: flex;
+    flex-wrap: nowrap !important;
+    /* No wrapping */
+    overflow-x: auto;
+    /* Horizontal Scroll */
+    justify-content: flex-start !important;
+    /* Start align */
+    gap: 10px !important;
+    padding-bottom: 10px;
+    /* Space for scrollbar/touch */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth iOS scroll */
+    margin-bottom: 1rem;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+  }
+
+  .week-grid::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
   }
 
   .day-bubble {
-    width: 45px !important;
-    height: 45px !important;
+    flex: 0 0 auto;
+    /* Don't shrink */
+    width: 50px !important;
+    height: 50px !important;
     margin: 0 !important;
+  }
+
+  /* Session Card overlap fix */
+  .session {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 
   /* Action buttons stack */
