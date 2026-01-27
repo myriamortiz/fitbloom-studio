@@ -64,11 +64,11 @@ function getMealSlots(profile) {
 
 function getTagsForSlot(slot) {
   // Map UI slot to DB tags
-  // Strict separation V2
-  if (slot === 'breakfast') return ['petit-dej']; // Stricte : que ce qui est explicitement marqué pour le matiner
-  if (slot === 'lunch') return ['lunch', 'dejeuner', 'brunch']; // 'brunch' allowed for lunch (avocado toast etc)
+  // Strict separation V3 (User Request)
+  if (slot === 'breakfast') return ['petit-dej'];
+  if (slot === 'lunch') return ['lunch', 'dejeuner']; // Removed 'brunch'
   if (slot === 'snack') return ['snack', 'collation'];
-  if (slot === 'dinner') return ['dinner', 'diner']; // Never brunch at dinner
+  if (slot === 'dinner') return ['dinner', 'diner']; // Keeping 'dinner' as it is the main tag in JSON
   return [];
 }
 
@@ -98,32 +98,32 @@ function scaleString(str, factor) {
 
       // 1. Oeufs : Toujours entier
       if (lowerUnit.includes('oeuf')) {
-          displayQty = Math.round(newVal);
+        displayQty = Math.round(newVal);
       }
       // 2. Grammes/Millilitres : Arrondir "joli" pour les grandes quantités
       else if (lowerUnit === 'g' || lowerUnit === 'ml') {
-          if (newVal >= 100) { // Large values (> 100) -> Round to nearest 5 or 10
-              displayQty = Math.round(newVal / 5) * 5;
-          } else if (newVal > 10) { // Values between 10 and 100 -> Round to nearest integer
-              displayQty = Math.round(newVal);
-          } else { // Small quantities (< 10) -> Keep 1 decimal if needed, avoid .0
-              const fixed = newVal.toFixed(1);
-              displayQty = fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
-          }
+        if (newVal >= 100) { // Large values (> 100) -> Round to nearest 5 or 10
+          displayQty = Math.round(newVal / 5) * 5;
+        } else if (newVal > 10) { // Values between 10 and 100 -> Round to nearest integer
+          displayQty = Math.round(newVal);
+        } else { // Small quantities (< 10) -> Keep 1 decimal if needed, avoid .0
+          const fixed = newVal.toFixed(1);
+          displayQty = fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
+        }
       }
       // 3. Other units (c.à.s, tranche...)
       else {
-          // Small integers proximity check (e.g. 2.9 -> 3)
-          const nearestInt = Math.round(newVal);
-          if (Math.abs(newVal - nearestInt) < 0.2) {
-            displayQty = nearestInt;
-          } else if (newVal > 10) {
-            displayQty = Math.round(newVal);
-          } else {
-            // Max 1 decimal, no .0
-            const fixed = newVal.toFixed(1);
-            displayQty = fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
-          }
+        // Small integers proximity check (e.g. 2.9 -> 3)
+        const nearestInt = Math.round(newVal);
+        if (Math.abs(newVal - nearestInt) < 0.2) {
+          displayQty = nearestInt;
+        } else if (newVal > 10) {
+          displayQty = Math.round(newVal);
+        } else {
+          // Max 1 decimal, no .0
+          const fixed = newVal.toFixed(1);
+          displayQty = fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
+        }
       }
       return `${displayQty} ${unit}`;
     } else {
