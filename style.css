@@ -618,6 +618,8 @@ body {
   transition: 0.3s ease;
   align-self: center;
   /* Centre le bouton */
+  position: static;
+  /* Reset position absolute from other pages */
 }
 
 .modal-close:hover {
