@@ -212,9 +212,12 @@ window.toggleHabit = (id) => {
   let todaysDone = history[today] || [];
 
   if (todaysDone.includes(id)) {
+    // Untoggle (remove XP?) -> For now let's keep it simple: no XP loss, but no double gain
     todaysDone = todaysDone.filter(x => x !== id);
   } else {
     todaysDone.push(id);
+    // GAIN XP
+    if (window.gainXP) window.gainXP(10, "Habitude validée");
   }
 
   history[today] = todaysDone;
@@ -280,6 +283,12 @@ function loadJournalModule() {
 
   btn.onclick = () => {
     const text = input.value;
+
+    // Check if first time specific today
+    if (!journalData[today] && text.length > 5) {
+      if (window.gainXP) window.gainXP(15, "Journaling du jour");
+    }
+
     journalData[today] = text;
     localStorage.setItem("my_journal", JSON.stringify(journalData));
 

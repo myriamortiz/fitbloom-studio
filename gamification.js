@@ -1,134 +1,235 @@
 // -------------------------------
-// FITBLOOM GAMIFICATION ENGINE 🌸
+// FITBLOOM GAMIFICATION ENGINE 🌸 (RPG V2)
 // -------------------------------
 
-const BLOOM_LEVELS = [
-    { min: 0, max: 25, stage: 'seed', img: 'assets/bloom/bloom_stage_1_seed_1769281746060.png', label: "Graine Potentielle 🌱" },
-    { min: 25, max: 50, stage: 'sprout', img: 'assets/bloom/bloom_stage_2_sprout_1769281758730.png', label: "Jeune Pousse 🌿" },
-    { min: 50, max: 75, stage: 'bud', img: 'assets/bloom/bloom_stage_3_bud_1769281783120.png', label: "Bourgeon Prometteur 🌷" },
-    { min: 75, max: 1000, stage: 'flower', img: 'assets/bloom/bloom_stage_4_flower_1769281796752.png', label: "Fleur Épanouie 🌸" }
+// Nouvelle Logic XP : Cumulatif
+// Niveaux : 1 -> Infini
+// XP par action
+
+const XP_TABLE = [
+    0,      // Level 1 starts at 0
+    100,    // Level 2
+    250,    // Level 3
+    500,    // Level 4
+    800,    // Level 5
+    1200,   // Level 6
+    1700,   // Level 7
+    2300,   // Level 8
+    3000,   // Level 9
+    4000    // Level 10 (etc...)
+];
+
+// Configuration des Gains
+const ACTIONS_XP = {
+    'HABIT_DONE': 10,
+    'WORKOUT': 50,
+    'JOURNAL': 15,
+    'MEAL_LOG': 5,
+    'LOGIN_BONUS': 20
+};
+
+// Images (Nouvelles versions transparentes)
+const BLOOM_STAGES = [
+    { minLevel: 1, img: 'assets/bloom/bloom_stage_1_seed_1769752536285.png', label: "Graine Potentielle 🌱" },
+    { minLevel: 4, img: 'assets/bloom/bloom_stage_2_sprout_1769752551303.png', label: "Jeune Pousse 🌿" },
+    { minLevel: 7, img: 'assets/bloom/bloom_stage_3_bud_1769752566420.png', label: "Bourgeon Prometteur 🌷" },
+    { minLevel: 10, img: 'assets/bloom/bloom_stage_4_flower_1769752582043.png', label: "Fleur Épanouie 🌸" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    updateBloomScore();
+    initGamification();
     renderBloomWidget();
 });
 
 
-// Calculate Daily Score (0-100)
-function calculateDailyBloom() {
-    let score = 0;
+// ----------------------------------------
+// CORE ENGINE
+// ----------------------------------------
+
+function initGamification() {
+    let progress = getProgress();
+    
+    // Daily Login Bonus Check
     const today = new Date().toISOString().split("T")[0];
-
-    // 1. HABITS (Self-Care)
-    const habitsHistory = JSON.parse(localStorage.getItem("habits_history")) || {};
-    const habitsDone = habitsHistory[today] || [];
-    // Cap at 3 habits = 30 pts
-    score += Math.min(habitsDone.length * 10, 30);
-
-    // 2. EMOTION (Self-Care)
-    const emotionHistory = JSON.parse(localStorage.getItem("emotions_history")) || {};
-    if (emotionHistory[today]) {
-        score += 15; // Just tracking it is good!
+    if (progress.lastLogin !== today) {
+        progress.lastLogin = today;
+        saveProgress(progress);
+        gainXP(ACTIONS_XP.LOGIN_BONUS, "Bonus Connexion Quotidienne");
     }
-
-    // 3. JOURNAL (Self-Care)
-    const journal = JSON.parse(localStorage.getItem("my_journal")) || {};
-    if (journal[today]) {
-        score += 15;
-    }
-
-    // 4. WORKOUT (Fitness) - Need to confirm if marked as done?
-    // For now, let's assume if they visited the fitness page > 1 min?
-    // Or simpler: Add a specific "I worked out" button in gamification widget?
-    const workoutDone = localStorage.getItem(`workout_done_${today}`);
-    if (workoutDone === 'true') {
-        score += 40;
-    }
-
-    return Math.min(score, 100);
 }
 
-function updateBloomScore() {
-    const score = calculateDailyBloom();
-    // Save maybe? not strictly needed if calc on fly
+function getProgress() {
+    const defaultState = {
+        level: 1,
+        currentXP: 0,
+        totalXP: 0,
+        lastLogin: null,
+        history: [] // Log des gains récents
+    };
+    return JSON.parse(localStorage.getItem('fbs_gamification')) || defaultState;
 }
 
-function getBloomStage(score) {
-    return BLOOM_LEVELS.find(l => score >= l.min && score < l.max) || BLOOM_LEVELS[0];
+function saveProgress(state) {
+    localStorage.setItem('fbs_gamification', JSON.stringify(state));
+}
+
+function getNextLevelXP(level) {
+    // Si on dépasse la table, on ajoute 1000 par niveau
+    if (level >= XP_TABLE.length) return XP_TABLE[XP_TABLE.length - 1] + ((level - XP_TABLE.length + 1) * 1200);
+    return XP_TABLE[level]; 
+}
+
+// PUBLIC API : Gain XP
+window.gainXP = function(amount, reason) {
+    let p = getProgress();
+    
+    p.currentXP += amount;
+    p.totalXP += amount;
+    
+    // Check Level Up
+    let nextLevelThreshold = getNextLevelXP(p.level);
+    let leveledUp = false;
+    
+    while (p.currentXP >= nextLevelThreshold) {
+        p.currentXP -= nextLevelThreshold;
+        p.level++;
+        leveledUp = true;
+        nextLevelThreshold = getNextLevelXP(p.level); // Re-calc for multi-level jump
+    }
+    
+    saveProgress(p);
+    renderBloomWidget();
+    
+    if (leveledUp) {
+        showLevelUpModal(p.level);
+        triggerConfetti();
+    } else {
+        showToast(`+${amount} XP : ${reason}`);
+    }
+}
+
+// ----------------------------------------
+// UI & WIDGET
+// ----------------------------------------
+
+function getStageForLevel(level) {
+    // Find highest stage where minLevel <= current level
+    return BLOOM_STAGES.slice().reverse().find(s => level >= s.minLevel) || BLOOM_STAGES[0];
 }
 
 function renderBloomWidget() {
     const container = document.getElementById("bloom-widget-area");
     if (!container) return;
 
-    const score = calculateDailyBloom();
-    const stage = getBloomStage(score);
-    const today = new Date().toISOString().split("T")[0];
-    const isWorkoutDone = localStorage.getItem(`workout_done_${today}`) === 'true';
+    const p = getProgress();
+    const stage = getStageForLevel(p.level);
+    const nextLimit = getNextLevelXP(p.level);
+    const pct = Math.min((p.currentXP / nextLimit) * 100, 100);
 
     container.innerHTML = `
-        <div class="bloom-card">
+        <div class="bloom-card" style="position:relative; overflow:hidden;">
             <div class="bloom-visual">
-                <img src="${stage.img}" alt="${stage.label}" class="bloom-img ${score >= 75 ? 'pulse' : ''}">
+                <img src="${stage.img}" alt="${stage.label}" class="bloom-img" style="filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));">
             </div>
             <div class="bloom-info">
-                <h3>Mon Bloom du Jour</h3>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width:0%; transition: width 1.5s ease-out;"></div>
-                </div>
-                <p class="bloom-status">${score}% - ${stage.label}</p>
+                <h3>Niveau ${p.level}</h3>
+                <p class="bloom-status">${stage.label}</p>
                 
-                ${!isWorkoutDone ?
-            `<button class="fbs-btn-small" onclick="declareWorkout()" style="margin-top:10px; width:100%">
-                    J'ai fait mon sport ! (+40 XP)
-                   </button>` :
-            `<div style="color:var(--fbs-vert-sauge); font-size:0.9rem; margin-top:5px; font-weight:bold;">✨ Sport validé !</div>`
-        }
+                <div class="progress-bar-bg" style="margin-top:8px;">
+                    <div class="progress-bar-fill" style="width:${pct}%"></div>
+                </div>
+                <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--fbs-taupe-rose); margin-top:4px;">
+                    <span>${p.currentXP} XP</span>
+                    <span>${nextLimit} XP</span>
+                </div>
             </div>
         </div>
     `;
-
-    // Trigger animation after render
-    setTimeout(() => {
-        const bar = container.querySelector('.progress-bar-fill');
-        if (bar) bar.style.width = `${score}%`;
-    }, 100);
 }
 
-window.declareWorkout = () => {
-    const today = new Date().toISOString().split("T")[0];
-    localStorage.setItem(`workout_done_${today}`, 'true');
-    renderBloomWidget();
+// ----------------------------------------
+// FEEDBACK & ANIMATIONS
+// ----------------------------------------
 
-    // MAGIC Sparkles Confetti
+function showToast(msg) {
+    // Simple toast
+    const div = document.createElement('div');
+    div.className = 'xp-toast';
+    div.innerHTML = `✨ ${msg}`;
+    div.style.cssText = `
+        position: fixed; top: 20px; right: 20px;
+        background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+        border: 1px solid var(--fbs-rose-clair); color: white;
+        padding: 10px 20px; border-radius: 20px; z-index: 9999;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        animation: slideIn 0.5s ease-out forwards;
+    `;
+    document.body.appendChild(div);
+    
+    setTimeout(() => {
+        div.style.animation = 'fadeOut 0.5s ease-out forwards';
+        setTimeout(() => div.remove(), 500);
+    }, 3000);
+}
+
+function showLevelUpModal(newLevel) {
+    // Could be a nice overlay. For now simple alert customized? 
+    // Let's make a quick temporary overlay
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.85); z-index: 10000;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        text-align: center; color: white;
+    `;
+    
+    overlay.innerHTML = `
+        <h1 style="font-size: 3rem; color: var(--fbs-rose-clair); margin-bottom: 1rem;">NIVEAU ${newLevel} !</h1>
+        <p style="font-size: 1.2rem; color: var(--fbs-rose-pale);">Tu grandis magnifiquement. Continue comme ça ! 🌸</p>
+        <button onclick="this.parentElement.remove()" style="
+            margin-top: 2rem; padding: 1rem 2rem; background: var(--fbs-rose-clair); 
+            border: none; border-radius: 30px; font-weight: bold; cursor: pointer; color: #1a1a1a;">
+            Continuer
+        </button>
+    `;
+    
+    document.body.appendChild(overlay);
+}
+
+function triggerConfetti() {
     if (typeof confetti === 'function') {
-        const duration = 2000;
-        const animationEnd = Date.now() + duration;
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#c48a8a', '#eedbd1', '#ffffff']
+        });
+    }
+}
 
-        // Gold and Rose dust
-        const colors = ['#ffeebb', '#f2d5c8', '#ffffff'];
+// CSS Injection for Animations
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+`;
+document.head.appendChild(style);
 
-        const interval = setInterval(function () {
-            const timeLeft = animationEnd - Date.now();
-
-            if (timeLeft <= 0) {
-                return clearInterval(interval);
-            }
-
-            const particleCount = 20 * (timeLeft / duration);
-
-            // Center burst
-            confetti({
-                particleCount,
-                startVelocity: 20,
-                spread: 360,
-                origin: { x: 0.5, y: 0.4 }, // Center near widget
-                colors: colors,
-                shapes: ['circle'],
-                scalar: 0.6, // Smaller particles
-                disableForReducedMotion: true
-            });
-        }, 100);
+// ----------------------------------------
+// HOOKS (Legacy support shim)
+// ----------------------------------------
+// Used by fitness.js / index.html legacy calls if any
+window.declareWorkout = () => {
+    // Verify if already done today? With cumulative XP, maybe we allow once per day?
+    const today = new Date().toISOString().split("T")[0];
+    const key = `workout_xp_${today}`;
+    
+    if (!localStorage.getItem(key)) {
+        gainXP(ACTIONS_XP.WORKOUT, "Séance de sport terminée");
+        localStorage.setItem(key, 'true');
+        triggerConfetti();
+    } else {
+        alert("Tu as déjà validé ta séance aujourd'hui ! Reviens demain 💪");
     }
 };
+
