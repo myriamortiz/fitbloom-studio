@@ -2059,7 +2059,7 @@ input:-webkit-autofill:active {
 /* ====================================================== */
 /*          MOBILE RESPONSIVENESS (V1)                    */
 /* ====================================================== */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
   /* --- GLOBAL --- */
   body {
@@ -2156,6 +2156,12 @@ input:-webkit-autofill:active {
   .session {
     margin-top: 1rem;
     margin-bottom: 2rem;
+    padding: 2rem 1.2rem;
+    /* More padding inside card */
+  }
+
+  .session-title {
+    font-size: 1.4rem;
   }
 
   /* Action buttons stack */
@@ -2163,11 +2169,14 @@ input:-webkit-autofill:active {
     flex-direction: column;
     gap: 1rem !important;
     width: 100%;
+    margin-top: 1.5rem !important;
   }
 
-  .action-btn {
+  .action-btn,
+  .fbs-btn,
+  .main-btn {
     width: 100% !important;
-    max-width: 300px;
+    max-width: 320px;
   }
 
   /* --- SELFCARE MODULE --- */
