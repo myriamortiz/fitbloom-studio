@@ -2180,7 +2180,8 @@
         "sans_gluten",
         "sans_lactose",
         "spring",
-        "petit-dej"
+        "lunch",
+        "dinner"
       ],
       "ingredients": [
         "Navets : 150g",
@@ -2739,7 +2740,8 @@
         "sans_lactose",
         "proteine",
         "spring",
-        "petit-dej"
+        "lunch",
+        "dinner"
       ],
       "ingredients": [
         "Cabillaud: 150g",
@@ -5854,7 +5856,8 @@
       "tags": [
         "pescetarien",
         "plaisir",
-        "petit-dej"
+        "lunch",
+        "dinner"
       ],
       "ingredients": [
         "Bagel sésame: 1",

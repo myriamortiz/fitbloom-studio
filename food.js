@@ -190,6 +190,18 @@ function filterRecipes(pool, profile, slot) {
     });
   }
 
+  // SAFETY BLACKLIST (V9.12 Fix) - Bloque strictement les plats salés lourds le matin
+  if (slot === 'breakfast') {
+    const BLACKLIST = ['boeuf', 'poisson', 'steak', 'saumon', 'thon', 'cabillaud', 'navet', 'chou', 'haricot', 'brocoli', 'poulet', 'dinde', 'porc', 'agneau', 'sardine', 'maquereau', 'crevette', 'burger', 'pizza', 'tacos', 'curry', 'okonomiyaki'];
+    candidates = candidates.filter(r => {
+      const n = r.name.toLowerCase();
+      // Exception: "Bacon" is allowed even if it triggers "dinde" or "porc"
+      if (n.includes('bacon')) return true;
+
+      return !BLACKLIST.some(bad => n.includes(bad));
+    });
+  }
+
   // Apply Tag Filter
   const targetTags = getTagsForSlot(slot);
   candidates = candidates.filter(r => r.tags && targetTags.some(t => r.tags.includes(t)));
