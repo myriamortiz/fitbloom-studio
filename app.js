@@ -23,12 +23,19 @@ const QUOTES = [
   "La paix intérieure est mon plus grand trésor."
 ];
 
+function getWeekNumber(d) {
+  d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+}
+
 function loadDailyQuote() {
   const el = document.getElementById('daily-quote');
   if (!el) return;
 
-  const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
-  const index = dayOfYear % QUOTES.length;
+  const weekNum = getWeekNumber(new Date());
+  const index = weekNum % QUOTES.length;
 
   el.textContent = QUOTES[index];
 }
