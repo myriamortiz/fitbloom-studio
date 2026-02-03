@@ -671,15 +671,34 @@ function parseQuantity(qtyStr) {
   return { val, unit };
 }
 
+function normalizeIngredient(name) {
+  let n = name.toLowerCase().trim();
+
+  // Fix common spelling/variations
+  n = n.replace("œ", "oe");
+
+  // Synonyms mapping
+  if (n.startsWith("oeuf")) return "Oeufs";
+  if (n.includes("lait") && n.includes("coco")) return "Lait de coco";
+  if (n.includes("creme") && n.includes("coco")) return "Crème coco";
+  if (n.includes("pomme") && n.includes("terre")) return "Pommes de terre";
+
+  // Singular/Plural simple fix
+  if (n.endsWith("s") && !n.endsWith("ss")) n = n.slice(0, -1);
+
+  // Capitalize for display
+  return n.charAt(0).toUpperCase() + n.slice(1);
+}
+
 function buildGroceryList(week) {
   let rawList = {}; // name -> { unit -> totalVal }
 
   const pushIng = (rawLine) => {
     if (!rawLine.includes(":")) return;
     const [name, qtyRaw] = rawLine.split(":");
-    const cleanName = name.match(/[a-zA-ZÀ-ÿ\s]+/)[0].trim(); // Remove potential emojis or extra chars if simple regex
-    // Actually keep full name but trim
-    const finalName = name.trim();
+
+    // Normalize Name
+    const finalName = normalizeIngredient(name);
 
     const { val, unit } = parseQuantity(qtyRaw);
 
@@ -714,10 +733,9 @@ function buildGroceryList(week) {
     const aisle = getAisle(name);
     if (!categorized[aisle]) categorized[aisle] = [];
 
-    // Combine versions (e.g. 500g and 2 cuillières if mixed units, keep separate)
+    // Combine versions
     Object.keys(versions).forEach(unit => {
       let val = versions[unit];
-      // Round
       val = Math.round(val * 100) / 100;
       const displayStr = `${val} ${unit}`;
       categorized[aisle].push({ name, displayStr, full: `${name} : ${displayStr}`, checked: false });
