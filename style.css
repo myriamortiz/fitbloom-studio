@@ -279,6 +279,41 @@ body {
   /* Essential for absolute children like favorites heart */
 }
 
+/* GROCERY LIST STYLING */
+.grocery-aisle-header {
+  color: var(--fbs-rose-suave);
+  background: rgba(255, 255, 255, 0.05);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.8rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-left: 3px solid var(--fbs-rose-vif);
+}
+
+.grocery-item {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background 0.2s;
+}
+
+.grocery-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.grocery-check {
+  accent-color: var(--fbs-rose-vif);
+  cursor: pointer;
+  width: 1.1em;
+  height: 1.1em;
+}
+
 .modal-close {
   border: none;
   background: rgba(255, 255, 255, 0.12);

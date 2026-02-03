@@ -813,10 +813,7 @@ function renderGroceryPopup(categorizedList) {
     // Header
     const h3 = document.createElement('h3');
     h3.textContent = aisle;
-    h3.style.color = "var(--fbs-rose-suave)";
-    h3.style.marginTop = "1rem";
-    h3.style.marginBottom = "0.5rem";
-    h3.style.borderBottom = "1px solid rgba(255,255,255,0.1)";
+    h3.className = 'grocery-aisle-header';
     container.appendChild(h3);
 
     // Items
