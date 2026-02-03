@@ -91,72 +91,77 @@ function updateStepsUI(count) {
     circle.style.strokeDashoffset = offset;
 }
 
-// --- FASTING ---
+// --- FASTING (MANUAL) ---
+let fastInterval;
+
 function initFasting() {
-    const profile = JSON.parse(localStorage.getItem('userProfile')) || {};
-    // Fasting Config
-    // If no config, assume 16:8 (Skip Breakfast by default if not set?? Or balanced?)
-    // In food.js we have logic: 'balanced', 'skip_breakfast', 'skip_dinner'
-    // Let's replicate or assume simple logic based on current time.
+    updateFastingUI();
+    // Update timer every minute
+    fastInterval = setInterval(updateFastingUI, 60000); // 1 min update
+}
 
-    const mode = profile.fastingMode || 'skip_breakfast'; // default
+window.toggleFast = () => {
+    const data = getFastingData();
 
-    /* 
-       MODE LOGIC SIMPLIFIED:
-       skip_breakfast (16:8) -> Eat 12:00 - 20:00. Fast 20:00 - 12:00
-       skip_dinner (16:8) -> Eat 08:00 - 16:00. Fast 16:00 - 08:00
-       balanced (12:12) -> Eat 08:00 - 20:00. Fast 20:00 - 08:00
-    */
+    if (data.isFasting) {
+        // STOP FASTING
+        const now = Date.now();
+        const start = data.startTime;
+        const elapsedHours = (now - start) / (1000 * 60 * 60);
 
-    const now = new Date();
-    const hour = now.getHours() + (now.getMinutes() / 60);
-
-    let isFasting = false;
-    let statusText = "";
-    let nextEvent = "";
-
-    if (mode === 'skip_breakfast') {
-        // Window: 12h - 20h
-        if (hour >= 12 && hour < 20) {
-            isFasting = false;
-            statusText = "Fenêtre d'alimentation 🥗";
+        // GAMIFICATION CHECK (Target: 16h)
+        if (elapsedHours >= 16 && window.gainXP) {
+            window.gainXP(50, "Jeûne 16h réussi ! ⏳");
+            alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. Bravo ! +50 XP 🔥`);
         } else {
-            isFasting = true;
-            statusText = "En période de Jeûne 🌑";
+            alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. (Objectif : 16h)`);
         }
-    } else if (mode === 'skip_dinner') {
-        // Window: 8h - 16h
-        if (hour >= 8 && hour < 16) {
-            isFasting = false;
-            statusText = "Fenêtre d'alimentation 🥗";
-        } else {
-            isFasting = true;
-            statusText = "En période de Jeûne 🌑";
-        }
+
+        saveFastingData(false, null);
     } else {
-        // Balanced 12/12: Eat 8h - 20h
-        if (hour >= 8 && hour < 20) {
-            isFasting = false;
-            statusText = "Fenêtre d'alimentation 🥗";
-        } else {
-            isFasting = true;
-            statusText = "En période de Jeûne 🌑";
-        }
+        // START FASTING
+        saveFastingData(true, Date.now());
     }
+    updateFastingUI();
+};
 
-    document.getElementById('fasting-status-text').textContent = statusText;
-    document.getElementById('fasting-meta').textContent = `Mode: ${mode === 'skip_breakfast' ? '16/8 (Sauter PDJ)' : mode}`;
+function getFastingData() {
+    return JSON.parse(localStorage.getItem('fbs_fasting_state')) || { isFasting: false, startTime: null };
+}
 
-    // Style update
+function saveFastingData(isFasting, startTime) {
+    localStorage.setItem('fbs_fasting_state', JSON.stringify({ isFasting, startTime }));
+}
+
+function updateFastingUI() {
+    const data = getFastingData();
+    const statusText = document.getElementById('fasting-status-text');
+    const timerDisplay = document.getElementById('fasting-timer-display');
+    const btn = document.getElementById('fast-btn');
     const card = document.getElementById('fasting-widget');
-    if (isFasting) {
-        card.style.borderLeft = "4px solid #a8e6cf"; // Greenish for Fasting (healing)
-    } else {
-        card.style.borderLeft = "4px solid #ffb7b2"; // Reddish/Orange for Eating
-    }
 
-    // Timer (Simulated "Time since switch")
-    // This is complex without storing LastMealTime.
-    // For now, just show current time? Or "Keep it up!"
-    document.getElementById('fasting-timer-display').textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    if (data.isFasting) {
+        // FASTING MODE
+        statusText.textContent = "Jeûne en cours 🌑";
+        btn.textContent = "Arrêter le Jeûne 🍳";
+        btn.style.background = "var(--fbs-rose-clair)";
+        btn.style.color = "#1a1a1a";
+        card.style.borderLeft = "4px solid #a8e6cf"; // Green
+
+        // Timer
+        const diff = Date.now() - data.startTime;
+        const h = Math.floor(diff / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        timerDisplay.textContent = `${h}h ${m}m`;
+
+    } else {
+        // EATING MODE
+        statusText.textContent = "Fenêtre d'alimentation 🥗";
+        btn.textContent = "Commencer le Jeûne ⏳";
+        btn.style.background = ""; // Default glass/border
+        btn.style.color = "var(--fbs-rose-pale)";
+        card.style.borderLeft = "4px solid #ffb7b2"; // Red
+
+        timerDisplay.textContent = "--:--";
+    }
 }
