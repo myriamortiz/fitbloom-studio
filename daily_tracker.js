@@ -101,28 +101,34 @@ function initFasting() {
 }
 
 window.toggleFast = () => {
-    const data = getFastingData();
+    try {
+        const data = getFastingData();
+        console.log("Toggle Fast. Current:", data);
 
-    if (data.isFasting) {
-        // STOP FASTING
-        const now = Date.now();
-        const start = data.startTime;
-        const elapsedHours = (now - start) / (1000 * 60 * 60);
+        if (data.isFasting) {
+            // STOP FASTING
+            const now = Date.now();
+            const start = data.startTime;
+            const elapsedHours = (now - start) / (1000 * 60 * 60);
 
-        // GAMIFICATION CHECK (Target: 16h)
-        if (elapsedHours >= 16 && window.gainXP) {
-            window.gainXP(50, "Jeûne 16h réussi ! ⏳");
-            alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. Bravo ! +50 XP 🔥`);
+            // GAMIFICATION CHECK (Target: 16h)
+            if (elapsedHours >= 16 && window.gainXP) {
+                window.gainXP(50, "Jeûne 16h réussi ! ⏳");
+                alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. Bravo ! +50 XP 🔥`);
+            } else {
+                alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. (Objectif : 16h)`);
+            }
+
+            saveFastingData(false, null);
         } else {
-            alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. (Objectif : 16h)`);
+            // START FASTING
+            saveFastingData(true, Date.now());
+            console.log("Started Fasting");
         }
-
-        saveFastingData(false, null);
-    } else {
-        // START FASTING
-        saveFastingData(true, Date.now());
+        updateFastingUI();
+    } catch (e) {
+        alert("Erreur JS: " + e.message);
     }
-    updateFastingUI();
 };
 
 function getFastingData() {
