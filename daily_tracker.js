@@ -101,34 +101,27 @@ function initFasting() {
 }
 
 window.toggleFast = () => {
-    try {
-        const data = getFastingData();
-        console.log("Toggle Fast. Current:", data);
+    const data = getFastingData();
 
-        if (data.isFasting) {
-            // STOP FASTING
-            const now = Date.now();
-            const start = data.startTime;
-            const elapsedHours = (now - start) / (1000 * 60 * 60);
+    if (data.isFasting) {
+        // STOP FASTING
+        const now = Date.now();
+        const start = data.startTime;
+        const elapsedHours = (now - start) / (1000 * 60 * 60);
 
-            // GAMIFICATION CHECK (Target: 16h)
-            if (elapsedHours >= 16 && window.gainXP) {
-                window.gainXP(50, "Jeûne 16h réussi ! ⏳");
-                alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. Bravo ! +50 XP 🔥`);
-            } else {
-                alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. (Objectif : 16h)`);
-            }
-
-            saveFastingData(false, null);
+        // GAMIFICATION CHECK (Target: 16h)
+        if (elapsedHours >= 16 && window.gainXP) {
+            window.gainXP(50, "Jeûne 16h réussi ! ⏳");
         } else {
-            // START FASTING
-            saveFastingData(true, Date.now());
-            console.log("Started Fasting");
+            // No alert for non-goal completion
         }
-        updateFastingUI();
-    } catch (e) {
-        alert("Erreur JS: " + e.message);
+
+        saveFastingData(false, null);
+    } else {
+        // START FASTING
+        saveFastingData(true, Date.now());
     }
+    updateFastingUI();
 };
 
 function getFastingData() {
@@ -152,7 +145,7 @@ function updateFastingUI() {
         btn.textContent = "Arrêter le Jeûne 🍳";
         btn.style.background = "var(--fbs-rose-clair)";
         btn.style.color = "#1a1a1a";
-        card.style.borderLeft = "4px solid #a8e6cf"; // Green
+        // card.style.borderLeft = "4px solid #a8e6cf"; // Removed for harmony
 
         // Timer
         const diff = Date.now() - data.startTime;
@@ -166,7 +159,7 @@ function updateFastingUI() {
         btn.textContent = "Commencer le Jeûne ⏳";
         btn.style.background = ""; // Default glass/border
         btn.style.color = "var(--fbs-rose-pale)";
-        card.style.borderLeft = "4px solid #ffb7b2"; // Red
+        // card.style.borderLeft = "4px solid #ffb7b2"; // Removed for harmony
 
         timerDisplay.textContent = "--:--";
     }
