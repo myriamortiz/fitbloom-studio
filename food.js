@@ -623,21 +623,75 @@ document.getElementById("open-favorites").addEventListener("click", () => {
 document.getElementById("close-favorites").addEventListener("click", () => {
   document.getElementById("favorites-popup").style.display = "none";
 });
+// ----------------------------
+// GROCERY ENGINE 🛒
+// ----------------------------
+
+const AISLES = {
+  "Fruits & Légumes": ["pomme", "poire", "banane", "citron", "avocat", "tomate", "concombre", "carotte", "chou", "épinard", "mangue", "figue", "raisin", "maïs", "ciboulette", "persil", "basilic", "menthe", "ail", "oignon", "patate douce", "poivron", "champignon", "fruits"],
+  "Boucherie & Poisson": ["saumon", "thon", "dinde", "bacon", "poulet", "crevette", "oeuf", "œuf"],
+  "Frais & Crémerie": ["lait", "crème", "beurre", "yaourt", "fromage", "chèvre", "feta", "skyr", "tofu", "faux-mage", "guacamole", "houmous"],
+  "Épicerie Salée": ["riz", "pâte", "quinoa", "sarrasin", "pain", "bagel", "wrap", "tortilla", "huile", "vinaigre", "soja", "chia", "not", "amande", "noix", "noisette", "cajou", "graine", "lentille", "pois chiche", "haricot", "farine"],
+  "Épicerie Sucrée & Matin": ["flocon", "avoine", "muesli", "granola", "miel", "sirop", "sucre", "chocolat", "cacao", "vanille", "compote", "brioche", "biscuit", "cookie"],
+  "Surgelés": ["glace", "fruit rouge"],
+  "Divers": []
+};
+
+function getAisle(ingredientName) {
+  const lower = ingredientName.toLowerCase();
+  for (const [aisle, keywords] of Object.entries(AISLES)) {
+    if (keywords.some(k => lower.includes(k))) return aisle;
+  }
+  return "Divers";
+}
+
+function parseQuantity(qtyStr) {
+  // Extract number and unit
+  // "200g" -> {val: 200, unit: "g"}
+  // "2" -> {val: 2, unit: ""}
+  // "1/2" -> {val: 0.5, unit: ""}
+
+  if (!qtyStr) return { val: 1, unit: "" };
+
+  const clean = qtyStr.trim().replace(',', '.');
+
+  // Try fraction
+  if (clean.includes('/')) {
+    const [n, d] = clean.split('/');
+    const val = parseFloat(n) / parseFloat(d);
+    // remove numbers to find unit
+    const unit = clean.replace(/[0-9\/.]/g, '').trim();
+    return { val, unit };
+  }
+
+  const val = parseFloat(clean);
+  if (isNaN(val)) return { val: 1, unit: clean }; // Fallback if no number found
+
+  const unit = clean.replace(/[0-9.]/g, '').trim();
+  return { val, unit };
+}
+
 function buildGroceryList(week) {
-  let ingredients = {};
-  const pushIng = (raw) => {
-    if (!raw.includes(":")) return;
-    const [name, qty] = raw.split(":");
-    const cleanName = name.trim();
-    const cleanQty = qty.trim();
-    if (!ingredients[cleanName]) ingredients[cleanName] = [];
-    ingredients[cleanName].push(cleanQty);
+  let rawList = {}; // name -> { unit -> totalVal }
+
+  const pushIng = (rawLine) => {
+    if (!rawLine.includes(":")) return;
+    const [name, qtyRaw] = rawLine.split(":");
+    const cleanName = name.match(/[a-zA-ZÀ-ÿ\s]+/)[0].trim(); // Remove potential emojis or extra chars if simple regex
+    // Actually keep full name but trim
+    const finalName = name.trim();
+
+    const { val, unit } = parseQuantity(qtyRaw);
+
+    if (!rawList[finalName]) rawList[finalName] = {};
+    if (!rawList[finalName][unit]) rawList[finalName][unit] = 0;
+
+    rawList[finalName][unit] += val;
   };
 
   if (!week) return {};
-  if (week[0] && week[0].juice) week[0].juice.ingredients.forEach(pushIng);
+  if (week[0] && week[0].juice) (week[0].juice.ingredients || []).forEach(pushIng);
 
-  // Generic iteration over all keys in daily object except 'juice'
   week.slice(1).forEach(day => {
     Object.keys(day).forEach(slotKey => {
       const r = day[slotKey];
@@ -645,45 +699,94 @@ function buildGroceryList(week) {
     });
   });
 
-  return ingredients;
+  // Format final list with categorization
+  let categorized = {};
+
+  // Add extras
+  const extras = JSON.parse(localStorage.getItem('grocery_ext')) || [];
+  extras.forEach(ext => {
+    if (!categorized["Divers"]) categorized["Divers"] = [];
+    categorized["Divers"].push({ str: ext, checked: false });
+  });
+
+  Object.keys(rawList).forEach(name => {
+    const versions = rawList[name];
+    const aisle = getAisle(name);
+    if (!categorized[aisle]) categorized[aisle] = [];
+
+    // Combine versions (e.g. 500g and 2 cuillières if mixed units, keep separate)
+    Object.keys(versions).forEach(unit => {
+      let val = versions[unit];
+      // Round
+      val = Math.round(val * 100) / 100;
+      const displayStr = `${val} ${unit}`;
+      categorized[aisle].push({ name, displayStr, full: `${name} : ${displayStr}`, checked: false });
+    });
+  });
+
+  return categorized;
 }
 
-function renderGroceryPopup(list) {
-  const ul = document.getElementById("grocery-list");
-  ul.innerHTML = "";
-  Object.keys(list).forEach(item => {
-    const li = document.createElement("li");
-    li.className = "grocery-item";
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.className = "grocery-check";
-    const label = document.createElement("span");
-    label.textContent = `${item} : ${list[item].join(" + ")}`;
+function renderGroceryPopup(categorizedList) {
+  const container = document.getElementById("grocery-list");
+  container.innerHTML = "";
 
-    checkbox.addEventListener("change", function () {
-      if (this.checked) {
-        label.style.textDecoration = "line-through";
-        label.style.opacity = "0.5";
-      } else {
-        label.style.textDecoration = "none";
-        label.style.opacity = "1";
-      }
+  // Order of aisles
+  const orderedKeys = Object.keys(AISLES); // Priority order defined in obj
+
+  orderedKeys.forEach(aisle => {
+    if (!categorizedList[aisle] || categorizedList[aisle].length === 0) return;
+
+    // Header
+    const h3 = document.createElement('h3');
+    h3.textContent = aisle;
+    h3.style.color = "var(--fbs-rose-suave)";
+    h3.style.marginTop = "1rem";
+    h3.style.marginBottom = "0.5rem";
+    h3.style.borderBottom = "1px solid rgba(255,255,255,0.1)";
+    container.appendChild(h3);
+
+    // Items
+    categorizedList[aisle].forEach(item => {
+      const li = document.createElement("li");
+      li.className = "grocery-item";
+      li.style.listStyle = "none";
+      li.style.textAlign = "left";
+      li.style.display = "flex";
+      li.style.alignItems = "center";
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.className = "grocery-check";
+      checkbox.style.marginRight = "10px";
+
+      const label = document.createElement("span");
+      label.textContent = item.full || item.str;
+      label.style.color = "var(--fbs-rose-clair)";
+
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          label.style.textDecoration = "line-through";
+          label.style.opacity = "0.5";
+        } else {
+          label.style.textDecoration = "none";
+          label.style.opacity = "1";
+        }
+      });
+
+      li.appendChild(checkbox);
+      li.appendChild(label);
+      container.appendChild(li);
     });
-
-    li.appendChild(checkbox);
-    li.appendChild(label);
-    ul.appendChild(li);
   });
+
+  // Handle remaining "Divers" or extras if they were not in ordered keys (though Divers is in keys)
 }
 
 document.getElementById("open-grocery").addEventListener("click", () => {
   const week = JSON.parse(localStorage.getItem("fbs-week-v2"));
-  const list = buildGroceryList(week);
-  const extras = JSON.parse(localStorage.getItem('grocery_ext')) || [];
-  if (extras.length > 0) {
-    list["Ajouts Manuels"] = extras;
-  }
-  renderGroceryPopup(list);
+  const catList = buildGroceryList(week);
+  renderGroceryPopup(catList);
   document.getElementById("grocery-popup").style.display = "flex";
 });
 
