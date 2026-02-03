@@ -129,7 +129,7 @@ function renderBloomWidget() {
     container.innerHTML = `
         <div class="bloom-card" style="position:relative; overflow:hidden;">
             <div class="bloom-visual">
-                <img src="${stage.img}" alt="${stage.label}" class="bloom-img" style="filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));">
+                <img src="${stage.img}" alt="${stage.label}" class="bloom-img">
             </div>
             <div class="bloom-info">
                 <h3>Niveau ${p.level}</h3>

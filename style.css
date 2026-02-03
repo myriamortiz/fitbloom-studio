@@ -2230,3 +2230,9 @@ input:-webkit-autofill:active {
     width: 100%;
   }
 }
+
+/* FIX BLOOMING TRANSPARENCY */
+.bloom-img {
+    mix-blend-mode: screen; /* Makes black background transparent */
+    border-radius: 50%; /* Optional */
+}
