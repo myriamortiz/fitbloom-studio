@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBloom Studio – Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Utilisation de Chart.js via CDN pour éviter de copier un gros fichier -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="page-trackers">
+
+  <!-- HEADER -->
+  <header class="sub-header">
+    <a href="index.html" class="back-btn">← Retour</a>
+    <div class="header-center">
+      <img src="assets/logo/logo-fbs-light.png" class="sub-logo" alt="FitBloom">
+      <h1>Tracker</h1>
+    </div>
+  </header>
+
+  <!-- SECTION 1 : Suivi Mensuel (Poids & Mensurations) -->
+  <section class="sc-section">
+    <h2 class="sc-title">Suivi Mensuel : Poids et Mensurations</h2>
+    <p style="text-align:center; margin-bottom: 1.5rem;">Je mesure pour comprendre, jamais pour me juger.</p>
+
+    <!-- SELETCEUR METRIQUE -->
+    <div class="metric-selector"
+      style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+      <button class="tab-pill active" onclick="switchMetric('poids', this)">Poids</button>
+      <button class="tab-pill" onclick="switchMetric('taille', this)">Taille</button>
+      <button class="tab-pill" onclick="switchMetric('poitrine', this)">Poitrine</button>
+      <button class="tab-pill" onclick="switchMetric('hanches', this)">Hanches</button>
+      <button class="tab-pill" onclick="switchMetric('cuisses', this)">Cuisses</button>
+      <button class="tab-pill" onclick="switchMetric('bras', this)">Bras</button>
+    </div>
+
+    <!-- GRAPHIQUE -->
+    <div
+      style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 1rem; margin-bottom: 2rem; border: 1px solid var(--fbs-rose-clair);">
+      <canvas id="weightChart" style="max-height: 300px;"></canvas>
+    </div>
+
+    <table class="tracking-table">
+      <thead>
+        <tr>
+          <th>Mois</th>
+          <th>Poids (kg)</th>
+          <th>Taille (cm)</th>
+          <th>Poitrine (cm)</th>
+          <th>Hanches (cm)</th>
+          <th>Cuisses (cm)</th>
+          <th>Bras (cm)</th>
+        </tr>
+      </thead>
+      <tbody id="weight-tracking">
+        <tr>
+          <td>Janvier</td>
+          <td><input type="number" id="poids-jan" placeholder="kg" /></td>
+          <td><input type="number" id="taille-jan" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-jan" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-jan" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-jan" placeholder="cm" /></td>
+          <td><input type="number" id="bras-jan" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Février</td>
+          <td><input type="number" id="poids-feb" placeholder="kg" /></td>
+          <td><input type="number" id="taille-feb" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-feb" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-feb" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-feb" placeholder="cm" /></td>
+          <td><input type="number" id="bras-feb" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Mars</td>
+          <td><input type="number" id="poids-mar" placeholder="kg" /></td>
+          <td><input type="number" id="taille-mar" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-mar" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-mar" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-mar" placeholder="cm" /></td>
+          <td><input type="number" id="bras-mar" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Avril</td>
+          <td><input type="number" id="poids-apr" placeholder="kg" /></td>
+          <td><input type="number" id="taille-apr" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-apr" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-apr" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-apr" placeholder="cm" /></td>
+          <td><input type="number" id="bras-apr" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Mai</td>
+          <td><input type="number" id="poids-may" placeholder="kg" /></td>
+          <td><input type="number" id="taille-may" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-may" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-may" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-may" placeholder="cm" /></td>
+          <td><input type="number" id="bras-may" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Juin</td>
+          <td><input type="number" id="poids-jun" placeholder="kg" /></td>
+          <td><input type="number" id="taille-jun" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-jun" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-jun" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-jun" placeholder="cm" /></td>
+          <td><input type="number" id="bras-jun" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Juillet</td>
+          <td><input type="number" id="poids-jul" placeholder="kg" /></td>
+          <td><input type="number" id="taille-jul" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-jul" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-jul" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-jul" placeholder="cm" /></td>
+          <td><input type="number" id="bras-jul" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Août</td>
+          <td><input type="number" id="poids-aug" placeholder="kg" /></td>
+          <td><input type="number" id="taille-aug" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-aug" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-aug" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-aug" placeholder="cm" /></td>
+          <td><input type="number" id="bras-aug" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Septembre</td>
+          <td><input type="number" id="poids-sep" placeholder="kg" /></td>
+          <td><input type="number" id="taille-sep" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-sep" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-sep" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-sep" placeholder="cm" /></td>
+          <td><input type="number" id="bras-sep" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Octobre</td>
+          <td><input type="number" id="poids-oct" placeholder="kg" /></td>
+          <td><input type="number" id="taille-oct" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-oct" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-oct" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-oct" placeholder="cm" /></td>
+          <td><input type="number" id="bras-oct" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Novembre</td>
+          <td><input type="number" id="poids-nov" placeholder="kg" /></td>
+          <td><input type="number" id="taille-nov" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-nov" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-nov" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-nov" placeholder="cm" /></td>
+          <td><input type="number" id="bras-nov" placeholder="cm" /></td>
+        </tr>
+        <tr>
+          <td>Décembre</td>
+          <td><input type="number" id="poids-dec" placeholder="kg" /></td>
+          <td><input type="number" id="taille-dec" placeholder="cm" /></td>
+          <td><input type="number" id="poitrine-dec" placeholder="cm" /></td>
+          <td><input type="number" id="hanches-dec" placeholder="cm" /></td>
+          <td><input type="number" id="cuisses-dec" placeholder="cm" /></td>
+          <td><input type="number" id="bras-dec" placeholder="cm" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="add-entry" class="main-btn">Enregistrer les Mensurations</button>
+  </section>
+
+  <script src="measurements.js"></script>
+
+</body>
+
+</html>
