@@ -42,6 +42,11 @@ function updateWater(delta) {
 
     saveDailyData('water', newUnknown);
     updateWaterUI(newUnknown);
+
+    // GAMIFICATION
+    if (delta > 0 && window.gainXP) {
+        window.gainXP(5, "Hydratation 💧");
+    }
 }
 
 function updateWaterUI(count) {
