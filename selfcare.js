@@ -4,7 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   loadMoodModule();
-  loadHabitsModule();
+
   loadJournalModule();
   loadRitual();
   loadRespiration();
@@ -110,152 +110,7 @@ function renderMoodChart() {
 }
 
 
-// ============================================
-// 2. HABITS TRACKER (Dynamic)
-// ============================================
 
-const DEFAULT_HABITS = [];
-
-function loadHabitsModule() {
-  renderHabitsList();
-
-  // Add Button Logic
-  const addBtn = document.getElementById('add-habit-btn');
-  const addInput = document.getElementById('new-habit-input');
-
-  if (addBtn && addInput) {
-    addBtn.onclick = () => {
-      const text = addInput.value.trim();
-      if (text) {
-        addNewHabit(text);
-        addInput.value = "";
-      }
-    };
-  }
-
-  updateStreak();
-}
-
-function getMyHabits() {
-  const custom = JSON.parse(localStorage.getItem('my_custom_habits'));
-  if (!custom) {
-    // Init defaults
-    localStorage.setItem('my_custom_habits', JSON.stringify(DEFAULT_HABITS));
-    return DEFAULT_HABITS;
-  }
-  return custom;
-}
-
-function addNewHabit(text) {
-  const habits = getMyHabits();
-  const id = "h_" + Date.now();
-  habits.push({ id, label: text });
-  localStorage.setItem('my_custom_habits', JSON.stringify(habits));
-  renderHabitsList();
-}
-
-function deleteHabit(id) {
-  let habits = getMyHabits();
-  habits = habits.filter(h => h.id !== id);
-  localStorage.setItem('my_custom_habits', JSON.stringify(habits));
-  renderHabitsList();
-}
-
-function renderHabitsList() {
-  const container = document.getElementById('habits-list');
-  if (!container) return;
-
-  const habits = getMyHabits();
-  const today = new Date().toISOString().split("T")[0];
-  const history = JSON.parse(localStorage.getItem("habits_history")) || {};
-  const todaysDone = history[today] || [];
-
-  container.innerHTML = "";
-
-  habits.forEach(h => {
-    const isDone = todaysDone.includes(h.id);
-
-    const el = document.createElement('div');
-    el.className = 'habit-item';
-
-    // Inner HTML
-    el.innerHTML = `
-            <div class="habit-label" onclick="toggleHabit('${h.id}')">
-                <div style="
-                    width:20px; height:20px; 
-                    border:2px solid var(--fbs-rose-clair); 
-                    border-radius:50%; 
-                    display:flex; align-items:center; justify-content:center;
-                    background:${isDone ? 'var(--fbs-rose-clair)' : 'transparent'}
-                ">
-                    ${isDone ? '<span style="color:#1a1a1a; font-size:0.8rem">✔</span>' : ''}
-                </div>
-                <span style="color:${isDone ? 'var(--fbs-rose-clair)' : 'var(--fbs-rose-pale)'}; text-decoration:${isDone ? 'line-through' : 'none'}">
-                    ${h.label}
-                </span>
-            </div>
-            <button class="delete-habit-btn" onclick="deleteHabit('${h.id}')">✕</button>
-        `;
-
-    container.appendChild(el);
-  });
-}
-
-// Global scope for onclick
-window.toggleHabit = (id) => {
-  const today = new Date().toISOString().split("T")[0];
-  const history = JSON.parse(localStorage.getItem("habits_history")) || {};
-  let todaysDone = history[today] || [];
-
-  if (todaysDone.includes(id)) {
-    // Untoggle (remove XP?) -> For now let's keep it simple: no XP loss, but no double gain
-    todaysDone = todaysDone.filter(x => x !== id);
-  } else {
-    todaysDone.push(id);
-    // GAIN XP
-    if (window.gainXP) window.gainXP(10, "Habitude validée");
-  }
-
-  history[today] = todaysDone;
-  localStorage.setItem("habits_history", JSON.stringify(history));
-
-  renderHabitsList();
-  updateStreak();
-};
-
-window.deleteHabit = (id) => {
-  if (confirm("Supprimer cette habitude ?")) {
-    deleteHabit(id);
-  }
-}
-
-function updateStreak() {
-  // Simple streak logic: check consecutive days backward where at least 1 habit was done
-  const history = JSON.parse(localStorage.getItem("habits_history")) || {};
-  let streak = 0;
-
-  for (let i = 0; i < 365; i++) {
-    const d = new Date();
-    d.setDate(d.getDate() - i);
-    const dateStr = d.toISOString().split("T")[0];
-
-    if (history[dateStr] && history[dateStr].length > 0) {
-      streak++;
-    } else if (i === 0) {
-      // If today is empty, don't break streak yet (user might do it later)
-      continue;
-    } else {
-      break;
-    }
-  }
-
-  const el = document.getElementById('habit-streak');
-  if (el && streak > 1) {
-    el.textContent = `🔥 Série : ${streak} jours !`;
-  } else {
-    if (el) el.textContent = "";
-  }
-}
 
 
 // ============================================
@@ -562,16 +417,6 @@ function loadWeeklyRecap() {
 
   const avg = (totalMood / moodCount).toFixed(1);
   let msg = `Humeur moyenne : <strong>${avg}/5</strong> this week.`;
-
-  if (topHabitId) {
-    const habits = getMyHabits();
-    const hObj = habits.find(h => h.id === topHabitId);
-    const label = hObj ? hObj.label : "Inconnu";
-    msg += `<br>Top Habitude : <strong>${label}</strong> (${maxCount} fois)`;
-  } else {
-    msg += `<br>Aucune habitude trackée cette semaine.`;
-  }
-
   container.innerHTML = msg;
 }
 
