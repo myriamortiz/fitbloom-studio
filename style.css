@@ -275,6 +275,8 @@ body {
   text-align: center;
   box-shadow: 0 0 30px var(--fbs-glow);
   backdrop-filter: blur(6px);
+  position: relative;
+  /* Essential for absolute children like favorites heart */
 }
 
 .modal-close {
@@ -2233,6 +2235,8 @@ input:-webkit-autofill:active {
 
 /* FIX BLOOMING TRANSPARENCY */
 .bloom-img {
-    mix-blend-mode: screen; /* Makes black background transparent */
-    border-radius: 50%; /* Optional */
+  mix-blend-mode: screen;
+  /* Makes black background transparent */
+  border-radius: 50%;
+  /* Optional */
 }
