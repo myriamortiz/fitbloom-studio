@@ -674,19 +674,74 @@ function parseQuantity(qtyStr) {
 function normalizeIngredient(name) {
   let n = name.toLowerCase().trim();
 
-  // Fix common spelling/variations
-  n = n.replace("œ", "oe");
+  // 1. Remove parsing artifacts / useless qualifiers
+  // remove initial quantities if they leaked into name (digits at start)
+  n = n.replace(/^[\d\s\/\.,]+(g|ml|cl|kg|l)?\s*/, "");
 
-  // Synonyms mapping
-  if (n.startsWith("oeuf")) return "Oeufs";
+  // Remove cooking states / shapes
+  const badWords = ["cuit", "cru", "frais", "grillé", "rôti", "vapeur", "ciselé", "émincé", "haché", "brouillés", "dur", "en dés", "en tranches", "tranche de", "tranches de", "feuilles de", "feuille de", "poudre", "déshydraté"];
+  badWords.forEach(w => {
+    n = n.replace(new RegExp(`\\b${w}\\b`, 'g'), "").trim();
+  });
+
+  // Fix common chars
+  n = n.replace(/œ/g, "oe");
+  n = n.replace(/\./g, ""); // "c.à.s" -> "cas" but usually these are in unit.
+
+  // 2. Specific Mappings (Canonicals)
+  if (n.includes("oeuf") || n.includes("œuf")) return "Oeufs";
+  if (n.includes("avocat")) return "Avocat";
+  if (n.includes("banane")) return "Banane";
+  if (n.includes("patate douce")) return "Patate douce";
+  if (n.includes("pomme") && n.includes("terre") || n === "pdt") return "Pommes de terre";
+  if (n.includes("pomme") && !n.includes("terre") && !n.includes("compote")) return "Pommes"; // Fruit
+  if (n.includes("poire") && !n.includes("poireau")) return "Poires";
+
+  // Flours & Milks normalization
+  if (n.includes("farine") && n.includes("sarrasin")) return "Farine de sarrasin";
+  if (n.includes("farine") && n.includes("riz")) return "Farine de riz";
   if (n.includes("lait") && n.includes("coco")) return "Lait de coco";
-  if (n.includes("creme") && n.includes("coco")) return "Crème coco";
-  if (n.includes("pomme") && n.includes("terre")) return "Pommes de terre";
+  if (n.includes("lait") && n.includes("amande")) return "Lait d'amande";
+  if (n.includes("lait") && n.includes("soja")) return "Lait de soja";
+  if (n.includes("crème") && n.includes("coco") || n.includes("creme") && n.includes("coco")) return "Crème coco";
 
-  // Singular/Plural simple fix
-  if (n.endsWith("s") && !n.endsWith("ss")) n = n.slice(0, -1);
+  // Breads / GF
+  if (n.includes("pain") && (n.includes("gf") || n.includes("gluten"))) return "Pain sans gluten";
+  if (n.includes("bagel") && (n.includes("gf") || n.includes("gluten"))) return "Bagel sans gluten";
+  if (n.includes("wrap") || n.includes("tortilla")) return "Wraps/Tortillas";
 
-  // Capitalize for display
+  // Proteins
+  if (n.includes("poulet")) return "Poulet";
+  if (n.includes("dinde") && !n.includes("jambon")) return "Dinde";
+  if (n.includes("saumon") && n.includes("fumé")) return "Saumon fumé";
+  if (n.includes("saumon") && !n.includes("fumé")) return "Saumon";
+  if (n.includes("thon")) return "Thon";
+  if (n.includes("tofu")) return "Tofu";
+
+  // Veggies
+  if (n.includes("tomate") && n.includes("cerise")) return "Tomates cerises";
+  if (n.includes("tomate") && n.includes("concassée")) return "Tomates concassées";
+  if (n.startsWith("tomate")) return "Tomates";
+  if (n.includes("concombre")) return "Concombre";
+  if (n.includes("courgette")) return "Courgettes";
+  if (n.includes("carotte")) return "Carottes";
+  if (n.includes("oignon") && n.includes("rouge")) return "Oignon rouge";
+  if (n.startsWith("oignon")) return "Oignons";
+  if (n.includes("ail") && !n.includes("persil")) return "Ail";
+  if (n.includes("champignon")) return "Champignons";
+  if (n.includes("épinard") || n.includes("epinard")) return "Épinards";
+
+  // Others
+  if (n.includes("chocolat") && (n.includes("noir") || n.includes("85"))) return "Chocolat Noir 85%";
+  if (n.includes("sirop") && (n.includes("érable") || n.includes("erable"))) return "Sirop d'érable";
+  if (n.includes("yaourt") && n.includes("coco")) return "Yaourt Coco";
+  if (n.includes("yaourt") && n.includes("soja")) return "Yaourt Soja";
+  if (n.includes("fromage blanc")) return "Fromage blanc"; // Keep distinct looking
+
+  // 3. Generic Pluralization (if not caught above)
+  if (n.endsWith("s") && !n.endsWith("ss") && !n.endsWith("is") && !n.endsWith("us") && !n.endsWith("os")) n = n.slice(0, -1);
+
+  // Capitalize
   return n.charAt(0).toUpperCase() + n.slice(1);
 }
 
