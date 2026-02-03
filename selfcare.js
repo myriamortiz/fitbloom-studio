@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadJournalModule();
   loadRitual();
   loadRespiration();
-  loadTodos();
+
   loadComplements(); // V8 logic
 });
 
@@ -114,11 +114,7 @@ function renderMoodChart() {
 // 2. HABITS TRACKER (Dynamic)
 // ============================================
 
-const DEFAULT_HABITS = [
-  { id: 'water', label: "Boire 2L d’eau 💧" },
-  { id: 'complements', label: "Prendre mes compléments 💊" },
-  { id: 'sport', label: "Bouger mon corps 💪" }
-];
+const DEFAULT_HABITS = [];
 
 function loadHabitsModule() {
   renderHabitsList();
