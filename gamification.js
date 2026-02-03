@@ -30,10 +30,10 @@ const ACTIONS_XP = {
 
 // Images (Nouvelles versions transparentes)
 const BLOOM_STAGES = [
-    { minLevel: 1, img: 'assets/bloom/bloom_stage_1_seed_1769752536285.png', label: "Graine Potentielle 🌱" },
-    { minLevel: 4, img: 'assets/bloom/bloom_stage_2_sprout_1769752551303.png', label: "Jeune Pousse 🌿" },
-    { minLevel: 7, img: 'assets/bloom/bloom_stage_3_bud_1769752566420.png', label: "Bourgeon Prometteur 🌷" },
-    { minLevel: 10, img: 'assets/bloom/bloom_stage_4_flower_1769752582043.png', label: "Fleur Épanouie 🌸" }
+    { minLevel: 1, img: 'assets/bloom/bloom_stage_1_seed.png', label: "Graine Potentielle 🌱" },
+    { minLevel: 4, img: 'assets/bloom/bloom_stage_2_sprout.png', label: "Jeune Pousse 🌿" },
+    { minLevel: 7, img: 'assets/bloom/bloom_stage_3_bud.png', label: "Bourgeon Prometteur 🌷" },
+    { minLevel: 10, img: 'assets/bloom/bloom_stage_4_flower.png', label: "Fleur Épanouie 🌸" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initGamification() {
     let progress = getProgress();
-    
+
     // Daily Login Bonus Check
     const today = new Date().toISOString().split("T")[0];
     if (progress.lastLogin !== today) {
@@ -76,30 +76,30 @@ function saveProgress(state) {
 function getNextLevelXP(level) {
     // Si on dépasse la table, on ajoute 1000 par niveau
     if (level >= XP_TABLE.length) return XP_TABLE[XP_TABLE.length - 1] + ((level - XP_TABLE.length + 1) * 1200);
-    return XP_TABLE[level]; 
+    return XP_TABLE[level];
 }
 
 // PUBLIC API : Gain XP
-window.gainXP = function(amount, reason) {
+window.gainXP = function (amount, reason) {
     let p = getProgress();
-    
+
     p.currentXP += amount;
     p.totalXP += amount;
-    
+
     // Check Level Up
     let nextLevelThreshold = getNextLevelXP(p.level);
     let leveledUp = false;
-    
+
     while (p.currentXP >= nextLevelThreshold) {
         p.currentXP -= nextLevelThreshold;
         p.level++;
         leveledUp = true;
         nextLevelThreshold = getNextLevelXP(p.level); // Re-calc for multi-level jump
     }
-    
+
     saveProgress(p);
     renderBloomWidget();
-    
+
     if (leveledUp) {
         showLevelUpModal(p.level);
         triggerConfetti();
@@ -165,7 +165,7 @@ function showToast(msg) {
         animation: slideIn 0.5s ease-out forwards;
     `;
     document.body.appendChild(div);
-    
+
     setTimeout(() => {
         div.style.animation = 'fadeOut 0.5s ease-out forwards';
         setTimeout(() => div.remove(), 500);
@@ -182,7 +182,7 @@ function showLevelUpModal(newLevel) {
         display: flex; flex-direction: column; align-items: center; justify-content: center;
         text-align: center; color: white;
     `;
-    
+
     overlay.innerHTML = `
         <h1 style="font-size: 3rem; color: var(--fbs-rose-clair); margin-bottom: 1rem;">NIVEAU ${newLevel} !</h1>
         <p style="font-size: 1.2rem; color: var(--fbs-rose-pale);">Tu grandis magnifiquement. Continue comme ça ! 🌸</p>
@@ -192,7 +192,7 @@ function showLevelUpModal(newLevel) {
             Continuer
         </button>
     `;
-    
+
     document.body.appendChild(overlay);
 }
 
@@ -223,7 +223,7 @@ window.declareWorkout = () => {
     // Verify if already done today? With cumulative XP, maybe we allow once per day?
     const today = new Date().toISOString().split("T")[0];
     const key = `workout_xp_${today}`;
-    
+
     if (!localStorage.getItem(key)) {
         gainXP(ACTIONS_XP.WORKOUT, "Séance de sport terminée");
         localStorage.setItem(key, 'true');
