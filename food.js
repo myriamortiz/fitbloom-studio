@@ -689,79 +689,148 @@ function normalizeIngredient(name) {
   let n = name.toLowerCase().trim();
 
   // 1. Remove parsing artifacts / useless qualifiers
-  // remove initial quantities if they leaked into name (digits at start)
   n = n.replace(/^[\d\s\/\.,]+(g|ml|cl|kg|l)?\s*/, "");
 
   // Remove cooking states / shapes
-  const badWords = ["cuit", "cru", "frais", "grillé", "rôti", "vapeur", "ciselé", "émincé", "haché", "brouillés", "dur", "en dés", "en tranches", "tranche de", "tranches de", "feuilles de", "feuille de", "poudre", "déshydraté"];
+  const badWords = ["cuit", "cru", "frais", "grillé", "rôti", "vapeur", "ciselé", "émincé", "haché", "brouillés", "dur", "en dés", "en tranches", "tranche de", "tranches de", "feuilles de", "feuille de", "poudre", "déshydraté", "nouvelle", "chaud", "froid", "risotto", "soufflé", "concassée", "concassées", "râpée", "râpé"];
   badWords.forEach(w => {
     n = n.replace(new RegExp(`\\b${w}\\b`, 'g'), "").trim();
   });
 
   // Fix common chars
   n = n.replace(/œ/g, "oe");
-  n = n.replace(/\./g, ""); // "c.à.s" -> "cas" but usually these are in unit.
+  n = n.replace(/\./g, ""); // "c.à.s" -> "cas"
+  n = n.replace(/’/g, "'");
 
-  // 2. Specific Mappings (Canonicals)
+  // 2. Specific Mappings (Canonicals) - Priority Rules
   if (n.includes("oeuf") || n.includes("œuf")) return "Oeufs";
   if (n.includes("avocat")) return "Avocat";
   if (n.includes("banane")) return "Banane";
   if (n.includes("patate douce")) return "Patate douce";
-  if (n.includes("pomme") && n.includes("terre") || n === "pdt") return "Pommes de terre";
+  if (n.includes("pomme de terre") || n === "pdt") return "Pommes de terre";
   if (n.includes("pomme") && !n.includes("terre") && !n.includes("compote")) return "Pommes"; // Fruit
   if (n.includes("poire") && !n.includes("poireau")) return "Poires";
+  if (n.includes("abricot")) return "Abricots";
+  if (n.includes("ananas")) return "Ananas";
+  if (n.includes("figue")) return "Figues";
+  if (n.includes("fraise")) return "Fraises";
+  if (n.includes("framboise")) return "Framboises";
+  if (n.includes("mangue")) return "Mangue";
+  if (n.includes("melon")) return "Melon";
+  if (n.includes("myrtille")) return "Myrtilles";
+  if (n.includes("nectarine")) return "Nectarine";
+  if (n.includes("pêche")) return "Pêche";
+  if (n.includes("pruneau")) return "Pruneaux";
+  if (n.includes("raisin") && !n.includes("sec")) return "Raisins";
+  if (n.includes("raisin") && n.includes("sec")) return "Raisins secs";
 
-  // Seeds & Grains
-  if (n.includes("chia")) return "Gaines de Chia";
-  if (n.includes("riz") && !n.includes("farine") && !n.includes("nouille") && !n.includes("galette")) return "Riz";
+  // Seeds / Nuts
+  if (n.includes("chia")) return "Graines de Chia";
+  if (n.includes("courge") && n.includes("graine")) return "Graines de courge";
+  if (n.includes("sésame") || n.includes("sesame")) return "Sésame";
+  if (n.includes("amande") && !n.includes("lait") && !n.includes("beurre") && !n.includes("farine") && !n.includes("poudre")) return "Amandes";
+  if (n.includes("beurre") && (n.includes("amande") || n.includes("cacahuète") || n.includes("noix"))) return "Beurre d'oléagineux";
+  if (n.includes("noix") && n.includes("cajou")) return "Noix de cajou";
+  if (n.includes("noix") && !n.includes("beurre") && !n.includes("cajou") && !n.includes("coco")) return "Noix";
+  if (n.includes("noisette")) return "Noisettes";
+  if (n.includes("pistache")) return "Pistaches";
 
-  // Doughs vs Pasta
-  if (n.includes("pâte") && (n.includes("pizza") || n.includes("tarte") || n.includes("brisée") || n.includes("feuilletée"))) return "Pâte à Tarte/Pizza";
-  if (n.includes("pâte") && !n.includes("patate") && !n.includes("curry") && !n.includes("tartiner") && !n.includes("pizza")) return "Pâtes";
-
-  if (n.includes("boulgour") || n.includes("bulgur")) return "Boulgour";
+  // Grains / Carbs
+  if (n.includes("riz") && !n.includes("farine") && !n.includes("nouille") && !n.includes("galette") && !n.includes("vinaigre")) return "Riz";
+  if (n.includes("nouille") && n.includes("riz")) return "Nouilles de riz";
   if (n.includes("quinoa")) return "Quinoa";
+  if (n.includes("sarrasin") && !n.includes("farine") && !n.includes("galette") && !n.includes("flocon")) return "Sarrasin (grains)";
+  if (n.includes("boulgour") || n.includes("bulgur")) return "Boulgour";
 
-  // Flours & Milks normalization
+  // Doughs vs Pasta (Corrected)
+  // "Pâte GF" often used for pizza base => Map to Pâte Brisée as requested
+  if (n === "pâte gf" || n === "pate gf" || (n.includes("pâte") && (n.includes("pizza") || n.includes("tarte") || n.includes("brisée")))) return "Pâte Brisée";
+  if (n.includes("pâte") && !n.includes("patate") && !n.includes("curry") && !n.includes("tartiner")) return "Pâtes"; // Pasta
+
+  // Flours & Milks
   if (n.includes("farine") && n.includes("sarrasin")) return "Farine de sarrasin";
   if (n.includes("farine") && n.includes("riz")) return "Farine de riz";
+  if (n.includes("farine") && n.includes("avoine")) return "Farine d'avoine";
+
   if (n.includes("lait") && n.includes("coco")) return "Lait de coco";
   if (n.includes("lait") && n.includes("amande")) return "Lait d'amande";
   if (n.includes("lait") && n.includes("soja")) return "Lait de soja";
+  if (n.includes("lait") && n.includes("avoine")) return "Lait d'avoine";
   if (n.includes("crème") && n.includes("coco") || n.includes("creme") && n.includes("coco")) return "Crème coco";
+  if (n.includes("crème") && n.includes("soja")) return "Crème soja";
 
-  // Breads / GF
-  if (n.includes("pain") && (n.includes("gf") || n.includes("gluten"))) return "Pain sans gluten";
-  if (n.includes("bagel") && (n.includes("gf") || n.includes("gluten"))) return "Bagel sans gluten";
+  // Breads
+  if (n.includes("pain") && (n.includes("gf") || n.includes("gluten") || n.includes("complet"))) return "Pain sans gluten/complet";
+  if (n.includes("bagel")) return "Bagel";
   if (n.includes("wrap") || n.includes("tortilla")) return "Wraps/Tortillas";
+  if (n.includes("muffin anglais")) return "Muffin anglais";
+  if (n.includes("brioche")) return "Brioche";
+  if (n.includes("galette") && n.includes("sarrasin")) return "Galette sarrasin";
 
   // Proteins
   if (n.includes("poulet")) return "Poulet";
-  if (n.includes("dinde") && !n.includes("jambon")) return "Dinde";
+  if (n.includes("dinde") && !n.includes("jambon") && !n.includes("bacon") && !n.includes("steak")) return "Dinde";
+  if (n.includes("steak") && n.includes("dinde")) return "Steak de dinde";
+  if (n.includes("bacon")) return "Bacon";
+  if (n.includes("jambon")) return "Jambon";
+  if (n.includes("boeuf") || n.includes("bœuf")) return "Boeuf";
   if (n.includes("saumon") && n.includes("fumé")) return "Saumon fumé";
   if (n.includes("saumon") && !n.includes("fumé")) return "Saumon";
   if (n.includes("thon")) return "Thon";
+  if (n.includes("cabillaud")) return "Cabillaud";
+  if (n.includes("crevette")) return "Crevettes";
+  if (n.includes("sardine")) return "Sardines";
+
+  // Veg/Vegan Proteins
   if (n.includes("tofu")) return "Tofu";
+  if (n.includes("pois chiche")) return "Pois Chiches";
+  if (n.includes("lentille")) return "Lentilles";
+  if (n.includes("haricot") && n.includes("rouge")) return "Haricots rouges";
 
   // Veggies
   if (n.includes("tomate") && n.includes("cerise")) return "Tomates cerises";
-  if (n.includes("tomate") && n.includes("concassée")) return "Tomates concassées";
   if (n.startsWith("tomate")) return "Tomates";
   if (n.includes("concombre")) return "Concombre";
   if (n.includes("courgette")) return "Courgettes";
   if (n.includes("carotte")) return "Carottes";
-  if (n.includes("oignon") && n.includes("rouge")) return "Oignon rouge";
-  if (n.startsWith("oignon")) return "Oignons";
-  if (n.includes("ail") && !n.includes("persil")) return "Ail";
+  if (n.includes("poivron")) return "Poivrons";
   if (n.includes("champignon")) return "Champignons";
   if (n.includes("épinard") || n.includes("epinard")) return "Épinards";
+  if (n.includes("oignon") && n.includes("rouge")) return "Oignon rouge";
+  if (n.startsWith("oignon")) return "Oignons";
+  if (n.includes("ail")) return "Ail";
+  if (n.includes("échalote")) return "Echalote";
+  if (n.includes("chou") && n.includes("fleur")) return "Chou-fleur";
+  if (n.includes("chou") && !n.includes("fleur")) return "Chou";
+  if (n.includes("brocoli")) return "Brocoli";
+  if (n.includes("asperge")) return "Asperges";
+  if (n.includes("aubergine")) return "Aubergine";
+  if (n.includes("poireau")) return "Poireaux";
+  if (n.includes("radis")) return "Radis";
+  if (n.includes("courge") || n.includes("potimarron") || n.includes("potiron")) return "Courge/Potimarron";
+
+  // Dairy / Fresh
+  if (n.includes("yaourt") && n.includes("coco")) return "Yaourt Coco";
+  if (n.includes("yaourt") && n.includes("soja")) return "Yaourt Soja";
+  if (n.includes("yaourt") && (n.includes("grec") || n.includes("grecque"))) return "Yaourt Grec";
+  if (n.includes("fromage blanc")) return "Fromage blanc";
+  if (n.includes("mozza")) return "Mozzarella";
+  if (n.includes("feta")) return "Feta";
+  if (n.includes("chèvre")) return "Fromage de Chèvre";
+  if (n.includes("parmesan")) return "Parmesan";
+  if (n.includes("emmental") || n.includes("gruyère") || n.includes("comté")) return "Fromage râpé";
+  if (n.includes("beurre") && !n.includes("cacahuète") && !n.includes("amande")) return "Beurre";
+  if (n.includes("faux-mage")) return "Faux-mage";
 
   // Others
   if (n.includes("chocolat") && (n.includes("noir") || n.includes("85"))) return "Chocolat Noir 85%";
+  if (n.includes("sirop") && n.includes("agave")) return "Sirop d'agave";
   if (n.includes("sirop") && (n.includes("érable") || n.includes("erable"))) return "Sirop d'érable";
-  if (n.includes("yaourt") && n.includes("coco")) return "Yaourt Coco";
-  if (n.includes("yaourt") && n.includes("soja")) return "Yaourt Soja";
-  if (n.includes("fromage blanc")) return "Fromage blanc"; // Keep distinct looking
+  if (n.includes("miel")) return "Miel";
+  if (n.includes("huile") && n.includes("olive")) return "Huile d'olive";
+  if (n.includes("sauce soja") || n.includes("tamari")) return "Sauce Soja/Tamari";
+  if (n.includes("vinaigre")) return "Vinaigre";
+  if (n.includes("épices") || n.includes("curry") || n.includes("paprika") || n.includes("cannelle") || n.includes("muscade") || n.includes("cumin") || n.includes("herbes") || n.includes("coriandre") || n.includes("persil") || n.includes("basilic") || n.includes("menthe") || n.includes("origan") || n.includes("thym") || n.includes("romarin") || n.includes("ciboulette")) return "Épices & Herbes";
 
   // 3. Generic Pluralization (if not caught above)
   if (n.endsWith("s") && !n.endsWith("ss") && !n.endsWith("is") && !n.endsWith("us") && !n.endsWith("os")) n = n.slice(0, -1);
@@ -815,12 +884,16 @@ function buildGroceryList(week) {
     if (!categorized[aisle]) categorized[aisle] = [];
 
     // Combine versions
+    const parts = [];
     Object.keys(versions).forEach(unit => {
       let val = versions[unit];
       val = Math.round(val * 100) / 100;
-      const displayStr = `${val} ${unit}`;
-      categorized[aisle].push({ name, displayStr, full: `${name} : ${displayStr}`, checked: false });
+      // If unit is empty, just number
+      parts.push(unit ? `${val} ${unit}` : `${val}`);
     });
+
+    const displayStr = parts.join(" + ");
+    categorized[aisle].push({ name, displayStr, full: `${name} : ${displayStr}`, checked: false });
   });
 
   return categorized;
