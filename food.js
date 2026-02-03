@@ -671,6 +671,20 @@ function parseQuantity(qtyStr) {
   return { val, unit };
 }
 
+// Normalizes units (e.g. "tr" -> "tranches", "cas" -> "c.à.s")
+function normalizeUnit(unit) {
+  let u = unit.toLowerCase().trim();
+
+  if (u === "tr" || u.startsWith("tranche")) return "tranches";
+  if (u === "cas" || u === "càs" || u.includes("soupe") || u === "c.à.s") return "c.à.s";
+  if (u === "cac" || u === "càc" || u.includes("café") || u === "c.à.c") return "c.à.c";
+  if (u === "pincée" || u === "pincee") return "pincée";
+  if (u === "g" || u === "gr" || u === "gramme" || u === "grammes") return "g";
+  if (u === "ml" || u === "milli") return "ml";
+
+  return u;
+}
+
 function normalizeIngredient(name) {
   let n = name.toLowerCase().trim();
 
@@ -696,6 +710,17 @@ function normalizeIngredient(name) {
   if (n.includes("pomme") && n.includes("terre") || n === "pdt") return "Pommes de terre";
   if (n.includes("pomme") && !n.includes("terre") && !n.includes("compote")) return "Pommes"; // Fruit
   if (n.includes("poire") && !n.includes("poireau")) return "Poires";
+
+  // Seeds & Grains
+  if (n.includes("chia")) return "Gaines de Chia";
+  if (n.includes("riz") && !n.includes("farine") && !n.includes("nouille") && !n.includes("galette")) return "Riz";
+
+  // Doughs vs Pasta
+  if (n.includes("pâte") && (n.includes("pizza") || n.includes("tarte") || n.includes("brisée") || n.includes("feuilletée"))) return "Pâte à Tarte/Pizza";
+  if (n.includes("pâte") && !n.includes("patate") && !n.includes("curry") && !n.includes("tartiner") && !n.includes("pizza")) return "Pâtes";
+
+  if (n.includes("boulgour") || n.includes("bulgur")) return "Boulgour";
+  if (n.includes("quinoa")) return "Quinoa";
 
   // Flours & Milks normalization
   if (n.includes("farine") && n.includes("sarrasin")) return "Farine de sarrasin";
@@ -755,7 +780,8 @@ function buildGroceryList(week) {
     // Normalize Name
     const finalName = normalizeIngredient(name);
 
-    const { val, unit } = parseQuantity(qtyRaw);
+    let { val, unit } = parseQuantity(qtyRaw);
+    unit = normalizeUnit(unit);
 
     if (!rawList[finalName]) rawList[finalName] = {};
     if (!rawList[finalName][unit]) rawList[finalName][unit] = 0;
