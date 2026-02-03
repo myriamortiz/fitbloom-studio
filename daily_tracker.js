@@ -109,13 +109,16 @@ window.toggleFast = () => {
         const start = data.startTime;
         const elapsedHours = (now - start) / (1000 * 60 * 60);
 
-        // GAMIFICATION CHECK (Target: 16h)
-        if (elapsedHours >= 16 && window.gainXP) {
-            window.gainXP(50, "Jeûne 16h réussi ! ⏳");
-        } else {
-            // No alert for non-goal completion
-        }
+        // GAMIFICATION (Flexible: 10 XP per hour)
+        const points = Math.floor(elapsedHours * 10);
 
+        if (points > 0) {
+            if (window.gainXP) window.gainXP(points, `Jeûne de ${elapsedHours.toFixed(1)}h`);
+            alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h. Bravo ! +${points} XP 🔥`);
+            logFastingCompletion();
+        } else {
+            alert(`Jeûne terminé : ${elapsedHours.toFixed(1)}h.`);
+        }
         saveFastingData(false, null);
     } else {
         // START FASTING
@@ -123,6 +126,94 @@ window.toggleFast = () => {
     }
     updateFastingUI();
 };
+
+// --- STREAK & HISTORY LOGIC ---
+function updateStreaks() {
+    // 1. Steps Streak
+    const stepsStreak = calculateDailyStreak('steps', 10000); // Threshold 10k
+    const stepsEl = document.getElementById('steps-streak');
+    if (stepsEl) stepsEl.innerHTML = stepsStreak > 1 ? `🔥 ${stepsStreak}j` : '';
+
+    // 2. Fasting Streak
+    const fastStreak = calculateFastingStreak();
+    const fastEl = document.getElementById('fast-streak');
+    if (fastEl) fastEl.innerHTML = fastStreak > 1 ? `🔥 ${fastStreak}j` : '';
+}
+
+function calculateDailyStreak(metric, threshold) {
+    let streak = 0;
+    // Check yesterday, then day before...
+    for (let i = 1; i < 365; i++) {
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        const key = `${STORAGE_PREFIX}${d.toISOString().split('T')[0]}`;
+        const data = JSON.parse(localStorage.getItem(key));
+
+        if (data && data[metric] >= threshold) {
+            streak++;
+        } else {
+            break;
+        }
+    }
+
+    // Check TODAY (if goal already met, add 1. If not, streak is based on yesterday)
+    // Actually, "Current Streak" usually includes today if done, or holds from yesterday.
+    const todayKey = getDailyKey();
+    const todayData = JSON.parse(localStorage.getItem(todayKey));
+    if (todayData && todayData[metric] >= threshold) {
+        streak++;
+    }
+
+    return streak;
+}
+
+function calculateFastingStreak() {
+    const history = JSON.parse(localStorage.getItem('fbs_fasting_history')) || [];
+    // History is array of dates "YYYY-MM-DD" where fast was completed
+    let streak = 0;
+    // Similar logic, check consecutive days backward
+    // ...
+    // Simplified: Just verifying simple count for now or rigorous date check?
+    // Let's do rigorous.
+
+    // Convert to Set for easy lookup
+    const dates = new Set(history);
+
+    // Check if today is done?
+    const today = new Date().toISOString().split('T')[0];
+    let counting = true;
+    let daysBack = 0;
+
+    if (dates.has(today)) {
+        streak++;
+        daysBack = 1;
+    } else {
+        // use yesterday as start
+        daysBack = 1;
+    }
+
+    while (counting) {
+        const d = new Date();
+        d.setDate(d.getDate() - daysBack);
+        const dateStr = d.toISOString().split('T')[0];
+        if (dates.has(dateStr)) {
+            streak++;
+            daysBack++;
+        } else {
+            counting = false;
+        }
+    }
+    return streak;
+}
+
+function logFastingCompletion() {
+    const history = JSON.parse(localStorage.getItem('fbs_fasting_history')) || [];
+    const today = new Date().toISOString().split('T')[0];
+    if (!history.includes(today)) {
+        history.push(today);
+        localStorage.setItem('fbs_fasting_history', JSON.stringify(history));
+    }
+}
 
 function getFastingData() {
     return JSON.parse(localStorage.getItem('fbs_fasting_state')) || { isFasting: false, startTime: null };
@@ -163,4 +254,7 @@ function updateFastingUI() {
 
         timerDisplay.textContent = "--:--";
     }
+
+    // Also update streaks whenever UI updates
+    updateStreaks();
 }

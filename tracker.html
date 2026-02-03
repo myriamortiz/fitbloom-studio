@@ -26,12 +26,13 @@
         <div class="tracker-card glass-panel" id="fasting-widget">
             <div class="card-header">
                 <span class="card-icon">⏳</span>
-                <h3>Jeûne Intermittent</h3>
+                <h3>Jeûne Intermittent <span id="fast-streak"
+                        style="font-size:0.8em; color:var(--fbs-rose-vif); margin-left:5px;"></span></h3>
             </div>
             <div class="card-body">
                 <div class="fasting-status" id="fasting-status-text">Chargement...</div>
                 <div class="fasting-timer" id="fasting-timer-display">--:--</div>
-                <div class="fasting-meta" id="fasting-meta">Mode: 16/8 (Manuel)</div>
+
                 <button id="fast-btn" class="main-btn" onclick="toggleFast()"
                     style="margin-top:1rem; width:100%; font-size:1rem;">Commencer le Jeûne</button>
             </div>
@@ -63,7 +64,8 @@
         <div class="tracker-card glass-panel" style="margin-top: 1rem;">
             <div class="card-header">
                 <span class="card-icon">👣</span>
-                <h3>Pas du jour</h3>
+                <h3>Pas du jour <span id="steps-streak"
+                        style="font-size:0.8em; color:var(--fbs-rose-vif); margin-left:5px;"></span></h3>
             </div>
             <div class="card-body steps-body">
                 <div class="steps-input-row">
