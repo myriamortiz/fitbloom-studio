@@ -338,6 +338,22 @@ function openModal(session) {
     list.appendChild(div);
   });
 
+  // Add Validation Button
+  const validateBtn = document.createElement("button");
+  validateBtn.className = "main-btn";
+  validateBtn.style.marginTop = "2rem";
+  validateBtn.style.width = "100%";
+  validateBtn.innerHTML = "✅ J'ai terminé ma séance !";
+  validateBtn.onclick = () => {
+    if (window.declareWorkout) {
+      window.declareWorkout();
+      modal.classList.add("hidden"); // Close modal on success
+    } else {
+      alert("Erreur système gamification.");
+    }
+  };
+  list.appendChild(validateBtn);
+
   modal.classList.remove("hidden");
 
   // Close logic

@@ -51,6 +51,23 @@ function saveEmotion(emotion, val) {
 
   localStorage.setItem("emotions_history", JSON.stringify(history));
 
+  // GAMIFICATION: XP for Mood Log
+  // Check if first time today? Or allow updates? 
+  // Let's allow updates but maybe cap per day elsewhere?
+  // Current gamification engine allows accumulation. Let's assume daily check inside gainXP wrapper if we wanted specific limits, 
+  // but here we can just verify if entry existed before.
+  // Actually, simplest is to just give it. Or check usage.
+  // Let's check if we ALREADY had an entry for today.
+  const alreadyLogged = (history[today] && history[today].val) ? true : false;
+  // Wait, I just overwrote it above. I should have checked before.
+  // Instead, let's just make a separate tracking for 'xp_given_mood_DATE'.
+
+  const xpKey = `xp_mood_${today}`;
+  if (!localStorage.getItem(xpKey) && window.gainXP) {
+    window.gainXP(20, "Humeur du jour 🌈");
+    localStorage.setItem(xpKey, "true");
+  }
+
   msg.textContent = `Enregistré : ${emotion}. Prends soin de toi 💖`;
 
   // Re-render chart to show today's update
