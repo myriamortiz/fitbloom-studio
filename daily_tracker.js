@@ -59,8 +59,20 @@ function updateWaterUI(count) {
 window.saveSteps = () => {
     const input = document.getElementById('steps-input');
     const val = parseInt(input.value) || 0;
+
+    // Check previous data for reward status
+    const currentData = JSON.parse(localStorage.getItem(getDailyKey())) || { water: 0, steps: 0 };
+    const alreadyClaimed = currentData.stepsRewardClaimed || false;
+
     saveDailyData('steps', val);
     updateStepsUI(val);
+
+    // GAMIFICATION: Reward if goal met and not yet claimed
+    if (val >= 10000 && !alreadyClaimed && window.gainXP) {
+        window.gainXP(50, "Objectif 10k Pas ! 🏃‍♀️");
+        saveDailyData('stepsRewardClaimed', true);
+        alert("Bravo ! Objectif 10.000 pas atteint ! +50 XP 🔥");
+    }
 };
 
 function updateStepsUI(count) {
