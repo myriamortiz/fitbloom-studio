@@ -4,14 +4,49 @@
 const DATA_URL = "data/fitness.json";
 const STORAGE_KEY = "fbs-fitness-week-v1";
 const EXERCISE_IMAGES = {
+  // Squats & Legs
   'squat': 'assets/fitness/instruction_squat.png',
+  'chaise': 'assets/fitness/instruction_squat.png',
+  'chair': 'assets/fitness/instruction_squat.png',
+  'wall sit': 'assets/fitness/instruction_squat.png',
+
+  // Pushups & Arms
   'pompes': 'assets/fitness/instruction_pushup.png',
-  'push ups': 'assets/fitness/instruction_pushup.png',
-  'fentes': 'assets/fitness/instruction_lunges.png',
-  'lunges': 'assets/fitness/instruction_lunges.png',
+  'push up': 'assets/fitness/instruction_pushup.png',
+  'dips': 'assets/fitness/instruction_pushup.png',
+
+  // Lunges
+  'fente': 'assets/fitness/instruction_lunges.png',
+  'lunge': 'assets/fitness/instruction_lunges.png',
+  'split': 'assets/fitness/instruction_lunges.png',
+
+  // Plank & Abs
   'planche': 'assets/fitness/instruction_plank.png',
   'plank': 'assets/fitness/instruction_plank.png',
-  'burpees': 'assets/fitness/instruction_burpee.png'
+  'gainage': 'assets/fitness/instruction_plank.png',
+  'crunch': 'assets/fitness/instruction_plank.png',
+  'sit-up': 'assets/fitness/instruction_plank.png',
+  'abdo': 'assets/fitness/instruction_plank.png',
+  'hollow': 'assets/fitness/instruction_plank.png',
+  'superman': 'assets/fitness/instruction_plank.png',
+  'pont': 'assets/fitness/instruction_plank.png',
+  'bridge': 'assets/fitness/instruction_plank.png',
+
+  // Cardio / HIIT
+  'burpee': 'assets/fitness/instruction_burpee.png',
+  'mountain': 'assets/fitness/instruction_burpee.png',
+  'climber': 'assets/fitness/instruction_burpee.png',
+  'jumping': 'assets/fitness/instruction_burpee.png',
+  'saut': 'assets/fitness/instruction_burpee.png',
+  'jack': 'assets/fitness/instruction_burpee.png',
+
+  // Yoga / Soft
+  'yoga': 'assets/fitness/ex_yoga.png',
+  'pilates': 'assets/fitness/ex_yoga.png',
+  'stretch': 'assets/fitness/ex_yoga.png',
+  'souplesse': 'assets/fitness/ex_yoga.png',
+  'salutation': 'assets/fitness/ex_yoga.png',
+  'chien': 'assets/fitness/ex_yoga.png'
 };
 
 // -------------------------------

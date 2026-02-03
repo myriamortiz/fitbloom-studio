@@ -377,53 +377,60 @@ function formatTime(sec) {
   return `${m}:${s < 10 ? '0' : ''}${s}`;
 }
 
-// TODO LIST (Legacy)
+// TODO LIST (Refactored)
 function loadTodos() {
-  // Keeping existing TODO logic but simplified for brevity in this rewrite
-  // Assuming user wants to keep it
   const container = document.getElementById('todos-container');
+  if (!container) return;
+
   const input = document.getElementById('todo-input');
   const addBtn = document.getElementById('add-todo');
-  if (!container) return;
+
+  // Upgrade styling
+  if (input && input.parentElement && input.parentElement.classList.contains("todo-add")) {
+    input.parentElement.className = "todo-add-row";
+    input.className = "todo-input-modern";
+    if (addBtn) addBtn.className = "todo-add-btn-modern";
+  }
+
+  // Wraps in a container if not already (hacky but works for legacy HTML structure)
+  // Ideally we change HTML but let's keep it JS-driven for simplicity in this step.
 
   let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-  function render() {
-    container.innerHTML = '';
+  const render = () => {
+    container.innerHTML = "";
     todos.forEach((todo, idx) => {
-      const div = document.createElement('div');
-      div.style.cssText = "display:flex; justify-content:space-between; background:rgba(255,255,255,0.05); padding:0.8rem; border-radius:15px; margin-bottom:0.5rem; align-items:center;";
+      const div = document.createElement("div");
+      div.className = `todo-item-modern ${todo.done ? 'done' : ''}`;
+
       div.innerHTML = `
-                <span style="text-decoration: ${todo.done ? 'line-through' : 'none'}; color: ${todo.done ? 'grey' : 'white'}">${todo.text}</span>
-                <div>
-                   <button onclick="toggleTodo(${idx})" style="background:none; border:none; cursor:pointer;">${todo.done ? '✅' : '🔲'}</button>
-                   <button onclick="deleteTodo(${idx})" style="background:none; border:none; cursor:pointer; margin-left:10px;">🗑️</button>
-                </div>
-            `;
+        <input type="checkbox" ${todo.done ? 'checked' : ''} class="grocery-check" onchange="toggleTodo(${idx})">
+        <span class="todo-text-modern">${todo.text}</span>
+        <button class="todo-del-btn" onclick="deleteTodo(${idx})">🗑️</button>
+      `;
       container.appendChild(div);
     });
-  }
+  };
 
-  if (addBtn) addBtn.onclick = () => {
-    if (input.value.trim()) {
-      todos.push({ text: input.value, done: false });
-      localStorage.setItem('todos', JSON.stringify(todos));
-      input.value = '';
-      render();
-    }
-  }
+  addBtn.onclick = () => {
+    if (!input.value.trim()) return;
+    todos.push({ text: input.value, done: false });
+    localStorage.setItem('todos', JSON.stringify(todos));
+    input.value = "";
+    render();
+  };
 
   window.toggleTodo = (idx) => {
     todos[idx].done = !todos[idx].done;
     localStorage.setItem('todos', JSON.stringify(todos));
     render();
-  }
+  };
 
   window.deleteTodo = (idx) => {
     todos.splice(idx, 1);
     localStorage.setItem('todos', JSON.stringify(todos));
     render();
-  }
+  };
 
   render();
 }
