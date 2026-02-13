@@ -83,7 +83,7 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Flocons de sarrasin : 60g",
+        "Flocons de sarrasin (cru) : 60g",
         "Lait d’amande : 150ml",
         "Pomme : 1",
         "Cannelle : 1 c.à.c"
@@ -265,7 +265,7 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Riz rond : 70g",
+        "Riz rond (cru) : 70g",
         "Lait d’amande : 250ml",
         "Crème coco : 40ml"
       ],
@@ -4027,13 +4027,15 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Flocons",
-        "Noisettes",
-        "Sirop érable"
+        "Flocons d'avoine: 100g",
+        "Noisettes concassées: 50g",
+        "Sirop d'érable: 3 c.à.s",
+        "Huile de coco: 1 c.à.s",
+        "Cannelle: 1/2 c.à.c"
       ],
-      "instructions": "Four.",
+      "instructions": "Mélanger tous les ingrédients. Étaler sur une plaque de cuisson. Cuire 20 min à 160°C en remuant à mi-cuisson. Laisser refroidir.",
       "id": "granola_maison_noisette",
-      "prep_time": 15,
+      "prep_time": 25,
       "difficulty": "facile"
     },
     {
@@ -4070,13 +4072,15 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Farine sarrasin: 20g",
+        "Farine de sarrasin : 30g",
         "Miel : 1 c.à.c",
-        "4 épices : pincée"
+        "Mélange 4 épices : 1/2 c.à.c",
+        "Lait végétal : 2 c.à.s",
+        "Levure chimique : 1 pincée"
       ],
-      "instructions": "Micro-ondes 1 min.",
+      "instructions": "Mélanger tous les ingrédients dans un mug. Cuire 1 min 30 au micro-ondes.",
       "id": "pain_d'épices_minute_(mug_cake)",
-      "prep_time": 15,
+      "prep_time": 5,
       "difficulty": "facile"
     },
     {
@@ -4093,11 +4097,13 @@
       ],
       "ingredients": [
         "Panais : 1",
-        "Huile : 1/2 c.à.c"
+        "Huile d'olive : 1 c.à.c",
+        "Sel",
+        "Paprika"
       ],
-      "instructions": "Fines tranches au four.",
+      "instructions": "Couper le panais en tranches très fines (mandoline). Mélanger avec l'huile et les épices. Cuire 15-20 min au four à 180°C jusqu'à ce qu'elles soient croustillantes.",
       "id": "chips_de_panais",
-      "prep_time": 15,
+      "prep_time": 20,
       "difficulty": "facile"
     },
     {
@@ -4114,13 +4120,38 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Poire : 1",
-        "Epinards : 30g",
-        "Eau : 150ml"
+        "Poire mûre : 1",
+        "Epinards frais : 40g",
+        "Eau de coco ou eau : 200ml",
+        "Jus de citron : 1 filet"
       ],
-      "instructions": "Mixer.",
+      "instructions": "Mettre tous les ingrédients dans un blender. Mixer jusqu'à obtenir une texture lisse.",
       "id": "smoothie_poire-épinard",
-      "prep_time": 15,
+      "prep_time": 5,
+      "difficulty": "facile"
+    },
+    {
+      "type": "healthy",
+      "name": "Compote pomme chataigne",
+      "calories": 180,
+      "tags": [
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "sans_lactose",
+        "snack",
+        "autumn",
+        "dessert"
+      ],
+      "ingredients": [
+        "Pommes : 2",
+        "Châtaignes cuites : 50g",
+        "Vanille : 1 pincée",
+        "Eau : 2 c.à.s"
+      ],
+      "instructions": "Peler et couper les pommes en dés. Cuire à feu doux avec l'eau et la vanille 15 min. Ajouter les châtaignes émiettées à la fin. Mixer ou écraser selon la texture désirée.",
+      "id": "compote_pomme_chataigne",
+      "prep_time": 20,
       "difficulty": "facile"
     },
     {
@@ -4513,13 +4544,15 @@
         "lunch"
       ],
       "ingredients": [
-        "Pâtes GF: 80g",
-        "Courge: 150g",
-        "Bouillon"
+        "Pâtes sans gluten : 80g",
+        "Courge butternut en dés : 150g",
+        "Bouillon de légumes : 250ml",
+        "Oignon : 1/2",
+        "Sauge : 2 feuilles"
       ],
-      "instructions": "Cuire tout ensemble.",
+      "instructions": "Mettre tous les ingrédients dans une casserole. Couvrir et laisser mijoter 15 min jusqu'à absorption du liquide.",
       "id": "one_pot_pasta_courge_(gf)",
-      "prep_time": 15,
+      "prep_time": 20,
       "difficulty": "facile"
     },
     {
@@ -4537,14 +4570,16 @@
         "lunch"
       ],
       "ingredients": [
-        "Feuilles chou",
-        "Riz",
-        "Lentilles"
+        "Feuilles de chou vert : 2",
+        "Riz cuit : 100g",
+        "Lentilles cuites : 80g",
+        "Oignon : 1/2",
+        "Carotte : 1"
       ],
-      "instructions": "Rouler et cuire vapeur.",
+      "instructions": "Blanchir les feuilles de chou. Mélanger riz, lentilles et légumes sautés. Farcir les feuilles, rouler et cuire à la vapeur 15 min.",
       "id": "chou_farci_végétarien",
-      "prep_time": 15,
-      "difficulty": "facile"
+      "prep_time": 25,
+      "difficulty": "moyen"
     },
     {
       "type": "healthy",
@@ -4559,14 +4594,16 @@
         "lunch"
       ],
       "ingredients": [
-        "Filet mignon",
-        "Tamari",
-        "Sirop agave"
+        "Filet mignon de porc : 120g",
+        "Tamari (sauce soja) : 2 c.à.s",
+        "Sirop d'agave : 1 c.à.s",
+        "Gingembre : 1 cm",
+        "Oignon nouveau : 1"
       ],
-      "instructions": "Sauter.",
+      "instructions": "Sauter le porc en dés. Ajouter gingembre, tamari et agave. Laisser caraméliser doucement.",
       "id": "porc_au_caramel_(sans_sucre)",
-      "prep_time": 15,
-      "difficulty": "facile"
+      "prep_time": 20,
+      "difficulty": "moyen"
     },
     {
       "type": "healthy",
@@ -4577,17 +4614,20 @@
         "sans_gluten",
         "proteine",
         "autumn",
-        "petit-dej"
+        "lunch",
+        "dinner"
       ],
       "ingredients": [
-        "Potiron",
-        "Farine amande",
-        "Parmesan"
+        "Potiron en dés : 200g",
+        "Farine d'amande : 40g",
+        "Parmesan râpé : 30g",
+        "Huile d'olive : 1 c.à.s",
+        "Noisettes concassées : 10g"
       ],
-      "instructions": "Four.",
+      "instructions": "Cuire le potiron à la vapeur. Mélanger farine, parmesan et huile pour le crumble. Disposer sur le potiron et gratiner 20 min au four à 180°C.",
       "id": "crumble_salé_potiron_parmesan",
-      "prep_time": 15,
-      "difficulty": "facile"
+      "prep_time": 30,
+      "difficulty": "moyen"
     },
     {
       "type": "healthy",
@@ -4603,13 +4643,16 @@
         "dinner"
       ],
       "ingredients": [
-        "Moules: 500g",
-        "Pomme de terre: 150g"
+        "Moules : 500g",
+        "Pomme de terre : 150g",
+        "Echalote : 1",
+        "Vin blanc : 50ml",
+        "Persil"
       ],
-      "instructions": "Cuire.",
+      "instructions": "Cuire les frites de pomme de terre au four. Faire ouvrir les moules avec échalote et vin blanc.",
       "id": "moules_marinières_&_frites_four",
-      "prep_time": 15,
-      "difficulty": "facile"
+      "prep_time": 25,
+      "difficulty": "moyen"
     },
     {
       "type": "healthy",
@@ -4621,15 +4664,18 @@
         "sans_gluten",
         "sans_lactose",
         "winter",
-        "petit-dej"
+        "dessert",
+        "snack"
       ],
       "ingredients": [
         "Poire : 1",
-        "Vanille : 1 c.à.c"
+        "Vanille : 1/2 gousse",
+        "Cannelle : 1 pincée",
+        "Sirop d'érable : 1 c.à.c"
       ],
-      "instructions": "Cuire 10 min.",
+      "instructions": "Évider la poire. Saupoudrer d'épices et arroser de sirop. Cuire 20 min au four à 180°C.",
       "id": "poire_au_four_&_vanille",
-      "prep_time": 15,
+      "prep_time": 20,
       "difficulty": "facile"
     },
     {
@@ -5190,7 +5236,7 @@
       "ingredients": [
         "Tofu : 150g",
         "Coco : 60ml",
-        "Riz chaud : 120g"
+        "Riz chaud (cuit) : 120g"
       ],
       "instructions": "Cuire tofu + coco + riz.",
       "id": "tofu_coco-curry_&_riz_chaud",
@@ -5234,7 +5280,7 @@
       ],
       "ingredients": [
         "Dinde : 150g",
-        "Riz chaud : 120g"
+        "Riz chaud (cuit) : 120g"
       ],
       "instructions": "Assembler.",
       "id": "dinde_grillée_&_riz_chaud",
@@ -5302,7 +5348,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Riz froid : 120g",
+        "Riz froid (cuit) : 120g",
         "Carotte : 1",
         "Curcuma : 1 pincée"
       ],
@@ -5347,7 +5393,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Quinoa : 120g",
+        "Quinoa (cuit) : 120g",
         "Poulet : 150g",
         "Orange : 1/2"
       ],
@@ -5413,7 +5459,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Riz : 120g",
+        "Riz (cuit) : 120g",
         "Orange : 1/2",
         "Noix : 10g"
       ],
@@ -5573,7 +5619,7 @@
         "Crevettes: 150g",
         "Lait Coco: 100ml",
         "Pâte Curry Vert",
-        "Riz basmati: 50g cru"
+        "Riz basmati (cru): 50g"
       ],
       "instructions": "Cuire le riz. Poêler crevettes avec curry et coco 5 min.",
       "id": "curry_vert_crevettes_express"
@@ -5661,7 +5707,7 @@
         "Haricots rouges: 150g",
         "Maïs: 50g",
         "Epices Chili",
-        "Riz: 50g"
+        "Riz (cru) : 50g"
       ],
       "instructions": "Mijoter le boeuf avec épices et tomates. Ajouter haricots et maïs. Servir avec riz.",
       "id": "chili_con_carne_family"
@@ -5748,7 +5794,7 @@
         "plaisir"
       ],
       "ingredients": [
-        "Riz Arborio: 80g",
+        "Riz Arborio (cru): 80g",
         "Champignons: 150g",
         "Parmesan: 30g",
         "Vin blanc: 30ml",
@@ -5771,7 +5817,7 @@
         "plaisir"
       ],
       "ingredients": [
-        "Nouilles riz: 80g",
+        "Nouilles riz (cru): 80g",
         "Poulet: 100g",
         "Beurre cacahuète: 1 c.à.s",
         "Soja",
@@ -5815,7 +5861,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Riz Vinaigré: 100g",
+        "Riz Vinaigré (cuit): 100g",
         "Saumon: 80g",
         "Mangue: 1/2",
         "Avocat: 1/4",
@@ -5838,13 +5884,14 @@
         "family"
       ],
       "ingredients": [
-        "Pommes de terre: 200g",
-        "Lait: 100ml",
-        "Ail",
-        "Muscade",
-        "Gruyère: 20g"
+        "Pommes de terre : 200g",
+        "Lait demi-écrémé : 150ml",
+        "Ail : 1 gousse",
+        "Muscade : 1 pincée",
+        "Gruyère râpé : 30g",
+        "Crème légère : 1 c.à.s"
       ],
-      "instructions": "Couper pdt fines. Cuire dans lait aillé. Gratiner au four.",
+      "instructions": "Couper les pommes de terre en fines rondelles. Frotter le plat avec l'ail. Disposer les pommes de terre, verser le mélange lait/crème/muscade. Saupoudrer de fromage et cuire 40-45 min à 180°C.",
       "id": "gratin_dauphinois_(version_légère)"
     },
     {
@@ -5951,7 +5998,7 @@
         "Lait Coco: 100ml",
         "Pâte Curry Rouge",
         "Ananas frais: 50g",
-        "Riz"
+        "Riz (cru) : 60g"
       ],
       "instructions": "Saisir canard. Mijoter dans coco/curry avec ananas. Servir avec riz.",
       "id": "curry_rouge_canard_ananas"
@@ -5968,12 +6015,13 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Avoine",
-        "Protein Whey",
-        "Beurre Cacahuète",
-        "Miel"
+        "Flocons d'avoine : 100g",
+        "Protein Whey (chocolat) : 60g",
+        "Beurre de cacahuète : 80g",
+        "Miel : 3 c.à.s",
+        "Lait végétal : 2-3 c.à.s si besoin"
       ],
-      "instructions": "Mélanger, presser dans un moule, frigo 1h.",
+      "instructions": "Mélanger tous les ingrédients jusqu'à obtenir une pâte homogène. Presser fermement dans un moule carré. Réfrigérer 1h avant de découper en barres.",
       "id": "barre_protéinée_maison_choco-beurre_cacahuète"
     },
     {
@@ -5987,12 +6035,14 @@
         "healthy"
       ],
       "ingredients": [
-        "Farine avoine",
-        "Oeuf",
-        "Myrtilles",
-        "Yaourt"
+        "Flocons d'avoine mixés (farine) : 150g",
+        "Oeufs : 2",
+        "Myrtilles fraîches ou surgelées : 100g",
+        "Yaourt nature : 1 pot",
+        "Sirop d'agave : 2 c.à.s",
+        "Levure chimique : 1 sachet"
       ],
-      "instructions": "Cuire 20min au four à 180C.",
+      "instructions": "Mélanger les ingrédients secs et humides séparément puis combiner. Incorporer délicatement les myrtilles. Verser dans des moules à muffins et cuire 20-25 min au four à 180°C.",
       "id": "muffins_myrtilles_avoine_(light)"
     },
     {
@@ -6007,13 +6057,14 @@
         "vegetarien"
       ],
       "ingredients": [
-        "Courgettes",
-        "Oeufs",
-        "Lait",
-        "Chèvre",
-        "Maïzena"
+        "Courgettes râpées : 2",
+        "Oeufs : 3",
+        "Lait : 200ml",
+        "Chèvre frais : 100g",
+        "Maïzena : 30g",
+        "Gruyère râpé : 50g"
       ],
-      "instructions": "Mélanger tout et cuire au four 30min.",
+      "instructions": "Mélanger les oeufs, le lait et la maïzena. Ajouter les courgettes et le chèvre. Verser dans un moule et cuire 30 min à 180°C.",
       "id": "quiche_sans_pâte_courgette_chèvre"
     },
     {
@@ -6028,12 +6079,13 @@
         "pescetarien"
       ],
       "ingredients": [
-        "Poisson blanc",
-        "Courgette",
-        "Tomate",
-        "Citron"
+        "Filet de poisson blanc : 150g",
+        "Courgette en rondelles : 1/2",
+        "Tomate en dés : 1",
+        "Jus de citron : 1/2",
+        "Herbes de Provence"
       ],
-      "instructions": "Fermer papillote, cuire 20min four.",
+      "instructions": "Disposer les légumes et le poisson sur du papier cuisson. Arroser de citron et herbes. Fermer la papillote et cuire 20 min au four à 180°C.",
       "id": "papillote_poisson_légumes_du_soleil"
     },
     {
@@ -6048,12 +6100,13 @@
         "vegan"
       ],
       "ingredients": [
-        "Lentilles corail",
-        "Lait coco",
-        "Curry",
-        "Tomate"
+        "Lentilles corail : 60g",
+        "Lait de coco : 100ml",
+        "Curry en poudre : 1 c.à.c",
+        "Tomate concassée : 100g",
+        "Oignon : 1/2"
       ],
-      "instructions": "Mijoter lentilles dans coco/tomate 15min.",
+      "instructions": "Faire revenir l'oignon et le curry. Ajouter lentilles, tomate et coco. Laisser mijoter 15-20 min jusqu'à ce que les lentilles soient tendres.",
       "id": "dahl_lentilles_corail_coco"
     },
     {
@@ -6067,12 +6120,13 @@
         "plaisir"
       ],
       "ingredients": [
-        "Romaine",
-        "Poulet grillé",
-        "Parmesan",
-        "Sauce yaourt"
+        "Romaine : 1 coeur",
+        "Poulet grillé : 120g",
+        "Parmesan : 20g",
+        "Sauce yaourt : 2 c.à.s",
+        "Croûtons complets : 30g"
       ],
-      "instructions": "Assembler salade.",
+      "instructions": "Couper la romaine. Ajouter le poulet, le parmesan et les croûtons. Napper de sauce.",
       "id": "salade_césar_allégée_(poulet)"
     },
     {
@@ -6087,12 +6141,13 @@
         "dinner"
       ],
       "ingredients": [
-        "Riz",
-        "Saumon vapeur",
-        "Brocoli",
-        "Sésame"
+        "Riz cuit : 150g",
+        "Saumon vapeur : 100g",
+        "Brocoli vapeur : 100g",
+        "Sésame : 1 c.à.c",
+        "Sauce soja : 1 c.à.s"
       ],
-      "instructions": "Cuire riz et saumon. Disposer dans bento.",
+      "instructions": "Disposer le riz, le saumon émietté et les brocolis dans le bento. Saupoudrer de sésame.",
       "id": "bento_riz_saumon_brocoli"
     },
     {
@@ -6107,13 +6162,14 @@
         "dinner"
       ],
       "ingredients": [
-        "Quinoa cuit",
-        "Tomate",
-        "Concombre",
-        "Feta",
-        "Menthe"
+        "Quinoa cuit : 150g",
+        "Tomate : 1",
+        "Concombre : 1/2",
+        "Feta : 40g",
+        "Menthe : 1/2 bouquet",
+        "Jus de citron : 1/2"
       ],
-      "instructions": "Mélanger tout frais.",
+      "instructions": "Couper tomate, concombre et feta en dés. Ciseler la menthe. Mélanger au quinoa avec le citron.",
       "id": "taboulé_de_quinoa_menthe_feta"
     },
     {
@@ -6128,12 +6184,14 @@
         "dinner"
       ],
       "ingredients": [
-        "Tortilla",
-        "Thon",
-        "Salade",
-        "Mais"
+        "Tortilla complète : 1",
+        "Thon au naturel : 80g",
+        "Salade verte : 1 poignée",
+        "Maïs : 30g",
+        "Tomate : 1/2",
+        "Yaourt grec : 1 c.à.s"
       ],
-      "instructions": "Rouler serré.",
+      "instructions": "Égoutter le thon. Mélanger avec yaourt et maïs. Garnir la tortilla, ajouter salade et tomate. Rouler.",
       "id": "wrap_thon_crudités_(tortilla_complète)"
     },
     {
@@ -6147,13 +6205,14 @@
         "pescetarien"
       ],
       "ingredients": [
-        "Oeuf dur",
-        "Thon",
-        "Haricots verts",
-        "Pomme de terre",
-        "Olive"
+        "Oeuf dur : 2",
+        "Thon : 80g",
+        "Haricots verts cuits : 100g",
+        "Pomme de terre vapeur : 1",
+        "Olives noires : 5",
+        "Tomate : 1"
       ],
-      "instructions": "Dresser l'assiette.",
+      "instructions": "Disposer tous les ingrédients dans une assiette. Assaisonner d'huile d'olive et vinaigre.",
       "id": "salade_niçoise_classique"
     },
     {
@@ -6168,33 +6227,65 @@
         "dinner"
       ],
       "ingredients": [
-        "Pâtes complètes",
-        "Pesto Rosso",
-        "Roquette",
-        "Pignons"
+        "Pâtes complètes : 70g cru",
+        "Pesto Rosso : 2 c.à.s",
+        "Roquette : 1 poignée",
+        "Pignons de pin : 1 c.à.c",
+        "Tomates cerises : 5"
       ],
-      "instructions": "Mélanger pâtes chaudes et pesto.",
+      "instructions": "Cuire les pâtes. Mélanger avec le pesto. Servir sur un lit de roquette, parsemer de pignons.",
       "id": "pâtes_complètes_pesto_rosso_&_roquette"
     },
     {
-      "name": "Buddha Bowl Patate Douce Pois Chiches",
-      "type": "healthy",
-      "calories": 480,
-      "prep_time": 20,
-      "difficulty": "facile",
+      "name": "Poke Bowl Saumon Express",
+      "calories": 550,
+      "protein": "30g",
+      "carbs": "60g",
+      "fat": "20g",
+      "ingredients": [
+        "Riz à sushi cuit : 150g",
+        "Saumon frais en dés : 100g",
+        "Avocat : 1/2",
+        "Fèves edamame : 50g",
+        "Sauce soja : 1 c.à.s",
+        "Graines de sésame : 1 c.à.c",
+        "Vinaigre de riz : 1 c.à.c"
+      ],
+      "instructions": "Assaisonner le riz avec le vinaigre. Disposer le saumon, l'avocat et les edamames sur le riz. Napper de sauce soja et saupoudrer de sésame.",
       "tags": [
         "lunch",
-        "vegan",
+        "poisson",
+        "frais",
+        "sans_gluten",
         "dinner"
       ],
+      "prep_time": 15,
+      "difficulty": "facile",
+      "id": "extra_lunch_oghqnhyur"
+    },
+    {
+      "name": "Club Sandwich Dinde & Avocat",
+      "calories": 450,
+      "protein": "25g",
+      "carbs": "40g",
+      "fat": "20g",
       "ingredients": [
-        "Patate douce rôtie",
-        "Pois chiches",
-        "Epinard",
-        "Tahini"
+        "Pain de mie complet : 3 tranches",
+        "Blanc de dinde : 2 tranches",
+        "Avocat écrasé : 1/2",
+        "Tomate : 1/2",
+        "Laitue : 2 feuilles",
+        "Mayonnaise légère : 1 c.à.c"
       ],
-      "instructions": "Assembler bol.",
-      "id": "buddha_bowl_patate_douce_pois_chiches"
+      "instructions": "Toaster le pain. Tartiner d'avocat et mayonnaise. Alterner couches de dinde, tomate et laitue entre les tranches de pain. Couper en triangles.",
+      "tags": [
+        "lunch",
+        "rapide",
+        "froid"
+      ],
+      "prep_time": 10,
+      "difficulty": "facile",
+      "id": "extra_lunch_club_sandwich"
     },
     {
       "name": "Croque-Monsieur Saumon Epinard",
@@ -6208,12 +6299,13 @@
         "dinner"
       ],
       "ingredients": [
-        "Pain mie",
-        "Saumon fumé",
-        "Epinard",
-        "Emmental"
+        "Pain de mie complet : 2 tranches",
+        "Saumon fumé : 1 tranche",
+        "Epinard frais : 1 poignée",
+        "Emmental râpé : 30g",
+        "Crème fraîche : 1 c.à.c"
       ],
-      "instructions": "Cuire appareil à croque.",
+      "instructions": "Tartiner le pain de crème. Ajouter épinards, saumon et fromage. Refermer et cuire à l'appareil à croque.",
       "id": "croque-monsieur_saumon_epinard"
     },
     {
@@ -6227,12 +6319,13 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Bagel",
-        "Houmous",
-        "Poivron grillé",
-        "Aubergine grillée"
+        "Bagel sésame : 1",
+        "Houmous : 2 c.à.s",
+        "Poivron grillé : 1/2",
+        "Aubergine grillée : 2 tranches",
+        "Roquette : 1 poignée"
       ],
-      "instructions": "Garnir bagel.",
+      "instructions": "Toaster le bagel. Tartiner de houmous. Garnir de légumes grillés et de roquette.",
       "id": "bagel_veggie_houmous_légumes_grillés"
     },
     {
