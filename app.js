@@ -42,6 +42,22 @@ function loadDailyQuote() {
 
 document.addEventListener("DOMContentLoaded", () => {
   loadDailyQuote();
+
+  // AJOUT MOTEUR DE BIENVENUE (V4)
+  const profile = JSON.parse(localStorage.getItem('userProfile'));
+  if (profile && profile.name) {
+    const welcomeSection = document.querySelector('.fbs-welcome');
+    if (welcomeSection) {
+      const helloMsg = document.createElement('h2');
+      helloMsg.textContent = `Bonjour ${profile.name} ! 🌸`;
+      helloMsg.style.color = 'var(--fbs-rose-suave)';
+      helloMsg.style.marginBottom = '10px';
+      helloMsg.style.fontSize = '1.4rem';
+
+      // Insérer au début de la section welcome
+      welcomeSection.insertBefore(helloMsg, welcomeSection.firstChild);
+    }
+  }
 });
 // ---------------------------
 // GESTION PWA (INSTALLATION)

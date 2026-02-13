@@ -108,10 +108,9 @@ function scaleString(str, factor) {
       return `${Math.round(newVal)} ${unit || ''}`.trim();
     }
 
-    // 2. HALF STEPS (Avocado, Fruits...) -> 0.5, 1, 1.5...
+    // 2. HALF STEPS (Avocado, Fruits...) -> TOUJOURS ARRONDIR A L'ENTIER SUPERIEUR (Demande User)
     if (isHalfStep) {
-      let rounded = Math.round(newVal * 2) / 2;
-      if (rounded === 0) rounded = 0.5; // Avoid 0 for things like avocado
+      let rounded = Math.ceil(newVal); // Force l'entier supérieur (ex: 0.5 -> 1)
       return `${rounded} ${unit || ''}`.trim();
     }
 
@@ -120,38 +119,21 @@ function scaleString(str, factor) {
       if (effectiveUnit === 'g' || effectiveUnit === 'ml') {
         if (newVal >= 100) {
           return `${Math.round(newVal / 5) * 5} ${unit}`;
-        } else if (newVal > 10) {
-          return `${Math.round(newVal)} ${unit}`;
         } else {
-          const fixed = newVal.toFixed(1);
-          const finalVal = fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
-          return `${finalVal} ${unit}`;
+          // Force Integer Rounding for everything
+          return `${Math.round(newVal)} ${unit}`;
         }
       }
       // Other units
       else {
-        const nearestInt = Math.round(newVal);
-        if (Math.abs(newVal - nearestInt) < 0.2) {
-          return `${nearestInt} ${unit}`;
-        } else if (newVal > 10) {
-          return `${Math.round(newVal)} ${unit}`;
-        } else {
-          const fixed = newVal.toFixed(1);
-          const finalVal = fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
-          return `${finalVal} ${unit}`;
-        }
+        // Force Integer Rounding
+        return `${Math.round(newVal)} ${unit}`;
       }
     } else {
       // 4. UNITLESS GENERIC
       if (newVal >= 100) return Math.round(newVal / 5) * 5;
-
-      const nearestInt = Math.round(newVal);
-      if (Math.abs(newVal - nearestInt) < 0.2) return nearestInt;
-
-      if (newVal > 10) return Math.round(newVal);
-
-      const fixed = newVal.toFixed(1);
-      return fixed.endsWith('.0') ? parseInt(fixed) : parseFloat(fixed);
+      // Force Integer
+      return Math.round(newVal);
     }
   });
 }
@@ -972,12 +954,15 @@ document.getElementById("close-grocery").addEventListener("click", () => {
   displayWeek(week);
 
   const profile = getSmartProfile();
+  // CODE SUPPRIMÉ : Le message "Bonjour" est déplacé vers index.html (Page d'accueil)
+  /*
   if (profile && profile.name) {
     const title = document.querySelector('.sub-title');
     if (title) {
       title.innerHTML = `FitBloom <span style="font-size:0.6em; display:block; color:var(--fbs-rose-suave)">Bonjour ${profile.name} !</span>`;
     }
   }
+  */
   if (profile && profile.targetCalories) {
     const calDiv = document.getElementById('calorie-target-display');
     if (calDiv) {

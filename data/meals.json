@@ -2710,7 +2710,7 @@
     },
     {
       "type": "healthy",
-      "name": "Tarte salée épinard chèvre (pâte GF)",
+      "name": "Tarte salée épinard chèvre (Pâte à pizza)",
       "calories": 480,
       "tags": [
         "vegetarien",
@@ -2721,7 +2721,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Pâte GF",
+        "Pâte à pizza",
         "Epinards",
         "Chèvre"
       ],
@@ -3408,7 +3408,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Pâte GF : 1",
+        "Pâte à pizza : 1",
         "Mozza vegan : 60g",
         "Tomates : 1"
       ],
@@ -4312,7 +4312,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Pâte GF : 1",
+        "Pâte à pizza : 1",
         "Potiron : 100g",
         "Noix : 10g"
       ],
@@ -5279,7 +5279,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Pâte GF : 1",
+        "Pâte à pizza : 1",
         "Champignons : 120g",
         "Coco : 40ml"
       ],
