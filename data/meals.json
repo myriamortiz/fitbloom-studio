@@ -6257,8 +6257,8 @@
         "sans_gluten",
         "dinner"
       ],
-      "prep_time": "15 min",
-      "difficulty": "Facile",
+      "prep_time": 15,
+      "difficulty": "facile",
       "id": "extra_lunch_oghqnhyur"
     },
     {
@@ -6283,8 +6283,8 @@
         "chaud",
         "dinner"
       ],
-      "prep_time": "25 min",
-      "difficulty": "Moyen",
+      "prep_time": 25,
+      "difficulty": "moyen",
       "id": "extra_lunch_gq6n5p2qp"
     },
     {
@@ -6309,8 +6309,8 @@
         "froid",
         "dinner"
       ],
-      "prep_time": "10 min",
-      "difficulty": "Trés facile",
+      "prep_time": 10,
+      "difficulty": "facile",
       "id": "extra_lunch_51kr0clcj"
     },
     {
