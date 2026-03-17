@@ -509,7 +509,7 @@
       "ingredients": [
         "Œufs : 2",
         "Champignons : 100g",
-        "Ail/Persil"
+        "Ail/Persil : "
       ],
       "instructions": "Poêler champignons puis oeufs.",
       "id": "omelette_champignons_persillade",
@@ -1768,7 +1768,7 @@
         "Lentilles corail : 70g",
         "Coco : 50ml",
         "Tomates : 100g",
-        "Curry"
+        "Curry : "
       ],
       "instructions": "Mijoter 15min.",
       "id": "curry_de_lentilles_corail",
@@ -1790,8 +1790,8 @@
       ],
       "ingredients": [
         "Thon : 120g",
-        "Sésame",
-        "Soja GF"
+        "Sésame : ",
+        "Soja GF : "
       ],
       "instructions": "Snacker 1min par face.",
       "id": "steak_de_thon_sésame",
@@ -1813,7 +1813,7 @@
       "ingredients": [
         "Poulet : 120g",
         "Beurre cacahuète : 1 c.à.s",
-        "Légumes wok"
+        "Légumes wok : "
       ],
       "instructions": "Sauter au wok.",
       "id": "wok_poulet_cacahuète",
@@ -1883,7 +1883,7 @@
       "ingredients": [
         "Pommes de terre : 200g",
         "Crème soja : 100ml",
-        "Ail"
+        "Ail : "
       ],
       "instructions": "Four 45min.",
       "id": "gratin_dauphinois_vegan",
@@ -1906,8 +1906,8 @@
       ],
       "ingredients": [
         "Pois chiches : 150g",
-        "Herbes",
-        "Epices"
+        "Herbes : ",
+        "Epices : "
       ],
       "instructions": "Mixer et cuire four.",
       "id": "falafels_au_four",
@@ -2655,8 +2655,8 @@
       ],
       "ingredients": [
         "Fèves : 150g",
-        "Menthe",
-        "Citron"
+        "Menthe : ",
+        "Citron : "
       ],
       "instructions": "Blanchir et assaisonner.",
       "id": "salade_fevettes_et_menthe",
@@ -2701,7 +2701,7 @@
       "ingredients": [
         "Riz arborio : 60g",
         "Petits pois : 50g",
-        "Citron"
+        "Citron : "
       ],
       "instructions": "Cuire risotto.",
       "id": "risotto_petits_pois_citron",
@@ -2721,9 +2721,9 @@
         "lunch"
       ],
       "ingredients": [
-        "Pâte à pizza",
-        "Epinards",
-        "Chèvre"
+        "Pâte à pizza : ",
+        "Epinards : ",
+        "Chèvre : "
       ],
       "instructions": "Four.",
       "id": "tarte_salée_épinard_chèvre_(pâte_gf)",
@@ -2745,8 +2745,8 @@
       ],
       "ingredients": [
         "Cabillaud : 150g",
-        "Herbes",
-        "Poudre amande"
+        "Herbes : ",
+        "Poudre amande : "
       ],
       "instructions": "Four.",
       "id": "dos_de_cabillaud_croûte_d'herbes",
@@ -2768,7 +2768,7 @@
       "ingredients": [
         "Veau : 120g",
         "Olives : 10",
-        "Tomate"
+        "Tomate : "
       ],
       "instructions": "Mijoter.",
       "id": "sauté_de_veau_aux_olives",
@@ -2790,8 +2790,8 @@
       ],
       "ingredients": [
         "Chou-fleur râpé : 200g",
-        "Tomate",
-        "Concombre"
+        "Tomate : ",
+        "Concombre : "
       ],
       "instructions": "Tout cru.",
       "id": "taboulé_de_chou-fleur",
@@ -2989,7 +2989,7 @@
       "ingredients": [
         "Œufs : 2",
         "Courgette : 1",
-        "Menthe"
+        "Menthe : "
       ],
       "instructions": "Cuire poêle.",
       "id": "frittata_courgette-menthe",
@@ -3054,7 +3054,7 @@
       ],
       "ingredients": [
         "Cerises : 100g",
-        "Appareil oeuf/lait/farine"
+        "Appareil oeuf/lait/farine : "
       ],
       "instructions": "Four.",
       "id": "clafoutis_cerise_(rapide)",
@@ -3590,8 +3590,8 @@
       ],
       "ingredients": [
         "Poulet : 150g",
-        "Citron confit",
-        "Oignon"
+        "Citron confit : ",
+        "Oignon : "
       ],
       "instructions": "BBQ ou four.",
       "id": "brochettes_poulet_citron_confit",
@@ -3612,10 +3612,10 @@
         "lunch"
       ],
       "ingredients": [
-        "Thon",
-        "Œuf",
-        "Haricots verts",
-        "Pommes de terre"
+        "Thon : ",
+        "Œuf : ",
+        "Haricots verts : ",
+        "Pommes de terre : "
       ],
       "instructions": "Assembler.",
       "id": "salade_niçoise_revisitée",
@@ -3635,10 +3635,10 @@
         "lunch"
       ],
       "ingredients": [
-        "Aubergine",
-        "Tomate",
-        "Mozza",
-        "Parmesan"
+        "Aubergine : ",
+        "Tomate : ",
+        "Mozza : ",
+        "Parmesan : "
       ],
       "instructions": "Four.",
       "id": "auberginges_à_la_parmigiana_(allégé)",
@@ -3659,9 +3659,9 @@
         "lunch"
       ],
       "ingredients": [
-        "Tomates",
-        "Poivron",
-        "Concombre",
+        "Tomates : ",
+        "Poivron : ",
+        "Concombre : ",
         "Œuf : 2"
       ],
       "instructions": "Mixer soupe, ajouter oeuf.",
@@ -3705,8 +3705,8 @@
       ],
       "ingredients": [
         "Dorade : 120g",
-        "Mangue",
-        "Citron vert"
+        "Mangue : ",
+        "Citron vert : "
       ],
       "instructions": "Mariner 20min.",
       "id": "ceviche_dorade_mangue",
@@ -4098,8 +4098,8 @@
       "ingredients": [
         "Panais : 1",
         "Huile d'olive : 1 c.à.c",
-        "Sel",
-        "Paprika"
+        "Sel : ",
+        "Paprika : "
       ],
       "instructions": "Couper le panais en tranches très fines (mandoline). Mélanger avec l'huile et les épices. Cuire 15-20 min au four à 180°C jusqu'à ce qu'elles soient croustillantes.",
       "id": "chips_de_panais",
@@ -4523,7 +4523,7 @@
       "ingredients": [
         "Champignons : 300g",
         "Œuf : 1",
-        "Bouillon"
+        "Bouillon : "
       ],
       "instructions": "Mixer soupe, ajouter oeuf.",
       "id": "velouté_champignons_&_oeuf_poché",
@@ -4647,7 +4647,7 @@
         "Pommes de terre : 150g",
         "Echalote : 1",
         "Vin blanc : 50ml",
-        "Persil"
+        "Persil : "
       ],
       "instructions": "Cuire les frites de pomme de terre au four. Faire ouvrir les moules avec échalote et vin blanc.",
       "id": "moules_marinières_&_frites_four",
@@ -4842,7 +4842,7 @@
       "ingredients": [
         "Flocons : 50g",
         "Pomme : 1",
-        "Cannelle"
+        "Cannelle : "
       ],
       "instructions": "Cuire.",
       "id": "porridge_pomme_cannelle",
@@ -4993,9 +4993,9 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Lait végétal",
-        "Chocolat pur",
-        "Zeste"
+        "Lait végétal : ",
+        "Chocolat pur : ",
+        "Zeste : "
       ],
       "instructions": "Chauffer.",
       "id": "chocolat_chaud_onctueux_&_orange",
@@ -5482,8 +5482,8 @@
       ],
       "ingredients": [
         "Oignon : 3",
-        "Pain GF",
-        "Comté"
+        "Pain GF : ",
+        "Comté : "
       ],
       "instructions": "Gratiner.",
       "id": "soupe_oignon_gratinée_(pain_gf)",
@@ -5502,10 +5502,10 @@
         "winter"
       ],
       "ingredients": [
-        "Bœuf maigre",
-        "Carotte",
-        "Poireau",
-        "Navet"
+        "Bœuf maigre : ",
+        "Carotte : ",
+        "Poireau : ",
+        "Navet : "
       ],
       "instructions": "Bouillon long.",
       "id": "pot-au-feu_léger",
@@ -5527,7 +5527,7 @@
       "ingredients": [
         "Endives : 2",
         "Jambon : 2",
-        "Chou-fleur mixé"
+        "Chou-fleur mixé : "
       ],
       "instructions": "Four.",
       "id": "endives_au_jambon_(béchamel_chou-fleur)",
@@ -5549,9 +5549,9 @@
         "lunch"
       ],
       "ingredients": [
-        "Lentilles corail",
-        "Coco",
-        "Epinards"
+        "Lentilles corail : ",
+        "Coco : ",
+        "Epinards : "
       ],
       "instructions": "Mijoter.",
       "id": "dahl_de_lentilles_coco",
@@ -5572,7 +5572,7 @@
       "ingredients": [
         "Pommes de terre : 150g",
         "Fromage : 3 tr",
-        "Cornichon"
+        "Cornichon : "
       ],
       "instructions": "Fondre.",
       "id": "raclette_bowl_(3_fromages)",
@@ -5596,8 +5596,8 @@
         "Pain Burger : 1",
         "Steak Dinde : 120g",
         "Avocat : 1/2",
-        "Tomate",
-        "Moutarde"
+        "Tomate : ",
+        "Moutarde : "
       ],
       "instructions": "Griller le steak. Toaster le pain. Assembler avec avocat et légumes.",
       "id": "burger_maison_dinde_&_avocat"
@@ -5618,7 +5618,7 @@
       "ingredients": [
         "Crevettes : 150g",
         "Lait Coco : 100ml",
-        "Pâte Curry Vert",
+        "Pâte Curry Vert : ",
         "Riz basmati (cru) : 50g"
       ],
       "instructions": "Cuire le riz. Poêler crevettes avec curry et coco 5 min.",
@@ -5638,8 +5638,8 @@
       ],
       "ingredients": [
         "Semoule blé : 80g",
-        "Lait",
-        "Beurre",
+        "Lait : ",
+        "Beurre : ",
         "Parmesan : 30g"
       ],
       "instructions": "Faire la pâte, découper disques, gratiner au four avec parmesan.",
@@ -5684,7 +5684,7 @@
         "Aubergine : 1",
         "Mozzarella : 50g",
         "Coulis tomate : 150g",
-        "Parmesan"
+        "Parmesan : "
       ],
       "instructions": "Griller aubergines. Alterner couches pâtes/légumes/fromage. Cuire 30min au four.",
       "id": "lasagnes_maison_aubergines_&_mozza"
@@ -5706,7 +5706,7 @@
         "Bœuf haché 5% : 100g",
         "Haricots rouges : 150g",
         "Maïs : 50g",
-        "Epices Chili",
+        "Epices Chili : ",
         "Riz (cru) : 50g"
       ],
       "instructions": "Mijoter le boeuf avec épices et tomates. Ajouter haricots et maïs. Servir avec riz.",
@@ -5729,8 +5729,8 @@
         "Chou-fleur râpé : 200g",
         "Œuf : 1",
         "Chèvre : 30g",
-        "Tomate",
-        "Origan"
+        "Tomate : ",
+        "Origan : "
       ],
       "instructions": "Mélanger chou-fleur et oeuf pour la pâte. Cuire à blanc. Garnir et gratiner.",
       "id": "pizza_maison_base_chou-fleur"
@@ -5751,8 +5751,8 @@
         "Tortillas de maïs : 2",
         "Poulet : 100g",
         "Avocat : 1/2",
-        "Citron vert",
-        "Coriandre"
+        "Citron vert : ",
+        "Coriandre : "
       ],
       "instructions": "Saisir poulet aux épices. Garnir tortillas avec purée d'avocat.",
       "id": "tacos_poulet_&_guacamole"
@@ -5773,9 +5773,9 @@
       "ingredients": [
         "Steak de bœuf : 120g",
         "Poivrons : 2",
-        "Oignon",
+        "Oignon : ",
         "Tortillas blé : 2",
-        "Epices fajitas"
+        "Epices fajitas : "
       ],
       "instructions": "Sauter boeuf et légumes en lanières. Servir chaud dans galettes.",
       "id": "fajitas_boeuf_poivrons"
@@ -5798,7 +5798,7 @@
         "Champignons : 150g",
         "Parmesan : 30g",
         "Vin blanc : 30ml",
-        "Bouillon"
+        "Bouillon : "
       ],
       "instructions": "Nacrer riz. Ajouter bouillon louche par louche. Finir avec parmesan.",
       "id": "risotto_champignons_&_parmesan"
@@ -5820,8 +5820,8 @@
         "Nouilles riz (cru) : 80g",
         "Poulet : 100g",
         "Beurre cacahuète : 1 c.à.s",
-        "Soja",
-        "Citron vert"
+        "Soja : ",
+        "Citron vert : "
       ],
       "instructions": "Cuire nouilles. Sauter poulet. Mélanger beurre cacahuète et soja pour la sauce.",
       "id": "wok_poulet_cacahuète_(pad_thaï_style)"
@@ -5865,7 +5865,7 @@
         "Saumon : 80g",
         "Mangue : 1/2",
         "Avocat : 1/4",
-        "Sésame"
+        "Sésame : "
       ],
       "instructions": "Couper saumon et fruits en dés. Disposer sur riz froid.",
       "id": "poke_bowl_saumon_mangue"
@@ -5910,8 +5910,8 @@
         "Bagel sésame : 1",
         "Saumon fumé : 60g",
         "Cream Cheese : 30g",
-        "Câpres",
-        "Oignon rouge"
+        "Câpres : ",
+        "Oignon rouge : "
       ],
       "instructions": "Toaster bagel. Tartiner fromage. Ajouter saumon et condiments.",
       "id": "bagel_saumon_cream_cheese_(le_vrai)"
@@ -5954,7 +5954,7 @@
         "Banane : 1",
         "Œufs : 2",
         "Farine sarrasin : 20g",
-        "Sirop d'érable"
+        "Sirop d'érable : "
       ],
       "instructions": "Mixer banane et oeufs. Cuire petits tas à la poêle.",
       "id": "pancakes_banane_'fluffy'"
@@ -5974,8 +5974,8 @@
         "Muffin anglais : 1",
         "Œufs : 2",
         "Yaourt grec : 50g",
-        "Moutarde",
-        "Citron"
+        "Moutarde : ",
+        "Citron : "
       ],
       "instructions": "Pocher les oeufs. Faire sauce avec yaourt/moutarde. Servir sur muffin toasté.",
       "id": "oeufs_bénédictine_(sauce_yaourt)"
@@ -5996,7 +5996,7 @@
       "ingredients": [
         "Magret canard : 100g",
         "Lait Coco : 100ml",
-        "Pâte Curry Rouge",
+        "Pâte Curry Rouge : ",
         "Ananas frais : 50g",
         "Riz (cru) : 60g"
       ],
@@ -6083,7 +6083,7 @@
         "Courgette en rondelles : 1/2",
         "Tomate en dés : 1",
         "Jus de citron : 1/2",
-        "Herbes de Provence"
+        "Herbes de Provence : "
       ],
       "instructions": "Disposer les légumes et le poisson sur du papier cuisson. Arroser de citron et herbes. Fermer la papillote et cuire 20 min au four à 180°C.",
       "id": "papillote_poisson_légumes_du_soleil"
@@ -6340,7 +6340,7 @@
         "Avocat : 1/2",
         "Fèves edamame : 50g",
         "Sauce soja : 1 c.à.s",
-        "Graines de sésame"
+        "Graines de sésame : "
       ],
       "instructions": "Disposez le riz au fond du bol. Arrangez joliment le saumon, l'avocat et les edamames par-dessus. Arrosez de sauce soja et saupoudrez de sésame. Servez immédiatement.",
       "tags": [
@@ -6391,7 +6391,7 @@
         "Dinde : 100g",
         "Avocat : 1/2",
         "Tomates : 2 tranches",
-        "Quelques feuilles de laitue",
+        "Quelques feuilles de laitue : ",
         "Mayonnaise légère : 1 c.à.c"
       ],
       "instructions": "Tartinez une tranche de pain d'avocat. Ajoutez la dinde. Posez la seconde tranche, tartinez de mayonnaise, ajoutez tomate et laitue. Fermez avec la troisième tranche. Coupez en triangles.",

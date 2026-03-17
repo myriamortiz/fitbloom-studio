@@ -96,10 +96,10 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Céleri",
-        "Concombre",
-        "Persil",
-        "Citron"
+        "Céleri : ",
+        "Concombre : ",
+        "Persil : ",
+        "Citron : "
       ],
       "instructions": "Extracteur."
     },
@@ -114,9 +114,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Orange",
-        "Carotte",
-        "Citron"
+        "Orange : ",
+        "Carotte : ",
+        "Citron : "
       ],
       "instructions": "Extracteur."
     },
@@ -131,9 +131,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Gingembre",
-        "Curcuma",
-        "Citron"
+        "Gingembre : ",
+        "Curcuma : ",
+        "Citron : "
       ],
       "instructions": "Shot."
     },
@@ -148,9 +148,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Banane",
-        "Cacao",
-        "Lait amande"
+        "Banane : ",
+        "Cacao : ",
+        "Lait amande : "
       ],
       "instructions": "Mixer."
     },
@@ -165,9 +165,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Betterave",
-        "Pomme",
-        "Gingembre"
+        "Betterave : ",
+        "Pomme : ",
+        "Gingembre : "
       ],
       "instructions": "Extracteur."
     },
@@ -182,7 +182,7 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Coco jeune"
+        "Coco jeune : "
       ],
       "instructions": "Ouvrir et boire."
     },
@@ -197,9 +197,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Fenouil",
-        "Pomme",
-        "Citron"
+        "Fenouil : ",
+        "Pomme : ",
+        "Citron : "
       ],
       "instructions": "Extracteur."
     },
@@ -214,8 +214,8 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Amandes trempées",
-        "Eau"
+        "Amandes trempées : ",
+        "Eau : "
       ],
       "instructions": "Mixer et filtrer."
     },
@@ -230,9 +230,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Carotte",
-        "Persil",
-        "Huile olive (goutte)"
+        "Carotte : ",
+        "Persil : ",
+        "Huile olive (goutte) : "
       ],
       "instructions": "Extracteur."
     },
@@ -247,9 +247,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Tomate",
-        "Céleri",
-        "Tabasco"
+        "Tomate : ",
+        "Céleri : ",
+        "Tabasco : "
       ],
       "instructions": "Extracteur."
     }
@@ -350,9 +350,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Asperce (crue)",
-        "Pomme",
-        "Citron"
+        "Asperce (crue) : ",
+        "Pomme : ",
+        "Citron : "
       ],
       "instructions": "Extracteur."
     },
@@ -367,9 +367,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Fraise",
-        "Rhubarbe (cuite)",
-        "Pomme"
+        "Fraise : ",
+        "Rhubarbe (cuite) : ",
+        "Pomme : "
       ],
       "instructions": "Mixer."
     },
@@ -384,9 +384,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Epinard",
-        "Pomme",
-        "Citron vert"
+        "Epinard : ",
+        "Pomme : ",
+        "Citron vert : "
       ],
       "instructions": "Extracteur."
     },
@@ -401,8 +401,8 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Radis",
-        "Pomme"
+        "Radis : ",
+        "Pomme : "
       ],
       "instructions": "Extracteur."
     },
@@ -417,7 +417,7 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Pamplemousse"
+        "Pamplemousse : "
       ],
       "instructions": "Presser."
     },
@@ -432,9 +432,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Kiwi",
-        "Menthe",
-        "Pomme"
+        "Kiwi : ",
+        "Menthe : ",
+        "Pomme : "
       ],
       "instructions": "Mixer."
     },
@@ -449,8 +449,8 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Ortie fraîche",
-        "Pomme"
+        "Ortie fraîche : ",
+        "Pomme : "
       ],
       "instructions": "Extracteur."
     },
@@ -465,8 +465,8 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Noisette",
-        "Eau"
+        "Noisette : ",
+        "Eau : "
       ],
       "instructions": "Mixer et filtrer."
     }
@@ -567,9 +567,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Pastèque",
-        "Menthe",
-        "Citron vert"
+        "Pastèque : ",
+        "Menthe : ",
+        "Citron vert : "
       ],
       "instructions": "Extracteur."
     },
@@ -584,9 +584,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Pêche",
-        "Abricot",
-        "Lait coco"
+        "Pêche : ",
+        "Abricot : ",
+        "Lait coco : "
       ],
       "instructions": "Mixer."
     },
@@ -601,8 +601,8 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Concombre",
-        "Melon"
+        "Concombre : ",
+        "Melon : "
       ],
       "instructions": "Extracteur."
     },
@@ -617,10 +617,10 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Citron",
-        "Gingembre",
-        "Eau",
-        "Agave"
+        "Citron : ",
+        "Gingembre : ",
+        "Eau : ",
+        "Agave : "
       ],
       "instructions": "Mélanger."
     },
@@ -635,9 +635,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Fraise",
-        "Framboise",
-        "Cassis"
+        "Fraise : ",
+        "Framboise : ",
+        "Cassis : "
       ],
       "instructions": "Mixer."
     },
@@ -652,9 +652,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Poivron rouge",
-        "Carotte",
-        "Pomme"
+        "Poivron rouge : ",
+        "Carotte : ",
+        "Pomme : "
       ],
       "instructions": "Extracteur."
     },
@@ -669,9 +669,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Thé noir",
-        "Pêche",
-        "Glaçons"
+        "Thé noir : ",
+        "Pêche : ",
+        "Glaçons : "
       ],
       "instructions": "Infuser."
     },
@@ -686,9 +686,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Tomate",
-        "Basilic",
-        "Sel"
+        "Tomate : ",
+        "Basilic : ",
+        "Sel : "
       ],
       "instructions": "Extracteur."
     }
@@ -789,7 +789,7 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Raisin noir"
+        "Raisin noir : "
       ],
       "instructions": "Extracteur."
     },
@@ -804,9 +804,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Poire",
-        "Cannelle",
-        "Gingembre"
+        "Poire : ",
+        "Cannelle : ",
+        "Gingembre : "
       ],
       "instructions": "Extracteur."
     },
@@ -821,9 +821,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Figues",
-        "Lait amande",
-        "Miel"
+        "Figues : ",
+        "Lait amande : ",
+        "Miel : "
       ],
       "instructions": "Mixer."
     },
@@ -838,9 +838,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Citrouille crue",
-        "Pomme",
-        "Cannelle"
+        "Citrouille crue : ",
+        "Pomme : ",
+        "Cannelle : "
       ],
       "instructions": "Extracteur."
     },
@@ -855,7 +855,7 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Grenade"
+        "Grenade : "
       ],
       "instructions": "Presser."
     },
@@ -870,9 +870,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Noix",
-        "Eau",
-        "Dattes"
+        "Noix : ",
+        "Eau : ",
+        "Dattes : "
       ],
       "instructions": "Mixer filtrer."
     },
@@ -887,8 +887,8 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Kaki",
-        "Orange"
+        "Kaki : ",
+        "Orange : "
       ],
       "instructions": "Extracteur."
     },
@@ -903,8 +903,8 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Carotte violette",
-        "Pomme"
+        "Carotte violette : ",
+        "Pomme : "
       ],
       "instructions": "Extracteur."
     }
@@ -1005,7 +1005,7 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Orange sanguine"
+        "Orange sanguine : "
       ],
       "instructions": "Presser."
     },
@@ -1020,9 +1020,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Pomme",
-        "Céleri",
-        "Gingembre"
+        "Pomme : ",
+        "Céleri : ",
+        "Gingembre : "
       ],
       "instructions": "Extracteur."
     },
@@ -1037,9 +1037,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Banane",
-        "Dattes",
-        "Lait avoine"
+        "Banane : ",
+        "Dattes : ",
+        "Lait avoine : "
       ],
       "instructions": "Mixer."
     },
@@ -1054,9 +1054,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Chou rouge",
-        "Pomme",
-        "Citron"
+        "Chou rouge : ",
+        "Pomme : ",
+        "Citron : "
       ],
       "instructions": "Extracteur."
     },
@@ -1071,9 +1071,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Carotte",
-        "Curcuma frais",
-        "Poivre noir"
+        "Carotte : ",
+        "Curcuma frais : ",
+        "Poivre noir : "
       ],
       "instructions": "Extracteur."
     },
@@ -1088,9 +1088,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Noisettes torréfiées",
-        "Dattes",
-        "Eau"
+        "Noisettes torréfiées : ",
+        "Dattes : ",
+        "Eau : "
       ],
       "instructions": "Mixer."
     },
@@ -1105,8 +1105,8 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Kiwi",
-        "Pomme"
+        "Kiwi : ",
+        "Pomme : "
       ],
       "instructions": "Extracteur."
     },
@@ -1120,9 +1120,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Thym",
-        "Citron",
-        "Miel"
+        "Thym : ",
+        "Citron : ",
+        "Miel : "
       ],
       "instructions": "Infuser."
     }

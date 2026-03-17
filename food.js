@@ -610,12 +610,14 @@ document.getElementById("close-favorites").addEventListener("click", () => {
 // ----------------------------
 
 const AISLES = {
-  "Fruits & Légumes": ["pomme", "poire", "banane", "citron", "avocat", "tomate", "concombre", "carotte", "chou", "épinard", "mangue", "figue", "raisin", "maïs", "ciboulette", "persil", "basilic", "menthe", "ail", "oignon", "patate douce", "poivron", "champignon", "fruits"],
-  "Boucherie & Poisson": ["saumon", "thon", "dinde", "bacon", "poulet", "crevette", "oeuf", "œuf"],
-  "Frais & Crémerie": ["lait", "crème", "beurre", "yaourt", "fromage", "chèvre", "feta", "skyr", "tofu", "faux-mage", "guacamole", "houmous"],
-  "Épicerie Salée": ["riz", "pâte", "quinoa", "sarrasin", "pain", "bagel", "wrap", "tortilla", "huile", "vinaigre", "soja", "chia", "not", "amande", "noix", "noisette", "cajou", "graine", "lentille", "pois chiche", "haricot", "farine"],
-  "Épicerie Sucrée & Matin": ["flocon", "avoine", "muesli", "granola", "miel", "sirop", "sucre", "chocolat", "cacao", "vanille", "compote", "brioche", "biscuit", "cookie"],
-  "Surgelés": ["glace", "fruit rouge"],
+  "Fruits & Légumes": ["pomme", "poire", "banane", "citron", "avocat", "tomate", "concombre", "carotte", "chou", "épinard", "mangue", "figue", "raisin", "maïs", "ciboulette", "persil", "basilic", "menthe", "ail", "oignon", "patate douce", "poivron", "champignon", "fruits", "datte", "cranberrie", "fraise", "olive", "gingembre", "orange", "melon", "pêche", "céleri", "kale", "ananas", "abricot", "kiwi", "airelle", "pastèque", "zeste", "fenouil", "radis", "pois gourmand", "navet", "asperge", "artichaut", "myrtille", "courgette", "pamplemousse", "cerise", "nectarine", "framboise", "mûre", "aubergine", "ratatouille", "courge", "potimarron", "betterave", "panais", "clémentine", "grenade", "piment", "pomélo", "kaki", "endive", "brocoli", "salade", "roquette", "mâche", "cassis", "rhubarbe", "ortie", "asperce", "citrouille", "légume", "pois"],
+  "Boucherie & Poisson": ["saumon", "thon", "dinde", "bacon", "poulet", "crevette", "oeuf", "œuf", "poisson", "cabillaud", "agneau", "veau", "sardine", "dorade", "canard", "porc", "moule", "jambon"],
+  "Frais & Crémerie": ["lait", "crème", "beurre", "yaourt", "fromage", "chèvre", "feta", "skyr", "tofu", "faux-mage", "guacamole", "houmous", "mozzarella", "mozza", "parmesan", "comté", "emmental", "cream cheese"],
+  "Épicerie Salée": ["riz", "pâte", "quinoa", "sarrasin", "pain", "bagel", "wrap", "tortilla", "huile", "vinaigre", "soja", "chia", "not", "amande", "noix", "noisette", "cajou", "graine", "lentille", "pois chiche", "haricot", "farine", "pistache", "tahini", "purée cacahuète", "pécan", "sel", "bouillon", "échalote", "echalote", "croûton", "pignon", "fève", "maïzena", "semoule", "sésame", "olive", "cornichon", "moutarde", "câpre", "pavot"],
+  "Épicerie Sucrée & Matin": ["flocon", "avoine", "muesli", "granola", "miel", "sirop", "sucre", "chocolat", "cacao", "vanille", "compote", "brioche", "biscuit", "cookie", "eau de coco", "châtaigne", "pruneau", "muffin", "agave", "coco"],
+  "Boissons & Divers": ["eau", "vin", "thé", "matcha", "verveine", "café"],
+  "Surgelés": ["glace", "fruit rouge", "glaçon"],
+  "Épices & Condiments": ["épices", "herbe", "curcuma", "poivre", "levure", "sauge", "pesto", "mayonnaise", "epice", "tabasco"],
   "Divers": []
 };
 
@@ -713,7 +715,8 @@ function normalizeIngredient(name) {
   if (n.includes("amande") && !n.includes("lait") && !n.includes("beurre") && !n.includes("farine") && !n.includes("poudre")) return "Amandes";
   if (n.includes("beurre") && (n.includes("amande") || n.includes("cacahuète") || n.includes("noix"))) return "Beurre d'oléagineux";
   if (n.includes("noix") && n.includes("cajou")) return "Noix de cajou";
-  if (n.includes("noix") && !n.includes("beurre") && !n.includes("cajou") && !n.includes("coco")) return "Noix";
+  if (n.includes("noix") && name.toLowerCase().includes("poudre")) return "Noix (en poudre)";
+  if (n.includes("noix") && !n.includes("beurre") && !n.includes("cajou") && !n.includes("coco")) return "Noix (entières)";
   if (n.includes("noisette")) return "Noisettes";
   if (n.includes("pistache")) return "Pistaches";
 
