@@ -687,6 +687,7 @@ function normalizeIngredient(name) {
   n = n.replace(/’/g, "'");
 
   // 2. Specific Mappings (Canonicals) - Priority Rules
+  if (n.includes("boeuf") || n.includes("bœuf")) return "Boeuf";
   if (n.includes("oeuf") || n.includes("œuf")) return "Œufs";
   if (n.includes("avocat")) return "Avocat";
   if (n.includes("banane")) return "Banane";
@@ -758,7 +759,6 @@ function normalizeIngredient(name) {
   if (n.includes("steak") && n.includes("dinde")) return "Steak de dinde";
   if (n.includes("bacon")) return "Bacon";
   if (n.includes("jambon")) return "Jambon";
-  if (n.includes("boeuf") || n.includes("bœuf")) return "Boeuf";
   if (n.includes("saumon") && n.includes("fumé")) return "Saumon fumé";
   if (n.includes("saumon") && !n.includes("fumé")) return "Saumon";
   if (n.includes("thon")) return "Thon";
@@ -805,7 +805,7 @@ function normalizeIngredient(name) {
   // Specific exceptions we fixed
   if (n.includes("chocolat")) return "Chocolat pur";
   if (n.includes("pépite") && n.includes("chocolat") || n.includes("pepite") && n.includes("chocolat")) return "Pépites de chocolat";
-  if (n.includes("maïs") || n.includes("mai")) return "Maïs";
+  if (n === "maïs" || n === "maïs doux" || n === "mais" || n.includes("tortilla de maïs")) return "Maïs";
   if (n.includes("chèvre")) return "Fromage de Chèvre";
   if (n.includes("parmesan")) return "Parmesan";
   if (n.includes("emmental") || n.includes("gruyère") || n.includes("comté")) return "Fromage râpé";
@@ -823,7 +823,11 @@ function normalizeIngredient(name) {
   if (n.includes("épices") || n.includes("curry") || n.includes("paprika") || n.includes("cannelle") || n.includes("muscade") || n.includes("cumin") || n.includes("herbes") || n.includes("coriandre") || n.includes("persil") || n.includes("basilic") || n.includes("menthe") || n.includes("origan") || n.includes("thym") || n.includes("romarin") || n.includes("ciboulette")) return "Épices & Herbes";
 
   // 3. Generic Pluralization (if not caught above)
-  if (n.endsWith("s") && !n.endsWith("ss") && !n.endsWith("is") && !n.endsWith("us") && !n.endsWith("os")) n = n.slice(0, -1);
+  if ((n.endsWith("s") || n.endsWith("x")) && !n.endsWith("ss") && !n.endsWith("is") && !n.endsWith("us") && !n.endsWith("os")) n = n.slice(0, -1);
+  
+  // Cas particuliers
+  if (n === "asperce") return "Asperges";
+  if (n === "echalote") return "Échalote";
 
   // Capitalize
   return n.charAt(0).toUpperCase() + n.slice(1);
