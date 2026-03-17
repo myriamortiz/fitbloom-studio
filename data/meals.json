@@ -356,7 +356,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Oeuf : 1",
+        "Œuf : 1",
         "Epinard : 50g",
         "Crème soja : 1 c.à.s"
       ],
@@ -442,7 +442,7 @@
       ],
       "ingredients": [
         "Farine sarrasin : 60g",
-        "Oeuf : 1"
+        "Œuf : 1"
       ],
       "instructions": "Cuire galette puis oeuf.",
       "id": "galette_sarrasin_oeuf_miroir",
@@ -464,7 +464,7 @@
       ],
       "ingredients": [
         "Bagel GF : 1",
-        "Saumon: 50g",
+        "Saumon : 50g",
         "Faux-mage : 20g"
       ],
       "instructions": "Garnir.",
@@ -485,7 +485,7 @@
       ],
       "ingredients": [
         "Brioche GF : 2 tr",
-        "Oeuf : 1",
+        "Œuf : 1",
         "Lait amande : 50ml"
       ],
       "instructions": "Tremper et poêler.",
@@ -507,7 +507,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Oeufs : 2",
+        "Œufs : 2",
         "Champignons : 100g",
         "Ail/Persil"
       ],
@@ -552,7 +552,7 @@
       ],
       "ingredients": [
         "Wrap GF : 1",
-        "Oeuf : 2",
+        "Œuf : 2",
         "Avocat : 1/4"
       ],
       "instructions": "Rouler.",
@@ -662,7 +662,7 @@
         "all_seasons"
       ],
       "ingredients": [
-        "Mélange noix : 20g",
+        "Mélange de noix : 20g",
         "Cranberries : 15g"
       ],
       "instructions": "Mélanger et servir.",
@@ -794,7 +794,7 @@
       ],
       "ingredients": [
         "Poire : 1",
-        "Chocolat 85% : 10g"
+        "Chocolat pur : 10g"
       ],
       "instructions": "Servir poire avec chocolat.",
       "id": "poire_&_chocolat_noir_85%",
@@ -901,7 +901,7 @@
       ],
       "ingredients": [
         "Riz soufflé : 20g",
-        "Chocolat 85% : 10g"
+        "Chocolat pur : 10g"
       ],
       "instructions": "Mélanger.",
       "id": "riz_soufflé_&_chocolat_noir",
@@ -1181,7 +1181,7 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Chocolat 85% : 15g",
+        "Chocolat pur : 15g",
         "Coco : 10g"
       ],
       "instructions": "Faire fondre chocolat, mélanger coco, former rocher.",
@@ -1403,7 +1403,7 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Noix cajou : 10g",
+        "Noix de cajou : 10g",
         "Amandes : 10g",
         "Raisins secs : 10g"
       ],
@@ -1471,7 +1471,7 @@
       ],
       "ingredients": [
         "Figues sèches : 30g",
-        "Noix : 20g"
+        "Noix (entières) : 20g"
       ],
       "instructions": "Mixer et rouler.",
       "id": "boules_d'énergie_figue-noix",
@@ -1765,9 +1765,9 @@
         "lunch"
       ],
       "ingredients": [
-        "Lentilles corail: 70g",
-        "Coco: 50ml",
-        "Tomates: 100g",
+        "Lentilles corail : 70g",
+        "Coco : 50ml",
+        "Tomates : 100g",
         "Curry"
       ],
       "instructions": "Mijoter 15min.",
@@ -1789,7 +1789,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Thon: 120g",
+        "Thon : 120g",
         "Sésame",
         "Soja GF"
       ],
@@ -1811,8 +1811,8 @@
         "lunch"
       ],
       "ingredients": [
-        "Poulet: 120g",
-        "Beurre cacahuète: 1 c.à.s",
+        "Poulet : 120g",
+        "Beurre cacahuète : 1 c.à.s",
         "Légumes wok"
       ],
       "instructions": "Sauter au wok.",
@@ -1834,9 +1834,9 @@
         "lunch"
       ],
       "ingredients": [
-        "Cabillaud: 150g",
-        "Fenouil: 1",
-        "Orange: 2 tranches"
+        "Cabillaud : 150g",
+        "Fenouil : 1",
+        "Orange : 2 tranches"
       ],
       "instructions": "Four 20min.",
       "id": "papillote_cabillaud_fenouil",
@@ -1858,9 +1858,9 @@
         "lunch"
       ],
       "ingredients": [
-        "Quinoa: 60g",
-        "Avocat: 1/2",
-        "Tofu fumé: 100g"
+        "Quinoa : 60g",
+        "Avocat : 1/2",
+        "Tofu fumé : 100g"
       ],
       "instructions": "Mélanger.",
       "id": "salade_quinoa_avocat_tofu",
@@ -1881,8 +1881,8 @@
         "lunch"
       ],
       "ingredients": [
-        "PdT: 200g",
-        "Crème soja: 100ml",
+        "Pommes de terre : 200g",
+        "Crème soja : 100ml",
         "Ail"
       ],
       "instructions": "Four 45min.",
@@ -1905,7 +1905,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Pois chiches: 150g",
+        "Pois chiches : 150g",
         "Herbes",
         "Epices"
       ],
@@ -2014,7 +2014,7 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Pomme nouvelle : 1"
+        "Pommes de terre : 1"
       ],
       "instructions": "Rôtir 10 min.",
       "id": "pommes_nouvelles_rôties",
@@ -2078,7 +2078,7 @@
       ],
       "ingredients": [
         "Fraises : 100g",
-        "Chocolat noir : 10g"
+        "Chocolat pur : 10g"
       ],
       "instructions": "Tremper.",
       "id": "fraises_&_chocolat_noir",
@@ -2270,7 +2270,7 @@
         "spring"
       ],
       "ingredients": [
-        "Oeuf : 1",
+        "Œuf : 1",
         "Epinards : 50g",
         "Farine pois chiche : 10g"
       ],
@@ -2630,9 +2630,9 @@
         "lunch"
       ],
       "ingredients": [
-        "Agneau: 100g",
-        "Petits pois: 50g",
-        "Carottes: 1"
+        "Agneau : 100g",
+        "Petits pois : 50g",
+        "Carottes : 1"
       ],
       "instructions": "Mijoter.",
       "id": "navarin_d'agneau_printanier",
@@ -2654,7 +2654,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Fèves: 150g",
+        "Fèves : 150g",
         "Menthe",
         "Citron"
       ],
@@ -2677,8 +2677,8 @@
         "lunch"
       ],
       "ingredients": [
-        "Asperges: 10",
-        "Oeuf: 2"
+        "Asperges : 10",
+        "Œuf : 2"
       ],
       "instructions": "Four et cuisson oeuf.",
       "id": "asperges_rôties_&_oeuf_mollet",
@@ -2699,8 +2699,8 @@
         "lunch"
       ],
       "ingredients": [
-        "Riz arborio: 60g",
-        "Petits pois: 50g",
+        "Riz arborio : 60g",
+        "Petits pois : 50g",
         "Citron"
       ],
       "instructions": "Cuire risotto.",
@@ -2744,7 +2744,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Cabillaud: 150g",
+        "Cabillaud : 150g",
         "Herbes",
         "Poudre amande"
       ],
@@ -2766,8 +2766,8 @@
         "lunch"
       ],
       "ingredients": [
-        "Veau: 120g",
-        "Olives: 10",
+        "Veau : 120g",
+        "Olives : 10",
         "Tomate"
       ],
       "instructions": "Mijoter.",
@@ -2789,7 +2789,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Chou-fleur râpé: 200g",
+        "Chou-fleur râpé : 200g",
         "Tomate",
         "Concombre"
       ],
@@ -2987,7 +2987,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Oeufs : 2",
+        "Œufs : 2",
         "Courgette : 1",
         "Menthe"
       ],
@@ -3182,7 +3182,7 @@
       ],
       "ingredients": [
         "Framboises : 10",
-        "Pépite chocolat : 10"
+        "Pépites de chocolat : 10"
       ],
       "instructions": "Insérer une pépite dans chaque framboise.",
       "id": "framboises_farcies_(chocolat)",
@@ -3589,7 +3589,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Poulet: 150g",
+        "Poulet : 150g",
         "Citron confit",
         "Oignon"
       ],
@@ -3613,9 +3613,9 @@
       ],
       "ingredients": [
         "Thon",
-        "Oeuf",
+        "Œuf",
         "Haricots verts",
-        "Pomme de terre"
+        "Pommes de terre"
       ],
       "instructions": "Assembler.",
       "id": "salade_niçoise_revisitée",
@@ -3662,7 +3662,7 @@
         "Tomates",
         "Poivron",
         "Concombre",
-        "Oeuf: 2"
+        "Œuf : 2"
       ],
       "instructions": "Mixer soupe, ajouter oeuf.",
       "id": "gazpacho_andalou_&_oeuf_dur",
@@ -3683,8 +3683,8 @@
         "lunch"
       ],
       "ingredients": [
-        "Sardines: 4",
-        "Ratatouille: 200g"
+        "Sardines : 4",
+        "Ratatouille : 200g"
       ],
       "instructions": "Griller.",
       "id": "sardines_grillées_&_ratatouille",
@@ -3704,7 +3704,7 @@
         "summer"
       ],
       "ingredients": [
-        "Dorade: 120g",
+        "Dorade : 120g",
         "Mangue",
         "Citron vert"
       ],
@@ -3727,7 +3727,7 @@
       ],
       "ingredients": [
         "Pomme : 1",
-        "Noix : 10g"
+        "Noix (entières) : 10g"
       ],
       "instructions": "Rôtir pomme, ajouter noix.",
       "id": "pomme_rôtie_&_noix",
@@ -3897,7 +3897,7 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Chocolat : 15g",
+        "Chocolat pur : 15g",
         "Noisettes : 10g"
       ],
       "instructions": "Former truffe.",
@@ -3920,7 +3920,7 @@
       "ingredients": [
         "Pain GF : 2",
         "Purée potiron : 50g",
-        "Oeuf : 1"
+        "Œuf : 1"
       ],
       "instructions": "Tremper et cuire.",
       "id": "pain_perdu_potiron_épices",
@@ -3942,7 +3942,7 @@
       "ingredients": [
         "Flocons : 50g",
         "Poire : 1",
-        "Chocolat : 10g"
+        "Chocolat pur : 10g"
       ],
       "instructions": "Cuire.",
       "id": "porridge_poire-chocolat",
@@ -3964,7 +3964,7 @@
       "ingredients": [
         "Farine : 100g",
         "Figue : 2",
-        "Noix : 20g"
+        "Noix (entières) : 20g"
       ],
       "instructions": "Four.",
       "id": "cake_salé_figues-noix",
@@ -3985,7 +3985,7 @@
       ],
       "ingredients": [
         "Farine châtaigne : 50g",
-        "Oeuf : 1"
+        "Œuf : 1"
       ],
       "instructions": "Cuire.",
       "id": "pancakes_châtaigne",
@@ -4006,7 +4006,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Oeufs : 2",
+        "Œufs : 2",
         "Huile truffe : filet"
       ],
       "instructions": "Brouiller.",
@@ -4027,11 +4027,11 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Flocons d'avoine: 100g",
-        "Noisettes concassées: 50g",
-        "Sirop d'érable: 3 c.à.s",
-        "Huile de coco: 1 c.à.s",
-        "Cannelle: 1/2 c.à.c"
+        "Flocons d'avoine : 100g",
+        "Noisettes concassées : 50g",
+        "Sirop d'érable : 3 c.à.s",
+        "Huile de coco : 1 c.à.s",
+        "Cannelle : 1/2 c.à.c"
       ],
       "instructions": "Mélanger tous les ingrédients. Étaler sur une plaque de cuisson. Cuire 20 min à 160°C en remuant à mi-cuisson. Laisser refroidir.",
       "id": "granola_maison_noisette",
@@ -4052,7 +4052,7 @@
       ],
       "ingredients": [
         "Figues : 2",
-        "Noix : 10g"
+        "Noix (entières) : 10g"
       ],
       "instructions": "Manger tel quel.",
       "id": "figues_fraîches_&_noix",
@@ -4345,7 +4345,7 @@
       "ingredients": [
         "Pâte à pizza : 1",
         "Potiron : 100g",
-        "Noix : 10g"
+        "Noix (entières) : 10g"
       ],
       "instructions": "Cuire pizza.",
       "id": "pizza_gf_potiron-noix",
@@ -4499,8 +4499,8 @@
         "lunch"
       ],
       "ingredients": [
-        "Confit canard: 100g",
-        "Patate douce: 200g"
+        "Confit canard : 100g",
+        "Patate douce : 200g"
       ],
       "instructions": "Effilocher canard, purée, gratiner.",
       "id": "parmentier_canard_patate_douce",
@@ -4521,8 +4521,8 @@
         "lunch"
       ],
       "ingredients": [
-        "Champignons: 300g",
-        "Oeuf: 1",
+        "Champignons : 300g",
+        "Œuf : 1",
         "Bouillon"
       ],
       "instructions": "Mixer soupe, ajouter oeuf.",
@@ -4644,7 +4644,7 @@
       ],
       "ingredients": [
         "Moules : 500g",
-        "Pomme de terre : 150g",
+        "Pommes de terre : 150g",
         "Echalote : 1",
         "Vin blanc : 50ml",
         "Persil"
@@ -4798,7 +4798,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Noix : 10g",
+        "Noix (entières) : 10g",
         "Dattes : 2"
       ],
       "instructions": "Assembler.",
@@ -4819,7 +4819,7 @@
         "petit-dej"
       ],
       "ingredients": [
-        "Chocolat : 10g",
+        "Chocolat pur : 10g",
         "Zeste orange : 1 c.à.c"
       ],
       "instructions": "Mélanger.",
@@ -4862,7 +4862,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Oeufs : 2",
+        "Œufs : 2",
         "Pain GF : 1tr",
         "Comté : 20g"
       ],
@@ -4951,7 +4951,7 @@
         "dinner"
       ],
       "ingredients": [
-        "Oeufs : 2",
+        "Œufs : 2",
         "Kale : 50g"
       ],
       "instructions": "Poêler.",
@@ -4973,7 +4973,7 @@
       "ingredients": [
         "Banane : 1",
         "Farine : 60g",
-        "Noix : 20g"
+        "Noix (entières) : 20g"
       ],
       "instructions": "Four.",
       "id": "pain_banane_noix_(banana_bread)",
@@ -4994,7 +4994,7 @@
       ],
       "ingredients": [
         "Lait végétal",
-        "Chocolat",
+        "Chocolat pur",
         "Zeste"
       ],
       "instructions": "Chauffer.",
@@ -5017,7 +5017,7 @@
       ],
       "ingredients": [
         "Lait amande : 200ml",
-        "Carré chocolat 85% : 1"
+        "Chocolat pur : 1"
       ],
       "instructions": "Fondre doucement.",
       "id": "chocolat_chaud_léger_85%",
@@ -5461,7 +5461,7 @@
       "ingredients": [
         "Riz (cuit) : 120g",
         "Orange : 1/2",
-        "Noix : 10g"
+        "Noix (entières) : 10g"
       ],
       "instructions": "Assembler.",
       "id": "riz_sauté_hivernal_noix-orange",
@@ -5481,7 +5481,7 @@
         "lunch"
       ],
       "ingredients": [
-        "Oignon: 3",
+        "Oignon : 3",
         "Pain GF",
         "Comté"
       ],
@@ -5502,7 +5502,7 @@
         "winter"
       ],
       "ingredients": [
-        "Boeuf maigre",
+        "Bœuf maigre",
         "Carotte",
         "Poireau",
         "Navet"
@@ -5525,8 +5525,8 @@
         "lunch"
       ],
       "ingredients": [
-        "Endives: 2",
-        "Jambon: 2",
+        "Endives : 2",
+        "Jambon : 2",
         "Chou-fleur mixé"
       ],
       "instructions": "Four.",
@@ -5570,8 +5570,8 @@
         "lunch"
       ],
       "ingredients": [
-        "PdT: 150g",
-        "Fromage: 3 tr",
+        "Pommes de terre : 150g",
+        "Fromage : 3 tr",
         "Cornichon"
       ],
       "instructions": "Fondre.",
@@ -5593,9 +5593,9 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Pain Burger: 1",
-        "Steak Dinde: 120g",
-        "Avocat: 1/2",
+        "Pain Burger : 1",
+        "Steak Dinde : 120g",
+        "Avocat : 1/2",
         "Tomate",
         "Moutarde"
       ],
@@ -5616,10 +5616,10 @@
         "sans_gluten"
       ],
       "ingredients": [
-        "Crevettes: 150g",
-        "Lait Coco: 100ml",
+        "Crevettes : 150g",
+        "Lait Coco : 100ml",
         "Pâte Curry Vert",
-        "Riz basmati (cru): 50g"
+        "Riz basmati (cru) : 50g"
       ],
       "instructions": "Cuire le riz. Poêler crevettes avec curry et coco 5 min.",
       "id": "curry_vert_crevettes_express"
@@ -5637,10 +5637,10 @@
         "vegetarien"
       ],
       "ingredients": [
-        "Semoule blé: 80g",
+        "Semoule blé : 80g",
         "Lait",
         "Beurre",
-        "Parmesan: 30g"
+        "Parmesan : 30g"
       ],
       "instructions": "Faire la pâte, découper disques, gratiner au four avec parmesan.",
       "id": "gnocchis_à_la_romaine_(gratin)"
@@ -5659,9 +5659,9 @@
         "keto"
       ],
       "ingredients": [
-        "Oeufs: 3",
-        "Comté: 40g",
-        "Epinards: 50g"
+        "Œufs : 3",
+        "Comté : 40g",
+        "Epinards : 50g"
       ],
       "instructions": "Battre oeufs, poêler, ajouter fromage à la fin.",
       "id": "omelette_complète_3_oeufs_fromage"
@@ -5680,10 +5680,10 @@
         "plaisir"
       ],
       "ingredients": [
-        "Pâtes lasagne: 3 feuilles",
-        "Aubergine: 1",
-        "Mozzarella: 50g",
-        "Coulis tomate: 150g",
+        "Pâtes lasagne : 3 feuilles",
+        "Aubergine : 1",
+        "Mozzarella : 50g",
+        "Coulis tomate : 150g",
         "Parmesan"
       ],
       "instructions": "Griller aubergines. Alterner couches pâtes/légumes/fromage. Cuire 30min au four.",
@@ -5703,9 +5703,9 @@
         "plaisir"
       ],
       "ingredients": [
-        "Boeuf haché 5%: 100g",
-        "Haricots rouges: 150g",
-        "Maïs: 50g",
+        "Bœuf haché 5% : 100g",
+        "Haricots rouges : 150g",
+        "Maïs : 50g",
         "Epices Chili",
         "Riz (cru) : 50g"
       ],
@@ -5726,9 +5726,9 @@
         "plaisir"
       ],
       "ingredients": [
-        "Chou-fleur râpé: 200g",
-        "Oeuf: 1",
-        "Chèvre: 30g",
+        "Chou-fleur râpé : 200g",
+        "Œuf : 1",
+        "Chèvre : 30g",
         "Tomate",
         "Origan"
       ],
@@ -5748,9 +5748,9 @@
         "plaisir"
       ],
       "ingredients": [
-        "Tortillas Maïs: 2",
-        "Poulet: 100g",
-        "Avocat: 1/2",
+        "Tortillas de maïs : 2",
+        "Poulet : 100g",
+        "Avocat : 1/2",
         "Citron vert",
         "Coriandre"
       ],
@@ -5771,10 +5771,10 @@
         "sans_lactose"
       ],
       "ingredients": [
-        "Boeuf steak: 120g",
-        "Poivrons: 2",
+        "Steak de bœuf : 120g",
+        "Poivrons : 2",
         "Oignon",
-        "Tortillas blé: 2",
+        "Tortillas blé : 2",
         "Epices fajitas"
       ],
       "instructions": "Sauter boeuf et légumes en lanières. Servir chaud dans galettes.",
@@ -5794,10 +5794,10 @@
         "plaisir"
       ],
       "ingredients": [
-        "Riz Arborio (cru): 80g",
-        "Champignons: 150g",
-        "Parmesan: 30g",
-        "Vin blanc: 30ml",
+        "Riz Arborio (cru) : 80g",
+        "Champignons : 150g",
+        "Parmesan : 30g",
+        "Vin blanc : 30ml",
         "Bouillon"
       ],
       "instructions": "Nacrer riz. Ajouter bouillon louche par louche. Finir avec parmesan.",
@@ -5817,9 +5817,9 @@
         "plaisir"
       ],
       "ingredients": [
-        "Nouilles riz (cru): 80g",
-        "Poulet: 100g",
-        "Beurre cacahuète: 1 c.à.s",
+        "Nouilles riz (cru) : 80g",
+        "Poulet : 100g",
+        "Beurre cacahuète : 1 c.à.s",
         "Soja",
         "Citron vert"
       ],
@@ -5839,10 +5839,10 @@
         "dinner"
       ],
       "ingredients": [
-        "Pain complet: 2 tr",
-        "Jambon Dinde: 1 tr",
-        "Avocat: 1/4",
-        "Mozzarella: 20g"
+        "Pain complet : 2 tr",
+        "Jambon Dinde : 1 tr",
+        "Avocat : 1/4",
+        "Mozzarella : 20g"
       ],
       "instructions": "Tartiner avocat. Ajouter dinde et mozza. Griller à la poêle.",
       "id": "croque-monsieur_avocat_dinde"
@@ -5861,10 +5861,10 @@
         "dinner"
       ],
       "ingredients": [
-        "Riz Vinaigré (cuit): 100g",
-        "Saumon: 80g",
-        "Mangue: 1/2",
-        "Avocat: 1/4",
+        "Riz Vinaigré (cuit) : 100g",
+        "Saumon : 80g",
+        "Mangue : 1/2",
+        "Avocat : 1/4",
         "Sésame"
       ],
       "instructions": "Couper saumon et fruits en dés. Disposer sur riz froid.",
@@ -5907,9 +5907,9 @@
         "dinner"
       ],
       "ingredients": [
-        "Bagel sésame: 1",
-        "Saumon fumé: 60g",
-        "Cream Cheese: 30g",
+        "Bagel sésame : 1",
+        "Saumon fumé : 60g",
+        "Cream Cheese : 30g",
         "Câpres",
         "Oignon rouge"
       ],
@@ -5929,9 +5929,9 @@
         "vegetarien"
       ],
       "ingredients": [
-        "Flocons avoine: 40g",
-        "Banane: 1/2",
-        "Pépites chocolat: 15g"
+        "Flocons avoine : 40g",
+        "Banane : 1/2",
+        "Pépites de chocolat : 15g"
       ],
       "instructions": "Ecraser banane, mélanger avoine. Cuire 12min au four 180°C.",
       "id": "cookies_avoine_chocolat_noir"
@@ -5951,9 +5951,9 @@
         "dinner"
       ],
       "ingredients": [
-        "Banane: 1",
-        "Oeufs: 2",
-        "Farine sarrasin: 20g",
+        "Banane : 1",
+        "Œufs : 2",
+        "Farine sarrasin : 20g",
         "Sirop d'érable"
       ],
       "instructions": "Mixer banane et oeufs. Cuire petits tas à la poêle.",
@@ -5971,9 +5971,9 @@
         "plaisir"
       ],
       "ingredients": [
-        "Muffin anglais: 1",
-        "Oeufs: 2",
-        "Yaourt grec: 50g",
+        "Muffin anglais : 1",
+        "Œufs : 2",
+        "Yaourt grec : 50g",
         "Moutarde",
         "Citron"
       ],
@@ -5994,10 +5994,10 @@
         "plaisir"
       ],
       "ingredients": [
-        "Magret canard: 100g",
-        "Lait Coco: 100ml",
+        "Magret canard : 100g",
+        "Lait Coco : 100ml",
         "Pâte Curry Rouge",
-        "Ananas frais: 50g",
+        "Ananas frais : 50g",
         "Riz (cru) : 60g"
       ],
       "instructions": "Saisir canard. Mijoter dans coco/curry avec ananas. Servir avec riz.",
@@ -6036,7 +6036,7 @@
       ],
       "ingredients": [
         "Flocons d'avoine mixés (farine) : 150g",
-        "Oeufs : 2",
+        "Œufs : 2",
         "Myrtilles fraîches ou surgelées : 100g",
         "Yaourt nature : 1 pot",
         "Sirop d'agave : 2 c.à.s",
@@ -6058,7 +6058,7 @@
       ],
       "ingredients": [
         "Courgettes râpées : 2",
-        "Oeufs : 3",
+        "Œufs : 3",
         "Lait : 200ml",
         "Chèvre frais : 100g",
         "Maïzena : 30g",
@@ -6205,10 +6205,10 @@
         "pescetarien"
       ],
       "ingredients": [
-        "Oeuf dur : 2",
+        "Œuf dur : 2",
         "Thon : 80g",
         "Haricots verts cuits : 100g",
-        "Pomme de terre vapeur : 1",
+        "Pommes de terre : 1",
         "Olives noires : 5",
         "Tomate : 1"
       ],
@@ -6335,11 +6335,11 @@
       "carbs": "60g",
       "fat": "20g",
       "ingredients": [
-        "100g de riz à sushi cuit",
-        "100g de saumon frais (qualité sushi) en dés",
-        "1/2 avocat en tranches",
-        "50g de fèves edamame",
-        "1 cuillère à soupe de sauce soja",
+        "Riz : 100g",
+        "Saumon : 100g",
+        "Avocat : 1/2",
+        "Fèves edamame : 50g",
+        "Sauce soja : 1 c.à.s",
         "Graines de sésame"
       ],
       "instructions": "Disposez le riz au fond du bol. Arrangez joliment le saumon, l'avocat et les edamames par-dessus. Arrosez de sauce soja et saupoudrez de sésame. Servez immédiatement.",
@@ -6361,12 +6361,12 @@
       "carbs": "70g",
       "fat": "15g",
       "ingredients": [
-        "150g de riz arborio",
-        "100g de champignons de Paris émincés",
-        "1 échalote ciselée",
-        "500ml de bouillon de légumes chaud",
-        "2 cuillères à soupe de parmesan râpé",
-        "1 noix de beurre"
+        "Riz arborio : 150g",
+        "Champignons : 100g",
+        "Echalote : 1",
+        "Bouillon de légumes : 500ml",
+        "Parmesan : 2 c.à.s",
+        "Beurre : 1 noix"
       ],
       "instructions": "Faites revenir l'échalote et les champignons dans le beurre. Ajoutez le riz et remuez 1 min. Versez le bouillon louche par louche en attendant qu'il soit absorbé. Terminez avec le parmesan.",
       "tags": [
@@ -6387,12 +6387,12 @@
       "carbs": "45g",
       "fat": "22g",
       "ingredients": [
-        "3 tranches de pain complet grillées",
-        "100g de tranches de dinde (rôti)",
-        "1/2 avocat écrasé",
-        "2 tranches de tomate",
+        "Pain complet : 3 tranches",
+        "Dinde : 100g",
+        "Avocat : 1/2",
+        "Tomates : 2 tranches",
         "Quelques feuilles de laitue",
-        "1 cuillère à café de mayonnaise légère"
+        "Mayonnaise légère : 1 c.à.c"
       ],
       "instructions": "Tartinez une tranche de pain d'avocat. Ajoutez la dinde. Posez la seconde tranche, tartinez de mayonnaise, ajoutez tomate et laitue. Fermez avec la troisième tranche. Coupez en triangles.",
       "tags": [
@@ -6513,7 +6513,7 @@
         "all_seasons"
       ],
       "ingredients": [
-        "Oeufs : 2",
+        "Œufs : 2",
         "Pain complet : 30g"
       ],
       "instructions": "Cuire oeufs 3min dans l'eau bouillante. Servir avec pain.",

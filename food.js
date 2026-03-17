@@ -685,7 +685,7 @@ function normalizeIngredient(name) {
   n = n.replace(/’/g, "'");
 
   // 2. Specific Mappings (Canonicals) - Priority Rules
-  if (n.includes("oeuf") || n.includes("œuf")) return "Oeufs";
+  if (n.includes("oeuf") || n.includes("œuf")) return "Œufs";
   if (n.includes("avocat")) return "Avocat";
   if (n.includes("banane")) return "Banane";
   if (n.includes("patate douce")) return "Patate douce";
@@ -798,6 +798,11 @@ function normalizeIngredient(name) {
   if (n.includes("fromage blanc")) return "Fromage blanc";
   if (n.includes("mozza")) return "Mozzarella";
   if (n.includes("feta")) return "Feta";
+  
+  // Specific exceptions we fixed
+  if (n.includes("chocolat")) return "Chocolat pur";
+  if (n.includes("pépite") && n.includes("chocolat") || n.includes("pepite") && n.includes("chocolat")) return "Pépites de chocolat";
+  if (n.includes("maïs") || n.includes("mai")) return "Maïs";
   if (n.includes("chèvre")) return "Fromage de Chèvre";
   if (n.includes("parmesan")) return "Parmesan";
   if (n.includes("emmental") || n.includes("gruyère") || n.includes("comté")) return "Fromage râpé";
