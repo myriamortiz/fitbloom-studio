@@ -138,6 +138,23 @@ body {
   cursor: pointer;
 }
 
+.reset-details {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--fbs-taupe-rose);
+  opacity: 0.6;
+}
+
+.reset-summary {
+  cursor: pointer;
+  list-style: none;
+  text-decoration: underline;
+}
+
+.reset-summary::-webkit-details-marker {
+  display: none;
+}
+
 /* ------------------------------------------------------ */
 /*                 PAGE FOOD (WEEKLY PLANNER)             */
 /* ------------------------------------------------------ */

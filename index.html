@@ -95,11 +95,14 @@
       📲 Installer l'application
     </button>
 
-    <div>
-      <button onclick="resetApp()" class="footer-btn-reset">
-        🔄 Reset App
-      </button>
-    </div>
+    <details class="reset-details">
+      <summary class="reset-summary">Réglages Avancés</summary>
+      <div style="margin-top: 1rem;">
+        <button onclick="resetApp()" class="footer-btn-reset">
+          🔄 Reset App
+        </button>
+      </div>
+    </details>
     <script>
       function resetApp() {
         if (confirm("Tout effacer et recommencer à zéro ?")) {

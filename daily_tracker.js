@@ -74,6 +74,9 @@ function updateWaterUI(count) {
     const fillEl = document.getElementById('water-fill');
 
     if (countEl) countEl.textContent = count;
+    const unitEl = document.getElementById('water-unit');
+    if (unitEl) unitEl.textContent = count <= 1 ? "verre" : "verres";
+
     if (fillEl) {
         const pct = Math.min((count / 8) * 100, 100);
         fillEl.style.width = `${pct}%`;
